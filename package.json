@@ -6,10 +6,10 @@
     "start": "serve .vuepress/dist"
   },
   "dependencies": {
+    "serve": "^13.0.2",
     "vuepress-theme-cosmos": "^1.0.183"
   },
   "devDependencies": {
-    "prettier": "^2.5.1",
-    "serve": "^13.0.2"
+    "prettier": "^2.5.1"
   }
 }
