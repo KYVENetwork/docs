@@ -3,7 +3,7 @@ module.exports = {
   title: 'KYVE',
   themeConfig: {
     logo: {
-      src: '/logo.svg',
+      src: '/logo.png',
     },
     sidebar: {
       auto: true,
