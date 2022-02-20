@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build": "vuepress build",
+    "format": "prettier --write .",
+    "serve": "vuepress dev --no-cache",
+    "start": "serve .vuepress/dist"
+  },
+  "dependencies": {
+    "vuepress-theme-cosmos": "^1.0.183"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "serve": "^13.0.2"
+  }
+}
