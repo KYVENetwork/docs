@@ -21,16 +21,16 @@ kyved tx gov submit-proposal create-pool [flags]
 
 ### `submit-proposal` (type: `spend-treasury`)
 
-Transfer assets from the [treasury](/modules/treasury.md) module to any recipient.
+Transfer assets from the [treasury](/modules/treasury.md) module to a recipient.
 
 ```
 kyved tx gov submit-proposal spend-treasury [recipient] [amount] [flags]
 ```
 
-| Name        | Type                                                                       | Description | Example     |
-| ----------- | -------------------------------------------------------------------------- | ----------- | ----------- |
-| `Recipient` | `string`                                                                   |             | `"kyve..."` |
-| `Amount`    | [`sdk.Coins`](https://pkg.go.dev/github.com/cosmos/cosmos-sdk/types#Coins) |             | `"100kyve"` |
+| Name        | Type                                                                       | Example     |
+| ----------- | -------------------------------------------------------------------------- | ----------- |
+| `Recipient` | `string`                                                                   | `"kyve..."` |
+| `Amount`    | [`sdk.Coins`](https://pkg.go.dev/github.com/cosmos/cosmos-sdk/types#Coins) | `"100kyve"` |
 
 ### `submit-proposal` (type: `update-pool`)
 
