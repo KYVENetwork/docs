@@ -1,16 +1,12 @@
-<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_525_2)">
-<rect width="600" height="600" rx="300" fill="#141C1B"/>
-<path d="M300 3.48083e-05C134.315 2.03236e-05 -2.03236e-05 134.315 -3.48083e-05 300C-4.9293e-05 465.685 134.315 600 300 600C465.685 600 600 465.685 600 300C600 134.315 465.685 4.9293e-05 300 3.48083e-05Z" fill="url(#paint0_radial_525_2)" fill-opacity="0.5"/>
-<path d="M244.038 407H203L249.324 191H290.362L271.397 279.56H278.859L349.122 191H397V194.703L314.301 297.149V302.703L366.532 405.149V407H321.141L275.75 318.44H262.692L244.038 407Z" fill="#F5F5F5"/>
-</g>
-<defs>
-<radialGradient id="paint0_radial_525_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(402.945 246.866) rotate(-180) scale(436.408)">
-<stop stop-opacity="0"/>
-<stop offset="1" stop-color="#58C6B2"/>
-</radialGradient>
-<clipPath id="clip0_525_2">
-<rect width="600" height="600" rx="300" fill="white"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 130 29" style="enable-background:new 0 0 130 29;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#000000;}
+</style>
+<path class="st0" d="M5.68,29H0L6.41,0h5.69L9.48,11.89h1.03L20.23,0h6.6v0.5L15.38,14.25V15l7.23,13.75V29h-6.28l-6.24-11.89H8.28
+	L5.68,29z M63.72,0.5L49.23,22.09L47.71,29h-5.69l1.59-7.33L38.22,0h6.03l3.27,13.84h0.78L57.52,0h6.2V0.5z M72.69,0h5.77
+	l0.98,26.27h0.78L91.78,0h5.95v0.5L84.74,29H74.15L72.69,0z M105.85,28.5L112.14,0H130v5.22h-13.35l-1.43,6.63h11.67v5.22h-12.86
+	l-1.49,6.71h12.72V29h-19.42V28.5z"/>
 </svg>

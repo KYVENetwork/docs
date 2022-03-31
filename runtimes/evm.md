@@ -1,6 +1,6 @@
 ---
-order: 4
-title: EVM
+order: 1
+title: '@kyve/evm'
 ---
 
 # EVM
