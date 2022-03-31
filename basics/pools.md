@@ -1,12 +1,12 @@
 ---
-title: Storage pools
-order: 3
+title: Pools
+order: 4
 parent:
   title: Basics
   order: 2
 ---
 
-# Storage pools
+# Pools
 
 Generally, storage pools (or just pools) can be described as discrete entities arranged around specific data sources.
 They can be created by anyone through the governance and can store any data stream.

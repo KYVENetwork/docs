@@ -1,12 +1,12 @@
 ---
-title: What is Arweave?
-order: 2
+title: Arweave
+order: 3
 parent:
   title: Basics
   order: 2
 ---
 
-# What is Arweave?
+# Arweave
 
 [Arweave](https://www.arweave.org/) is a protocol that offers permament, decentralized storage. The web as
 we know it is impermanent and prone to erasure as a strict function of its
