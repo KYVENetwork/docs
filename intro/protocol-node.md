@@ -10,7 +10,7 @@ parent:
 
 [[toc]]
 
-## Prerequisites
+### Requirements
 
 Wallets
 

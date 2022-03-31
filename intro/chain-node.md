@@ -8,7 +8,7 @@ parent:
 
 # Running a chain node
 
-## Prerequisites
+### Requirements
 
 Minimum requirements
 
