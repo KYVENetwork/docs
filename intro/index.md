@@ -1,9 +1,6 @@
 ---
-# title is displayed in the sidebar
 title: High-level Overview
-# order specifies file's priority in the sidebar
 order: 1
-# parent is readme.md or index.md parent directory
 parent:
   title: Introduction
   order: 1
