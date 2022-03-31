@@ -8,7 +8,9 @@ parent:
 
 # Running a protocol node
 
-### Requirements
+[[toc]]
+
+## Prerequisites
 
 Wallets
 
@@ -21,20 +23,46 @@ Minimum hardware requirements
 - 4GB RAM
 - 1GB DISK
 
-```
-sudo apt update
-sudo apt install zip -y
-```
-
-### Claim some $KYVE
+### Get some $KYVE
 
 Before continuing, make sure that you have the [Keplr](https://keplr.app) wallet installed in your browser. Head over to the [KYVE app](https://app.kyve.network) and make sure to connect your wallet (this automatically adds and switches to the KYVE network).
 
 Go to the faucet tab and claim some tokens via one of three faucets. The wheel is the easiest option.
 
+### Choose a pool
+
+Before you can run a protocol node you have to choose a pool you want to join. You can find an overview of all pools
+in the KYVE app [here](https://app.kyve.network/). Once you have chosen a pool you have to remember the pool id and the
+pool runtime for later. You can find this information right below the pool name once you have clicked on a pool in the overview. In this example we have chosen the first pool with the pool id `0` and the runtime `@kyve/evm`.
+
+### Claim a validator slot
+
+Due to a limited number of validator slots in each pool only the nodes with the highest stake can claim
+a validator slot. To check the slot availability you can click on the tab `Validators`. There you should see something like this:
+
+![validator info](/validator_info.png)
+
+In this case all validator slots are occupied, but since the minimum staking amount is 300 $KYVE you just need more than 300 to claim a slot. You can do that by clicking on the button `Become a validator` and enter your desired staking amount.
+If the minimum staking amount is zero you can stake as much as you want, a validator slot will be then always claimable.
+
+::: warning
+**IMPORTANT**: If you can not claim a validator slot in the desired pool you can not continue!
+:::
+
+You can verify that you are a validator in the desired pool by checking the table of validators. If you can find your
+account address inside it you can continue.
+
 ### Manually build the binaries
 
-Clone the EVM repository and make sure your are on branch `main`. Now run the following command to install dependencies and build the binaries
+Since we want to run a protocol node on a `@kyve/evm` runtime pool we have to clone the correct repository. In our
+case clone the [EVM repository](https://github.com/KYVENetwork/evm) and make sure your are on branch `main`.
+
+```
+git clone https://github.com/KYVENetwork/evm.git
+cd evm
+```
+
+Now run the following commands to install dependencies and build the binaries
 
 ```
 yarn install
@@ -80,14 +108,14 @@ Run the following command with the same binary as above
 ./out/evm-macos -p 0 -m "your mnemonic in here ..." -k ./arweave.json -n beta
 ```
 
-If your node has started correctly, it should print some logs and idle while it waits for you to stake some $KYVE
+If your node has started correctly, it should print some logs like this:
 
 ```
 2022-03-31 11:02:16.289  INFO  🚀 Starting node ...
 
         Node name     = spotty-tomato-marmoset
         Address       = kyve1ungug8m2cuk7rtslvnlkuql2elyve6ed0s3vgn
-        Pool Id       = 1
+        Pool Id       = 0
         Cache height  = 0
         @kyve/core    = v0.2.2
         @kyve/evm     = v0.2.0
