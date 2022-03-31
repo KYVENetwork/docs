@@ -15,44 +15,55 @@ The `gov` module enables on-chain governance, which allows KYVE token holders to
 
 Create a new pool in the [registry](/modules/registry.md) module.
 
-```
+```shell
 kyved tx gov submit-proposal create-pool [flags]
 ```
 
-### `submit-proposal` (type: `spend-treasury`)
-
-Transfer assets from the [treasury](/modules/treasury.md) module to a recipient.
-
-```
-kyved tx gov submit-proposal spend-treasury [recipient] [amount] [flags]
-```
-
-| Name        | Type                                                                       | Example     |
-| ----------- | -------------------------------------------------------------------------- | ----------- |
-| `Recipient` | `string`                                                                   | `"kyve..."` |
-| `Amount`    | [`sdk.Coins`](https://pkg.go.dev/github.com/cosmos/cosmos-sdk/types#Coins) | `"100kyve"` |
+| Flag Position | Name              | Type     |
+|---------------|-------------------|----------|
+| 1st           | `name`            | `string` |
+| 2nd           | `runtime`         | `string` |
+| 3rd           | `logo`            | `string` |
+| 4th           | `versions`        | `string` |
+| 5th           | `config`          | `string` |
+| 6th           | `start_height`    | `uint64` |
+| 7th           | `min_bundle_size` | `uint64` |
+| 8th           | `operating_cost`  | `uint64` |
 
 ### `submit-proposal` (type: `update-pool`)
 
-Update any setting of a specific pool in the [registry](/modules/registry.md) module.
+Update a specific pool in the [registry](/modules/registry.md) module.
 
-```
+```shell
 kyved tx gov submit-proposal update-pool [flags]
 ```
 
-<!-- TODO: Add descriptions. -->
+| Flag Position | Name              | Type     |
+|---------------|-------------------|----------|
+| 1st           | `id`              | `uint64` |
+| 2nd           | `name`            | `string` |
+| 3rd           | `runtime`         | `string` |
+| 4th           | `logo`            | `string` |
+| 5th           | `versions`        | `string` |
+| 6th           | `config`          | `string` |
+| 7th           | `min_bundle_size` | `uint64` |
+| 8th           | `operating_cost`  | `uint64` |
 
-| Flag Position | Name            | Type     | Description  |
-| ------------- | --------------- | -------- | ------------ |
-| 1st           | `Id`            | `uint64` | The pool ID. |
-| 2nd           | `BundleDelay`   | `uint64` |              |
-| 3rd           | `Config`        | `string` |              |
-| 4th           | `Logo`          | `string` |              |
-| 5th           | `Name`          | `string` |              |
-| 6th           | `OperatingCost` | `uint64` |              |
-| 7th           | `Runtime`       | `string` |              |
-| 8th           | `StorageCost`   | `uint64` |              |
-| 9th           | `Versions`      | `string` |              |
+### `submit-proposal` (type: `pause-pool`)
+
+Pause a specific pool in the [registry](/modules/registry.md) module.
+
+```shell
+kyved tx gov submit-proposal pause-pool [id]
+```
+
+### `submit-proposal` (type: `unpause-pool`)
+
+Unpause a specific pool in the [registry](/modules/registry.md) module.
+
+```shell
+kyved tx gov submit-proposal unpause-pool [id]
+```
 
 ## Queries
 
