@@ -10,7 +10,15 @@ parent:
 
 Storing data on Arweave is simple, storing data validated by multiple parties is a bit more complicated. Because of that we will break down the process of KYVE stores it's data.
 
+## Saving data in rounds
+
+Saving many data items or even a data stream is tricky, thats why we aggregate data into bundles to store them more efficiently. This enables KYVE to validate multiple data items which are bundled up in a single validation round. With this method we can break down a data stream into multiple rounds, making it way easier to work with. In each round, a selected validator will collect data, create a bundle and submit it to the network. This marks the beginning of such a proposal round.
+
 ## Lifecycle of a bundle proposal
+
+Running a protocol nodes comes with certain responsibilities. Based on your role for each proposal round, the following will happen:
+
+![uploaders validator](/uploaders_validators.png)
 
 ### 1. Selecting an uploader for the data bundle
 
@@ -61,3 +69,7 @@ The amount of the vote slash can be seen on the network page on the KYVE app. Mo
 
 If more than 50% of the validators voted invalid there will be no bundle reward for the uploader. The opposite will be the case, the uploader will receive an upload slash. The amount of the slash can be also seen on the network page. Like before,
 all validators who voted incorrectly, in this case voted with valid will receive a vote slash, too.
+
+## Summary
+
+![data flow](/data_flow.png)
