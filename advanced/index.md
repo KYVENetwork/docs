@@ -4,6 +4,9 @@ order: 1
 parent:
   title: Advanced
   order: 3
+
+mathjax:
+  presets: '\def\lr#1#2#3{\left#1#2\right#3}'
 ---
 
 # How data is stored
@@ -31,7 +34,10 @@ selection with the following two factors:
 
 In detail to calculate the upload probability of a validator you have to apply the following formula:
 
-> todo
+- $n$ = `number of validators`
+- $v$ = `validator`
+
+$p = \frac {validator\_personal\_stake + \sqrt {validator\_total\_delegation}} {\sum_{i=1}^n v_i.personal\_stake + \sqrt {v_i.total\_delegation}} * 100$
 
 The `next_uploader` for each round is selected directly when the new round starts.
 
@@ -60,7 +66,15 @@ If more than 50% of the validators voted valid the bundle proposal got accepted 
 
 The reward is calculated the following:
 
-> todo
+- $operating\_cost$ = `Minimum fixed bundle reward in $KYVE`
+- $storage\_cost$ = `Amount of $KYVE to save 1 Byte on Arweave`
+- $byte\_size$ = `The size of the data bundle in bytes`
+- $network\_fee$ = `The fee which gets transferred to treasurey`
+- $uploader\_commission$ = `The commission the uploader set (rest goes to delegators)`
+
+$bundle\_reward = operating\_cost + storage\_cost * byte\_size$
+
+$uploader\_payout = bundle\_reward * (1 - network\_fee) * uploader\_commission$
 
 But before this reward is being payed out the network fee will be deducted which is usually at 1%. After that we take the commission of the validator, which is 90% by default. In this case 10% of the remaining bundle reward will be distributed to the delegators, the remaining 90% will be then automatically transferred to the validators account.
 

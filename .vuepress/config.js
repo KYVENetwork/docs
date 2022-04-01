@@ -58,5 +58,14 @@ module.exports = {
         hostname: 'https://docs.kyve.network',
       },
     ],
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+        macros: {
+          '*': '\\times',
+        },
+      },
+    ],
   ],
 };
