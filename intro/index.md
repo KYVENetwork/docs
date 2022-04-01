@@ -20,7 +20,7 @@ Blockchain technology came along and provided a solution to centralization probl
 
 Due to its scalability, immutability, and availability, Arweave is the go-to solution for data storage. Nonetheless, data availability does not equal data validity. Therefore, we see KYVE and Arweave as complementary: while KYVE provides reliable data validity, Arweave, in contrast, focuses on data availability (replicability).
 
-![data flow](/data_flow.png)
+![kyve overview](/kyve_overview.png)
 
 ### Lifetime data
 
