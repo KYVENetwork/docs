@@ -9,58 +9,70 @@ title: Registry
 
 ## Transactions
 
-### `create-pool`
-
-Create a new storage pool.
-
-```
-kyved tx registry create-pool [flags]
-```
-
 ### `fund-pool`
 
 Fund a specific pool using $KYVE tokens.
 
+```shell
+kyved tx registry fund-pool [id] [amount]
 ```
-kyved tx registry fund-pool [pool-id] [amount]
+
+### `defund-pool`
+
+Defund from a specific pool.
+
+```shell
+kyved tx registry defund-pool [id] [amount]
 ```
 
 ### `stake-pool`
 
 Stake in a specific pool using $KYVE tokens.
 
+```shell
+kyved tx registry stake-pool [id] [amount]
 ```
-kyved tx registry stake-pool [pool-id] [amount]
+
+### `unstake-pool`
+
+Unstake from a specific pool.
+
+```shell
+kyved tx registry stake-pool [id] [amount]
+```
+
+### `delegate-pool`
+
+Delegate to a protocol node in a specific pool using $KYVE tokens.
+
+```shell
+kyved tx registry delegate-pool [id] [node] [amount]
+```
+
+### `withdraw-pool`
+
+Withdraw your delegation rewards from a protocol node in a specific pool.
+
+```shell
+kyved tx registry delegate-pool [id] [node]
+```
+
+### `undelegate-pool`
+
+Undelegate from a protocol node in a specific pool.
+
+```shell
+kyved tx registry undelegate-pool [id] [node] [amount]
+```
+
+### `update-metadata`
+
+Update your protocol node's metadata in a specific pool.
+
+```shell
+kyved tx registry update-metadata [id] [commission] [moniker] [website] [logo]
 ```
 
 ## Queries
-
-### `pools`
-
-Query all pools.
-
-```
-kyved query registry pools
-```
-
-Alternatively, you can query using a valid RPC endpoint.
-
-```
-https://api.node.kyve.network/kyve/registry/pools
-```
-
-### `pool`
-
-Query details of a specific pool.
-
-```
-kyved query registry pool [pool-id]
-```
-
-Alternatively, you can query using a valid RPC endpoint.
-
-```
-https://api.node.kyve.network/kyve/registry/pool/<pool-id>
-```
 
 ## Current Configuration
