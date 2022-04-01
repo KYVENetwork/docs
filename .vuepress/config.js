@@ -45,4 +45,18 @@ module.exports = {
       ],
     },
   },
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'G-SY5FWZVWK2',
+      },
+    ],
+    [
+      'sitemap',
+      {
+        hostname: 'https://docs.kyve.network',
+      },
+    ],
+  ],
 };

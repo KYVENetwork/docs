@@ -15,7 +15,7 @@ parent:
 Wallets
 
 - A [Keplr](https://keplr.app) wallet with $KYVE. (You can claim some [here](https://app.kyve.network/faucet))
-- An [Arweave](https://arweave.org/) keyfile with some funds. (You can claim some [here](https://faucet.arweave.net/))
+- An [Arweave](https://arweave.org/) keyfile with some AR. (You can claim some [here](https://faucet.arweave.net/))
 
 Minimum hardware requirements
 
@@ -35,22 +35,24 @@ Before you can run a protocol node you have to choose a pool you want to join. Y
 in the KYVE app [here](https://app.kyve.network/). Once you have chosen a pool you have to remember the pool id and the
 pool runtime for later. You can find this information right below the pool name once you have clicked on a pool in the overview. In this example we have chosen the first pool with the pool id `0` and the runtime `@kyve/evm`.
 
-### Claim a validator slot
+### Verify that you can claim a validator slot
 
 Due to a limited number of validator slots in each pool only the nodes with the highest stake can claim
-a validator slot. To check the slot availability you can click on the tab `Validators`. There you should see something like this:
+a validator slot. You can only claim a validator slot if you have **more than the minimum staking amount**.
 
-![validator info](/validator_info.png)
+To check the minimum staking amount you can click on the tab `Validators` once you have selected a pool. There you should see something like this:
 
-In this case all validator slots are occupied, but since the minimum staking amount is 300 $KYVE you just need more than 300 to claim a slot. You can do that by clicking on the button `Become a validator` and enter your desired staking amount.
-If the minimum staking amount is zero you can stake as much as you want, a validator slot will be then always claimable.
+![minimum stake](/minimum_stake.png)
+
+In this case all validator slots are occupied, but since the minimum staking amount is 300 $KYVE you just need to have more than 300 to claim a slot. If the minimum staking amount is zero you just have to have more than zero $KYVE.
 
 ::: warning
-**IMPORTANT**: If you can not claim a validator slot in the desired pool you can not continue!
+**IMPORTANT**: Do not stake yet! Just verify that you can afford the minimum staking amount, you will stake later in this tutorial.
 :::
 
-You can verify that you are a validator in the desired pool by checking the table of validators. If you can find your
-account address inside it you can continue.
+::: warning
+**IMPORTANT**: If you don't have more $KYVE than the minimum staking amount you can not continue!
+:::
 
 ### Manually build the binaries
 
@@ -98,36 +100,76 @@ Options:
   -h, --help                display help for command
 ```
 
-### Run your node
+### Start your node
 
 To run your node, copy your Arweave keyfile into your working directory and fetch the mnemonic from Keplr.
 
 Run the following command with the same binary as above
 
 ```
-./out/evm-macos -p 0 -m "your mnemonic in here ..." -k ./arweave.json -n beta
+./out/evm-macos --poolId 0 --mnemonic "your mnemonic in here ..." --keyfile ./arweave.json --network korellia
 ```
 
 If your node has started correctly, it should print some logs like this:
 
 ```
-2022-03-31 11:02:16.289  INFO  🚀 Starting node ...
+2022-04-01 08:32:27.597  INFO  🚀 Starting node ...
 
-        Node name     = spotty-tomato-marmoset
-        Address       = kyve1ungug8m2cuk7rtslvnlkuql2elyve6ed0s3vgn
+        Node name     = light-pink-cricket
+        Address       = kyve1eka2hngntu5r2yeuyz5pd45a0fadarp3zue8gd
         Pool Id       = 0
-        Cache height  = 0
+        Cache height  = 5087
         @kyve/core    = v0.2.2
         @kyve/evm     = v0.2.0
 
-2022-03-31 11:02:16.291  DEBUG Attempting to fetch pool state.
-2022-03-31 11:02:16.568  INFO  💻 Running node on runtime @kyve/evm.
-2022-03-31 11:02:16.572  INFO  ⏱  Pool version requirements met
-2022-03-31 11:02:16.573  INFO  ✅ Fetched pool state
-2022-03-31 11:02:16.573  DEBUG Attempting to verify node.
-2022-03-31 11:02:16.574  INFO  🔍  Node is running as a validator.
+2022-04-01 08:32:27.598  DEBUG Attempting to fetch pool state.
+2022-04-01 08:32:27.724  INFO  💻 Running node on runtime @kyve/evm.
+2022-04-01 08:32:27.727  INFO  ⏱  Pool version requirements met
+2022-04-01 08:32:27.728  INFO  ✅ Fetched pool state
+2022-04-01 08:32:27.728  DEBUG Attempting to verify node.
+2022-04-01 08:32:27.728  WARN ⚠️  Node is not an active validator!
+2022-04-01 08:32:27.728  WARN ⚠️  Stake $KYVE here to join as a validator: https://app.korellia.kyve.network/#/pools/0/validators - Idling ...
+```
 
-2022-03-31 11:02:16.575  INFO  ⚡️ Starting new proposal
-2022-03-31 11:02:17.123  INFO  🧐 Selected as VALIDATOR
-2022-03-31 11:02:17.512  DEBUG Waiting for new proposal ...
+### Stake node
+
+When you see your node idling everything is correct. Since the node has not claimed a validator slot yet your node
+can not participate. In order to do that head back to the [app](https://app.kyve.network) and click on the `Validator` tab.
+After that click on the button `Become a validator` and follow the instructions.
+
+![become validator](/become_validator.png)
+
+After you have successfully staked you should see your address in the Pool validators table.
+
+![verify stake](/verify_stake.png)
+
+When you look at your node logs you should then see that the node is starting to verify bundles.
+
+```
+2022-04-01 08:32:27.597  INFO  🚀 Starting node ...
+
+        Node name     = light-pink-cricket
+        Address       = kyve1eka2hngntu5r2yeuyz5pd45a0fadarp3zue8gd
+        Pool Id       = 0
+        Cache height  = 5087
+        @kyve/core    = v0.2.2
+        @kyve/evm     = v0.2.0
+
+2022-04-01 08:32:27.598  DEBUG Attempting to fetch pool state.
+2022-04-01 08:32:27.724  INFO  💻 Running node on runtime @kyve/evm.
+2022-04-01 08:32:27.727  INFO  ⏱  Pool version requirements met
+2022-04-01 08:32:27.728  INFO  ✅ Fetched pool state
+2022-04-01 08:32:27.728  DEBUG Attempting to verify node.
+2022-04-01 08:32:27.728  WARN ⚠️  Node is not an active validator!
+2022-04-01 08:32:27.728  WARN ⚠️  Stake $KYVE here to join as a validator: https://app.korellia.kyve.network/#/pools/0/validators - Idling ...
+
+2022-04-01 08:32:27.728  WARN ⚠️  Node is not an active validator!
+2022-04-01 08:32:27.728  WARN ⚠️  Stake $KYVE here to join as a validator: https://app.korellia.kyve.network/#/pools/0/validators - Idling ...
+
+2022-04-01 08:33:27.728  WARN ⚠️  Node is not an active validator!
+2022-04-01 08:33:27.728  WARN ⚠️  Stake $KYVE here to join as a validator: https://app.korellia.kyve.network/#/pools/0/validators - Idling ...
+
+2022-04-01 8:34:16.575  INFO  ⚡️ Starting new proposal
+2022-04-01 8:34:17.123  INFO  🧐 Selected as VALIDATOR
+2022-04-01 8:34:17.512  DEBUG Waiting for new proposal ...
 ```
