@@ -4,9 +4,6 @@ order: 1
 parent:
   title: Advanced
   order: 3
-
-mathjax:
-  presets: '\def\lr#1#2#3{\left#1#2\right#3}'
 ---
 
 # How data is stored
@@ -85,5 +82,7 @@ If more than 50% of the validators voted invalid there will be no bundle reward 
 all validators who voted incorrectly, in this case voted with valid will receive a vote slash, too.
 
 ## Summary
+
+The following lifecycle can be summarized into the diagram below:
 
 ![data flow](/data_flow.png)
