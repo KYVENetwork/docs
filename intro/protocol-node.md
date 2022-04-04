@@ -54,6 +54,10 @@ In this case all validator slots are occupied, but since the minimum staking amo
 **IMPORTANT**: If you don't have more $KYVE than the minimum staking amount you can not continue!
 :::
 
+### Get the prebuilt binaries
+
+For our case, the prebuilt binaries every operating system can be downloaded at the [EVM repository](https://github.com/KYVENetwork/evm) under `releases`.
+
 ### Manually build the binaries
 
 Since we want to run a protocol node on a `@kyve/evm` runtime pool we have to clone the correct repository. In our
