@@ -56,7 +56,7 @@ In this case all validator slots are occupied, but since the minimum staking amo
 
 ### Get the prebuilt binaries
 
-For our case, the prebuilt binaries every operating system can be downloaded at the [EVM repository](https://github.com/KYVENetwork/evm) under `releases`.
+For our case, the prebuilt binaries every operating system can be downloaded [here](https://github.com/KYVENetwork/evm/releases).
 
 ### Manually build the binaries
 
