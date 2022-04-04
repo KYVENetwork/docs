@@ -95,7 +95,7 @@ Options:
   -p, --poolId <number>     The id of the pool you want to run on.
   -m, --mnemonic <string>   Your mnemonic of your account.
   -k, --keyfile <string>    The path to your Arweave keyfile.
-  -n, --network <string>    The chain id of the network. [optional, default = beta] (default: "beta")
+  -n, --network <string>    The chain id of the network. [optional, default = korellia] (default: "korellia")
   -sp, --space <number>     The size of disk space in bytes the node is allowed to use. [optional, default = 1000000000 (1 GB)] (default: "1000000000")
   -b, --batchSize <number>  The batch size of fetching items from datasource. For synchronous fetching enter 1. [optional, default = 1] (default: "1")
   --metrics                 Run Prometheus metrics server. [optional, default = false] (default: false)
