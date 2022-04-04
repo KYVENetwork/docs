@@ -12,12 +12,12 @@ Slashing is a core mechanism in a Proof of Stake chain. In KYVE we also make use
 
 ## Upload slash
 
-An upload slash is the harshest slash. If a protocol node encounters one, it looses 50% of it's stake. In order to receive one a majority of the validators in pool have to vote against your bundle proposal.
+An upload slash is the harshest slash. If a protocol node encounters one, it looses 20% of it's stake. In order to receive one a majority of the validators in pool have to vote against your bundle proposal.
 
 ## Vote slash
 
 A vote slash happens when you validate data incorrectly. That means, once quorum is reached (> 50% voted either valid or invalid) all the validators who voted the opposite of the majority receive a vote slash. When a node receives a vote slash
-it looses 20% of it's stake.
+it looses 10% of it's stake.
 
 ## Timeout slash
 
