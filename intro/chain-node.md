@@ -8,7 +8,9 @@ parent:
 
 # Running a chain node
 
-### Requirements
+Running a chain node will be available in a few days.
+
+<!-- ### Requirements
 
 Minimum requirements
 
@@ -172,4 +174,4 @@ Unjail
 
 ```
 kyved tx slashing unjail  --chain-id kyve-korellia --from validator
-```
+``` -->
