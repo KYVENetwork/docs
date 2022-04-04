@@ -116,7 +116,7 @@ Set environments
 Replace **“YOUR_MONİKER”** with your node name.
 
 ```
-echo export CHAIN_ID=kyve-beta >> $HOME/.profile
+echo export CHAIN_ID=kyve-korellia >> $HOME/.profile
 echo export MONIKER=YOUR_MONİKER >> $HOME/.profile
 source $HOME/.profile
 ```
@@ -165,11 +165,11 @@ kyved keys show validator -a --bech val
 Delegate additional stake
 
 ```
-kyved tx staking delegate {VALOPER_ADDRESS} {STAKE_AMOUNT}tkyve --from validator --chain-id kyve-beta
+kyved tx staking delegate {VALOPER_ADDRESS} {STAKE_AMOUNT}tkyve --from validator --chain-id kyve-korellia
 ```
 
 Unjail
 
 ```
-kyved tx slashing unjail  --chain-id kyve-beta --from validator
+kyved tx slashing unjail  --chain-id kyve-korellia --from validator
 ```
