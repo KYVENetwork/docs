@@ -6,54 +6,191 @@ parent:
   order: 1
 ---
 
-# Running a chain node
+# Running a Chain-Node
 
-Running a chain node will be available in a few days.
+The Chain-Nodes are the backbone of KYVE. The chain layer is a 
+completely sovereign [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_stake)
+blockchain build with [Starport](https://starport.com/). This 
+blockchain is run by independent nodes we call _Chain-Nodes_ 
+since they're running on the chain level. The native currency 
+of the KYVE chain is $[KYVE](/basics/kyve.md), it secures the chain 
+and allows chain nodes to stake and other users to delegate into them.
 
-<!-- ### Requirements
+
+#### Requirements
 
 Minimum requirements
 
-- 3vCPU
-- 4GB RAM
+- 2vCPU
+- 1GB RAM
 - 80GB DISK
 
-```
-sudo apt update
-sudo apt install zip -y
-```
+The guide uses GNU/Linux for the operating system.
 
-## Manual Installation
+## Genesis Installation
 
-### Download binaries
+During the time, chain-upgrades occur but the blockchains stays the same.
+Therefore, it is necessary to process older blocks with the appropriate version.
+We use Cosmovisor the handle automatic upgrades. The setup is explained after
+the initial setup.
 
-```
-mkdir kyvebinary && cd kyvebinary
-wget https://nc.breithecker.de/index.php/s/wKMRSZy3goxnaHT/download/kyve_beta-2022-03-30.zip
-unzip kyve_beta-2022-03-30.zip
-tar -xvf  chain_linux_amd64.tar.gz
-sudo mv chaind kyved
-sudo mv kyved /usr/bin/
-kyved init <node_name>
-mv genesis.json ~/.kyve/config/
-cd .. && rm -rf kyvebinary
-```
+In the genesis setup the node will be fully configured. After that one needs to configure
+the Cosmovisor.
 
-### Check the kyved version
+#### Obtaining the binaries
 
-```
-kyved version
-```
+We provide prebuilt binaries on GitHub ([https://github.com/KYVENetwork/chain/releases/tag/v0.0.1](https://github.com/KYVENetwork/chain/releases/tag/v0.0.1))
+For building the binaries we refer to the `Readme.md` in [https://github.com/KYVENetwork/chain](https://github.com/KYVENetwork/chain).
 
-you should see: `latest-1211bcef`
+Assuming an amd64 Linux system:
+```bash
+wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/chain_linux_amd64.tar.gz
+tar -xvzf chain_linux_amd64.tar.gz
 
-### Create keys and save all info
-
-```
-kyved keys add validator
+# The [moniker] is a human-readable name for your node
+./chaind init [moniker] --chain-id korellia
 ```
 
-### Go to Discord faucet and get some $KYVE
+Obtain the genesis
+```bash
+wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json
+# move to the chain-node directory
+mv genesis.json ~/.kyve/config/genesis.json
+```
+
+It is important to start with the oldest version `v0.0.1` (the genesis version).
+
+Start the chain the first time
+```bash
+./chaind start --p2p.seeds=e56574f922ff41c68b80700266dfc9e01ecae383@18.156.198.41:26656
+```
+
+The node now starts to sync the blockchain.
+
+::: warning
+**IMPORTANT**:
+The node can be stopped with `strg + C`. You do not need to wait for it to sync. Setting up a daemon service is explained later in this chapter.
+:::
+
+
+The seed only needs to be provided for the first startup.
+It is then automatically saved to the address book.
+
+The chain will start to sync until the first governance upgrade
+proposal starts to occur. The Chain-Node will halt and probably print a
+"CONSENSUS FAILURE" error. When this happens the next released binary
+needs to be started.
+
+To avoid replacing the binaries manually and allow automatic updates
+we recommend setting up the Cosmovisor.
+
+## Setup Cosmovisor
+
+The Cosmovisor is a tool that listens to on-chain governance proposals
+and automatically replaces the binary.
+
+The build instructions can be found at [https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor)
+For now we also provide the binary for linux at [https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64](https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64)
+
+```bash
+wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64
+mv cosmovisor_linux_amd64 cosmovisor
+chmod +x cosmovisor
+```
+
+Setup the directory
+```bash
+mkdir -p ~/.kyve/cosmovisor/genesis/bin/
+echo "{}" > ~/.kyve/cosmovisor/genesis/upgrade-info.json
+```
+
+Copy the binary from the first section to the Cosmovisor directory.
+```bash
+cp chaind ~/.kyve/cosmovisor/genesis/bin/chaind
+```
+
+Then export the following environment variables:
+
+```bash
+export DAEMON_HOME="$HOME/.kyve"
+export DAEMON_NAME="chaind"
+
+# optional on whether auto-download should be enabled
+# for a simple node setup we recommend to leave this true
+export DAEMON_ALLOW_DOWNLOAD_BINARIES="true"
+```
+::: warning
+**IMPORTANT**: For production grade validator nodes it is highly recommended turning off auto download and downloading binaries manually instead.
+:::
+
+Start the Cosmovisor
+```bash
+./cosmovisor start
+```
+
+The Cosmovisor can be stopped with `strg + C`. Setting up a daemon service is explained later in this chapter.
+
+
+#### Obtaining binaries manually
+
+This is needed when `DAEMON_ALLOW_DOWNLOAD_BINARIES` is set to `false`.
+
+When a new chain-upgrade proposal occurs, users have multiple days time to vote on it.
+The upgrade-proposal specifies an exact block-height on which the upgrade will be performed.
+When the proposal is up for vote the GitHub repository is already updated with the new tag and version.
+
+Node-runners then have to check out the specific tag and build the binary on their on.
+After that the binary needs to be copied to the Cosmovisor directory.
+
+```bash
+mv chaind ~/.kyve/cosmovisor/upgrades/$UPGRADE_NAME/bin/chaind
+```
+The `$UPGRADE_NAME` will be the name of the tag of the commit. And is also specified 
+in the governance proposal.
+
+
+## Setting up Deamon-service
+
+For the daemon service root-privileges are required during the setup.
+
+Create a service file.
+$USER is the Linux user which runs the process. Replace it before you copy the command
+
+```bash
+tee <<EOF > /dev/null /etc/systemd/system/kyved.service
+[Unit]
+Description=KYVE Chain-Node daemon
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=/home/$USER/cosmovisor start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=infinity
+
+Environment="DAEMON_HOME=/home/$USER/.kyve"
+Environment="DAEMON_NAME=chaind"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+Start the daemon
+```bash
+sudo systemctl start kyved
+```
+
+
+## Becoming a validator
+
+_Will be added soon!_
+
+
+
+<!-- ### Go to Discord faucet and get some $KYVE
 
 _The wallet address you will use is the wallet we created in the previous step_
 
@@ -61,55 +198,6 @@ _The wallet address you will use is the wallet we created in the previous step_
 !faucet send <your_kyve_address>
 ```
 
-### Configuration setup
-
-Set seeds to your config
-
-```
-wget https://raw.githubusercontent.com/Errorist79/seeds/main/seeds.txt -O $HOME/.kyve/config/seeds.txt
-sed -i.bak 's/seeds = \"\"/seeds = \"'$(cat $HOME/.kyve/config/seeds.txt)'\"/g' $HOME/.kyve/config/config.toml
-```
-
-### Create systemd
-
-```
-sudo tee <<EOF >/dev/null /etc/systemd/system/kyved.service
-[Unit]
-Description=Kyved Cosmos daemon
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=/usr/bin/kyved start
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=4096
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-cat /etc/systemd/system/kyved.service
-sudo systemctl enable kyved
-```
-
-### Start services
-
-```
-sudo systemctl daemon-reload
-sudo systemctl restart kyved
-```
-
-### Check logs
-
-```
-# change log settings and check logs
-
-sed -i 's/#Storage=auto/Storage=persistent/g' /etc/systemd/journald.conf
-sudo systemctl restart systemd-journald
-
-journalctl -u kyved.service -f -n 100
-```
 
 ### Set environments and create validator
 
