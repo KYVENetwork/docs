@@ -9,18 +9,18 @@ parent:
 # The KYVE Network
 
 KYVE is a network of storage pools built to store data streams or create snapshots of already existing data.
-It is secured by its own blockchain build on [cosmos](https://cosmos.network/)
+It is secured by its blockchain built on [cosmos](https://cosmos.network/)
 
 # Architecture
 
-KYVE consists of two layers which need to clarified:
+KYVE consists of two layers that need to clarify:
 
 ![architecture](/architecture.png)
 
 ## Chain Layer
 
-The chain layer is the backbone of KYVE. The chain layer is a completely sovereign [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_stake) blockchain build with [Starport](https://starport.com/). This blockchain is run by independent nodes we call _chain nodes_ since they're running on the chain level. The native currency of the KYVE chain is $[KYVE](/basics/kyve.md), it secures the chain and allows
-chain nodes to stake and other users to delegate into them.
+The chain layer is the backbone of KYVE. The chain layer is an entirely sovereign [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_stake) blockchain built with [Starport](https://starport.com/). This blockchain is run by independent nodes we call _chain nodes_ since they're running on the chain level. The native currency of the KYVE chain is $[KYVE](/basics/kyve.md). It secures the chain and allows
+chain nodes to stake and other users to delegate to them.
 
 ## Protocol Layer
 

@@ -8,5 +8,5 @@ parent:
 
 # $KYVE
 
-$KYVE is the native currency of the KYVE blockchain. On a chain level $KYVE is used for staking and delegating, thereby
-securing the network through Proof of Stake. Furthermore, $KYVE is used on the protocol level for funding, staking and delegating, incentivising participants to behave accordingly.
+$KYVE is the native currency of the KYVE blockchain. On a chain level, $KYVE is used for staking and delegating,
+securing the network through Proof of Stake. Furthermore, $KYVE is used on the protocol level for funding, staking, and delegating, incentivizing participants to behave accordingly.
