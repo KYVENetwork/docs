@@ -23,7 +23,7 @@ Running a protocol nodes comes with certain responsibilities. Based on your role
 ### 1. Selecting an uploader for the data bundle
 
 In order for a bundle proposal round to start, the `next_uploader` has to create a bundle, upload it to Arweave and then
-submit it to the network. But first of all, the next uploader has to be selected. For that, we use a weighted random
+submit it to the network. But first, the next uploader has to be selected. For that, we use a weighted random
 selection with the following two factors:
 
 - The personal stake (linear)
@@ -32,9 +32,17 @@ selection with the following two factors:
 In detail to calculate the upload probability of a validator you have to apply the following formula:
 
 - $n$ = `number of validators`
-- $v$ = `validator`
+- $S_i$ = `personal stake of i-th validator in $KYVE`
+- $D_i$ = `sum of all delegations to the i-th validator in $KYVE`
+- $A$ = 10000 (`scaling parameter`)
 
-$p = \frac {validator\_personal\_stake + \sqrt {validator\_total\_delegation}} {\sum_{i=1}^n v_i.personal\_stake + \sqrt {v_i.total\_delegation}} * 100$
+The upload weight of the i-th validator is then given by
+
+$$w_i = S_i + \sqrt{A \cdot \left(A + D_i\right)} - A$$
+
+which yields the probability
+
+$$p_i = \frac{w_i}{\sum_{k=1}^{n} w_k}$$
 
 The `next_uploader` for each round is selected directly when the new round starts.
 
