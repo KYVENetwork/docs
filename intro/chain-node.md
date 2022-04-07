@@ -181,85 +181,58 @@ EOF
 Start the daemon
 ```bash
 sudo systemctl start kyved
+# stop it with
+sudo systemctl stop kyved
 ```
 
 
 ## Becoming a validator
 
-_Will be added soon!_
+For becoming a validator you need $[KYVE](/basics/kyve.md).
+There are currently 100 validator slots. If all slots are taken
+you need to stake more than the lowest one in the list to become a validator.
 
+Make sure your node is fully synced and configured correctly.
 
-
-<!-- ### Go to Discord faucet and get some $KYVE
-
-_The wallet address you will use is the wallet we created in the previous step_
-
-```
-!faucet send <your_kyve_address>
-```
-
-
-### Set environments and create validator
-
-Set environments
-
-Replace **“YOUR_MONİKER”** with your node name.
-
-```
-echo export CHAIN_ID=kyve-korellia >> $HOME/.profile
-echo export MONIKER=YOUR_MONİKER >> $HOME/.profile
-source $HOME/.profile
+Create a key or import an existing one
+```shell
+./chaind keys add [your-key-name]
+# or
+./chaind keys add [your-key-name] --recover
+# It then asks for the mnemonic
 ```
 
-Create validator
+Make sure you have enough balance in your wallet.
+
+Become a validator by submitting the `create-validator` transaction to the network.
+You need to substitute `[amount]`, `[moniker]` and `[your-key-name]`
 
 ```
 kyved tx staking create-validator --yes \
- --amount 19000000000tkyve \
- --moniker $MONIKER \
+ --amount [amount]tkyve \
+ --moniker [moniker] \
  --commission-rate "0.10" \
  --commission-max-rate "0.20" \
  --commission-max-change-rate "0.01" \
  --min-self-delegation "1" \
- --pubkey "$(kyved tendermint show-validator)" \
- --from validator \
- --chain-id $CHAIN_ID
-```
-
-## Additional commands
-
-Stop the node:
-
-```
-systemctl stop kyved
-```
-
-Start the node:
-
-```
-systemctl start kyved
-```
-
-Check your balance
-
-```
-kyved q bank balances {ADDRESS}
+ --pubkey "$(./chaind tendermint show-validator)" \
+ --from [your-key-name] \
+ --chain-id korellia
 ```
 
 Learn your _valoper_ address
-
 ```
-kyved keys show validator -a --bech val
+./chaind keys show [your-key-name] -a --bech val
 ```
 
 Delegate additional stake
 
 ```
-kyved tx staking delegate {VALOPER_ADDRESS} {STAKE_AMOUNT}tkyve --from validator --chain-id kyve-korellia
+./chaind tx staking delegate [VALOPER_ADDRESS] [STAKE_AMOUNT]tkyve --from [your-key-name] --chain-id korellia
 ```
 
 Unjail
 
 ```
-kyved tx slashing unjail  --chain-id kyve-korellia --from validator
-``` -->
+./chaind tx slashing unjail  --chain-id korellia --from [your-key-name]
+``` 
