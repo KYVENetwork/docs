@@ -8,7 +8,9 @@ parent:
 
 # Running a protocol node
 
-[[toc]]
+The Protocol-nodes are the backbone of a KYVE pool. They are responsible
+for collecting data from a data source, bundling and uploading them to Arweave and verifying it. This enables KYVE
+to store any data stream decentralized and permanently.
 
 ### Requirements
 
@@ -28,6 +30,10 @@ Minimum hardware requirements
 Before continuing, make sure that you have the [Keplr](https://keplr.app) wallet installed in your browser. Head over to the [KYVE app](https://app.kyve.network) and make sure to connect your wallet (this automatically adds and switches to the KYVE network).
 
 Go to the faucet tab and claim some tokens via one of three faucets. The wheel is the easiest option.
+
+::: warning
+**IMPORTANT**: Make sure that you are on the correct app URL `https://app.kyve.network`
+:::
 
 ### Choose a pool
 
