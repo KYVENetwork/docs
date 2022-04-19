@@ -16,9 +16,9 @@ Saving many data items or even a data stream is tricky. Thats why we aggregate d
 
 ## Lifecycle of a bundle proposal
 
-Running a protocol node comes with specific responsibilities. Based on your role for each proposal round, the following will happen:
+The lifecycle of a bundle proposal can be seen in the following diagram:
 
-![uploaders validator](/uploaders_validators.png)
+![data flow](/data_flow_normal.png)
 
 ### 1. Selecting an uploader for the data bundle
 
@@ -50,7 +50,7 @@ The `next_uploader` for each round is selected directly when the new round start
 
 Once a node is selected as the `next_uploader`, it will create a bundle proposal that other validators can validate. A bundle consists of many data items, making it more efficient since storing every data item on Arweave alone would be way more expensive.
 
-A parameter called `min_bundle_size` determines that a bundle has to have at least so many data items. If this number is high, it stores data very efficiently. Still, it takes longer to upload/validate, which means an increased number would not be suitable for live data. So the node which creates the bundle will collect data until it has collected enough data items to fulfill the bundle size requirements.
+A parameter called `upload_interval` how long the validator has to wait until he can submit his bundle proposal. The higher this number, the more efficient data is getting archived due to bigger bundles. For live data on another hand it is recommended to have a rather small upload interval like 60 seconds.
 
 Once enough data has been collected, the data (usually JSON) will be transformed into a buffer to be gzipped, finishing the bundle for the next round.
 
@@ -67,7 +67,7 @@ When the new bundle proposal is submitted, the latest round officially starts. T
 
 After at least > 50% of all nodes (excluding the uploader) have voted _quorum_ has been reached. If that is the case the uploader of the next round submits his bundle he prepared in the meantime and finalizes the round.
 
-The bundle proposal was accepted and finalized if more than 50% of the validators voted validly. The chain will save the bundle id and make it available for the users. As a reward, the uploader of this bundle will receive a bundle reward.
+The bundle proposal was accepted and finalized if more than 50% of the validators voted with valid. The chain will save the bundle id and make it available for the users. As a reward, the uploader of this bundle will receive a bundle reward.
 
 The reward is calculated in the following:
 

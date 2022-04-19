@@ -22,4 +22,4 @@ it loses 10% of its stake.
 ## Timeout slash
 
 A timeout slash happens when the protocol node is offline for longer. When a node is supposed to upload and submit
-data, but it does not for any reason, other validators vote if the data source was available or not. If the data source was available, the node in question was probably offline and got slashed with 1%. If the data source is unavailable and it's not the node's fault that it did not upload the node, it does not get slashed.
+data, but it does not for any reason, other validators vote if the data source was available or not. If the data source was available, the node in question was probably offline and got slashed with usually 1%. If the data source is unavailable and it's not the node's fault that it did not upload the node, it does not get slashed.
