@@ -180,6 +180,7 @@ EOF
 
 Start the daemon
 ```bash
+sudo systemctl enable kyved
 sudo systemctl start kyved
 # stop it with
 sudo systemctl stop kyved
@@ -208,7 +209,7 @@ Become a validator by submitting the `create-validator` transaction to the netwo
 You need to substitute `[amount]`, `[moniker]` and `[your-key-name]`
 
 ```
-kyved tx staking create-validator --yes \
+./chaind tx staking create-validator --yes \
  --amount [amount]tkyve \
  --moniker [moniker] \
  --commission-rate "0.10" \
