@@ -58,7 +58,7 @@ In this case all validator slots are occupied, but since the minimum staking amo
 
 ### Get the prebuilt binaries (recommended)
 
-For our case, the prebuilt binaries every operating system can be downloaded [here](https://github.com/KYVENetwork/evm/releases).
+For our case, the prebuilt binaries every operating system can be downloaded [here](https://github.com/KYVENetwork/evm/releases) for every operating system. For example on EVM it would be `evm-linux`, `evm-macos`, `evm-windows.exe`.
 
 In general, you can get the binaries by clicking on the `Become a validator` button and following the steps until you're on the section `Get node binaries`.
 
