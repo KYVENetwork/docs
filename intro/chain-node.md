@@ -62,7 +62,7 @@ It is important to start with the oldest version `v0.0.1` (the genesis version).
 
 Start the chain the first time
 ```bash
-./chaind start --p2p.seeds=e56574f922ff41c68b80700266dfc9e01ecae383@18.156.198.41:26656
+./chaind start --p2p.seeds=e56574f922ff41c68b80700266dfc9e01ecae383@3.73.27.185:26656
 ```
 
 The node now starts to sync the blockchain.
