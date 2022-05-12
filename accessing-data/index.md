@@ -1,8 +1,8 @@
 ---
-title: Basic Queries
-order: 1
+title: Basic Queries 
+order: 1 
 parent:
-    title: Accessing Data
+    title: Accessing Data 
     order: 4
 ---
 
@@ -11,8 +11,10 @@ parent:
 Learn how to query web3 data in your website or application. Before following that guide, you might want to learn more
 about using GraphQL. All endpoints use the same argument structure with a Filter and a Pagination-Type. The Filter
 allows you to run complex queries while the Pagination enables you to set the amount of data you want to have in return
-and improves performance by limiting results. 
-## Basic Query - Getting the first Avalanche Block 
+and improves performance by limiting results.
+
+## Basic Query - Getting the first Avalanche Block
+
 You can find the endpoint for Avalanche data. Use the following code snippet:
 
 ```

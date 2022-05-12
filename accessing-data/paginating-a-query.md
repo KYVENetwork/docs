@@ -1,3 +1,11 @@
+---
+title: Paginating a Query
+order: 3
+parent:
+    title: Accessing Data
+    order: 4
+---
+
 # Paginating a Query
 
 To limit the number of results, you can use pagination. Use the pageSize parameter to limit the number of results and

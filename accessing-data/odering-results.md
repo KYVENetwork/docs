@@ -1,3 +1,11 @@
+---
+title: Ordering results
+order: 4
+parent:
+    title: Accessing Data
+    order: 4
+---
+
 # Ordering results
 
 To order query results, you can specify a list of field names. Use + or - for ascending or descending order. The default
