@@ -1,3 +1,11 @@
+---
+title: Querying multiple sources
+order: 6
+parent:
+    title: Accessing Data
+    order: 4
+---
+
 # Querying multiple sources
 
 KYVE allows you to query multiple sources at the same time. This requires you to use a special gateway endpoint. The

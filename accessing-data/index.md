@@ -15,7 +15,7 @@ and improves performance by limiting results.
 
 ## Basic Query - Getting the first Avalanche Block
 
-You can find the endpoint for Avalanche data. Use the following code snippet:
+You can find the endpoint for Avalanche data [here](./well-known-endpoints.md). Use the following code snippet:
 
 ```
 query FirstAvalancheBlock {
