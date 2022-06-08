@@ -67,7 +67,7 @@ This example will show how to run a protocol node on a linux system on the Moonb
 - Getting the new upgrade binaries during a pool upgrade **automatically** and therefore **don't risk timeout slashes**
 - Make running protocol nodes **standardized** and **easier**
 
-## Installation
+#### Installation
 
 Currently, there are no binaries for the KYSOR, therefore it has to be installed and build manually by cloning the repository:
 
@@ -76,7 +76,7 @@ git clone https://github.com/kyve-org/kysor.git
 cd kysor
 ```
 
-## Install dependencies
+#### Install dependencies
 
 In order to get started run the following in the project root directory:
 
@@ -84,7 +84,7 @@ In order to get started run the following in the project root directory:
 yarn install
 ```
 
-## Setup
+#### Setup
 
 General directory structure and important files:
 

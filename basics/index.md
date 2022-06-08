@@ -28,14 +28,14 @@ The protocol layer sits on top of the chain layer and enables the actual use cas
 
 ## Summary
 
-|                     | Chain node                        | Protocol node                        |
-| ------------------- | --------------------------------- | ------------------------------------ |
-| Currency            | $KYVE                             | $KYVE                                |
-| Node maximum        | 100 Validators                    | 100 Validators per pool              |
-| Secured by          | Proof of Stake                    | Proof of stake                       |
-| CPU requirements    | 3vCPU                             | None                                 |
-| Memory requirements | 4GB RAM                           | 2GB RAM                              |
-| Disk requirements   | 80GB                              | 1GB                                  |
-| Rewards in          | $KYVE                             | $KYVE                                |
-| Function            | Secure blockchain                 | Upload and validate data             |
-| Tutorials           | [How to run](intro/chain-node.md) | [How to run](intro/protocol-node.md) |
+|                     | Chain node                           | Protocol node                           |
+| ------------------- | ------------------------------------ | --------------------------------------- |
+| Currency            | $KYVE                                | $KYVE                                   |
+| Node maximum        | 100 Validators                       | 100 Validators per pool                 |
+| Secured by          | Proof of Stake                       | Proof of stake                          |
+| CPU requirements    | 3vCPU                                | None                                    |
+| Memory requirements | 4GB RAM                              | 2GB RAM                                 |
+| Disk requirements   | 80GB                                 | 1GB                                     |
+| Rewards in          | $KYVE                                | $KYVE                                   |
+| Function            | Secure blockchain                    | Upload and validate data                |
+| Tutorials           | [How to run](../intro/chain-node.md) | [How to run](../intro/protocol-node.md) |
