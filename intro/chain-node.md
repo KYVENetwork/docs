@@ -69,7 +69,7 @@ It is important to start with the oldest version `v0.0.1` (the genesis version).
 Start the chain the first time
 
 ```bash
-./chaind start --p2p.seeds=e56574f922ff41c68b80700266dfc9e01ecae383@3.73.27.185:26656
+./chaind start --p2p.seeds=02dd2c26948ea758a25d3dbc91744f8897681652@3.73.27.185:26656
 ```
 
 The node should now be starting to sync the chain. If it doesn't, you can always look
@@ -77,7 +77,7 @@ for other peers [here](https://rpc.korellia.kyve.network/net_info) and use it wi
 the `p2p.persistent_peers` param, for example:
 
 ```bash
----p2p.persistent_peers 44185d392e2c7097dd90671bf9570ff2499581be@18.197.228.197:26656
+---p2p.persistent_peers 70556c82352b9919fb6f339b9da0ebc587e9148c@3.68.232.117:26656
 ```
 
 ::: warning
