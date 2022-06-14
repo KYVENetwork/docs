@@ -3,7 +3,7 @@ title: How data is stored
 order: 2
 parent:
   title: Advanced
-  order: 3
+  order: 4
 ---
 
 # How data is stored

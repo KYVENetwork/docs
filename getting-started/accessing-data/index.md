@@ -1,12 +1,29 @@
 ---
-title: How to use GraphQL in your application
-order: 8
+title: Getting Started
+order: 1 
 parent:
     title: Accessing Data
-    order: 4
+    order: 2
 ---
-# How to use GraphQL in your application
+
+# Getting Started
+
 This tutorial will get you up and running with data access from KYVE in your React application.
+
+### Prerequisites
+
+1. Get familiar with GraphQL
+
+The Kyve Data Access API is available only in GraphQL.
+
+If you are not familiar with GraphQL, read a good primer here.
+
+2. Select Your Endpoint
+
+http://localhost:8080/getting-started/accessing-data/well-known-endpoints.html
+
+## Try this
+
 ## Set-up
 
 1. Create a new React App with [Create React App](https://create-react-app.dev/)
@@ -57,6 +74,7 @@ root.render(
 
 In this section, we follow the basic setup for the Apollo Client. The client is connecting to
 the Evmos-EVM endpoint. You can find more endpoints [here](./well-known-endpoints.md).
+
 ## Fetching data from KYVE
 To fetch data from KYVE we first specify a basic query that queries for Evmos-EVM-Transactions.
 ```js
@@ -99,3 +117,6 @@ function App() {
 }
 ```
 You can now run `npm start` to see the app in action.
+
+
+
