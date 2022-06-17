@@ -66,7 +66,7 @@ The `getDataItem` method that you implement should take in a `key`, which is the
   public async getDataItem(key: number): Promise<{ key: number; value: any }>
 ```
 
-Every `getDataItem` method will likely take the RPC endpoint from step 1, and either pass it to an SDK provided by the source chain or third party library provider like Ethers, Infura, or Alchemuy; OR the method will call the public RPC endpoint directly for data.
+Every `getDataItem` method will likely take the RPC endpoint from step 1, and either pass it to an SDK provided by the source chain or third party library provider like Ethers or Web3JS; OR the method will call the public RPC endpoint directly for data.
 
 Once the data comes back from the source chain, you can choose to clean up the data before returning it in the method.
 
