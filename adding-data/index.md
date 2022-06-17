@@ -141,9 +141,9 @@ function initialiseSolanaRPC(
 
 The `fetchBlock` method first initializes a connection to the Solana API and then calls the `getBlock()` method that is provided in the Solana SDK.
 
-### Kyve-Near Integration
+### Kyve-Cosmos Integration
 
-The `fetchBlock` helper method for the Kyve-Near integration fetches data from the source chain (Near) directly from Near's RPC endpoints.
+The `fetchBlock` helper method for the Kyve-Cosmos integration fetches data from the source chain (Cosmos) directly from Cosmos's RPC endpoints.
 
 ```ts
 export async function fetchBlock(
@@ -220,7 +220,7 @@ class KyveSolana extends KYVE {
 
 4. Test your integration
 
-Now that you've successfully extended `KYVE` and implemented your `getDataItem` class, it's time to test your integration!
+Now that you've successfully extended `KYVE` and implemented your `getDataItem` class method, it's time to test your integration!
 
 To proceed to this next step, reach out to the Kyve Discord channel for help.
 
