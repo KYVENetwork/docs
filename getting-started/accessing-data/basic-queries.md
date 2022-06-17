@@ -14,7 +14,9 @@ and improves performance by limiting results.
 
 ## Basic Query - Getting the first Avalanche Block
 
-You can find the endpoint for Avalanche data [here](./well-known-endpoints.md). Use the following code snippet:
+You can find the endpoint for Avalanche data [here](./well-known-endpoints.md).
+
+The endpoints host GraphiQL playgrounds that allow you to try out GraphQL queries. For example, let's copy and paste the following query to get an Avalanche block into the playground:
 
 ```
 query FirstAvalancheBlock {
@@ -28,6 +30,9 @@ query FirstAvalancheBlock {
     }
 }
 ```
+
+![graphql](/graphql-kyve-avalanche.gif)
+
 
 This will result in
 
