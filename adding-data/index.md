@@ -107,7 +107,7 @@ class KyveSolana extends KYVE {
 }
 ```
 
-Let's take a closer look at the `fetchBlock` helper method, which in this case lives in its own `utilies.ts` file.
+Let's take a closer look at the `fetchBlock` helper method, which in this case lives in its own `utils.ts` file.
 
 ```ts
 import { BlockResponse, Connection } from '@solana/web3.js';
