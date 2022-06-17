@@ -180,7 +180,7 @@ In addition to the `getDataItem` method which must be implemented, you are free 
 
 For example, for several of the existing integrations, we have implemented custom signatures.
 
-These signatures, which were implemented to prevent spamming of private Infura endpoints, are calculated from the address (conveniently exposed in the class through your wallet) and the message. They can be used for signature verification.
+These signatures, which were implemented to prevent spamming of private endpoints, are calculated from the address (conveniently exposed in the class through your wallet) and the message. They can be used for signature verification.
 
 ```ts
 class KyveSolana extends KYVE {
