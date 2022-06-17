@@ -24,7 +24,7 @@ Open up `package.json` in your cloned repo.
 vi package.json
 ```
 
-Update the name and version to fit your chain.
+Update the name and version to fit your integration/runtime.
 
 So for example:
 
