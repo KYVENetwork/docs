@@ -24,7 +24,7 @@ Open up `package.json` in your cloned repo.
 vi package.json
 ```
 
-Update the name and version to fit your chain.
+Update the name and version to fit your integration/runtime.
 
 So for example:
 
@@ -66,7 +66,7 @@ The `getDataItem` method that you implement should take in a `key`, which is the
   public async getDataItem(key: number): Promise<{ key: number; value: any }>
 ```
 
-Every `getDataItem` method will likely take the RPC endpoint from step 1, and either pass it to an SDK provided by the source chain or third party library provider like Ethers, Infura, or Alchemuy; OR the method will call the public RPC endpoint directly for data.
+Every `getDataItem` method will likely take the RPC endpoint from step 1, and either pass it to an SDK provided by the source chain or third party library provider like Ethers or Web3JS; OR the method will call the public RPC endpoint directly for data.
 
 Once the data comes back from the source chain, you can choose to clean up the data before returning it in the method.
 
@@ -107,7 +107,7 @@ class KyveSolana extends KYVE {
 }
 ```
 
-Let's take a closer look at the `fetchBlock` helper method, which in this case lives in its own `utilies.ts` file.
+Let's take a closer look at the `fetchBlock` helper method, which in this case lives in its own `utils.ts` file.
 
 ```ts
 import { BlockResponse, Connection } from '@solana/web3.js';
@@ -180,7 +180,7 @@ In addition to the `getDataItem` method which must be implemented, you are free 
 
 For example, for several of the existing integrations, we have implemented custom signatures.
 
-These signatures, which were implemented to prevent spamming of private Infura endpoints, are calculated from the address (conveniently exposed in the class through your wallet) and the message. They can be used for signature verification.
+These signatures, which were implemented to prevent spamming of private endpoints, are calculated from the address (conveniently exposed in the class through your wallet) and the message. They can be used for signature verification.
 
 ```ts
 class KyveSolana extends KYVE {
