@@ -1,5 +1,5 @@
 ---
-title: Querying multiple sources
+title: Counting results
 order: 5
 parent:
     title: Accessing Data

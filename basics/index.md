@@ -1,9 +1,9 @@
 ---
-title: The KYVE Network
+title: Overview
 order: 1
 parent:
-  title: Basics
-  order: 2
+  title: Kyve Network
+  order: 3
 ---
 
 # The KYVE Network

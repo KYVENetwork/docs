@@ -1,6 +1,6 @@
 ---
 title: Filtering a Query
-order: 2
+order: 3
 parent:
     title: Accessing Data
     order: 4
