@@ -1,10 +1,10 @@
-# Adding data to Kyve
+# Adding data to KYVE
 
-You may want to insert data from another blockchain and store it in Kyve's data warehouse.
+You may want to insert data from another blockchain and store it in KYVE's data warehouse.
 
 To do this, you'll want to write an integration.
 
-0. Gather necessary information from the chain you would like to integrate into Kyve
+0. Gather necessary information from the chain you would like to integrate into KYVE
 
 a. RPC endpoint
 b. SDK's for the source blockchain
@@ -36,7 +36,7 @@ So for example:
 }
 ```
 
-3. Extend the `Kyve` class
+3. Extend the `KYVE` class
 
 Now open up the `src/index.ts` file from the root of the repo.
 
@@ -56,8 +56,6 @@ class KyveSolana extends KYVE {
 }
 ```
 
-```
-
 3. Fill in the `getDataItem` method
 
 The `getDataItem` method that you implement should take in a `key`, which is the [height](https://academy.binance.com/en/glossary/block-height) of the blockchain block you are indexing. (Block height refers to a specific location in a blockchain, measured by how many confirmed blocks precede it.) The method should return the value for that particular key, which can be anything from a JSON object to a string.
@@ -72,7 +70,7 @@ Once the data comes back from the source chain, you can choose to clean up the d
 
 ## Examples
 
-### Kyve-Solana Integration
+### KYVE-Solana Integration
 
 As an example, let's walk through the Solana integration. The `KyveSolana` class is as below. 
 
@@ -141,11 +139,11 @@ function initialiseSolanaRPC(
 
 The `fetchBlock` method first initializes a connection to the Solana API and then calls the `getBlock()` method that is provided in the Solana SDK.
 
-### Kyve-Cosmos Integration
+### KYVE-Cosmos Integration
 
-The `fetchBlock` helper method for the Kyve-Cosmos integration fetches data from the source chain (Cosmos) directly from Cosmos's RPC endpoints.
+The `fetchBlock` helper method for the KYVE-Cosmos integration fetches data from the source chain (Cosmos) directly from Cosmos's RPC endpoints.
 
-```ts
+```typescript
 export async function fetchBlock(
   endpoint: string,
   height: number,
@@ -222,6 +220,6 @@ class KyveSolana extends KYVE {
 
 Now that you've successfully extended `KYVE` and implemented your `getDataItem` class method, it's time to test your integration!
 
-To proceed to this next step, reach out to the Kyve Discord channel for help.
+To proceed to this next step, reach out to the [KYVE Discord](https://discord.gg/kyve) channel for help.
 
 
