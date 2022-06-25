@@ -100,7 +100,7 @@ Query amount funding by address
 kyved query registry funding-amount [id] [address]
 ```
 ### `list-proposal`
-list all proposal
+List of all proposal
 ```shell
 kyved query registry list-proposal
 ```
@@ -111,7 +111,7 @@ kyved query registry proposal-by-height [pool-id] [height]
 ```
 
 ### `show-pool`
-Shows a poo info
+Shows a pool info
 ```shell
 kyved query registry show-pool [id]
 ```
@@ -127,7 +127,7 @@ Query stakers list in a specific pool
 kyved query registry stakers-list [id] 
 ```
 ### `staking-amount`
-Query stakingAmount
+Query staking amount
 ```shell
 kyved query registry staking-amount [id] [staker]
 ```
