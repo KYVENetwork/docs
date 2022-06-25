@@ -22,4 +22,4 @@ A pool always requires two instructions:
 These instructions are defined in the pools _runtime_. Because data can look very different and every data stream
 has its unique features, other runtimes exist for different data streams. For example, to archive
 the Ethereum blockchain, the runtime will be `@kyve/evm`. Besides Ethereum, this runtime can also archive other EVM chains
-like Moonbeam or Aurora. For example, suppose you want to archive Solana. In that case, you need to run a different runtime specially designed for Solana data, ' @kyve/solana`.
+like Moonbeam or Aurora. For example, suppose you want to archive Solana. In that case, you need to run a different runtime specially designed for Solana data, `@kyve/solana`.
