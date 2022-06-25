@@ -82,7 +82,7 @@ the `p2p.persistent_peers` param, for example:
 
 ::: warning
 **IMPORTANT**:
-The node can be stopped with `strg + C`. You do not need to wait for it to sync. Setting up a daemon service is explained later in this chapter.
+The node can be stopped with `ctrl + c`. You do not need to wait for it to sync. Setting up a daemon service is explained later in this chapter.
 :::
 
 The seed only needs to be provided for the first startup.
