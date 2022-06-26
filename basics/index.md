@@ -38,4 +38,4 @@ The protocol layer sits on top of the chain layer and enables the actual use cas
 | Disk requirements   | 80GB                                 | 1GB                                     |
 | Rewards in          | $KYVE                                | $KYVE                                   |
 | Function            | Secure blockchain                    | Upload and validate data                |
-| Tutorials           | [How to run](../intro/chain-node.md) | [How to run](../intro/protocol-node.md) |
+| Tutorials           | [How to run](../getting-started/chain-node.md) | [How to run](../getting-started/protocol-node.md) |
