@@ -65,6 +65,29 @@ Unpause a specific pool in the [registry](/modules/registry.md) module.
 kyved tx gov submit-proposal unpause-pool [id]
 ```
 
+### `vote`
+
+Vote for an active proposal.
+
+```shell
+kyved tx gov vote [proposal-id] [option]
+```
+
+| Options         |
+|-----------------|
+| `yes`           |
+| `no`            |
+| `no_with_veto`  |
+| `abstain`       |
+
 ## Queries
+
+### `proposal`
+
+Query details of a single proposal.
+
+```shell
+kyved query gov proposal [proposal-id]
+```
 
 ## Current Configurations
