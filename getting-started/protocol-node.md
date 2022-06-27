@@ -1,6 +1,6 @@
 ---
 title: Running a protocol node
-order: 3
+order: 5
 parent:
   title: Introduction
   order: 1

@@ -1,6 +1,6 @@
 ---
 title: Running a chain node
-order: 2
+order: 4
 parent:
   title: Introduction
   order: 1
