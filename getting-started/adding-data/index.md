@@ -1,22 +1,30 @@
-# Adding data to KYVE
+---
+title: Getting Started
+order: 1 
+parent:
+    title: Adding Data
+    order: 3
+---
+
+# Adding data
 
 You may want to insert data from another blockchain and store it in KYVE's data warehouse.
 
 To do this, you'll want to write an integration.
 
-0. Gather necessary information from the chain you would like to integrate into KYVE
+### 0. Gather necessary information from the chain you would like to integrate into KYVE
 
-a. RPC endpoint
-b. SDK's for the source blockchain
+* RPC endpoint
+* SDK's for the source blockchain
 
-1. Clone the template repo
+### 1. Clone the template repo
 
 ```sh
 git clone https://github.com/yirenlu92/KyveIntegrationTemplate
 cd KyveIntegrationTemplate
 ```
 
-2. Add configuration for your chain
+### 2. Add configuration for your chain
 
 Open up `package.json` in your cloned repo.
 
@@ -36,7 +44,7 @@ So for example:
 }
 ```
 
-3. Extend the `KYVE` class
+### 3. Extend the `KYVE` class
 
 Now open up the `src/index.ts` file from the root of the repo.
 
@@ -56,7 +64,7 @@ class KyveSolana extends KYVE {
 }
 ```
 
-3. Fill in the `getDataItem` method
+### 4. Fill in the `getDataItem` method
 
 The `getDataItem` method that you implement should take in a `key`, which is the [height](https://academy.binance.com/en/glossary/block-height) of the blockchain block you are indexing. (Block height refers to a specific location in a blockchain, measured by how many confirmed blocks precede it.) The method should return the value for that particular key, which can be anything from a JSON object to a string.
 
@@ -216,7 +224,7 @@ class KyveSolana extends KYVE {
 }
 ```
 
-4. Test your integration
+### 5. Test your integration
 
 Now that you've successfully extended `KYVE` and implemented your `getDataItem` class method, it's time to test your integration!
 

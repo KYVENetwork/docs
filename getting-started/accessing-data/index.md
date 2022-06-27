@@ -14,15 +14,11 @@ This tutorial will get you up and running with data access from KYVE in your Rea
 
 1. Get familiar with GraphQL
 
-The Kyve Data Access API is available only in [GraphQL](https://graphql.org/).
-
-GraphQL is a query language for API's and an alternative to REST API's.
-
-If you are not familiar with GraphQL, you can read an introduction [here](https://graphql.org/learn/).
+    The Kyve Data Access API is available only in [GraphQL](https://graphql.org/). GraphQL is a query language for API's and an alternative to REST API's. If you are not familiar with GraphQL, you can read an introduction [here](https://graphql.org/learn/).
 
 2. Select Your Endpoint
 
-Select an endpoint from the list [here](https://docs.kyve.network/accessing-data/youll-known-endpoints.html), depending on what kind of data you would like to retrieve from Kyve.
+    Select an endpoint from the list [here](https://docs.kyve.network/accessing-data/youll-known-endpoints.html), depending on what kind of data you would like to retrieve from Kyve.
 
 
 ## Set-up
