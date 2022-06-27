@@ -18,7 +18,7 @@ This tutorial will get you up and running with data access from KYVE in your Rea
 
 2. Select Your Endpoint
 
-    Select an endpoint from the list [here](https://docs.kyve.network/accessing-data/youll-known-endpoints.html), depending on what kind of data you would like to retrieve from Kyve.
+    Select an endpoint from the list [here](./accessing-data/well-known-endpoints.html), depending on what kind of data you would like to retrieve from Kyve.
 
 
 ## Set-up
@@ -68,7 +68,7 @@ root.render(
 );
 ```
 
-In this section, you follow the basic setup for the Apollo Client. Notice how the client is connecting to the Evmos-EVM endpoint. You can find more endpoints [here](./youll-known-endpoints.md).
+In this section, you follow the basic setup for the Apollo Client. Notice how the client is connecting to the Evmos-EVM endpoint. You can find more endpoints [here](./well-known-endpoints.md).
 
 ## Fetching data from KYVE
 
