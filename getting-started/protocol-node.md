@@ -214,7 +214,7 @@ Once you're on releases you can download the latest binary for your operating sy
 
 ![protocol binary download](/protocol_binary_download.png)
 
-When you have downloaded and unzipped the binary correctly you can proceed to [how to verify your binary](/intro/protocol-node.md#verify-that-your-binary-has-been-built-correctly)
+When you have downloaded and unzipped the binary correctly you can proceed to [how to verify your binary](/getting-started/protocol-node.md#verify-that-your-binary-has-been-built-correctly)
 
 ### Manually build the binaries
 
