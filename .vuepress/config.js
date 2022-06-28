@@ -52,6 +52,7 @@ module.exports = {
         ga: 'G-SY5FWZVWK2',
       },
     ],
+
     [
       'sitemap',
       {
@@ -66,6 +67,9 @@ module.exports = {
           '*': '\\times',
         },
       },
+    ],
+    [
+      'code-switcher'
     ],
   ],
 };
