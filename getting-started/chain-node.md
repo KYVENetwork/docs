@@ -21,7 +21,7 @@ and allows chain nodes to stake and other users to delegate into them.
 Minimum requirements
 
 - 2vCPU
-- 1GB RAM
+- 2GB RAM (plus 8GB SWAP during chain-upgrades)
 - 150GB DISK
 
 The disk requirements will keep on expanding over time: the 150GB figure was valid
