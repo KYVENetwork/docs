@@ -1,6 +1,5 @@
 ---
-order: 2
-title: SDK
+order: 2 title: SDK
 ---
 
 # Registry
@@ -38,13 +37,11 @@ kyved tx registry fund-pool [id] [amount]
 <template v-slot:sdk>
 
 ```js
-fundPool({id: "0", amount: 100})
+fundPool({ id: "0", amount: 100 })
 ```
-
 
 </template>
 </CodeSwitcher>
-
 
 ### `defund-pool`
 
@@ -75,14 +72,11 @@ kyved tx registry defund-pool [id] [amount]
 <template v-slot:sdk>
 
 ```js
-defundPool({id: "0", amount: 100})
+defundPool({ id: "0", amount: 100 })
 ```
-
 
 </template>
 </CodeSwitcher>
-
-
 
 ### `stake-pool`
 
@@ -113,13 +107,11 @@ kyved tx registry stake-pool [id] [amount]
 <template v-slot:sdk>
 
 ```js
-stakePool({id: "0", amount: 100})
+stakePool({ id: "0", amount: 100 })
 ```
-
 
 </template>
 </CodeSwitcher>
-
 
 ### `unstake-pool`
 
@@ -150,13 +142,11 @@ kyved tx registry unstake-pool [id] [amount]
 <template v-slot:sdk>
 
 ```js
-unstakePool({id: "0", amount: 100})
+unstakePool({ id: "0", amount: 100 })
 ```
-
 
 </template>
 </CodeSwitcher>
-
 
 ### `delegate-pool`
 
@@ -167,7 +157,7 @@ Delegate to a protocol node in a specific pool using $KYVE tokens.
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the pool where you want to delegate | "0" |
-| node           | *`string`*          | the protocol `node` where you want to delegate  | "noderunner" |
+| node           | *`string`*          | the protocol `node` where you want to delegate  | "kyve1x..." |
 | amount           | *`integer`*          | the `amount` of `$KYVE` you want to delegate | 100 |
 
 #### *Optional parameters*
@@ -188,9 +178,8 @@ kyved tx registry delegate-pool [id] [node] [amount]
 <template v-slot:sdk>
 
 ```js
-delegatePool({id: "0", node: "noderunner" ,amount: 100})
+delegatePool({ id: "0", node: "kyve1x...", amount: 100 })
 ```
-
 
 </template>
 </CodeSwitcher>
@@ -204,7 +193,7 @@ Withdraw your delegation rewards from a protocol node in a specific pool.
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the pool where you want to delegate | "0" |
-| node           | *`string`*          | the protocol `node` where you want to delegate  | "noderunner" |
+| node           | *`string`*          | the protocol `node` where you want to delegate  | "kyve1x..." |
 
 #### *Optional parameters*
 
@@ -224,13 +213,11 @@ kyved tx registry withdraw-pool [id] [node]
 <template v-slot:sdk>
 
 ```js
-withdrawPool({id: "0", node: "noderunner"})
+withdrawPool({ id: "0", node: "kyve1x..." })
 ```
 
 </template>
 </CodeSwitcher>
-
-
 
 ### `undelegate-pool`
 
@@ -241,7 +228,7 @@ Undelegate from a protocol node in a specific pool using $KYVE tokens.
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the pool where you want to undelegate | "0" |
-| node           | *`string`*          | the protocol `node` where you want to undelegate  | "noderunner" |
+| node           | *`string`*          | the protocol `node` where you want to undelegate  | "kyve1x..." |
 | amount           | *`integer`*          | the `amount` of `$KYVE` you want to undelegate | 100 |
 
 #### *Optional parameters*
@@ -262,8 +249,9 @@ kyved tx registry undelegate-pool [id] [node] [amount]
 <template v-slot:sdk>
 
 ```js
-undelegatePool({id: "0", node: "noderunner" ,amount: 100})
+undelegatePool({ id: "0", node: "kyve1x...", amount: 100 })
 ```
+
 </template>
 </CodeSwitcher>
 
@@ -276,7 +264,7 @@ Update your protocol node's metadata in a specific pool.
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the protocol node which metadata you want to update | "0" |
-| commission           | *`string`*          |   | "noderunner" |
+| commission           | *`string`*          |   | "kyve1x..." |
 | moniker           | *`string`*          |  | 100 |
 | website           | *`string`*          |  | 100 |
 | logo           | *`string`*          |  | 100 |
@@ -299,13 +287,16 @@ kyved tx registry update-metadata [id] [commission] [moniker] [website] [logo]
 <template v-slot:sdk>
 
 ```js
-updateMetadata({id: "0", commission:, moniker: '', website: '', logo:'' })
+updateMetadata({ id: "0", commission:, moniker: '', website: '', logo: '' })
 ```
+
 </template>
 </CodeSwitcher>
 
 ## Queries
+
 ### `account-funded-list`
+
 Query list of account funded
 
 #### Required parameters
@@ -313,7 +304,7 @@ Query list of account funded
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the pool where you want to undelegate | "0" |
-| node           | *`string`*          | the protocol `node` where you want to undelegate  | "noderunner" |
+| node           | *`string`*          | the protocol `node` where you want to undelegate  | "kyve1x..." |
 | amount           | *`integer`*          | the `amount` of `$KYVE` you want to undelegate | 100 |
 
 #### *Optional parameters*
@@ -334,13 +325,14 @@ kyved query registry account-funded-list [address]
 <template v-slot:sdk>
 
 ```js
-undelegatePool({id: "0", node: "noderunner" ,amount: 100})
+undelegatePool({ id: "0", node: "kyve1x...", amount: 100 })
 ```
+
 </template>
 </CodeSwitcher>
 
-
 ### `account-staked-list`
+
 Query list of account staked
 
 #### Required parameters
@@ -360,20 +352,22 @@ kyved query registry account-staked-list [address]
 <template v-slot:sdk>
 
 ```js
-accountStakedList({address: "0"})
+accountStakedList({ address: "0" })
 ```
+
 </template>
 </CodeSwitcher>
 
-
 ### `account-stakers-delegation-list`
+
 Query account stakers delegation list
+
 #### Required parameters
 
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the pool which you want to query | "0" |
-| node           | *`string`*          | the protocol `node` which you want to query | "noderunner" |
+| node           | *`string`*          | the protocol `node` which you want to query | "kyve1x..." |
 
 <CodeSwitcher :languages="{cli:'CLI',sdk:'Node.js'}">
 <template v-slot:cli>
@@ -386,13 +380,14 @@ kyved query registry account-stakers-delegation-list [id] [node]
 <template v-slot:sdk>
 
 ```js
-accountStakersDelegationList({id: "0", node: "noderunner"})
+accountStakersDelegationList({ id: "0", node: "kyve1x..." })
 ```
+
 </template>
 </CodeSwitcher>
 
-
 ### `funders-list`
+
 Query list of pool funders
 
 #### Required parameters
@@ -414,13 +409,14 @@ kyved query registry funders-list [id]
 <template v-slot:sdk>
 
 ```js
-fundersList({id: "0"})
+fundersList({ id: "0" })
 ```
+
 </template>
 </CodeSwitcher>
 
-
 ### `funding-amount`
+
 Query amount funding by address
 
 #### Required parameters
@@ -448,14 +444,14 @@ kyved query registry funding-amount [id] [address]
 <template v-slot:sdk>
 
 ```js
-fundingAmount({id: "0", address: "noderunner"})
+fundingAmount({ id: "0", address: "kyve1x..." })
 ```
+
 </template>
 </CodeSwitcher>
 
-
-
 ### `list-proposal`
+
 List of all proposal
 
 
@@ -470,22 +466,22 @@ kyved query registry list-proposal
 <template v-slot:sdk>
 
 ```js
-listProposal({id: "0", node: "noderunner" ,amount: 100})
+listProposal({ id: "0", node: "kyve1x...", amount: 100 })
 ```
+
 </template>
 </CodeSwitcher>
 
-
-
 ### `proposal-by-height`
+
 Query proposal by height
 
 #### Required parameters
 
 | Name | Type              | Description     | Example|
 |---|---|---|---|
-| ~~pool~~Id           | *`uint64`*            | the `id` of the pool which you want to query | "0" |
-| height           | *`string`*          | the `height` of blocks | "noderunner" |
+| poolId           | *`uint64`*            | the `id` of the pool which you want to query | "0" |
+| height           | *`string`*          | the `height` of blocks | "kyve1x..." |
 
 <CodeSwitcher :languages="{cli:'CLI',sdk:'Node.js'}">
 <template v-slot:cli>
@@ -498,15 +494,14 @@ kyved query registry proposal-by-height [pool-id] [height]
 <template v-slot:sdk>
 
 ```js
-proposalByHeight({poolId: "0", height: 100 })
+proposalByHeight({ poolId: "0", height: 100 })
 ```
+
 </template>
 </CodeSwitcher>
 
-
-
-
 ### `show-pool`
+
 Shows a pool info
 
 #### Required parameters
@@ -526,13 +521,14 @@ kyved query registry show-pool [id]
 <template v-slot:sdk>
 
 ```js
-showPool({id: "0"})
+showPool({ id: "0" })
 ```
+
 </template>
 </CodeSwitcher>
 
-
 ### `stakers-by-pool-and-delegator`
+
 Query stakers by pool and delegator
 
 #### Required parameters
@@ -540,7 +536,7 @@ Query stakers by pool and delegator
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | poolId           | *`uint64`*            | the `id` of the pool which you want to query | "0" |
-| delegator           | *`string`*          | the `delegator`  | "noderunner" |
+| delegator           | *`string`*          | the `delegator`  | "kyve1x..." |
 
 #### *Optional parameters*
 
@@ -560,14 +556,14 @@ kyved query registry stakers-by-pool-and-delegator [pool-id] [delegator]
 <template v-slot:sdk>
 
 ```js
-stakersByPoolAndDelegator({poolId: "0", delegator: "noderunner"})
+stakersByPoolAndDelegator({ poolId: "0", delegator: "kyve1x..." })
 ```
+
 </template>
 </CodeSwitcher>
 
-
-
 ### `stakers-list`
+
 Query stakers list in a specific pool
 
 #### Required parameters
@@ -587,14 +583,14 @@ kyved query registry stakers-list [id]
 <template v-slot:sdk>
 
 ```js
-stakersList({id: "0"})
+stakersList({ id: "0" })
 ```
+
 </template>
 </CodeSwitcher>
 
-
-
 ### `staking-amount`
+
 Query staking amount
 
 #### Required parameters
@@ -602,7 +598,7 @@ Query staking amount
 | Name | Type              | Description     | Example|
 |---|---|---|---|
 | id           | *`uint64`*            | the `id` of the pool which you want to query | "0" |
-| staker           | *`string`*          | the id of the `staker`  | "noderunner" |
+| staker           | *`string`*          | the id of the `staker`  | "kyve1x..." |
 
 <CodeSwitcher :languages="{cli:'CLI',sdk:'Node.js'}">
 <template v-slot:cli>
@@ -615,12 +611,11 @@ kyved query registry staking-amount [id] [staker]
 <template v-slot:sdk>
 
 ```js
-stakingAmount({id: "0", staker: "noderunner" })
+stakingAmount({ id: "0", staker: "kyve1x..." })
 ```
+
 </template>
 </CodeSwitcher>
-
-
 
 ## Current Configuration
 
