@@ -31,6 +31,12 @@ Running a KYVE protocol node enables projects to store and retrieve their data s
 
 ### Getting started with contributing to the docs site
 
+1. Fork this repo
+2. Install dependencies
+```sh
+yarn install
+```
+3. Serve up the site
 ```sh
 yarn serve
 ```
