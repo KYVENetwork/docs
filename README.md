@@ -34,9 +34,9 @@ Running a KYVE protocol node enables projects to store and retrieve their data s
 1. Fork this repo
 2. Install dependencies
 ```sh
-yarn install
+npm install
 ```
 3. Serve up the site in dev mode
 ```sh
-yarn serve
+npm run serve
 ```
