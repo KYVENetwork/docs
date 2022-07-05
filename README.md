@@ -28,3 +28,9 @@ Running a KYVE protocol node enables projects to store and retrieve their data s
 - [Octopus](https://oct.network/)
 - [Celo](https://celo.org/)
 - [Zilliqa](https://www.zilliqa.com/)
+
+### Getting started with contributing to the docs site
+
+```sh
+yarn serve
+```
