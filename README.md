@@ -36,7 +36,7 @@ Running a KYVE protocol node enables projects to store and retrieve their data s
 ```sh
 yarn install
 ```
-3. Serve up the site
+3. Serve up the site in dev mode
 ```sh
 yarn serve
 ```
