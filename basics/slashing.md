@@ -8,7 +8,7 @@ parent:
 
 # Slashing
 
-Slashing is a core mechanism in a Proof of Stake chain. In KYVE, we also use nodes having "Skin in the game" by letting their stake participate as a protocol node. Currently, there are three types of slashes a protocol node can experience:
+Slashing is a core mechanism in a Proof of Stake chain. In KYVE, we also use nodes having "skin in the game" by letting their stake participate as a protocol node. Currently, there are three types of slashes a protocol node can experience:
 
 ## Upload slash
 
