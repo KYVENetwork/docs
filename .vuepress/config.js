@@ -68,8 +68,6 @@ module.exports = {
         },
       },
     ],
-    [
-      'code-switcher'
-    ],
+    ['code-switcher'],
   ],
 };

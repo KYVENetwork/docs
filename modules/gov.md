@@ -20,7 +20,7 @@ kyved tx gov submit-proposal create-pool [flags]
 ```
 
 | Flag Position | Name              | Type     |
-|---------------|-------------------|----------|
+| ------------- | ----------------- | -------- |
 | 1st           | `name`            | `string` |
 | 2nd           | `runtime`         | `string` |
 | 3rd           | `logo`            | `string` |
@@ -39,7 +39,7 @@ kyved tx gov submit-proposal update-pool [flags]
 ```
 
 | Flag Position | Name              | Type     |
-|---------------|-------------------|----------|
+| ------------- | ----------------- | -------- |
 | 1st           | `id`              | `uint64` |
 | 2nd           | `name`            | `string` |
 | 3rd           | `runtime`         | `string` |

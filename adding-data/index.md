@@ -56,7 +56,7 @@ class KyveSolana extends KYVE {
 }
 ```
 
-```
+````
 
 3. Fill in the `getDataItem` method
 
@@ -64,7 +64,7 @@ The `getDataItem` method that you implement should take in a `key`, which is the
 
 ```ts
   public async getDataItem(key: number): Promise<{ key: number; value: any }>
-```
+````
 
 Every `getDataItem` method will likely take the RPC endpoint from step 1, and either pass it to an SDK provided by the source chain or third party library provider like Ethers or Web3JS; OR the method will call the public RPC endpoint directly for data.
 
@@ -74,10 +74,9 @@ Once the data comes back from the source chain, you can choose to clean up the d
 
 ### Kyve-Solana Integration
 
-As an example, let's walk through the Solana integration. The `KyveSolana` class is as below. 
+As an example, let's walk through the Solana integration. The `KyveSolana` class is as below.
 
 ```ts
-
 class KyveSolana extends KYVE {
   public async getDataItem(key: number): Promise<{ key: number; value: any }> {
     let block;
@@ -102,7 +101,7 @@ class KyveSolana extends KYVE {
   }
 
   private async getSignature(): Promise<Signature> {
-   // ...
+    // ...
   }
 }
 ```
@@ -174,7 +173,7 @@ export async function fetchBlock(
 
 ## Custom Logic
 
-In addition to the `getDataItem` method which must be implemented, you are free to implement custom methods in your class. 
+In addition to the `getDataItem` method which must be implemented, you are free to implement custom methods in your class.
 
 ### Custom Signatures
 
@@ -223,5 +222,3 @@ class KyveSolana extends KYVE {
 Now that you've successfully extended `KYVE` and implemented your `getDataItem` class method, it's time to test your integration!
 
 To proceed to this next step, reach out to the Kyve Discord channel for help.
-
-
