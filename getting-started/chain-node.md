@@ -10,7 +10,7 @@ parent:
 
 The Chain-Nodes are the backbone of KYVE. The chain layer is a
 completely sovereign [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_stake)
-blockchain build with [Starport](https://starport.com/). This
+blockchain build with [Ignite](https://ignite.com/). This
 blockchain is run by independent nodes we call _Chain-Nodes_
 since they're running on the chain level. The native currency
 of the KYVE chain is [$KYVE](/basics/kyve.md), it secures the chain
