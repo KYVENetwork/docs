@@ -8,7 +8,7 @@ parent:
 
 # Running a protocol node
 
-The Protocol-nodes are the backbone of a KYVE pool. They are responsible
+The protocol nodes are the backbone of a KYVE pool. They are responsible
 for collecting data from a data source, bundling and uploading them to Arweave and verifying it. This enables KYVE
 to store any data stream decentralized and permanently.
 
@@ -97,7 +97,7 @@ General directory structure and important files:
 
 In order to setup KYSOR the following secrets need to be added under the `secrets` directory. If this directory does not exist yet create it in project root.
 
-- `arweave.json` this is the arweave keyfile you need to provide in order to run protocol nodes. This one keyfile will be used for **all** of your protocol nodes
+- `arweave.json` this is the Arweave keyfile you need to provide in order to run protocol nodes. This one keyfile will be used for **all** of your protocol nodes
 - `mnemonic.txt` this is the file which contains your mnemonic of your validator account. This one mnemonic will be used for **all** of your protocol nodes
 
 After adding the required secrets you can check the `kysor.conf.ts` file. When you initially open it, it should look like this:

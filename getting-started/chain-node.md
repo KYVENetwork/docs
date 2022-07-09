@@ -37,7 +37,7 @@ This guide assumes a GNU/Linux amd64 system.
 
 During the time, chain-upgrades occur but the blockchains stays the same.
 Therefore, it is necessary to process older blocks with the appropriate version.
-We use Cosmovisor the handle automatic upgrades. The setup is explained after
+We use Cosmovisor to handle automatic upgrades. The setup is explained after
 the initial setup.
 
 In the genesis setup the node will be fully configured. After that one needs to configure
@@ -66,7 +66,7 @@ mv genesis.json ~/.kyve/config/genesis.json
 
 It is important to start with the oldest version `v0.0.1` (the genesis version).
 
-Start the chain the first time
+Start the chain the first time:
 
 ```bash
 ./chaind start --p2p.seeds=02dd2c26948ea758a25d3dbc91744f8897681652@3.73.27.185:26656

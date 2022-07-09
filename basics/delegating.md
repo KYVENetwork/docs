@@ -20,4 +20,4 @@ At KYVE, you can delegate to both protocol and chain nodes, allowing you to have
 
 On the protocol, you can delegate to a node through the KYVE [app](https://app.kyve.network). Select a pool to see the validators of the pool, choose one with parameters you are happy with, and click the become a delegator button.
 
-To delegate to a chain node, we recommend using the explorer and the built-in process in the Staking-Tab for easy delegation. Note: The KYVE team does not manage this process; use it as your responsibility
+To delegate to a chain node, we recommend using the explorer and the built-in process in the Staking-Tab for easy delegation. Note: The KYVE team does not manage this process; treat it as your responsibility.
