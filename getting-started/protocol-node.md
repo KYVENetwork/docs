@@ -16,7 +16,7 @@ to store any data stream decentralized and permanently.
 
 Wallets
 
-- A [Keplr](https://keplr.app) wallet with $KYVE. (You can claim some [here](https://app.kyve.network/faucet))
+- A [Keplr](https://keplr.app) wallet with $KYVE. (You can claim some [here](https://app.kyve.network/#/faucet))
 - An [Arweave](https://arweave.org/) keyfile with some AR. (You can claim some [here](https://faucet.arweave.net/))
 
 Minimum hardware requirements
