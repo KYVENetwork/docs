@@ -2,8 +2,8 @@
 title: Paginating a Query
 order: 3
 parent:
-    title: Accessing Data
-    order: 4
+  title: Accessing Data
+  order: 4
 ---
 
 # Paginating a Query
@@ -15,10 +15,10 @@ Example: Retrieving 5 results
 
 ```gql
 query First5AvalancheBlocks {
-    avalancheBlocks(pagination: { page: 0, pageSize: 5 }) {
-        hash
-        number
-    }
+  avalancheBlocks(pagination: { page: 0, pageSize: 5 }) {
+    hash
+    number
+  }
 }
 ```
 

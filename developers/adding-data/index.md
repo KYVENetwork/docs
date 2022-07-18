@@ -1,9 +1,9 @@
 ---
 title: Getting Started
-order: 1 
+order: 1
 parent:
-    title: Adding Data
-    order: 3
+  title: Adding Data
+  order: 3
 ---
 
 # Adding data
@@ -14,8 +14,8 @@ To do this, you'll want to write an integration.
 
 ### 0. Gather necessary information from the chain you would like to integrate into KYVE
 
-* RPC endpoint
-* SDK's for the source blockchain
+- RPC endpoint
+- SDK's for the source blockchain
 
 ### 1. Clone the template repo
 
@@ -80,10 +80,9 @@ Once the data comes back from the source chain, you can choose to clean up the d
 
 ### KYVE-Solana Integration
 
-As an example, let's walk through the Solana integration. The `KyveSolana` class is as below. 
+As an example, let's walk through the Solana integration. The `KyveSolana` class is as below.
 
 ```ts
-
 class KyveSolana extends KYVE {
   public async getDataItem(key: number): Promise<{ key: number; value: any }> {
     let block;
@@ -108,7 +107,7 @@ class KyveSolana extends KYVE {
   }
 
   private async getSignature(): Promise<Signature> {
-   // ...
+    // ...
   }
 }
 ```
@@ -180,7 +179,7 @@ export async function fetchBlock(
 
 ## Custom Logic
 
-In addition to the `getDataItem` method which must be implemented, you are free to implement custom methods in your class. 
+In addition to the `getDataItem` method which must be implemented, you are free to implement custom methods in your class.
 
 ### Custom Signatures
 
@@ -229,5 +228,3 @@ class KyveSolana extends KYVE {
 Now that you've successfully extended `KYVE` and implemented your `getDataItem` class method, it's time to test your integration!
 
 To proceed to this next step, reach out to the [KYVE Discord](https://discord.gg/kyve) channel for help.
-
-
