@@ -15,18 +15,17 @@ Blockchain explorers allow users to query the blockchain for data. Explorers are
 Below is a list of public block explorers that support KYVE Mainnet and Testnet:
 
 :::: tabs
-::: tab Mainnet
 
+::: tab Mainnet
 |     | URL |
 | --- | --- |
-
 :::
-::: tab Testnet
 
+::: tab Testnet
 |            | URL                                                    |
 | ---------- | ------------------------------------------------------ |
 | Ping       | [explorer.kyve.network](https://explorer.kyve.network) |
 | NGExplorer | [kyve.explorers.guru](https://kyve.explorers.guru/)    |
-
 :::
+
 ::::

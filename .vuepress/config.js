@@ -1,6 +1,6 @@
 module.exports = {
   theme: 'cosmos',
-  title: 'KYVE',
+  title: 'KYVE Documentation',
   themeConfig: {
     logo: {
       src: '/logo.svg',
@@ -30,6 +30,11 @@ module.exports = {
               title: 'Advanced Concepts',
               directory: true,
               path: '/advanced',
+            },
+            {
+              title: 'Governance',
+              directory: true,
+              path: '/users/governance',
             },
           ],
         },
@@ -146,6 +151,7 @@ module.exports = {
     },
   },
   plugins: [
+    ['tabs'],
     [
       '@vuepress/google-analytics',
       {
