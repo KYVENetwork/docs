@@ -17,15 +17,15 @@ Below is a list of public block explorers that support KYVE Mainnet and Testnet:
 :::: tabs
 
 ::: tab Mainnet
-|     | URL |
+| | URL |
 | --- | --- |
 :::
 
 ::: tab Testnet
-|            | URL                                                    |
+| | URL |
 | ---------- | ------------------------------------------------------ |
-| Ping       | [explorer.kyve.network](https://explorer.kyve.network) |
-| NGExplorer | [kyve.explorers.guru](https://kyve.explorers.guru/)    |
+| Ping | [explorer.kyve.network](https://explorer.kyve.network) |
+| NGExplorer | [kyve.explorers.guru](https://kyve.explorers.guru/) |
 :::
 
 ::::

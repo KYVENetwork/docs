@@ -80,7 +80,7 @@ Assume that many people will stop reading at this point. However, it is importan
 1. Problem/Value - generally the problem or value that's motivating the parameter change(s)
 2. Solution - generally how changing the parameter(s) will address the problem or improve the network
    - the beneficiaries of the change(s) (ie. who will these changes impact and how?)
-      - voters should understand the importance of the change(s) in a simple way
+     - voters should understand the importance of the change(s) in a simple way
 3. Risks & Benefits - clearly describe how making this/these change(s) may expose stakeholders to new benefits and/or risks
 4. Supplementary materials - optional materials eg. models, graphs, tables, research, signed petition, etc
 
@@ -119,19 +119,20 @@ Assume that many people will stop reading at this point. However, it is importan
      - how can the community observe your progress?
      - how can the community provide feedback?
    - how should the quality of deliverables be assessed? eg. metrics
-5. Relationships and disclosures
+6. Relationships and disclosures
    - have you received or applied for grants or funding? for similar work?
    - how will you and/or your organization benefit?
    - do you see this work continuing in the future and is there a plan?
    - what are the risks involved with this work?
    - do you have conflicts of interest to declare?
 
-
 ### Begin with a well-considered draft proposal
 
 The ideal format for a proposal is as a Markdown file (ie. `.md`) in a Github repo or [HackMd](https://hackmd.io/). Markdown
 is a simple and accessible format for writing plain text files that is easy to
+
 <!-- markdown-link-check-disable-next-line -->
+
 learn. See the [Github Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for details on
 writing markdown files.
 
