@@ -18,7 +18,7 @@ This tutorial will get you up and running with data access from KYVE in your Rea
 
 2. Select Your Endpoint
 
-    Select an endpoint from the list [here](./accessing-data/well-known-endpoints.html), depending on what kind of data you would like to retrieve from Kyve.
+    Select an endpoint from the list [here](./well-known-endpoints.md), depending on what kind of data you would like to retrieve from Kyve.
 
 
 ## Set-up
