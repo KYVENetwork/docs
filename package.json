@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "serve": "^13.0.2",
+    "vue-tabs-component": "^1.5.0",
+    "vuepress-plugin-tabs": "^0.3.0",
     "vuepress-theme-cosmos": "^1.0.183"
   },
   "devDependencies": {

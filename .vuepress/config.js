@@ -1,19 +1,116 @@
 module.exports = {
   theme: 'cosmos',
-  title: 'KYVE',
+  title: 'KYVE Documentation',
   themeConfig: {
     logo: {
       src: '/logo.svg',
     },
     sidebar: {
-      auto: true,
+      auto: false,
       nav: [
         {
-          title: 'Resources',
+          title: 'About KYVE',
           children: [
             {
-              title: 'KYVE on Github',
-              path: 'https://github.com/KYVENetwork',
+              title: 'Introduction',
+              directory: true,
+              path: '/intro',
+            },
+          ],
+        },
+        {
+          title: 'For Users',
+          children: [
+            {
+              title: 'Basic Concepts',
+              directory: true,
+              path: '/basics',
+            },
+            {
+              title: 'Advanced Concepts',
+              directory: true,
+              path: '/advanced',
+            },
+            {
+              title: 'Governance',
+              directory: true,
+              path: '/users/governance',
+            },
+          ],
+        },
+        {
+          title: 'For dApp Devs',
+          children: [
+            {
+              title: 'Accessing data',
+              directory: true,
+              path: '/developers/accessing-data',
+            },
+            {
+              title: 'Adding data',
+              directory: true,
+              path: '/developers/adding-data',
+            },
+            {
+              title: 'Runtimes',
+              directory: false,
+              path: '/developers/runtimes',
+            },
+            {
+              title: 'Cosmos gRPC & REST',
+              path: 'https://api.korellia.kyve.network/',
+            },
+            {
+              title: 'Tendermint RPC',
+              path: 'https://docs.tendermint.com/v0.34/rpc/',
+            },
+          ],
+        },
+        {
+          title: 'For Protocol Devs',
+          children: [
+            {
+              title: 'Modules',
+              directory: true,
+              path: '/modules',
+            },
+            {
+              title: 'Module Accounts',
+              directory: false,
+              path: '/protocol/moduleaccounts',
+            },
+            {
+              title: 'IBC Channels',
+              directory: false,
+              path: '/protocol/ibc',
+            },
+            {
+              title: 'KYVE Go API',
+              path: 'https://pkg.go.dev/github.com/KYVENetwork/chain',
+            },
+          ],
+        },
+        {
+          title: 'For Validators',
+          children: [
+            {
+              title: 'Protocol Node Overview',
+              directory: false,
+              path: '/validators/protocol-node',
+            },
+            {
+              title: 'Chain Node Overview',
+              directory: false,
+              path: '/validators/chain-node',
+            },
+          ],
+        },
+        {
+          title: 'Block Explorers',
+          children: [
+            {
+              title: 'Block Explorers',
+              path: '/developers/explorers',
             },
           ],
         },
@@ -31,6 +128,10 @@ module.exports = {
       },
       services: [
         {
+          service: 'github',
+          url: 'https://github.com/KYVENetwork/docs',
+        },
+        {
           service: 'discord',
           url: 'https://discord.gg/kyve',
         },
@@ -42,10 +143,15 @@ module.exports = {
           service: 'twitter',
           url: 'https://twitter.com/KYVENetwork',
         },
+        {
+          service: 'medium',
+          url: 'https://blog.kyve.network/',
+        },
       ],
     },
   },
   plugins: [
+    ['tabs'],
     [
       '@vuepress/google-analytics',
       {

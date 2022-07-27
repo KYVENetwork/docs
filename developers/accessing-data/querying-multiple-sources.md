@@ -2,8 +2,8 @@
 title: Querying multiple sources
 order: 6
 parent:
-    title: Accessing Data
-    order: 4
+  title: Accessing Data
+  order: 4
 ---
 
 # Querying multiple sources

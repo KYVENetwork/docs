@@ -2,10 +2,9 @@
 title: Basic Queries
 order: 2
 parent:
-    title: Accessing Data
-    order: 4
+  title: Accessing Data
+  order: 4
 ---
-
 
 # Basic Queries
 
@@ -32,7 +31,6 @@ query FirstAvalancheBlock {
 ```
 
 ![graphql](/graphql-kyve-avalanche.gif)
-
 
 This will result in
 

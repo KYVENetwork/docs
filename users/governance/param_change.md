@@ -1,12 +1,8 @@
----
-title: Dealing with offline data sources
-order: 4
-parent:
-  title: Advanced
-  order: 3
----
+<!--
+order: 6
+-->
 
-# Dealing with offline data sources
+# Chain Parameters
 
 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧 🚧
 
