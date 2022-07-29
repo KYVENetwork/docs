@@ -52,6 +52,11 @@ module.exports = {
               path: '/developers/adding-data',
             },
             {
+              title: 'Client libraries',
+              directory: true,
+              path: '/developers/client-libraries',
+            },
+            {
               title: 'Runtimes',
               directory: false,
               path: '/developers/runtimes',
