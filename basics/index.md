@@ -25,17 +25,3 @@ chain nodes to stake and other users to delegate to them.
 ## Protocol Layer
 
 The protocol layer sits on top of the chain layer and enables the actual use case of KYVE. Every feature and unit of logic which makes KYVE unique is implemented directly into the chain nodes. This includes [pools](/basics/pools.md), [funding](/basics/funding.md), [staking](/basics/staking.md) and [delegating](/basics/delegating.md).
-
-## Summary
-
-|                     | Chain node                                     | Protocol node                                     |
-| ------------------- | ---------------------------------------------- | ------------------------------------------------- |
-| Currency            | $KYVE                                          | $KYVE                                             |
-| Node maximum        | 100 Validators                                 | 100 Validators per pool                           |
-| Secured by          | Proof of Stake                                 | Proof of stake                                    |
-| CPU requirements    | 3vCPU                                          | None                                              |
-| Memory requirements | 4GB RAM                                        | 2GB RAM                                           |
-| Disk requirements   | 80GB                                           | 1GB                                               |
-| Rewards in          | $KYVE                                          | $KYVE                                             |
-| Function            | Secure blockchain                              | Upload and validate data                          |
-| Tutorials           | [How to run](../getting-started/chain-node.md) | [How to run](../getting-started/protocol-node.md) |
