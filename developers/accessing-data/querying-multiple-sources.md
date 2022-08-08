@@ -10,12 +10,13 @@ parent:
 
 KYVE allows you to query multiple sources at the same time. This requires you to use a special gateway endpoint. The
 gateways have special Union queries which unify different results types, meaning that you have access to all results at
-the same time. You filter a union query with the same and settings as a standard query. The source argument The sources
-argument lets you select all the sources you want to apply this query. It is required to have at least one source
+the same time. You filter a Union query with the same settings as a standard query. The sources
+argument lets you select all the sources you want to apply to this query. It is required to have at least one source
 specified.
 
 Example: Query the first blocks from Moonriver and Avalanche On run the following Query:
 
+To do so run the following query:
 ```
 query FirstBlockOnAvalancheAndMoonriver{
     blocks(

@@ -8,7 +8,7 @@ parent:
 
 # Pool economics
 
-Keeping pools funded and therefore keeping the data flowing while at the same time keeping validators' stakes secured and incentivized is a challenge. KYVE designed pools in a way that they fulfill all those needs.
+Keeping pools funded and therefore keeping the data flowing while at the same time keeping validators' stakes secured and incentivized is a challenge. KYVE designed pools to fulfill all those needs.
 
 ## Basic $KYVE flow
 
