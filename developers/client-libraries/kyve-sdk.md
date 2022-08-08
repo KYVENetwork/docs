@@ -16,4 +16,4 @@ Learn about the KYVE-JS Library for connecting clients to KYVE. {synopsis}
 
 ## Package List
 
-- 
+-

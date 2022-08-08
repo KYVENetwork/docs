@@ -17,6 +17,7 @@ specified.
 Example: Query the first blocks from Moonriver and Avalanche On run the following Query:
 
 To do so run the following query:
+
 ```
 query FirstBlockOnAvalancheAndMoonriver{
     blocks(
