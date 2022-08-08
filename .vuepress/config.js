@@ -63,7 +63,7 @@ module.exports = {
             },
             {
               title: 'Cosmos gRPC & REST',
-              path: 'https://api.korellia.kyve.network/',
+              path: '/developers/grpc',
             },
             {
               title: 'Tendermint RPC',
