@@ -16,7 +16,7 @@ to store any data stream decentralized and permanently.
 
 Wallets
 
-- A [Keplr](https://keplr.app) wallet with $KYVE. (You can claim some [here](https://app.kyve.network/#/faucet))
+- A [Keplr](https://keplr.app) or [Cosmostation](https://www.cosmostation.io/) wallet with $KYVE. (You can claim some [here](https://app.kyve.network/#/faucet))
 - An [Arweave](https://arweave.org/) keyfile with some AR. (You can claim some [here](https://faucet.arweave.net/))
 
 Minimum hardware requirements
@@ -27,7 +27,7 @@ Minimum hardware requirements
 
 ### Get some $KYVE
 
-Before continuing, make sure that you have the [Keplr](https://keplr.app) wallet installed in your browser. Head over to the [KYVE app](https://app.kyve.network) and make sure to connect your wallet (this automatically adds and switches to the KYVE network).
+Before continuing, make sure that you have the [Keplr](https://keplr.app) or [Cosmostation](https://www.cosmostation.io/) wallet installed in your browser. Head over to the [KYVE app](https://app.kyve.network) and make sure to connect your wallet (this automatically adds and switches to the KYVE network).
 
 Go to the faucet tab and claim some tokens via one of three faucets. The wheel is the easiest option.
 
