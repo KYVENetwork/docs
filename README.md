@@ -12,11 +12,11 @@ There are multiple ways how you can interact with KYVE. These are the most commo
 
 ### Run a KYVE chain node
 
-Running a KYVE chain node enables users to support and secure the KYVE blockchain. Find out how to start a chain node in under 20 minutes [here](/getting-started/chain-node.md).
+Running a KYVE chain node enables users to support and secure the KYVE blockchain. Find out how to start a chain node in under 20 minutes [here](/validators/chain-node.md).
 
 ### Run a KYVE protocol node
 
-Running a KYVE protocol node enables projects to store and retrieve their data streams fully decentralized. Find out how to start a protocol node in under 10 minutes [here](/getting-started/protocol-node.md).
+Running a KYVE protocol node enables projects to store and retrieve their data streams fully decentralized. Find out how to start a protocol node in under 10 minutes [here](/validators/protocol-node.md).
 
 ### Projects using KYVE
 
