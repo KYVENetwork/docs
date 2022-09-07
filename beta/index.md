@@ -50,7 +50,7 @@ Start the chain
 #### Cosmovisor, Systemd and Validators
 
 The setup of cosmovisor and systemd is the same as described [here](/validators/chain-node.md#setup-cosmovisor)
-and [here](validators/chain-node.md#setting-up-deamon-service).
+and [here](/validators/chain-node.md#setting-up-deamon-service).
 
 For [Becoming a validator](validators/chain-node.md#becoming-a-validator) keep in mind to use the correct chain-id `kyve-beta`.
 
