@@ -5,7 +5,7 @@ Basic knowledge about cosmos-sdk and linux servers is highly recommended.
 
 ### Major Change: Interpool security
 
-The biggest difference to the current Korellia network is the feature of interpool-security.
+The biggest difference to the current korellia network is the feature of interpool-security.
 From now on, there is only one staker entry per address. And a staker can join multiple pools. Joining multiple pools means more rewards, but this comes also with the danger of being more vulnerable to slashes.
 
 ![interpool security](https://cdn.discordapp.com/attachments/889827445132374036/1016716774122733628/interpool_security.png)
@@ -15,7 +15,7 @@ From now on, there is only one staker entry per address. And a staker can join m
 - [explorer.beta.kyve.network](https://explorer.beta.kyve.network/kyve-betanet/staking)
 - [kyve-beta.netlify.app/#/](https://kyve-beta.netlify.app/#/)
 
-For $KYVE ask in the Discord beta-testers channels.
+For $KYVE ask in the Discord-Beta testers channels.
 
 ### Setting up a chain node
 
@@ -23,7 +23,7 @@ The process of setting up a beta node is similar to the general guide
 [here](/validators/chain-node.md). However, less disk space is required, as
 the network does not have that many transactions and is resettet here and then.
 
-#### Obtaining the beta binaries
+#### Obtaining binaries
 
 ```bash
 wget https://nc2.breithecker.de/s/BY4Lzj8TAQzgJZm/download/chain_linux_amd64.tar.gz
@@ -33,7 +33,7 @@ tar -xvzf chain_linux_amd64.tar.gz
 ./chaind init [moniker] --chain-id kyve-beta
 ```
 
-Obtain the beta genesis:
+Obtain the genesis:
 
 ```bash
 wget https://nc2.breithecker.de/s/z3bDsQk8D6snyWA/download/genesis-v0.7.0-beta.json
@@ -67,7 +67,7 @@ After the validator got created you can view your validator in detail by clickin
 
 #### 2. Get and build the protocol node binaries
 
-After successfully creating the validator the protocol node binaries have to be build and prepared. The current development repository is available here [github.com/KYVENetwork/node](https://github.com/KYVENetwork/node). For the beta network only pools
+After successfully creating the validator the protocol node binaries have the be build and prepared. The current developement repository is avaiable here [github.com/KYVENetwork/node](https://github.com/KYVENetwork/node). For the beta network only pools
 with the evm runtime will be available, so this tutorial will only focus on building the evm binaries.
 
 To build the evm binaries execute the following commands:
@@ -87,6 +87,10 @@ After that the binaries should be available under the following path: `/integrat
 
 #### 3. Add the arweave.json keyfile to the file backend
 
+::: warning
+**INFORMATION**: To protect sensitive information we implemented a password protected file backend. When the file backend is created for the first time you a prompted to choose a password. Every time you want to access secrets from the file backend you have to enter the password again. If you loose or forget the password the secrets are lost.
+:::
+
 It is also required to have an Arweave account in order to save data on Arweave. The keyfile needs to be added to the file backend. This can also be done with the binary CLI in the following way:
 
 ```bash
@@ -97,13 +101,13 @@ The command saves the content of your `arweave.json` keyfile into the encrypted 
 
 #### 4. Create a valaccount
 
-With the new Interpool-Security feature a single validator can join multiple pools. For every pool a validator wants to join he needs a `Valaccount`. A valaccount just consists of a separate KYVE address, which is just used to run one protocol node on one pool with the authorization of the main validator account. A valaccount address, or in short a `Valaddress` can be created with the help of the binary CLI in the following way:
+With the new Interpool-Security feature a single validator can join multiple pools. For every pool a validator wants to join he needs a `Valaccount`. A valaccount just consists of a seperate KYVE address, which is just used to run one protocol node on one pool with the authorization of the main validator account. A valaccount address, or in short a `Valaddress` can be created with the help of the binary CLI in the following way:
 
 ```bash
 ./out/kyve-linux valaccounts create "my-first-valaccount"
 ```
 
-This command generates a complete new and random valaddress for you and saves in an encrypted file backend. More information on the valaccount CLI can be found with `./out/kyve-macos valaccounts -h`
+This command generates a compeletey new and random valaddress for you and saves in an encrypted file backend. More information on the valaccount CLI can be found with `./out/kyve-macos valaccounts -h`
 
 #### 5. Start the binary on the pool you want to join
 
@@ -131,7 +135,7 @@ It will pause on the first startup because as the last step it needs to be autho
 
 #### 6. Finally join a pool with a valaccount
 
-Now that the node is already running it just needs the authorization from its main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
+Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
 A dialog should open where you should select the pool you want to join (here Moonbeam). After that enter the Valaddress that needs to be authorized and the Valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data). For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 1000 $KYVE for the start. Make sure that the valaccount always has enough $KYVE to pay for the fees, otherwise you are again in danger of receiving a timeout slash.
 
@@ -139,6 +143,8 @@ Once you have joined the pool the node should continue in about ~10 seconds. Aft
 
 #### 7. Join other pools if you want to increase your rewards
 
-This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the steps from point 4. You can see all the pools you are participating in your validator page.
+This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the steps from point 4. You can see all the pools you are participating in in your validator page.
 
-But beware, joining for example a second pool might double your rewards, but it would also double the danger of getting slashed.
+::: warning
+**WARNING**: But beware, joining for example a second pool might double your rewards, but it would also double the danger of getting slashed.
+:::
