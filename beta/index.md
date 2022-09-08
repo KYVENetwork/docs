@@ -32,11 +32,15 @@ tar -xvzf chain_linux_amd64.tar.gz
 # The [moniker] is a human-readable name for your node
 ./chaind init [moniker] --chain-id kyve-beta
 ```
+Other architectures: 
+- linux/arm64:  [https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_arm64.tar.gz](https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_arm64.tar.gz)
+- darwin/amd64:  [https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_darwin_amd64.tar.gz](https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_darwin_amd64.tar.gz)
+
 
 Obtain the genesis:
 
 ```bash
-wget https://nc2.breithecker.de/s/z3bDsQk8D6snyWA/download/genesis-v0.7.0-beta.json
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/genesis-v0.7.0-beta.json
 # move to the chain-node directory
 mv genesis-v0.7.0-beta.json ~/.kyve/config/genesis.json
 ```
