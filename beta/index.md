@@ -123,7 +123,7 @@ wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/celo
 checksum.txt
 
 ```bash
-wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/evm/checksum.txt
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/celo/checksum.txt
 ```
 
 #### Build the node binaries yourself
