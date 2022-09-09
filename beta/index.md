@@ -32,10 +32,11 @@ tar -xvzf chain_linux_amd64.tar.gz
 # The [moniker] is a human-readable name for your node
 ./chaind init [moniker] --chain-id kyve-beta
 ```
-Other architectures: 
-- linux/arm64:  [https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_arm64.tar.gz](https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_arm64.tar.gz)
-- darwin/amd64:  [https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_darwin_amd64.tar.gz](https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_darwin_amd64.tar.gz)
 
+Other architectures:
+
+- linux/arm64: [https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_arm64.tar.gz](https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_arm64.tar.gz)
+- darwin/amd64: [https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_darwin_amd64.tar.gz](https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_darwin_amd64.tar.gz)
 
 Obtain the genesis:
 
@@ -67,9 +68,65 @@ In order to create your validator visit the beta KYVE app [kyve-beta.netlify.app
 There you can choose your preferred `self delegation` which is the same as `stake` before. The self delegation determines the probability of creating bundles and therefore earning rewards. If the validator misbehaves the self delegation will get partially slashed.
 Others can also delegate to you. This will improve your probability of earning more rewards. To attract them, you can change your commission under `Manage Commission` on your validator page. If the validator misbehaves those delegators will get slashed, too.
 
-After the validator got created you can view your validator in detail by clicking on it. If you want to change your moniker, website and even your logo you can do that by clicking on `Manage Validator` and then on `Manage Metadata`
+After the validator got created you can view your validator in detail by clicking on it. If you want to change your moniker, website and even your logo you can do that by clicking on `Manage Validator` and then on `Manage Metadata
 
-#### 2. Get and build the protocol node binaries
+#### 2. wget the protocol node binaries (recommended)
+
+The current protocol node binaries can be found bellow. We will update them if there is an update, so that you will always have the current version. Currently, the `@kyve/evm` and the `@kyve/celo` runtimes are available for the beta network.
+
+#### @kyve/evm
+
+kyve-linux-x64
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/evm/kyve-linux-x64
+```
+
+kyve-linux-arm64
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/evm/kyve-linux-arm64
+```
+
+kyve-macos-x64
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/evm/kyve-macos-x64
+```
+
+checksum.txt
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/evm/checksum.txt
+```
+
+#### @kyve/celo
+
+kyve-linux-x64
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/celo/kyve-linux-x64
+```
+
+kyve-linux-arm64
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/celo/kyve-linux-arm64
+```
+
+kyve-macos-x64
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/celo/kyve-macos-x64
+```
+
+checksum.txt
+
+```bash
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/protocol-node-binaries/evm/checksum.txt
+```
+
+#### Build the node binaries yourself
 
 After successfully creating the validator the protocol node binaries have the be build and prepared. The current developement repository is avaiable here [github.com/KYVENetwork/node](https://github.com/KYVENetwork/node). For the beta network only pools
 with the evm runtime will be available, so this tutorial will only focus on building the evm binaries.
