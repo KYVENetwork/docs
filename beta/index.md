@@ -138,7 +138,7 @@ Then you can add the secrets in the following way:
 
 ```bash
 echo "my mnemonic ..." >> secrets/valaccount
-echo "$(path/to/arweave.json)" >> secrets/wallet
+echo "$(cat path/to/arweave.json)" >> secrets/wallet
 ```
 
 The final directory structure should look like this:
