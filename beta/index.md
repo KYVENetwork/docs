@@ -196,7 +196,7 @@ Knowing where KYSOR saves it's logs and binaries can be helpful. The example bel
 │   |   |   ├── bin
 │   |   |   │   └── kyve-linux-x64
 │   |   |   ├── cache
-|   |   |   │   └── 234.json
+|   |   |   │   ├── 234.json
 |   |   |   │   └── ...
 │   |   |   └── logs
 │   |   |       ├── 2022-09-29T08:23:02.003Z.log
@@ -205,7 +205,7 @@ Knowing where KYSOR saves it's logs and binaries can be helpful. The example bel
 │   |       ├── bin
 │   |       │   └── kyve-linux-x64
 │   |       ├── cache
-|   |       │   └── 567.json
+|   |       │   ├── 567.json
 |   |       │   └── ...
 │   |       └── logs
 │   |           └── 2022-09-29T08:23:24.953Z.log
@@ -214,12 +214,12 @@ Knowing where KYSOR saves it's logs and binaries can be helpful. The example bel
 │           ├── bin
 │           │   └── kyve-linux-x64
 │           ├── cache
-|           │   └── 3847.json
+|           │   ├── 3847.json
 |           │   └── ...
 │           └── logs
 │               └── 2022-09-29T08:23:02.003Z.log
 └── valaccounts
-    └── moonbeam.toml
+    ├── moonbeam.toml
     └── celo.toml
 ```
 
