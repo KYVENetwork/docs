@@ -102,41 +102,54 @@ linux-x64   -> https://kyve-beta.s3.eu-central-1.amazonaws.com/kysor/kysor-linux
 macos-x64   -> https://kyve-beta.s3.eu-central-1.amazonaws.com/kysor/kysor-macos-x64.zip
 ```
 
-**Create your first valaccount**
+**Initialize KYSOR**
 
-For every pool you run on a _valaccount_ has to be created. In our example, we want to run on the Moonbeam pool with Pool Id _0_. A new valaccount with a new mnemonic can be created in the following way:
+Once you have successfully downloaded the KYSOR binary you have to initialize it.
+
+When you init the KYSOR you need to specify the network you should run on and if the KYSOR should automatically download and execute the binaries for you. Since we are in beta testnet
+we would recommend initializing with the following properties:
 
 ```bash
-./kysor valaccounts create \
---name moonbeam \
---pool 0 \
---storage-priv "$(cat path/to/arweave.json)" \
---network beta \
---verbose \
---metrics \
---metrics-port 1234
+./kysor init --network beta --auto-download-binaries
 ```
 
-This will create a _moonbeam.toml_ file under the kysor home directory in `$HOME/.kysor/valaccounts/`. There you can view your valaccount config.
+This command creates a `config.toml` under the following directory: `$HOME/.kysor/`. You can edit this file if you wish to change the network or the auto download.
 
-If you want to create a valaccount from an existing mnemonic just add the _--recover_ flag like this:
+::: warning
+**IMPORTANT**: Since we are in testnet it is okay to leave auto download on, but once KYVE is in mainnet we would highly recommend turning auto download off and compiling the upgrade binaries yourself. You can find more information below for how to upgrade with KYSOR manually.
+:::
+
+**Create your first valaccount**
+
+Now that KYSOR is initalized we move on to the next step. For every pool you run on a _valaccount_ has to be created. In our example, we want to run on the Moonbeam pool with Pool Id `0`. A new valaccount with a new mnemonic can be created in the following way:
 
 ```bash
 ./kysor valaccounts create \
 --name moonbeam \
 --pool 0 \
 --storage-priv "$(cat path/to/arweave.json)" \
---network beta \
+--verbose \
+--metrics
+```
+
+This will create a `moonbeam.toml` file under the kysor home directory in `$HOME/.kysor/valaccounts/`. There you can view your valaccount config.
+
+If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
+
+```bash
+./kysor valaccounts create \
+--name moonbeam \
+--pool 0 \
+--storage-priv "$(cat path/to/arweave.json)" \
 --verbose \
 --metrics \
---metrics-port 1234
 --recover
 ```
 
 This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
 
 ::: warning
-**INFORMATION**: Of course multiple valaccounts can be created for each pool. We would recommend naming the valaccounts after the pool you want to run with this account on like in this case `moonbeam` for example. These names are just used locally for config management.
+**INFORMATION**: Of course multiple valaccounts can be created for each pool. We would recommend naming the valaccounts after the pool you want to run with this account on like in this case `moonbeam` for example. These names are just used locally for config management. Also if you have multiple valaccounts running on the same machine you are required to change the port of the metrics server (if enabled of course) so the don't overlap.
 :::
 
 **Run the KYSOR**
@@ -144,34 +157,84 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 After you have created the required valaccounts you can simply start running the KYSOR with the following command:
 
 ```bash
-./kysor start --valaccount moonbeam --auto-download-binaries
+./kysor start --valaccount moonbeam
 ```
-
-Because the betanet is still a very active testnet we highly recommend to keep _--auto-download-binaries_ enabled. During mainnet we would recommend disabling it and compiling the binaries yourself.
 
 When KYSOR is running, you can proceed with step 3.
 
 **Run the KYSOR without auto download**
 
-If you want to run the KYSOR without auto download enabled like it would be recommended in mainnet just leave the flag _--auto-download-binaries_ away. The start command would then look like the following:
-
-```bash
-./kysor start --valaccount moonbeam
-```
+If you want to run the KYSOR without auto download enabled like it would be recommended in mainnet just set the property `autoDownloadBinaries` to false in the `$HOME/.kysor/config.toml`. After that you should restart the KYSOR to make changes available.
 
 Before an upgrade you are then required to prebuild the upgrade binaries **yourself** and place them in the correct path. Once you have the upgrade binary compiled move them to the following directory **before** the upgrade:
 
 ```bash
-mv kyve-upgrade-binary $HOME/.kysor/upgrades/@kyve/$RUNTIME/$VERSION/
+mv kyve-upgrade-binary $HOME/.kysor/upgrades/pool-$pool/$version/bin
 ```
 
-$RUNTIME is the runtime name of the binary. For example for the Moonbeam upgrade of runtime `@kyve/evm` and new version `1.9.0` you should move the upgrade binary to the following folder:
+$POOL is the pool id where the binary should run on. For example for the Moonbeam pool with pool id `0` and upgrade version `1.9.0` you should move the upgrade binary to the following folder:
 
 ```bash
-mv kyve-upgrade-binary $HOME/.kysor/upgrades/@kyve/evm/1.9.0/
+mv kyve-moonbeam-binary $HOME/.kysor/upgrades/pool-0/1.9.0/bin/
 ```
 
 The upgrade binaries of each version in beta will be available here: [github.com/KYVENetwork/node/releases](https://github.com/KYVENetwork/node/releases)
+
+**General KYSOR directory structure**
+
+Knowing where KYSOR saves it's logs and binaries can be helpful. The example below shows the following setup: The KYSOR runs on two pools with pool id `0` and `2`. Pool `2` is still running on version `0.8.6` while pool `0` has already upgraded from `1.8.6` to `1.8.7`
+
+```
+.kysor
+├── config.toml
+├── logs
+│   └── 2022-09-29T08:38:24.513Z.log
+│   └── 2022-09-29T09:29:22.219Z.log
+├── upgrades
+│   ├── pool-0
+│   |   ├── 1.8.6
+│   |   |   ├── bin
+│   |   |   │   └── kyve-linux-x64
+│   |   |   ├── cache
+|   |   |   │   └── 234.json
+|   |   |   │   └── ...
+│   |   |   └── logs
+│   |   |       ├── 2022-09-29T08:23:02.003Z.log
+│   |   |       └── 2022-09-29T08:23:24.953Z.log
+│   |   └── 1.8.7
+│   |       ├── bin
+│   |       │   └── kyve-linux-x64
+│   |       ├── cache
+|   |       │   └── 567.json
+|   |       │   └── ...
+│   |       └── logs
+│   |           └── 2022-09-29T08:23:24.953Z.log
+│   └── pool-2
+│       └── 0.8.6
+│           ├── bin
+│           │   └── kyve-linux-x64
+│           ├── cache
+|           │   └── 3847.json
+|           │   └── ...
+│           └── logs
+│               └── 2022-09-29T08:23:02.003Z.log
+└── valaccounts
+    └── moonbeam.toml
+    └── celo.toml
+```
+
+Here the following directories have the following reason:
+
+- `.kysor` - KYSOR home directory, created with init command
+- `config.toml` - general KYSOR config, created with init command
+- `logs` - logs folder containing KYSOR log files. Each log file is a run from start to end where the date is the starting date
+- `upgrades` - most important directory, contains all the binaries for every pool
+- `upgrades/pool-$id` - holds every binary of every installed version of the specified pool
+- `upgrades/pool-$id/$version` - acts as a home directory for a specific binary, contains binary cache, logs and actual protocol node binary
+- `upgrades/pool-$id/$version/bin` - holds actual node binary
+- `upgrades/pool-$id/$version/cache` - contains cached data relevant for the protocol node
+- `upgrades/pool-$id/$version/logs` - logs folder for the protocol node of that version and pool. Each log file is a run from start to end where the date is the starting date
+- `valaccounts` - contains all the valaccount config files with which the KYSOR can run on a pool
 
 **Run KYSOR with systemd**
 
@@ -187,7 +250,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=/home/$USER/kysor start --valaccount moonbeam --auto-download-binaries
+ExecStart=/home/$USER/kysor start --valaccount moonbeam
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=infinity
