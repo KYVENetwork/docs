@@ -295,7 +295,6 @@ To run the protocol node the following command needs to be executed:
 --pool 0 \
 --valaccount "your mnemonic ..."
 --storage-priv "$(cat path/to/arweave.json)" \
---network beta \
 --verbose \
 --metrics \
 ```
