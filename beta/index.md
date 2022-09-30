@@ -148,6 +148,14 @@ If you want to create a valaccount from an existing mnemonic just add the `--rec
 
 This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
 
+If you want to port your valaccounts over from the old system (evm version <= 1.8.5 and celo version <= 0.8.5) you have to perform the following command to retrieve the mnemonic of your existing valaccounts:
+
+```bash
+./old-kyve-binary valaccounts reveal <name>
+```
+
+Then you can import this mnemonic with the `--recover` flag into the new system with KYSOR.
+
 ::: warning
 **INFORMATION**: Of course multiple valaccounts can be created for each pool. We would recommend naming the valaccounts after the pool you want to run with this account on like in this case `moonbeam` for example. These names are just used locally for config management. Also if you have multiple valaccounts running on the same machine you are required to change the port of the metrics server (if enabled of course) so the don't overlap.
 :::
@@ -161,6 +169,10 @@ After you have created the required valaccounts you can simply start running the
 ```
 
 When KYSOR is running, you can proceed with step 3.
+
+**Run KYSOR on multiple pools**
+
+If you want to run KYSOR with multiple pools you only have to edit one configuration in the valaccounts. The Protocol Nodes starts a metrics prometheus server if the option `metrics` is enabled. On default the metrics server is available under the following endpoint: `http://localhost:8080/metrics`. If you start on multiple pools those servers would collide because of the same port. You can solve this by editing the valaccounts config toml and specifying a different port for each valaccount.
 
 **Run the KYSOR without auto download**
 
