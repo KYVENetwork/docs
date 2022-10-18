@@ -26,7 +26,7 @@ the network does not have that many transactions and is resettet here and then.
 ### 1. Obtaining binaries
 
 ```bash
-wget https://nc2.breithecker.de/s/BY4Lzj8TAQzgJZm/download/chain_linux_amd64.tar.gz
+wget https://kyve-beta.s3.eu-central-1.amazonaws.com/genesis/chain_linux_amd64.tar.gz
 tar -xvzf chain_linux_amd64.tar.gz
 
 # The [moniker] is a human-readable name for your node
