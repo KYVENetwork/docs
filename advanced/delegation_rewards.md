@@ -1,6 +1,6 @@
 ---
 title: Delegation Rewards
-order: 5
+order: 6
 parent:
   title: Advanced
   order: 4

@@ -1,6 +1,6 @@
 ---
 title: Dealing with offline data sources
-order: 4
+order: 5
 parent:
   title: Advanced
   order: 3
