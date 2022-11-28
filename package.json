@@ -1,4 +1,10 @@
 {
+  "name": "kyve-docs",
+  "version": "1.0.0-beta",
+  "description": "KYVE Docs",
+  "productName": "KYVE",
+  "author": "Troy Kessler <troy.kessler99@gmail.com>",
+  "private": true,
   "scripts": {
     "build": "vuepress build",
     "format": "prettier --write .",
