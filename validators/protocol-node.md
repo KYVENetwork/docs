@@ -123,7 +123,7 @@ unzip kyve-linux-x64.zip
 ```
 
 ```bash
-mv kysor-linux-x64 kysor
+mv kyve-linux-x64 kysor
 ```
 
 ```bash
