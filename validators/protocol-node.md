@@ -400,7 +400,7 @@ Once you have joined the pool the node should continue in about ~10 seconds. Aft
 
 ### 4. Join multiple pools if you want to increase your rewards
 
-This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the steps from point 4. You can see all the pools you are participating in in your validator page.
+This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the steps from point 4. You can see all the pools you are participating in your validator page.
 
 ::: warning
 **WARNING**: But beware, joining for example a second pool might double your rewards, but it would also double the danger of getting slashed.
