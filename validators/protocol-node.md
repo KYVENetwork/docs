@@ -116,8 +116,17 @@ Get the latest release of the KYSOR binaries
 
 ```bash
 wget https://github.com/KYVENetwork/node/releases/download/%40kyve%2Fkysor%400.1.3/kyve-linux-x64.zip
-unzip kysor-linux-x64.zip
+```
+
+```bash
+unzip kyve-linux-x64.zip
+```
+
+```bash
 mv kysor-linux-x64 kysor
+```
+
+```bash
 chmod +x kysor
 ```
 
