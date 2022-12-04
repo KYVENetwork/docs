@@ -2,7 +2,6 @@
 title: Paginating a Query
 order: 3
 parent:
-  title: Accessing Data
   order: 4
 ---
 

@@ -2,7 +2,6 @@
 title: Basic Queries
 order: 2
 parent:
-  title: Accessing Data
   order: 4
 ---
 

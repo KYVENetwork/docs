@@ -2,7 +2,7 @@
 title: Getting Started
 order: 1
 parent:
-  title: Accessing Data
+  title: GraphQL
   order: 2
 ---
 

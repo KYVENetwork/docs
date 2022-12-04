@@ -2,7 +2,6 @@
 title: Ordering results
 order: 4
 parent:
-  title: Accessing Data
   order: 4
 ---
 

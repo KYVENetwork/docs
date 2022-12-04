@@ -2,7 +2,6 @@
 title: Well known Endpoints
 order: 7
 parent:
-  title: Accessing Data
   order: 4
 ---
 

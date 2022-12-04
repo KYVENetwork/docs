@@ -2,7 +2,6 @@
 title: Counting results
 order: 5
 parent:
-  title: Accessing Data
   order: 4
 ---
 
