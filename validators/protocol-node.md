@@ -186,15 +186,15 @@ Running a protocol node can be done in 3 ways, we recommend running the node wit
 Get the latest release of the KYSOR binaries
 
 ```bash
-wget https://github.com/KYVENetwork/node/releases/download/%40kyve%2Fkysor%400.1.3/kyve-linux-x64.zip
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-x64.zip
 ```
 
 ```bash
-unzip kyve-linux-x64.zip
+unzip kysor-linux-x64.zip
 ```
 
 ```bash
-mv kyve-linux-x64 kysor
+mv kysor-linux-x64 kysor
 ```
 
 ```bash
@@ -203,10 +203,22 @@ chmod +x kysor
 
 Available KYSOR binaries for platforms:
 
+linux-arm64
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-arm64.zip
 ```
-linux-arm64 -> https://github.com/KYVENetwork/node/releases/download/%40kyve%2Fkysor%400.1.3/kyve-linux-arm64.zip
-linux-x64   -> https://github.com/KYVENetwork/node/releases/download/%40kyve%2Fkysor%400.1.3/kyve-linux-x64.zip
-macos-x64   -> https://github.com/KYVENetwork/node/releases/download/%40kyve%2Fkysor%400.1.3/kyve-macos-x64.zip
+
+linux-x64
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-x64.zip
+```
+
+macos-x64
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-macos-x64.zip
 ```
 
 **Initialize KYSOR**
