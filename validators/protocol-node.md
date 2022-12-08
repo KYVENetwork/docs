@@ -93,6 +93,9 @@ Because this amount won't be enough to let validators run for a longer time you 
 $AR. You can exchange them on traditional exchanges like [Binance](https://www.binance.com/en). We would
 recommend an amount of ~1$AR which is more than enough.
 
+In order to read in the wallet simply add the flag `--storage-priv "$(cat /path/to/arweave.json)"` later once
+the node gets started.
+
 #### Setting up a Bundlr wallet
 
 Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
@@ -105,11 +108,11 @@ completing the above steps the easiest way to setup the bundlr wallet is to inst
 npm install -g @bundlr-network/client
 ```
 
-In order to fund the bundlr node simply execute the following, where wallet.json is your Arweave keyfile
+In order to fund the bundlr node simply execute the following, where arweave.json is your Arweave keyfile
 which holds some funds:
 
 ```bash
-$ bundlr fund 1000000000000 -h https://node1.bundlr.network -w wallet.json -c arweave
+$ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
 
 > ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
@@ -130,13 +133,16 @@ $ bundlr balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.bu
 In order to withdraw your funds from Bundlr simply execute:
 
 ```bash
-$ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w wallet.json -c arweave
+$ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
 
 > ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
 > Withdrawal request for 500000000000 winston successful
 > Transaction ID: xcmxJmHyNS502fzqiT66rNeIOSldKGDWR8XsL9auDfs with network fee 1379016 for a total cost of 2858032
 ```
+
+In order to read in the wallet simply add the flag `--storage-priv "$(cat /path/to/arweave.json)"` later once
+the node gets started.
 
 More information about the Bundlr CLI can be found [here](https://docs.bundlr.network/docs/client/cli)
 
