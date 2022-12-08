@@ -73,10 +73,76 @@ external delegation, the total delegation into your validator account matters.
 **IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount you can not continue!
 :::
 
+### Create a storage provider wallet
+
+Depending on which storage provider to pool runs on you have to setup a wallet with which you can upload
+data with. Currently, there are two available storagep providers:
+
+- [Arweave](https://arweave.org)
+- [Bundlr](https://bundlr.network/)
+
+On the pool overview, it is clearly listed which storage provider a pool uses.
+
+#### Setting up an Arweave wallet
+
+Arweave is a truly decentralized, permanent data storage solution.
+
+In order to setup an Arweave wallet you need a keyfile which will be the private key of Arweave.
+You can get one with some additional funds from the official Arweave faucet (https://faucet.arweave.net/).
+Because this amount won't be enough to let validators run for a longer time you have to get some additional
+$AR. You can exchange them on traditional exchanges like [Binance](https://www.binance.com/en). We would
+recommend an amount of ~1$AR which is more than enough.
+
+#### Setting up a Bundlr wallet
+
+Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
+with garanteed transaction finality.
+
+In order to setup a Bundlr wallet follow the exact same steps as in **Setting up an Arweave wallet**. After
+completing the above steps the easiest way to setup the bundlr wallet is to install the Bundlr CLI:
+
+```bash
+npm install -g @bundlr-network/client
+```
+
+In order to fund the bundlr node simply execute the following, where wallet.json is your Arweave keyfile
+which holds some funds:
+
+```bash
+$ bundlr fund 1000000000000 -h https://node1.bundlr.network -w wallet.json -c arweave
+
+> ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> Y / N y
+> Funding receipt:
+> Amount: 1000000000000 with Fee: 1379016 to 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo
+> ID: 7cI6jpfpx6A2z8F5AoVHvZn9Az_BWPgvKzBCoE5w07A
+```
+
+In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 mins
+you can view your balance with:
+
+```bash
+$ bundlr balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.bundlr.network -c arweave
+
+> Balance: 1000000000000 Winston (1AR)
+```
+
+In order to withdraw your funds from Bundlr simply execute:
+
+```bash
+$ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w wallet.json -c arweave
+
+> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> Y / N y
+> Withdrawal request for 500000000000 winston successful
+> Transaction ID: xcmxJmHyNS502fzqiT66rNeIOSldKGDWR8XsL9auDfs with network fee 1379016 for a total cost of 2858032
+```
+
+More information about the Bundlr CLI can be found [here](https://docs.bundlr.network/docs/client/cli)
+
 ### Create a Validator account
 
-With a pool you can join you can now create your validator account which will hold all of your
-self delegation. The first step you be to connect with you wallet to the KYVE app.
+With a pool you can join now and a well funded storage provider account you can finally create your validator account which will hold all of your self delegation. The first step you be to connect with you wallet to the KYVE app.
 
 ::: warning
 **IMPORTANT**: We would highly recommend creating the valaccount from a cold wallet like a Ledger since
