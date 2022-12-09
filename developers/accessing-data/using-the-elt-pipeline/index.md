@@ -2,8 +2,8 @@
 title: Getting Started
 order: 1
 parent:
-    title: ELT Pipeline
-    order: 1
+  title: ELT Pipeline
+  order: 1
 ---
 
 # KYVE DataPipeline
@@ -14,6 +14,7 @@ data warehouse or destination.
 ## Quick start
 
 ### Starting Airbyte
+
 ```bash
 git clone https://github.com/KYVENetwork/DataPipeline.git
 
@@ -25,6 +26,7 @@ Now visit [http://localhost:8000](http://localhost:8000)
 Here is a [step-by-step guide](https://github.com/airbytehq/airbyte/tree/e378d40236b6a34e1c1cb481c8952735ec687d88/docs/quickstart/getting-started.md) showing you how to load data from an API into a file, all on your computer.
 
 ### Adding the KYVE Source
+
 ```bash
 cd airbyte-integrations/connectors/source-kyve
 docker build . -t airbyte/source-kyve:dev

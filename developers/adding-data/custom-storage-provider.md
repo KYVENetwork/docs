@@ -8,15 +8,14 @@ class. The interface is well-documented and requires you to overwrite a few func
 First, instantiate an empty class, which implements the interface
 
 ```typescript
-export class MyCustomStorageProvider implements IStorageProvider {
-}
+export class MyCustomStorageProvider implements IStorageProvider {}
 ```
 
 Secondly, overwrite the `name` and `decimals` fields.
 
 ```typescript
 export class MyCustomStorageProvider implements IStorageProvider {
-  public name = "MyCustomStorageProvider";
+  public name = 'MyCustomStorageProvider';
   public decimals = 9;
 }
 ```
@@ -26,7 +25,7 @@ using KYSOR to run the runtime later, this key will be accessible through the ke
 
 ```typescript
 export class MyCustomStorageProvider implements IStorageProvider {
-  public name = "MyCustomStorageProvider";
+  public name = 'MyCustomStorageProvider';
   public decimals = 9;
 
   init(storagePriv: string) {
@@ -38,24 +37,24 @@ export class MyCustomStorageProvider implements IStorageProvider {
 
 In the last step, overwrite the three main functions.
 
-* `getBalance(): Promise<string>` should return the wallet's current balance. This function is used to avoid problems
+- `getBalance(): Promise<string>` should return the wallet's current balance. This function is used to avoid problems
   with empty wallets
-* `saveBundle(bundle: Buffer, tags: [string, string][]): Promise<string>` this function specifies how data is stored on
+- `saveBundle(bundle: Buffer, tags: [string, string][]): Promise<string>` this function specifies how data is stored on
   your storage provider. It also gives you a couple of tags you can optionally add to the transaction to make it easier
   to retrieve via external indexers. Please note that using the tagging is entirely optional. Make sure to return a
   unique ID that points to the bundle to be able to retrieve it later on.
-* `retrieveBundle(storageId: string, timeout: number): Promise<Buffer>` specify how to load a bundle from the storage
+- `retrieveBundle(storageId: string, timeout: number): Promise<Buffer>` specify how to load a bundle from the storage
   provider using the ID. This id will be of the type that got returned in the `saveBundle`-function. You also specify a
   timeout after which the function should abort to avoid future problems in case the storage provider is inaccessible
 
 ```typescript
 export class MyCustomStorageProvider implements IStorageProvider {
-  public name = "MyCustomStorageProvider";
+  public name = 'MyCustomStorageProvider';
   public decimals = 9;
 
   init(storagePriv: string) {
     // init your client to the storage endpoint here
-    this.exampleWallet = initWallet(storagePriv)
+    this.exampleWallet = initWallet(storagePriv);
     return this;
   }
 
@@ -65,16 +64,16 @@ export class MyCustomStorageProvider implements IStorageProvider {
   }
 
   async saveBundle(bundle: Buffer, tags: [string, string][]) {
-    const transaction = await this.exmapleClient.saveData({ data: bundle, });
+    const transaction = await this.exmapleClient.saveData({ data: bundle });
     return transaction.id;
   }
 
   async retrieveBundle(storageId: string, timeout: number) {
-    // This is an example implementation of some 
+    // This is an example implementation of some
     // made-up storage provider
     const { data: bundle } = await axios.get(
       `https://myexamplestorageprivder.net/${storageId}`,
-      { responseType: "arraybuffer", timeout }
+      { responseType: 'arraybuffer', timeout }
     );
     return bundle;
   }
