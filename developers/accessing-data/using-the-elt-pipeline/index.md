@@ -3,7 +3,7 @@ title: Getting Started
 order: 1
 parent:
   title: ELT Pipeline
-  order: 1
+  order: 2
 ---
 
 # KYVE DataPipeline
