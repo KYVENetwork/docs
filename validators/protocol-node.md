@@ -90,7 +90,7 @@ Arweave is a truly decentralized, permanent data storage solution.
 In order to setup an Arweave wallet you need a keyfile which will be the private key of Arweave.
 You can get one with some additional funds from the official Arweave faucet (https://faucet.arweave.net/).
 Because this amount won't be enough to let validators run for a longer time you have to get some additional
-$AR. You can exchange them on common exchanges. We would recommend an amount of ~1$AR which is more than enough.
+$AR. You can exchange them on common exchanges. We would recommend an amount of ~1 AR which is more than enough.
 
 In order to read in the wallet simply add the flag `--storage-priv "$(cat /path/to/arweave.json)"` later once
 the node gets started.
