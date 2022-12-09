@@ -3,7 +3,7 @@ title: Getting Started
 order: 1
 parent:
   title: GraphQL
-  order: 2
+  order: 3
 ---
 
 # Getting Started
