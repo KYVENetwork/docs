@@ -39,4 +39,3 @@ export class Gzip implements ICompression {
 ```
 
 Lastly, register your implementation in the [factory](https://github.com/KYVENetwork/kyvejs/blob/d5e7e735e3d716396fe424100c099f6702969414/common/protocol/src/methods/factories/compressionFactory.ts#L19) and create a PR.
-
