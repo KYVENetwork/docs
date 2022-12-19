@@ -38,27 +38,141 @@ Go to the faucet tab and claim some tokens via one of three faucets. The wheel i
 ### Choose a pool
 
 Before you can run a protocol node you have to choose a pool you want to join. You can find an overview of all pools
-in the KYVE app [here](https://app.kyve.network/). Once you have chosen a pool you have to remember the pool id and the
-pool runtime for later. You can find this information right below the pool name once you have clicked on a pool in the overview. In this example we have chosen the first pool with the pool id `0` and the runtime `@kyve/evm`.
+in the KYVE app [here](https://app.kyve.network/#/pools).
+
+![pools](/pools.png)
+
+Here you can already see some options. Since in this example the `Bitcoin` pool is paused due to the lack of funds
+it would be smarter to join the other active pools. Other metrics can be also added to your decision in which pool
+you want to participate. Example metrics could be for example the amount of slashes which occured in the pool (can be found when you click on `pool` then `metrics`).
+
+Once you have chosen a pool you have to remember the pool id and the
+pool runtime for later which can be both found when you click on the pool overview. In this example we have chosen the first pool with the pool id `0` and the runtime `@kyve/evm`.
+
+![pool overview](/pool_overview.png)
 
 ### Verify that you can claim a validator slot
 
-Due to a limited number of validator slots in each pool only the nodes with the highest stake can claim
-a validator slot. You can only claim a validator slot if you have **more than the minimum staking amount**.
+Due to a limited number of validator slots in each pool only the nodes with the highest delegation can claim
+a validator slot. You can only claim a validator slot if you have **more than the minimum delegation amount**.
 
-To check the minimum staking amount you can click on the tab `Validators` once you have selected a pool. There you should see something like this:
+To check the minimum delegation amount you can click on the tab `Validators` once you have selected a pool. There you should see something like this:
 
-![minimum stake](/minimum_stake.png)
+![min delegation](/min_delegation.png)
 
-In this case all validator slots are occupied, but since the minimum staking amount is 300 $KYVE you just need to have more than 300 to claim a slot. If the minimum staking amount is zero you just have to have more than zero $KYVE.
+In this case all there are still 9 free validator slots so you just have to have more than 0 $KYVE of delegation
+in your validator in order to participate. If the slots would be full and the minimum delegation would be for example
+300 $KYVE, you have to have **more** than 300 $KYVE delegated in your validator.
 
 ::: warning
-**IMPORTANT**: If you don't have more $KYVE than the minimum staking amount you can not continue!
+**INFORMATION**: It does not matter if you archieve the required delegation amount by self delegation or
+external delegation, the total delegation into your validator account matters.
 :::
 
-### Run with KYSOR (recommended)
+::: warning
+**IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount you can not continue!
+:::
 
-This example will show how to run a protocol node on a linux system on the Moonbeam pool with the pool Id `0`. More information can be found [here](https://github.com/kyve-org/kysor)
+### Create a storage provider wallet
+
+Depending on which storage provider to pool runs on you have to setup a wallet with which you can upload
+data with. Currently, there are two available storagep providers:
+
+- [Arweave](https://arweave.org)
+- [Bundlr](https://bundlr.network/)
+
+On the pool overview, it is clearly listed which storage provider a pool uses.
+
+#### Setting up an Arweave wallet
+
+Arweave is a truly decentralized, permanent data storage solution.
+
+In order to setup an Arweave wallet you need a keyfile which will be the private key of Arweave.
+You can get one with some additional funds from the official Arweave faucet (https://faucet.arweave.net/).
+Because this amount won't be enough to let validators run for a longer time you have to get some additional
+$AR. You can exchange them on common exchanges. We would recommend an amount of ~1 AR which is more than enough.
+
+In order to read in the wallet simply add the flag `--storage-priv "$(cat /path/to/arweave.json)"` later once
+the node gets started.
+
+#### Setting up a Bundlr wallet
+
+Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
+with garanteed transaction finality.
+
+In order to setup a Bundlr wallet follow the exact same steps as in **Setting up an Arweave wallet**. After
+completing the above steps the easiest way to setup the bundlr wallet is to install the Bundlr CLI:
+
+```bash
+npm install -g @bundlr-network/client
+```
+
+In order to fund the bundlr node simply execute the following, where arweave.json is your Arweave keyfile
+which holds some funds:
+
+```bash
+$ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
+
+> ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> Y / N y
+> Funding receipt:
+> Amount: 1000000000000 with Fee: 1379016 to 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo
+> ID: 7cI6jpfpx6A2z8F5AoVHvZn9Az_BWPgvKzBCoE5w07A
+```
+
+In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 mins
+you can view your balance with:
+
+```bash
+$ bundlr balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.bundlr.network -c arweave
+
+> Balance: 1000000000000 Winston (1AR)
+```
+
+In order to withdraw your funds from Bundlr simply execute:
+
+```bash
+$ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
+
+> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> Y / N y
+> Withdrawal request for 500000000000 winston successful
+> Transaction ID: xcmxJmHyNS502fzqiT66rNeIOSldKGDWR8XsL9auDfs with network fee 1379016 for a total cost of 2858032
+```
+
+In order to read in the wallet simply add the flag `--storage-priv "$(cat /path/to/arweave.json)"` later once
+the node gets started.
+
+More information about the Bundlr CLI can be found [here](https://docs.bundlr.network/docs/client/cli)
+
+### Create a Validator account
+
+With a pool you can join now and a well funded storage provider account you can finally create your validator account which will hold all of your self delegation. The first step you be to connect with you wallet to the KYVE app.
+
+::: warning
+**IMPORTANT**: We would highly recommend creating the valaccount from a cold wallet like a Ledger since
+this wallet will hold all of your delegation and rewards. If you loose that wallet you loose all of your stake.
+You just need to connect this wallet to the app in order to create the account or claim your rewards later.
+:::
+
+Once you have a wallet connected to the app you have to enable the `Expert mode`. This mode allows you to create a validator account with the currently connected
+wallet. You can find the expert mode button in the drawer on the left right at the bottom.
+
+![expert mode](/expert_mode.png)
+
+With expert mode enabled you can now head over to the `Validators` page and click on the top right to
+create a Validator.
+
+![create validator](/create_validator.png)
+
+If the validator was successfully created you should have been routed to your dedicated validator page were
+you can see all the information about your validator including other delegations and performance metrics.
+
+### 2. Run protocol nodes
+
+Running a protocol node can be done in 3 ways, we recommend running the node with Option 1.
+
+#### Option 1: Run with KYSOR (recommended)
 
 **Running nodes with KYSOR has the following benefits:**
 
@@ -67,255 +181,310 @@ This example will show how to run a protocol node on a linux system on the Moonb
 - Getting the new upgrade binaries during a pool upgrade **automatically** and therefore **don't risk timeout slashes**
 - Make running protocol nodes **standardized** and **easier**
 
-#### Installation
+**Installation**
 
-Currently, there are no binaries for the KYSOR, therefore it has to be installed and build manually by cloning the repository:
+Get the latest release of the KYSOR binaries
 
 ```bash
-git clone https://github.com/kyve-org/kysor.git
-cd kysor
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-x64.zip
 ```
 
-#### Install dependencies
-
-In order to get started run the following in the project root directory:
+```bash
+unzip kysor-linux-x64.zip
+```
 
 ```bash
+mv kysor-linux-x64 kysor
+```
+
+```bash
+chmod +x kysor
+```
+
+Available KYSOR binaries for platforms:
+
+linux-arm64
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-arm64.zip
+```
+
+linux-x64
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-x64.zip
+```
+
+macos-x64
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-macos-x64.zip
+```
+
+**Initialize KYSOR**
+
+Once you have successfully downloaded the KYSOR binary you have to initialize it.
+
+When you init the KYSOR you need to specify the network you should run on and if the KYSOR should automatically download and execute the binaries for you. Since we are in korellia testnet
+we would recommend initializing with the following properties:
+
+```bash
+./kysor init --network korellia --auto-download-binaries
+```
+
+This command creates a `config.toml` under the following directory: `$HOME/.kysor/`. You can edit this file if you wish to change the network or the auto download.
+
+::: warning
+**IMPORTANT**: Since we are in testnet it is okay to leave auto download on, but once KYVE is in mainnet we would highly recommend turning auto download off and compiling the upgrade binaries yourself. You can find more information below for how to upgrade with KYSOR manually.
+:::
+
+**Create your first valaccount**
+
+Now that KYSOR is initalized we move on to the next step. For every pool you run on a _valaccount_ has to be created. In our example, we want to run on the Moonbeam pool with Pool Id `0`. A new valaccount with a new mnemonic can be created in the following way:
+
+```bash
+./kysor valaccounts create \
+--name moonbeam \
+--pool 0 \
+--storage-priv "$(cat path/to/arweave.json)" \
+--verbose \
+--metrics
+```
+
+This will create a `moonbeam.toml` file under the kysor home directory in `$HOME/.kysor/valaccounts/`. There you can view your valaccount config.
+
+If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
+
+```bash
+./kysor valaccounts create \
+--name moonbeam \
+--pool 0 \
+--storage-priv "$(cat path/to/arweave.json)" \
+--verbose \
+--metrics \
+--recover
+```
+
+This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
+
+If you want to port your valaccounts over from the old system (evm version <= 1.8.5 and celo version <= 0.8.5) you have to perform the following command to retrieve the mnemonic of your existing valaccounts:
+
+```bash
+./old-kyve-binary valaccounts reveal <name>
+```
+
+Then you can import this mnemonic with the `--recover` flag into the new system with KYSOR.
+
+::: warning
+**INFORMATION**: Of course multiple valaccounts can be created for each pool. We would recommend naming the valaccounts after the pool you want to run with this account on like in this case `moonbeam` for example. These names are just used locally for config management. Also if you have multiple valaccounts running on the same machine you are required to change the port of the metrics server (if enabled of course) so the don't overlap.
+:::
+
+**Run the KYSOR**
+
+After you have created the required valaccounts you can simply start running the KYSOR with the following command:
+
+```bash
+./kysor start --valaccount moonbeam
+```
+
+When KYSOR is running, you can proceed with step 3.
+
+**Run KYSOR on multiple pools**
+
+If you want to run KYSOR with multiple pools you only have to edit one configuration in the valaccounts. The Protocol Nodes starts a metrics prometheus server if the option `metrics` is enabled. On default the metrics server is available under the following endpoint: `http://localhost:8080/metrics`. If you start on multiple pools those servers would collide because of the same port. You can solve this by editing the valaccounts config toml and specifying a different port for each valaccount.
+
+**Run the KYSOR without auto download**
+
+If you want to run the KYSOR without auto download enabled like it would be recommended in mainnet just set the property `autoDownloadBinaries` to false in the `$HOME/.kysor/config.toml`. After that you should restart the KYSOR to make changes available.
+
+Before an upgrade you are then required to prebuild the upgrade binaries **yourself** and place them in the correct path. Once you have the upgrade binary compiled move them to the following directory **before** the upgrade:
+
+```bash
+mv kyve-upgrade-binary $HOME/.kysor/upgrades/pool-$pool/$version/bin
+```
+
+$POOL is the pool id where the binary should run on. For example for the Moonbeam pool with pool id `0` and upgrade version `1.9.0` you should move the upgrade binary to the following folder:
+
+```bash
+mv kyve-moonbeam-binary $HOME/.kysor/upgrades/pool-0/1.9.0/bin/
+```
+
+The upgrade binaries of each version in korellia will be available here: [github.com/KYVENetwork/node/releases](https://github.com/KYVENetwork/node/releases)
+
+**General KYSOR directory structure**
+
+Knowing where KYSOR saves it's logs and binaries can be helpful. The example below shows the following setup: The KYSOR runs on two pools with pool id `0` and `2`. Pool `2` is still running on version `0.8.6` while pool `0` has already upgraded from `1.8.6` to `1.8.7`
+
+```
+.kysor
+├── config.toml
+├── logs
+│   └── 2022-09-29T08:38:24.513Z.log
+│   └── 2022-09-29T09:29:22.219Z.log
+├── upgrades
+│   ├── pool-0
+│   |   ├── 1.8.6
+│   |   |   ├── bin
+│   |   |   │   └── kyve-linux-x64
+│   |   |   ├── cache
+|   |   |   │   ├── 234.json
+|   |   |   │   └── ...
+│   |   |   └── logs
+│   |   |       ├── 2022-09-29T08:23:02.003Z.log
+│   |   |       └── 2022-09-29T08:23:24.953Z.log
+│   |   └── 1.8.7
+│   |       ├── bin
+│   |       │   └── kyve-linux-x64
+│   |       ├── cache
+|   |       │   ├── 567.json
+|   |       │   └── ...
+│   |       └── logs
+│   |           └── 2022-09-29T08:23:24.953Z.log
+│   └── pool-2
+│       └── 0.8.6
+│           ├── bin
+│           │   └── kyve-linux-x64
+│           ├── cache
+|           │   ├── 3847.json
+|           │   └── ...
+│           └── logs
+│               └── 2022-09-29T08:23:02.003Z.log
+└── valaccounts
+    ├── moonbeam.toml
+    └── celo.toml
+```
+
+Here the following directories have the following reason:
+
+- `.kysor` - KYSOR home directory, created with init command
+- `config.toml` - general KYSOR config, created with init command
+- `logs` - logs folder containing KYSOR log files. Each log file is a run from start to end where the date is the starting date
+- `upgrades` - most important directory, contains all the binaries for every pool
+- `upgrades/pool-$id` - holds every binary of every installed version of the specified pool
+- `upgrades/pool-$id/$version` - acts as a home directory for a specific binary, contains binary cache, logs and actual protocol node binary
+- `upgrades/pool-$id/$version/bin` - holds actual node binary
+- `upgrades/pool-$id/$version/cache` - contains cached data relevant for the protocol node
+- `upgrades/pool-$id/$version/logs` - logs folder for the protocol node of that version and pool. Each log file is a run from start to end where the date is the starting date
+- `valaccounts` - contains all the valaccount config files with which the KYSOR can run on a pool
+
+**Run KYSOR with systemd**
+
+For the daemon service root-privileges are required during the setup. Create a service file. $USER is the Linux user which runs the process. Replace it before you copy the command.
+
+Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `moonbeam`
+
+```bash
+tee <<EOF > /dev/null /etc/systemd/system/moonbeamd.service
+[Unit]
+Description=KYVE Protocol-Node moonbeam daemon
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=/home/$USER/kysor start --valaccount moonbeam
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=infinity
+EOF
+```
+
+Start the daemon
+
+```bash
+sudo systemctl enable moonbeamd
+sudo systemctl start moonbeamd
+```
+
+It can be stopped using
+
+```
+sudo systemctl stop moonbeamd
+```
+
+You can see its logs with
+
+```
+sudo journalctl -u moonbeamd -f
+```
+
+#### Option 2: Run prebuild binaries
+
+You can download the current protocol node binaries here: [github.com/KYVENetwork/node/releases](https://github.com/KYVENetwork/node/releases)
+
+For example, if we want to run on the Moonbeam pool with Pool Id _0_ we can do the following:
+
+```bash
+wget todo
+unzip kyve-linux-x64.zip
+chmod +x kyve-linux-x64
+```
+
+To run the protocol node the following command needs to be executed:
+
+```bash
+./kyve-linux-x64 start
+--pool 0 \
+--valaccount "your mnemonic ..."
+--storage-priv "$(cat path/to/arweave.json)" \
+--network "korellia" \
+--metrics \
+```
+
+The valaccount has to be created prior to this step. The easiest way is to just create it with Keplr or Cosmostation wallet and then export it.
+
+The logs and the cache files are generated in the current directory. You can specify the home directory with the optional flag _--home_.
+
+The prometheus metrics server runs default on port 8080, you can overwrite that with the optional flag _--metrics-port_
+
+#### Option 3: Compile binaries yourself and run manually
+
+For compiling the node protocol binaries yourself you can clone the KYVE monorepo here [github.com/KYVENetwork/node](https://github.com/KYVENetwork/node).
+
+To build the evm binaries execute the following commands:
+
+```bash
+git clone git@github.com:KYVENetwork/node.git
+cd node
+
 yarn install
-```
+yarn setup
 
-#### Setup
-
-General directory structure and important files:
-
-- `src` contains all the source code of KYSOR
-- `kysor.conf.ts` is the main config file. It is explained in more detail below
-- `secrets` is the directory where your secrets are stored like `arweave.json` and `mnemonic.txt`
-- `runtimes` will be autogenerated once you start KYSOR and will contain all binaries structured by runtime and version
-- `db` will be autogenerated once you start KYSOR and will contain all caching data for the protocol nodes
-- `logs` will be autogenerated once you start KYSOR and will contain all log data for the protocol nodes
-
-In order to setup KYSOR the following secrets need to be added under the `secrets` directory. If this directory does not exist yet create it in project root.
-
-- `arweave.json` this is the Arweave keyfile you need to provide in order to run protocol nodes. This one keyfile will be used for **all** of your protocol nodes
-- `mnemonic.txt` this is the file which contains your mnemonic of your validator account. This one mnemonic will be used for **all** of your protocol nodes
-
-After adding the required secrets you can check the `kysor.conf.ts` file. When you initially open it, it should look like this:
-
-```ts
-import { IConfig } from './src/faces';
-
-const config: IConfig = {
-  // target of the host machine, can be either "linux" or "macos"
-  // important for downloading the correct binaries
-  hostTarget: 'linux',
-
-  // whether KYSOR should auto download new binaries
-  // if set to false, you have to insert the binaries manually
-  autoDownload: true,
-
-  // whether KYSOR should verify the checksums of downloaded binaries
-  // if autoDownload is false this option can be ignored
-  verifyChecksums: true,
-
-  // settings for protocol node
-  // notice that mnemonic and keyfile is missing, those need to be files under the secrets directory
-  protocolNode: {
-    // the ID of the pool you want to join as a validator
-    // an overview of all pools can be found here -> https://app.kyve.network
-    poolId: 0,
-
-    // the network you want to run on
-    // currently only the testnet network "korellia" is available
-    network: 'korellia',
-
-    // the amount of $KYVE you want to stake
-    // will only get applied if you are not a validator yet
-    // once you are a validator you can manage your stake in the KYVE app
-    initialStake: 100,
-
-    // the amount of bytes the node can use at max to cache data
-    // 1000000000 equals 1 GB which is usually enough
-    space: 1000000000,
-
-    // specify verbose logging
-    // is often recommended in order to have a more detailed insight
-    verbose: true,
-  },
-};
-
-export default config;
-```
-
-Since this file is commented and explained in detail the info regarding config properties can be found in this file.
-Every time you edit the config file you have to build the project with `yarn build`.
-
-After entering your config like the `poolId` and your `initialStake` and other settings that are required to run a protocol node on a pool you can start KYSOR by running
-
-```
-yarn build
-yarn start
-```
-
-When you see logs like this everything should work fine
-
-```ts
-2022-05-19 13:54:00.299  INFO  Starting KYSOR ...
-2022-05-19 13:54:00.299  INFO  Validating files ...
-2022-05-19 13:54:00.300  INFO  Found kysor.conf.ts
-2022-05-19 13:54:00.300  INFO  Found arweave.json
-2022-05-19 13:54:00.300  INFO  Found mnemonic.txt
-2022-05-19 13:54:00.300  INFO  Creating "runtimes" directory ...
-2022-05-19 13:54:00.300  INFO  Attempting to fetch pool state.
-2022-05-19 13:54:00.543  INFO  Fetched pool state
-2022-05-19 13:54:00.543  INFO  Binary of runtime "@kyve/evm" with version 1.0.5 not found locally
-2022-05-19 13:54:00.544  INFO  Found downloadable binary on pool
-2022-05-19 13:54:00.545  INFO  Downloading https://github.com/kyve-org/evm/releases/download/v1.0.5/kyve-linux.zip?checksum=8662ddeb3a3e0eaedbbb5a665a4fa0eed12448349218ef0d98afed25cfacd60c ...
-2022-05-19 13:54:01.910  INFO  Extracting binary to "./runtimes/@kyve/evm/1.0.5/kyve.zip" ...
-2022-05-19 13:54:02.315  INFO  Deleting kyve.zip ...
-2022-05-19 13:54:02.664  INFO  Comparing binary checksums ...
-
-2022-05-19 13:54:02.666  INFO  Found checksum = 8662ddeb3a3e0eaedbbb5a665a4fa0eed12448349218ef0d98afed25cfacd60c
-2022-05-19 13:54:02.666  INFO  Local checksum = 8662ddeb3a3e0eaedbbb5a665a4fa0eed12448349218ef0d98afed25cfacd60c
-
-2022-05-19 13:54:02.666  INFO  Checksums are equal. Continuing ...
-2022-05-19 13:54:02.666  INFO  Starting child process ...
-
-
-2022-05-19 13:54:06.858  INFO  Starting node ...
-
-2022-05-19 13:54:06.861  INFO  Name              = impressed-emerald-spoonbill
-2022-05-19 13:54:06.953  INFO  Address           = kyve1eka2hngntu5r2yeuyz5pd45a0fadarp3zue8gd
-2022-05-19 13:54:06.954  INFO  Pool Id           = 0
-2022-05-19 13:54:06.954  INFO  @kyve/core        = v1.0.8
-2022-05-19 13:54:06.954  INFO  @kyve/evm         = v1.0.5
-
-2022-05-19 13:54:06.955  DEBUG Attempting to fetch pool state.
-2022-05-19 13:54:07.245  INFO  Running node on runtime @kyve/evm.
-2022-05-19 13:54:07.248  INFO  Pool version requirements met
-2022-05-19 13:54:07.249  INFO  Fetched pool state
-2022-05-19 13:54:07.349  INFO  Node is already staked. Skipping ...
-2022-05-19 13:54:07.350  INFO  Running node with a stake of 100.0000 $KYVE
-```
-
-### Get the prebuilt binaries
-
-For our case, the prebuilt binaries every operating system can be downloaded [here](https://github.com/KYVENetwork/evm/releases) for every operating system. For example on EVM it would be `evm-linux`, `evm-macos`.
-
-In general, you can get the binaries by clicking on the `Become a validator` button and following the steps until you're on the section `Get node binaries`.
-
-![become validator](/become_validator.png)
-
-Once you're there click the button `KYVE node` which should lead you to the github repository.
-
-![protocol binaries](/protocol_binaries.png)
-
-Once you're on releases you can download the latest binary for your operating system. In our case we download the `evm-macos.zip` and unzip it locally.
-
-![protocol binary download](/protocol_binary_download.png)
-
-When you have downloaded and unzipped the binary correctly you can proceed to [how to verify your binary](/getting-started/protocol-node.md#verify-that-your-binary-has-been-built-correctly)
-
-### Manually build the binaries
-
-Since we want to run a protocol node on a `@kyve/evm` runtime pool we have to clone the correct repository. In our
-case clone the [EVM repository](https://github.com/KYVENetwork/evm) and make sure your are on branch `main`.
-
-```bash
-git clone https://github.com/KYVENetwork/evm.git
-cd evm
-```
-
-Now run the following commands to install dependencies and build the binaries
-
-```bash
-yarn install
+cd integrations/evm
 yarn build:binaries
 ```
 
-Once the binaries have been build you should see three binaries (one for every operating system) in the `out` directory.
+After that the binaries should be available under the following path: `/integrations/evm/out/*`
 
-### Verify that your binary has been built correctly
+### 3. Finally join a pool with a valaccount
 
-Execute the binary using the following command to see the available options (example is on a MacOS machine)
+After the node is running you can finally join the pool with your valaccount.
 
-```bash
-./evm-macos --help
-```
-
-If everything is set up correctly you should see the following
+If the node is starting for the first time, you should something like this in the logs:
 
 ```
-Usage: @kyve/evm [options]
+2022-09-28 06:37:46.536  INFO  Valaccount kyve1psw3gt65hg3jzt3hqhayg6r7j42330nf49pyvc has not joined the pool with id 0 yet
+2022-09-28 06:37:46.539  INFO  Visit https://app.kyve.network/#/pools/0 and add join the pool with the following information:
 
-Options:
-  --name <string>              The identifier name of the node. [optional, default = auto generated]
-  -p, --poolId <number>        The id of the pool you want to run on.
-  -m, --mnemonic <string>      Your mnemonic of your account.
-  -k, --keyfile <string>       The path to your Arweave keyfile.
-  -s, --initialStake <number>  Your initial stake the node should start with. Flag is ignored node is already staked [unit = $KYVE].
-  -n, --network <string>       The chain id of the network. [optional, default = korellia] (default: "alpha")
-  -sp, --space <number>        The size of disk space in bytes the node is allowed to use. [optional, default = 1000000000 (1 GB)] (default: "1000000000")
-  -b, --batchSize <number>     The batch size of fetching items from datasource. For synchronous fetching enter 1. [optional, default = 1]
-  --metrics                    Run Prometheus metrics server. [optional, default = false] (default: false)
-  -v, --verbose                Run node in verbose mode. [optional, default = false] (default: false)
-  --version                    output the version number
-  -h, --help                   display help for command
+2022-09-28 06:37:46.540  INFO  Valaddress:    kyve1psw3gt65hg3jzt3hqhayg6r7j42330nf49pyvc
+2022-09-28 06:37:46.541  INFO  Valname:       xenacious-amethyst-penguin
+
+2022-09-28 06:37:46.541  INFO  The node will not continue until the account is authorized
 ```
 
-### Start your node
+With this information (`Valaddress` and `Valname`) you can head over the the KYVE app and join the pool.
 
-To run your node, copy your Arweave keyfile into your working directory and fetch the mnemonic from Keplr.
-Here it is important that you enter the correct `--poolId`, your `--mnemonic` and your desired `--initialStake`.
-In our case, we initially stake 10,000 $KYVE to ensure that we get a validator slot.
+Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
-Run the following command with the same binary as above
+A dialog should open where you should select the pool you want to join (here Moonbeam). After that enter the Valaddress that needs to be authorized and the Valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
 
-```bash
-./evm-macos --poolId 0 --mnemonic "your mnemonic in here ..." --initialStake 10000 --keyfile ./arweave.json --network korellia
-```
+For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 1000 $KYVE for the start. Make sure that the valaccount always has enough $KYVE to pay for the fees, otherwise you are again in danger of receiving a timeout slash.
 
-If your node has started correctly, it should print some logs like this:
+Once you have joined the pool the node should continue in about ~10 seconds. After that you are successfully participating in a pool.
 
-```
-2022-04-07 14:43:18.673  INFO  Starting node ...
+### 4. Join multiple pools if you want to increase your rewards
 
-2022-04-07 14:43:18.676  INFO  Name               = cute-maroon-pinniped
-2022-04-07 14:43:18.736  INFO  Address            = kyve1zpmetvqgeuh6ua4q5cnajay6u4uhuuvnjt85m7
-2022-04-07 14:43:18.737  INFO  Pool Id            = 0
-2022-04-07 14:43:18.737  INFO  @kyve/core         = v1.0.2
-2022-04-07 14:43:18.738  INFO  @kyve/evm          = v1.0.1
+This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the steps from point 4. You can see all the pools you are participating in your validator page.
 
-2022-04-07 14:43:18.739  DEBUG Attempting to fetch pool state.
-2022-04-07 14:43:19.059  INFO  Running node on runtime @kyve/evm.
-2022-04-07 14:43:19.064  INFO  Pool version requirements met
-2022-04-07 14:43:19.066  INFO  Fetched pool state
-2022-04-07 14:43:19.172  DEBUG Staking 100.0000 $KYVE ...
-2022-04-07 14:43:19.883  DEBUG Transaction = FA101B41873129D16937947ED1460F48A8EFD693B9CD7F12E65F221B5B7C9556
-2022-04-07 14:43:26.243  INFO  Successfully staked 100.0000 $KYVE
-2022-04-07 14:43:26.246  INFO  Running node with a stake of 100.0000 $KYVE
-
-2022-04-07 14:43:26.247  INFO  Joining KYVE network ...
-
-2022-04-07 14:43:26.370  DEBUG Attempting to verify node.
-2022-04-07 14:43:26.371  INFO  Node is running as a validator.
-
-2022-04-07 14:43:26.374  INFO  Starting new proposal
-2022-04-07 14:43:26.377  INFO  Cached to height = 0
-2022-04-07 14:43:26.489  INFO  Selected as VALIDATOR
-2022-04-07 14:43:26.608  INFO  Validating bundle sYNwr1BttK_WmIkjXJILjjcn60IHSX64QpBqi2fCyuU
-2022-04-07 14:43:26.776  DEBUG Downloading bundle from Arweave ...
-2022-04-07 14:43:27.648  DEBUG Successfully downloaded bundle from Arweave
-
-...
-```
-
-### Verify node stake
-
-When you look at your node logs you should then see that the node is starting to verify bundles.
-
-After you have successfully staked you should see your address in the Pool validators table.
-
-![verify stake](/verify_stake.png)
-
-Also, you can now manage your stake through the app under `Manage stake`.
+::: warning
+**WARNING**: But beware, joining for example a second pool might double your rewards, but it would also double the danger of getting slashed.
+:::

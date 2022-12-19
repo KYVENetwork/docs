@@ -1,9 +1,15 @@
 {
+  "name": "kyve-docs",
+  "version": "1.0.0-beta",
+  "description": "KYVE Docs",
+  "productName": "KYVE",
+  "author": "Troy Kessler <troy.kessler99@gmail.com>",
+  "private": true,
   "scripts": {
-    "build": "vuepress build",
-    "format": "prettier --write .",
-    "serve": "vuepress dev --no-cache",
-    "start": "serve .vuepress/dist"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build",
+    "format": "export NODE_OPTIONS=--openssl-legacy-provider && prettier --write .",
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev --no-cache",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && serve .vuepress/dist"
   },
   "dependencies": {
     "serve": "^13.0.2",
