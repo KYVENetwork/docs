@@ -147,7 +147,7 @@ More information about the Bundlr CLI can be found [here](https://docs.bundlr.ne
 
 ### Create a Validator account
 
-With a pool you can join now and a well funded storage provider account you can finally create your validator account which will hold all of your self delegation. The first step you be to connect with you wallet to the KYVE app.
+With a pool you can join now and a well funded storage provider account you can finally create your validator account which will hold all of your self delegation. The first step is to connect your wallet to the KYVE app.
 
 ::: warning
 **IMPORTANT**: We would highly recommend creating the valaccount from a cold wallet like a Ledger since
