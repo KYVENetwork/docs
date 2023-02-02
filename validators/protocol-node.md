@@ -183,10 +183,10 @@ Running a protocol node can be done in 3 ways, we recommend running the node wit
 
 **Installation**
 
-Get the latest release of the KYSOR binaries
+Get the latest release of the KYSOR binaries [here](https://github.com/KYVENetwork/kyvejs/releases?q=kysor&expanded=true)
 
 ```bash
-wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-linux-x64.zip
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%40$VERSION/kysor-linux-x64.zip
 ```
 
 ```bash
@@ -198,7 +198,7 @@ mv kysor-linux-x64 kysor
 ```
 
 ```bash
-chmod +x kysor
+chmod 700 kysor
 ```
 
 Available KYSOR binaries for platforms:
@@ -221,6 +221,12 @@ macos-x64
 wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.1/kysor-macos-x64.zip
 ```
 
+To verify that the KYSOR runs successfully just run
+
+```bash
+./kysor version
+```
+
 **Initialize KYSOR**
 
 Once you have successfully downloaded the KYSOR binary you have to initialize it.
@@ -229,10 +235,10 @@ When you init the KYSOR you need to specify the network you should run on and if
 we would recommend initializing with the following properties:
 
 ```bash
-./kysor init --network korellia --auto-download-binaries
+./kysor init --chain-id korellia --rpc https://rpc.korellia.kyve.network/ --rest https://api.korellia.kyve.network/ --auto-download-binaries
 ```
 
-This command creates a `config.toml` under the following directory: `$HOME/.kysor/`. You can edit this file if you wish to change the network or the auto download.
+This command creates a `config.toml` under the following directory: `$HOME/.kysor/`. You can edit this file if you wish to change the chain Id or the auto download feature.
 
 ::: warning
 **IMPORTANT**: Since we are in testnet it is okay to leave auto download on, but once KYVE is in mainnet we would highly recommend turning auto download off and compiling the upgrade binaries yourself. You can find more information below for how to upgrade with KYSOR manually.
@@ -267,14 +273,6 @@ If you want to create a valaccount from an existing mnemonic just add the `--rec
 
 This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
 
-If you want to port your valaccounts over from the old system (evm version <= 1.8.5 and celo version <= 0.8.5) you have to perform the following command to retrieve the mnemonic of your existing valaccounts:
-
-```bash
-./old-kyve-binary valaccounts reveal <name>
-```
-
-Then you can import this mnemonic with the `--recover` flag into the new system with KYSOR.
-
 ::: warning
 **INFORMATION**: Of course multiple valaccounts can be created for each pool. We would recommend naming the valaccounts after the pool you want to run with this account on like in this case `moonbeam` for example. These names are just used locally for config management. Also if you have multiple valaccounts running on the same machine you are required to change the port of the metrics server (if enabled of course) so the don't overlap.
 :::
@@ -289,6 +287,12 @@ After you have created the required valaccounts you can simply start running the
 
 When KYSOR is running, you can proceed with step 3.
 
+You can also start the process in debug mode by adding the `--debug` flag like this:
+
+```bash
+./kysor start --valaccount moonbeam --debug
+```
+
 **Run KYSOR on multiple pools**
 
 If you want to run KYSOR with multiple pools you only have to edit one configuration in the valaccounts. The Protocol Nodes starts a metrics prometheus server if the option `metrics` is enabled. On default the metrics server is available under the following endpoint: `http://localhost:8080/metrics`. If you start on multiple pools those servers would collide because of the same port. You can solve this by editing the valaccounts config toml and specifying a different port for each valaccount.
@@ -300,16 +304,16 @@ If you want to run the KYSOR without auto download enabled like it would be reco
 Before an upgrade you are then required to prebuild the upgrade binaries **yourself** and place them in the correct path. Once you have the upgrade binary compiled move them to the following directory **before** the upgrade:
 
 ```bash
-mv kyve-upgrade-binary $HOME/.kysor/upgrades/pool-$pool/$version/bin
+mv kyve-upgrade-binary $HOME/.kysor/upgrades/pool-$POOL/$VERSION/bin
 ```
 
-$POOL is the pool id where the binary should run on. For example for the Moonbeam pool with pool id `0` and upgrade version `1.9.0` you should move the upgrade binary to the following folder:
+$POOL is the pool id where the binary should run on. For example for the Moonbeam pool with pool id `0` and upgrade version `1.0.0-beta.6` you should move the upgrade binary to the following folder:
 
 ```bash
-mv kyve-moonbeam-binary $HOME/.kysor/upgrades/pool-0/1.9.0/bin/
+mv kyve-moonbeam-binary $HOME/.kysor/upgrades/pool-0/1.0.0-beta.6/bin/
 ```
 
-The upgrade binaries of each version in korellia will be available here: [github.com/KYVENetwork/node/releases](https://github.com/KYVENetwork/node/releases)
+The upgrade binaries of each version in korellia will be available here: [github.com/KYVENetwork/kyvejs/releases](https://github.com/KYVENetwork/kyvejs/releases)
 
 **General KYSOR directory structure**
 
@@ -409,14 +413,22 @@ sudo journalctl -u moonbeamd -f
 
 #### Option 2: Run prebuild binaries
 
-You can download the current protocol node binaries here: [github.com/KYVENetwork/node/releases](https://github.com/KYVENetwork/node/releases)
+You can download the current protocol node binaries here: [github.com/KYVENetwork/kyvejs/releases](https://github.com/KYVENetwork/kyvejs/releases)
 
 For example, if we want to run on the Moonbeam pool with Pool Id _0_ we can do the following:
 
 ```bash
 wget todo
 unzip kyve-linux-x64.zip
-chmod +x kyve-linux-x64
+chmod 700 kyve-linux-x64
+```
+
+In order to pass secrets like the valaccount mnemonic or the private key file of the storage provider we export them to the environment.
+This can be done in the following way:
+
+```bash
+export VALACCOUNT_MOONBEAM="your mnemonic ..."
+export STORAGE_PRIV_MOONBEAM="$(cat path/to/arweave.json)"
 ```
 
 To run the protocol node the following command needs to be executed:
@@ -424,10 +436,10 @@ To run the protocol node the following command needs to be executed:
 ```bash
 ./kyve-linux-x64 start
 --pool 0 \
---valaccount "your mnemonic ..."
---storage-priv "$(cat path/to/arweave.json)" \
---network "korellia" \
---metrics \
+--valaccount VALACCOUNT_MOONBEAM
+--storage-priv STORAGE_PRIV_MOONBEAM \
+--chain-id "korellia" \
+--metrics
 ```
 
 The valaccount has to be created prior to this step. The easiest way is to just create it with Keplr or Cosmostation wallet and then export it.
@@ -438,13 +450,13 @@ The prometheus metrics server runs default on port 8080, you can overwrite that 
 
 #### Option 3: Compile binaries yourself and run manually
 
-For compiling the node protocol binaries yourself you can clone the KYVE monorepo here [github.com/KYVENetwork/node](https://github.com/KYVENetwork/node).
+For compiling the node protocol binaries yourself you can clone the KYVE monorepo here [github.com/KYVENetwork/kyvejs](https://github.com/KYVENetwork/kyvejs).
 
 To build the evm binaries execute the following commands:
 
 ```bash
-git clone git@github.com:KYVENetwork/node.git
-cd node
+git clone git@github.com:KYVENetwork/kyvejs.git
+cd kyvejs
 
 yarn install
 yarn setup
@@ -477,7 +489,7 @@ Now that the node is already running it just needs the authorization from it's m
 
 A dialog should open where you should select the pool you want to join (here Moonbeam). After that enter the Valaddress that needs to be authorized and the Valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
 
-For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 1000 $KYVE for the start. Make sure that the valaccount always has enough $KYVE to pay for the fees, otherwise you are again in danger of receiving a timeout slash.
+For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 100 $KYVE for the start which typically lasts for about 1 month. Make sure that the valaccount always has enough $KYVE to pay for the fees, otherwise you are again in danger of receiving a timeout slash.
 
 Once you have joined the pool the node should continue in about ~10 seconds. After that you are successfully participating in a pool.
 
