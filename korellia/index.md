@@ -17,11 +17,11 @@ The following files and directories should be included: `config.toml`, `logs`, `
 
 ## 2. Get the newest KYSOR binary
 
-The newest binary is available [here](https://github.com/KYVENetwork/kyvejs/releases?q=kysor&expanded=true).
+The newest binary is available [here](https://github.com/KYVENetwork/kyvejs/releases/tag/%40kyve%2Fkysor%401.0.0-beta.5).
 To install the linux version the following command needs to be executed:
 
 ```bash
-wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.4/kysor-linux-x64.zip
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.5/kysor-linux-x64.zip
 ```
 
 ```bash
@@ -42,7 +42,7 @@ To verify the installation execute the version command:
 ./kysor version
 ```
 
-If the KYSOR version matches `1.0.0-beta.4` the new KYSOR is successfully installed.
+If the KYSOR version matches `1.0.0-beta.5` the new KYSOR is successfully installed.
 
 ## 3. Edit config.toml
 
