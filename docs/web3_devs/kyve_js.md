@@ -1,19 +1,20 @@
-<!--
-order: 1
--->
-
 # KYVE-JS
 
-Learn about the KYVE-JS Library for connecting clients to KYVE. {synopsis}
+Documentation is maintained on GitHub, KYVE-JS is the monorepo where
+all KYVE protocol level code sits. It consits of three main sections.
 
-[`kyve-js`](https://github.com/KYVENetwork/sdk) is a JavaScript and TypeScript client library for [KYVE](https://github.com/evmos/evmos).
+## Common
+
+holds all types for the KYVE application in typescript, the
+development kit for communicating with the KYVE blockchain and the core functionality for running validators on the KYVE
+network
 
 ## Tools
 
-- **Basic transaction generator**: used to create KYVE transactions
-- **Protobuf files**: used to create Cosmos Hub and KYVE transactions
-- **LCD client**: used to query the KYVE REST API and interact with KYVE chain nodes
+Tools that support the protocol like KYSOR
 
-## Package List
+## Integrations
 
--
+The code for all integrations. For more informations about integrations check
+this section. [link data engineers]
+
