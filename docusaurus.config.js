@@ -68,12 +68,12 @@ const config = {
             navbar: {
                 title: 'KYVE Network',
                 logo: {
-                    alt: 'My Site Logo',
+                    alt: 'KYVE Logo',
                     src: 'img/logo.svg',
                 },
                 items: [
                     {
-                        href: 'https://github.com/facebook/docusaurus',
+                        href: 'https://github.com/KYVENetwork',
                         label: 'GitHub',
                         position: 'right',
                     },
@@ -83,28 +83,15 @@ const config = {
                 style: 'dark',
                 links: [
                     {
-                        title: 'Docs',
-                        items: [
-                            {
-                                label: 'Tutorial',
-                                to: '/docs/intro',
-                            },
-                        ],
-                    },
-                    {
                         title: 'Community',
                         items: [
                             {
-                                label: 'Stack Overflow',
-                                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                            },
-                            {
                                 label: 'Discord',
-                                href: 'https://discordapp.com/invite/docusaurus',
+                                href: 'https://discord.gg/kyve',
                             },
                             {
                                 label: 'Twitter',
-                                href: 'https://twitter.com/docusaurus',
+                                href: 'https://twitter.com/KYVENetwork',
                             },
                         ],
                     },
@@ -112,12 +99,8 @@ const config = {
                         title: 'More',
                         items: [
                             {
-                                label: 'Blog',
-                                to: '/blog',
-                            },
-                            {
                                 label: 'GitHub',
-                                href: 'https://github.com/facebook/docusaurus',
+                                href: 'https://github.com/KYVENetwork',
                             },
                         ],
                     },
