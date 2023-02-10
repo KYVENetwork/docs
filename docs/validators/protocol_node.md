@@ -23,7 +23,7 @@ Before continuing, make sure that you have the [Keplr](https://keplr.app) or [Co
 
 Go to the faucet tab and claim some tokens via one of three faucets. The wheel is the easiest option.
 
-::: warning
+:::caution
 **IMPORTANT**: Make sure that you are on the correct app URL `https://app.kyve.network`
 :::
 
@@ -56,12 +56,12 @@ In this case all there are still 9 free validator slots so you just have to have
 in your validator in order to participate. If the slots would be full and the minimum delegation would be for example
 300 $KYVE, you have to have **more** than 300 $KYVE delegated in your validator.
 
-::: warning
+:::caution
 **INFORMATION**: It does not matter if you archieve the required delegation amount by self delegation or
 external delegation, the total delegation into your validator account matters.
 :::
 
-::: warning
+:::caution
 **IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount you can not continue!
 :::
 
@@ -141,7 +141,7 @@ More information about the Bundlr CLI can be found [here](https://docs.bundlr.ne
 
 With a pool you can join now and a well funded storage provider account you can finally create your validator account which will hold all of your self delegation. The first step is to connect your wallet to the KYVE app.
 
-::: warning
+:::caution
 **IMPORTANT**: We would highly recommend creating the valaccount from a cold wallet like a Ledger since
 this wallet will hold all of your delegation and rewards. If you loose that wallet you loose all of your stake.
 You just need to connect this wallet to the app in order to create the account or claim your rewards later.
@@ -232,7 +232,7 @@ we would recommend initializing with the following properties:
 
 This command creates a `config.toml` under the following directory: `$HOME/.kysor/`. You can edit this file if you wish to change the chain Id or the auto download feature.
 
-::: warning
+:::caution
 **IMPORTANT**: Since we are in testnet it is okay to leave auto download on, but once KYVE is in mainnet we would highly recommend turning auto download off and compiling the upgrade binaries yourself. You can find more information below for how to upgrade with KYSOR manually.
 :::
 
@@ -265,7 +265,7 @@ If you want to create a valaccount from an existing mnemonic just add the `--rec
 
 This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
 
-::: warning
+:::caution
 **INFORMATION**: Of course multiple valaccounts can be created for each pool. We would recommend naming the valaccounts after the pool you want to run with this account on like in this case `moonbeam` for example. These names are just used locally for config management. Also if you have multiple valaccounts running on the same machine you are required to change the port of the metrics server (if enabled of course) so the don't overlap.
 :::
 
@@ -459,7 +459,7 @@ yarn build:binaries
 
 After that the binaries should be available under the following path: `/integrations/evm/out/*`
 
-### 3. Finally join a pool with a valaccount
+## 3. Finally join a pool with a valaccount
 
 After the node is running you can finally join the pool with your valaccount.
 
@@ -489,6 +489,6 @@ Once you have joined the pool the node should continue in about ~10 seconds. Aft
 
 This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the steps from point 4. You can see all the pools you are participating in your validator page.
 
-::: warning
+:::caution
 **WARNING**: But beware, joining for example a second pool might double your rewards, but it would also double the danger of getting slashed.
 :::

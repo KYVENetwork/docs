@@ -22,7 +22,7 @@ that amount in order to avoid having to resize your volumes too quickly.
 
 ## Genesis Installation
 
-::: warning
+:::caution
 **IMPORTANT**:
 This guide assumes a GNU/Linux amd64 system.
 :::
@@ -72,7 +72,7 @@ the `p2p.persistent_peers` param, for example:
 ---p2p.persistent_peers 70556c82352b9919fb6f339b9da0ebc587e9148c@3.68.232.117:26656
 ```
 
-::: warning
+:::caution
 **IMPORTANT**:
 The node can be stopped with `ctrl + c`. You do not need to wait for it to sync. Setting up a daemon service is explained later in this chapter.
 :::
@@ -126,7 +126,7 @@ export DAEMON_NAME="chaind"
 export DAEMON_ALLOW_DOWNLOAD_BINARIES="true"
 ```
 
-::: warning
+:::caution
 **IMPORTANT**: For production grade validator nodes it is highly recommended turning off auto download and downloading binaries manually instead.
 :::
 
