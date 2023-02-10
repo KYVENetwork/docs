@@ -1,4 +1,8 @@
-# Storage Providers
+---
+sidebar_position: 0
+---
+
+# Overview
 
 Storage providers are the backbone of KYVEs data storage. Select the desired ID in your pool configuration to apply them
 to your runtime.

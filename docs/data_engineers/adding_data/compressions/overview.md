@@ -1,4 +1,8 @@
-# Compression
+---
+sidebar_position: 0
+---
+
+# Overview
 
 KYVE allows developers to use compression or other algorithms on the data before it's stored on the storage provider.
 There are already some types of compressions available. The implementations can be

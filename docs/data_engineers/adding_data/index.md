@@ -1,9 +1,5 @@
 ---
-title: Getting Started
-order: 1
-parent:
-  title: Adding Data
-  order: 3
+sidebar_position: 0
 ---
 
 # Adding data
