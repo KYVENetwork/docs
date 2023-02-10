@@ -1,11 +1,10 @@
-<!--
-order: 1
-title: "Overview"
--->
+---
+sidebar_position: 5
+---
 
-# Governance Overview
+# Governance
 
-::: tip
+:::tip
 **Note:** Working on a governance proposal? Make sure to look at the [best practices](./best_practices.md).
 :::
 

@@ -1,12 +1,8 @@
 ---
-title: Pool economics
-order: 1
-parent:
-  title: Advanced
-  order: 4
+sidebar_position: 4
 ---
 
-# Pool economics
+# Pool Economics
 
 Keeping pools funded and therefore keeping the data flowing while at the same time keeping validators' stakes secured and incentivized is a challenge. KYVE designed pools to fulfill all those needs.
 

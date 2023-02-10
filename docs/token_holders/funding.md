@@ -1,9 +1,5 @@
 ---
-title: Funding
-order: 5
-parent:
-  title: Basics
-  order: 2
+sidebar_position: 3
 ---
 
 # Funding
@@ -20,6 +16,6 @@ Projects/Users who are building business cases with the pools data. They want to
 
 You can fund a pool through the KYVE [app](https://app.kyve.network). Select a pool you are interested in and click on the funding tab to become a funder. You can always withdraw your funds.
 
-::: warning
+:::caution
 **IMPORTANT**: Funding will not earn you rewards! The opposite is the case. Funders pay for the staking rewards in a pool and are therefore necessary for a pool to function. You should only fund if you have an interest in the data being archived
 :::
