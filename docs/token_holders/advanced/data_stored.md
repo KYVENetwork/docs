@@ -99,7 +99,7 @@ distributed to the delegators. The remaining 90% will then be automatically tran
 
 If voters have validated incorrectly (nodes who have voted invalid if the quorum was valid) will receive a vote slash.
 The amount of the vote slash can be seen on the network page on the KYVE app. More on slashes can be
-found [here](/token_holders/staking_delegation#slashing.md).
+found [here](/token_holders/staking_delegation.md#slashing).
 
 If more than 50% of the validators voted invalid, there would be no bundle reward for the uploader. The opposite will be
 the case, and the uploader will receive an upload slash. The amount of the slash can also be seen on the network page.
