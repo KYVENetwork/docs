@@ -10,7 +10,7 @@ to your runtime.
 ## Existing storage providers
 
 | ID  | Name       | Description                          |
-|-----|------------|--------------------------------------|
+| --- | ---------- | ------------------------------------ |
 | 0   | No Storage | Data does not get stored             |
 | 1   | Arweave    | Uses Arweave to store data           |
 | 2   | Bundlr     | Uses Bundlr to store data on Arweave |
@@ -25,15 +25,14 @@ class. The interface is well-documented and requires you to overwrite a few func
 First, instantiate an empty class, which implements the interface
 
 ```typescript
-export class MyCustomStorageProvider implements IStorageProvider {
-}
+export class MyCustomStorageProvider implements IStorageProvider {}
 ```
 
 Secondly, overwrite the `name` and `decimals` fields.
 
 ```typescript
 export class MyCustomStorageProvider implements IStorageProvider {
-  public name = 'MyCustomStorageProvider';
+  public name = "MyCustomStorageProvider";
   public decimals = 9;
 }
 ```
@@ -43,7 +42,7 @@ using KYSOR to run the runtime later, this key will be accessible through the ke
 
 ```typescript
 export class MyCustomStorageProvider implements IStorageProvider {
-  public name = 'MyCustomStorageProvider';
+  public name = "MyCustomStorageProvider";
   public decimals = 9;
 
   init(storagePriv: string) {
@@ -67,7 +66,7 @@ In the last step, overwrite the three main functions.
 
 ```typescript
 export class MyCustomStorageProvider implements IStorageProvider {
-  public name = 'MyCustomStorageProvider';
+  public name = "MyCustomStorageProvider";
   public decimals = 9;
 
   init(storagePriv: string) {
@@ -91,7 +90,7 @@ export class MyCustomStorageProvider implements IStorageProvider {
     // made-up storage provider
     const { data: bundle } = await axios.get(
       `https://myexamplestorageprivder.net/${storageId}`,
-      { responseType: 'arraybuffer', timeout }
+      { responseType: "arraybuffer", timeout }
     );
     return bundle;
   }

@@ -17,4 +17,3 @@ Tools that support the protocol like KYSOR
 
 The code for all integrations. For more informations about integrations check
 this section. [link data engineers]
-

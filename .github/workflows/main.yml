@@ -1,5 +1,5 @@
 name: vale
-on: [ push ]
+on: [push]
 
 jobs:
   vale:

@@ -14,4 +14,3 @@ rangy, no doubt enabling KYVE’s vision.
 
 Because of Arweaves unique feature - Pay
 now, store forever - KYVE chose Arweave as a layer 0, laying the foundation for the KYVE Network.
-

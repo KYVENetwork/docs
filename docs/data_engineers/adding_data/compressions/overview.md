@@ -12,7 +12,7 @@ Select the desired ID in your pool configuration to apply them to your runtime.
 ## List of existing compressions
 
 | ID  | Name           | Description                          |
-|-----|----------------|--------------------------------------|
+| --- | -------------- | ------------------------------------ |
 | 0   | No Compression | -                                    |
 | 1   | GZip           | Uses GZip as a compression algorithm |
 
@@ -28,13 +28,13 @@ A name and a MimeType have to be added to enrich the metadata of the implementat
 ### Example: GZip
 
 ```ts
-import { gunzipSync, gzipSync } from 'zlib';
+import { gunzipSync, gzipSync } from "zlib";
 
-import { ICompression } from '../../types';
+import { ICompression } from "../../types";
 
 export class Gzip implements ICompression {
-  public name = 'Gzip';
-  public mimeType = 'application/gzip';
+  public name = "Gzip";
+  public mimeType = "application/gzip";
 
   async compress(data: Buffer) {
     return gzipSync(data);

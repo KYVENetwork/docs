@@ -111,7 +111,7 @@ class KyveSolana extends KYVE {
 Let's take a closer look at the `fetchBlock` helper method, which in this case lives in its own `utils.ts` file.
 
 ```ts
-import { BlockResponse, Connection } from '@solana/web3.js';
+import { BlockResponse, Connection } from "@solana/web3.js";
 
 // NOTE: The response type isn't correct because of our patch.
 export async function fetchBlock(
@@ -130,10 +130,10 @@ function initialiseSolanaRPC(
 ): Connection {
   return new Connection(endpoint, {
     httpHeaders: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Signature: signature.signature,
-      'Public-Key': signature.pubKey,
-      'Pool-ID': signature.poolId,
+      "Public-Key": signature.pubKey,
+      "Pool-ID": signature.poolId,
       Timestamp: signature.timestamp,
     },
   });

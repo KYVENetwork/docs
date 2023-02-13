@@ -12,13 +12,13 @@ The address for all KYVE Networks (Korellia, Kaon, Mainnet) is the same
 
 KYVE is supported by these wallets
 
-* Keplr
-* Cosmostation
+- Keplr
+- Cosmostation
 
 Additionally, the following cold wallets are supported trough Keplr:
 
-* Ledger
-* Keystone
+- Ledger
+- Keystone
 
 ## Custody
 
@@ -31,10 +31,10 @@ account(s).
 
 ### Before you start
 
-* Ensure the latest version of the Cosmos app is installed on your Ledger device.
-* Make sure to close Ledger Live as it can conflict with Keplr.
-* Firefox users might face connectivity issues, so we strongly recommend using Chrome.
-* Add the Keplr Chrome extension to your browser via this link.
+- Ensure the latest version of the Cosmos app is installed on your Ledger device.
+- Make sure to close Ledger Live as it can conflict with Keplr.
+- Firefox users might face connectivity issues, so we strongly recommend using Chrome.
+- Add the Keplr Chrome extension to your browser via this link.
 
 ### Accessing your Ledger KYVE account(s) via Keplr
 
