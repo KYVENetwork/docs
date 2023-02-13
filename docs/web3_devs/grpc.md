@@ -1,4 +1,4 @@
-# Comsos gRPC & Rest-API
+# Cosmos gRPC & LCD-Endpoints
 
 ## Cosmos RPC
 
@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## API Endpoint
+## LCD Endpoints
 
 All queries for the current chain state. The KYVE queries are prefixed with a `/kyve` prefix.
 
