@@ -8,7 +8,7 @@ Before you can run protocol nodes some basic requirements have to be met ranging
 
 ## Supported OS
 
-We officially support macOS and Linux only in the following architectures:
+We officially support macOS and Linux in the following architectures:
 
 - `macos-x64`
 - `linux-x64`

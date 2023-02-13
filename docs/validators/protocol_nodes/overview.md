@@ -26,3 +26,11 @@ A detailed step by step guide on how to run a protocol node can be found in the 
   - Install pool binaries
 - **Run a node**
   - Start a node and run them as a background process
+
+## Terminology
+
+- **Protocol Node**: A software client build and maintained by KYVE in order to participate in KYVE storage pools which are responsible for uploading and validating data, therefore maintaining the network
+- **Runtime**: A prebuild integration for specific data sources which can be grouped together. For example `@kyvejs/evm` handles the archival of multiple EVM based blockchains
+- **KYSOR**: The Cosmovisor of KYVE. Handles upgrading to newer protocol nodes automatically and comes with a CLI which helps bootstrapping protocol nodes.
+- **Validator account**: The main account which holds $KYVE and grants valaccounts the permission to earn rewards for them
+- **Valaccount**: The operating address of a protocol node. It holds only some $KYVE to pay for transaction fees and basically does all the work (upload and validate data)
