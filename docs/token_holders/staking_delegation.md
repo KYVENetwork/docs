@@ -11,7 +11,7 @@ sidebar_position: 1
 A storage pool requires protocol nodes that upload and validate data. To ensure that nodes upload correct data
 and validate honestly, the protocol nodes have to stake $KYVE. When protocol nodes stake $KYVE in a pool, they are
 allowed to operate in that specific pool. In case of nodes misbehaving (e.g., uploading and submitting invalid data or
-validating incorrectly), the node would get [slashed](/basics/slashing.md). In return for the risk of being slashed and
+validating incorrectly), the node would get [slashed](#slashing). In return for the risk of being slashed and
 the work of uploading and validating data, nodes are rewarded with $KYVE based on their staking amount.
 
 ### Who would stake in a pool?

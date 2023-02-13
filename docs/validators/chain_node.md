@@ -5,7 +5,7 @@ completely sovereign [Proof of Stake](https://en.wikipedia.org/wiki/Proof_of_sta
 blockchain build with [Ignite](https://ignite.com/). This
 blockchain is run by independent nodes we call _Chain-Nodes_
 since they're running on the chain level. The native currency
-of the KYVE chain is [$KYVE](/basics/kyve.md), it secures the chain
+of the KYVE chain is $KYVE, it secures the chain
 and allows chain nodes to stake and other users to delegate into them.
 
 #### Requirements
@@ -205,7 +205,7 @@ journalctl -u kyved
 
 ## Becoming a validator
 
-To become a validator you need [$KYVE](/basics/kyve.md).
+To become a validator you need $KYVE.
 There are currently 100 validator slots, if all slots are taken
 you need to stake more than the lowest one in the list to take its place.
 

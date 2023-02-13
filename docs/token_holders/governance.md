@@ -5,11 +5,11 @@ sidebar_position: 5
 # Governance
 
 :::tip
-**Note:** Working on a governance proposal? Make sure to look at the [best practices](./best_practices.md).
+**Note:** Working on a governance proposal? Make sure to look at the [best practices](./governance/best_practices.md).
 :::
 
 KYVE has an on-chain governance mechanism for passing
-text proposals, changing [chain parameters](./param_change.md), and spending [funds from the community pool](./community_pool.md).
+text proposals, changing [chain parameters](./governance/param_change.md), and spending [funds from the community pool](./governance/community_pool.md).
 
 ## On- and off-chain Governance Structure
 
