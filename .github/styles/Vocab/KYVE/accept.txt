@@ -1,8 +1,10 @@
 KYVE
 KYSOR
 valaccount
-uploader
+Valaccount
 validator
+Validator
+uploader
 delegators
 funder
 Cosmovisor
@@ -19,3 +21,10 @@ systemd
 korellia
 GZip
 Protobuf
+Readme
+valoper
+Unjail
+param
+repo
+prebuild
+APY
