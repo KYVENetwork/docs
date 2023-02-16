@@ -19,8 +19,8 @@ We officially support macOS and Linux in the following architectures:
 To run mainnet of testnet protocol nodes, you will need a machine with the following minimum hardware requirements:
 
 - 1 or more physical CPU cores
-- At least 8GB of disk storage
-- At least 2GB of memory (RAM)
+- At least 8 GB of disk storage
+- At least 2 GB of memory (RAM)
 - At least 50mbps network bandwidth
 
 ## Pool delegation requirements
@@ -28,13 +28,13 @@ To run mainnet of testnet protocol nodes, you will need a machine with the follo
 ### Choose a storage pool
 
 Before you can run a protocol node you have to choose a pool you want to join. You can find an overview of all pools
-in the KYVE app: [app.kyve.network/#/pools](https://app.kyve.network/#/pools).
+in the KYVE app: [https://app.kyve.network/#/pools](https://app.kyve.network/#/pools).
 
 ![pools](/img/pools.png)
 
 Here you can already see some options. Since in this example the `Bitcoin` pool is paused due to the lack of funds
 it would be smarter to join the other active pools. Other metrics can be also added to your decision in which pool
-you want to participate. Example metrics could be for example the amount of slashes which occured in the pool (can be found when you click on `pool` then `metrics`) or the APYs that other protocol node operators have running in that pool.
+you want to participate. Example metrics could be for example the amount of slashes which occurred in the pool (can be found when you click on `pool` then `metrics`) or the APYs that other protocol node operators have running in that pool.
 
 Once you have chosen a pool you have to remember the pool id and the
 pool runtime for later which can be both found when you click on the pool overview. In this example we have chosen the first pool with the pool id `0` and the runtime `@kyvejs/evm`.
@@ -54,7 +54,7 @@ In this case there are still 9 free validator slots so you just have to have mor
 300 $KYVE, you have to have **more** than 300 $KYVE delegated in your validator.
 
 :::caution
-**IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount you can not continue!
+**IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount you can not continue
 :::
 
 ## Storage Provider requirements
@@ -63,7 +63,7 @@ Because a storage pool is always archiving the data on a web3 storage provider t
 must have access to a funded wallet in order to be able to actually upload data to those storage providers.
 
 Depending on which storage provider to pool runs on you have to setup a wallet with which you can upload
-data with. Currently, there are two available storagep providers:
+data with. Currently, there are two available storage providers:
 
 - [Arweave](https://arweave.org)
 - [Bundlr](https://bundlr.network/)
@@ -84,16 +84,16 @@ Store the keyfile in a secure location you will need it again later in the insta
 ### Setting up a Bundlr wallet
 
 Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
-with garanteed transaction finality.
+with guaranteed transaction finality.
 
 In order to setup a Bundlr wallet follow the exact same steps as in **Setting up an Arweave wallet**. After
-completing the above steps the easiest way to setup the bundlr wallet is to install the Bundlr CLI:
+completing the above steps the easiest way to setup the Bundlr wallet is to install the Bundlr CLI:
 
 ```bash
 npm install -g @bundlr-network/client
 ```
 
-In order to fund the bundlr node simply execute the following, where arweave.json is your Arweave keyfile
+In order to fund the Bundlr node simply execute the following, where `arweave.json` is your Arweave keyfile
 which holds some funds:
 
 ```bash
@@ -106,7 +106,7 @@ $ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c a
 > ID: 7cI6jpfpx6A2z8F5AoVHvZn9Az_BWPgvKzBCoE5w07A
 ```
 
-In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 mins
+In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 minutes
 you can view your balance with:
 
 ```bash

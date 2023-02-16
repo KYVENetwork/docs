@@ -44,11 +44,11 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.876  INFO  The node will not continue until the account is authorized
 ```
 
-With this information (`Valaddress` and `Valname`) you can head over the the KYVE app and join the pool.
+With this information (`Valaddress` and `Valname`) you can head over the KYVE app and join the pool.
 
 Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
-A dialog should open where you should select the pool you want to join (here Moonbeam). After that enter the Valaddress that needs to be authorized and the Valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
+A dialog should open where you should select the pool you want to join (here Moonbeam). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
 
 For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 100 $KYVE for the start which typically lasts for about 1 month.
 

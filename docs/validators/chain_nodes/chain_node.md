@@ -13,11 +13,11 @@ and allows chain nodes to stake and other users to delegate into them.
 Minimum requirements
 
 - 2vCPU
-- 2GB RAM (plus 8GB SWAP during chain-upgrades)
-- 150GB DISK
+- 2 GB RAM (plus 8 GB SWAP during chain-upgrades)
+- 150 GB DISK
 
-The disk requirements will keep on expanding over time: the 150GB figure was valid
-on May 7th 2022 but it will not stay that way forever. Consider giving 2 to 3 times
+The disk requirements will keep on expanding over time: the 150 GB figure was valid
+on May seventh 2022 but it will not stay that way forever. Consider giving 2 to 3 times
 that amount in order to avoid having to resize your volumes too quickly.
 
 ## Genesis Installation

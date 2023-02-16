@@ -37,7 +37,7 @@ Here the following entities have characteristics:
 - **Pool**
   - A storage pool where validators upload and validate data which then gets archived on a web3 storage provider
   - Validators can earn rewards by successfully proposing data bundles which get accepted by the network
-  - Validators are disincentivized by slashing for acting maliciously
+  - Validators are punished by slashing for acting maliciously
 
 ## Summary on how to run a protocol node
 

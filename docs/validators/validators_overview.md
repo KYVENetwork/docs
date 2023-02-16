@@ -8,7 +8,7 @@ Validators are the backbone of KYVE and depending on which type of validator you
 
 ## Types of validators
 
-KYVE currently has two types of validators: A _chain node_ which is a validator in a cosmos based Proof of Stake blockchain. Their main tasks are finding consensus on the chain state which includes keeping track of the storage pools and other related data. On the other hand we have _protocol nodes_ which is a validator on the protocol level. Their main tasks are connecting to storage pools and uploading and validating data from various data sources, archiving them on a web3 storage provider like Arweave. A general overview of that architecture can be found below:
+KYVE currently has two types of validators: A _chain node_ which is a validator in a Cosmos based Proof of Stake blockchain. Their main tasks are finding consensus on the chain state which includes keeping track of the storage pools and other related data. On the other hand we have _protocol nodes_ which is a validator on the protocol level. Their main tasks are connecting to storage pools and uploading and validating data from various data sources, archiving them on a web3 storage provider like Arweave. A general overview of that architecture can be found below:
 
 ![architecture](/img/architecture.png)
 
@@ -22,8 +22,8 @@ Because of the nature of each type of validator there are many differences regar
 | Available Slots             | 100                                          | pools x 50                                   |
 | Minimum $KYVE required      | more than lowest validator if slots are full | more than lowest validator if slots are full |
 | Min CPU requirements        | 2vCPU                                        | 1vCPU                                        |
-| Min RAM requirements        | 2GB (plus 8GB SWAP during chain-upgrades)    | 2GB                                          |
-| Minimum DISK requirements   | 150GB                                        | 8GB                                          |
+| Min RAM requirements        | 2 GB (plus 8 GB SWAP during chain-upgrades)  | 2 GB                                         |
+| Minimum DISK requirements   | 150 GB                                       | 8 GB                                         |
 | Source of rewards           | transaction fees + inflation                 | storage pool funds                           |
 | Delegation possible         | yes                                          | yes                                          |
 | Commission rewards possible | yes                                          | yes                                          |

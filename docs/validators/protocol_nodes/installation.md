@@ -47,7 +47,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="kysor_init">
   <TabItem value="korellia" label="Korellia">
-    Since Korellia is a testnet it is actually recommended to enable autodownload because many upgrades are performed.
+    Since korellia is a testnet it is actually recommended to enable auto download because many upgrades are performed.
 
 ```bash
 ./kysor init \
@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    Since Kaon is a testnet it is actually recommended to enable autodownload because many upgrades are performed.
+    Since Kaon is a testnet it is actually recommended to enable auto download because many upgrades are performed.
 
 ```bash
 ./kysor init \
@@ -70,7 +70,7 @@ import TabItem from '@theme/TabItem';
 
   </TabItem>
   <TabItem value="mainnet" label="Mainnet">
-    Coming Soon!
+    Coming Soon
   </TabItem>
 </Tabs>
 
@@ -84,7 +84,7 @@ There should be a `config.toml` file where the configurations you just defined a
 
 ## Create valaccount
 
-Now that KYSOR is initalized we move on to the next step. For every pool you run on a _valaccount_ has to be created. In our example, we want to run on the Moonbeam pool with Pool Id `0`. A new valaccount with a new mnemonic can be created in the following way:
+Now that KYSOR is initialized we move on to the next step. For every pool you run on a _valaccount_ has to be created. In our example, we want to run on the Moonbeam pool with Pool Id `0`. A new valaccount with a new mnemonic can be created in the following way:
 
 ```bash
 ./kysor valaccounts create \
@@ -94,7 +94,7 @@ Now that KYSOR is initalized we move on to the next step. For every pool you run
 --metrics
 ```
 
-This will create a `moonbeam.toml` file under the kysor home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `moonbeam.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
@@ -180,10 +180,10 @@ Here the following directories have the following reason:
 
 <Tabs groupId="kysor_init">
   <TabItem value="korellia" label="Korellia">
-    If you have autodownload enabled on KYSOR you don't need to install the binaries manually since they are downloaded and installed automatically. In this case you can proceed to the next step. If you have disabled autodownload simply follow the guide on the mainnet configuration.
+    If you have auto download enabled on KYSOR you don't need to install the binaries manually since they are downloaded and installed automatically. In this case you can proceed to the next step. If you have disabled auto download simply follow the guide on the mainnet configuration.
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    Since autodownload should be disabled for security reasons on the Kaon network you have to install the correct binaries manually on the KYSOR. In order to fetch the correct binary head back to the pool you chose and look at the <code>runtime</code> and at the <code>runtime version</code>. With this information you can head to the binary <a href="https://github.com/KYVENetwork/kyvejs/releases">releases</a> and get the correct binary.
+    Since auto download should be disabled for security reasons on the Kaon network you have to install the correct binaries manually on the KYSOR. In order to fetch the correct binary head back to the pool you chose and look at the <code>runtime</code> and at the <code>runtime version</code>. With this information you can head to the binary <a href="https://github.com/KYVENetwork/kyvejs/releases">releases</a> and get the correct binary.
     Once you have found the correct release create the required folders where the binary should be placed:<br/><br/>
 
 ```bash
@@ -215,6 +215,6 @@ To verify the version and the runtime of the binary simply call the version comm
 When the runtime and the version matches the KYSOR is ready.
 </TabItem>
 <TabItem value="mainnet" label="Mainnet">
-Coming Soon!
+Coming Soon
 </TabItem>
 </Tabs>
