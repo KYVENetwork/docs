@@ -4,11 +4,9 @@ sidebar_position: 1
 
 # Overview
 
-## Contribution to the network
+## Introduction
 
 The protocol nodes are the backbone of a KYVE storage pool. They are responsible for collecting data from a data source, bundling and uploading them to a web3 storage provider like Arweave and verifying it. This enables KYVE to store any data stream decentralized and permanently.
-
-## Responsibilities
 
 Since protocol nodes are responsible for uploading and verifying data they have to do certain tasks in order to contribute to the network and earn $KYVE rewards. Their main role is uploading data to a web3 storage provider like Arweave. Once a protocol node has uploaded a piece of data inside a storage pool all the other protocol nodes in that storage pool gather that proposed data and validate it on their end. Only when the majority of protocol nodes agree on the validity of the data the entry gets archived.
 
