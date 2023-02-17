@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol nodes some basic requirements have to be met ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol nodes, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
 
 ## Supported OS
 
@@ -14,7 +14,7 @@ We officially support macOS and Linux in the following architectures:
 - `linux-x64`
 - `linux-arm64`
 
-## Minimum hardware requirements
+## Minimum Hardware Requirements
 
 To run mainnet of testnet protocol nodes, you will need a machine with the following minimum hardware requirements:
 
@@ -23,46 +23,46 @@ To run mainnet of testnet protocol nodes, you will need a machine with the follo
 - At least 2 GB of memory (RAM)
 - At least 50mbps network bandwidth
 
-## Pool delegation requirements
+## Pool Delegation Requirements
 
-### Choose a storage pool
+### Choose a Storage Pool
 
 Before you can run a protocol node you have to choose a pool you want to join. You can find an overview of all pools
 in the KYVE app: [https://app.kyve.network/#/pools](https://app.kyve.network/#/pools).
 
 ![pools](/img/pools.png)
 
-Here you can already see some options. Since in this example the `Bitcoin` pool is paused due to the lack of funds
+Here you can already see some options. Since, in this example, the `Bitcoin` pool is paused due to the lack of funds,
 it would be smarter to join the other active pools. Other metrics can be also added to your decision in which pool
-you want to participate. Example metrics could be for example the amount of slashes which occurred in the pool (can be found when you click on `pool` then `metrics`) or the APYs that other protocol node operators have running in that pool.
+you would want to participate in. Example metrics could include the amount of slashes which occurred in the pool (can be found when you click on `pool` then `metrics`), or the APYs that other protocol node operators have running in that pool.
 
-Once you have chosen a pool you have to remember the pool id and the
-pool runtime for later which can be both found when you click on the pool overview. In this example we have chosen the first pool with the pool id `0` and the runtime `@kyvejs/evm`.
+Once you have chosen a pool, you need to remember the pool id and the
+pool runtime for later. Both can be found when you click on the pool overview. In this example, we have chosen the first pool with the pool id `0` and the runtime `@kyvejs/evm`.
 
 ![pool overview](/img/pool_overview.png)
 
 ### Verify if you have enough $KYVE to participate
 
-Due to a limited number of validator slots in each pool only the nodes with the highest delegation can claim
+Due to a limited number of validator slots in each pool, only the nodes with the highest delegation can claim
 a validator slot. You can only claim a validator slot if you have **more than the minimum delegation amount**.
 
 To check the minimum delegation amount you can click on the tab `Validators` once you have selected a pool. There you should see something like this:
 
 ![min delegation](/img/min_delegation.png)
 
-In this case there are still 9 free validator slots so you just have to have more than 0 $KYVE of delegation in order to participate. If the slots would be full and the minimum delegation would be for example
+In this case, there are still 9 free validator slots, so you just have to have more than 0 $KYVE of delegation in order to participate. If the slots would be full and the minimum delegation would be, for example,
 300 $KYVE, you have to have **more** than 300 $KYVE delegated in your validator.
 
 :::caution
-**IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount you can not continue
+**IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount, you can not continue
 :::
 
-## Storage Provider requirements
+## Storage Provider Requirements
 
-Because a storage pool is always archiving the data on a web3 storage provider the protocol node
+Because a storage pool is always archiving the data on a web3 storage provider, the protocol node
 must have access to a funded wallet in order to be able to actually upload data to those storage providers.
 
-Depending on which storage provider to pool runs on you have to setup a wallet with which you can upload
+Depending on which storage provider the pool runs, on you have to setup a wallet with which you can upload
 data with. Currently, there are two available storage providers:
 
 - [Arweave](https://arweave.org)
@@ -70,7 +70,7 @@ data with. Currently, there are two available storage providers:
 
 On the pool overview, it is clearly listed which storage provider a pool uses.
 
-### Setting up an Arweave wallet
+### Setting up an Arweave Wallet
 
 Arweave is a truly decentralized, permanent data storage solution.
 
@@ -81,7 +81,7 @@ $AR. You can exchange them on common exchanges. We would recommend an amount of 
 
 Store the keyfile in a secure location you will need it again later in the installation process.
 
-### Setting up a Bundlr wallet
+### Setting up a Bundlr Wallet
 
 Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
 with guaranteed transaction finality.
