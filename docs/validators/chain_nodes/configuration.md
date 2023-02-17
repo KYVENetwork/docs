@@ -49,7 +49,7 @@ persistent_peers = "02dd2c26948ea758a25d3dbc91744f8897681652@3.73.27.185:26656"
   Other persistent peers can be found <a href="https://rpc.korellia.kyve.network/net_info">here</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    Coming Soon
+    TODO
   </TabItem>
   <TabItem value="mainnet" label="Mainnet">
     Coming Soon
