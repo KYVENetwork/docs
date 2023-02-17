@@ -82,7 +82,7 @@ ls ~/.kysor
 
 There should be a `config.toml` file where the configurations you just defined are saved. You can change those at any time if you want.
 
-## Create valaccount
+## Create the Valaccount
 
 Now that KYSOR is initialized we move on to the next step. For every pool you run on a _valaccount_ has to be created. In our example, we want to run on the Moonbeam pool with Pool Id `0`. A new valaccount with a new mnemonic can be created in the following way:
 
@@ -115,12 +115,12 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 
 Loosing the mnemonic of the valaccount can cause a timeout slash. If a third party ever gets hold of the mnemonic an upload slash can be the worst case since they have control over the vote and upload behaviour of the node. Loosing the private keyfile of the storage provider means loosing your funds.
 
-## Install pool binaries
+## Install Pool Binaries
 
 In the last step of the installation process of KYSOR the actual pool runtime
 binaries need to be installed in KYSOR.
 
-### General KYSOR directory structure
+### General KYSOR Directory Structure
 
 Knowing where KYSOR saves it's logs and binaries can be helpful. The example below shows the following setup: The KYSOR runs on two pools with pool id `0` and `2`. Pool `2` is still running on version `0.8.6` while pool `0` has already upgraded from `1.8.6` to `1.8.7`
 
@@ -176,7 +176,7 @@ Here the following directories have the following reason:
 - `upgrades/pool-$id/$version/logs` - logs folder for the protocol node of that version and pool. Each log file is a run from start to end where the date is the starting date
 - `valaccounts` - contains all the valaccount config files with which the KYSOR can run on a pool
 
-### Binary installation
+### Binary Installation
 
 <Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">

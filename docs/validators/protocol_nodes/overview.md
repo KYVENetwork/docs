@@ -6,14 +6,16 @@ sidebar_position: 1
 
 ## Introduction
 
-The protocol nodes are the backbone of a KYVE storage pool. They are responsible for collecting data from a data source, bundling and uploading them to a web3 storage provider like Arweave and verifying it. This enables KYVE to store any data stream decentralized and permanently.
+Protocol nodes are the backbone of a KYVE storage pool. They are responsible for collecting data from a data source, bundling and uploading them to a Web3 storage provider like Arweave and verifying it. This enables KYVE to store any data stream permanently and in a decentralized way.
 
-Since protocol nodes are responsible for uploading and verifying data they have to do certain tasks in order to contribute to the network and earn $KYVE rewards. Their main role is uploading data to a web3 storage provider like Arweave. Once a protocol node has uploaded a piece of data inside a storage pool all the other protocol nodes in that storage pool gather that proposed data and validate it on their end. Only when the majority of protocol nodes agree on the validity of the data the entry gets archived.
+## Responsibilities
+
+Since protocol nodes are responsible for uploading and verifying data they need to do certain tasks in order to contribute to the network and earn $KYVE rewards. Their main role is uploading data to a Web3 storage provider like Arweave. Once a protocol node has uploaded a piece of data inside a storage pool, all the other protocol nodes in that storage pool gather that proposed data and validate it on their end. Only when the majority of protocol nodes agree on the validity of the data the entry gets archived.
 
 ## Accounts and Rewards
 
-Since the introduction of Interpool-Security a KYVE validator can join multiple pools at once, securing every
-pool with the validator's stake. To make this possible the owner of the stake (validator account) and the actual operator (valaccount) are logically separated to allow horizontal scaling. With this solution in mind the validator holds all the stake and earns all the rewards. In return, he grants permission to valaccounts which then upload and validate the data. The rewards earned then go to the validator account. An overview can be found below:
+Since the introduction of Inter-Pool Security, a KYVE validator can join multiple pools at once, securing every
+pool with the validator's stake. To make this possible, the owner of the stake (validator account) and the actual operator (valaccount) are logically separated to allow horizontal scaling. With this solution in mind, the validator holds all the stake and earns all the rewards. In return, they grant permission to valaccounts which then upload and validate the data. The rewards earned then go to the validator account. An overview can be found below:
 
 ![valaccounts](/img/valaccounts.png)
 
