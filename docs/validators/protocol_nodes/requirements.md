@@ -81,7 +81,7 @@ $AR. You can exchange them on common exchanges. We would recommend an amount of 
 
 Store the keyfile in a secure location you will need it again later in the installation process.
 
-### Setting up a Bundlr wallet
+### Setting up a Bundlr Wallet
 
 Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
 with guaranteed transaction finality.
