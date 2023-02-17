@@ -2,11 +2,11 @@
 sidebar_position: 4
 ---
 
-# Run a node
+# Run a Node
 
-## Start node
+## Start Node
 
-Finally the protocol node can be started. In order to start it execute the following command. Since we named our valaccount `moonbeam` we select the this valaccount to start the KYSOR.
+Finally the protocol node can be started. In order to start it, execute the following command. Since we named our valaccount `moonbeam` we select the this valaccount to start the KYSOR.
 
 ```bash
 ./kysor start --valaccount 'moonbeam'
