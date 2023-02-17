@@ -4,12 +4,14 @@ sidebar_position: 3
 
 # Installation
 
+## Obtain binaries
+
 Depending on which network you want to join you have to obtain the binaries differently.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId="explorers">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
     Since the source code of korellia is still close source the binaries have to be obtained by simply downloading them.
     
@@ -91,3 +93,61 @@ make build
     Coming Soon
   </TabItem>
 </Tabs>
+
+## Initialize Node
+
+We need to initialize the node to create all the necessary validator and node configuration files
+
+<Tabs groupId="network">
+  <TabItem value="korellia" label="Korellia">
+    <strong>Save Chain ID</strong>
+    <br/>
+    We recommend saving the mainnet chain-id into your kyved's client.toml. This will make it so you do not have to manually pass in the chain-id flag for every CLI command.
+    <br/><br/>
+
+```bash
+./kyved config chain-id korellia
+```
+
+  <strong>Initialize</strong>
+  <br/>
+  Initialize node by providing your moniker and the chain id
+  <br/><br/>
+
+```bash
+./kyved init <your_custom_moniker> --chain-id korellia
+```
+
+:::caution
+**IMPORTANT:** Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
+:::
+  </TabItem>
+  <TabItem value="kaon" label="Kaon">
+  <strong>Save Chain ID</strong>
+    <br/>
+    We recommend saving the mainnet chain-id into your kyved's client.toml. This will make it so you do not have to manually pass in the chain-id flag for every CLI command.
+    <br/><br/>
+
+```bash
+./kyved config chain-id kaon-1
+```
+
+  <strong>Initialize</strong>
+  <br/>
+  Initialize node by providing your moniker and the chain id
+  <br/><br/>
+
+```bash
+./kyved init <your_custom_moniker> --chain-id kaon-1
+```
+
+:::caution
+**IMPORTANT:** Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
+:::
+  </TabItem>
+  <TabItem value="mainnet" label="Mainnet">
+    Coming Soon
+  </TabItem>
+</Tabs>
+
+Once the installation and initialization was successful you can proceed to the node configuration.

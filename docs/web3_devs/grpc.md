@@ -7,7 +7,7 @@ The RPC-endpoint handles transaction sending, block events, the current chain st
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId="endpoints">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
     https://rpc.korellia.kyve.network
   </TabItem>
@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 All queries for the current chain state. The KYVE queries are prefixed with a `/kyve` prefix.
 
-<Tabs groupId="endpoints">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
     https://api.korellia.kyve.network/
   </TabItem>

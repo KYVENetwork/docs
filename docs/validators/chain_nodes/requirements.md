@@ -34,7 +34,7 @@ if you have enough $KYVE to join. If there are still slots open, you just need m
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId="explorers">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
     Korellia validators: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
   </TabItem>
