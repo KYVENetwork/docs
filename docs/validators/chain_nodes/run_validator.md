@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # Run a validator
 
+TODO: remove once this page has been refactored and split up into the other pages
+
 ## Get genesis file
 
 Download the `genesis.json` file and copy it over to the config directory: `~/.kyve/config/genesis.json`. This is a genesis file with the chain-id and genesis account balances.
