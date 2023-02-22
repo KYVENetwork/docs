@@ -33,21 +33,8 @@ More information about chain nodes can be found [here](/validators/chain_nodes/c
 The protocol layer sits on top of the chain layer and enables the actual use case of KYVE. Every feature and unit of
 logic which makes KYVE unique is implemented directly into the chain nodes with the help of Cosmos' [Application-Specific Blockchains](https://docs.cosmos.network/main/intro/why-app-specific).
 
-### Storage Pools
-
-Generally, storage pools (or just pools) can be described as discrete entities arranged around specific data sources.
-Anyone can create them through governance and can store any data stream. They are stored and operate on-chain, making them completely trustless. They are responsible for actually validating and archiving data by allowing participants (protocol node runners) to join a pool and managing the validation process on-chain, thus making the validity of the data trustless.
-
-**A pool always has to specify the following requirements:**
-
-- One or more data sources which the pool wants to validate and archive
-- A runtime which has defined how to validate the data
-- A web3 storage provider where validated data should get stored to (e.g. Arweave)
-
-If those requirements are met protocol nodes can join a pool and actually start validating the data.
-
 ### Protocol Nodes
 
-Protocol nodes are the backbone of a KYVE storage pool. They are responsible for collecting data from a data source, bundling and uploading them to a Web3 storage provider like Arweave and verifying it. This enables KYVE to store any data stream permanently and in a decentralized way.
+Protocol nodes are the backbone of a KYVE storage pool. A protocol node always runs in a specific storage pool which valdiates a specific source of data. They are responsible for collecting data from a data source, bundling and uploading them to a Web3 storage provider like Arweave and verifying it. 
 
 More information about protocol nodes can be found [here](/validators/protocol_nodes/overview.md)
