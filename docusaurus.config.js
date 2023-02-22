@@ -68,7 +68,10 @@ const config = {
         title: "KYVE Network",
         logo: {
           alt: "KYVE Logo",
-          src: "img/logo.svg",
+          src: "img/favicon.ico",
+          style: {
+            borderRadius: '7px'
+          }
         },
         items: [
           {
