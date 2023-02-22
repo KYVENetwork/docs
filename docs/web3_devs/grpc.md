@@ -1,4 +1,8 @@
-# Cosmos gRPC & LCD-Endpoints
+---
+sidebar_position: 2
+---
+
+# RPC & LCD-Endpoints
 
 ## Cosmos RPC
 
@@ -7,15 +11,23 @@ The RPC-endpoint handles transaction sending, block events, the current chain st
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId="endpoints">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
-    https://rpc.korellia.kyve.network
+
+
+```
+https://rpc.korellia.kyve.network
+```
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    https://rpc.kaon.kyve.network
+
+
+```
+https://rpc-eu-1.kaon.kyve.network/
+```
   </TabItem>
   <TabItem value="kyve" label="KYVE">
-    Coming Soon!
+    Coming Soon
   </TabItem>
 </Tabs>
 
@@ -23,14 +35,22 @@ import TabItem from '@theme/TabItem';
 
 All queries for the current chain state. The KYVE queries are prefixed with a `/kyve` prefix.
 
-<Tabs groupId="endpoints">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
-    https://api.korellia.kyve.network/
+
+
+```
+https://api.korellia.kyve.network
+```
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    https://api.kaon.kyve.network/
+
+
+```
+https://api-eu-1.kaon.kyve.network
+```
   </TabItem>
   <TabItem value="kyve" label="KYVE">
-    Coming Soon!
+    Coming Soon
   </TabItem>
 </Tabs>
