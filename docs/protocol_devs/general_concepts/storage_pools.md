@@ -19,15 +19,42 @@ If those requirements are met protocol nodes can join a pool and actually start 
 
 ## Interaction
 
-### Where to find them
+### Discover Pools
 
-### Query Pools
+Depending on the network a different set of storage pools are currently live and validating/archiving data. To view all pools simply visit the web app.
 
-### Create Pools
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### Update Pools
+<Tabs groupId="network">
+  <TabItem value="korellia" label="Korellia">
+    <strong>Pools</strong>: <a href="https://app.kyve.network/#/pools">https://app.kyve.network/#/pools</a>
+  </TabItem>
+  <TabItem value="kaon" label="Kaon">
+    <strong>Pools</strong>: <a href="https://app.kaon.kyve.network/#/pools">https://app.kaon.kyve.network/#/pools</a>
+  </TabItem>
+  <TabItem value="mainnet" label="Mainnet">
+    Coming Soon
+  </TabItem>
+</Tabs>
 
-## Anatomy
+Pools can also directly be queried by the following REST API endpoint: `/kyve/query/v1beta1/pools`
+
+<Tabs groupId="network">
+  <TabItem value="korellia" label="Korellia">
+    <strong>Pools</strong>: <a href="https://api.korellia.kyve.network/kyve/query/v1beta1/pools">https://api.korellia.kyve.network/kyve/query/v1beta1/pools</a>
+  </TabItem>
+  <TabItem value="kaon" label="Kaon">
+    <strong>Pools</strong>: <a href="https://api-eu-1.kaon.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.kaon.kyve.network/kyve/query/v1beta1/pools</a>
+  </TabItem>
+  <TabItem value="mainnet" label="Mainnet">
+    Coming Soon
+  </TabItem>
+</Tabs>
+
+Additionally, a pool can directly be queried by it's unique ID: `/kyve/query/v1beta1/pool/{id}`
+
+## Properties
 
 To make storage pools as general as possible many parameters where introduced to fit the various requirements of data streams. For each pool the following state is stored:
 

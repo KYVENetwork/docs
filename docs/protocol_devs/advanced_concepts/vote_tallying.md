@@ -8,9 +8,14 @@ sidebar_position: 3
 
 To finally determine if a bundle is valid or not the votes from all the node validators have to be collected and tallied. For that we track the `voting power` of each node. For every vote type (valid, invalid, abstain) the voting power is summed up and tallied at the end. If for example more than 50% of the voting power was dedicated to valid the bundle proposal will pass as valid. On the other hand if more than 50% of the voting power was dedicated to invalid the bundle proposal will be rejected as invalid. If neither of those requirements are met the bundle gets dropped since not enough validators participated in the validation process.
 
+:::danger
+**ATTENTION**: This means if a single node has more than 50% of the total delegation in a pool it also has more than 50% voting power. This would imply that this node can act maliciously and always veto honest participants, basically controlling everything. You should never join a pool or delegate if there is a participant with or close to 50% voting power.
+:::
+
 ## Calculation
 
-The voting power is exactly the same like the probability calculated above, the more delegation you have the more voting power you have.
+The voting power is almost the same like the uploader selection probability defined before, but here **every** node in a pool is taken into account and not only the ones who voted either *valid* or *invalid*. This implies
+that simply having more delegation leads to more voting power.
 
 $$\begin{aligned}
 v_i = \frac{d_i}{\sum_{k=1}^{n} d_k}
