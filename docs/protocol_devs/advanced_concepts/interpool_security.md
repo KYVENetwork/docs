@@ -1,12 +1,8 @@
 ---
-title: Interpool-security
-order: 3
-parent:
-  title: Advanced
-  order: 4
+sidebar_position: 1
 ---
 
-# Interpool-security
+# Interpool-Security
 
 Data can only be trustless if enough stake is behind it. To ensure the highest stake possible for an
 evergrowing amount of storage pools KYVE came up with the concept of `interpool-security`. Basically,
