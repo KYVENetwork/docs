@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# General Concepts
+# Bundle Proposals
 
 Storing data is simple. Storing validated data coming from multiple parties is a bit more complicated. Because of
 that, we will break down the process by which KYVE stores it's data.
@@ -17,6 +17,10 @@ proposal round.
 
 In summary, in each proposal round one bundle gets proposed which consists of multiple data items and gets validated by letting other validators check the proposed bundle and vote accordingly. On-chain the votes are tallied and once the result is valid entry of the bundle gets stored on chain as valid. The data is still on the storage provider but the chain has the storage id, thus making it possible to view all the valid storage ids and therefore view the actual content on the storage provider.
 
+## Content of a bundle proposal
+
+Data + metadata + json example
+
 ## Lifecycle of a bundle proposal
 
 The lifecycle for one bundle proposal can be seen in the following diagram:
@@ -30,7 +34,3 @@ For multiple bundle proposals over time the following diagram can be used for re
 <p align="center">
   <img width="90%" src="/img/data_flow.png" />
 </p>
-
-## Uploader
-
-## Validator

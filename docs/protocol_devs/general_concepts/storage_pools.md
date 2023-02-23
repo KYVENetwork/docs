@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Storage Pools
+
+## Introduction
 
 Generally, storage pools (or just pools) can be described as discrete entities arranged around specific data sources.
 Anyone can create them through governance and can store any data stream. They are stored and operate on-chain, making them completely trustless. They are responsible for actually validating and archiving data by allowing participants (protocol node runners) to join a pool and managing the validation process on-chain, thus making the validity of the data trustless. Storage pools which are currently live can be found [here](https://app.kyve.network/#/pools).
@@ -15,7 +17,17 @@ Anyone can create them through governance and can store any data stream. They ar
 
 If those requirements are met protocol nodes can join a pool and actually start validating the data.
 
-## Configuration
+## Interaction
+
+### Where to find them
+
+### Query Pools
+
+### Create Pools
+
+### Update Pools
+
+## Anatomy
 
 To make storage pools as general as possible many parameters where introduced to fit the various requirements of data streams. For each pool the following state is stored:
 
