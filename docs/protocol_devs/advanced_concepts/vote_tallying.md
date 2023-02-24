@@ -27,8 +27,10 @@ where
 - $d_i$ = `is the total delegation of i-th node`
 - $n$ = `is the number of validators in pool`
 
-This implies that the total voting power inside a pool should always add up to 100%. In order to tally votes for the final status the voting power of the nodes are summed up based on their vote. Then the final result can be calculated based on the requirements below:
+## Reaching Quorum
 
-- **valid**: > 50% voted with valid
-- **invalid**: >= 50% voted with invalid
-- **dropped**: if neither of the above requirements are met
+This implies that the total voting power inside a pool should always add up to 100%. In order to tally votes for the final status (quorum) the voting power of the nodes are summed up based on their vote. Then quorum (which can have three outcomes) then can be determined based on the requirements below:
+
+- **VALID**: > 50% voted with valid
+- **INVALID**: >= 50% voted with invalid
+- **DROPPED**: if neither of the above requirements are met

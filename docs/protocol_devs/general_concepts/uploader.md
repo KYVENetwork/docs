@@ -25,6 +25,8 @@ the new round immediately gets started. With the new round started, the other pa
 - Skip round with `MsgSkipUploaderRole`. This should be called if the uploader is unable to get new data from the data source due to it being offline or for other reasons. With this transaction
 a new uploader is automatically selected who then can try if he can find any new data. If an uploader skips a bundle proposal he will **not** earn any rewards
 
+## Flow diagram
+
 A more detailed step by step description can be found below:
 
 <p align="center">
