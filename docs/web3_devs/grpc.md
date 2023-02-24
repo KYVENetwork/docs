@@ -14,17 +14,17 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
 
-
 ```
 https://rpc.korellia.kyve.network
 ```
+
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-
 
 ```
 https://rpc-eu-1.kaon.kyve.network/
 ```
+
   </TabItem>
   <TabItem value="kyve" label="KYVE">
     Coming Soon
@@ -38,17 +38,17 @@ All queries for the current chain state. The KYVE queries are prefixed with a `/
 <Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
 
-
 ```
 https://api.korellia.kyve.network
 ```
+
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-
 
 ```
 https://api-eu-1.kaon.kyve.network
 ```
+
   </TabItem>
   <TabItem value="kyve" label="KYVE">
     Coming Soon

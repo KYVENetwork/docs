@@ -1,4 +1,4 @@
-# KYVE DataPipeline
+# Overview
 
 The KYVE ELT-Pipeline allows developers to connect KYVE to their favorite
 data warehouse or destination.
