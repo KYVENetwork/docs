@@ -31,6 +31,6 @@ where
 
 This implies that the total voting power inside a pool should always add up to 100%. In order to tally votes for the final status (quorum) the voting power of the nodes are summed up based on their vote. Then quorum (which can have three outcomes) then can be determined based on the requirements below:
 
-- **VALID**: > 50% voted with valid
-- **INVALID**: >= 50% voted with invalid
+- **VALID**: > 50% voting power dedicated to valid
+- **INVALID**: >= 50% voting power dedicated to invalid
 - **DROPPED**: if neither of the above requirements are met
