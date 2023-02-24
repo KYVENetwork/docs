@@ -14,7 +14,7 @@ and registering it for validation on-chain for the other validators.
 There are two options on how a pool participant can be become an uploader:
 
 - When the pool is just created and still in "genesis" state, the role of uploader is still empty. With the transaction `MsgClaimUploaderRole` the first pool participant who calls this transaction gets the uploader role for the first round
-- Increasing the total delegation. Increasing it increases the probability of getting chosen as the next uploader in each round. More details can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md)
+- Increasing the total delegation. Increasing it increases the probability of getting chosen as the next uploader in each round. More details can be found [here](/protocol_devs/advanced_concepts/uploader_selection.md)
 
 ## Responsibilities
 
