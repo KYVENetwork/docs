@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# High Level Overview
+# High-level Overview
 
 KYVE is a network of storage pools built to store data streams or create snapshots of already existing data.
 It is secured by its blockchain built on [Cosmos](https://cosmos.network/).

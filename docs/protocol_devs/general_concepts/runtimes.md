@@ -8,8 +8,9 @@ sidebar_position: 2
 
 As mentioned in the chapter before, every storage pool has to specify a runtime. Basically, a runtime is an implementation of the actual data retrieval and validation logic. If a storage pool chooses to run with a certain runtime, only data can be archived and validated if the data source is supported by the runtime.
 
-An example of a runtime is the `@kyvejs/bitcoin` runtime. It is a special implementation to retrieve bitcoin data and validate it. It would not be able to retrieve for example Ethereum data. So if KYVE should archive and validate the entire Bitcoin blockchain a storage pool with the `@kyvejs/bitcoin` runtime has to be created. If KYVE on the other hand should archive and validate the entire Ethereum blockchain a storage pool with the `@kyvejs/evm` runtime has to be created. This enables KYVE to reuse the validation logic of a storage pool to process every kind of data, assuming a runtime for that data type can be implemented.
+An example of a runtime is `@kyvejs/bitcoin`. It is a special implementation to retrieve bitcoin data and validate it. It would not be able to retrieve for example Ethereum data. So if KYVE should archive and validate the entire Bitcoin blockchain a storage pool with the `@kyvejs/bitcoin` runtime has to be created. If KYVE on the other hand should archive and validate the entire Ethereum blockchain a storage pool with the `@kyvejs/evm` runtime has to be used.
 
+>**This enables KYVE to reuse the validation logic of a storage pool to process every kind of data, assuming a runtime for that data type can be implemented.**
 
 ## Usage 
 
