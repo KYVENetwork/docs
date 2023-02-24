@@ -156,6 +156,35 @@ A bundle always is a JSON array of data items which have two properties, the `ke
 
 Of course storing raw JSON data is quite inefficient. For this reason protocol nodes compress the JSON bundles (mostly Gzip) and then store it which saves a lot of storage space and funds.
 
+## Query Bundle Proposals
+
+There are two types of bundle proposals: Ongoing bundle proposals which are currently validated and validated bundle proposals which are
+stored forever on-chain (but with less data). Both can be viewed in the Web App or directly be queried from the REST API.
+
+:::info
+**NOTE**: Ongoing Bundle Proposals have a one-to-one relationship with pools. Validated Bundle Proposals on the other hand have a one-to-many relationship. In both circumstances a pool ID is always required to query for proposals
+:::
+
+### Web App
+
+To view ongoing bundle proposals simply open the Web App, go to the pools page and click on a pool. If you scroll down a bit you should
+see the status of an ongoing bundle proposal including the current collected votes and other metrics.
+
+To view validated bundle proposals click on the tab `Bundles`. Here all validated bundles ever produced in this pool are listed including other helpful information.
+
+### REST API
+
+Ongoing bundle proposals are always attached to the pool query and can be found under `bundle_proposal`. As already mentioned before
+in [Storage Pools](/protocol_devs/general_concepts/storage_pools.md) there are two endpoints where pools can be queried:
+
+- `/kyve/query/v1beta1/pools`: gets all pools
+- `/kyve/query/v1beta1/pool/{id}`: gets a single pool by it's ID
+
+To query validated bundle proposals of a pool you can use the following endpoints
+
+- `/kyve/query/v1beta1/finalized_bundles/{pool_id}`: gets all validated proposals from a pool
+- `/kyve/query/v1beta1/finalized_bundles/{pool_id}/{id}`: gets a single validated proposal from a pool and the bundle ID
+
 ## Bundle validation over time
 
 For multiple bundle proposals over time the following diagram can be used for reference. Note that when the uploader submits a new bundle proposal the current round immediately gets tallied and closed. That is the reason why bundle proposals are an ongoing process.

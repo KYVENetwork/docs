@@ -17,11 +17,11 @@ Anyone can create them through governance and can store any data stream. They ar
 
 If those requirements are met protocol nodes can join a pool and actually start validating the data.
 
-## Interaction
-
-### Discover Pools
+## Discover Pools
 
 Depending on the network a different set of storage pools are currently live and validating/archiving data. To view all pools simply visit the web app.
+
+### Web App
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -38,6 +38,8 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
+### REST API
+
 Pools can also directly be queried by the following REST API endpoint: `/kyve/query/v1beta1/pools`
 
 <Tabs groupId="network">
@@ -52,7 +54,53 @@ Pools can also directly be queried by the following REST API endpoint: `/kyve/qu
   </TabItem>
 </Tabs>
 
-Additionally, a pool can directly be queried by it's unique ID: `/kyve/query/v1beta1/pool/{id}`
+:::tip
+**Note:** Additionally, a pool can directly be queried by it's unique ID: `/kyve/query/v1beta1/pool/{id}`
+:::
+
+## Pool Economics
+
+Keeping pools funded and therefore keeping the data flowing while at the same time keeping validators' stakes secured
+and incentivized is a challenge. KYVE designed pools to fulfill all those needs.
+
+### Keeping pools funded
+
+In order to payout protocol nodes and incentivize them the pool needs funds. These funds are provided by *funders*;
+they are interested in archiving the data the specific pool handles. This could be the project or the foundation behind
+a data source that wants its data to be permanently archived onto Arweave. Besides people interested in making the data
+permanent, anyone can become a funder. The only downside is that there are currently no rewards for becoming a funder.
+The opposite is the case; being a funder will cost you $KYVE.
+
+Because of limited funding slots, only those who fund the highest amount can claim a funding slot. Currently, there are
+100 funding slots available per pool. If there are still funding slots available, you only need to fund more than 0
+$KYVE to claim a slot. You have to fund more than the current lowest funder if all slots are occupied, basically
+outbidding him.
+Once you outbid the current lowest funder, you claim his funding slot. The remaining funds of the outbid funder will be
+automatically transferred back to him. This mechanism ensures that only people with the highest interest in archiving
+the data can operate as a funder.
+
+### Basic $KYVE flow
+
+With the funds provided by a funder the flow of $KYVE can be summarized by the diagram below:
+
+![pool economics](/img/pool_economics.png)
+
+### Keeping protocol nodes incentivized
+
+Validators have many tasks. They have to collect data, bundle them, upload, and submit them. To reward validators for
+their work and keep them incentivized, they receive bundle rewards when they successfully propose a valid bundle (more
+on that can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md)). As described above, those rewards are funded by funders. But
+before the uploader receives his reward, a network fee (usually 1%) is deducted and automatically transferred to the
+community pool.
+
+### Keeping delegators incentivized
+
+Delegators have the task of lending validators capital in the form of $KYVE and helping them to earn more rewards (more
+on how that works [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md)). The rewards delegators receive and have to share is determined by
+the validator's commission. If it is high (e.g., 99%), the delegators only receive a tiny fraction of the staker's
+rewards. On the other hand, if it is low, the delegators receive more. By that, delegators are rewarded for giving
+validators capital that they trust so everyone has a benefit.
+
 
 ## Properties
 
