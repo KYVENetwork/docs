@@ -6,14 +6,14 @@ sidebar_position: 6
 
 ## Introduction
 
-To discourage and punish malicious behaviour protocol nodes can get slashed and therefore loose a part of their delegation. 
+To discourage and punish malicious behaviour protocol nodes can get slashed and therefore loose a part of their delegation.
 Depending on the severity of the behaviour different kind of slashes are applied. There are three types of slashes:
 
 - **Timeout slash (0.05%)**: applied if the node misses a certain amount of bundle proposals
-- **Vote slash (2%)**: applied if the node voted incorrect (e.g. voted valid although the bundle was invalid etc.)
+- **Vote slash (2%)**: applied if the node voted incorrect (for example voted valid although the bundle was invalid etc.)
 - **Upload slash (5%)**: applied if the node proposed a bundle which then gets rejected as invalid
 
-To prevent multiple slashing and therefore to protect the node's stake because of for example an incorrect configuration the node automatically 
+To prevent multiple slashing and therefore to protect the node's stake because of for example an incorrect configuration the node automatically
 gets removed from the pool if any of the above slashings are applied.
 
 :::danger

@@ -9,7 +9,7 @@ that, we will break down the process by which KYVE stores it's data.
 
 ## Saving data in rounds
 
-Saving many data items or even a data stream is tricky. Thats why we group data into bundles to store them more
+Saving many data items or even a data stream is tricky. That's why we group data into bundles to store them more
 efficiently. This enables KYVE to validate multiple data items which are bundled up in a single validation round. With
 this method, we can break down a data stream into various rounds, making it easier to work with. A selected validator
 will collect data in each round, create a bundle, and submit it to the network. This marks the beginning of such a
@@ -30,28 +30,28 @@ The lifecycle for one bundle proposal can be seen in the following diagram:
 In contrast to many beliefs the bundle proposal which gets registered on-chain **does not** contain the actual data which is getting validated. It only holds a reference in form of the storage receipt.
 That storage receipt can be used by anyone to retrieve the actual data from the storage provider. For Arweave for example this receipt is the transaction ID which looks like this: `iXJTjdxTwpEMdlLhdfhDnMgUxHr8TrOARvBxRTIZSsA`.
 
-This implies that the uploader bundles up the data und stores it on the storage provider. With the storage receipt the uploader got he can submit the bundle proposal. All other participants in the pool
+This implies that the uploader bundles up the data and stores it on the storage provider. With the storage receipt the uploader got he can submit the bundle proposal. All other participants in the pool
 see what the uploader submitted and take the storage receipt and retrieve the actual data from it. Because every node in a pool locally creates their own bundle proposal it then can compare the proposed
 proposal with the local one and vote accordingly.
 
 But in order to be able to reconstruct the bundle proposal locally certain metadata has to be included in the proposal. The required metadata can be seen in the proposal registration transaction: `MsgSubmitBundleProposal`. Looking at the transaction arguments we can identify the following requirements:
 
-- **creator**: the creator of the transaction. It is used to determine if the creator is also the current uploader, because only he can submit a bundle proposal for the current round.
-- **staker**: the address of the valaccount. It is used to determine if the valaccount has sufficient stake and is actually in the storage pool
-- **pool_id**: the id of the storage pool
-- **storage_id**: here the previously mentioned storage receipt is stored. With this other participants in the network can retrieve the actual data and verify it
-- **data_size**: the amount of bytes the data has which got stored on the storage provider. Used for the [reward calculation](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and is also verified by other validators
-- **data_hash**: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid the hash also gets stored on-chain together with the *storage_id* so that data consumers can always verify the validity of the data they retrieve from the storage provider
-- **from_index**: the current index of the storage pool. This is used to automatically check if the uploader submitted to correct slice of data and does not submit an already submitted bundle
-- **bundle_size**: the amount of data items inside a bundle. Used for incrementing the storage pool index and for validating if the bundle is below the *max_bundle_size* limit. This gets also validated by other validators
-- **from_key**: the key of the first data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
-- **to_key**: the key of the last data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
-- **bundle_summary**: the summary of the bundle data. This is a string value which gets stored on-chain once the proposal is valid. This enables on-chain queries for actual data.
+- `creator`: the creator of the transaction. It is used to determine if the creator is also the current uploader, because only he can submit a bundle proposal for the current round.
+- `staker`: the address of the valaccount. It is used to determine if the valaccount has sufficient stake and is actually in the storage pool
+- `pool_id`: the id of the storage pool
+- `storage_id`: here the previously mentioned storage receipt is stored. With this other participants in the network can retrieve the actual data and verify it
+- `data_size`: the amount of bytes the data has which got stored on the storage provider. Used for the [reward calculation](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and is also verified by other validators
+- `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid the hash also gets stored on-chain together with the *storage_id* so that data consumers can always verify the validity of the data they retrieve from the storage provider
+- `from_index`: the current index of the storage pool. This is used to automatically check if the uploader submitted to correct slice of data and does not submit an already submitted bundle
+- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the storage pool index and for validating if the bundle is below the *max_bundle_size* limit. This gets also validated by other validators
+- `from_key`: the key of the first data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
+- `to_key`: the key of the last data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
+- `bundle_summary`: the summary of the bundle data. This is a string value which gets stored on-chain once the proposal is valid. This enables on-chain queries for actual data.
 
 ## Data Content of bundle proposals
 
 Since we have only touched the content structure of the bundle proposal but not the actual bundle data which gets stored on the storage provider the following example might help to clarify this.
-A bundle always is a JSON array of data items which have two properties, the `key` and the corresponding `value`. A real example of how a bundle could look like is this bundle from Bitcoin, which has the first two blocks in it. Notice how the `key` corresponds to the value's blockheight, since the blockheight is in Bitcoin the key to query the value, the block.
+A bundle always is a JSON array of data items which have two properties, the `key` and the corresponding `value`. A real example of how a bundle could look like is this bundle from Bitcoin, which has the first two blocks in it. Notice how the `key` corresponds to the value's block height, since the block height is in Bitcoin the key to query the value, the block.
 
 ```json
 [
@@ -154,7 +154,7 @@ A bundle always is a JSON array of data items which have two properties, the `ke
 ]
 ```
 
-Of course storing raw JSON data is quite inefficient. For this reason protocol nodes compress the JSON bundles (mostly Gzip) and then store it which saves a lot of storage space and funds.
+Of course storing raw JSON data is quite inefficient. For this reason protocol nodes compress the JSON bundles (mostly GZip) and then store it which saves a lot of storage space and funds.
 
 ## Query Bundle Proposals
 

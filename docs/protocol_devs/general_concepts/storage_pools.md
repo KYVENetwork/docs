@@ -13,7 +13,7 @@ Anyone can create them through governance and can store any data stream. They ar
 
 - One or more data sources which the pool wants to validate and archive
 - A runtime which has defined how to validate the data
-- A web3 storage provider where validated data should get stored to (e.g. Arweave)
+- A web3 storage provider where validated data should get stored to (for example Arweave)
 
 If those requirements are met protocol nodes can join a pool and actually start validating the data.
 
@@ -97,7 +97,7 @@ community pool.
 
 Delegators have the task of lending validators capital in the form of $KYVE and helping them to earn more rewards (more
 on how that works [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md)). The rewards delegators receive and have to share is determined by
-the validator's commission. If it is high (e.g., 99%), the delegators only receive a tiny fraction of the staker's
+the validator's commission. If it is high (for example 99%), the delegators only receive a tiny fraction of the uploader's
 rewards. On the other hand, if it is low, the delegators receive more. By that, delegators are rewarded for giving
 validators capital that they trust so everyone has a benefit.
 
@@ -106,125 +106,125 @@ validators capital that they trust so everyone has a benefit.
 
 To make storage pools as general as possible many parameters where introduced to fit the various requirements of data streams. For each pool the following state is stored:
 
-### id
+### `id`
 
 The unique identifier of each pool. This can not be changed and gets assigned automatically on creation.
 
-### name
+### `name`
 
 A human readable name for the pool. Also used when searching for a pool.
 
-### runtime
+### `runtime`
 
 The name of the runtime. For EVM this would be `@kyvejs/evm` for example. It is used in the protocol node to double check if the node  actually supports this runtime and can take part in the upload/validation process.
 
-### logo
+### `logo`
 
 A link to an image file. Usually a SVG stored on Arweave.
 
-### config
+### `config`
 
-Runtime specific configuration in JSON format. Usually the data sources are stored here and other pool specific configuration the runtime needs. More information on how to configure this parameter can be found on the decicated runtime documentation.
+Runtime specific configuration in JSON format. Usually the data sources are stored here and other pool specific configuration the runtime needs. More information on how to configure this parameter can be found on the dedicated runtime documentation.
 
-### start_key
+### `start_key`
 
-The key the storage pool should start validating from. E.g. for blockchains the starting key would be `0` because this would be the genesis block. For time based data streams this would be the starting date. The format of the start key depends on the runtime.
+The key the storage pool should start validating from. For blockchains the starting key would be `0` because this would be the genesis block. For time based data streams this would be the starting date. The format of the start key depends on the runtime.
 
-### current_key
+### `current_key`
 
 The key the storage pool has validated to. If a storage pool has for example validated the first 1,000 blocks of a blockchain the current key would be `1000`.
 
-### current_summary
+### `current_summary`
 
 The summary of the latest valid bundle which got validated. The summary of a bundle gets generated in the runtime and is used to access bundle data on-chain.
 
-### current_index
+### `current_index`
 
 Since the keys are of type string the storage pool internally keeps track by using indexes. These indexes are just counters and in the case of blockchain the index corresponds to the number of blocks validated.
 
-### total_bundles
+### `total_bundles`
 
 A counter which keeps track of how many valid bundles the pool has produced. Used for metrics.
 
-### upload_interval
+### `upload_interval`
 
 How long a bundle proposal round should be at least open for voting. Usually between one and five minutes. The unit is seconds.
 
-### operating_cost
+### `operating_cost`
 
 The base reward for node operators who successfully proposed a valid bundle. This should cover all fixed costs a node operator has like server costs, transaction fees etc. in order to operate not in a loss. The unit is in ukyve.
 
-### min_delegation
+### `min_delegation`
 
 The minimum delegation a storage pool should have before it starts validating bundles. Used for security reasons to prevent for example only one node operator from proposing a bundle with a delegation of only 1 $KYVE. Unit is in ukyve.
 
-### max_bundle_size
+### `max_bundle_size`
 
 The maximum amount of data items a bundle can have, otherwise it is automatically flagged as invalid. Prevents uploaders from submitting huge bundles and therefore destabilizing the bundle validation flow.
 
-### disabled
+### `disabled`
 
 A boolean which indicates whether or not the pool has been temporary disabled by the governance or not. If a pool is disabled it can not validate bundles and is effectively paused. Only the governance can then enable a pool again.
 
-### funders
+### `funders`
 
 An array of entries which keep track of users that funded a pool with $KYVE. For that the address and the current funding amount is stored.
 
-#### address
+#### `address`
 
 The address of the funder.
 
-#### amount
+#### `amount`
 
 The amount the funder has still left in the pool in ukyve.
 
-### total_funds
+### `total_funds`
 
 The total amount of funds in ukyve the pool currently still has left.
 
-### protocol
+### `protocol`
 
 An object which holds all info about the current runtime version and the available binaries for participating as a validator in this pool.
 
-#### version
+#### `version`
 
 The version of the runtime. Protocol nodes compare for security reasons their runtime version with the pool's version to ensure correct behaviour.
 
-#### binaries
+#### `binaries`
 
-An object in JSON format containing download urls to the protocol node binaries. Used by KYSOR if auto download is enabled.
+An object in JSON format containing download URLs to the protocol node binaries. Used by KYSOR if auto download is enabled.
 
-### upgrade_plan
+### `upgrade_plan`
 
 An object which holds all the info when a pool has a scheduled runtime upgrade.
 
-#### version
+#### `version`
 
 Version is the new runtime version tag of the upgrade.
 
-#### binaries
+#### `binaries`
 
 Binaries is the new object in JSON format containing the download links to the new upgrade binaries.
 
-#### scheduled_at
+#### `scheduled_at`
 
 A UNIX timestamp of when the upgrade should get applied. If the scheduled time is in the past the upgrade gets applied immediately. Else it waits until that time is reached.
 
-#### duration
+#### `duration`
 
 Duration is the time in seconds how long the pool should halt while the upgrade is getting applied. During this time no bundles can get validated. This gives every node validator the time to properly upgrade their binaries before the pool continues with the newer version. Usually about one day.
 
-### current_storage_provider_id
+### `current_storage_provider_id`
 
-The ID of the storage provider which should get used. E.g. `1` equals Arweave and `2` equals Bundlr. If it is zero no storage provider is used and data just gets validated and not archived.
+The ID of the storage provider which should get used. Here `1` equals Arweave and `2` equals Bundlr. If it is zero no storage provider is used and data just gets validated and not archived.
 
-### current_compression_id
+### `current_compression_id`
 
-The ID of the compression which should get used before storing on the storage provider. If e.g. `1` it used Gzip compression. If it is zero it does no compression.
+The ID of the compression which should get used before storing on the storage provider. If it is `1` it used GZip compression. If it is zero it does no compression.
 
 ## Example
 
-Below is the query result from a pool. The actual pool state can be found under "data". Additionally, the corresponding "bundle_proposal" and all "stakers" who have joined the pool are attached with some other information calculated on the fly.
+Below is the query result from a pool. The actual pool state can be found under 'data'. Additionally, the corresponding `bundle_proposal` and all protocol nodes who have joined the pool are attached with some other information calculated on the fly.
 
 ```json
 {

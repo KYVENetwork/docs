@@ -70,8 +70,8 @@ const config = {
           alt: "KYVE Logo",
           src: "img/favicon.ico",
           style: {
-            borderRadius: '7px'
-          }
+            borderRadius: "7px",
+          },
         },
         items: [
           {

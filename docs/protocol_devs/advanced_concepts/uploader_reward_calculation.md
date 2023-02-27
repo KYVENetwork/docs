@@ -10,7 +10,7 @@ To incentivize protocol nodes to stay online and continue uploading and validati
 
 ## Bundle Reward
 
-The entire reward for the bundle is called the bundle reward and is calculated by adding the operating cost to the product of the data size times the storage cost. But this is not the final amount the uploader actually receives at the end. That final uploader reward depends on the *network fee* and the uploader's *commission*.
+The entire reward for the bundle is called the bundle reward and is calculated by adding the operating cost to the product of the data size times the storage cost. But this is not the final amount the uploader actually receives at the end. That final uploader reward depends on the _network fee_ and the uploader's _commission_.
 
 ### Network Fee
 
@@ -20,7 +20,7 @@ The network fee collects a part of the bundle reward and transfers it to the com
 
 After the network fee is deducted the uploader can take his share of the remaining bundle reward. Because the uploader has to share his rewards with delegators and the uploader's stake also counts as a normal delegation the uploader would earn the same rewards as a normal delegator who just delegated the same amount. This is of course unfair, since the node operator is putting way more work and capital in form of server costs and maintenance.
 
-For this reason the commission was introduced, giving the node operator the option of setting a percentage of how much of the remaining bundle reward he directly receives. If the commission is at 0% the node operator does not earn anything extra and has the same rewards as a normal delegator. If the commission is 100% the node operator receives the full remaining bundle reward, leaving nothing for the delegators. Here of course the commission has to be chosen carefully by the node operator, chosing a too low commission could result in a loss for the operator, chosing it too high would result in users not delegating to your node. After the commission is then finally deducted the remaining reward is called the *delegation reward*. More information on how the delegation reward gets distributed between all delegators can be found on the next page.
+For this reason the commission was introduced, giving the node operator the option of setting a percentage of how much of the remaining bundle reward he directly receives. If the commission is at 0% the node operator does not earn anything extra and has the same rewards as a normal delegator. If the commission is 100% the node operator receives the full remaining bundle reward, leaving nothing for the delegators. Here of course the commission has to be chosen carefully by the node operator, choosing a too low commission could result in a loss for the operator, choosing it too high would result in users not delegating to your node. After the commission is then finally deducted the remaining reward is called the _delegation reward_. More information on how the delegation reward gets distributed between all delegators can be found on the next page.
 
 :::info
 **NOTE**: This means that the node operator always has to sources of income, the commission rewards and the delegation rewards from his self delegation.
@@ -30,13 +30,17 @@ For this reason the commission was introduced, giving the node operator the opti
 
 With this information the rewards can be calculated as follows:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 bundle\_reward = operating\_cost + (data\_size \cdot storage\_cost)
-\end{aligned}$$
+\end{aligned}
+$$
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 commission\_reward = bundle\_reward \cdot (1 - network\_fee) \cdot commission
-\end{aligned}$$
+\end{aligned}
+$$
 
 where
 
