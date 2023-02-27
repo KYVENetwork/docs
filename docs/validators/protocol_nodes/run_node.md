@@ -66,6 +66,10 @@ For the daemon service root-privileges are required during the setup. Create a s
 
 Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `moonbeam`
 
+:::info
+You might have to execute this command with `sudo`
+:::
+
 ```bash
 tee <<EOF > /dev/null /etc/systemd/system/moonbeamd.service
 [Unit]
@@ -80,6 +84,10 @@ RestartSec=3
 LimitNOFILE=infinity
 EOF
 ```
+
+:::info
+Don't forget to change the filename and the valaccount in the service file if you join a different pool
+:::
 
 Start the daemon
 

@@ -14,7 +14,7 @@ Once you have the latest version for you operating system simply
 pull them down:
 
 ```bash
-wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%40$VERSION/kysor-linux-x64.zip
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.8/kysor-linux-x64.zip
 ```
 
 After that simply decompress it and give the executable correct access roles:
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 ./kysor init \
 --chain-id 'korellia' \
 --rpc 'https://rpc.korellia.kyve.network' \
---rest 'https://api.korellia.kyve.network '\
+--rest 'https://api.korellia.kyve.network' \
 --auto-download-binaries
 ```
 

@@ -4,7 +4,9 @@ valaccount
 Valaccount
 validator
 Validator
+Uploader
 uploader
+Delegators
 delegators
 funder
 Cosmovisor
@@ -26,5 +28,15 @@ valoper
 Unjail
 param
 repo
-prebuild
 APY
+Tendermint
+incentivized
+boolean
+Runtime
+runtime
+Staker
+staker
+Interpool
+interpool
+p_i
+v_i
