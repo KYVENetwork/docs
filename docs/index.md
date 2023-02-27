@@ -20,7 +20,7 @@ Get familiar with KYVE and explore its main concepts.
 - **[Introduction](/introduction/overview.md)** - High-level overview of KYVE
 - **[$KYVE](/token_holders/overview.md)** - Read all about the native currency of KYVE
 - **[Data](/data_engineers/adding_data/index.md)** - Discover how you can store and retrieve validated data
-- **[Core Logic](/token_holders/overview.md)** - Explore the underlying core protocol
+- **[Core Logic](/protocol_devs/overview.md)** - Explore the underlying core protocol
 - **[SDK](/web3_devs/kyvejs.md)** - Contribute and develop applications on KYVE
 - **[Running a node](/validators/validators_overview.md)** - Run a node and participate in the network
 

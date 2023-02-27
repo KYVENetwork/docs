@@ -22,7 +22,7 @@ https://rpc.korellia.kyve.network
   <TabItem value="kaon" label="Kaon">
 
 ```
-https://rpc-eu-1.kaon.kyve.network/
+https://rpc-eu-1.kaon.kyve.network
 ```
 
   </TabItem>
