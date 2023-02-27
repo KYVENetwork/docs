@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Block Explorers
 
 Blockchain explorers allow users to query the blockchain for data. Explorers are often compared to search engines for
@@ -6,21 +10,20 @@ broadcasted data to the blockchain.
 
 ### List of Block Explorers
 
-Below is a list of public block explorers that support KYVE Mainnet and Testnet:
+Below is a list of public block explorers supported for each network:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
-    Ping.Pub
+    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    Ping.Pub
-    Mintscan
+    <strong>Ping.Pub</strong>: <a href="https://explorer.kaon.kyve.network/kaon">https://explorer.kaon.kyve.network/kaon</a><br/>
+    <strong>Mintscan</strong>: <a href="https://testnet.mintscan.io/kyve-testnet">https://testnet.mintscan.io/kyve-testnet</a>
   </TabItem>
   <TabItem value="kyve" label="KYVE">
-    Mintcan
-    Viewblock
+    Coming Soon
   </TabItem>
 </Tabs>

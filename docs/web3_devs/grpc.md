@@ -1,4 +1,8 @@
-# Cosmos gRPC & LCD-Endpoints
+---
+sidebar_position: 4
+---
+
+# RPC & LCD-Endpoints
 
 ## Cosmos RPC
 
@@ -9,13 +13,21 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
-    https://rpc.korellia.kyve.network
+
+```
+https://rpc.korellia.kyve.network
+```
+
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    https://rpc.kaon.kyve.network
+
+```
+https://rpc-eu-1.kaon.kyve.network/
+```
+
   </TabItem>
   <TabItem value="kyve" label="KYVE">
-    Coming Soon!
+    Coming Soon
   </TabItem>
 </Tabs>
 
@@ -25,12 +37,20 @@ All queries for the current chain state. The KYVE queries are prefixed with a `/
 
 <Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
-    https://api.korellia.kyve.network/
+
+```
+https://api.korellia.kyve.network
+```
+
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    https://api.kaon.kyve.network/
+
+```
+https://api-eu-1.kaon.kyve.network
+```
+
   </TabItem>
   <TabItem value="kyve" label="KYVE">
-    Coming Soon!
+    Coming Soon
   </TabItem>
 </Tabs>
