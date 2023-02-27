@@ -17,7 +17,9 @@ Since protocol nodes are responsible for uploading and verifying data they need 
 Since the introduction of Inter-Pool Security, a KYVE validator can join multiple pools at once, securing every
 pool with the validator's stake. To make this possible, the owner of the stake (validator account) and the actual operator (valaccount) are logically separated to allow horizontal scaling. With this solution in mind, the validator holds all the stake and earns all the rewards. In return, they grant permission to valaccounts which then upload and validate the data. The rewards earned then go to the validator account. An overview can be found below:
 
-![valaccounts](/img/valaccounts.png)
+<p align="center">
+  <img width="70%" src="/img/valaccounts.png" />
+</p>
 
 Here the following entities have characteristics:
 
