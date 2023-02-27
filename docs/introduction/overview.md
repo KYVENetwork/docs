@@ -19,7 +19,7 @@ decentralized data validation, immutability, and retrieval.
 With these tools, developers, data engineers, and others can easily and reliably access the trustless data they need in
 order to continue building the future of Web3.
 
-## KYVE’s Layer 1 Blockchain
+## KYVE’s Layer 1 blockchain
 
 KYVE is its own PoS Layer 1 blockchain built with the Cosmos SDK. It has two layers: the Chain Layer, and the Protocol
 Layer, each with their own node infrastructure.

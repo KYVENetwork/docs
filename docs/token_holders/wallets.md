@@ -12,7 +12,7 @@ Currently, KYVE supports the following hot wallets which are primarily used as a
 
 ### Keplr
 
-[Keplr](https://www.keplr.app/) is a non-custodial blockchain wallet for webpages that allows users to interact with blockchain applications. It is developed and maintained by [Chainapsis](https://www.chainapsis.com/).
+[Keplr](https://www.keplr.app/) is a non-custodial blockchain wallet for web pages that allows users to interact with blockchain applications. It is developed and maintained by [Chainapsis](https://www.chainapsis.com/).
 
 :::info
 **NOTE**: It can be downloaded and installed here: **[https://www.keplr.app/download](https://www.keplr.app/download)**
@@ -47,7 +47,7 @@ The Ledger Live app is open source. The source code can be found on [GitHub](htt
 #### Tutorial: Connecting Ledger to KYVE
 
 This tutorial describes how to set up and use the Keplr web app with your Ledger device to access your Ledger KYVE
-account(s).
+accounts.
 
 **Before you start**
 
@@ -56,7 +56,7 @@ account(s).
 - Firefox users might face connectivity issues, so we strongly recommend using Chrome.
 - Add the Keplr Chrome extension to your browser via this link.
 
-**Accessing your Ledger KYVE account(s) via Keplr**
+**Accessing your Ledger KYVE accounts via Keplr**
 
 1. Connect your Ledger device to your computer and open the Cosmos app on your device.
    Your Ledger device should display Cosmos ready.
@@ -69,9 +69,9 @@ account(s).
 5. Click “Done”.
 6. Open the KYVE web app via this link. Then click on “connect wallet” (top right)
 7. Add the Network to Keplr
-8. Open Keplr and click on “Cosmos Hub” to select the KYVE network, then scroll all the way down and click on the KYVE Network (either 'KYVE Korellia' or 'KYVE Kaon')
+8. Open Keplr and click on “Cosmos Hub” to select the KYVE network, then scroll all the way down and click on the KYVE Network (either `KYVE Korellia` or `KYVE Kaon`)
 9. View your address under your account name.
-   It should start with “kyve…..”; for example kyve1x4mqge0gxvg98nsdt0qp3q55a9vy8ytnqk8dvw. Now everything is set up
+   It should start with `kyve…..`; for example `kyve1x4mqge0gxvg98nsdt0qp3q55a9vy8ytnqk8dvw`. Now everything is set up
 
 ### Keystone
 
