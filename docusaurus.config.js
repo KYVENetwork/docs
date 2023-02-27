@@ -10,7 +10,7 @@ const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "KYVE",
-  tagline: "Creating Web3 datalake",
+  tagline: "Making data a public good for a trustless ecosystem",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
