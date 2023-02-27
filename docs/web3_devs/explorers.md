@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Block Explorers
 
 Blockchain explorers allow users to query the blockchain for data. Explorers are often compared to search engines for

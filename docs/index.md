@@ -83,32 +83,32 @@ Interested in [storing KYVE data ?](/data_engineers/adding_data/index.md)
 
 To tie the network together, KYVE has its own native token, $KYVE, which has multiple uses:
 
-* On the chain level, $KYVE is used for staking and delegating, securing the network through Proof of Stake;
-* On the protocol level, $KYVE is used for funding, staking, and delegating, providing security for uploaded data.
-* On the governance level, $KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
+- On the chain level, $KYVE is used for staking and delegating, securing the network through Proof of Stake;
+- On the protocol level, $KYVE is used for funding, staking, and delegating, providing security for uploaded data.
+- On the governance level, $KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
   the evolution and growth of KYVE.
 
 Currently, $KYVE is not yet on the market. Its TGE is planned for late Q1, 2023.
 
 :::info
-Interested in [learning more about the tokenomics?](/token_holders/basic_tokenomics.md)
+Interested in [learning more about the tokenomics?](https://www.kyve.network/tokenomics)
 :::
 
 ## Partnered with KYVE
 
 KYVE is currently partnered with:
 
-* Polkadot & Kusama
-* Near
-* Moonbeam
-* Avalanche
-* Stacks
-* Cosmos
-* Evmos
-* Injective
-* Celo
-* Aurora
-* Zilliqa
-* Axelar
-* Sei Network
-* Archway
+- Polkadot & Kusama
+- Near
+- Moonbeam
+- Avalanche
+- Stacks
+- Cosmos
+- Evmos
+- Injective
+- Celo
+- Aurora
+- Zilliqa
+- Axelar
+- Sei Network
+- Archway
