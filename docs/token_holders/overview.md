@@ -18,3 +18,16 @@ Currently, $KYVE is not yet on the market. Its TGE is planned for late Q1, 2023.
 ## What can I do with my $KYVE?
 
 There are multiple use cases for $KYVE ranging from simple delegation to specific KYVE features like funding or participating in Storage Pools. The following use cases are explained in detail in the following pages.
+
+## Key Parameters
+
+The most important parameters of $KYVE are listed below depending on the network:
+
+import ParamTotalSupply from '/src/components/ParamTotalSupply';
+import ParamInflation from '/src/components/ParamInflation';
+
+|                      | Korellia                                                                                       | Kaon                                                                                            | Mainnet                 |
+| -------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------- |
+| Genesis Supply       | **1,000,000,000** $KYVE                                                                        | **1,000,000,000** $KYVE                                                                         | **1,000,000,000** $KYVE |
+| Current Total Supply | <ParamTotalSupply networkUrl="https://api.korellia.kyve.network" denom="tkyve" decimals={9} /> | <ParamTotalSupply networkUrl="https://api-eu-1.kaon.kyve.network" denom="tkyve" decimals={6} /> | TBD                     |
+| Current Inflation    | <ParamInflation networkUrl="https://api.korellia.kyve.network" />                              | <ParamInflation networkUrl="https://api-eu-1.kaon.kyve.network" />                              | TBD                     |
