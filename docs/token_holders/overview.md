@@ -18,11 +18,3 @@ Currently, $KYVE is not yet on the market. Its TGE is planned for late Q1, 2023.
 ## What can I do with my $KYVE?
 
 There are multiple use cases for $KYVE ranging from simple delegation to specific KYVE features like funding or participating in Storage Pools. The following use cases are explained in detail in the following pages.
-
-## Supported Wallets
-
-### Hot Wallets
-
-### Cold Wallets
-
-### Custody
