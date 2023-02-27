@@ -12,15 +12,17 @@ KYVE came up with the solution of making a weighted, pseudo random selection. He
 
 The seed to make the weighted random selection is derived from the current `app hash` of the blockchain state. This makes it impossible to predict the seed before the actual block is mined. As soon as the block is then mined all chain node participants come to the same hash and therefore to the same seed, therefore making the weighted selection on-chain and secure.
 
-It is important to point out that not everyone by default qualifies for the uploader selection. Only nodes who have either voted *valid* or *invalid* are taking into account for the selection. Nodes who have voted with *abstain* or did not vote at all are not considered. This ensures that nodes are incentivized to take the risk of voting either *valid* or *invalid*, otherwise nodes would just vote with abstain, since then they won't face the risk of receiving a vote slash.
+It is important to point out that not everyone by default qualifies for the uploader selection. Only nodes who have either voted _valid_ or _invalid_ are taking into account for the selection. Nodes who have voted with _abstain_ or did not vote at all are not considered. This ensures that nodes are incentivized to take the risk of voting either _valid_ or _invalid_, otherwise nodes would just vote with abstain, since then they won't face the risk of receiving a vote slash.
 
 ## Calculation
 
 The probability of a node getting selected as the next uploader each round can be calculated the following way:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 p_i = \frac{d_i}{\sum_{k=1}^{n} d_k}
-\end{aligned}$$
+\end{aligned}
+$$
 
 where
 

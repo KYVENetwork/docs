@@ -14,12 +14,14 @@ To finally determine if a bundle is valid or not the votes from all the node val
 
 ## Calculation
 
-The voting power is almost the same like the uploader selection probability defined before, but here **every** node in a pool is taken into account and not only the ones who voted either *valid* or *invalid*. This implies
+The voting power is almost the same like the uploader selection probability defined before, but here **every** node in a pool is taken into account and not only the ones who voted either _valid_ or _invalid_. This implies
 that simply having more delegation leads to more voting power.
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 v_i = \frac{d_i}{\sum_{k=1}^{n} d_k}
-\end{aligned}$$
+\end{aligned}
+$$
 
 where
 

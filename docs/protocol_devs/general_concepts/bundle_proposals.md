@@ -41,9 +41,9 @@ But in order to be able to reconstruct the bundle proposal locally certain metad
 - `pool_id`: the id of the storage pool
 - `storage_id`: here the previously mentioned storage receipt is stored. With this other participants in the network can retrieve the actual data and verify it
 - `data_size`: the amount of bytes the data has which got stored on the storage provider. Used for the [reward calculation](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and is also verified by other validators
-- `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid the hash also gets stored on-chain together with the *storage_id* so that data consumers can always verify the validity of the data they retrieve from the storage provider
+- `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid the hash also gets stored on-chain together with the _storage_id_ so that data consumers can always verify the validity of the data they retrieve from the storage provider
 - `from_index`: the current index of the storage pool. This is used to automatically check if the uploader submitted to correct slice of data and does not submit an already submitted bundle
-- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the storage pool index and for validating if the bundle is below the *max_bundle_size* limit. This gets also validated by other validators
+- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the storage pool index and for validating if the bundle is below the _max_bundle_size_ limit. This gets also validated by other validators
 - `from_key`: the key of the first data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
 - `to_key`: the key of the last data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
 - `bundle_summary`: the summary of the bundle data. This is a string value which gets stored on-chain once the proposal is valid. This enables on-chain queries for actual data.

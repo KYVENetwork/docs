@@ -21,9 +21,9 @@ There are two options on how a pool participant can be become an uploader:
 The main tasks and responsibilities of an uploader are the following:
 
 - Close previous round with `MsgSubmitBundleProposal`. This will tally up the votes, reward (or slash) participants and close that round. By submitting already the new bundle proposal
-the new round immediately gets started. With the new round started, the other participants (validators) can validate and vote on the proposal
+  the new round immediately gets started. With the new round started, the other participants (validators) can validate and vote on the proposal
 - Skip round with `MsgSkipUploaderRole`. This should be called if the uploader is unable to get new data from the data source due to it being offline or for other reasons. With this transaction
-a new uploader is automatically selected who then can try if he can find any new data. If an uploader skips a bundle proposal he will **not** earn any rewards
+  a new uploader is automatically selected who then can try if he can find any new data. If an uploader skips a bundle proposal he will **not** earn any rewards
 
 ## Flow diagram
 

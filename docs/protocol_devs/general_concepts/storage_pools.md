@@ -65,7 +65,7 @@ and incentivized is a challenge. KYVE designed pools to fulfill all those needs.
 
 ### Keeping pools funded
 
-In order to payout protocol nodes and incentivize them the pool needs funds. These funds are provided by *funders*;
+In order to payout protocol nodes and incentivize them the pool needs funds. These funds are provided by _funders_;
 they are interested in archiving the data the specific pool handles. This could be the project or the foundation behind
 a data source that wants its data to be permanently archived onto Arweave. Besides people interested in making the data
 permanent, anyone can become a funder. The only downside is that there are currently no rewards for becoming a funder.
@@ -101,7 +101,6 @@ the validator's commission. If it is high (for example 99%), the delegators only
 rewards. On the other hand, if it is low, the delegators receive more. By that, delegators are rewarded for giving
 validators capital that they trust so everyone has a benefit.
 
-
 ## Properties
 
 To make storage pools as general as possible many parameters where introduced to fit the various requirements of data streams. For each pool the following state is stored:
@@ -116,7 +115,7 @@ A human readable name for the pool. Also used when searching for a pool.
 
 ### `runtime`
 
-The name of the runtime. For EVM this would be `@kyvejs/evm` for example. It is used in the protocol node to double check if the node  actually supports this runtime and can take part in the upload/validation process.
+The name of the runtime. For EVM this would be `@kyvejs/evm` for example. It is used in the protocol node to double check if the node actually supports this runtime and can take part in the upload/validation process.
 
 ### `logo`
 
@@ -283,9 +282,7 @@ Below is the query result from a pool. The actual pool state can be found under 
       "kyve10flshfy53rz0tfmuyt3n2ptx2z0t0rardql4ks"
     ],
     "voters_invalid": [],
-    "voters_abstain": [
-      "kyve1kslrzlrjw25e9c48ck2j4777m6cqqkcryntfja"
-    ],
+    "voters_abstain": ["kyve1kslrzlrjw25e9c48ck2j4777m6cqqkcryntfja"],
     "from_key": "3003882",
     "storage_provider_id": 1,
     "compression_id": 1
@@ -307,4 +304,3 @@ Below is the query result from a pool. The actual pool state can be found under 
   "status": "POOL_STATUS_ACTIVE"
 }
 ```
-
