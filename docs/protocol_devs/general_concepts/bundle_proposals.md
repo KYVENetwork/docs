@@ -15,7 +15,11 @@ this method, we can break down a data stream into various rounds, making it easi
 will collect data in each round, create a bundle, and submit it to the network. This marks the beginning of such a
 proposal round.
 
-In summary, in each proposal round one bundle gets proposed which consists of multiple data items and gets validated by letting other validators check the proposed bundle and vote accordingly. On-chain the votes are tallied and once the result is valid entry of the bundle gets stored on chain as valid. The data is still on the storage provider but the chain has the storage id, thus making it possible to view all the valid storage ids and therefore view the actual content on the storage provider.
+In summary, in each proposal round one bundle gets proposed which consists of multiple data items and gets validated by
+letting other validators check the proposed bundle and vote accordingly. On-chain the votes are tallied and once the
+result is valid entry of the bundle gets stored on chain as valid. The data is still on the storage provider but the
+chain has the storage id, thus making it possible to view all the valid storage ids and therefore view the actual
+content on the storage provider.
 
 ## Lifecycle of a bundle proposal
 
@@ -27,31 +31,53 @@ The lifecycle for one bundle proposal can be seen in the following diagram:
 
 ## Content of a bundle proposal
 
-In contrast to many beliefs the bundle proposal which gets registered on-chain **does not** contain the actual data which is getting validated. It only holds a reference in form of the storage receipt.
-That storage receipt can be used by anyone to retrieve the actual data from the storage provider. For Arweave for example this receipt is the transaction ID which looks like this: `iXJTjdxTwpEMdlLhdfhDnMgUxHr8TrOARvBxRTIZSsA`.
+In contrast to many beliefs the bundle proposal which gets registered on-chain **does not** contain the actual data
+which is getting validated. It only holds a reference in form of the storage receipt.
+That storage receipt can be used by anyone to retrieve the actual data from the storage provider. For Arweave for
+example this receipt is the transaction ID which looks like this: `iXJTjdxTwpEMdlLhdfhDnMgUxHr8TrOARvBxRTIZSsA`.
 
-This implies that the uploader bundles up the data and stores it on the storage provider. With the storage receipt the uploader got he can submit the bundle proposal. All other participants in the pool
-see what the uploader submitted and take the storage receipt and retrieve the actual data from it. Because every node in a pool locally creates their own bundle proposal it then can compare the proposed
+This implies that the uploader bundles up the data and stores it on the storage provider. With the storage receipt the
+uploader got he can submit the bundle proposal. All other participants in the pool
+see what the uploader submitted and take the storage receipt and retrieve the actual data from it. Because every node in
+a pool locally creates their own bundle proposal it then can compare the proposed
 proposal with the local one and vote accordingly.
 
-But in order to be able to reconstruct the bundle proposal locally certain metadata has to be included in the proposal. The required metadata can be seen in the proposal registration transaction: `MsgSubmitBundleProposal`. Looking at the transaction arguments we can identify the following requirements:
+But in order to be able to reconstruct the bundle proposal locally certain metadata has to be included in the proposal.
+The required metadata can be seen in the proposal registration transaction: `MsgSubmitBundleProposal`. Looking at the
+transaction arguments we can identify the following requirements:
 
-- `creator`: the creator of the transaction. It is used to determine if the creator is also the current uploader, because only he can submit a bundle proposal for the current round.
-- `staker`: the address of the valaccount. It is used to determine if the valaccount has sufficient stake and is actually in the storage pool
+- `creator`: the creator of the transaction. It is used to determine if the creator is also the current uploader,
+  because only he can submit a bundle proposal for the current round.
+- `staker`: the address of the valaccount. It is used to determine if the valaccount has sufficient stake and is
+  actually in the storage pool
 - `pool_id`: the id of the storage pool
-- `storage_id`: here the previously mentioned storage receipt is stored. With this other participants in the network can retrieve the actual data and verify it
-- `data_size`: the amount of bytes the data has which got stored on the storage provider. Used for the [reward calculation](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and is also verified by other validators
-- `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid the hash also gets stored on-chain together with the _storage_id_ so that data consumers can always verify the validity of the data they retrieve from the storage provider
-- `from_index`: the current index of the storage pool. This is used to automatically check if the uploader submitted to correct slice of data and does not submit an already submitted bundle
-- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the storage pool index and for validating if the bundle is below the _max_bundle_size_ limit. This gets also validated by other validators
-- `from_key`: the key of the first data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
-- `to_key`: the key of the last data item in a bundle. Is used for tagging purposes for the bundle proposal to easier find content afterwards
-- `bundle_summary`: the summary of the bundle data. This is a string value which gets stored on-chain once the proposal is valid. This enables on-chain queries for actual data.
+- `storage_id`: here the previously mentioned storage receipt is stored. With this other participants in the network can
+  retrieve the actual data and verify it
+- `data_size`: the amount of bytes the data has which got stored on the storage provider. Used for
+  the [reward calculation](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and is also verified by
+  other validators
+- `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid
+  the hash also gets stored on-chain together with the _storage_id_ so that data consumers can always verify the
+  validity of the data they retrieve from the storage provider
+- `from_index`: the current index of the storage pool. This is used to automatically check if the uploader submitted to
+  correct slice of data and does not submit an already submitted bundle
+- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the storage pool index and for
+  validating if the bundle is below the _max_bundle_size_ limit. This gets also validated by other validators
+- `from_key`: the key of the first data item in a bundle. Is used for tagging purposes for the bundle proposal to easier
+  find content afterwards
+- `to_key`: the key of the last data item in a bundle. Is used for tagging purposes for the bundle proposal to easier
+  find content afterwards
+- `bundle_summary`: the summary of the bundle data. This is a string value which gets stored on-chain once the proposal
+  is valid. This enables on-chain queries for actual data.
 
 ## Data Content of bundle proposals
 
-Since we have only touched the content structure of the bundle proposal but not the actual bundle data which gets stored on the storage provider the following example might help to clarify this.
-A bundle always is a JSON array of data items which have two properties, the `key` and the corresponding `value`. A real example of how a bundle could look like is this bundle from Bitcoin, which has the first two blocks in it. Notice how the `key` corresponds to the value's block height, since the block height is in Bitcoin the key to query the value, the block.
+Since we have only touched the content structure of the bundle proposal but not the actual bundle data which gets stored
+on the storage provider the following example might help to clarify this.
+A bundle always is a JSON array of data items which have two properties, the `key` and the corresponding `value`. A real
+example of how a bundle could look like is this bundle from Bitcoin, which has the first two blocks in it. Notice how
+the `key` corresponds to the value's block height, since the block height is in Bitcoin the key to query the value, the
+block.
 
 ```json
 [
@@ -134,7 +160,12 @@ A bundle always is a JSON array of data items which have two properties, the `ke
           "vsize": 134,
           "weight": 536,
           "locktime": 0,
-          "vin": [{ "coinbase": "04ffff001d0104", "sequence": 4294967295 }],
+          "vin": [
+            {
+              "coinbase": "04ffff001d0104",
+              "sequence": 4294967295
+            }
+          ],
           "vout": [
             {
               "value": 50,
@@ -154,27 +185,34 @@ A bundle always is a JSON array of data items which have two properties, the `ke
 ]
 ```
 
-Of course storing raw JSON data is quite inefficient. For this reason protocol nodes compress the JSON bundles (mostly GZip) and then store it which saves a lot of storage space and funds.
+Of course storing raw JSON data is quite inefficient. For this reason protocol nodes compress the JSON bundles (mostly
+GZip) and then store it which saves a lot of storage space and funds.
 
 ## Query Bundle Proposals
 
-There are two types of bundle proposals: Ongoing bundle proposals which are currently validated and validated bundle proposals which are
-stored forever on-chain (but with less data). Both can be viewed in the Web App or directly be queried from the REST API.
+There are two types of bundle proposals: Ongoing bundle proposals which are currently validated and validated bundle
+proposals which are
+stored forever on-chain (but with less data). Both can be viewed in the Web App or directly be queried from the REST
+API.
 
 :::info
-**NOTE**: Ongoing Bundle Proposals have a one-to-one relationship with pools. Validated Bundle Proposals on the other hand have a one-to-many relationship. In both circumstances a pool ID is always required to query for proposals
+**NOTE**: Ongoing Bundle Proposals have a one-to-one relationship with pools. Validated Bundle Proposals on the other
+hand have a one-to-many relationship. In both circumstances a pool ID is always required to query for proposals
 :::
 
 ### Web App
 
-To view ongoing bundle proposals simply open the Web App, go to the pools page and click on a pool. If you scroll down a bit you should
+To view ongoing bundle proposals simply open the Web App, go to the pools page and click on a pool. If you scroll down a
+bit you should
 see the status of an ongoing bundle proposal including the current collected votes and other metrics.
 
-To view validated bundle proposals click on the tab `Bundles`. Here all validated bundles ever produced in this pool are listed including other helpful information.
+To view validated bundle proposals click on the tab `Bundles`. Here all validated bundles ever produced in this pool are
+listed including other helpful information.
 
 ### REST API
 
-Ongoing bundle proposals are always attached to the pool query and can be found under `bundle_proposal`. As already mentioned before
+Ongoing bundle proposals are always attached to the pool query and can be found under `bundle_proposal`. As already
+mentioned before
 in [Storage Pools](/protocol_devs/general_concepts/storage_pools.md) there are two endpoints where pools can be queried:
 
 - `/kyve/query/v1beta1/pools`: gets all pools
@@ -187,7 +225,9 @@ To query validated bundle proposals of a pool you can use the following endpoint
 
 ## Bundle validation over time
 
-For multiple bundle proposals over time the following diagram can be used for reference. Note that when the uploader submits a new bundle proposal the current round immediately gets tallied and closed. That is the reason why bundle proposals are an ongoing process.
+For multiple bundle proposals over time the following diagram can be used for reference. Note that when the uploader
+submits a new bundle proposal the current round immediately gets tallied and closed. That is the reason why bundle
+proposals are an ongoing process.
 
 <p align="center">
   <img width="90%" src="/img/data_flow.png" />

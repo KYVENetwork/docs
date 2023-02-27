@@ -6,11 +6,17 @@ sidebar_position: 2
 
 ## Introduction
 
-As mentioned in the chapter before, every storage pool has to specify a runtime. Basically, a runtime is an implementation of the actual data retrieval and validation logic. If a storage pool chooses to run with a certain runtime, only data can be archived and validated if the data source is supported by the runtime.
+As mentioned in the chapter before, every storage pool has to specify a runtime. Basically, a runtime is an
+implementation of the actual data retrieval and validation logic. If a storage pool chooses to run with a certain
+runtime, only data can be archived and validated if the data source is supported by the runtime.
 
-An example of a runtime is `@kyvejs/bitcoin`. It is a special implementation to retrieve bitcoin data and validate it. It would not be able to retrieve for example Ethereum data. So if KYVE should archive and validate the entire Bitcoin blockchain a storage pool with the `@kyvejs/bitcoin` runtime has to be created. If KYVE on the other hand should archive and validate the entire Ethereum blockchain a storage pool with the `@kyvejs/evm` runtime has to be used.
+An example of a runtime is `@kyvejs/bitcoin`. It is a special implementation to retrieve bitcoin data and validate it.
+It would not be able to retrieve for example Ethereum data. So if KYVE should archive and validate the entire Bitcoin
+blockchain a storage pool with the `@kyvejs/bitcoin` runtime has to be created. If KYVE on the other hand should archive
+and validate the entire Ethereum blockchain a storage pool with the `@kyvejs/evm` runtime has to be used.
 
-> **This enables KYVE to reuse the validation logic of a storage pool to process every kind of data, assuming a runtime for that data type can be implemented.**
+> **This enables KYVE to reuse the validation logic of a storage pool to process every kind of data, assuming a runtime
+for that data type can be implemented.**
 
 ## Usage
 
@@ -22,15 +28,19 @@ The runtime communicates in the following way with the KYVE core implementation:
 
 ## Implementation
 
-When a storage pool has specified a certain runtime, the actual protocol node binaries have to use this runtime, else they are not able to join the pool. The binaries are compiled from the runtime implementation directly, extending the base logic from the protocol package which can be found [here](https://www.npmjs.com/package/@kyvejs/protocol).
+When a storage pool has specified a certain runtime, the actual protocol node binaries have to use this runtime, else
+they are not able to join the pool. The binaries are compiled from the runtime implementation directly, extending the
+base logic from the protocol package which can be found [here](https://www.npmjs.com/package/@kyvejs/protocol).
 
 :::info
-**INFO**: Existing runtime implementations can be found [here](https://github.com/KYVENetwork/kyvejs/tree/main/integrations)
+**INFO**: Existing runtime implementations can be
+found [here](https://github.com/KYVENetwork/kyvejs/tree/main/integrations)
 :::
 
 ## Interface
 
-The runtime not only retrieves and validates the data for the protocol node, it also has some other responsibilities. A full list of every method the runtime has to implemented can be found below:
+The runtime not only retrieves and validates the data for the protocol node, it also has some other responsibilities. A
+full list of every method the runtime has to implemented can be found below:
 
 ```ts title="/kyvejs/common/protocol/src/types/interfaces/runtime.interface.ts"
 /**
