@@ -4,10 +4,6 @@ sidebar_position: 2
 
 # Block Explorers
 
-import SlashingParameters from '/src/components/SlashingParameters';
-
-<SlashingParameters networkUrl="https://api.korellia.kyve.network" />
-
 Blockchain explorers allow users to query the blockchain for data. Explorers are often compared to search engines for
 the blockchain. By using an explorer, users can search and track balances, transactions, contracts, and other
 broadcasted data to the blockchain.
