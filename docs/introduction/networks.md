@@ -19,7 +19,7 @@ Kaon is the newest network which is KYVE's official testnet. It should mirror th
     <strong>WebApp</strong>: <a href="https://app.kaon.kyve.network">https://app.kaon.kyve.network</a>
   </TabItem>
   <TabItem value="explorer" label="Explorer">
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kaon.kyve.network/kaon">https://explorer.kaon.kyve.network/kaon</a><br/>
+    <strong>Ping</strong>: <a href="https://explorer.kaon.kyve.network/kaon">https://explorer.kaon.kyve.network/kaon</a><br/>
     <strong>Mintscan</strong>: <a href="https://testnet.mintscan.io/kyve-testnet">https://testnet.mintscan.io/kyve-testnet</a>
   </TabItem>
   <TabItem value="rpc" label="RPC">
@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
     <strong>WebApp</strong>: <a href="https://app.kyve.network">https://app.kyve.network</a>
   </TabItem>
   <TabItem value="explorer" label="Explorer">
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
+    <strong>Ping</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
   </TabItem>
   <TabItem value="rpc" label="RPC">
     <strong>RPC</strong>: <a href="https://rpc.korellia.kyve.network">https://rpc.korellia.kyve.network</a>

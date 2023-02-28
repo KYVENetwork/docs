@@ -12,7 +12,7 @@ Because there are two different types of nodes (chain node & protocol node) ther
 
 ## Chain Delegation
 
-Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate into a chain node you're $KYVE is bonded and used in the Proof of Stake protocol to produce and validate new blocks. By delegating into a chain node you are trusting that node to act honestly. If that node is found to act mailicously and is getting slashed a part of your delegation is also slashed.
+Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate into a chain node you're $KYVE is bonded and used in the Proof of Stake protocol to produce and validate new blocks. By delegating into a chain node you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed a part of your delegation is also slashed.
 
 ### How to delegate?
 
@@ -23,10 +23,10 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
+    <strong>Explorer</strong>: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kaon.kyve.network/kaon/staking">https://explorer.kaon.kyve.network/kaon/staking</a>
+    <strong>Explorer</strong>: <a href="https://explorer.kaon.kyve.network/kaon/staking">https://explorer.kaon.kyve.network/kaon/staking</a>
   </TabItem>
   <TabItem value="kyve" label="KYVE">
     Coming Soon
@@ -46,12 +46,12 @@ The following example shows the delegation with the Ping explorer on the Kaon ne
 In return for lending out $KYVE and putting them at risk in order to secure the network delegators receive rewards in form of $KYVE. The most important parameter to estimate the rewards is the APY (Annual percentage yield) or also sometimes called APR (Annual percentage rate). This is an estimation of how much interest you can accrue in one year.
 
 :::caution
-**IMPORTANT**: The chain delegation APY is **never** a garuantee. It is simply an estimation for the next year based on current parameters.
+**IMPORTANT**: The chain delegation APY is **never** a guarantee. It is simply an estimation for the next year based on current parameters.
 :::
 
 Another parameter which influences the rewards of a delegator is the node commission. The node commission defines how much of the block reward directly goes to the node and how much goes to the rest - the delegators. A high commission means less rewards for delegators, a low one the opposite.
 
-The source of those rewards are a combination of inflation and transaction fees. Inflation helps stablizing the network by providing consistent rewards to chain nodes and chain delegators. Those rewards are minted every block and collected in a fee pool where every transaction fee gets collected, too. After the rewards for each block are collected there are distributed in the Cosmos SDK [x/distribution](https://docs.cosmos.network/main/modules/distribution) module.
+The source of those rewards are a combination of inflation and transaction fees. Inflation helps stabilizing the network by providing consistent rewards to chain nodes and chain delegators. Those rewards are minted every block and collected in a fee pool where every transaction fee gets collected, too. After the rewards for each block are collected there are distributed in the Cosmos SDK [x/distribution](https://docs.cosmos.network/main/modules/distribution) module.
 
 Those rewards then can be claimed in the block explorer. Once they are claimed they are liquid and free to use.
 
@@ -108,7 +108,7 @@ The following example shows the delegation with the KYVE web app on the Korellia
 Again similar to chain delegation the delegator receives in return for lending out $KYVE and putting them at risk in order to secure the network and the process of data validation rewards in form of $KYVE. The most important parameter again is the APY (or APR).
 
 :::caution
-**IMPORTANT**: The protocol delegation APY is **never** a garuantee. It is simply an estimation for the next year based on current parameters.
+**IMPORTANT**: The protocol delegation APY is **never** a guarantee. It is simply an estimation for the next year based on current parameters.
 :::
 
 Another parameter which influences the rewards of a delegator is the node commission. The node commission defines how much of the bundle reward directly goes to the node and how much goes to the rest - the delegators. A high commission means less rewards for delegators, a low one the opposite. More information on that can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation).

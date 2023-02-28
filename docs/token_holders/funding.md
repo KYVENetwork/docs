@@ -15,7 +15,7 @@ Projects/Users who are building business cases with the pools data. They want to
 ## How can I fund a pool?
 
 :::caution
-**IMPORTANT**: Funding will not earn you rewards! The opposite is the case. Funders pay for the delegation rewards in a pool and are therefore necessary for a pool to function. You should only fund if you have an interest in the data being archived and only if you know what you are doing
+**IMPORTANT**: Funding will not earn you rewards. The opposite is the case. Funders pay for the delegation rewards in a pool and are therefore necessary for a pool to function. You should only fund if you have an interest in the data being archived and only if you know what you are doing
 :::
 
 The easiest way to fund a pool is through the KYVE web app. The web app for every network can be found below:
