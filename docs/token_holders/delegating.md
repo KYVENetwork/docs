@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Because there are two different types of nodes (chain node & protocol node) there are also two types of delegation. Both actions help to secure the KYVE network and earn rewards, but both come with their respected risks.
 
-:::danger
+:::caution
 **ATTENTION**: Delegating might lead to the loss of your $KYVE. Please read this guide until the end in order to understand how to prevent this.
 :::
 
