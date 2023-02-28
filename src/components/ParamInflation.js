@@ -17,11 +17,11 @@ const ParamInflation = ({ networkUrl }) => {
   }, []);
 
   if (!data) {
-    return <div>Loading ...</div>;
+    return <div>-</div>;
   }
 
   if (data === ERROR_MSG) {
-    return <div>{ERROR_MSG}</div>;
+    return <div>-</div>;
   }
 
   return (

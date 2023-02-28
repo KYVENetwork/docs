@@ -6,29 +6,11 @@ sidebar_position: 3
 
 Currently, KYVE has two active networks. Both are testnets, meaning the native currency $KYVE has no value and the data is not safe to use. In the future, KYVE will have it's third network: Mainnet.
 
-## Korellia
+## Mainnet - KYVE
 
-Korellia is the oldest official testnet of KYVE. The Incentivized Testnet was performed on this network and still runs to this day.
+Planned for late Q1, 2023
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="webapp" label="WebApp">
-    <strong>WebApp</strong>: <a href="https://app.kyve.network">https://app.kyve.network</a>
-  </TabItem>
-  <TabItem value="explorer" label="Explorer">
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
-  </TabItem>
-  <TabItem value="rpc" label="RPC">
-    <strong>RPC</strong>: <a href="https://rpc.korellia.kyve.network">https://rpc.korellia.kyve.network</a>
-  </TabItem>
-  <TabItem value="rest" label="REST">
-    <strong>REST</strong>: <a href="https://api.korellia.kyve.network">https://api.korellia.kyve.network</a>
-  </TabItem>
-</Tabs>
-
-## Kaon
+## Testnet - Kaon
 
 Kaon is the newest network which is KYVE's official testnet. It should mirror the mainnet and before upgrades are applied on mainnet they should first be successfully applied in this testnet.
 
@@ -48,6 +30,24 @@ Kaon is the newest network which is KYVE's official testnet. It should mirror th
   </TabItem>
 </Tabs>
 
-## Mainnet
+## Devnet - Korellia
 
-Coming soon
+Korellia is the oldest official testnet of KYVE. The Incentivized Testnet was performed on this network alongside many important upgrades. It will be used as a devnet from this point on, testing out new features without the risk of loosing real assets.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="webapp" label="WebApp">
+    <strong>WebApp</strong>: <a href="https://app.kyve.network">https://app.kyve.network</a>
+  </TabItem>
+  <TabItem value="explorer" label="Explorer">
+    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
+  </TabItem>
+  <TabItem value="rpc" label="RPC">
+    <strong>RPC</strong>: <a href="https://rpc.korellia.kyve.network">https://rpc.korellia.kyve.network</a>
+  </TabItem>
+  <TabItem value="rest" label="REST">
+    <strong>REST</strong>: <a href="https://api.korellia.kyve.network">https://api.korellia.kyve.network</a>
+  </TabItem>
+</Tabs>
