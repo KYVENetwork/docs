@@ -22,15 +22,15 @@ The PrivKey is employed to create digital signatures that demonstrate that the a
 
 ## KYVE Accounts
 
-KYVE uses the Coin type `118` ([list of coin types](https://github.com/satoshilabs/slips/blob/master/slip-0044.md)) and further has `m/44'/118'/0'` as the root HD path for KYVE-based accounts.
+KYVE uses the Coin type `118` ([list of coin types](https://github.com/satoshilabs/slips/blob/master/slip-0044.md)) and additionally uses `m/44'/118'/0'` as the root HD path for KYVE-based accounts.
 
-With [BIP-0173](https://github.com/satoshilabs/slips/blob/master/slip-0173.md), which defines a new format for segregated witness output addresses that contains a human-readable part that identifies the coin type, the usage of Bech32 encoding is possible.
-
-KYVE uses the following HRP (humand readable prefix) as the base HRP:
+With [BIP-0173](https://github.com/satoshilabs/slips/blob/master/slip-0173.md), which defines a new format for segregated witness output addresses that contains a human-readable part that identifies the coin type, the usage of Bech32 encoding is possible. KYVE uses the following HRP (humand readable prefix) as the base HRP:
 
 |        | Mainnet | Kaon   | Korellia |
 | ------ | ------- | ------ | -------- |
 | Prefix | `kyve`  | `kyve` | `kyve`   |
+
+In general, the easiest way the create and manage accounts are wallets. KYVE supports a variety of wallets which are listed in the next section.
 
 :::tip
 **NOTE**: This means you can use the **same** address for every KYVE network, including Mainnet, Kaon and Korellia
