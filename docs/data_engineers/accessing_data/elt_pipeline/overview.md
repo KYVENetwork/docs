@@ -1,27 +1,70 @@
+---
+sidebar_position: 0
+---
+
 # Overview
 
-The KYVE ELT-Pipeline allows developers to connect KYVE to their favorite
-data warehouse or destination.
+The KYVE Data Pipeline enables easy import of KYVE data into any data warehouse or destination
+supported by [Airbyte](https://airbyte.com/). With the [ELT](https://en.wikipedia.org/wiki/Extract,_load,_transform)
+format, data analysts and engineers can now confidently source KYVE data without worrying about its validity or
+reliability.
 
-## Quick start
+The sections that follow were created to help you build up a local testbed for testing KYVE's DataPipeline.
 
-### Starting Airbyte
+### System Requirements
+To experiment with the ELT pipeline via [Airbyte](https://airbyte.com/), you must ensure that your PC has been configured correctly.
 
-```bash
-git clone https://github.com/KYVENetwork/DataPipeline.git
+#### Windows
 
-docker-compose up
-```
+For Windows users, the Windows Subsystem for Linux 2 (WSL2) must be installed. You must be running Windows 10 version
+2004 or higher (build 19041 or higher), or Windows 11 to use the commands in this tutorial.
 
-Now visit [http://localhost:8000](http://localhost:8000)
+1. Open PowerShell or the Windows Command Prompt in `administrator` mode, then enter the following command to install
+   WSL2:
 
-Here is a [step-by-step guide](https://github.com/airbytehq/airbyte/tree/e378d40236b6a34e1c1cb481c8952735ec687d88/docs/quickstart/getting-started.md) showing you how to load data from an API into a file, all on your computer.
+   ```bat
+   wsl --install
+   ```
 
-### Adding the KYVE Source
+   Note: In case the installation command returns _"This application requires the Windows Subsystem for Linux
+   Optional Component"_, you should run:
 
-```bash
-cd airbyte-integrations/connectors/source-kyve
-docker build . -t airbyte/source-kyve:dev
-```
+   ```bat
+   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+   ```
 
-Now visit [http://localhost:8000](http://localhost:8000) and follow [this guide](https://docs.airbyte.com/integrations/custom-connectors/#adding-your-connectors-in-the-ui).
+2. Restart your machine after installation.
+
+3. To ensure that WSL2 has been installed successfully, run the following command:
+
+   ```bat
+    wsl -l -v
+   ```
+
+   Expected output:
+
+   ```bat
+     NAME                   STATE           VERSION
+   * Ubuntu                 Running         2
+   ```
+
+4. After you've set up WSL2 successfully, install `Docker desktop on Windows` by following the
+   steps [here](https://docs.docker.com/desktop/install/windows-install/).
+
+#### Mac
+
+We will be utilizing `brew` in order to install Docker Desktop and `docker-compose` on Mac. In order to install `brew`
+please follow the instructions listed [here](https://brew.sh/).
+
+1. You are now ready to install Docker Desktop and `docker-compose`. Run the following command on your terminal:
+
+   ```sh
+   brew install docker docker-compose
+   ```
+
+#### Linux
+
+1. In order to install Docker and `docker-compose` on Linux, please follow the instructions
+   listed [here](https://docs.docker.com/engine/install/) and choose your Linux distribution. Remember to also run the
+   Post-installation steps listed [here](https://docs.docker.com/engine/install/linux-postinstall/).
+
