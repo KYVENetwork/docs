@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const ParamInflation = ({ networkUrl }) => {
-  const ERROR_MSG = "err";
+  const ERROR_MSG = "error";
 
   const [data, setData] = useState([]);
 
@@ -21,7 +21,7 @@ const ParamInflation = ({ networkUrl }) => {
   }
 
   if (data === ERROR_MSG) {
-    return <div>error</div>;
+    return <div>{ERROR_MSG}</div>;
   }
 
   return (

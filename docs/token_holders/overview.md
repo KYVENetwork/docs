@@ -25,9 +25,14 @@ The most important parameters of $KYVE are listed below depending on the network
 
 import ParamTotalSupply from '/src/components/ParamTotalSupply';
 import ParamInflation from '/src/components/ParamInflation';
+import LastUpdated from '/src/components/LastUpdated';
 
 |                      | Korellia                                                                                       | Kaon                                                                                            | Mainnet                 |
 | -------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------- |
 | Genesis Supply       | **1,000,000,000** $KYVE                                                                        | **1,000,000,000** $KYVE                                                                         | **1,000,000,000** $KYVE |
 | Current Total Supply | <ParamTotalSupply networkUrl="https://api.korellia.kyve.network" denom="tkyve" decimals={9} /> | <ParamTotalSupply networkUrl="https://api-eu-1.kaon.kyve.network" denom="tkyve" decimals={6} /> | TBD                     |
 | Current Inflation    | <ParamInflation networkUrl="https://api.korellia.kyve.network" />                              | <ParamInflation networkUrl="https://api-eu-1.kaon.kyve.network" />                              | TBD                     |
+
+:::info
+**NOTE**: The parameters above were updated at **<LastUpdated />**
+:::
