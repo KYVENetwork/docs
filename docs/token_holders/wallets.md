@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Supported Wallets
@@ -85,7 +85,7 @@ The Keystone firmware is open source. The source code can be found on [GitHub](h
 
 ## Custody
 
-KYVE is working with the following custody providers in order to provider custody to investors.
+KYVE is working with the following custody providers in order to provide custody to investors.
 
 ### Finoa
 

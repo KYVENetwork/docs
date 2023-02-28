@@ -15,3 +15,6 @@ Polkadot
 Injective
 Chainapsis
 Finoa
+Mintscan
+Ping.Pub
+keystore

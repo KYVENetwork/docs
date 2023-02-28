@@ -2,18 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const ParamInflation = ({ networkUrl }) => {
+const ParamPercentage = ({ url, param }) => {
   const ERROR_MSG = "error";
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${networkUrl}/cosmos/mint/v1beta1/inflation`)
+      .get(url)
       .then(({ data }) =>
-        setData((parseFloat(data.inflation) * 100).toFixed(2))
+        setData((parseFloat(data.params[param]) * 100).toFixed(2))
       )
-      .catch(() => setData(ERROR_MSG));
+      .catch((err) => setData(ERROR_MSG));
   }, []);
 
   if (!data) {
@@ -31,4 +31,4 @@ const ParamInflation = ({ networkUrl }) => {
   );
 };
 
-export default ParamInflation;
+export default ParamPercentage;

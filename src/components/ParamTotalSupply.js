@@ -10,7 +10,7 @@ export const toHumanReadable = (amount) => {
 };
 
 const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
-  const ERROR_MSG = "err";
+  const ERROR_MSG = "error";
 
   const [data, setData] = useState([]);
 
@@ -28,11 +28,11 @@ const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
   }, []);
 
   if (!data) {
-    return <div>Loading ...</div>;
+    return <div>-</div>;
   }
 
   if (data === ERROR_MSG) {
-    return <div>error</div>;
+    return <div>-</div>;
   }
 
   return (
