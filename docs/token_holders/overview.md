@@ -15,10 +15,6 @@ On the governance level, $KYVE is used for submitting and voting on proposals, a
 
 Currently, $KYVE is not yet on the market. Its TGE is planned for late Q1, 2023.
 
-## What can I do with my $KYVE?
-
-There are multiple use cases for $KYVE ranging from simple delegation to specific KYVE features like funding or participating in Storage Pools. The following use cases are explained in detail in the following pages.
-
 ## Key Parameters
 
 The most important parameters of $KYVE are listed below depending on the network:
@@ -36,3 +32,7 @@ import LastUpdated from '/src/components/LastUpdated';
 :::info
 **NOTE**: The parameters above were updated at **<LastUpdated />**
 :::
+
+## What can I do with my $KYVE?
+
+There are multiple use cases for $KYVE ranging from simple delegation to specific KYVE features like funding or participating in Storage Pools. The following use cases are explained in detail in the following pages.
