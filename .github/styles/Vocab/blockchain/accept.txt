@@ -7,3 +7,14 @@ Celo
 Airbyte
 Cosmos
 Starport
+Kusama
+Zilliqa
+Axelar
+Sei
+Polkadot
+Injective
+Chainapsis
+Finoa
+Mintscan
+Ping.Pub
+keystore

@@ -13,13 +13,18 @@ Cosmovisor
 Cosmostation
 Keplr
 blockchain
+Devnet
+devnet
+Testnet
 testnet
+Mainnet
 mainnet
 valaddress
 valname
 keyfile
 config
 systemd
+Korellia
 korellia
 GZip
 Protobuf
@@ -30,6 +35,7 @@ param
 repo
 APY
 Tendermint
+Incentivized
 incentivized
 boolean
 Runtime
@@ -40,3 +46,8 @@ Interpool
 interpool
 p_i
 v_i
+tokenomics
+dApps
+multisig
+crypto
+GUI

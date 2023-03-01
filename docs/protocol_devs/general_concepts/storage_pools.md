@@ -76,7 +76,7 @@ permanent, anyone can become a funder. The only downside is that there are curre
 The opposite is the case; being a funder will cost you $KYVE.
 
 Because of limited funding slots, only those who fund the highest amount can claim a funding slot. Currently, there are
-100 funding slots available per pool. If there are still funding slots available, you only need to fund more than 0
+50 funding slots available per pool. If there are still funding slots available, you only need to fund more than 0
 $KYVE to claim a slot. You have to fund more than the current lowest funder if all slots are occupied, basically
 outbidding him.
 Once you outbid the current lowest funder, you claim his funding slot. The remaining funds of the outbid funder will be
@@ -87,26 +87,23 @@ the data can operate as a funder.
 
 With the funds provided by a funder the flow of $KYVE can be summarized by the diagram below:
 
-![pool economics](/img/pool_economics.png)
+<p align="center">
+  <img width="70%" src="/img/pool_economics.png" />
+</p>
 
 ### Keeping protocol nodes incentivized
 
-Validators have many tasks. They have to collect data, bundle them, upload, and submit them. To reward validators for
-their work and keep them incentivized, they receive bundle rewards when they successfully propose a valid bundle (more
-on that can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md)). As described above, those
+Protocol nodes have many tasks. They have to collect data, bundle them, upload, and submit them. To reward these nodes for
+their work and keep them incentivized, they receive bundle rewards when they successfully propose a valid bundle. As described above, those
 rewards are funded by funders. But
 before the uploader receives his reward, a network fee (usually 1%) is deducted and automatically transferred to the
-community pool.
+community pool. You can find more information on the calculation of the uploader reward [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md).
 
 ### Keeping delegators incentivized
 
-Delegators have the task of lending validators capital in the form of $KYVE and helping them to earn more rewards (more
-on how that works [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md)). The rewards delegators
-receive and have to share is determined by
-the validator's commission. If it is high (for example 99%), the delegators only receive a tiny fraction of the
-uploader's
-rewards. On the other hand, if it is low, the delegators receive more. By that, delegators are rewarded for giving
-validators capital that they trust so everyone has a benefit.
+Delegators are lending $KYVE to protocol nodes to help secure the network and helping them to earn more rewards. Delegators have to trust protocol nodes
+since they also receive a slash proportionally to their delegation. In return for putting the capital at risk delegators receive delegation rewards which are also funded by funders. These rewards are a certain fraction of the entire bundle reward, depending on the nodes commission. You can find more information about the commission
+[here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and more details about the delegation distribution [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md).
 
 ## Properties
 
@@ -314,9 +311,7 @@ calculated on the fly.
       "kyve10flshfy53rz0tfmuyt3n2ptx2z0t0rardql4ks"
     ],
     "voters_invalid": [],
-    "voters_abstain": [
-      "kyve1kslrzlrjw25e9c48ck2j4777m6cqqkcryntfja"
-    ],
+    "voters_abstain": ["kyve1kslrzlrjw25e9c48ck2j4777m6cqqkcryntfja"],
     "from_key": "3003882",
     "storage_provider_id": 1,
     "compression_id": 1
