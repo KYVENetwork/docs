@@ -76,7 +76,8 @@ The chain slashing parameters can only be updated via the governance. The slashe
 ### Undelegation
 
 To prevent undelegation and therefore mitigate slashings before the evidence of a malicious node can be found there is an unbonding time.
-When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator.
+When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator. Max entries
+defines how much undelegations and redelegations you can have in parallel.
 
 import ParamString from '/src/components/params/ParamString';
 
@@ -88,12 +89,24 @@ import ParamString from '/src/components/params/ParamString';
 \*Updated at **<LastUpdated />**
 
 :::caution
-**ATTENTION**: During the unbonding time the delegation still can be slashed
+**ATTENTION**: During the unbonding time the delegation still can be slashed and **no** rewards are earned
 :::
 
 You can undelegate by going to the explorer and to your delegations. There should be a button called 'Undelegate'.
 
 ### Redelegation
+
+On the chain level redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target chain node and not from the old source chain node. The catch is that you still can get slashed during the unbonding
+time in the old and the new target chain node at the same time. After the unbonding time is done you can only get slashed if the new target chain node receives a slash. Here, the same parameters like in the undelegation are used for redelegation.
+
+|                  | Mainnet | Kaon                                                                       | Korellia                                                                       |
+| ---------------- | ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Unbonding Time\* | -       | <ParamString network="kaon" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" module="staking" param="unbonding_time" /> sec |
+| Max Entries\*    | -       | <ParamString network="kaon" module="staking" param="max_entries" />        | <ParamString network="korellia" module="staking" param="max_entries" />        |
+
+\*Updated at **<LastUpdated />**
+
+You can redelegate by going to the explorer and to your delegations. There should be a button called 'Redelegate'.
 
 ## Protocol Delegation
 
@@ -168,10 +181,14 @@ When a delegator starts undelegating the $KYVE are unbonding for the specified u
 \*Updated at **<LastUpdated />**
 
 :::caution
-**ATTENTION**: During the unbonding time the delegation still can be slashed
+**ATTENTION**: During the unbonding time the delegation still can be slashed, but during this time rewards are still earned
 :::
 
 You can undelegate by going to the web app and view your delegations on the 'User' page. There should be a button called 'Undelegate'.
+
+:::info
+**NOTE**: After the unbonding time is reached the entire current rewards are also automatically claimed and transferred to the delegator account
+:::
 
 ### Redelegation
 
@@ -186,3 +203,5 @@ anymore. Spells are enabled again after the redelegation cooldown time. The rede
 | Redelegation Cooldown Time\* | -       | <ParamString network="kaon" module="delegation" param="redelegation_cooldown" /> sec | <ParamString network="korellia" module="delegation" param="redelegation_cooldown" /> sec |
 
 \*Updated at **<LastUpdated />**
+
+You can redelegate by going to the web app and view your delegations on the 'User' page. There should be a button called 'Redelegate'.
