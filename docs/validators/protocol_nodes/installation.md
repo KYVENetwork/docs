@@ -45,7 +45,7 @@ configuration needs to be passed to the init options.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs groupId="kysor_init">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
     Since korellia is a testnet it is actually recommended to enable auto download because many upgrades are performed.
 
@@ -178,7 +178,7 @@ Here the following directories have the following reason:
 
 ### Binary Installation
 
-<Tabs groupId="kysor_init">
+<Tabs groupId="network">
   <TabItem value="korellia" label="Korellia">
     If you have auto download enabled on KYSOR you don't need to install the binaries manually since they are downloaded and installed automatically. In this case you can proceed to the next step. If you have disabled auto download simply follow the guide on the mainnet configuration.
   </TabItem>
