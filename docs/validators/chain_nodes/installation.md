@@ -53,17 +53,18 @@ After the installation is done, verify that it was successful:
 ```
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-  For kaon the binaries have to be build manually. For that follow the following steps:
+  For Kaon the binaries have to be build manually.
   <br/><br/>
   <strong>Install Go</strong>
   <br/>
-  KYVE is built using <a href="https://go.dev/dl/">Go</a> version <code>1.19+</code>.
-  If the <code>go: command not found</code> error message is returned, confirm that your <a href="https://go.dev/doc/gopath_code#GOPATH">GOPATH</a> is correctly configured by running the following command:
-  <br/><br/>
+  KYVE is built using <a href="https://go.dev/dl/">Go</a> version <code>1.20+</code>.
+  Follow the instructions from the official website to install go.
 
 ```bash
-export PATH=$PATH:$(go env GOPATH)/bin
+go version # e.g. go version go1.20.1 linux/amd64
 ```
+
+  In addition to Go, make sure you have <code>git</code> and <code>make</code> installed.
 
   <strong>GitHub</strong>
 
@@ -83,7 +84,7 @@ make build
 **Note:** You can find the compiled binary under <code>chain/build/kyved</code>
 :::
 
-  After the installation is done, verify that it was successful:
+  After the download was done, verify that it was successful:
 
 ```bash
 ./kyved version
@@ -150,4 +151,7 @@ We need to initialize the node to create all the necessary validator and node co
   </TabItem>
 </Tabs>
 
+
+
 Once the installation and initialization was successful you can proceed to the node configuration.
+
