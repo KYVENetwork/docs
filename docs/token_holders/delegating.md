@@ -81,10 +81,10 @@ defines how much undelegations and redelegations you can have in parallel.
 
 import ParamString from '/src/components/params/ParamString';
 
-|                  | Mainnet | Kaon                                                                       | Korellia                                                                       |
-| ---------------- | ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Unbonding Time\* | -       | <ParamString network="kaon" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" module="staking" param="unbonding_time" /> sec |
-| Max Entries\*    | -       | <ParamString network="kaon" module="staking" param="max_entries" />        | <ParamString network="korellia" module="staking" param="max_entries" />        |
+|                  | Mainnet | Kaon                                                                                        | Korellia                                                                                        |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Unbonding Time\* | -       | <ParamString network="kaon" project="cosmos" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" project="cosmos" module="staking" param="unbonding_time" /> sec |
+| Max Entries\*    | -       | <ParamString network="kaon" project="cosmos" module="staking" param="max_entries" />        | <ParamString network="korellia" project="cosmos" module="staking" param="max_entries" />        |
 
 \*Updated at **<LastUpdated />**
 
@@ -99,10 +99,10 @@ You can undelegate by going to the explorer and to your delegations. There shoul
 On the chain level redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target chain node and not from the old source chain node. The catch is that you still can get slashed during the unbonding
 time in the old and the new target chain node at the same time. After the unbonding time is done you can only get slashed if the new target chain node receives a slash. Here, the same parameters like in the undelegation are used for redelegation.
 
-|                  | Mainnet | Kaon                                                                       | Korellia                                                                       |
-| ---------------- | ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Unbonding Time\* | -       | <ParamString network="kaon" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" module="staking" param="unbonding_time" /> sec |
-| Max Entries\*    | -       | <ParamString network="kaon" module="staking" param="max_entries" />        | <ParamString network="korellia" module="staking" param="max_entries" />        |
+|                  | Mainnet | Kaon                                                                                        | Korellia                                                                                        |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Unbonding Time\* | -       | <ParamString network="kaon" project="cosmos" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" project="cosmos" module="staking" param="unbonding_time" /> sec |
+| Max Entries\*    | -       | <ParamString network="kaon" project="cosmos" module="staking" param="max_entries" />        | <ParamString network="korellia" project="cosmos" module="staking" param="max_entries" />        |
 
 \*Updated at **<LastUpdated />**
 
