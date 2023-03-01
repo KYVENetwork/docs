@@ -12,6 +12,12 @@ Protocol nodes are the backbone of a KYVE storage pool. They are responsible for
 
 Since protocol nodes are responsible for uploading and verifying data they need to do certain tasks in order to contribute to the network and earn $KYVE rewards. Their main role is uploading data to a Web3 storage provider like Arweave. Once a protocol node has uploaded a piece of data inside a storage pool, all the other protocol nodes in that storage pool gather that proposed data and validate it on their end. Only when the majority of protocol nodes agree on the validity of the data the entry gets archived.
 
+Depending on their current role they have in a storage pool they have different tasks. A protocol node can be an [Uploader](/protocol_devs/general_concepts/uploader.md) or a [Validator](/protocol_devs/general_concepts/validator.md). More information can be found there.
+
+## Risks
+
+Becoming a protocol node also comes with risk in form of slashings if the tasks are not performed well. There are three types of slashings, each having a different level of severity. You can find all details about when slashing is applied and how much the penalty will be [here](/protocol_devs/general_concepts/slashing.md).
+
 ## Accounts and Rewards
 
 Since the introduction of Inter-Pool Security, a KYVE validator can join multiple pools at once, securing every
