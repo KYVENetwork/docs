@@ -30,6 +30,27 @@ const config = {
     locales: ["en"],
   },
 
+  customFields: {
+    mainnet: {
+      rpc: "",
+      rest: "",
+      denom: "ukyve",
+      decimals: 6,
+    },
+    kaon: {
+      rpc: "https://rpc-eu-1.kaon.kyve.network",
+      rest: "https://api-eu-1.kaon.kyve.network",
+      denom: "tkyve",
+      decimals: 6,
+    },
+    korellia: {
+      rpc: "https://rpc.korellia.kyve.network",
+      rest: "https://api.korellia.kyve.network",
+      denom: "tkyve",
+      decimals: 9,
+    },
+  },
+
   presets: [
     [
       "classic",

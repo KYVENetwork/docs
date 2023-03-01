@@ -38,22 +38,28 @@ reached (`max_points`) the timeout slash gets applied, but for that to occur
 the node has to receive the max points in a row. If for example the node has already 2 points but then starts voting
 again because of a short internet timeout the points
 are reset to zero again. With this system we can ensure with a high probability, that the node is actually offline.
-The `max_points` is a global parameter in the `x/bundles` module.
+The `max_points` is a global parameter and it's value can be found below.
+
+Nodes receive a point in the following occurences:
+
+- When the node is uploader and does not upload withing the Upload Timeout (time can be found below)
+- When the node is validator and does not vote in the entire bundle proposal round
 
 ## Slash Parameters
 
-The current slashing parameters and the max points (important metric of timeout slashes) can be found below.
+The current slashing parameters, the max points and the upload timeout (both important metric of timeout slashes) can be found below.
 
-import ParamPercentage from '/src/components/ParamPercentage';
-import ParamString from '/src/components/ParamString';
+import ParamPercentage from '/src/components/params/ParamPercentage';
+import ParamString from '/src/components/params/ParamString';
 import LastUpdated from '/src/components/LastUpdated';
 
-|                 | Mainnet | Kaon                                                                                                              | Korellia                                                                                                         |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Upload Slash\*  | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/kyve/delegation/v1beta1/params" param="upload_slash" />  | <ParamPercentage url="https://api.korellia.kyve.network/kyve/delegation/v1beta1/params" param="upload_slash" />  |
-| Vote Slash\*    | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/kyve/delegation/v1beta1/params" param="vote_slash" />    | <ParamPercentage url="https://api.korellia.kyve.network/kyve/delegation/v1beta1/params" param="vote_slash" />    |
-| Timeout Slash\* | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/kyve/delegation/v1beta1/params" param="timeout_slash" /> | <ParamPercentage url="https://api.korellia.kyve.network/kyve/delegation/v1beta1/params" param="timeout_slash" /> |
-| Max Points\*    | -       | <ParamString url="https://api-eu-1.kaon.kyve.network/kyve/bundles/v1beta1/params" param="max_points" />           | <ParamString url="https://api.korellia.kyve.network/kyve/bundles/v1beta1/params" param="max_points" />           |
+|                  | Mainnet | Kaon                                                                         | Korellia                                                                         |
+| ---------------- | ------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Upload Slash\*   | -       | <ParamPercentage network="kaon" module="delegation" param="upload_slash" />  | <ParamPercentage network="korellia" module="delegation" param="upload_slash" />  |
+| Vote Slash\*     | -       | <ParamPercentage network="kaon" module="delegation" param="vote_slash" />    | <ParamPercentage network="korellia" module="delegation" param="vote_slash" />    |
+| Timeout Slash\*  | -       | <ParamPercentage network="kaon" module="delegation" param="timeout_slash" /> | <ParamPercentage network="korellia" module="delegation" param="timeout_slash" /> |
+| Max Points\*     | -       | <ParamString network="kaon" module="bundles" param="max_points" />           | <ParamString network="korellia" module="bundles" param="max_points" />           |
+| Upload Timeout\* | -       | <ParamString network="kaon" module="bundles" param="upload_timeout" /> sec   | <ParamString network="korellia" module="bundles" param="upload_timeout" /> sec   |
 
 \*Updated at **<LastUpdated />**
 

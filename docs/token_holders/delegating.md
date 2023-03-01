@@ -61,17 +61,39 @@ As already briefly mentioned before, chain delegation comes with risk. Delegatin
 
 The severity of a slash depends on the action of the node and on the network parameters. These can be found below:
 
-import ParamPercentage from '/src/components/ParamPercentage';
+import ParamPercentage from '/src/components/params/ParamPercentage';
 import LastUpdated from '/src/components/LastUpdated';
 
-|               | Mainnet | Kaon                                                                                                                           | Korellia                                                                                                                      |
-| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| Double Sign\* | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/cosmos/slashing/v1beta1/params" param="slash_fraction_double_sign" /> | <ParamPercentage url="https://api.korellia.kyve.network/cosmos/slashing/v1beta1/params" param="slash_fraction_double_sign" /> |
-| Downtime\*    | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/cosmos/slashing/v1beta1/params" param="slash_fraction_downtime" />    | <ParamPercentage url="https://api.korellia.kyve.network/cosmos/slashing/v1beta1/params" param="slash_fraction_downtime" />    |
+|               | Mainnet | Kaon                                                                                                     | Korellia                                                                                                     |
+| ------------- | ------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Double Sign\* | -       | <ParamPercentage network="kaon" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> | <ParamPercentage network="korellia" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> |
+| Downtime\*    | -       | <ParamPercentage network="kaon" module="slashing" project="cosmos" param="slash_fraction_downtime" />    | <ParamPercentage network="korellia" module="slashing" project="cosmos" param="slash_fraction_downtime" />    |
 
 \*Updated at **<LastUpdated />**
 
 The chain slashing parameters can only be updated via the governance. The slashed $KYVE will get transferred to the community pool.
+
+### Undelegation
+
+To prevent undelegation and therefore mitigate slashings before the evidence of a malicious node can be found there is an unbonding time.
+When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator.
+
+import ParamString from '/src/components/params/ParamString';
+
+|                  | Mainnet | Kaon                                                                       | Korellia                                                                       |
+| ---------------- | ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Unbonding Time\* | -       | <ParamString network="kaon" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" module="staking" param="unbonding_time" /> sec |
+| Max Entries\*    | -       | <ParamString network="kaon" module="staking" param="max_entries" />        | <ParamString network="korellia" module="staking" param="max_entries" />        |
+
+\*Updated at **<LastUpdated />**
+
+:::caution
+**ATTENTION**: During the unbonding time the delegation still can be slashed
+:::
+
+You can undelegate by going to the explorer and to your delegations. There should be a button called 'Undelegate'.
+
+### Redelegation
 
 ## Protocol Delegation
 
@@ -124,12 +146,43 @@ As already briefly mentioned before, protocol delegation comes with risk. Delega
 
 The severity of a slash depends on the action of the node and on the network parameters. More details of how and when those slashes are applied can be found [here](/protocol_devs/general_concepts/slashing.md). These can be found below:
 
-|                 | Mainnet | Kaon                                                                                                              | Korellia                                                                                                         |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Upload Slash\*  | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/kyve/delegation/v1beta1/params" param="upload_slash" />  | <ParamPercentage url="https://api.korellia.kyve.network/kyve/delegation/v1beta1/params" param="upload_slash" />  |
-| Vote Slash\*    | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/kyve/delegation/v1beta1/params" param="vote_slash" />    | <ParamPercentage url="https://api.korellia.kyve.network/kyve/delegation/v1beta1/params" param="vote_slash" />    |
-| Timeout Slash\* | -       | <ParamPercentage url="https://api-eu-1.kaon.kyve.network/kyve/delegation/v1beta1/params" param="timeout_slash" /> | <ParamPercentage url="https://api.korellia.kyve.network/kyve/delegation/v1beta1/params" param="timeout_slash" /> |
+|                 | Mainnet | Kaon                                                                         | Korellia                                                                         |
+| --------------- | ------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Upload Slash\*  | -       | <ParamPercentage network="kaon" module="delegation" param="upload_slash" />  | <ParamPercentage network="korellia" module="delegation" param="upload_slash" />  |
+| Vote Slash\*    | -       | <ParamPercentage network="kaon" module="delegation" param="vote_slash" />    | <ParamPercentage network="korellia" module="delegation" param="vote_slash" />    |
+| Timeout Slash\* | -       | <ParamPercentage network="kaon" module="delegation" param="timeout_slash" /> | <ParamPercentage network="korellia" module="delegation" param="timeout_slash" /> |
 
 \*Updated at **<LastUpdated />**
 
 The protocol slashing parameters can only be updated via the governance. The slashed $KYVE will get transferred to the community pool.
+
+### Undelegation
+
+To prevent undelegation and therefore mitigate slashings before a bundle proposal round is closed there is an undelegation time.
+When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator.
+
+|                  | Mainnet | Kaon                                                                                     | Korellia                                                                                     |
+| ---------------- | ------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Unbonding Time\* | -       | <ParamString network="kaon" module="delegation" param="unbonding_delegation_time" /> sec | <ParamString network="korellia" module="delegation" param="unbonding_delegation_time" /> sec |
+
+\*Updated at **<LastUpdated />**
+
+:::caution
+**ATTENTION**: During the unbonding time the delegation still can be slashed
+:::
+
+You can undelegate by going to the web app and view your delegations on the 'User' page. There should be a button called 'Undelegate'.
+
+### Redelegation
+
+To permit redelegations without the need to wait for a long unbonding time the protocol reledelation uses _redelegation spells_.
+This special concept allows to redelegate to other protocol nodes immediately. This can only be done depending on how many
+redelegation spells you have left. If you perform a redelegation you loose one spell. When all spells are used you can't redelegate
+anymore. Spells are enabled again after the redelegation cooldown time. The redelegation cooldown time immediately starts after a spell has been used.
+
+|                              | Mainnet | Kaon                                                                                 | Korellia                                                                                 |
+| ---------------------------- | ------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| Redelegation Spells\*        | -       | <ParamString network="kaon" module="delegation" param="redelegation_max_amount" />   | <ParamString network="korellia" module="delegation" param="redelegation_max_amount" />   |
+| Redelegation Cooldown Time\* | -       | <ParamString network="kaon" module="delegation" param="redelegation_cooldown" /> sec | <ParamString network="korellia" module="delegation" param="redelegation_cooldown" /> sec |
+
+\*Updated at **<LastUpdated />**
