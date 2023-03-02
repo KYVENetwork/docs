@@ -19,18 +19,18 @@ Currently, $KYVE is not yet on the market. Its TGE is planned for late Q1, 2023.
 
 The most important parameters of $KYVE are listed below depending on the network:
 
-import ParamBalance from '/src/components/ParamBalance';
+import ParamTotalSupply from '/src/components/ParamTotalSupply';
 import ParamInflation from '/src/components/ParamInflation';
 import LastUpdated from '/src/components/LastUpdated';
 
-|                        | Mainnet                 | Kaon                                                                                        | Korellia                                                                                   |
-| ---------------------- | ----------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Genesis Supply         | **1,000,000,000** $KYVE | **1,000,000,000** $KYVE                                                                     | **1,000,000,000** $KYVE                                                                    |
-| Current Total Supply\* | -                       | <ParamBalance networkUrl="https://api-eu-1.kaon.kyve.network" denom="tkyve" decimals={6} /> | <ParamBalance networkUrl="https://api.korellia.kyve.network" denom="tkyve" decimals={9} /> |
-| Current Inflation\*    | -                       | <ParamInflation networkUrl="https://api-eu-1.kaon.kyve.network" />                          | <ParamInflation networkUrl="https://api.korellia.kyve.network" />                          |
-| Coin Type              | **118**                 | **118**                                                                                     | **118**                                                                                    |
-| Base Denom             | **ukyve**               | **tkyve**                                                                                   | **tkyve**                                                                                  |
-| Decimals               | **6**                   | **6**                                                                                       | **9**                                                                                      |
+|                        | Mainnet                 | Kaon                                                                                            | Korellia                                                                                       |
+| ---------------------- | ----------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Genesis Supply         | **1,000,000,000** $KYVE | **1,000,000,000** $KYVE                                                                         | **1,000,000,000** $KYVE                                                                        |
+| Current Total Supply\* | -                       | <ParamTotalSupply networkUrl="https://api-eu-1.kaon.kyve.network" denom="tkyve" decimals={6} /> | <ParamTotalSupply networkUrl="https://api.korellia.kyve.network" denom="tkyve" decimals={9} /> |
+| Current Inflation\*    | -                       | <ParamInflation networkUrl="https://api-eu-1.kaon.kyve.network" />                              | <ParamInflation networkUrl="https://api.korellia.kyve.network" />                              |
+| Coin Type              | **118**                 | **118**                                                                                         | **118**                                                                                        |
+| Base Denom             | **ukyve**               | **tkyve**                                                                                       | **tkyve**                                                                                      |
+| Decimals               | **6**                   | **6**                                                                                           | **9**                                                                                          |
 
 \*Updated at **<LastUpdated />**
 

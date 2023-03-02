@@ -26,6 +26,24 @@ For this reason the commission was introduced, giving the node operator the opti
 **NOTE**: This means that the node operator always has to sources of income, the commission rewards and the delegation rewards from his self delegation.
 :::
 
+## Reward Parameters
+
+The current reward parameters can be found below. The operating cost is the parameter which is not globally set and defined in each pool itself where the bundle reward is applied.
+
+import ParamString from '/src/components/params/ParamString';
+import ParamPercentage from '/src/components/params/ParamPercentage';
+import LastUpdated from '/src/components/LastUpdated';
+
+|                | Mainnet | Kaon                                                                       | Korellia                                                                       |
+| -------------- | ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Network Fee\*  | -       | <ParamPercentage network="kaon" module="bundles" param="network_fee" />    | <ParamPercentage network="korellia" module="bundles" param="network_fee" />    |
+| Storage Cost\* | -       | <ParamString network="kaon" module="bundles" param="storage_cost" /> tkyve | <ParamString network="korellia" module="bundles" param="storage_cost" /> tkyve |
+| Operating Cost | -       | per Pool                                                                   | per Pool                                                                       |
+
+\*Updated at **<LastUpdated />**
+
+These parameters can only be updated via the governance.
+
 ## Calculation
 
 With this information the rewards can be calculated as follows:

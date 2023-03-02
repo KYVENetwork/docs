@@ -10,8 +10,6 @@ export const toHumanReadable = (amount) => {
 };
 
 const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
-  const ERROR_MSG = "error";
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,14 +22,10 @@ const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
 
         setData(toHumanReadable(amount.toString(10)));
       })
-      .catch(() => setData(ERROR_MSG));
+      .catch(() => setData("-"));
   }, []);
 
   if (!data) {
-    return <div>-</div>;
-  }
-
-  if (data === ERROR_MSG) {
     return <div>-</div>;
   }
 
