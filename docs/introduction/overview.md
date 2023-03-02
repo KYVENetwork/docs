@@ -28,7 +28,7 @@ The chain layer is the backbone of KYVE and is an entirely sovereign Proof of St
 Ignite. It’s run by independent nodes, which enable users to support and secure the KYVE blockchain.
 
 :::info
-Interested in [running a chain node ?](/validators/chain_nodes/chain_node.md)
+Interested in [running a chain node ?](/validators/chain_nodes/overview.md)
 :::
 
 Sitting on top of the chain layer is the Protocol Layer, which enables the actual use case of KYVE’s data lake. This
