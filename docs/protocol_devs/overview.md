@@ -38,7 +38,7 @@ Because the KYVE blockchain is a Cosmos app chain the custom KYVE logic needed f
 Since KYVE's blockchain is based on Tendermint it relies on a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.
 
 :::info
-**NOTE**: You can find more information about chain nodes [here](/validators/chain_nodes/chain_node.md)
+**NOTE**: You can find more information about chain nodes [here](/validators/chain_nodes/overview.md)
 :::
 
 ### Protocol Layer
