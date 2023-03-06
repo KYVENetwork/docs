@@ -8,7 +8,7 @@ In this step, you will configure the `KYVE` source for your Airbyte deployment.
 1. Change to the `source-kyve` directory:
 
    ```sh
-   cd DataPipeline/airbyte-integrations/connectors/source-kyve
+   cd airbyte-integrations/connectors/source-kyve
    ```
 
 2. Build the docker image for the Kyve source:
