@@ -10,7 +10,7 @@ your system as shown in the [Overview section](overview.md).
 To deploy Airbyte locally, run the following commands in your terminal:
 
 ```sh
-  git clone https://github.com/KYVENetwork/DataPipeline.git
+  git clone https://github.com/KYVENetwork/airbyte.git
 ```
 ```sh
   cd DataPipeline
