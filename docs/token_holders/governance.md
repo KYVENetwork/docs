@@ -42,7 +42,7 @@ Currently, the KYVE governance is able to make the following proposals:
 ## On- and off-chain Governance Structure
 
 KYVE has an on-chain governance mechanism for passing
-text proposals, changing [chain parameters](./governance/param_change.md), and spending [funds from the community pool](./governance/community_pool.md).
+text proposals, changing chain parameters, and spending funds from the community pool.
 
 ### Communication Methods
 
