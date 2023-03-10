@@ -1,10 +1,10 @@
-<!--
-order: 3
--->
+---
+sidebar_position: 1
+---
 
 # Best Practices
 
-::: tip
+:::tip
 **Note:**
 
 - If users are creating governance proposals which require community pool funding (such as those of type `CommunityPoolSpendProposal`), refer to [this section](#community-spend-proposal).
@@ -31,7 +31,7 @@ You should be able engaging with key stakeholders (e.g. a large validator operat
 
 **Why a large validator?** They tend to be the de facto decision-makers on KYVE, since their delegators also delegate their voting power. If you can establish a base layer of off-chain support, you can be more confident that it's worth proceeding to the next stage.
 
-::: tip
+:::tip
 **Note:** many will likely hesitate to commit support, and that's okay. It will be important to reassure these stakeholders that this isn't a binding a commitment. You're just canvassing the community to get a feel for whether it's worthwhile to proceed. It's also an opportunity to connect with new people and to answer their questions about what it is you're working on. It will be important for them to clearly understand why you think what you're proposing will be valuable to KYVE, and if possible, why it will be valuable to them as long-term stakeholders.
 :::
 
