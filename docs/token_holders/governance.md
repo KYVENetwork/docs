@@ -1,17 +1,48 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Governance
 
+## Democratizing the network
+
+The KYVE governance allows anyone who holds some $KYVE and has them bonded in the network (either delegated to chain or protocol)
+to participate in the process of changing and improving it. If a minimum deposit can be reached a $KYVE holder can create a governance proposal which is able to change network parameters or make protocol changes like creating storage pools. If the proposal passes with enough $KYVE holders voting for yes and a certain quorum was reached the changes go into effect.
+
+## Creating Proposals
+
+Currently, the KYVE governance is able to make the following proposals:
+
+- Cosmos
+  - `MsgSoftwareUpgrade`: Create a scheduled software upgrade
+  - `MsgCancelUpgrade`: Cancel a scheduled software upgrade
+  - `MsgCommunityPoolSpend`: Spend assets from the community pool
+  - `MsgUpdateParams`: Update params of x/bank module
+  - `MsgUpdateParams`: Update params of x/distribution module
+  - `MsgUpdateParams`: Update params of x/mint module
+  - `MsgUpdateParams`: Update params of x/slashing module
+  - `MsgUpdateParams`: Update params of x/staking module
+- Params
+  - `MsgUpdateParams`: Update params of x/stakers module
+  - `MsgUpdateParams`: Update params of x/delegation module
+  - `MsgUpdateParams`: Update params of x/bundles module
+  - `MsgUpdateParams`: Update params of x/global module
+- Pools
+  - `MsgCreatePool`: Create a new storage pool
+  - `UpdatePool`: Update an existing storage pool
+  - `MsgDisablePool`: Stop a running storage pool
+  - `MsgEnablePool`: Continue a stopped storage pool
+  - `MsgScheduleRuntimeUpgrade`: Create and schedule a runtime upgrade for storage pools
+  - `MsgCancelRuntimeUpgrade`: Cancel a scheduled runtime upgrade for storage pools
+
 :::tip
-**Note:** Working on a governance proposal? Make sure to look at the [best practices](./governance/best_practices.md).
+**Note:** Working on a governance proposal or want to learn more about the voting process? Make sure to look at the [best practices](./governance/best_practices.md).
 :::
 
-KYVE has an on-chain governance mechanism for passing
-text proposals, changing [chain parameters](./governance/param_change.md), and spending [funds from the community pool](./governance/community_pool.md).
-
 ## On- and off-chain Governance Structure
+
+KYVE has an on-chain governance mechanism for passing
+text proposals, changing chain parameters, and spending funds from the community pool.
 
 ### Communication Methods
 

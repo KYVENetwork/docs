@@ -1,10 +1,10 @@
-<!--
-order: 3
--->
+---
+sidebar_position: 1
+---
 
 # Best Practices
 
-::: tip
+:::tip
 **Note:**
 
 - If users are creating governance proposals which require community pool funding (such as those of type `CommunityPoolSpendProposal`), refer to [this section](#community-spend-proposal).
@@ -31,7 +31,7 @@ You should be able engaging with key stakeholders (e.g. a large validator operat
 
 **Why a large validator?** They tend to be the de facto decision-makers on KYVE, since their delegators also delegate their voting power. If you can establish a base layer of off-chain support, you can be more confident that it's worth proceeding to the next stage.
 
-::: tip
+:::tip
 **Note:** many will likely hesitate to commit support, and that's okay. It will be important to reassure these stakeholders that this isn't a binding a commitment. You're just canvassing the community to get a feel for whether it's worthwhile to proceed. It's also an opportunity to connect with new people and to answer their questions about what it is you're working on. It will be important for them to clearly understand why you think what you're proposing will be valuable to KYVE, and if possible, why it will be valuable to them as long-term stakeholders.
 :::
 
@@ -144,10 +144,6 @@ writing markdown files.
 
 ### Submit your proposal to the testnet
 
-:::tip
-**Note**: Not sure how to submit a proposal to either testnet or mainnet? Check out [this document](./submitting.md).
-:::
-
 You may want to submit your proposal to the testnet chain before the mainnet for a number of reasons, such as wanting to see what the proposal description will look like, to share what the proposal will look like in advance with stakeholders, and to signal that your proposal is about to go live on the mainnet.
 
 Perhaps most importantly, for parameter change proposals, you can test the parameter changes in advance (if you have enough support from the voting power on the testnet).
@@ -157,8 +153,6 @@ Submitting your proposal to the testnet increases the likelihood of engagement a
 ## Stage 3: Your On-Chain Proposal
 
 A majority of the voting community should probably be aware of the proposal and have considered it before the proposal goes live on-chain. If you're taking a conservative approach, you should have reasonable confidence that your proposal will pass before risking deposit contributions. Make revisions to your draft proposal after each stage of engagement.
-
-See the [submitting guide](./submitting.md) for more on submitting proposals.
 
 ### The Deposit Period
 
