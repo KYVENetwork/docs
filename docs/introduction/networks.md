@@ -18,11 +18,11 @@ KYVE is the official mainnet of KYVE. Validated and archived data in this networ
     <strong>Ping</strong>: <a href="https://explorer.kyve.network/kyve">https://explorer.kyve.network/kyve</a><br/>
   </TabItem>
   <TabItem value="rpc" label="RPC">
-    <strong>RPC EU</strong>: <a href="https://rpc-eu-1.kyve.network">https://rpc-eu-1.kyve.network</a>
+    <strong>RPC EU</strong>: <a href="https://rpc-eu-1.kyve.network">https://rpc-eu-1.kyve.network</a><br/>
     <strong>RPC US</strong>: <a href="https://rpc-us-1.kyve.network">https://rpc-us-1.kyve.network</a>
   </TabItem>
   <TabItem value="rest" label="REST">
-    <strong>REST EU</strong>: <a href="https://api-eu-1.kyve.network">https://api-eu-1.kyve.network</a>
+    <strong>REST EU</strong>: <a href="https://api-eu-1.kyve.network">https://api-eu-1.kyve.network</a><br/>
     <strong>REST US</strong>: <a href="https://api-us-1.kyve.network">https://api-us-1.kyve.network</a>
   </TabItem>
 </Tabs>
