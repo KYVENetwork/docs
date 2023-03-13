@@ -12,10 +12,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
+  <TabItem value="kyve" label="Mainnet">
 
 ```
-https://rpc.korellia.kyve.network
+https://rpc-eu-1.kyve.network
+https://rpc-us-1.kyve.network
 ```
 
   </TabItem>
@@ -23,11 +24,16 @@ https://rpc.korellia.kyve.network
 
 ```
 https://rpc-eu-1.kaon.kyve.network
+https://rpc-us-1.kaon.kyve.network
 ```
 
   </TabItem>
-  <TabItem value="kyve" label="KYVE">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+
+```
+https://rpc-eu-1.korellia.kyve.network
+```
+
   </TabItem>
 </Tabs>
 
@@ -36,10 +42,11 @@ https://rpc-eu-1.kaon.kyve.network
 All queries for the current chain state. The KYVE queries are prefixed with a `/kyve` prefix.
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
+  <TabItem value="kyve" label="Mainnet">
 
 ```
-https://api.korellia.kyve.network
+https://api-eu-1.kyve.network
+https://api-us-1.kyve.network
 ```
 
   </TabItem>
@@ -47,10 +54,15 @@ https://api.korellia.kyve.network
 
 ```
 https://api-eu-1.kaon.kyve.network
+https://api-us-1.kaon.kyve.network
 ```
 
   </TabItem>
-  <TabItem value="kyve" label="KYVE">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+
+```
+https://api-eu-1.korellia.kyve.network
+```
+
   </TabItem>
 </Tabs>

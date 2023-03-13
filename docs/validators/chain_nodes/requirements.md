@@ -35,13 +35,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    Korellia validators: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
+  <TabItem value="kyve" label="Mainnet">
+    Mainnet validators: <a href="https://explorer.kyve.network/kyve/staking">https://explorer.kyve.network/kyve/staking</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     Kaon validators: <a href="https://explorer.kaon.kyve.network/kaon/staking">https://explorer.kaon.kyve.network/kaon/staking</a>
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    Korellia validators: <a href="https://explorer.korellia.kyve.network/korellia/staking">https://explorer.korellia.kyve.network/korellia/staking</a>
   </TabItem>
 </Tabs>

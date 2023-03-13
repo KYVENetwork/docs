@@ -16,14 +16,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a>
+  <TabItem value="kyve" label="Mainnet">
+    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/kyve">https://explorer.kyve.network/kyve</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>Ping.Pub</strong>: <a href="https://explorer.kaon.kyve.network/kaon">https://explorer.kaon.kyve.network/kaon</a><br/>
     <strong>Mintscan</strong>: <a href="https://testnet.mintscan.io/kyve-testnet">https://testnet.mintscan.io/kyve-testnet</a>
   </TabItem>
-  <TabItem value="kyve" label="KYVE">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    <strong>Ping.Pub</strong>: <a href="https://explorer.korellia.kyve.network/korellia">https://explorer.korellia.kyve.network/korellia</a>
   </TabItem>
 </Tabs>

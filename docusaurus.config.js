@@ -44,8 +44,8 @@ const config = {
       decimals: 6,
     },
     korellia: {
-      rpc: "https://rpc.korellia.kyve.network",
-      rest: "https://api.korellia.kyve.network",
+      rpc: "https://rpc-eu-1.korellia.kyve.network",
+      rest: "https://api-eu-1.korellia.kyve.network",
       denom: "tkyve",
       decimals: 9,
     },

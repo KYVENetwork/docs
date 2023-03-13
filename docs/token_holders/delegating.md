@@ -22,7 +22,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="mainnet" label="Mainnet">
+  <TabItem value="kyve" label="Mainnet">
     <strong>Explorer</strong>: <a href="https://explorer.kyve.network/kyve/staking">https://explorer.kyve.network/kyve/staking</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
@@ -119,7 +119,7 @@ also earn more rewards. More information on that can be found [here](/protocol_d
 The easiest way to delegate into protocol nodes is by using the KYVE web app. The web app for every network can be found below:
 
 <Tabs groupId="network">
-<TabItem value="mainnet" label="Mainnet">
+<TabItem value="kyve" label="Mainnet">
     <strong>Web App</strong>: <a href="https://app.kyve.network/#/validators?status=1">https://app.kyve.network/#/validators?status=1</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">

@@ -53,13 +53,13 @@ import ParamPercentage from '/src/components/params/ParamPercentage';
 import ParamString from '/src/components/params/ParamString';
 import LastUpdated from '/src/components/LastUpdated';
 
-|                  | Mainnet | Kaon                                                                         | Korellia                                                                         |
-| ---------------- | ------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Upload Slash\*   | -       | <ParamPercentage network="kaon" module="delegation" param="upload_slash" />  | <ParamPercentage network="korellia" module="delegation" param="upload_slash" />  |
-| Vote Slash\*     | -       | <ParamPercentage network="kaon" module="delegation" param="vote_slash" />    | <ParamPercentage network="korellia" module="delegation" param="vote_slash" />    |
-| Timeout Slash\*  | -       | <ParamPercentage network="kaon" module="delegation" param="timeout_slash" /> | <ParamPercentage network="korellia" module="delegation" param="timeout_slash" /> |
-| Max Points\*     | -       | <ParamString network="kaon" module="bundles" param="max_points" />           | <ParamString network="korellia" module="bundles" param="max_points" />           |
-| Upload Timeout\* | -       | <ParamString network="kaon" module="bundles" param="upload_timeout" /> sec   | <ParamString network="korellia" module="bundles" param="upload_timeout" /> sec   |
+|                  | Mainnet                                                                      | Kaon                                                                         | Korellia                                                                         |
+| ---------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Upload Slash\*   | <ParamPercentage network="kyve" module="delegation" param="upload_slash" />  | <ParamPercentage network="kaon" module="delegation" param="upload_slash" />  | <ParamPercentage network="korellia" module="delegation" param="upload_slash" />  |
+| Vote Slash\*     | <ParamPercentage network="kyve" module="delegation" param="vote_slash" />    | <ParamPercentage network="kaon" module="delegation" param="vote_slash" />    | <ParamPercentage network="korellia" module="delegation" param="vote_slash" />    |
+| Timeout Slash\*  | <ParamPercentage network="kyve" module="delegation" param="timeout_slash" /> | <ParamPercentage network="kaon" module="delegation" param="timeout_slash" /> | <ParamPercentage network="korellia" module="delegation" param="timeout_slash" /> |
+| Max Points\*     | <ParamString network="kyve" module="bundles" param="max_points" />           | <ParamString network="kaon" module="bundles" param="max_points" />           | <ParamString network="korellia" module="bundles" param="max_points" />           |
+| Upload Timeout\* | <ParamString network="kyve" module="bundles" param="upload_timeout" /> sec   | <ParamString network="kaon" module="bundles" param="upload_timeout" /> sec   | <ParamString network="korellia" module="bundles" param="upload_timeout" /> sec   |
 
 \*Updated at **<LastUpdated />**
 

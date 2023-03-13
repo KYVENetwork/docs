@@ -31,14 +31,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
+  <TabItem value="kyve" label="Mainnet">
     <strong>Pools</strong>: <a href="https://app.kyve.network/#/pools">https://app.kyve.network/#/pools</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>Pools</strong>: <a href="https://app.kaon.kyve.network/#/pools">https://app.kaon.kyve.network/#/pools</a>
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    <strong>Pools</strong>: <a href="https://app.korellia.kyve.network/#/pools">https://app.kyve.network/#/pools</a>
   </TabItem>
 </Tabs>
 
@@ -47,14 +47,14 @@ import TabItem from '@theme/TabItem';
 Pools can also directly be queried by the following REST API endpoint: `/kyve/query/v1beta1/pools`
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    <strong>Pools</strong>: <a href="https://api.korellia.kyve.network/kyve/query/v1beta1/pools">https://api.korellia.kyve.network/kyve/query/v1beta1/pools</a>
+  <TabItem value="kyve" label="Mainnet">
+    <strong>Pools</strong>: <a href="https://api-eu-1.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.kyve.network/kyve/query/v1beta1/pools</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>Pools</strong>: <a href="https://api-eu-1.kaon.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.kaon.kyve.network/kyve/query/v1beta1/pools</a>
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    <strong>Pools</strong>: <a href="https://api-eu-1.korellia.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.korellia.kyve.network/kyve/query/v1beta1/pools</a>
   </TabItem>
 </Tabs>
 

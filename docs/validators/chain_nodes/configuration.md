@@ -38,6 +38,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
+  <TabItem value="kyve" label="Mainnet">
+    Coming Soon
+  </TabItem>
+  <TabItem value="kaon" label="Kaon" default>
+
+We recommend adding a certain amount of persistent peers. We provide
+initial nodes hosted in Europe and the United States.
+
+EU:
+
+- `430845649afaad0a817bdf36da63b6f93bbd8bd1@3.67.29.225:26656`
+- `b68e5131552e40b9ee70427879eb34e146ef20df@18.194.131.3:26656`
+
+US:
+
+- `4f97b95345da25877da84533712795a8671b02c8@52.39.152.195:26656`
+- `164efedef3711d449604fefe88f79669ccd54447@52.10.203.131:26656`
+
+Example configuration with all four peers:
+
+```toml
+persistent_peers = "430845649afaad0a817bdf36da63b6f93bbd8bd1@3.67.29.225:26656,b68e5131552e40b9ee70427879eb34e146ef20df@18.194.131.3:26656,4f97b95345da25877da84533712795a8671b02c8@52.39.152.195:26656,164efedef3711d449604fefe88f79669ccd54447@52.10.203.131:26656"
+```
+
+Other persistent peers can be found <a href="https://rpc-eu-1.kaon.kyve.network/net_info">here</a>.
+
+  </TabItem>
   <TabItem value="korellia" label="Korellia">
     Default persistent peers:
     <br/><br/>
@@ -46,32 +73,8 @@ import TabItem from '@theme/TabItem';
 persistent_peers = "02dd2c26948ea758a25d3dbc91744f8897681652@3.73.27.185:26656"
 ```
 
-  Other persistent peers can be found <a href="https://rpc.korellia.kyve.network/net_info">here</a>.
-  </TabItem>
-  <TabItem value="kaon" label="Kaon" default>
-
-We recommend adding a certain amount of persistent peers. We provide
-initial nodes hosted in Europe and the United States.
-
-EU:
-- `430845649afaad0a817bdf36da63b6f93bbd8bd1@3.67.29.225:26656`
-- `b68e5131552e40b9ee70427879eb34e146ef20df@18.194.131.3:26656`
-
-US:
-- `4f97b95345da25877da84533712795a8671b02c8@52.39.152.195:26656`
-- `164efedef3711d449604fefe88f79669ccd54447@52.10.203.131:26656`
-
-Example configuration with all four peers:
-```toml
-persistent_peers = "430845649afaad0a817bdf36da63b6f93bbd8bd1@3.67.29.225:26656,b68e5131552e40b9ee70427879eb34e146ef20df@18.194.131.3:26656,4f97b95345da25877da84533712795a8671b02c8@52.39.152.195:26656,164efedef3711d449604fefe88f79669ccd54447@52.10.203.131:26656"
-```
-
-Other persistent peers can be found <a href="https://rpc-eu-1.kaon.kyve.network/net_info">here</a>.
-
-  </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
-  </TabItem>
+Other persistent peers can be found <a href="https://rpc-eu-1.korellia.kyve.network/net_info">here</a>.
+</TabItem>
 </Tabs>
 
 :::tip
@@ -81,6 +84,7 @@ Other persistent peers can be found <a href="https://rpc-eu-1.kaon.kyve.network/
 ./kyved tendermint show-node-id
 a23f87b6501f53f71b03099ee7f5f22a7d8c0138
 ```
+
 :::
 
 ## Disk Usage Optimization
@@ -107,6 +111,7 @@ State sync snapshots allow other nodes to rapidly join the network without repla
 If you want to provide statesync to other nodes, you also need to have pruning enabled for the amount of recent blocks you want to provide state-sync for.
 
 Example configuration for providing state-sync every 200 blocks for the past two days:
+
 ```toml
 pruning = custom
 pruning-keep-recent = 3000
@@ -134,4 +139,3 @@ node you can disable tx-indexing. In `config.toml` under `[tx_index]` set
 ```toml
 indexer = "null"
 ```
-

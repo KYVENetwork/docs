@@ -62,9 +62,9 @@ import TabItem from '@theme/TabItem';
     <strong>Ping</strong>: <a href="https://explorer.korellia.kyve.network/korellia">https://explorer.korellia.kyve.network/korellia</a><br/>
   </TabItem>
   <TabItem value="rpc" label="RPC">
-    <strong>RPC</strong>: <a href="https://rpc.korellia.kyve.network">https://rpc.korellia.kyve.network</a>
+    <strong>RPC</strong>: <a href="https://rpc-eu-1.korellia.kyve.network">https://rpc-eu-1.korellia.kyve.network</a>
   </TabItem>
   <TabItem value="rest" label="REST">
-    <strong>REST</strong>: <a href="https://api.korellia.kyve.network">https://api.korellia.kyve.network</a>
+    <strong>REST</strong>: <a href="https://api-eu-1.korellia.kyve.network">https://api-eu-1.korellia.kyve.network</a>
   </TabItem>
 </Tabs>

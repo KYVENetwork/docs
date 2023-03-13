@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import BigNumber from "bignumber.js";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export const toHumanReadable = (amount) => {
   const fmt = new BigNumber(amount || "0").toFixed(0, 1);
@@ -23,7 +24,7 @@ const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
 
         setData(toHumanReadable(amount.toString(10)));
       })
-      .catch(() => setData(ERROR_MSG));
+      .catch(() => setData(errorMsg));
   }, []);
 
   if (!data) {

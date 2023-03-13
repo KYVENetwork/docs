@@ -14,10 +14,9 @@ Download the `genesis.json` file and copy it over to the config directory: `~/.k
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-        Will be supported soon. In the meantime, reach out to the Team for instructions.
+  <TabItem value="kyve" label="Mainnet">
+    Will be supported soon. In the meantime, reach out to the Team for instructions.
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
@@ -31,12 +30,12 @@ Then verify the correctness of the genesis configuration file:
 ```shell
 echo "3532166eb1605057f633ff577b4fc3e57a6dddc46498c5bc6f2f4e8ab0c756b8  genesis.json" | sha256sum -c
 ```
+
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    Will be supported soon. In the meantime, reach out to the Team for instructions.
   </TabItem>
 </Tabs>
-
 
 ## Syncing the network
 
@@ -56,7 +55,7 @@ However, one needs to trust the provided state-sync nodes. If you need full
 trust you should sync from genesis.
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
+  <TabItem value="kyve" label="Mainnet">
     Will be supported soon. In the meantime, reach out to the Team for instructions.
   </TabItem>
   <TabItem value="kaon" label="Kaon">
@@ -65,8 +64,7 @@ trust you should sync from genesis.
         <p>Make sure to use the current version of the chain for statesync. All releases can be found here: <a href="https://github.com/KYVENetwork/chain/releases">https://github.com/KYVENetwork/chain/releases</a></p>
 </Admonition>
 
-
-First, one needs to obtain a trusted height and hash of that height. 
+First, one needs to obtain a trusted height and hash of that height.
 One can go to a blockexplorer and use the values provided there. For example block 325017 can be viewed at: <a href="https://testnet.mintscan.io/kyve-testnet/blocks/328549">
 https://testnet.mintscan.io/kyve-testnet/blocks/325017 </a>
 
@@ -83,30 +81,29 @@ trust_height = 325017 # Replace with newer block
 trust_hash = "6548AC5525F24CD09BADDBE3A143CC3D44D057F669EB72BDED9C4C7D62E85FDC" # Replace with newer hash
 ```
 
-After that start the node with 
+After that start the node with
+
 ```bash
 ./kyved start
 ```
+
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    Will be supported soon. In the meantime, reach out to the Team for instructions.
   </TabItem>
 </Tabs>
 
 ### Sync from genesis
 
-
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    There is no official support for syncing Korellia from genesis.
-    If you have a special requirement reach out to the team for more instructions. 
+  <TabItem value="kyve" label="Mainnet">
+    Will be supported soon. In the meantime, reach out to the Team for instructions.
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
 <Admonition type="info">
         <p>For syncing from genesis you need chain binary version <b>v1.0.0-rc0</b></p>
 </Admonition>
-
 
 After the genisis file is download the chain binary can be started with
 
@@ -115,8 +112,8 @@ After the genisis file is download the chain binary can be started with
 ```
 
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-        Comming Soon!
+  <TabItem value="korellia" label="Korellia">
+    There is no official support for syncing Korellia from genesis.
+    If you have a special requirement reach out to the team for more instructions. 
   </TabItem>
 </Tabs>
-

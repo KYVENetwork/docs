@@ -15,19 +15,8 @@ pull them down:
 
 ```bash
 wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.8/kysor-linux-x64.zip
-```
-
-After that simply decompress it and give the executable correct access roles:
-
-```bash
 unzip kysor-linux-x64.zip
-```
-
-```bash
 mv kysor-linux-x64 kysor
-```
-
-```bash
 chmod 700 kysor
 ```
 
@@ -46,20 +35,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    Since korellia is a testnet it is actually recommended to enable auto download because many upgrades are performed.
+  <TabItem value="kyve" label="Mainnet">
 
 ```bash
 ./kysor init \
---chain-id 'korellia' \
---rpc 'https://rpc.korellia.kyve.network' \
---rest 'https://api.korellia.kyve.network' \
---auto-download-binaries
+--chain-id 'kyve-1' \
+--rpc 'https://rpc-eu-1.kyve.network' \
+--rest 'https://api-eu-1.kyve.network'
 ```
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    Since Kaon is a testnet it is actually recommended to enable auto download because many upgrades are performed.
 
 ```bash
 ./kysor init \
@@ -69,10 +55,22 @@ import TabItem from '@theme/TabItem';
 ```
 
   </TabItem>
-  <TabItem value="mainnet" label="Mainnet">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+
+```bash
+./kysor init \
+--chain-id 'korellia' \
+--rpc 'https://rpc-eu-1.korellia.kyve.network' \
+--rest 'https://api-eu-1.korellia.kyve.network' \
+--auto-download-binaries
+```
+
   </TabItem>
 </Tabs>
+
+:::tip
+**NOTE**: Depending on your geolocation it might be better to use a different endpoint. You can check available endpoints for each network **[here](/web3_devs/grpc.md)**
+:::
 
 Once you have initialized KYSOR you can verify the successful initialization by printing out the home directory:
 
@@ -179,11 +177,8 @@ Here the following directories have the following reason:
 ### Binary Installation
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    If you have auto download enabled on KYSOR you don't need to install the binaries manually since they are downloaded and installed automatically. In this case you can proceed to the next step. If you have disabled auto download simply follow the guide on the mainnet configuration.
-  </TabItem>
-  <TabItem value="kaon" label="Kaon">
-    Since auto download should be disabled for security reasons on the Kaon network you have to install the correct binaries manually on the KYSOR. In order to fetch the correct binary head back to the pool you chose and look at the <code>runtime</code> and at the <code>runtime version</code>. With this information you can head to the binary <a href="https://github.com/KYVENetwork/kyvejs/releases">releases</a> and get the correct binary.
+  <TabItem value="kyve" label="Mainnet">
+  Since auto download should be disabled for security reasons on mainnet you have to install the correct binaries manually on the KYSOR. In order to fetch the correct binary head back to the pool you chose and look at the <code>runtime</code> and at the <code>runtime version</code>. With this information you can head to the binary <a href="https://github.com/KYVENetwork/kyvejs/releases">releases</a> and get the correct binary.
     Once you have found the correct release create the required folders where the binary should be placed:<br/><br/>
 
 ```bash
@@ -214,7 +209,39 @@ To verify the version and the runtime of the binary simply call the version comm
 
 When the runtime and the version matches the KYSOR is ready.
 </TabItem>
-<TabItem value="mainnet" label="Mainnet">
-Coming Soon
+<TabItem value="kaon" label="Kaon">
+Since auto download should be disabled for security reasons on the Kaon network you have to install the correct binaries manually on the KYSOR. In order to fetch the correct binary head back to the pool you chose and look at the <code>runtime</code> and at the <code>runtime version</code>. With this information you can head to the binary <a href="https://github.com/KYVENetwork/kyvejs/releases">releases</a> and get the correct binary.
+Once you have found the correct release create the required folders where the binary should be placed:<br/><br/>
+
+```bash
+mkdir -p ~/.kysor/upgrades/pool-$POOL_ID/$VERSION/bin
+```
+
+```bash
+cd ~/.kysor/upgrades/pool-$POOL_ID/$VERSION/bin
+```
+
+```bash
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2F$RUNTIME%40$VERSION/kyve-linux-x64.zip
+```
+
+```bash
+unzip kyve-linux-x64.zip
+```
+
+```bash
+rm kyve-linux-x64.zip
+```
+
+To verify the version and the runtime of the binary simply call the version command:
+
+```bash
+./kyve-linux-x64 version
+```
+
+When the runtime and the version matches the KYSOR is ready.
+</TabItem>
+<TabItem value="korellia" label="Korellia">
+If you have auto download enabled on KYSOR you don't need to install the binaries manually since they are downloaded and installed automatically. In this case you can proceed to the next step. If you have disabled auto download simply follow the guide on the mainnet configuration.
 </TabItem>
 </Tabs>

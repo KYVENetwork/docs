@@ -24,7 +24,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="mainnet" label="Mainnet">
+  <TabItem value="kyve" label="Mainnet">
     <strong>Web App</strong>: <a href="https://app.kyve.network/#/pools">https://app.kyve.network/#/pools</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">

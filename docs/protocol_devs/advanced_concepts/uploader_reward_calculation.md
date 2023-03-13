@@ -34,11 +34,11 @@ import ParamString from '/src/components/params/ParamString';
 import ParamPercentage from '/src/components/params/ParamPercentage';
 import LastUpdated from '/src/components/LastUpdated';
 
-|                | Mainnet | Kaon                                                                       | Korellia                                                                       |
-| -------------- | ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Network Fee\*  | -       | <ParamPercentage network="kaon" module="bundles" param="network_fee" />    | <ParamPercentage network="korellia" module="bundles" param="network_fee" />    |
-| Storage Cost\* | -       | <ParamString network="kaon" module="bundles" param="storage_cost" /> tkyve | <ParamString network="korellia" module="bundles" param="storage_cost" /> tkyve |
-| Operating Cost | -       | per Pool                                                                   | per Pool                                                                       |
+|                | Mainnet                                                                    | Kaon                                                                       | Korellia                                                                       |
+| -------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Network Fee\*  | <ParamPercentage network="kyve" module="bundles" param="network_fee" />    | <ParamPercentage network="kaon" module="bundles" param="network_fee" />    | <ParamPercentage network="korellia" module="bundles" param="network_fee" />    |
+| Storage Cost\* | <ParamString network="kyve" module="bundles" param="storage_cost" /> tkyve | <ParamString network="kaon" module="bundles" param="storage_cost" /> tkyve | <ParamString network="korellia" module="bundles" param="storage_cost" /> tkyve |
+| Operating Cost | per Pool                                                                   | per Pool                                                                   | per Pool                                                                       |
 
 \*Updated at **<LastUpdated />**
 
