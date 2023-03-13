@@ -24,14 +24,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
+  <TabItem value="mainnet" label="Mainnet">
     <strong>Web App</strong>: <a href="https://app.kyve.network/#/pools">https://app.kyve.network/#/pools</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>Web App</strong>: <a href="https://app.kaon.kyve.network/#/pools">https://app.kaon.kyve.network/#/pools</a>
   </TabItem>
-  <TabItem value="kyve" label="KYVE">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    <strong>Web App</strong>: <a href="https://app.korellia.kyve.network/#/pools">https://app.korellia.kyve.network/#/pools</a>
   </TabItem>
 </Tabs>
 

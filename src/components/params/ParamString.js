@@ -10,7 +10,7 @@ const ParamString = ({
   project = "kyve",
   version = "v1beta1",
 }) => {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, errorMsg } = useDocusaurusContext();
   const {
     customFields: {
       [network]: { rest },
@@ -23,10 +23,14 @@ const ParamString = ({
     axios
       .get(`${rest}/${project}/${module}/${version}/params`)
       .then(({ data: { params } }) => setData(params[param]))
-      .catch(() => setData("-"));
+      .catch(() => setData(errorMsg));
   }, []);
 
   if (!data) {
+    return <span>-</span>;
+  }
+
+  if (data === errorMsg) {
     return <span>-</span>;
   }
 

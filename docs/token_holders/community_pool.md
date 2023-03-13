@@ -13,9 +13,9 @@ The current balances for the community pool can be found below for every network
 import ParamCommunityPool from '/src/components/ParamCommunityPool';
 import LastUpdated from '/src/components/LastUpdated';
 
-|                  | Mainnet | Kaon                                  | Korellia                                  |
-| ---------------- | ------- | ------------------------------------- | ----------------------------------------- |
-| Community Pool\* | -       | <ParamCommunityPool network="kaon" /> | <ParamCommunityPool network="korellia" /> |
+|                  | Mainnet                               | Kaon                                  | Korellia                                  |
+| ---------------- | ------------------------------------- | ------------------------------------- | ----------------------------------------- |
+| Community Pool\* | <ParamCommunityPool network="kyve" /> | <ParamCommunityPool network="kaon" /> | <ParamCommunityPool network="korellia" /> |
 
 \*Updated at **<LastUpdated />**
 
@@ -32,10 +32,10 @@ The current values for the tax and the fee can be found below for every network:
 
 import ParamPercentage from '/src/components/params/ParamPercentage';
 
-|                 | Mainnet | Kaon                                                                                            | Korellia                                                                                            |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Community Tax\* | -       | <ParamPercentage network="kaon" project="cosmos" module="distribution" param="community_tax" /> | <ParamPercentage network="korellia" project="cosmos" module="distribution" param="community_tax" /> |
-| Network Fee\*   | -       | <ParamPercentage network="kaon" module="bundles" param="network_fee" />                         | <ParamPercentage network="korellia" module="bundles" param="network_fee" />                         |
+|                 | Mainnet                                                                                         | Kaon                                                                                            | Korellia                                                                                            |
+| --------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Community Tax\* | <ParamPercentage network="kyve" project="cosmos" module="distribution" param="community_tax" /> | <ParamPercentage network="kaon" project="cosmos" module="distribution" param="community_tax" /> | <ParamPercentage network="korellia" project="cosmos" module="distribution" param="community_tax" /> |
+| Network Fee\*   | <ParamPercentage network="kyve" module="bundles" param="network_fee" />                         | <ParamPercentage network="kaon" module="bundles" param="network_fee" />                         | <ParamPercentage network="korellia" module="bundles" param="network_fee" />                         |
 
 \*Updated at **<LastUpdated />**
 

@@ -31,7 +31,7 @@ const config = {
   },
 
   customFields: {
-    mainnet: {
+    kyve: {
       rpc: "",
       rest: "",
       denom: "ukyve",
@@ -49,6 +49,7 @@ const config = {
       denom: "tkyve",
       decimals: 9,
     },
+    errorMsg: "error",
   },
 
   presets: [

@@ -11,7 +11,7 @@ export const toHumanReadable = (amount) => {
 };
 
 const ParamCommunityPool = ({ network = "mainnet" }) => {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, errorMsg } = useDocusaurusContext();
   const {
     customFields: {
       [network]: { rest, denom, decimals },
@@ -30,10 +30,14 @@ const ParamCommunityPool = ({ network = "mainnet" }) => {
 
         setData(toHumanReadable(amount.toString(10)));
       })
-      .catch(() => setData("-"));
+      .catch(() => setData(errorMsg));
   }, []);
 
   if (!data) {
+    return <div>-</div>;
+  }
+
+  if (data === errorMsg) {
     return <div>-</div>;
   }
 

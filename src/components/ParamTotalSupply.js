@@ -10,6 +10,7 @@ export const toHumanReadable = (amount) => {
 };
 
 const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
+  const { errorMsg } = useDocusaurusContext();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -22,10 +23,14 @@ const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
 
         setData(toHumanReadable(amount.toString(10)));
       })
-      .catch(() => setData("-"));
+      .catch(() => setData(ERROR_MSG));
   }, []);
 
   if (!data) {
+    return <div>-</div>;
+  }
+
+  if (data === errorMsg) {
     return <div>-</div>;
   }
 

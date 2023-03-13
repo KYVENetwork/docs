@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const ParamInflation = ({ networkUrl }) => {
-  const ERROR_MSG = "error";
-
+  const { errorMsg } = useDocusaurusContext();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -13,14 +12,14 @@ const ParamInflation = ({ networkUrl }) => {
       .then(({ data }) =>
         setData((parseFloat(data.inflation) * 100).toFixed(2))
       )
-      .catch(() => setData(ERROR_MSG));
+      .catch(() => setData(errorMsg));
   }, []);
 
   if (!data) {
     return <div>-</div>;
   }
 
-  if (data === ERROR_MSG) {
+  if (data === errorMsg) {
     return <div>-</div>;
   }
 

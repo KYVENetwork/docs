@@ -17,7 +17,7 @@ const ParamBalance = ({
   project = "kyve",
   version = "v1beta1",
 }) => {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, errorMsg } = useDocusaurusContext();
   const {
     customFields: {
       [network]: { rest, decimals },
@@ -36,10 +36,14 @@ const ParamBalance = ({
 
         setData(toHumanReadable(amount.toString(10)));
       })
-      .catch(() => setData("-"));
+      .catch(() => setData(errorMsg));
   }, []);
 
   if (!data) {
+    return <span>-</span>;
+  }
+
+  if (data === errorMsg) {
     return <span>-</span>;
   }
 

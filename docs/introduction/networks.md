@@ -8,7 +8,24 @@ Currently, KYVE has two active networks. Both are testnets, meaning the native c
 
 ## Mainnet - KYVE
 
-Planned for late Q1, 2023
+KYVE is the official mainnet of KYVE. Validated and archived data in this network can be used in production.
+
+<Tabs>
+  <TabItem value="webapp" label="WebApp">
+    <strong>WebApp</strong>: <a href="https://app.kyve.network">https://app.kyve.network</a>
+  </TabItem>
+  <TabItem value="explorer" label="Explorer">
+    <strong>Ping</strong>: <a href="https://explorer.kyve.network/kyve">https://explorer.kyve.network/kyve</a><br/>
+  </TabItem>
+  <TabItem value="rpc" label="RPC">
+    <strong>RPC EU</strong>: <a href="https://rpc-eu-1.kyve.network">https://rpc-eu-1.kyve.network</a>
+    <strong>RPC US</strong>: <a href="https://rpc-us-1.kyve.network">https://rpc-us-1.kyve.network</a>
+  </TabItem>
+  <TabItem value="rest" label="REST">
+    <strong>REST EU</strong>: <a href="https://api-eu-1.kyve.network">https://api-eu-1.kyve.network</a>
+    <strong>REST US</strong>: <a href="https://api-us-1.kyve.network">https://api-us-1.kyve.network</a>
+  </TabItem>
+</Tabs>
 
 ## Testnet - Kaon
 
@@ -39,10 +56,10 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="webapp" label="WebApp">
-    <strong>WebApp</strong>: <a href="https://app.kyve.network">https://app.kyve.network</a>
+    <strong>WebApp</strong>: <a href="https://app.korellia.kyve.network">https://app.korellia.kyve.network</a>
   </TabItem>
   <TabItem value="explorer" label="Explorer">
-    <strong>Ping</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
+    <strong>Ping</strong>: <a href="https://explorer.korellia.kyve.network/korellia">https://explorer.korellia.kyve.network/korellia</a><br/>
   </TabItem>
   <TabItem value="rpc" label="RPC">
     <strong>RPC</strong>: <a href="https://rpc.korellia.kyve.network">https://rpc.korellia.kyve.network</a>

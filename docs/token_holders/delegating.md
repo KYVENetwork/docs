@@ -22,14 +22,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
-    <strong>Explorer</strong>: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
+  <TabItem value="mainnet" label="Mainnet">
+    <strong>Explorer</strong>: <a href="https://explorer.kyve.network/kyve/staking">https://explorer.kyve.network/kyve/staking</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>Explorer</strong>: <a href="https://explorer.kaon.kyve.network/kaon/staking">https://explorer.kaon.kyve.network/kaon/staking</a>
   </TabItem>
-  <TabItem value="kyve" label="KYVE">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    <strong>Explorer</strong>: <a href="https://explorer.korellia.kyve.network/korellia/staking">https://explorer.korellia.kyve.network/korellia/staking</a>
   </TabItem>
 </Tabs>
 
@@ -64,10 +64,10 @@ The severity of a slash depends on the action of the node and on the network par
 import ParamPercentage from '/src/components/params/ParamPercentage';
 import LastUpdated from '/src/components/LastUpdated';
 
-|               | Mainnet | Kaon                                                                                                     | Korellia                                                                                                     |
-| ------------- | ------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Double Sign\* | -       | <ParamPercentage network="kaon" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> | <ParamPercentage network="korellia" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> |
-| Downtime\*    | -       | <ParamPercentage network="kaon" module="slashing" project="cosmos" param="slash_fraction_downtime" />    | <ParamPercentage network="korellia" module="slashing" project="cosmos" param="slash_fraction_downtime" />    |
+|               | Mainnet                                                                                                  | Kaon                                                                                                     | Korellia                                                                                                     |
+| ------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Double Sign\* | <ParamPercentage network="kyve" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> | <ParamPercentage network="kaon" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> | <ParamPercentage network="korellia" module="slashing" project="cosmos" param="slash_fraction_double_sign" /> |
+| Downtime\*    | <ParamPercentage network="kyve" module="slashing" project="cosmos" param="slash_fraction_downtime" />    | <ParamPercentage network="kaon" module="slashing" project="cosmos" param="slash_fraction_downtime" />    | <ParamPercentage network="korellia" module="slashing" project="cosmos" param="slash_fraction_downtime" />    |
 
 \*Updated at **<LastUpdated />**
 
@@ -81,10 +81,10 @@ defines how much undelegations and redelegations you can have in parallel.
 
 import ParamString from '/src/components/params/ParamString';
 
-|                  | Mainnet | Kaon                                                                                        | Korellia                                                                                        |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Unbonding Time\* | -       | <ParamString network="kaon" project="cosmos" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" project="cosmos" module="staking" param="unbonding_time" /> sec |
-| Max Entries\*    | -       | <ParamString network="kaon" project="cosmos" module="staking" param="max_entries" />        | <ParamString network="korellia" project="cosmos" module="staking" param="max_entries" />        |
+|                  | Mainnet                                                                                 | Kaon                                                                                    | Korellia                                                                                    |
+| ---------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Unbonding Time\* | <ParamString network="kyve" project="cosmos" module="staking" param="unbonding_time" /> | <ParamString network="kaon" project="cosmos" module="staking" param="unbonding_time" /> | <ParamString network="korellia" project="cosmos" module="staking" param="unbonding_time" /> |
+| Max Entries\*    | <ParamString network="kyve" project="cosmos" module="staking" param="max_entries" />    | <ParamString network="kaon" project="cosmos" module="staking" param="max_entries" />    | <ParamString network="korellia" project="cosmos" module="staking" param="max_entries" />    |
 
 \*Updated at **<LastUpdated />**
 
@@ -99,10 +99,10 @@ You can undelegate by going to the explorer and to your delegations. There shoul
 On the chain level redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target chain node and not from the old source chain node. The catch is that you still can get slashed during the unbonding
 time in the old and the new target chain node at the same time. After the unbonding time is done you can only get slashed if the new target chain node receives a slash. Here, the same parameters like in the undelegation are used for redelegation.
 
-|                  | Mainnet | Kaon                                                                                        | Korellia                                                                                        |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Unbonding Time\* | -       | <ParamString network="kaon" project="cosmos" module="staking" param="unbonding_time" /> sec | <ParamString network="korellia" project="cosmos" module="staking" param="unbonding_time" /> sec |
-| Max Entries\*    | -       | <ParamString network="kaon" project="cosmos" module="staking" param="max_entries" />        | <ParamString network="korellia" project="cosmos" module="staking" param="max_entries" />        |
+|                  | Mainnet                                                                                 | Kaon                                                                                    | Korellia                                                                                    |
+| ---------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Unbonding Time\* | <ParamString network="kyve" project="cosmos" module="staking" param="unbonding_time" /> | <ParamString network="kaon" project="cosmos" module="staking" param="unbonding_time" /> | <ParamString network="korellia" project="cosmos" module="staking" param="unbonding_time" /> |
+| Max Entries\*    | <ParamString network="kyve" project="cosmos" module="staking" param="max_entries" />    | <ParamString network="kaon" project="cosmos" module="staking" param="max_entries" />    | <ParamString network="korellia" project="cosmos" module="staking" param="max_entries" />    |
 
 \*Updated at **<LastUpdated />**
 
@@ -119,14 +119,14 @@ also earn more rewards. More information on that can be found [here](/protocol_d
 The easiest way to delegate into protocol nodes is by using the KYVE web app. The web app for every network can be found below:
 
 <Tabs groupId="network">
-  <TabItem value="korellia" label="Korellia">
+<TabItem value="mainnet" label="Mainnet">
     <strong>Web App</strong>: <a href="https://app.kyve.network/#/validators?status=1">https://app.kyve.network/#/validators?status=1</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>Web App</strong>: <a href="https://app.kaon.kyve.network/#/validators?status=1">https://app.kaon.kyve.network/#/validators?status=1</a>
   </TabItem>
-  <TabItem value="kyve" label="KYVE">
-    Coming Soon
+  <TabItem value="korellia" label="Korellia">
+    <strong>Web App</strong>: <a href="https://app.korellia.kyve.network/#/validators?status=1">https://app.korellia.kyve.network/#/validators?status=1</a>
   </TabItem>
 </Tabs>
 
@@ -159,11 +159,11 @@ As already briefly mentioned before, protocol delegation comes with risk. Delega
 
 The severity of a slash depends on the action of the node and on the network parameters. More details of how and when those slashes are applied can be found [here](/protocol_devs/general_concepts/slashing.md). These can be found below:
 
-|                 | Mainnet | Kaon                                                                         | Korellia                                                                         |
-| --------------- | ------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Upload Slash\*  | -       | <ParamPercentage network="kaon" module="delegation" param="upload_slash" />  | <ParamPercentage network="korellia" module="delegation" param="upload_slash" />  |
-| Vote Slash\*    | -       | <ParamPercentage network="kaon" module="delegation" param="vote_slash" />    | <ParamPercentage network="korellia" module="delegation" param="vote_slash" />    |
-| Timeout Slash\* | -       | <ParamPercentage network="kaon" module="delegation" param="timeout_slash" /> | <ParamPercentage network="korellia" module="delegation" param="timeout_slash" /> |
+|                 | Mainnet                                                                      | Kaon                                                                         | Korellia                                                                         |
+| --------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Upload Slash\*  | <ParamPercentage network="kyve" module="delegation" param="upload_slash" />  | <ParamPercentage network="kaon" module="delegation" param="upload_slash" />  | <ParamPercentage network="korellia" module="delegation" param="upload_slash" />  |
+| Vote Slash\*    | <ParamPercentage network="kyve" module="delegation" param="vote_slash" />    | <ParamPercentage network="kaon" module="delegation" param="vote_slash" />    | <ParamPercentage network="korellia" module="delegation" param="vote_slash" />    |
+| Timeout Slash\* | <ParamPercentage network="kyve" module="delegation" param="timeout_slash" /> | <ParamPercentage network="kaon" module="delegation" param="timeout_slash" /> | <ParamPercentage network="korellia" module="delegation" param="timeout_slash" /> |
 
 \*Updated at **<LastUpdated />**
 
@@ -174,9 +174,9 @@ The protocol slashing parameters can only be updated via the governance. The sla
 To prevent undelegation and therefore mitigate slashings before a bundle proposal round is closed there is an undelegation time.
 When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator.
 
-|                  | Mainnet | Kaon                                                                                     | Korellia                                                                                     |
-| ---------------- | ------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Unbonding Time\* | -       | <ParamString network="kaon" module="delegation" param="unbonding_delegation_time" /> sec | <ParamString network="korellia" module="delegation" param="unbonding_delegation_time" /> sec |
+|                  | Mainnet                                                                                  | Kaon                                                                                     | Korellia                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Unbonding Time\* | <ParamString network="kyve" module="delegation" param="unbonding_delegation_time" /> sec | <ParamString network="kaon" module="delegation" param="unbonding_delegation_time" /> sec | <ParamString network="korellia" module="delegation" param="unbonding_delegation_time" /> sec |
 
 \*Updated at **<LastUpdated />**
 
@@ -197,10 +197,10 @@ This special concept allows to redelegate to other protocol nodes immediately. T
 redelegation spells you have left. If you perform a redelegation you loose one spell. When all spells are used you can't redelegate
 anymore. Spells are enabled again after the redelegation cooldown time. The redelegation cooldown time immediately starts after a spell has been used.
 
-|                              | Mainnet | Kaon                                                                                 | Korellia                                                                                 |
-| ---------------------------- | ------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Redelegation Spells\*        | -       | <ParamString network="kaon" module="delegation" param="redelegation_max_amount" />   | <ParamString network="korellia" module="delegation" param="redelegation_max_amount" />   |
-| Redelegation Cooldown Time\* | -       | <ParamString network="kaon" module="delegation" param="redelegation_cooldown" /> sec | <ParamString network="korellia" module="delegation" param="redelegation_cooldown" /> sec |
+|                              | Mainnet                                                                              | Kaon                                                                                 | Korellia                                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| Redelegation Spells\*        | <ParamString network="kyve" module="delegation" param="redelegation_max_amount" />   | <ParamString network="kaon" module="delegation" param="redelegation_max_amount" />   | <ParamString network="korellia" module="delegation" param="redelegation_max_amount" />   |
+| Redelegation Cooldown Time\* | <ParamString network="kyve" module="delegation" param="redelegation_cooldown" /> sec | <ParamString network="kaon" module="delegation" param="redelegation_cooldown" /> sec | <ParamString network="korellia" module="delegation" param="redelegation_cooldown" /> sec |
 
 \*Updated at **<LastUpdated />**
 

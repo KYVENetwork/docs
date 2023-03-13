@@ -10,7 +10,7 @@ const ParamPercentage = ({
   project = "kyve",
   version = "v1beta1",
 }) => {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, errorMsg } = useDocusaurusContext();
   const {
     customFields: {
       [network]: { rest },
@@ -25,10 +25,14 @@ const ParamPercentage = ({
       .then(({ data: { params } }) =>
         setData((parseFloat(params[param]) * 100).toFixed(2))
       )
-      .catch(() => setData("-"));
+      .catch(() => setData(errorMsg));
   }, []);
 
   if (!data) {
+    return <span>-</span>;
+  }
+
+  if (data === errorMsg) {
     return <span>-</span>;
   }
 
