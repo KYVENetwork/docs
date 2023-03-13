@@ -24,6 +24,12 @@ go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@latest
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
 
+Before running cosmovisor export the following environement variables:
+```shell
+export DAEMON_HOME=/home/kyve-user/.kyve # Change this to your node home
+export DAEMON_NAME=kyved
+```
+
 Assuming the chain binary (`./kyved`) lies in the current directory, run:
 ```shell
 cosmovisor init kyved
@@ -33,6 +39,8 @@ The binary can then be started using
 ```shell
 cosmovisor run start
 ```
+
+For more detailed instructions please visit [https://github.com/cosmos/cosmos-sdk/blob/main/tools/cosmovisor/README.md](https://github.com/cosmos/cosmos-sdk/blob/main/tools/cosmovisor/README.md)
 
 :::tip
 
@@ -59,13 +67,13 @@ After=network-online.target
 
 [Service]
 User=chain
-WorkingDirectory=/home/chain
+WorkingDirectory=/home/kyve-user
 ExecStart=/home/chain/cosmovisor run start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=infinity
 
-Environment="DAEMON_HOME=/home/chain/.kyve"
+Environment="DAEMON_HOME=/home/kyve-user/.kyve"
 Environment="DAEMON_NAME=kyved"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="UNSAFE_SKIP_BACKUP=false"

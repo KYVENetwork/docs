@@ -16,19 +16,41 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
-    Will be supported soon. In the meantime, reach out to the Team for instructions.
-  </TabItem>
-  <TabItem value="kaon" label="Kaon">
 
-```bash
-wget https://raw.githubusercontent.com/KYVENetwork/networks/c59a8300bc10aa0e28834ecd61ec54c417e95acc/kaon-1/genesis.json
+Download the mainnet genesis file (5.2 MB)
+```shell
+wget https://files.kyve.network/mainnet/genesis.json
+```
+
+verify the correctness of the genesis configuration via
+
+```shell
+echo "1dc3ec916f49ef8c221851566aca12a3f914b23afb3ab35067fc8a8d5f59c2ee  genesis.json" | sha256sum -c
+```
+
+and move the genesis file to the config directory
+```shell
 mv genesis.json ~/.kyve/config/
 ```
 
-Then verify the correctness of the genesis configuration file:
+  </TabItem>
+  <TabItem value="kaon" label="Kaon">
+
+Download the Kaon genesis file (55 KB)
+
+```bash
+wget https://files.kyve.network/kaon/genesis.json
+```
+
+verify the correctness of the genesis configuration via
 
 ```shell
 echo "3532166eb1605057f633ff577b4fc3e57a6dddc46498c5bc6f2f4e8ab0c756b8  genesis.json" | sha256sum -c
+```
+
+and move the genesis file to the config directory
+```shell
+mv genesis.json ~/.kyve/config/
 ```
 
   </TabItem>
@@ -56,7 +78,11 @@ trust you should sync from genesis.
 
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
-    Will be supported soon. In the meantime, reach out to the Team for instructions.
+
+Once the number of blocks grows beyond a certain height we will provide 
+statesync instructions. In the meantime syncing from genesis should only
+take a few minutes.
+
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
@@ -97,7 +123,17 @@ After that start the node with
 
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
-    Will be supported soon. In the meantime, reach out to the Team for instructions.
+
+<Admonition type="info">
+        <p>For syncing from genesis you need chain binary version <b>v1.0.0</b></p>
+</Admonition>
+
+After the genisis file is download the chain binary can be started with
+
+```bash
+./kyved start
+```
+
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 

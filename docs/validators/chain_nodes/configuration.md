@@ -39,7 +39,27 @@ import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
-    Coming Soon
+
+We recommend adding a certain amount of persistent peers. We provide
+initial nodes hosted in Europe and the United States.
+
+EU:
+
+- `b950b6b08f7a6d5c3e068fcd263802b336ffe047@18.198.182.214:26656`
+- `25da6253fc8740893277630461eb34c2e4daf545@3.76.244.30:26656`
+
+US:
+
+- `146d27829fd240e0e4672700514e9835cb6fdd98@34.212.201.1:26656`
+- `fae8cd5f04406e64484a7a8b6719eacbb861c094@44.241.103.199:26656`
+
+Example configuration with all four peers:
+
+```toml
+persistent_peers = "b950b6b08f7a6d5c3e068fcd263802b336ffe047@18.198.182.214:26656,25da6253fc8740893277630461eb34c2e4daf545@3.76.244.30:26656,146d27829fd240e0e4672700514e9835cb6fdd98@34.212.201.1:26656,fae8cd5f04406e64484a7a8b6719eacbb861c094@44.241.103.199:26656"
+```
+
+Other persistent peers can be found <a href="https://rpc-eu-1.kyve.network/net_info">here</a>.
   </TabItem>
   <TabItem value="kaon" label="Kaon" default>
 
@@ -62,7 +82,7 @@ Example configuration with all four peers:
 persistent_peers = "430845649afaad0a817bdf36da63b6f93bbd8bd1@3.67.29.225:26656,b68e5131552e40b9ee70427879eb34e146ef20df@18.194.131.3:26656,4f97b95345da25877da84533712795a8671b02c8@52.39.152.195:26656,164efedef3711d449604fefe88f79669ccd54447@52.10.203.131:26656"
 ```
 
-Other persistent peers can be found <a href="https://rpc-eu-1.kaon.kyve.network/net_info">here</a>.
+Other peers can be found <a href="https://rpc-eu-1.kaon.kyve.network/net_info">here</a>.
 
   </TabItem>
   <TabItem value="korellia" label="Korellia">
