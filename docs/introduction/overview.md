@@ -90,7 +90,7 @@ To tie the network together, KYVE has its own native coin, $KYVE, which has mult
 - On the governance level, $KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
   the evolution and growth of KYVE.
 
-Currently, $KYVE is not yet on the market. Its TGE is planned for late Q1, 2023.
+Currently, $KYVE is not yet on the market. TGE was on March 14th, 2023. Visit our tokenomics to find out more regarding $KYVE utility, claims, and unlocks. Stay tuned for $KYVE’s official listing.
 
 :::info
 Interested in [learning more about the tokenomics?](https://www.kyve.network/tokenomics)
@@ -102,6 +102,8 @@ KYVE is currently partnered with:
 
 - Polkadot & Kusama
 - Near
+- Solana
+- Mina
 - Moonbeam
 - Avalanche
 - Stacks
