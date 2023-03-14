@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Delegating
 
-Because there are two different types of nodes (chain node & protocol node) there are also two types of delegation. Both actions help to secure the KYVE network and earn rewards, but both come with their respected risks.
+Since there are two different types of nodes (chain node & protocol node), there are also two types of delegation. Both actions help to secure the KYVE network and earn rewards, but both come with their respected risks.
 
 :::caution
 **ATTENTION**: Delegating might lead to the loss of your $KYVE. Please read this guide until the end in order to understand how to prevent this.
@@ -16,7 +16,7 @@ Chain delegation helps to secure the KYVE blockchain, which further secures the 
 
 ### How to delegate?
 
-The easiest way to delegate into chain nodes is by using a block explorer which supports delegation. Such a block explorer is the _Ping_ explorer. The explorer can be found below for every network:
+The easiest way to delegate to chain nodes is by using a block explorer which supports delegation. Such a block explorer is the _Ping_ explorer. The explorer can be found below for every network:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Staking' page you can see a list of all chain nodes which are actively running in the network. After choosing a node based on certain factors like APY, commission or uptime you can delegate by clicking on the node itself or on the right button 'Delegate'.
+You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Staking' page, you can see a list of all chain nodes which are actively running in the network. After choosing a node based on certain factors like APY, commission or uptime you can delegate by clicking on the node itself or on the right button 'Delegate'.
 
 The following example shows the delegation with the Ping explorer on the Kaon network.
 
@@ -43,7 +43,7 @@ The following example shows the delegation with the Ping explorer on the Kaon ne
 
 ### Rewards
 
-In return for lending out $KYVE and putting them at risk in order to secure the network delegators receive rewards in form of $KYVE. The most important parameter to estimate the rewards is the APY (Annual percentage yield) or also sometimes called APR (Annual percentage rate). This is an estimation of how much interest you can accrue in one year.
+In return for lending out $KYVE and putting them at risk in order to secure, the network delegators receive rewards in form of $KYVE. The most important parameter to estimate the rewards is the APY (Annual percentage yield), or also sometimes called APR (Annual percentage rate). This is an estimation of how much interest you can accrue in one year.
 
 :::caution
 **IMPORTANT**: The chain delegation APY is **never** a guarantee. It is simply an estimation for the next year based on current parameters.
@@ -75,8 +75,8 @@ The chain slashing parameters can only be updated via the governance. The slashe
 
 ### Undelegation
 
-To prevent undelegation and therefore mitigate slashings before the evidence of a malicious node can be found there is an unbonding time.
-When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator. Max entries
+To prevent undelegation, and therefore mitigate slashings before the evidence of a malicious node can be found, there is an unbonding time.
+When a delegator starts undelegating, the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator. Max entries
 defines how much undelegations and redelegations you can have in parallel.
 
 import ParamString from '/src/components/params/ParamString';
