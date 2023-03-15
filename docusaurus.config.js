@@ -32,8 +32,8 @@ const config = {
 
   customFields: {
     kyve: {
-      rpc: "",
-      rest: "",
+      rpc: "https://rpc-eu-1.kyve.network",
+      rest: "https://api-eu-1.kyve.network",
       denom: "ukyve",
       decimals: 6,
     },
