@@ -4,11 +4,11 @@ sidebar_position: 0
 
 # Discovering KYVE
 
-Making data a public good for a trustless ecosystem
+Making data a public good for a trustless ecosystem.
 
 ## Getting Started
 
-Read all about KYVE or start directly with the Academy.
+Read into KYVE or learn with the KYVE Academy:
 
 - **[Introduction to KYVE](/introduction/overview.md)** - Learn about all the parts of KYVE
 - **[KYVE Academy](https://kyve.academy)** - Start with dedicated tutorials about KYVE
