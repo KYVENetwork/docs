@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Become a validator
+# Become a Validator
 
 A validator is a full synced cosmos node which directly participates in
 the Proof of Stake mechanism. Running a validator is only for node operators
@@ -24,12 +24,12 @@ curl localhost:26657/status
 and making sure `result.node_info.network` and `result.node_info.latest_block_height`
 matches the network you want to join.
 
-## Important security configurations
+## Important Security Configurations
 
 Before joining a network you should make sure that you also fulfill these
 additional configurations.
 
-### Recommended configurations
+### Recommended Configurations
 - Keep your host environment always up to date. Use production ready operating systems.
 - Make sure you always have enough disk-space and good internet connection.
 - Run the chain node only with **user**-privileges. **Do not use the root account**.
@@ -37,11 +37,11 @@ additional configurations.
 - Connect your prometheus endpoint to a monitoring service like Datadog or Grafana. Configure alerts in case your node stops producing blocks.
 - Utilise a [Sentry-Node-Architecture](https://forum.cosmos.network/t/sentry-node-architecture-overview/454), so that your node is never exposed directly to the p2p network.
 
-### Advanced configuration
+### Advanced Configuration
 - Use a Key Management System for Tendermint like [tmkms](https://github.com/iqlusioninc/tmkms).
 - Use [Horcrux](https://github.com/strangelove-ventures/horcrux) for distributing your signing key across multiple nodes.
 
-## Create your validator
+## Create Your Validator
 
 Before creating a validator you need two keys. One key is for managing your validator and 
 keeping your funds. The other one is only for signing blocks. In case the latter gets compromised
@@ -74,7 +74,7 @@ We refer to [Wallets](/token_holders/wallets.md) for key creation. We recommend 
 - Use all the three above
 
 
-## The Create-Validator transaction
+## The Create-Validator Transaction
 
 After the secure node setup and the creation of a private key is done, it's time
 to sign the message which will actually turn your node into a validator.

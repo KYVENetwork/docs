@@ -41,17 +41,17 @@ You should be able engaging with key stakeholders (e.g. a large validator operat
 
 ## Stage 1: Your Idea
 
-### Not yet confident about your idea?
+### Not Yet Confident About Your Idea?
 
 Great! Governance proposals potentially impact many stakeholders. Introduce your idea with known members of the community before investing resources into drafting a proposal. Don't let negative feedback dissuade you from exploring your idea if you think that it's still important.
 
 If you know people who are very involved with KYVE, send them a private message with a concise overview of what you think will result from your idea or proposed changes. Wait for them to ask questions before providing details. Do the same in semi-private channels where people tend to be respectful (and hopefully supportive).
 
-### Confident with your idea?
+### Confident With Your Idea?
 
 Great! However, remember that governance proposals potentially impact many stakeholders, which can happen in unexpected ways. Introduce your idea with members of the community before investing resources into drafting a proposal. At this point you should seek out and carefully consider critical feedback in order to protect yourself from [confirmation bias](https://en.wikipedia.org/wiki/Confirmation_bias). This is the ideal time to see a critical flaw, because submitting a flawed proposal will waste resources.
 
-### Are you ready to draft a governance proposal?
+### Are You Ready To Draft A Governance Proposal?
 
 There will likely be differences of opinion about the value of what you're proposing to do and the strategy by which you're planning to do it. If you've considered feedback from broad perspectives and think that what you're doing is valuable and that your strategy should work, and you believe that others feel this way as well, it's likely worth drafting a proposal. However, remember that the largest KYVE stakers have the biggest vote, so a vocal minority isn't necessarily representative or predictive of the outcome of an on-chain vote.
 
@@ -126,7 +126,7 @@ Assume that many people will stop reading at this point. However, it is importan
    - what are the risks involved with this work?
    - do you have conflicts of interest to declare?
 
-### Begin with a well-considered draft proposal
+### Begin With A Well-Considered Draft Proposal
 
 The ideal format for a proposal is as a Markdown file (ie. `.md`) in a Github repo or [HackMd](https://hackmd.io/). Markdown
 is a simple and accessible format for writing plain text files that is easy to
@@ -136,13 +136,13 @@ is a simple and accessible format for writing plain text files that is easy to
 learn. See the [Github Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for details on
 writing markdown files.
 
-### Engage the community with your draft proposal
+### Engage The Community With Your Draft Proposal
 
 1. Post a discussion in the [Commonwealth KYVE community](https://commonwealth.im/KYVE). Ideally this should contain a link to this repository, either directly to your proposal if it has been merged, or else to a pull-request containing your proposal if it has not been merged yet.
 2. Directly engage key members of the community for feedback. These could be large contributors, those likely to be most impacted by the proposal, and entities with high stake-backing (eg. high-ranked validators; large stakers).
 3. Target members of the community in a semi-public way before bringing the draft to a full public audience. The burden of public scrutiny in a semi-anonymized environment (eg. Twitter) can be stressful and overwhelming without establishing support. Solicit opinions in places with people who have established reputations first.
 
-### Submit your proposal to the testnet
+### Submit Your Proposal To The Testnet
 
 You may want to submit your proposal to the testnet chain before the mainnet for a number of reasons, such as wanting to see what the proposal description will look like, to share what the proposal will look like in advance with stakeholders, and to signal that your proposal is about to go live on the mainnet.
 

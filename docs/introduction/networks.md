@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Networks
 
-Currently, KYVE has two active networks. Both are testnets, meaning the native currency $KYVE has no value and the data is not safe to use. In the future, KYVE will have it's third network: Mainnet.
+Currently, KYVE has three networks. There is KYVE mainnet, which uses the official $KYVE and provides truly trustless data. Then two testnets, Korellia and Kaon, where the native currency of $tKYVE has no value and the data is not safe to use.
 
 ## Mainnet - KYVE
 
@@ -29,7 +29,7 @@ KYVE is the official mainnet of KYVE. Validated and archived data in this networ
 
 ## Testnet - Kaon
 
-Kaon is the newest network which is KYVE's official testnet. It should mirror the mainnet and before upgrades are applied on mainnet they should first be successfully applied in this testnet.
+Kaon is KYVE's official testnet. It should mirror the mainnet and before upgrades are applied on mainnet they should first be successfully applied in this testnet. The same goes for new data pools.
 
 <Tabs>
   <TabItem value="webapp" label="WebApp">

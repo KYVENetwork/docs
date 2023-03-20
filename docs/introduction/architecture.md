@@ -14,7 +14,7 @@ KYVE's objective is to validate and store data streams on decentralized storage 
 
 ## Layers
 
-To achieve this at scale KYVE consists of two layers: the _chain layer_ and the _protocol layer_. Here, the chain layer is a sovereign Proof of Stake blockchain built with [Cosmos](https://cosmos.network/) and using the [Tendermint](https://tendermint.com/) consensus engine. It's main goal is to find consensus and secure the protocol layer on top of it. The protocol layer has all the logic which makes KYVE unique and enables the actual data validation.
+To achieve this at scale, KYVE consists of two layers: the _chain layer_ and the _protocol layer_. Here, the chain layer is a sovereign Proof of Stake blockchain built with [Cosmos](https://cosmos.network/) and using the [Tendermint](https://tendermint.com/) consensus engine. It's main goal is to find consensus and secure the protocol layer on top of it. The protocol layer has all the logic which makes KYVE unique and enables the actual data validation.
 
 <p align="center">
   <img width="40%" src="/img/kyve_layers.png" />
@@ -22,9 +22,9 @@ To achieve this at scale KYVE consists of two layers: the _chain layer_ and the 
 
 ## Nodes
 
-Because there are two different layers, each essential but with very different requirements, KYVE also has two different types of nodes. First we have the _chain nodes_ which are a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.
+Since there are two different layers, each essential but with very different requirements, KYVE also has two different types of nodes. First we have the _chain nodes_ which are a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.
 
-The _protocol nodes_ on the other hand always run on a specific _storage pool_ which is responsible for validating and archiving a specific data source. Protocol nodes collect data from the data source, submit them to a storage pool where other pool participants can validate the submitted data on their end. Every participant is able to cast a vote on the validity of the data. Depending on the result of the votes the data is being archived and the participant that uploaded the data will receive a reward for their efforts.
+Then there are _protocol nodes_ which always run on a specific _storage pool_ and are responsible for validating and archiving a specific data source. Protocol nodes collect data from the data source, submit them to a storage pool where other pool participants can validate the submitted data on their end. Every participant is able to cast a vote on the validity of the data. Depending on the result of the votes the data is being archived and the participant that uploaded the data will receive a reward for their efforts.
 
 
 :::tip

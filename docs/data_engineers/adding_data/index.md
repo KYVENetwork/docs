@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Adding data
 
-You may want to insert data from another blockchain and store it in KYVE's data warehouse.
+You may want to insert data from another blockchain and store it through a KYVE data pool onto decentralized storage providers such as Arweave.
 
 To do this, you'll want to write an integration.
 
@@ -179,7 +179,7 @@ In addition to the `getDataItem` method which must be implemented, you are free 
 
 ### Custom Signatures
 
-For example, for several of the existing integrations, we have implemented custom signatures.
+For example, we have implemented custom signatures for several of the existing integrations.
 
 These signatures, which were implemented to prevent spamming of private endpoints, are calculated from the address (conveniently exposed in the class through your wallet) and the message. They can be used for signature verification.
 

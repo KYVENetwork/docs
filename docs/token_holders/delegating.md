@@ -12,7 +12,7 @@ Since there are two different types of nodes (chain node & protocol node), there
 
 ## Chain Delegation
 
-Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate into a chain node you're $KYVE is bonded and used in the Proof of Stake protocol to produce and validate new blocks. By delegating into a chain node you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed a part of your delegation is also slashed.
+Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate to a chain node, you're $KYVE is bonded and used in the Delegated Proof of Stake protocol to produce and validate new blocks. By delegating to a chain node, you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed, a part of your delegation is also slashed.
 
 ### How to delegate?
 
@@ -96,7 +96,7 @@ You can undelegate by going to the explorer and to your delegations. There shoul
 
 ### Redelegation
 
-On the chain level redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target chain node and not from the old source chain node. The catch is that you still can get slashed during the unbonding
+On the chain level, redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target chain node and not from the old source chain node. The catch is that you still can get slashed during the unbonding
 time in the old and the new target chain node at the same time. After the unbonding time is done you can only get slashed if the new target chain node receives a slash. Here, the same parameters like in the undelegation are used for redelegation.
 
 |                  | Mainnet                                                                                 | Kaon                                                                                    | Korellia                                                                                    |
@@ -192,7 +192,7 @@ You can undelegate by going to the web app and view your delegations on the 'Use
 
 ### Redelegation
 
-To permit redelegations without the need to wait for a long unbonding time the protocol reledelation uses _redelegation spells_.
+To permit redelegations without the need to wait for a long unbonding time, the protocol reledelation uses _redelegation spells_.
 This special concept allows to redelegate to other protocol nodes immediately. This can only be done depending on how many
 redelegation spells you have left. If you perform a redelegation you loose one spell. When all spells are used you can't redelegate
 anymore. Spells are enabled again after the redelegation cooldown time. The redelegation cooldown time immediately starts after a spell has been used.
