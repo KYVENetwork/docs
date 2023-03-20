@@ -55,7 +55,24 @@ mv genesis.json ~/.kyve/config/
 
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-    Will be supported soon. In the meantime, reach out to the Team for instructions.
+
+Download the Korellia genesis file (207 KB)
+
+```bash
+wget https://files.kyve.network/korellia/genesis.json
+```
+
+verify the correctness of the genesis configuration via
+
+```shell
+echo "4298308739a5025804e7f83cb01456a9edee507c79f92a179f88058669b0fdfd  genesis.json" | sha256sum -c
+```
+
+and move the genesis file to the config directory
+```shell
+mv genesis.json ~/.kyve/config/
+```
+
   </TabItem>
 </Tabs>
 
@@ -79,15 +96,40 @@ trust you should sync from genesis.
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
 
-Once the number of blocks grows beyond a certain height we will provide 
-statesync instructions. In the meantime syncing from genesis should only
-take a few minutes.
+<Admonition type="info">
+        <p>Make sure to use the current version of the chain for statesync. All releases can be found here: <a href="https://github.com/KYVENetwork/chain/releases">https://github.com/KYVENetwork/chain/releases</a>.
+Go to <a href="https://explorer.kyve.network/kyve/gov">https://explorer.kyve.network/kyve/gov</a> and look for the latest SoftwareUpgrade Proposal to find the current version.</p>
+</Admonition>
+
+First, one needs to obtain a trusted height and hash of that height.
+One can go to a blockexplorer and use the values provided there. For example block 86783 can be viewed at: <a href="https://www.mintscan.io/kyve/blocks/86783">
+https://www.mintscan.io/kyve/blocks/86783 </a>
+
+To enable state-sync edit <code>config.yml</code> under the section <code>[statesync]</code>
+
+```toml
+[statesync]
+enable = true
+
+# ...
+
+rpc_servers = "https://rpc-cache.kyve.network:443,https:rpc-cache.kyve.network:443"
+trust_height = 86783 # Replace with newer block
+trust_hash = "DFE6A7EC8D3E3A55A3CA6DA2D9BFB776A5F52604EBED078DAC87775AEA5C3D75" # Replace with newer hash
+```
+
+After that start the node with
+
+```bash
+./kyved start
+```
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
 <Admonition type="info">
-        <p>Make sure to use the current version of the chain for statesync. All releases can be found here: <a href="https://github.com/KYVENetwork/chain/releases">https://github.com/KYVENetwork/chain/releases</a></p>
+        <p>Make sure to use the current version of the chain for statesync. All releases can be found here: <a href="https://github.com/KYVENetwork/chain/releases">https://github.com/KYVENetwork/chain/releases</a>.
+Go to <a href="https://explorer.kaon.kyve.network/kaon/gov">https://explorer.kaon.kyve.network/kaon/gov</a> and look for the latest SoftwareUpgrade Proposal to find the current version.</p>
 </Admonition>
 
 First, one needs to obtain a trusted height and hash of that height.
@@ -115,7 +157,37 @@ After that start the node with
 
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-    Will be supported soon. In the meantime, reach out to the Team for instructions.
+
+<Admonition type="info">
+        <p>Korellia versions are not open source and only prebuilt binaries are available.</p>
+</Admonition>
+
+The latest binaries can be found at the [Installtion](installation) instructions.
+
+
+After that, one needs to obtain a trusted height and hash of that height.
+One can go to a blockexplorer and use the values provided there. For example block 5121641 can be viewed at: <a href="https://explorer.korellia.kyve.network/korellia/blocks/5121641">
+https://explorer.korellia.kyve.network/korellia/blocks/5121641 </a>
+
+To enable state-sync edit <code>config.yml</code> under the section <code>[statesync]</code>
+
+```toml
+[statesync]
+enable = true
+
+# ...
+
+rpc_servers = "https://rpc-cache.korellia.kyve.network:443,https:rpc-cache.korellia.kyve.network:443"
+trust_height = 5121641 # Replace with newer block
+trust_hash = "12B737A85692CBB606C83D763BED3992E158914DD584DCA100F4C6BEDFB9846D" # Replace with newer hash
+```
+
+After that start the node with
+
+```bash
+./kyved start
+```
+
   </TabItem>
 </Tabs>
 
@@ -128,7 +200,7 @@ After that start the node with
         <p>For syncing from genesis you need chain binary version <b>v1.0.0</b></p>
 </Admonition>
 
-After the genisis file is download the chain binary can be started with
+After the genesis file is downloaded the chain binary can be started with
 
 ```bash
 ./kyved start
@@ -141,7 +213,7 @@ After the genisis file is download the chain binary can be started with
         <p>For syncing from genesis you need chain binary version <b>v1.0.0-rc0</b></p>
 </Admonition>
 
-After the genisis file is download the chain binary can be started with
+After the genesis file is downloaded the chain binary can be started with
 
 ```bash
 ./kyved start
