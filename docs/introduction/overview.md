@@ -59,7 +59,7 @@ KYVE’s trustless data is accessible to all for free. Currently, there are two 
 trustless data.
 
 One being via KYVE’s Data Pipeline. This is a no-code, customizable option for easily importing KYVE’s data into a
-preferred data backend before transforming the data into the format needed.
+preferred data backend before transforming the data into the format needed. For now, Data Pipeline pulls data from Korellia devnet. Once the protocol layer launches on mainnet, Data Pipeline will pull from the mainnet network. 
 
 The second option provides a native way to access data by coding your own solution using KYVE’s REST-API.
 
@@ -90,7 +90,7 @@ To tie the network together, KYVE has its own native coin, $KYVE, which has mult
 - On the governance level, $KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
   the evolution and growth of KYVE.
 
-Currently, $KYVE is not yet on the market. TGE was on March 14th, 2023. Visit our tokenomics to find out more regarding $KYVE utility, claims, and unlocks. Stay tuned for $KYVE’s official listing.
+Currently, $KYVE is not yet on the market. TGE was on March 14th, 2023. Visit our [tokenomics](https://www.kyve.network/tokenomics) to find out more regarding $KYVE utility, claims, and unlocks. Stay tuned for $KYVE’s official listing.
 
 :::info
 Interested in [learning more about the tokenomics?](https://www.kyve.network/tokenomics)
