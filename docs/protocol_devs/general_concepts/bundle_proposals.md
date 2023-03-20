@@ -7,13 +7,11 @@ sidebar_position: 3
 Storing data is simple. Storing validated data coming from multiple parties is a bit more complicated. Because of
 that, we will break down the process by which KYVE stores it's data.
 
-## Saving data in rounds
+## Saving Data In Rounds
 
 Saving many data items or even a data stream is tricky. That's why we group data into bundles to store them more
 efficiently. This enables KYVE to validate multiple data items which are bundled up in a single validation round. With
-this method, we can break down a data stream into various rounds, making it easier to work with. A selected validator
-will collect data in each round, create a bundle, and submit it to the network. This marks the beginning of such a
-proposal round.
+this method, we can break down a data stream into various rounds, making it easier to work with. A validator [selected randomly](https://blog.kyve.network/kyve-fundamentals-article-1-the-hazards-of-poor-infrastructure-and-lack-of-trustless-data-d8aabe0c4f26) will collect data in each round, create a bundle, and submit it to the network. This marks the beginning of such a proposal round.
 
 In summary, in each proposal round one bundle gets proposed which consists of multiple data items and gets validated by
 letting other validators check the proposed bundle and vote accordingly. On-chain the votes are tallied and once the
@@ -21,7 +19,7 @@ result is valid entry of the bundle gets stored on chain as valid. The data is s
 chain has the storage id, thus making it possible to view all the valid storage ids and therefore view the actual
 content on the storage provider.
 
-## Lifecycle of a bundle proposal
+## Lifecycle Of A Bundle Proposal
 
 The lifecycle for one bundle proposal can be seen in the following diagram:
 
@@ -29,7 +27,7 @@ The lifecycle for one bundle proposal can be seen in the following diagram:
   <img width="70%" src="/img/round_lifecycle.png" />
 </p>
 
-## Content of a bundle proposal
+## Content Of A Bundle Proposal
 
 In contrast to many beliefs the bundle proposal which gets registered on-chain **does not** contain the actual data
 which is getting validated. It only holds a reference in form of the storage receipt.
@@ -42,7 +40,7 @@ see what the uploader submitted and take the storage receipt and retrieve the ac
 a pool locally creates their own bundle proposal it then can compare the proposed
 proposal with the local one and vote accordingly.
 
-But in order to be able to reconstruct the bundle proposal locally certain metadata has to be included in the proposal.
+However, in order to be able to reconstruct the bundle proposal locally certain metadata has to be included in the proposal.
 The required metadata can be seen in the proposal registration transaction: `MsgSubmitBundleProposal`. Looking at the
 transaction arguments we can identify the following requirements:
 
@@ -70,7 +68,7 @@ transaction arguments we can identify the following requirements:
 - `bundle_summary`: the summary of the bundle data. This is a string value which gets stored on-chain once the proposal
   is valid. This enables on-chain queries for actual data.
 
-## Data Content of bundle proposals
+## Data Content Of Bundle Proposals
 
 Since we have only touched the content structure of the bundle proposal but not the actual bundle data which gets stored
 on the storage provider the following example might help to clarify this.
@@ -223,7 +221,7 @@ To query validated bundle proposals of a pool you can use the following endpoint
 - `/kyve/query/v1beta1/finalized_bundles/{pool_id}`: gets all validated proposals from a pool
 - `/kyve/query/v1beta1/finalized_bundles/{pool_id}/{id}`: gets a single validated proposal from a pool and the bundle ID
 
-## Bundle validation over time
+## Bundle Validation Over Time
 
 For multiple bundle proposals over time the following diagram can be used for reference. Note that when the uploader
 submits a new bundle proposal the current round immediately gets tallied and closed. That is the reason why bundle
