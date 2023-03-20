@@ -104,6 +104,7 @@ This example shows how to create a validator on our testnet Kaon. Please note th
   --pubkey=$(./kyved tendermint show-validator) \
   --moniker=<moniker> \
   --chain-id=kaon-1 \
+  --ledger \
   --commission-rate="0.05" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
