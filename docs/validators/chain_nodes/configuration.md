@@ -90,7 +90,7 @@ Other peers can be found <a href="https://rpc-eu-1.kaon.kyve.network/net_info">h
     <br/><br/>
 
 ```bash
-persistent_peers = "02dd2c26948ea758a25d3dbc91744f8897681652@3.73.27.185:26656"
+persistent_peers = "7871d64bdc41d87582c26c86545849e6153c6676@52.58.250.62:26656"
 ```
 
 Other persistent peers can be found <a href="https://rpc-eu-1.korellia.kyve.network/net_info">here</a>.

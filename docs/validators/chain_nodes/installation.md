@@ -74,7 +74,7 @@ git clone https://github.com/KYVENetwork/chain.git
 cd chain
 git fetch
 git checkout tags/<tag> -b <tag>
-make build
+make build ENV=kaon
 ```
 
 Here the <code><tag\></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
