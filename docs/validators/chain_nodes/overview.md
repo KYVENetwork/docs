@@ -21,7 +21,7 @@ To become a validator, it's essential to prepare your data center with reliable 
 
 In the early stages, network requirements are expected to be minimal. However, as the network expands, bandwidth, CPU, and memory requirements will increase. Therefore, it's recommended to have large hard drives for storing several years of blockchain history.
 
-## First steps
+## First Steps
 
 To gain the trust of users who stake their KYVE, it's crucial to create a dedicated validator's website and social profile, such as a Twitter account. Additionally, you should signal your intent to become a validator on Discord. Having an online presence provides users with important information about your entity, which can be reassuring and encourage them to stake to you.
 
