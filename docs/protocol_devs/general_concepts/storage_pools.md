@@ -67,7 +67,7 @@ Pools can also directly be queried by the following REST API endpoint: `/kyve/qu
 Keeping pools funded and therefore keeping the data flowing while at the same time keeping validators' stakes secured
 and incentivized is a challenge. KYVE designed pools to fulfill all those needs.
 
-### Keeping pools funded
+### Keeping Pools Funded
 
 In order to payout protocol nodes and incentivize them the pool needs funds. These funds are provided by _funders_;
 they are interested in archiving the data the specific pool handles. This could be the project or the foundation behind
@@ -83,7 +83,7 @@ Once you outbid the current lowest funder, you claim his funding slot. The remai
 automatically transferred back to him. This mechanism ensures that only people with the highest interest in archiving
 the data can operate as a funder.
 
-### Basic $KYVE flow
+### Basic $KYVE Flow
 
 With the funds provided by a funder the flow of $KYVE can be summarized by the diagram below:
 
@@ -91,7 +91,7 @@ With the funds provided by a funder the flow of $KYVE can be summarized by the d
   <img width="70%" src="/img/pool_economics.png" />
 </p>
 
-### Keeping protocol nodes incentivized
+### Keeping Protocol Nodes Incentivized
 
 Protocol nodes have many tasks. They have to collect data, bundle them, upload, and submit them. To reward these nodes for
 their work and keep them incentivized, they receive bundle rewards when they successfully propose a valid bundle. As described above, those
@@ -99,7 +99,7 @@ rewards are funded by funders. But
 before the uploader receives his reward, a network fee (usually 1%) is deducted and automatically transferred to the
 community pool. You can find more information on the calculation of the uploader reward [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md).
 
-### Keeping delegators incentivized
+### Keeping Delegators Incentivized
 
 Delegators are lending $KYVE to protocol nodes to help secure the network and helping them to earn more rewards. Delegators have to trust protocol nodes
 since they also receive a slash proportionally to their delegation. In return for putting the capital at risk delegators receive delegation rewards which are also funded by funders. These rewards are a certain fraction of the entire bundle reward, depending on the nodes commission. You can find more information about the commission
