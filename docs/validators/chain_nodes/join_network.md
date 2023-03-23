@@ -177,7 +177,7 @@ enable = true
 
 # ...
 
-rpc_servers = "https://rpc-cache.korellia.kyve.network:443,https:rpc-cache.korellia.kyve.network:443"
+rpc_servers = "https://rpc-cache.korellia.kyve.network:443,https://rpc-cache.korellia.kyve.network:443"
 trust_height = 5121641 # Replace with newer block
 trust_hash = "12B737A85692CBB606C83D763BED3992E158914DD584DCA100F4C6BEDFB9846D" # Replace with newer hash
 ```
