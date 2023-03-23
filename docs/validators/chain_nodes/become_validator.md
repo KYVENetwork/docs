@@ -43,9 +43,10 @@ additional configurations.
 
 ## Create Your Validator
 
-Before creating a validator you need two keys. One key is for managing your validator and 
-keeping your funds. The other one is only for signing blocks. In case the latter gets compromised
-you only risk a slash but not loosing your entire funds.
+Before creating a validator you need two keys. One key, the *Operating Key*, 
+is for managing your validator and keeping your funds. The other one is the 
+*Private Node Key* and is only for signing blocks. In case the latter gets 
+compromised you only risk a slash but not loosing your entire funds.
 
 ### Private Node Key
 
@@ -53,20 +54,24 @@ The private node key gets created while initialising the node. It is located at
 `~/.kyve/config/priv_validator_key.json`.
 
 :::danger
-**WARNING**: The key is not encrypted. Make sure it has the right read permissions and only 
-the user running the node is able to read it.
+**WARNING**: The private node key is not encrypted. Make sure it has the right 
+read permissions and only the user running the node is able to read it.
+There are some advanced protection mechanisms like <a href="https://github.com/iqlusioninc/tmkms">tmkms</a> 
+and <a href="https://github.com/strangelove-ventures/horcrux">Horcrux</a>.
 :::
 
-If you want to create a new or different key run `./kyved init <moniker>` on your local machine and 
-copy the contents to your validator.
+If you want to create a new or different node key run `./kyved init <moniker>` 
+on your local machine and copy the contents to your validator.
 
 ### Operating Key
 
 :::warning
-**WARNING**: This key needs to be carefully protected. This key should reside in a safe place.
+**WARNING**: The operating key needs to be carefully protected and should 
+reside in a safe place.
 :::
 
-We refer to [Wallets](/token_holders/wallets.md) for key creation. We recommend to consider the following things:
+We refer to [Wallets](/token_holders/wallets.md) for operating key creation. 
+We recommend to consider the following things:
 
 - Use a multi-sig setup
 - Use a local machine for signing your transaction
@@ -76,11 +81,19 @@ We refer to [Wallets](/token_holders/wallets.md) for key creation. We recommend 
 
 ## The Create-Validator Transaction
 
-After the secure node setup and the creation of a private key is done, it's time
-to sign the message which will actually turn your node into a validator.
+After the secure node setup and the creation of a private operating key is done,
+it's time to sign the message which will actually turn your node into a validator.
 
-For this guide we assume a local machine with Ledger (but no multi-sig).
+Before we can start, log in to your validator node and obtain the private node
+public key with
 
+```shell
+remote$ ./kyved tendermint show-validator
+```
+and copy the results for later.
+
+Now go back to your local machine, we assume a local machine with Ledger
+(but no multi-sig).
 
 ```bash
 local$ ./kyved keys add <key_name> --ledger
@@ -101,8 +114,8 @@ This example shows how to create a validator on our testnet Kaon. Please note th
 ```bash
 ./kyved tx staking create-validator \
   --amount=<amount>tkyve \
-  --pubkey=$(./kyved tendermint show-validator) \
-  --moniker=<moniker> \
+  --pubkey="<your-validator-public-node-key>" \
+  --moniker="<moniker>" \
   --chain-id=kaon-1 \
   --ledger \
   --commission-rate="0.05" \
@@ -113,4 +126,7 @@ This example shows how to create a validator on our testnet Kaon. Please note th
   --gas="auto" \
   --from=<key_name>
 ```
+
+For running a node on mainnet one needs to use `ukyve` instead of `tkyve` 
+and the mainnet chain-id as well as a mainnet rpc node.
 
