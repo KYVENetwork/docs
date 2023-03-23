@@ -106,7 +106,7 @@ mv chaind kyved
 **linux/arm64**
 
 ```bash
-wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_darwin_arm64.tar.gz
+wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_linux_arm64.tar.gz
 tar -xvzf kyved_linux_arm64.tar.gz
 mv chaind kyved
 ```
@@ -119,11 +119,11 @@ tar -xvzf kyved_darwin_amd64.tar.gz
 mv chaind kyved
 ```
 
-**linux/arm64**
+**darwin/arm64**
 
 ```bash
-wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_linux_arm64.tar.gz
-tar -xvzf kyved_linux_arm64.tar.gz
+wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_darwin_arm64.tar.gz
+tar -xvzf kyved_darwin_arm64.tar.gz
 mv chaind kyved
 ```
 
