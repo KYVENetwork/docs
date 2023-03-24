@@ -175,7 +175,7 @@ connection.
    Select as destination type `Snowflake`.
    You will automatically be taken to a page to add the set-up details Snowflake WH that you set [before](#setting-up-a-snowflake-data-warehouse).
 
-   <img src="/img/elt/snowflake_connection_details.png" height="700px;"/>
+   <img src="/img/elt/snowflake_connection_details.png" width="300px;" />
 
    - For the authorization method, use `Username` and `Password`:
 
