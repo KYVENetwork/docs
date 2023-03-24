@@ -1,13 +1,13 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 ---
-# Create a Pipeline
+
+# Postgres Pipeline
 
 In order to create an end to end test of the ELT pipeline apart from the Source which is the KYVE network, you should configure a destination where the `records` will be stored.
 
 This page will guide you through setting up an ELT pipeline to fetch data from
 a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into a local `Postgres` database.
-
 
 ## Postgres Local Deployment
 
