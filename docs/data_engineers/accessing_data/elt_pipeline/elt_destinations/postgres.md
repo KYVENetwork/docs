@@ -4,13 +4,10 @@ sidebar_position: 1
 
 # Postgres Destination
 
-In order to create an end-to-end test of the ELT pipeline apart from the Source which is the KYVE network, you should
-configure a destination where the `records` will be stored.
-
 This page will guide you through setting up an ELT pipeline to fetch data from
 a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into a local `Postgres` database.
 
-## Postgres Local Deployment
+## Postgres Setup
 
 In this step, you will deploy a local `Postgres` database using Docker.
 
@@ -64,7 +61,7 @@ In this step, you will deploy a local `Postgres` database using Docker.
 
    <img src="/img/elt/pgAdmin4_connection.jpg"/>
 
-## Create an ELT pipeline
+## Configure Airbyte
 
 Now you are ready to go on the Airbyte app ([http://localhost:8000/](http://localhost:8000/)) and create a new
 connection.
