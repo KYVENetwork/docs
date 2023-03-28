@@ -4,11 +4,8 @@ sidebar_position: 2
 
 # Snowflake Destination
 
-In order to create an end to end test of the ELT pipeline apart from the Source which is the KYVE network, you should
-configure a destination where the `records` will be stored.
-
 This page will guide you through setting up an ELT pipeline using Snowflake to fetch data from
-a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into a `Snowflake` database.
+a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into a Snowflake data warehouse.
 
 ## About Snowflake
 
@@ -37,8 +34,8 @@ engineers and executives.
 These instructions assume that you already have a Snowflake account. For more information on how to get started with an
 account, go [here](https://signup.snowflake.com/).
 
-Once the Snowflake data warehouse is set up, you can connect to it in various ways. We are going to be utilizing the UI
-via the Web browser:
+Once the Snowflake data warehouse is set up, we can configure it as a destination for Airbyte. We are going to be 
+utilizing the UI via the Web browser:
 
 1. Open a web browser and go to the [Snowflake web application](https://app.snowflake.com/).
 2. Log in to your account using your Snowflake username and password.
@@ -62,7 +59,7 @@ Below are the instructions to create/get the required parameters.
 > NOTE: The worksheet you just opened can act as your query editor. All the SQL queries you'll see below need to be run
 > there.
 
-### Getting the required parameters
+### Configuring Snowflake
 
 #### **Host**
 
@@ -162,7 +159,7 @@ connection.
 
 1. Set up the source.
 
-   In this step you should specify the [Kyve pool](https://app.kyve.network/#/pools) from which you want to
+   In this step you should specify the [KYVE pool](https://app.kyve.network/#/pools) from which you want to
    retrieve data. You can specify a specific **Bundle-Start-ID** in case you want to narrow the records that will be
    retrieved from the pool. You can find the bundles of your pool choice in the KYVE app. For example
    [here](https://app.korellia.kyve.network/#/pools/8/bundles) are the bundles of Pool ID `8`, the Evmos chain.
@@ -206,7 +203,7 @@ connection.
 
 ## View Stored Data
 
-To view the data you just synced from Kyve, go back to your Snowflake UI, select the worksheet you created
+To view the data you just synced from KYVE, go back to your Snowflake UI, select the worksheet you created
 [earlier](#prerequisites) and try out the following queries. All variables inside `<>` need to be changed according
 to the variables you set.
 
