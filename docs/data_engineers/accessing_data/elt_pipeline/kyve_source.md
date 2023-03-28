@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Add KYVE Source
+# KYVE Source Setup
 
 In this step, you will configure the `KYVE` source for your Airbyte deployment.
 
