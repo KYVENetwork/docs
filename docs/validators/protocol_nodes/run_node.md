@@ -4,6 +4,13 @@ sidebar_position: 4
 
 # Run a Node
 
+Before you can finally run the node the runtime specific setup has to be made. You can check the setup
+for each runtime here:
+
+- **@kyvejs/tendermint-bsync**: [Setup guide](https://github.com/KYVENetwork/kyvejs/tree/main/integrations/tendermint-bsync#run-a-node)
+
+After you have made the correct setup for the specific runtime you can proceed here.
+
 ## Start Node
 
 Finally the protocol node can be started. In order to start it, execute the following command. Since we named our valaccount `moonbeam` we select the this valaccount to start the KYSOR.

@@ -176,6 +176,13 @@ Here the following directories have the following reason:
 
 ### Binary Installation
 
+The binary installation for each runtime can differ. Current runtimes which are live are listed below. You can follow
+a detailed binary installation for each runtime there. Once you are done you can continue here.
+
+- **@kyvejs/tendermint-bsync**: [Installation guide](https://github.com/KYVENetwork/kyvejs/tree/main/integrations/tendermint-bsync#binary-installation)
+
+After you have installed the binary you can proceed to move it to the correct location so KYSOR can use it:
+
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
   Since auto download should be disabled for security reasons on mainnet you have to install the correct binaries manually on the KYSOR. In order to fetch the correct binary head back to the pool you chose and look at the <code>runtime</code> and at the <code>runtime version</code>. With this information you can head to the binary <a href="https://github.com/KYVENetwork/kyvejs/releases">releases</a> and get the correct binary.
