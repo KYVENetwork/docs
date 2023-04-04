@@ -5,7 +5,7 @@ sidebar_position: 1
 # Postgres Destination
 
 This page will guide you through setting up an ELT pipeline to fetch data from
-a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into a local `Postgres` database.
+a [KYVE data pool](/introduction/architecture.md) and import it into a local `Postgres` database.
 
 ## Postgres Setup
 
@@ -45,87 +45,88 @@ In this step, you will deploy a local `Postgres` database using Docker.
    GRANT ALL ON SCHEMA public to airbyte_user;
    ```
 
+   ```sql
+   \quit
+   ```
+
    A database named `kyvetest` has been created and the user `airbyte_user` with password `pass` now
    has read and write access.
 
-4. Install the [pgAdmin 4](https://www.pgadmin.org/download/) management tool.
+4. Install the [pgAdmin 4](https://www.pgadmin.org/download/) Postgres management tool, for example with Homebrew:
 
-5. Click on "Add New Server" and create a connection with the `kyvetest` database.
-   As show in the figure bellow you should add the following parameters:
+   ```sh
+   brew install --cask pgadmin4
+   ```
 
-    - **Maintenance database**: `kyvetest`
-    - **Username**: `airbyte_user`
-    - **Password**: `pass` (in case you did not modify it from step 3.1)
+5. Run pgAdmin and click on "Add New Server". Give it a name, for example `local-psql`, and in the "Connections" tab fill out the fields as follows:
+
+   - **Host name/address**: `localhost`
+   - **Maintenance database**: `kyvetest`
+   - **Username**: `airbyte_user`
+   - **Password**: `pass` (in case you did not modify it in step 3)
 
    <br></br>
-
-   <img src="/img/elt/pgAdmin4_connection.jpg"/>
+   <img src="/img/elt/pgAdmin4_connection.jpg" alt="pgAdmin Add New Server" />
 
 ## Configure Airbyte
 
-Now you are ready to go on the Airbyte app ([http://localhost:8000/](http://localhost:8000/)) and create a new
-connection.
+Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 1. Set up the source.
 
-   In this step you should specify the [Kyve pool](https://app.korellia.kyve.network/#/pools) from which you want to
-   retrieve data. You can specify a specific **Bundle-Start-ID** in case you want to narrow the records that will be 
-   retrieved from the pool. You can find the bundles of your pool choice in the KYVE app. For example 
-   [here](https://app.korellia.kyve.network/#/pools/8/bundles) are the bundles of Pool ID `8`, the Evmos chain.
+   In this step you specify the [KYVE pools](https://app.korellia.kyve.network/#/pools) from which you want to retrieve data, identified by **Pool-IDs**.
 
-   For this example we choose:
+   You can also specify **Bundle-Start-IDs** for each pool, in order to limit the records that will be retrieved from that pool. In the KYVE app you can find the bundles for each pool, for example [these](https://app.korellia.kyve.network/#/pools/8/bundles) are the bundles for Pool-ID `8`, the Evmos chain.
 
-    - **Pool-ID**: `8` which refers to the [Evmos chain](https://app.kyve.network/#/pools/8/bundles).
-    - **Bundle-Start-ID**: `105395` (or choose another `Bundle-Start-ID`)
+   For this example we choose to ingest only the Evmos chain.
+
+    - **Source Name**: KYVE
+    - **Pool-IDs**: `8`
+    - **Bundle-Start-IDs**: `105395`
     - **KYVE-API URL Base**: *This should remain as is*.
 
    <br></br>
-
-   <img src="/img/elt/airbyte_kyve_source.jpg"/>
+   <img src="/img/elt/airbyte_kyve_source.jpg" alt="Airbyte set up source" />
 
 2. Set up the destination.
 
-   Add the parameters of the Postgres DB that you set [here](#postgres-local-deployment).
+   Add the parameters of the Postgres DB that you configured [here](#postgres-setup):
 
-    - **DB Name**: `kyvetest`
-    - **User**: `airbyte_user`
-    - **Password**: `pass`
-   
+   - **Destination type**: Postgres Local
+   - **DB Name**: `kyvetest`
+   - **User**: `airbyte_user`
+   - **Password**: `pass`
+
    <br></br>
-
-   <img height="700" src="/img/elt/airbyte_kyve_dest.jpg"/>
+   <img src="/img/elt/airbyte_kyve_dest.jpg" alt="Airbyte set up destination" width="800px;" />
 
 3. Final ELT configuration.
 
    This is the final step where you can modify the pipeline.
 
-    - In the **Transfer** field, you can set how often the data should sync to the destination. For this example, we set
-      it to `Manual`.
-    - In the **Streams** section, you can modify the Namespace, and you can add a Prefix for the data that will be
-      stored.
-    - In the **Activate the streams you want to sync** section, you can modify the behavior of the stream in each
-      repetition. For this example, you could set it to `Incremental|Append`, which means that only new records will be
-      stored on each new sync and will be appended in the DB.
-   
-   <br></br>
+   - In the **Transfer** field, you can set how often the data should sync to the destination. For this example, we set it to `Manual`.
+   - In the **Streams** section, you can modify the Namespace, and you can add a Prefix for the data that will be stored.
+   - In the **Activate the streams you want to sync** section, you can modify the behavior of the stream in each repetition. For this example, you could set it to `Incremental|Append`, which means that only new records will be stored on each new sync and will be appended in the DB.
 
-   <img height="700" src="/img/elt/airbyte_kyve_elt_conf.jpg"/>
+   <br></br>
+   <img src="/img/elt/airbyte_kyve_elt_conf.jpg" alt="Airbyte ELT configuration" width="700px;" />
+
+4. Run the initial sync.
+
+   Click **Sync Now**. You can track progress by clicking "Sync Running". Depending on how you configured the source in Step 1 this may take a while.
 
 ## View Stored Data
 
-For viewing the retrieved data, open pgAdmin or any other postgres management tool
-that you have installed and connect to the `kyvetest` DB that you created in Step 3 of the 
-[Postgres local deployment](#postgres-local-deployment).
+For viewing the retrieved data, open pgAdmin (or any other Postgres management tool that you have installed) and connect to the `kyvetest` database that you created in [Step 3](#postgres-setup).
 
-In the public schema, you will find the retrieved records in both raw and normalized formats.
+In the `public` schema, you will find the retrieved records in both raw and normalized formats.
 
 1. Raw format
 
-   <img src="/img/elt/pgAdmin4_raw.jpg"/>
+   <img src="/img/elt/pgAdmin4_raw.jpg" alt="pgAdmin raw data" />
 
 2. Normalized format
 
-   <img src="/img/elt/pgAdmin4_norm.jpg"/>
+   <img src="/img/elt/pgAdmin4_norm.jpg" alt="pgAdmin normalized data" />
 
-That's it! You've successfully created an end-to-end ELT pipeline fetching data from a KYVE data pool and importing it
-into a local Postgres database.
+That's it! You've successfully created an end-to-end ELT pipeline fetching data from a KYVE data pool and importing it into a local Postgres database.

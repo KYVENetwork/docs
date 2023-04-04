@@ -5,7 +5,7 @@ sidebar_position: 2
 # Snowflake Destination
 
 This page will guide you through setting up an ELT pipeline using Snowflake to fetch data from
-a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into a Snowflake data warehouse.
+a [KYVE data pool](/introduction/architecture.md) and import it into a Snowflake data warehouse.
 
 ## About Snowflake
 
@@ -13,9 +13,6 @@ The KYVE Data Pipeline enables easy import of KYVE data into any data warehouse 
 supported by [Airbyte](https://airbyte.com/). With the [ELT](https://en.wikipedia.org/wiki/Extract,_load,_transform)
 format, data analysts and engineers can now confidently source KYVE data without worrying about its validity or
 reliability.
-
-This tutorial will guide you through setting up an ELT pipeline to fetch data from
-a [KYVE data pool](https://docs.kyve.network/basics/pools.html) and import it into the Snowflake data warehouse.
 
 A data warehouse is a centralized repository of data that is optimized for querying and analysis. It is designed for
 [analytical processing (OLAP)](https://en.wikipedia.org/wiki/Online_analytical_processing). A data warehouse can handle
@@ -80,7 +77,7 @@ To create a user you can either create it on the UI or using SQL:
 - Using SQL:
 
     - To run
-      this [command](https://docs.snowflake.com/en/sql-reference/sql/create-user.html#:~:text=Objects%20%26%20Columns.-,Access%20Control%20Requirements,-A%20role%20used),
+      this [command](https://docs.snowflake.com/en/sql-reference/sql/create-user),
       the current user must have a `USERADMIN` role or one with higher privileges (run this command in the worksheet):
 
       > NOTE: An owner with `ACCOUNTADMIN` privileges will work as well since it has higher level of access
