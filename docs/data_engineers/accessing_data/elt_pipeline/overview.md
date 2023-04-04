@@ -56,7 +56,7 @@ For Windows users, the Windows Subsystem for Linux 2 (WSL2) must be installed. Y
 
 1. Make sure you have Homebrew installed. If not you can follow the instructions listed [here](https://brew.sh/).
 
-1. Make sure you have Docker Desktop installed. If not you can install it with Homebrew in your Terminal:
+2. Make sure you have Docker Desktop installed. If not you can install it with Homebrew in your terminal:
 
    ```sh
    brew install --cask docker

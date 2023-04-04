@@ -5,7 +5,7 @@ sidebar_position: 2
 
 In this step, you will configure the `KYVE` source for your Airbyte deployment.
 
-1. In a new Terminal window change to the `source-kyve` directory:
+1. In a new terminal window change to the `source-kyve` directory:
 
    ```sh
    cd airbyte-integrations/connectors/source-kyve
