@@ -25,6 +25,13 @@ You can also start the process in debug mode by adding the `--debug` flag like t
 ./kysor start --valaccount 'moonbeam' --debug
 ```
 
+If the runtime needs env variables you can define them in an `.env` file and pass it to KYSOR. Then they
+will be available in the runtime.
+
+```bash
+./kysor start --valaccount 'moonbeam' --env-file="path/to/.env"
+```
+
 After the node successfully started you should see the following logs:
 
 ```log
