@@ -30,7 +30,7 @@ Keplr wallet is open source. The source code can be found on [GitHub](https://gi
 
 Cosmostation wallet is open source. The source code can be found on [GitHub](https://github.com/cosmostation/cosmostation-chrome-extension-client).
 
-## Leap
+### Leap
 
 [Leap](https://www.leapwallet.io/) wallet is a non-custodial, multi-chain & cross platform wallet.
 
