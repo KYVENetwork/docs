@@ -30,6 +30,16 @@ Keplr wallet is open source. The source code can be found on [GitHub](https://gi
 
 Cosmostation wallet is open source. The source code can be found on [GitHub](https://github.com/cosmostation/cosmostation-chrome-extension-client).
 
+## Leap
+
+[Leap](https://www.leapwallet.io/) wallet is a non-custodial, multi-chain & cross platform wallet.
+
+:::info
+**NOTE**: It can be downloaded and installed here: **[https://www.leapwallet.io/download](https://www.leapwallet.io/download)**
+:::
+
+Leap wallet is partially open source. The source code of the keychain can be found on [GitHub](https://github.com/leapwallet/leap-keychain).
+
 ## Cold Wallets
 
 Currently, KYVE supports the following cold wallets which are primarily used to operate nodes or to connect to KYVE's WebApp.
