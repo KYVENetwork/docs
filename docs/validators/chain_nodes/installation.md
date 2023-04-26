@@ -4,6 +4,21 @@ sidebar_position: 3
 
 # Installation
 
+## Versions
+
+Depending on the network one may need to run different versions. The following
+table shows the upgrade block height for a given version
+
+| Tag \ Network | Kaon    | Mainnet |
+|---------------|---------|---------|
+| v1.0.0-rc0    | 0       | -       |
+| v1.0.0-rc1    | 443300  | -       |
+| v1.0.0        | -       | 0       |
+| v1.1.0        | 1115111 | TBD     |
+
+For the Korellia devnet there is no version map. Only the latest version via 
+blocksync is supported.
+
 ## Obtain binaries
 
 Depending on which network you want to join you have to obtain the binaries differently.
@@ -38,7 +53,8 @@ git checkout tags/<tag> -b <tag>
 make build
 ```
 
-Here the <code><tag\></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
+Here the <code><tag\></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>. 
+For building v1.1.0 or later on needs to additionally define the environment, i.e. `make build ENV=mainnet`
 
 :::tip
 **Note:** You can find the compiled binary under <code>chain/build/kyved</code>
