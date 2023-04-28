@@ -51,3 +51,6 @@ dApps
 multisig
 crypto
 GUI
+unbonding
+redelegation
+redelegate

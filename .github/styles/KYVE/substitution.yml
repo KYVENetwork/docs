@@ -1,0 +1,10 @@
+extends: substitution
+message: Use '%s' instead of '%s'
+level: error
+ignorecase: true
+# swap maps tokens in form of bad: good
+swap:
+  chain layer: consensus layer
+  protocol node: protocol validator
+  chain node: consensus validator
+  storage pool: data pool
