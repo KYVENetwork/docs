@@ -96,6 +96,10 @@ npm install -g @bundlr-network/client
 In order to fund the Bundlr node simply execute the following, where `arweave.json` is your Arweave keyfile
 which holds some funds:
 
+:::caution
+**IMPORTANT**: Always use `https://node1.bundlr.network` as the host to fund your bundlr account since KYVE uses this by default
+:::
+
 ```bash
 $ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
 
