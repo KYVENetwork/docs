@@ -14,7 +14,7 @@ Once you have the latest version for you operating system simply
 pull them down:
 
 ```bash
-wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.17/kysor-linux-x64.zip
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.20/kysor-linux-x64.zip
 unzip kysor-linux-x64.zip
 mv kysor-linux-x64 kysor
 chmod 700 kysor
