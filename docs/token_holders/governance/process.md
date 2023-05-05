@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Deposit Period
 
-The deposit period lasts either 5 minutes or until the proposal deposit totals 20.000 KYVE, whichever happens first.
+The deposit period lasts either 5 minutes or until the proposal deposit totals 25,000 KYVE, whichever happens first.
 
 ### Deposits
 
