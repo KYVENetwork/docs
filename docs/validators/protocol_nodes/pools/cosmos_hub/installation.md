@@ -120,12 +120,7 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
 
-```bash
-./kysor init \
---chain-id 'kyve-1' \
---rpc 'https://rpc-eu-1.kyve.network' \
---rest 'https://api-eu-1.kyve.network'
-```
+    Scheduled for Q2
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
@@ -165,7 +160,15 @@ There should be a `config.toml` file where the configurations you just defined a
 
 ### Create the Valaccount
 
-Now that KYSOR is initialized we move on to the next step. For every pool you run on a _valaccount_ has to be created. For the Cosmos Hub pool, we want to have the pool id `0` (in case we run from Kaon). A new valaccount with a new mnemonic can be created in the following way:
+Now that KYSOR is initialized we move on to the next step. For every pool you run on a _valaccount_ has to be created. A new valaccount with a new mnemonic can be created in the following way:
+
+<Tabs groupId="network">
+  <TabItem value="kyve" label="Mainnet">
+
+    Scheduled for Q2
+
+  </TabItem>
+  <TabItem value="kaon" label="Kaon">
 
 ```bash
 ./kysor valaccounts create \
@@ -189,6 +192,35 @@ If you want to create a valaccount from an existing mnemonic just add the `--rec
 ```
 
 This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
+
+  </TabItem>
+  <TabItem value="korellia" label="Korellia">
+
+```bash
+./kysor valaccounts create \
+--name 'cosmoshub' \
+--pool 24 \
+--storage-priv "$(cat path/to/arweave.json)" \
+--metrics
+```
+
+This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+
+If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
+
+```bash
+./kysor valaccounts create \
+--name cosmoshub \
+--pool 24 \
+--storage-priv "$(cat path/to/arweave.json)" \
+--metrics \
+--recover
+```
+
+This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
+
+  </TabItem>
+</Tabs>
 
 :::danger
 **ATTENTION**: Since the valaccount config files store the valaccount's mnemonic and the wallet keyfile for the storage provider you should **never** share this file with anyone.

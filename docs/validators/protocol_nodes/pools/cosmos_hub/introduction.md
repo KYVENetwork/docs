@@ -7,7 +7,11 @@ sidebar_position: 1
 This storage pool validates and archives all blocks from Cosmos Hub and makes them permanently
 available with Arweave and Bundlr.
 
-## Quick Facts
+:::info
+**INFO**: Cosmos Hub is currently **not** live on Mainnet, only on Kaon and Korellia
+:::
+
+## Overview
 
 - **Runtime**: @kyvejs/tendermint-bsync
 - **Data Source**: Self hosted Gaia full node (cosmoshub-4)
@@ -18,14 +22,16 @@ available with Arweave and Bundlr.
   - [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 24)
 - **Min Hardware Requirements**
   - 2 or more physical CPU cores
-  - 16GB RAM
-  - 512GB DISK
+  - 16 GB RAM
+  - 512 GB DISK
   - 50mbps network bandwidth
 
 ## General Setup
 
-Every protocol node runner will run their own Gaia Full Node as a data source together with the KYVE node. This
-ensures that the data which is getting proposed and validated actually comes from decentralized
+If you want to participate in the Cosmos Hub pool you will have to run a Gaia Full node which will act as the
+data source for the KYVE protocol node.
+
+This ensures that the data which is getting proposed and validated actually comes from decentralized
 sources. Furthermore, since the gaia blockchain node only serves valid blocks we further increase
 the validation of this data. With that setup a user who wants to join this pool first has to sync
 his gaia node to the current height the pool has already archived the blocks and then start the
