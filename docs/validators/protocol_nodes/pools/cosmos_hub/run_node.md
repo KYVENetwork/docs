@@ -4,33 +4,38 @@ sidebar_position: 4
 
 # Run a Node
 
-Before you can finally run the node the runtime specific setup has to be made. You can check the setup
-for each runtime here:
-
-- **@kyvejs/tendermint-bsync**: [Setup guide](https://github.com/KYVENetwork/kyvejs/tree/main/integrations/tendermint-bsync#run-a-node)
-
-After you have made the correct setup for the specific runtime you can proceed here.
+With the Cosmos source node in place and the KYVE node also installed you can finally start the node.
 
 ## Start Node
 
-Finally the protocol node can be started. In order to start it, execute the following command. Since we named our valaccount `moonbeam` we select the this valaccount to start the KYSOR.
+Finally the protocol node can be started. In order to start it, execute the following command. Since we named our valaccount `cosmoshub` we select the this valaccount to start the KYSOR.
 
 ```bash
-./kysor start --valaccount 'moonbeam'
+./kysor start --valaccount 'cosmoshub'
 ```
 
 You can also start the process in debug mode by adding the `--debug` flag like this:
 
 ```bash
-./kysor start --valaccount 'moonbeam' --debug
+./kysor start --valaccount 'cosmoshub' --debug
 ```
 
-If the runtime needs env variables you can define them in an `.env` file and pass it to KYSOR. Then they
-will be available in the runtime.
+:::tip
+If you're running the gaia node on a separate machine you have to tell the protocol node with an env variable the new rpc endpoint.
+
+Create .env file:
+
+```
+KYVEJS_TENDERMINT_BSYNC_RPC="https://my-custom-rpc-endpoint:26657"
+```
+
+pass it to KYSOR:
 
 ```bash
-./kysor start --valaccount 'moonbeam' --env-file="path/to/.env"
+./kysor start --valaccount 'cosmoshub' --env-file="path/to/.env"
 ```
+
+:::
 
 After the node successfully started you should see the following logs:
 
@@ -38,16 +43,16 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.618  INFO  Starting node ...
 
 2023-02-13 08:46:00.624  INFO  Starting metric server on: http://localhost:8080/metrics
-2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Arweave
-2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Arweave
+2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Bundlr
+2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
 
-2023-02-13 08:46:00.873  INFO  Chain ID = kyve-local
+2023-02-13 08:46:00.873  INFO  Chain ID = kyve-kaon
 2023-02-13 08:46:00.873  INFO  Pool ID = 0
-2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/evm
+2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/tendermint-bsync
 2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 
-2023-02-13 08:46:00.873  INFO  @kyvejs/evm = v1.0.0-beta.8
-2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.0-beta.8
+2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint-bsync = v1.0.0-beta.9
+2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.0-beta.14
 
 2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 0 yet
 2023-02-13 08:46:00.876  INFO  Visit https://app.kyve.network and join the pool from your validator account:
@@ -62,7 +67,7 @@ With this information (`Valaddress` and `Valname`) you can head over the KYVE ap
 
 Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
-A dialog should open where you should select the pool you want to join (here Moonbeam). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
+A dialog should open where you should select the pool you want to join (here Cosmos Hub). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
 
 For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 100 $KYVE for the start which typically lasts for about 1 month.
 
@@ -78,21 +83,21 @@ If you want to start the nodes as a background process you can use `systemd`.
 
 For the daemon service root-privileges are required during the setup. Create a service file. $USER is the Linux user which runs the process. Replace it before you copy the command.
 
-Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `moonbeam`
+Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `cosmoshub`
 
 :::info
 You might have to execute this command with `sudo`
 :::
 
 ```bash
-tee <<EOF > /dev/null /etc/systemd/system/moonbeamd.service
+tee <<EOF > /dev/null /etc/systemd/system/cosmoshubd.service
 [Unit]
-Description=KYVE Protocol-Node moonbeam daemon
+Description=KYVE Protocol-Node cosmoshub daemon
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=/home/$USER/kysor start --valaccount moonbeam
+ExecStart=/home/$USER/kysor start --valaccount cosmoshub
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=infinity
@@ -106,20 +111,20 @@ Don't forget to change the filename and the valaccount in the service file if yo
 Start the daemon
 
 ```bash
-sudo systemctl enable moonbeamd
-sudo systemctl start moonbeamd
+sudo systemctl enable cosmoshub
+sudo systemctl start cosmoshub
 ```
 
 It can be stopped using
 
 ```
-sudo systemctl stop moonbeamd
+sudo systemctl stop cosmoshub
 ```
 
 You can see its logs with
 
 ```
-sudo journalctl -u moonbeamd -f -o cat
+sudo journalctl -u cosmoshub -f -o cat
 ```
 
 ## Start node on multiple pools

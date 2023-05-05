@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol nodes, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol nodes on the Cosmos Hub pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
 
 ## Supported OS
 
@@ -18,28 +18,12 @@ We officially support macOS and Linux in the following architectures:
 
 To run mainnet of testnet protocol nodes, you will need a machine with the following minimum hardware requirements:
 
-- 1 or more physical CPU cores
-- At least 8 GB of disk storage
-- At least 2 GB of memory (RAM)
+- 2 or more physical CPU cores
+- At least 512 GB of disk storage
+- At least 16 GB of memory (RAM)
 - At least 50mbps network bandwidth
 
 ## Pool Delegation Requirements
-
-### Choose a Storage Pool
-
-Before you can run a protocol node you have to choose a pool you want to join. You can find an overview of all pools
-in the KYVE app: [https://app.kyve.network/#/pools](https://app.kyve.network/#/pools).
-
-![pools](/img/pools.png)
-
-Here you can already see some options. Since, in this example, the `Bitcoin` pool is paused due to the lack of funds,
-it would be smarter to join the other active pools. Other metrics can be also added to your decision in which pool
-you would want to participate in. Example metrics could include the amount of slashes which occurred in the pool (can be found when you click on `pool` then `metrics`), or the APYs that other protocol node operators have running in that pool.
-
-Once you have chosen a pool, you need to remember the pool id and the
-pool runtime for later. Both can be found when you click on the pool overview. In this example, we have chosen the first pool with the pool id `0` and the runtime `@kyvejs/evm`.
-
-![pool overview](/img/pool_overview.png)
 
 ### Verify if you have enough $KYVE to participate
 
@@ -50,7 +34,7 @@ To check the minimum delegation amount you can click on the tab `Validators` onc
 
 ![min delegation](/img/min_delegation.png)
 
-In this case, there are still 9 free validator slots, so you just have to have more than 0 $KYVE of delegation in order to participate. If the slots would be full and the minimum delegation would be, for example,
+In this case, there are still 45 free validator slots, so you just have to have more than 0 $KYVE of delegation in order to participate. If the slots would be full and the minimum delegation would be, for example,
 300 $KYVE, you have to have **more** than 300 $KYVE delegated in your validator.
 
 :::caution
@@ -74,10 +58,8 @@ On the pool overview, it is clearly listed which storage provider a pool uses.
 
 Arweave is a truly decentralized, permanent data storage solution.
 
-In order to setup an Arweave wallet you need a keyfile which will be the private key of Arweave.
-You can get one with some additional funds from the official Arweave faucet (https://faucet.arweave.net/).
-Because this amount won't be enough to let validators run for a longer time you have to get some additional
-$AR. You can exchange them on common exchanges. We would recommend an amount of ~1 AR which is more than enough.
+In order to setup an Arweave wallet which is also required if you want to setup a Bundlr wallet you need a keyfile which will be the private key of Arweave.
+You can generate an Arweave wallet [here](https://arweave.app/). You can exchange $AR on common exchanges. We would recommend an amount of ~1 AR which is more than enough for a few weeks or even months.
 
 Store the keyfile in a secure location you will need it again later in the installation process.
 
