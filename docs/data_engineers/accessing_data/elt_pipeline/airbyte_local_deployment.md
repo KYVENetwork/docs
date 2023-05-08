@@ -17,7 +17,7 @@ cd airbyte
 ```
 
 ```sh
-docker compose up
+./run-ab-platform.sh
 ```
 
 After the deployment is complete, you'll be able to access the Airbyte UI at <http://localhost:8000/>.
