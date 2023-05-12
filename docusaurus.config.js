@@ -57,6 +57,10 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        gtag: {
+          trackingID: 'G-SY5FWZVWK2',
+          anonymizeIP: true,
+        },
         docs: {
           remarkPlugins: [math],
           rehypePlugins: [katex],
