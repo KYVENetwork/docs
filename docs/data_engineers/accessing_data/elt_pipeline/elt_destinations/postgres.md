@@ -74,6 +74,8 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 1. Set up the source.
 
+   Search "KYVE" in the `Sources searchbar` and select it. 
+   
    In this step you specify the [KYVE pools](https://app.korellia.kyve.network/#/pools) from which you want to retrieve data, identified by **Pool-IDs**.
 
    You can also specify **Bundle-Start-IDs** for each pool, in order to limit the records that will be retrieved from that pool. In the KYVE app you can find the bundles for each pool, for example [these](https://app.korellia.kyve.network/#/pools/8/bundles) are the bundles for Pool-ID `8`, the Evmos chain.
@@ -88,7 +90,12 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
    <br></br>
    <img src="/img/elt/airbyte_kyve_source.jpg" alt="Airbyte set up source" />
 
+   ***NOTE***: The **Bundle-Start-IDs** determines the size of the extracted data. This also affects the time that it is required for completing
+   the sync process which can take place for hours if the data are old. It is advised for testing purposes to visit the [KYVE network Polls page](https://app.korellia.kyve.network/#/pools) and to select a recent bundle ID (2-5 days before).
+
 2. Set up the destination.
+
+   Search "Postgres" in the `Destinations searchbar` and select it.
 
    Add the parameters of the Postgres DB that you configured [here](#postgres-setup):
 
@@ -102,10 +109,11 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 3. Final ELT configuration.
 
-   This is the final step where you can modify the pipeline.
+   Select the `KYVE Source` that you have configured in step 1 and the `Postgres Destination` from step 2.
+   In this final step  you can modify the pipeline.
 
    - In the **Transfer** field, you can set how often the data should sync to the destination. For this example, we set it to `Manual`.
-   - In the **Streams** section, you can modify the Namespace, and you can add a Prefix for the data that will be stored.
+   - In the **Streams** section, you can modify the Namespace, and you can add a Prefix for the data that will be stored. In this example we added the word `evmos` so the tables in postgres will be named `evmospool_0_...`.
    - In the **Activate the streams you want to sync** section, you can modify the behavior of the stream in each repetition. For this example, you could set it to `Incremental|Append`, which means that only new records will be stored on each new sync and will be appended in the DB.
 
    <br></br>
