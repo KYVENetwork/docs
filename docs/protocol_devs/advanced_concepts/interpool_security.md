@@ -5,8 +5,8 @@ sidebar_position: 1
 # Interpool-Security
 
 Data can only be trustless if enough stake is behind it. To ensure the highest stake possible for an
-ever growing amount of storage pools KYVE came up with the concept of `interpool-security`. Basically,
-this allows validators to join multiple storage pools at once and therefore secure the pool with their
+ever growing amount of data pools KYVE came up with the concept of `interpool-security`. Basically,
+this allows validators to join multiple data pools at once and therefore secure the pool with their
 entirety of stake.
 
 ## One validator - multiple pools
@@ -20,7 +20,7 @@ the rewards if he runs on the twice the amount of pools as their competitors. Bu
 ## The use of Valaccounts
 
 To make it possible for the Validator to participate on multiple pools without having to copy once's mnemonic to a
-potentially insecure server where to protocol node should be hosted on KYVE uses `Valaccounts` to run nodes. Basically,
+potentially insecure server where to protocol validator should be hosted on KYVE uses `Valaccounts` to run nodes. Basically,
 the validator address can grant permissions to a random account to validate in the KYVE network on behalf of the staker.
 This has to be done for every pool a validator wants to participate in. This ensures, that the validator does not have
 to export his private key to a server and enables massive horizontal scaling, due to the fact that validators and his valaccounts are decoupled from another. A potential setup with multiple pools can be found below:

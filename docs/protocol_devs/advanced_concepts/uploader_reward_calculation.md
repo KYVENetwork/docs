@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## Introduction
 
-To incentivize protocol nodes to stay online and continue uploading and validating data nodes receive a reward in $KYVE for every valid bundle proposed. The reward depends on two main parameters, the `operating_cost` which is stored per pool and the `storage_cost` which is stored as a module param and used for every pool. The operating cost covers all fixed costs a node has including server operating costs, $KYVE transaction fees and other fixed costs. The storage cost covers all variable costs which mainly covers the cost of storing the bundle proposals on a web3 provider like Arweave.
+To incentivize protocol validators to stay online and continue uploading and validating data nodes receive a reward in $KYVE for every valid bundle proposed. The reward depends on two main parameters, the `operating_cost` which is stored per pool and the `storage_cost` which is stored as a module param and used for every pool. The operating cost covers all fixed costs a node has including server operating costs, $KYVE transaction fees and other fixed costs. The storage cost covers all variable costs which mainly covers the cost of storing the bundle proposals on a web3 provider like Arweave.
 
 ## Bundle Reward
 

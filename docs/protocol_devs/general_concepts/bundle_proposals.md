@@ -47,8 +47,8 @@ transaction arguments we can identify the following requirements:
 - `creator`: the creator of the transaction. It is used to determine if the creator is also the current uploader,
   because only he can submit a bundle proposal for the current round.
 - `staker`: the address of the valaccount. It is used to determine if the valaccount has sufficient stake and is
-  actually in the storage pool
-- `pool_id`: the id of the storage pool
+  actually in the data pool
+- `pool_id`: the id of the data pool
 - `storage_id`: here the previously mentioned storage receipt is stored. With this other participants in the network can
   retrieve the actual data and verify it
 - `data_size`: the amount of bytes the data has which got stored on the storage provider. Used for
@@ -57,9 +57,9 @@ transaction arguments we can identify the following requirements:
 - `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid
   the hash also gets stored on-chain together with the _storage_id_ so that data consumers can always verify the
   validity of the data they retrieve from the storage provider
-- `from_index`: the current index of the storage pool. This is used to automatically check if the uploader submitted to
+- `from_index`: the current index of the data pool. This is used to automatically check if the uploader submitted to
   correct slice of data and does not submit an already submitted bundle
-- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the storage pool index and for
+- `bundle_size`: the amount of data items inside a bundle. Used for incrementing the data pool index and for
   validating if the bundle is below the _max_bundle_size_ limit. This gets also validated by other validators
 - `from_key`: the key of the first data item in a bundle. Is used for tagging purposes for the bundle proposal to easier
   find content afterwards
@@ -183,7 +183,7 @@ block.
 ]
 ```
 
-Of course storing raw JSON data is quite inefficient. For this reason protocol nodes compress the JSON bundles (mostly
+Of course storing raw JSON data is quite inefficient. For this reason protocol validators compress the JSON bundles (mostly
 GZip) and then store it which saves a lot of storage space and funds.
 
 ## Query Bundle Proposals

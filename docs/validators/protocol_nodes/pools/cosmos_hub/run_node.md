@@ -8,7 +8,7 @@ With the Cosmos source node in place and the KYVE node also installed you can fi
 
 ## Start Node
 
-Finally the protocol node can be started. In order to start it, execute the following command. Since we named our valaccount `cosmoshub` we select the this valaccount to start the KYSOR.
+Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount `cosmoshub` we select the this valaccount to start the KYSOR.
 
 ```bash
 ./kysor start --valaccount 'cosmoshub'
@@ -21,7 +21,7 @@ You can also start the process in debug mode by adding the `--debug` flag like t
 ```
 
 :::tip
-If you're running the gaia node on a separate machine you have to tell the protocol node with an env variable the new rpc endpoint.
+If you're running the gaia node on a separate machine you have to tell the protocol validator with an env variable the new rpc endpoint.
 
 Create .env file:
 
@@ -129,7 +129,7 @@ sudo journalctl -u cosmoshub -f -o cat
 
 ## Start node on multiple pools
 
-This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the previous steps (Install pool binaries). For that you have to create a new valaccount, because a valaccount can only run on one storage pool. Once you have setup the second valaccount you can start it. You can see all the pools you are participating in your validator page.
+This step is optional, but the more pools you participate in the higher the rewards. If you want to join another pool just repeat the previous steps (Install pool binaries). For that you have to create a new valaccount, because a valaccount can only run on one data pool. Once you have setup the second valaccount you can start it. You can see all the pools you are participating in your validator page.
 
 :::caution
 **WARNING**: Joining for example a second pool might double your rewards, but it also doubles the danger of getting slashed.

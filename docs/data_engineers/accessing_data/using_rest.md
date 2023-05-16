@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Accessing Stored Data via REST
 
-KYVE data is available for developers through the REST-API exposed by the chain nodes, a list of REST endpoints can be
+KYVE data is available for developers through the REST-API exposed by the consensus validators, a list of REST endpoints can be
 found [here](/web3_devs/grpc.md). The REST integration
 is the native way to access data that has been stored through KYVE.
 

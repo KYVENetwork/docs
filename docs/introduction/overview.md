@@ -24,23 +24,23 @@ order to continue building the future of Web3.
 KYVE is its own PoS Layer 1 blockchain built with the Cosmos SDK. It has two layers: the Chain Layer, and the Protocol
 Layer, each with their own node infrastructure.
 
-The chain layer is the backbone of KYVE and is an entirely sovereign Proof of Stake (PoS) blockchain built with/on
+The consensus layer is the backbone of KYVE and is an entirely sovereign Proof of Stake (PoS) blockchain built with/on
 Ignite. It’s run by independent nodes, which enable users to support and secure the KYVE blockchain.
 
 :::info
-Interested in [running a chain node ?](/validators/chain_nodes/overview.md)
+Interested in [running a consensus validator ?](/validators/chain_nodes/overview.md)
 :::
 
-Sitting on top of the chain layer is the Protocol Layer, which enables the actual use case of KYVE’s data lake. This
+Sitting on top of the consensus layer is the Protocol Layer, which enables the actual use case of KYVE’s data lake. This
 includes data pools, funding, staking, and delegation.
 
-The protocol layer has its own protocol nodes, which are responsible for collecting data from a data source, bundling
+The protocol layer has its own protocol validators, which are responsible for collecting data from a data source, bundling
 and uploading it to any decentralized storage solution, and then validating it, keeping track of which data is truly
 valid for its users to tap into. This enables KYVE to store any data permanently and in a decentralized manner, creating
 a Web3 data lake.
 
 :::info
-Interested in [running a protocol node ?](/validators/protocol_nodes/overview.md)
+Interested in [running a protocol validator ?](/validators/protocol_nodes/overview.md)
 :::
 
 ## KYVE Network Stack

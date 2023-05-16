@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run chain nodes some basic requirements have to be met ranging from simple hardware specs to owning a certain amount of $KYVE.
+Before you can run consensus validators some basic requirements have to be met ranging from simple hardware specs to owning a certain amount of $KYVE.
 
 ## Supported OS
 
@@ -17,7 +17,7 @@ We officially support macOS and Linux in the following architectures:
 
 ## Minimum Hardware Requirements
 
-To run mainnet of testnet protocol nodes, you will need a machine with the following minimum hardware requirements:
+To run mainnet of testnet protocol validators, you will need a machine with the following minimum hardware requirements:
 
 - 2 or more physical CPU cores
 - At least 250 GB of disk storage

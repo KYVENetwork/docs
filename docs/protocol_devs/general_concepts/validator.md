@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## Introduction
 
-Those protocol nodes who did not become _uploader_ in the current round are automatically assigned the role of
+Those protocol validators who did not become _uploader_ in the current round are automatically assigned the role of
 _validator_. This does not make them less important, they have the critical task of finding out if the proposed bundle
 of the uploader is valid or invalid.
 

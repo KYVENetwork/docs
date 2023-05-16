@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## What Is Funding, And Why Is It Important?
 
-A storage pool requires funding in $KYVE in order to function. This can be provided by anyone. The funding gets paid out to the protocol nodes active in the pool. If a pool runs out of funds, it stops. This is a crucial part of KYVEs tokenonomics. The goal at KYVE is to build a decentralized data lake that gets utilized by as many users/projects as possible. When users create a use case with KYVE data, they are highly incentivized to ensure that the pool keeps producing the data. Whenever a pool is close to running out of tokens, they will purchase some more tokens and top up the pool's funding. The more users/projects do this, the more they split the costs, making it more cost-effective and reducing the risk of a pool running out of funding.
+A data pool requires funding in $KYVE in order to function. This can be provided by anyone. The funding gets paid out to the protocol validators active in the pool. If a pool runs out of funds, it stops. This is a crucial part of KYVEs tokenonomics. The goal at KYVE is to build a decentralized data lake that gets utilized by as many users/projects as possible. When users create a use case with KYVE data, they are highly incentivized to ensure that the pool keeps producing the data. Whenever a pool is close to running out of tokens, they will purchase some more tokens and top up the pool's funding. The more users/projects do this, the more they split the costs, making it more cost-effective and reducing the risk of a pool running out of funding.
 
 ## Who Would Fund A Pool?
 

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-This storage pool validates and archives all blocks from Cosmos Hub and makes them permanently
+This data pool validates and archives all blocks from Cosmos Hub and makes them permanently
 available with Arweave and Bundlr.
 
 :::info
@@ -29,13 +29,13 @@ available with Arweave and Bundlr.
 ## General Setup
 
 If you want to participate in the Cosmos Hub pool you will have to run a Gaia Full node which will act as the
-data source for the KYVE protocol node.
+data source for the KYVE protocol validator.
 
 This ensures that the data which is getting proposed and validated actually comes from decentralized
-sources. Furthermore, since the gaia blockchain node only serves valid blocks we further increase
+sources. Furthermore, since the gaia blockconsensus validator only serves valid blocks we further increase
 the validation of this data. With that setup a user who wants to join this pool first has to sync
 his gaia node to the current height the pool has already archived the blocks and then start the
-actual KYVE protocol node.
+actual KYVE protocol validator.
 
 This architecture diagram summarizes the setup of the Cosmos Hub integration on KYVE:
 
@@ -43,7 +43,7 @@ This architecture diagram summarizes the setup of the Cosmos Hub integration on 
   <img width="90%" src="/img/tendermint-bsync.png" />
 </p>
 
-Here the tendermint-bsync runtime is responsible for communicating with the tendermint application (purple) - in this case gaia, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol node. The resulting
+Here the tendermint-bsync runtime is responsible for communicating with the tendermint application (purple) - in this case gaia, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol validator. The resulting
 data are the blocks from the tendermint application - validated and permanently stored on a storage provider like Arweave.
 
 ## Goal

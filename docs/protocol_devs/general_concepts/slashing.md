@@ -6,7 +6,7 @@ sidebar_position: 6
 
 ## Introduction
 
-To discourage and punish malicious behaviour protocol nodes can get slashed and therefore loose a part of their
+To discourage and punish malicious behaviour protocol validators can get slashed and therefore loose a part of their
 delegation.
 Depending on the severity of the behaviour different kind of slashes are applied. There are three types of slashes:
 

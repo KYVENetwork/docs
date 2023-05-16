@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Delegating
 
-Since there are two different types of nodes (chain node & protocol node), there are also two types of delegation. Both actions help to secure the KYVE network and earn rewards, but both come with their respected risks.
+Since there are two different types of nodes (consensus validator & protocol validator), there are also two types of delegation. Both actions help to secure the KYVE network and earn rewards, but both come with their respected risks.
 
 :::caution
 **ATTENTION**: Delegating might lead to the loss of your $KYVE. Please read this guide until the end in order to understand how to prevent this.
@@ -12,11 +12,11 @@ Since there are two different types of nodes (chain node & protocol node), there
 
 ## Chain Delegation
 
-Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate to a chain node, you're $KYVE is bonded and used in the Delegated Proof of Stake protocol to produce and validate new blocks. By delegating to a chain node, you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed, a part of your delegation is also slashed.
+Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate to a consensus validator, you're $KYVE is bonded and used in the Delegated Proof of Stake protocol to produce and validate new blocks. By delegating to a consensus validator, you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed, a part of your delegation is also slashed.
 
 ### How to delegate?
 
-The easiest way to delegate to chain nodes is by using a block explorer which supports delegation. Such a block explorer is the _Ping_ explorer. The explorer can be found below for every network:
+The easiest way to delegate to consensus validators is by using a block explorer which supports delegation. Such a block explorer is the _Ping_ explorer. The explorer can be found below for every network:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Staking' page, you can see a list of all chain nodes which are actively running in the network. After choosing a node based on certain factors like APY, commission or uptime you can delegate by clicking on the node itself or on the right button 'Delegate'.
+You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Staking' page, you can see a list of all consensus validators which are actively running in the network. After choosing a node based on certain factors like APY, commission or uptime you can delegate by clicking on the node itself or on the right button 'Delegate'.
 
 The following example shows the delegation with the Ping explorer on the Kaon network.
 
@@ -51,13 +51,13 @@ In return for lending out $KYVE and putting them at risk in order to secure, the
 
 Another parameter which influences the rewards of a delegator is the node commission. The node commission defines how much of the block reward directly goes to the node and how much goes to the rest - the delegators. A high commission means less rewards for delegators, a low one the opposite.
 
-The source of those rewards are a combination of inflation and transaction fees. Inflation helps stabilizing the network by providing consistent rewards to chain nodes and chain delegators. Those rewards are minted every block and collected in a fee pool where every transaction fee gets collected, too. After the rewards for each block are collected there are distributed in the Cosmos SDK [x/distribution](https://docs.cosmos.network/main/modules/distribution) module.
+The source of those rewards are a combination of inflation and transaction fees. Inflation helps stabilizing the network by providing consistent rewards to consensus validators and chain delegators. Those rewards are minted every block and collected in a fee pool where every transaction fee gets collected, too. After the rewards for each block are collected there are distributed in the Cosmos SDK [x/distribution](https://docs.cosmos.network/main/modules/distribution) module.
 
 Those rewards then can be claimed in the block explorer. Once they are claimed they are liquid and free to use.
 
 ### Risks
 
-As already briefly mentioned before, chain delegation comes with risk. Delegating into a chain node also implies that you as a delegator are responsible for the actions of that node. If the node behaves accordingly it and you as a delegator receive rewards. If the network finds the node was acting maliciously (for example double signing) or being offline the node and you receive a slash.
+As already briefly mentioned before, chain delegation comes with risk. Delegating into a consensus validator also implies that you as a delegator are responsible for the actions of that node. If the node behaves accordingly it and you as a delegator receive rewards. If the network finds the node was acting maliciously (for example double signing) or being offline the node and you receive a slash.
 
 The severity of a slash depends on the action of the node and on the network parameters. These can be found below:
 
@@ -96,8 +96,8 @@ You can undelegate by going to the explorer and to your delegations. There shoul
 
 ### Redelegation
 
-On the chain level, redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target chain node and not from the old source chain node. The catch is that you still can get slashed during the unbonding
-time in the old and the new target chain node at the same time. After the unbonding time is done you can only get slashed if the new target chain node receives a slash. Here, the same parameters like in the undelegation are used for redelegation.
+On the chain level, redelegation is possible immediately. If you perform a redelegation you start earning rewards from the new target consensus validator and not from the old source consensus validator. The catch is that you still can get slashed during the unbonding
+time in the old and the new target consensus validator at the same time. After the unbonding time is done you can only get slashed if the new target consensus validator receives a slash. Here, the same parameters like in the undelegation are used for redelegation.
 
 |                  | Mainnet                                                                                 | Kaon                                                                                    | Korellia                                                                                    |
 | ---------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -110,13 +110,13 @@ You can redelegate by going to the explorer and to your delegations. There shoul
 
 ## Protocol Delegation
 
-Similarly to chain delegation, which helps to secure the KYVE blockchain, protocol delegation helps to secure the actual validity of the data KYVE is archiving. For that you have to delegate into protocol nodes.
-When protocol nodes receive delegations their voting power and their probability of getting chosen as the next uploader increases. This means that protocol nodes have more control over which data gets validated and
-also earn more rewards. More information on that can be found [here](/protocol_devs/advanced_concepts/uploader_selection.md). By delegating into protocol nodes you again are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed a part of your delegation is also slashed.
+Similarly to chain delegation, which helps to secure the KYVE blockchain, protocol delegation helps to secure the actual validity of the data KYVE is archiving. For that you have to delegate into protocol validators.
+When protocol validators receive delegations their voting power and their probability of getting chosen as the next uploader increases. This means that protocol validators have more control over which data gets validated and
+also earn more rewards. More information on that can be found [here](/protocol_devs/advanced_concepts/uploader_selection.md). By delegating into protocol validators you again are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed a part of your delegation is also slashed.
 
 ### How to delegate?
 
-The easiest way to delegate into protocol nodes is by using the KYVE web app. The web app for every network can be found below:
+The easiest way to delegate into protocol validators is by using the KYVE web app. The web app for every network can be found below:
 
 <Tabs groupId="network">
 <TabItem value="kyve" label="Mainnet">
@@ -130,7 +130,7 @@ The easiest way to delegate into protocol nodes is by using the KYVE web app. Th
   </TabItem>
 </Tabs>
 
-You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Validators' page you can see a list of all protocol nodes which are actively running in the network. After choosing a node based on certain factors like APY, commission or slashing history you can delegate by clicking on the node itself or on the right button 'Delegate'.
+You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Validators' page you can see a list of all protocol validators which are actively running in the network. After choosing a node based on certain factors like APY, commission or slashing history you can delegate by clicking on the node itself or on the right button 'Delegate'.
 
 The following example shows the delegation with the KYVE web app on the Korellia network.
 
@@ -148,14 +148,14 @@ Again similar to chain delegation the delegator receives in return for lending o
 
 Another parameter which influences the rewards of a delegator is the node commission. The node commission defines how much of the bundle reward directly goes to the node and how much goes to the rest - the delegators. A high commission means less rewards for delegators, a low one the opposite. More information on that can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md).
 
-The source of those rewards are storage pool funds provided by pool funders. Pool funders have an interest in validating the archiving a specific data source the storage pool handles. Once a node receives
+The source of those rewards are data pool funds provided by pool funders. Pool funders have an interest in validating the archiving a specific data source the data pool handles. Once a node receives
 a bundle reward (the data he archived got validated) the rewards are distributed between all delegators. More information on the distribution details can be found [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md).
 
 Those rewards then can be claimed in the web app under 'User'. Once they are claimed they are liquid and free to use.
 
 ### Risks
 
-As already briefly mentioned before, protocol delegation comes with risk. Delegating into a protocol node also implies that you as a delegator are responsible for the actions of that node. If the node behaves accordingly it and you as a delegator receive rewards. If the network finds the node was acting maliciously (for example uploading incorrect data) or being offline the node and you receive a slash.
+As already briefly mentioned before, protocol delegation comes with risk. Delegating into a protocol validator also implies that you as a delegator are responsible for the actions of that node. If the node behaves accordingly it and you as a delegator receive rewards. If the network finds the node was acting maliciously (for example uploading incorrect data) or being offline the node and you receive a slash.
 
 The severity of a slash depends on the action of the node and on the network parameters. More details of how and when those slashes are applied can be found [here](/protocol_devs/general_concepts/slashing.md). These can be found below:
 
@@ -193,7 +193,7 @@ You can undelegate by going to the web app and view your delegations on the 'Use
 ### Redelegation
 
 To permit redelegations without the need to wait for a long unbonding time, the protocol reledelation uses _redelegation spells_.
-This special concept allows to redelegate to other protocol nodes immediately. This can only be done depending on how many
+This special concept allows to redelegate to other protocol validators immediately. This can only be done depending on how many
 redelegation spells you have left. If you perform a redelegation you loose one spell. When all spells are used you can't redelegate
 anymore. Spells are enabled again after the redelegation cooldown time. The redelegation cooldown time immediately starts after a spell has been used.
 

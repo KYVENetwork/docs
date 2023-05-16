@@ -4,8 +4,8 @@ sidebar_position: 3
 
 # Installation
 
-This section will deal with the installation for the Gaia Full Node and the KYVE protocol node. The Gaia Full
-Node will act as the source for the KYVE protocol node and is **required**. You can either run the Gaia node on
+This section will deal with the installation for the Gaia Full Node and the KYVE protocol validator. The Gaia Full
+Node will act as the source for the KYVE protocol validator and is **required**. You can either run the Gaia node on
 a seperate machine or run it on the same machine with the KYVE protocol together.
 
 ## Install Gaia full node
@@ -79,7 +79,7 @@ that height with:
 curl http://localhost:26657/block?height=6000000
 ```
 
-If it returns a valid block response you can continue with starting the actual KYVE protocol node
+If it returns a valid block response you can continue with starting the actual KYVE protocol validator
 and start participating in the validation and archival process.
 
 **TIP**: to save storage space you can start pruning blocks manually after they have been archived
@@ -87,7 +87,7 @@ by the pool since after that they are not needed anymore.
 
 **TIP**: to make it easier during chain upgrades we also recommend running the chain with _cosmosvisor_. You can find official instructions [here](https://hub.cosmos.network/main/hub-tutorials/upgrade-node.html#cosmovisor)
 
-## Install KYVE protocol node
+## Install KYVE protocol validator
 
 ### Install KYSOR
 
@@ -283,10 +283,10 @@ Here the following directories have the following reason:
 - `logs` - logs folder containing KYSOR log files. Each log file is a run from start to end where the date is the starting date
 - `upgrades` - most important directory, contains all the binaries for every pool
 - `upgrades/pool-$id` - holds every binary of every installed version of the specified pool
-- `upgrades/pool-$id/$version` - acts as a home directory for a specific binary, contains binary cache, logs and actual protocol node binary
+- `upgrades/pool-$id/$version` - acts as a home directory for a specific binary, contains binary cache, logs and actual protocol validator binary
 - `upgrades/pool-$id/$version/bin` - holds actual node binary
-- `upgrades/pool-$id/$version/cache` - contains cached data relevant for the protocol node
-- `upgrades/pool-$id/$version/logs` - logs folder for the protocol node of that version and pool. Each log file is a run from start to end where the date is the starting date
+- `upgrades/pool-$id/$version/cache` - contains cached data relevant for the protocol validator
+- `upgrades/pool-$id/$version/logs` - logs folder for the protocol validator of that version and pool. Each log file is a run from start to end where the date is the starting date
 - `valaccounts` - contains all the valaccount config files with which the KYSOR can run on a pool
 
 #### Binary Installation
