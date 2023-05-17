@@ -139,6 +139,18 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '08VTEK2AEZ',
+
+        // Public API key: it is safe to commit it
+        apiKey: 'd42641774cb613121c37dcd07732c587',
+
+        indexName: 'kyve',
+
+        contextualSearch: true,
+        searchParameters: {},
+      },
     }),
 };
 
