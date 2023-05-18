@@ -95,7 +95,7 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 2. Set up the destination.
 
-   Search "Postgres" in the `Destinations searchbar` and select it.
+   Search for "Postgres" in the `Destinations search bar` and select it.
 
    Add the parameters of the Postgres DB that you configured [here](#postgres-setup):
 
