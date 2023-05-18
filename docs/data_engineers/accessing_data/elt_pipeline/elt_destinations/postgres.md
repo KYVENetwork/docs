@@ -90,8 +90,8 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
    <br></br>
    <img src="/img/elt/airbyte_kyve_source.jpg" alt="Airbyte set up source" />
 
-   ***NOTE***: The **Bundle-Start-IDs** determines the size of the extracted data. This also affects the time that it is required for completing
-   the sync process which can take place for hours if the data are old. It is advised for testing purposes to visit the [KYVE network Polls page](https://app.korellia.kyve.network/#/pools) and to select a recent bundle ID (2-5 days before).
+   ***NOTE***: The **Bundle-Start-IDs** determines the size of the extracted data. This also affects the time required for completing
+   the sync process, up to several hours for historic data. It is advised for testing purposes to visit the [KYVE network Polls page](https://app.korellia.kyve.network/#/pools) and to select a recent bundle ID (2-5 days old).
 
 2. Set up the destination.
 
