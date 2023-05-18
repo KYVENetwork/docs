@@ -110,7 +110,7 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 3. Final ELT configuration.
 
    Select the `KYVE Source` that you have configured in step 1 and the `Postgres Destination` from step 2.
-   In this final step  you can modify the pipeline.
+   In this step you can make final modifications to the pipeline.
 
    - In the **Transfer** field, you can set how often the data should sync to the destination. For this example, we set it to `Manual`.
    - In the **Streams** section, you can modify the Namespace, and you can add a Prefix for the data that will be stored. In this example we added the word `evmos` so the tables in postgres will be named `evmospool_0_...`.
