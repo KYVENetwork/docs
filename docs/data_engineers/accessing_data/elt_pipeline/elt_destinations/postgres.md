@@ -74,7 +74,7 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 1. Set up the source.
 
-   Search "KYVE" in the `Sources searchbar` and select it. 
+   Search for "KYVE" in the `Sources search bar` and select it. 
    
    In this step you specify the [KYVE pools](https://app.korellia.kyve.network/#/pools) from which you want to retrieve data, identified by **Pool-IDs**.
 
