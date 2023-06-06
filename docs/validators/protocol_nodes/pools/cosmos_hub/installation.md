@@ -120,16 +120,49 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
 
-    Scheduled for Q2
+Official Mainnet endpoints:
+
+```bash
+EU RPC: 'https://rpc-eu-1.kyve.network'
+EU API: 'https://api-eu-1.kyve.network'
+
+US RPC: 'https://rpc-us-1.kyve.network'
+US API: 'https://api-us-1.kyve.network'
+```
+
+Depending on your geolocation certain endpoints can be used as a primary and secondary endpoints.
+Primary endpoints are used by default, secondary ones only when the primary fails and so on. It is also possible
+to only use one or more than two. It is important that the number of endpoints used for rpc and api are equal.
+
+```bash
+./kysor init \
+--chain-id 'kyve-1' \
+--rpc '<primary_rpc>,<secondary_rpc>,...' \
+--rest '<primary_api>,<secondary_api>,...'
+```
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
+Official Kaon endpoints:
+
+```bash
+EU RPC: 'https://rpc-eu-1.kaon.kyve.network'
+EU API: 'https://api-eu-1.kaon.kyve.network'
+
+US RPC: 'https://rpc-us-1.kaon.kyve.network'
+US API: 'https://api-us-1.kaon.kyve.network'
+```
+
+Depending on your geolocation certain endpoints can be used as a primary and secondary endpoints.
+Primary endpoints are used by default, secondary ones only when the primary fails and so on. It is also possible
+to only use one or more than two. It is important that the number of endpoints used for rpc and api are equal.
+
 ```bash
 ./kysor init \
 --chain-id 'kaon-1' \
---rpc 'https://rpc-eu-1.kaon.kyve.network' \
---rest 'https://api-eu-1.kaon.kyve.network'
+--rpc '<primary_rpc>,<secondary_rpc>,...' \
+--rest '<primary_api>,<secondary_api>,...'
 ```
 
   </TabItem>
@@ -146,10 +179,6 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-:::tip
-**NOTE**: Depending on your geolocation it might be better to use a different endpoint. You can check available endpoints for each network **[here](/web3_devs/grpc.md)**
-:::
-
 Once you have initialized KYSOR you can verify the successful initialization by printing out the home directory:
 
 ```bash
@@ -165,7 +194,28 @@ Now that KYSOR is initialized we move on to the next step. For every pool you ru
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
 
-    Scheduled for Q2
+```bash
+./kysor valaccounts create \
+--name 'cosmoshub' \
+--pool 0 \
+--storage-priv "$(cat path/to/arweave.json)" \
+--metrics
+```
+
+This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+
+If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
+
+```bash
+./kysor valaccounts create \
+--name cosmoshub \
+--pool 0 \
+--storage-priv "$(cat path/to/arweave.json)" \
+--metrics \
+--recover
+```
+
+This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
