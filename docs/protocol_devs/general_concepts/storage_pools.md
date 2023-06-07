@@ -6,11 +6,11 @@ sidebar_position: 1
 
 ## Introduction
 
-Generally, storage pools (or just pools) can be described as discrete entities arranged around specific data sources.
+Generally, data pools (or just pools) can be described as discrete entities arranged around specific data sources.
 Anyone can create them through governance and can store any data stream. They are stored and operate on-chain, making
 them completely trustless. They are responsible for actually validating and archiving data by allowing participants (
-protocol node runners) to join a pool and managing the validation process on-chain, thus making the validity of the data
-trustless. Storage pools which are currently live can be found [here](https://app.kyve.network/#/pools).
+protocol validator runners) to join a pool and managing the validation process on-chain, thus making the validity of the data
+trustless. Data pools which are currently live can be found [here](https://app.kyve.network/#/pools).
 
 **A pool always has to specify the following requirements:**
 
@@ -18,11 +18,11 @@ trustless. Storage pools which are currently live can be found [here](https://ap
 - A runtime which has defined how to validate the data
 - A web3 storage provider where validated data should get stored to (for example Arweave)
 
-If those requirements are met protocol nodes can join a pool and actually start validating the data.
+If those requirements are met protocol validators can join a pool and actually start validating the data.
 
 ## Discover Pools
 
-Depending on the network a different set of storage pools are currently live and validating/archiving data. To view all
+Depending on the network a different set of data pools are currently live and validating/archiving data. To view all
 pools simply visit the web app.
 
 ### Web App
@@ -69,7 +69,7 @@ and incentivized is a challenge. KYVE designed pools to fulfill all those needs.
 
 ### Keeping Pools Funded
 
-In order to payout protocol nodes and incentivize them the pool needs funds. These funds are provided by _funders_;
+In order to payout protocol validators and incentivize them the pool needs funds. These funds are provided by _funders_;
 they are interested in archiving the data the specific pool handles. This could be the project or the foundation behind
 a data source that wants its data to be permanently archived onto Arweave. Besides people interested in making the data
 permanent, anyone can become a funder. The only downside is that there are currently no rewards for becoming a funder.
@@ -93,7 +93,7 @@ With the funds provided by a funder the flow of $KYVE can be summarized by the d
 
 ### Keeping Protocol Nodes Incentivized
 
-Protocol nodes have many tasks. They have to collect data, bundle them, upload, and submit them. To reward these nodes for
+Protocol validators have many tasks. They have to collect data, bundle them, upload, and submit them. To reward these nodes for
 their work and keep them incentivized, they receive bundle rewards when they successfully propose a valid bundle. As described above, those
 rewards are funded by funders. But
 before the uploader receives his reward, a network fee (usually 1%) is deducted and automatically transferred to the
@@ -101,13 +101,13 @@ community pool. You can find more information on the calculation of the uploader
 
 ### Keeping Delegators Incentivized
 
-Delegators are lending $KYVE to protocol nodes to help secure the network and helping them to earn more rewards. Delegators have to trust protocol nodes
+Delegators are lending $KYVE to protocol validators to help secure the network and helping them to earn more rewards. Delegators have to trust protocol validators
 since they also receive a slash proportionally to their delegation. In return for putting the capital at risk delegators receive delegation rewards which are also funded by funders. These rewards are a certain fraction of the entire bundle reward, depending on the nodes commission. You can find more information about the commission
 [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and more details about the delegation distribution [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md).
 
 ## Properties
 
-To make storage pools as general as possible many parameters where introduced to fit the various requirements of data
+To make data pools as general as possible many parameters where introduced to fit the various requirements of data
 streams. For each pool the following state is stored:
 
 ### `id`
@@ -120,7 +120,7 @@ A human readable name for the pool. Also used when searching for a pool.
 
 ### `runtime`
 
-The name of the runtime. For EVM this would be `@kyvejs/evm` for example. It is used in the protocol node to double
+The name of the runtime. For EVM this would be `@kyvejs/evm` for example. It is used in the protocol validator to double
 check if the node actually supports this runtime and can take part in the upload/validation process.
 
 ### `logo`
@@ -135,13 +135,13 @@ runtime documentation.
 
 ### `start_key`
 
-The key the storage pool should start validating from. For blockchains the starting key would be `0` because this would
+The key the data pool should start validating from. For blockchains the starting key would be `0` because this would
 be the genesis block. For time based data streams this would be the starting date. The format of the start key depends
 on the runtime.
 
 ### `current_key`
 
-The key the storage pool has validated to. If a storage pool has for example validated the first 1,000 blocks of a
+The key the data pool has validated to. If a data pool has for example validated the first 1,000 blocks of a
 blockchain the current key would be `1000`.
 
 ### `current_summary`
@@ -151,7 +151,7 @@ used to access bundle data on-chain.
 
 ### `current_index`
 
-Since the keys are of type string the storage pool internally keeps track by using indexes. These indexes are just
+Since the keys are of type string the data pool internally keeps track by using indexes. These indexes are just
 counters and in the case of blockchain the index corresponds to the number of blocks validated.
 
 ### `total_bundles`
@@ -170,7 +170,7 @@ operator has like server costs, transaction fees etc. in order to operate not in
 
 ### `min_delegation`
 
-The minimum delegation a storage pool should have before it starts validating bundles. Used for security reasons to
+The minimum delegation a data pool should have before it starts validating bundles. Used for security reasons to
 prevent for example only one node operator from proposing a bundle with a delegation of only 1 $KYVE. Unit is in ukyve.
 
 ### `max_bundle_size`
@@ -207,12 +207,12 @@ validator in this pool.
 
 #### `version`
 
-The version of the runtime. Protocol nodes compare for security reasons their runtime version with the pool's version to
+The version of the runtime. Protocol validators compare for security reasons their runtime version with the pool's version to
 ensure correct behaviour.
 
 #### `binaries`
 
-An object in JSON format containing download URLs to the protocol node binaries. Used by KYSOR if auto download is
+An object in JSON format containing download URLs to the protocol validator binaries. Used by KYSOR if auto download is
 enabled.
 
 ### `upgrade_plan`
@@ -251,7 +251,7 @@ compression. If it is zero it does no compression.
 ## Example
 
 Below is the query result from a pool. The actual pool state can be found under 'data'. Additionally, the
-corresponding `bundle_proposal` and all protocol nodes who have joined the pool are attached with some other information
+corresponding `bundle_proposal` and all protocol validators who have joined the pool are attached with some other information
 calculated on the fly.
 
 ```json

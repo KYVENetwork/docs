@@ -7,7 +7,7 @@ sidebar_position: 7
 ## Democratizing the network
 
 The KYVE governance allows anyone who holds some $KYVE and has them bonded in the network (either delegated to chain or protocol)
-to participate in the process of changing and improving it. If a minimum deposit can be reached a $KYVE holder can create a governance proposal which is able to change network parameters or make protocol changes like creating storage pools. If the proposal passes with enough $KYVE holders voting for yes and a certain quorum was reached the changes go into effect.
+to participate in the process of changing and improving it. If a minimum deposit can be reached a $KYVE holder can create a governance proposal which is able to change network parameters or make protocol changes like creating data pools. If the proposal passes with enough $KYVE holders voting for yes and a certain quorum was reached the changes go into effect.
 
 ## Creating Proposals
 
@@ -28,12 +28,12 @@ Currently, the KYVE governance is able to make the following proposals:
   - `MsgUpdateParams`: Update params of x/bundles module
   - `MsgUpdateParams`: Update params of x/global module
 - Pools
-  - `MsgCreatePool`: Create a new storage pool
-  - `UpdatePool`: Update an existing storage pool
-  - `MsgDisablePool`: Stop a running storage pool
-  - `MsgEnablePool`: Continue a stopped storage pool
-  - `MsgScheduleRuntimeUpgrade`: Create and schedule a runtime upgrade for storage pools
-  - `MsgCancelRuntimeUpgrade`: Cancel a scheduled runtime upgrade for storage pools
+  - `MsgCreatePool`: Create a new data pool
+  - `UpdatePool`: Update an existing data pool
+  - `MsgDisablePool`: Stop a running data pool
+  - `MsgEnablePool`: Continue a stopped data pool
+  - `MsgScheduleRuntimeUpgrade`: Create and schedule a runtime upgrade for data pools
+  - `MsgCancelRuntimeUpgrade`: Cancel a scheduled runtime upgrade for data pools
 
 :::tip
 **Note:** Working on a governance proposal or want to learn more about the voting process? Make sure to look at the [best practices](./governance/best_practices.md).

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol nodes on the Cosmos Hub pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol validators on the Cosmos Hub pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
 
 ## Supported OS
 
@@ -16,7 +16,7 @@ We officially support macOS and Linux in the following architectures:
 
 ## Minimum Hardware Requirements
 
-To run mainnet of testnet protocol nodes, you will need a machine with the following minimum hardware requirements:
+To run mainnet of testnet protocol validators, you will need a machine with the following minimum hardware requirements:
 
 - 2 or more physical CPU cores
 - At least 512 GB of disk storage
@@ -43,7 +43,7 @@ In this case, there are still 45 free validator slots, so you just have to have 
 
 ## Storage Provider Requirements
 
-Because a storage pool is always archiving the data on a web3 storage provider, the protocol node
+Because a data pool is always archiving the data on a web3 storage provider, the protocol validator
 must have access to a funded wallet in order to be able to actually upload data to those storage providers.
 
 Depending on which storage provider the pool runs, on you have to setup a wallet with which you can upload

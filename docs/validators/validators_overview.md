@@ -8,7 +8,7 @@ Validators are the backbone of KYVE and depending on which type of validator you
 
 ## Types of validators
 
-KYVE currently has two types of validators: A _chain node_ which is a validator in a Cosmos based Proof of Stake blockchain. Their main tasks are finding consensus on the chain state which includes keeping track of the storage pools and other related data. On the other hand we have _protocol nodes_ which is a validator on the protocol level. Their main tasks are connecting to storage pools and uploading and validating data from various data sources, archiving them on a web3 storage provider like Arweave. A general overview of that architecture can be found below:
+KYVE currently has two types of validators: A _consensus validator_ which is a validator in a Cosmos based Proof of Stake blockchain. Their main tasks are finding consensus on the chain state which includes keeping track of the data pools and other related data. On the other hand we have _protocol validators_ which is a validator on the protocol level. Their main tasks are connecting to data pools and uploading and validating data from various data sources, archiving them on a web3 storage provider like Arweave. A general overview of that architecture can be found below:
 
 ![architecture](/img/architecture.png)
 
@@ -16,7 +16,7 @@ KYVE currently has two types of validators: A _chain node_ which is a validator 
 
 Because of the nature of each type of validator there are many differences regarding the setup, minimum stake and other requirements. An overview of those differences can be found below:
 
-|                             | Chain node                                   | Protocol node                                |
+|                             | Consensus validator                                   | Protocol validator                                |
 | --------------------------- |----------------------------------------------| -------------------------------------------- |
 | Task                        | find consensus on chain state                | find consensus on data validity              |
 | Available Slots             | 100                                          | pools x 50                                   |
@@ -24,7 +24,7 @@ Because of the nature of each type of validator there are many differences regar
 | Min CPU requirements        | 2vCPU                                        | 1vCPU                                        |
 | Min RAM requirements        | 16 GB                                        | 2 GB                                         |
 | Minimum DISK requirements   | 250 GB                                       | 8 GB                                         |
-| Source of rewards           | transaction fees + inflation                 | storage pool funds                           |
+| Source of rewards           | transaction fees + inflation                 | data pool funds                           |
 | Delegation possible         | yes                                          | yes                                          |
 | Commission rewards possible | yes                                          | yes                                          |
 | Reasons for slashing        | double signing, being offline                | invalid voting/uploading, being offline      |

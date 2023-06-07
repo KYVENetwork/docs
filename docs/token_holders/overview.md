@@ -38,4 +38,4 @@ import LastUpdated from '/src/components/LastUpdated';
 
 There are multiple use cases for $KYVE ranging from simple delegation to specific KYVE features like funding or participating in Storage Pools. The following use cases are explained in detail in the following pages. KYVE mainnet has just launched. 
 
-Currently, you can only delegate $KYVE to chain nodes, run a chain node, or participate in KYVE governance. Further participation will open up as soon as data pools launch on mainnet. 
+Currently, you can only delegate $KYVE to consensus validators, run a consensus validator, or participate in KYVE governance. Further participation will open up as soon as data pools launch on mainnet. 
