@@ -67,7 +67,7 @@ In this step, we'll deploy Airbyte locally on your machine. Make sure you have i
 To deploy Airbyte locally, run the following commands in your terminal:
 
 ```sh
-git clone https://github.com/KYVENetwork/airbyte.git
+git clone https://github.com/airbytehq/airbyte.git
 ```
 
 ```sh
