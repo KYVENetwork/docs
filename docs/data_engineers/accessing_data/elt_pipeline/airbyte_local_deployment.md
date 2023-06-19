@@ -89,3 +89,7 @@ BASIC_AUTH_PASSWORD=password
 When you first access the Website, you will be directed to the onboarding screen. Enter an email to proceed.
 
 <img src="/img/elt/airbyte_preferences.png" alt="Airbyte Preferences" width="500px;" />
+
+You can browse on the `Sources` page and search for the KYVE source.
+
+<img src="/img/elt/airbyte_source_page.png" alt="Airbyte Source Page" />
