@@ -51,7 +51,17 @@ const config = {
     },
     errorMsg: "error",
   },
-
+  scripts: [
+    {
+      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
+      "data-website-id": "0d46a6d3-da82-402b-9073-fd024d4e0c9c",
+      "data-project-name": "KYVE",
+      "data-project-color": "#050D0B",
+      "data-project-logo":
+          "https://user-images.githubusercontent.com/62398724/137493477-63868209-a19b-4efa-9413-f06d41197d6d.png",
+      async: true,
+    },
+  ],
   presets: [
     [
       "classic",
