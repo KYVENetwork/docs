@@ -4,11 +4,11 @@ sidebar_position: 3
 
 # Networks
 
-Currently, KYVE has three networks. There is KYVE mainnet, which uses the official $KYVE and provides truly trustless data. Then two testnets, Korellia and Kaon, where the native currency of $tKYVE has no value and the data is not safe to use.
+Currently, KYVE has three networks. The **KYVE mainnet**, which uses the official $KYVE and provides truly trustless data, and two testnets; **Korellia** and **Kaon**, where the native currency of $tKYVE has no value and the data is not safe to use.
 
 ## Mainnet - KYVE
 
-KYVE is the official mainnet of KYVE. Validated and archived data in this network can be used in production.
+KYVE is the official mainnet of KYVE. Data validated and archived in this network can be used in production.
 
 <Tabs groupId="service">
   <TabItem value="webapp" label="WebApp">
@@ -31,7 +31,7 @@ KYVE is the official mainnet of KYVE. Validated and archived data in this networ
 
 ## Testnet - Kaon
 
-Kaon is KYVE's official testnet. It should mirror the mainnet and before upgrades are applied on mainnet they should first be successfully applied in this testnet. The same goes for new data pools.
+Kaon is KYVE's official testnet. It is designed to replicate the mainnet. Before implementing upgrades on the mainnet, they must be effectively tested and applied on the Kaon testnet. The same principle applies to new data pools as well.
 
 <Tabs groupId="service">
   <TabItem value="webapp" label="WebApp">
@@ -51,7 +51,7 @@ Kaon is KYVE's official testnet. It should mirror the mainnet and before upgrade
 
 ## Devnet - Korellia
 
-Korellia is the oldest official testnet of KYVE. The Incentivized Testnet was performed on this network alongside many important upgrades. It will be used as a devnet from this point on, testing out new features without the risk of loosing real assets.
+Korellia is the oldest official testnet of KYVE. The Incentivized Testnet was performed on this network alongside many important upgrades. It will be used as a devnet from this point on, for testing out new features without the risk of loosing real assets.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

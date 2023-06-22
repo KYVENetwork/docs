@@ -24,14 +24,14 @@ To achieve this at scale, KYVE consists of two layers: the _consensus layer_ and
 
 Since there are two different layers, each essential but with very different requirements, KYVE also has two different types of nodes. First we have the _consensus validators_ which are a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.
 
-Then there are _protocol validators_ which always run on a specific _data pool_ and are responsible for validating and archiving a specific data source. Protocol validators collect data from the data source, submit them to a data pool where other pool participants can validate the submitted data on their end. Every participant is able to cast a vote on the validity of the data. Depending on the result of the votes the data is being archived and the participant that uploaded the data will receive a reward for their efforts.
+Then there are _protocol validators_ which always run on a specific _data pool_ and are responsible for validating and archiving a specific data source. Protocol validators collect data from the data source, submit them to a data pool where other pool participants can validate the submitted data on their end. Every participant is able to cast a vote on the validity of the data. Depending on the result of the votes, the data will be archived and the participant that uploaded the data will receive a reward for their efforts.
 
 
 :::tip
 A more detailed overview and guides on how to run those nodes can be found [here](/validators/validators_overview.md)
 :::
 
-To summarize the different types of nodes and to make it more clear where the nodes are actually running the diagram below can be used:
+The diagram below shows the different types of nodes and where they are actually running:
 
 <p align="center">
   <img width="80%" src="/img/kyve_network.png" />
