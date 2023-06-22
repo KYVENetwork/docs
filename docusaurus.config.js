@@ -140,15 +140,23 @@ const config = {
                 label: "Twitter",
                 href: "https://twitter.com/KYVENetwork",
               },
+              {
+                label: "Reddit",
+                href: "https://reddit.com/r/kyve",
+              },
             ],
           },
           {
             title: "Resources",
             items: [
               {
-                label: "Blog",
+                label: "Medium",
                 href: "https://kyve.medium.com/",
-              }
+              },
+              {
+                label: "YouTube",
+                href: "https://www.youtube.com/channel/UCThrQRlVd2KKy2-e0tBgfpQ",
+              },
             ]
           },
           {
