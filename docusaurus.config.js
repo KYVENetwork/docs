@@ -118,6 +118,11 @@ const config = {
         ],
       },
       footer: {
+        logo: {
+          alt: 'KYVE logo',
+          src: 'img/favicon.ico',
+          href: 'https://docs.kyve.network',
+        },
         style: "dark",
         links: [
           {
@@ -128,10 +133,23 @@ const config = {
                 href: "https://discord.gg/kyve",
               },
               {
+                label: "Telegram",
+                href: "https://t.me/KYVENet",
+              },
+              {
                 label: "Twitter",
                 href: "https://twitter.com/KYVENetwork",
               },
             ],
+          },
+          {
+            title: "Resources",
+            items: [
+              {
+                label: "Blog",
+                href: "https://kyve.medium.com/",
+              }
+            ]
           },
           {
             title: "More",
