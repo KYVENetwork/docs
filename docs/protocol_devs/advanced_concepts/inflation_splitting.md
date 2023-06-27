@@ -19,4 +19,11 @@ quite big to finance the entire network especially in the starting phase. A shor
 It actually starts to become unfair looking at the chain where
 the minted $KYVE from inflation is used to support the block reward. For this reason and to decrease the burden of the funders
 inflation splitting was introduced, which basically splits the inflation between chain and protocol, redirecting parts of the newly
-minted $KYVE to protocol and therefore supporting the bundle reward.
+minted $KYVE to protocol and therefore supporting the bundle reward. A summary of this process can be taken from below:
+
+<p align="center">
+  <img width="50%" src="/img/with_inflation_split.png" />
+</p>
+
+While the funders get charged with the operating cost of the pool, the pool also takes a certain amount from it's inflation fund
+depending on the payout rate. With this total payout the bundle reward gets distributed to all stakeholders like the treasury, the uploader and it's delegators. More information on that calculation can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md)
