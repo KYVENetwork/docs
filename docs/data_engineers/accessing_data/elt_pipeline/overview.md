@@ -17,6 +17,6 @@ For users that wants to experiment locally with the KYVE data it is recommended 
 
 ## Airbyte Cloud
 
-You can connect to the [Airbyte Cloud](https://airbyte.com/airbyte-cloud) platform and try the [KYVE Source Connector](https://cloud.airbyte.com/workspaces/2a2bfca3-c289-48af-a11d-1a9ad69ea187/source/new-source/60a1efcc-c31c-4c63-b508-5b48b6a9f4a6).
+You can connect to the [Airbyte Cloud](https://airbyte.com/airbyte-cloud) platform and try the `KYVE Source Connector`.
 
 This option does not require any local setup. For setting up a destination follow the documentation in the Airbyte cloud page. For example, the [Snowflake](elt_destinations/snowflake) section presents one such destination that could be used with cloud.
