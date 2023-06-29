@@ -74,7 +74,7 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 1. Set up the source.
 
-   Search for "KYVE" in the `Sources search bar` and select it.
+   Search for "KYVE" in the `Sources` search bar and select it.
 
    In this step you specify the [KYVE pools](https://app.korellia.kyve.network/#/pools) from which you want to retrieve data, identified by **Pool-IDs**.
 
@@ -95,7 +95,7 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 2. Set up the destination.
 
-   Search for "Postgres" in the `Destinations search bar` and select it.
+   Search for "Postgres" in the `Destinations` search bar and select it.
 
    Add the parameters of the Postgres DB that you configured [here](#postgres-setup):
 
