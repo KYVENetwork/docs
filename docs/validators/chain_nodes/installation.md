@@ -9,13 +9,14 @@ sidebar_position: 3
 Depending on the network one may need to run different versions. The following
 table shows the upgrade block height for a given version:
 
-| Tag                                                                          | Kaon                                                               | Mainnet                                            |
-|------------------------------------------------------------------------------|--------------------------------------------------------------------|----------------------------------------------------|
-| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                  | -                                                  |
-| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://testnet.mintscan.io/kyve-testnet/blocks/443300)   | -                                                  |
-| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                  | 0                                                  |
-| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://testnet.mintscan.io/kyve-testnet/blocks/1115111) | [826000](https://mintscan.io/kyve/blocks/826000)   |
-| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://testnet.mintscan.io/kyve-testnet/blocks/1502502) | [1135000](https://mintscan.io/kyve/blocks/1135000) |
+| Tag                                                                          | Kaon                                                               | Mainnet                                                                                                     |
+|------------------------------------------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                  | -                                                                                                           |
+| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://testnet.mintscan.io/kyve-testnet/blocks/443300)   | -                                                                                                           |
+| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                  | 0                                                                                                           |
+| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://testnet.mintscan.io/kyve-testnet/blocks/1115111) | [826000](https://mintscan.io/kyve/blocks/826000)                                                            |
+| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://testnet.mintscan.io/kyve-testnet/blocks/1502502) | [1135000](https://mintscan.io/kyve/blocks/1135000)                                                          |
+| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://testnet.mintscan.io/kyve-testnet/blocks/2341100) | [2061100](https://mintscan.io/kyve/blocks/2061100) (**[VOTING](https://www.mintscan.io/kyve/proposals/8)**) |
 
 For the Korellia devnet there is no version map. Only the latest version via
 blocksync is supported.
