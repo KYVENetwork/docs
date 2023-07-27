@@ -10,7 +10,7 @@ On every round there has to be a single uploader, the rest of the protocol valid
 
 ## Weighted Round Robin Uploader Selection
 
-This round robin implementation closely follows the Tendermint round robin implementation described [here](https://learnblockchain.cn/docs/tendermint/spec/reactors/consensus/proposer-selection.html#requirements-for-proposer-selection)
+This round robin implementation closely follows the Tendermint round robin implementation described [here](https://learnblockchain.cn/docs/tendermint/spec/reactors/consensus/proposer-selection.html#requirements-for-proposer-selection).
 
 ### Determinism
 
@@ -46,7 +46,7 @@ $p(n, r) = s(n, r) / S(r)$
 
 Using this value one can obtain the frequencies for uploader selection over all rounds, which is
 
-$P(n) = 1/R * \sum_{r=1}^R p(n, r)$
+$P(n) = 1/R \cdot \sum_{r=1}^R p(n, r)$
 
 ### Algorithm
 
@@ -196,7 +196,7 @@ def UploaderSelection (vset):
   A(uploader) -= P
 ```
 
-Note also that even during steady state the priority range may increase beyond 2 \* P. The scaling introduced here helps to keep the range bounded
+Note also that even during steady state the priority range may increase beyond 2 \* P. The scaling introduced here helps to keep the range bounded.
 
 ##### Skipping rounds
 
