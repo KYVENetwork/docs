@@ -58,7 +58,7 @@ An illustrative model that provides a clear understanding of how and why the sel
 2. The first validator in the queue is designated as the uploader: The validator with the highest priority is selected as the uploader.
 3. The uploader is then moved back in the queue: The proposer's priority is decreased by the total voting power of all validators.
 
-Simple Algorithm in Pseudo Code
+Simple Algorithm in Pseudo Code:
 
 ```
 def UploaderSelection (vset):
