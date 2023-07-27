@@ -18,6 +18,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="kyve" label="Mainnet">
 
 Download the mainnet genesis file (5.2 MB)
+
 ```shell
 wget https://files.kyve.network/mainnet/genesis.json
 ```
@@ -29,6 +30,7 @@ echo "1dc3ec916f49ef8c221851566aca12a3f914b23afb3ab35067fc8a8d5f59c2ee  genesis.
 ```
 
 and move the genesis file to the config directory
+
 ```shell
 mv genesis.json ~/.kyve/config/
 ```
@@ -49,6 +51,7 @@ echo "3532166eb1605057f633ff577b4fc3e57a6dddc46498c5bc6f2f4e8ab0c756b8  genesis.
 ```
 
 and move the genesis file to the config directory
+
 ```shell
 mv genesis.json ~/.kyve/config/
 ```
@@ -69,6 +72,7 @@ echo "4298308739a5025804e7f83cb01456a9edee507c79f92a179f88058669b0fdfd  genesis.
 ```
 
 and move the genesis file to the config directory
+
 ```shell
 mv genesis.json ~/.kyve/config/
 ```
@@ -113,7 +117,7 @@ enable = true
 
 # ...
 
-rpc_servers = "https://rpc-cache.kyve.network:443,https:rpc-cache.kyve.network:443"
+rpc_servers = "https://rpc-cache.kyve.network:443,https://rpc-cache.kyve.network:443"
 trust_height = 86783 # Replace with newer block
 trust_hash = "DFE6A7EC8D3E3A55A3CA6DA2D9BFB776A5F52604EBED078DAC87775AEA5C3D75" # Replace with newer hash
 ```
@@ -144,7 +148,7 @@ enable = true
 
 # ...
 
-rpc_servers = "https://rpc-eu-1.kaon.kyve.network:443,https:rpc-us-1.kaon.kyve.network:443"
+rpc_servers = "https://rpc-eu-1.kaon.kyve.network:443,https://rpc-us-1.kaon.kyve.network:443"
 trust_height = 325017 # Replace with newer block
 trust_hash = "6548AC5525F24CD09BADDBE3A143CC3D44D057F669EB72BDED9C4C7D62E85FDC" # Replace with newer hash
 ```
@@ -163,7 +167,6 @@ After that start the node with
 </Admonition>
 
 The latest binaries can be found at the [Installtion](installation) instructions.
-
 
 After that, one needs to obtain a trusted height and hash of that height.
 One can go to a blockexplorer and use the values provided there. For example block 5121641 can be viewed at: <a href="https://explorer.korellia.kyve.network/korellia/blocks/5121641">
