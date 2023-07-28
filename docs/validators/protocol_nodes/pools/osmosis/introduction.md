@@ -19,7 +19,7 @@ available with Arweave and Bundlr.
 - **Storage Provider**: Bundlr
 - **Networks**
   - [Kaon](https://app.kaon.kyve.network/#/pools/1) (Pool Id: 1)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 24)
+  - [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 30)
 - **Min Hardware Requirements**
   - 4 or more physical CPU cores
   - 32 GB RAM

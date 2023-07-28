@@ -16,7 +16,7 @@ Once you have the latest version for you operating system simply
 pull them down:
 
 ```bash
-wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-beta.20/kysor-linux-x64.zip
+wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyve%2Fkysor%401.0.0-/kysor-linux-x64.zip
 unzip kysor-linux-x64.zip
 mv kysor-linux-x64 kysor
 chmod 700 kysor
@@ -115,19 +115,19 @@ Now that KYSOR is initialized we move on to the next step. For every pool you ru
 
 ```bash
 ./kysor valaccounts create \
---name 'cosmoshub' \
+--name 'osmosis' \
 --pool 0 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `osmosis.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name cosmoshub \
+--name osmosis \
 --pool 0 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
@@ -141,19 +141,19 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 
 ```bash
 ./kysor valaccounts create \
---name 'cosmoshub' \
+--name 'osmosis' \
 --pool 0 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `osmosis.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name cosmoshub \
+--name osmosis \
 --pool 0 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
@@ -167,19 +167,19 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 
 ```bash
 ./kysor valaccounts create \
---name 'cosmoshub' \
+--name 'osmosis' \
 --pool 24 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `osmosis.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name cosmoshub \
+--name osmosis \
 --pool 24 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
@@ -262,8 +262,8 @@ Here the following directories have the following reason:
 
 If you run with KYSOR and have auto download enabled (which is not recommended for Mainnet and Kaon) you can skip the manual binary installation. If you want to run the binaries with or without KYSOR you have to install them manually.
 
-Depending on the runtime the binary installation differs. For Cosmos Hub we have to install the binary from the
-@kyvejs/tendermint-bsync runtime.
+Depending on the runtime the binary installation differs. For Osmosis we have to install the binary from the
+@kyvejs/tendermint runtime.
 
 #### Build from source
 
@@ -279,7 +279,7 @@ If you want to build a specific version you can checkout the tag and continue fr
 If you want to build the latest version you can skip this step.
 
 ```bash
-git checkout tags/@kyvejs/tendermint-bsync@x.x.x -b x.x.x
+git checkout tags/@kyvejs/tendermint@x.x.x -b x.x.x
 ```
 
 After you have cloned the project and have the desired version the dependencies can be installed and the project build:
@@ -294,7 +294,7 @@ Finally, you can build the runtime binaries.
 **INFO**: During the binary build log warnings can occur. You can safely ignore them.
 
 ```bash
-cd integrations/tendermint-bsync
+cd integrations/tendermint
 yarn build:binaries
 ```
 
