@@ -85,10 +85,10 @@ which holds some funds:
 ```bash
 $ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
 > Loaded address: 7smNXWVNbTinRPuKbrke0XR0N9N6FgTBVCh20niXEbU
-> ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> ? Confirmation: send 1000000000000 Winston to node1.bundlr.network (OXcT1sVRSA5eGwt2k6Yuz8-3e3g9WJi5uSE99CWqsBs)?
 > Y / N y
 > Funding receipt:
-> Amount: 1000000000000 with Fee: 1379016 to 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo
+> Amount: 1000000000000 with Fee: 1379016 to OXcT1sVRSA5eGwt2k6Yuz8-3e3g9WJi5uSE99CWqsBs
 > ID: 7cI6jpfpx6A2z8F5AoVHvZn9Az_BWPgvKzBCoE5w07A
 ```
 
@@ -106,7 +106,7 @@ In order to withdraw your funds from Bundlr simply execute:
 ```bash
 $ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
 
-> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (OXcT1sVRSA5eGwt2k6Yuz8-3e3g9WJi5uSE99CWqsBs)?
 > Y / N y
 > Withdrawal request for 500000000000 winston successful
 > Transaction ID: xcmxJmHyNS502fzqiT66rNeIOSldKGDWR8XsL9auDfs with network fee 1379016 for a total cost of 2858032
