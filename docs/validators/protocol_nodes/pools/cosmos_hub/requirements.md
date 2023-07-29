@@ -84,7 +84,7 @@ which holds some funds:
 
 ```bash
 $ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
-
+> Loaded address: 7smNXWVNbTinRPuKbrke0XR0N9N6FgTBVCh20niXEbU
 > ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
 > Funding receipt:
@@ -93,10 +93,10 @@ $ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c a
 ```
 
 In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 minutes
-you can view your balance with:
+you can view your balance using your arweave address (which will show up under `Loaded address` like the example seen above) with: 
 
 ```bash
-$ bundlr balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.bundlr.network -c arweave
+$ bundlr balance <your arweave address> -h https://node1.bundlr.network -c arweave
 
 > Balance: 1000000000000 Winston (1AR)
 ```
