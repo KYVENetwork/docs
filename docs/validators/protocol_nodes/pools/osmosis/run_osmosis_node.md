@@ -91,7 +91,7 @@ docker pull kyve/osmosis:latest
 To start the node, simply run:
 
 ```bash
-docker run -p 0.0.0.0:26657:26657 kyve/osmosis --x-crisis-skip-assert-invariants
+docker run --restart unless-stopped -p 0.0.0.0:26657:26657 kyve/osmosis --x-crisis-skip-assert-invariants
 ```
 
 :::info
