@@ -98,6 +98,26 @@ docker run --restart unless-stopped -p 0.0.0.0:26657:26657 kyve/osmosis --x-cris
 **INFO**: To prevent data loss, it is recommended to use a Docker volume in the running container.
 :::
 
+Example: 
+```bash
+# create the volume named osmosisd and select an empty directory:
+docker volume create --driver local \
+    --opt type=none \
+    --opt device=<path_to_empty_directory> \
+    --opt o=bind \
+    osmosisd
+
+# start the container and map the volume to the container
+docker run -d --restart unless-stopped \
+    -p 0.0.0.0:26657:26657 \
+    -v osmosisd:/root/.osmosisd \
+    kyve/osmosis --x-crisis-skip-assert-invariants
+```
+
+:::info
+**INFO**: When creating the volume, you must ensure that the <path_to_empty_directory> folder is empty and writable by your docker service.
+:::
+
 ## Verifying the completed node setup
 
 After the successful start of the node you have to sync blocks until the latest summary of the pool is reached. For example
