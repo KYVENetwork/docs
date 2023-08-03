@@ -218,8 +218,8 @@ in [Storage Pools](/protocol_devs/general_concepts/storage_pools.md) there are t
 
 To query validated bundle proposals of a pool you can use the following endpoints
 
-- `/kyve/query/v1beta1/finalized_bundles/{pool_id}`: gets all validated proposals from a pool
-- `/kyve/query/v1beta1/finalized_bundles/{pool_id}/{id}`: gets a single validated proposal from a pool and the bundle ID
+- `/kyve/v1/bundles/{pool_id}`: gets all validated proposals from a pool
+- `/kyve/v1/bundles/{pool_id}/{id}`: gets a single validated proposal from a pool and the bundle ID
 
 ## Bundle Validation Over Time
 

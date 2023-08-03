@@ -13,7 +13,7 @@ is the native way to access data that has been stored through KYVE.
 Because KYVE does not store any data, developers must fetch the underlying data from the storage provider.
 The KYVE REST-API holds the proof that data on a storage provider is valid and can be retrieved trustless. A list of
 valid
-bundles is available at the `kyve/query/v1beta1/finalized_bundles/[pool_id]` path.
+bundles is available at the `kyve/v1/bundles/[pool_id]` path.
 
 The returned elements include a `storage_provider_id` which points to a storage provider. In combination with the
 `storage_id` developers can retrieve the uploaded data.

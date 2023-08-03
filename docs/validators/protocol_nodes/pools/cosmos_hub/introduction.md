@@ -7,10 +7,6 @@ sidebar_position: 1
 This data pool validates and archives all blocks from Cosmos Hub and makes them permanently
 available with Arweave and Bundlr.
 
-:::info
-**INFO**: Cosmos Hub is currently **not** live on Mainnet, only on Kaon and Korellia
-:::
-
 ## Overview
 
 - **Runtime**: @kyvejs/tendermint-bsync
@@ -18,6 +14,7 @@ available with Arweave and Bundlr.
 - **Data**: Blocks from height 5,200,791 ongoing
 - **Storage Provider**: Bundlr
 - **Networks**
+  - [Mainnet](https://app.kyve.network/#/pools/0) (Pool Id: 0)
   - [Kaon](https://app.kaon.kyve.network/#/pools/0) (Pool Id: 0)
   - [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 24)
 - **Min Hardware Requirements**
