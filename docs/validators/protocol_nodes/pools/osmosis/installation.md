@@ -142,7 +142,7 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 ```bash
 ./kysor valaccounts create \
 --name 'osmosis' \
---pool 0 \
+--pool 1 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
@@ -154,7 +154,7 @@ If you want to create a valaccount from an existing mnemonic just add the `--rec
 ```bash
 ./kysor valaccounts create \
 --name osmosis \
---pool 0 \
+--pool 1 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
