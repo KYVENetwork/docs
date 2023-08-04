@@ -11,7 +11,7 @@ The Osmosis Full Node will act as the source for the KYVE protocol validator and
 The Osmosis binary with the version `v3.1.0` has to be installed. There are two ways to install and run the binary:
 
 ### 1. Install Osmosis Binary manually
-You can follow the official installation instructions [here](https://docs.osmosis.zone/networks/join-mainnet) or download the binary directly from [here](https://github.com/cosmos/gaia/releases/tag/v4.2.1).
+You can follow the official installation instructions [here](https://docs.osmosis.zone/networks/join-mainnet) or download the binary directly from [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0).
 
 You can verify the successful installation with
 
