@@ -23,6 +23,34 @@ Some integrations might compress data before storing it on the storage provider.
 
 After the data has been retrieved from the storage provider and decompressed, developers can use it in the application.
 
+## Parameters
+
+**Pagination**
+
+The bundles query supports pagination via the following query parameters:
+
+| Name               | Type    | Description                                           |
+|--------------------|---------|-------------------------------------------------------|
+| pagination.limit   | number  | Defines the amount of bundles returned                |
+| pagination.offset  | number  | The amount of bundles to skip                         |
+| pagination.key     | string  | Define key if next_key iteration should be used.      |
+| pagination.reverse | boolean | Reverse order                                         |
+
+One either has to use `pagination.offset` or `pagination.key`. Both can not be 
+used at the same time.
+
+The pagination key is a base64 encoded string. When using inside the browser
+keep in mind that some characters need to be escaped.
+
+**Specific Item**
+
+If one wants to find a bundle which contains a specific data item (identified
+by the index), there is the index query.
+
+| Name  | Type   | Description                                           |
+|-------|--------|-------------------------------------------------------|
+| index | number | Filters for the bundle which contains the given index |
+
 ## Next steps
 
 An easier way to get KYVE data integrated into your application is using the KYVE ELT Pipeline.
