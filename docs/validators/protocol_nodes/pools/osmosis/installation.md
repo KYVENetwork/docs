@@ -116,7 +116,7 @@ Now that KYSOR is initialized we move on to the next step. For every pool you ru
 ```bash
 ./kysor valaccounts create \
 --name 'osmosis' \
---pool 0 \
+--pool 1 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
@@ -128,7 +128,7 @@ If you want to create a valaccount from an existing mnemonic just add the `--rec
 ```bash
 ./kysor valaccounts create \
 --name osmosis \
---pool 0 \
+--pool 1 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
