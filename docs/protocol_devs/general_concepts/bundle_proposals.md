@@ -5,7 +5,7 @@ sidebar_position: 3
 # Bundle Proposals
 
 Storing data is simple. Storing validated data coming from multiple parties is a bit more complicated. Because of
-that, we will break down the process by which KYVE stores it's data.
+that, we will break down the process by which KYVE stores its data.
 
 ## Saving Data In Rounds
 
@@ -214,7 +214,7 @@ mentioned before
 in [Storage Pools](/protocol_devs/general_concepts/storage_pools.md) there are two endpoints where pools can be queried:
 
 - `/kyve/query/v1beta1/pools`: gets all pools
-- `/kyve/query/v1beta1/pool/{id}`: gets a single pool by it's ID
+- `/kyve/query/v1beta1/pool/{id}`: gets a single pool by its ID
 
 To query validated bundle proposals of a pool you can use the following endpoints
 
