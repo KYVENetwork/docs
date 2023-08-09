@@ -15,7 +15,7 @@ of the uploader is valid or invalid.
 The main task is like mentioned above to find out if the proposed bundle from the uploader is valid or invalid. For that
 they retrieve the data from the storage provider with the `storage_id` once the proposal was registered and compare it
 with their local data they retrieved themselves from the data source. With that mechanism every validator is comparing
-their collected data with the data the uploader stored on the storage provider. Beside the raw data validation which is
+their collected data with the data the uploader stored on the storage provider. Besides the raw data validation which is
 mostly a simple hash comparison the validators also validate certain metadata which is attached in the bundle proposal
 like data size (which is used in the reward calculation) or the actual data hash provided by the uploader. Once the
 validator is done with validating and came to a conclusion he votes with the transaction type `MsgVoteBundleProposal`.
