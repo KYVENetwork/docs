@@ -10,7 +10,7 @@ As the Web3 space expands, decentralized and completely accurate data becomes mo
 Ultimately, this leads to major scalability issues due to difficulty in data access, and dangerous data inconsistencies
 from the lack of proper data validation before use.
 
-In order to provide a trustless and  more secure future for Web3’s data infrastructure, it is imperative that we target these
+In order to provide a trustless and more secure future for Web3’s data infrastructure, it is imperative that we target these
 issues of data access and true validity. How? Via KYVE.
 
 The **KYVE Network** is revolutionizing customized access to on- and off-chain data by providing fast and easy tooling for
@@ -59,7 +59,7 @@ KYVE’s trustless data is accessible to all for free. Currently, there are two 
 trustless data:
 
 - Via KYVE’s Data Pipeline: This is a no-code, customizable option for easily importing KYVE’s data into a
-preferred data backend before transforming the data into the format needed. For now, KYVE’s Data Pipeline pulls data from Korellia devnet. Once the protocol layer launches on mainnet, the Data Pipeline will pull from the mainnet network. 
+  preferred data backend before transforming the data into the format needed. For now, KYVE’s Data Pipeline pulls data from Korellia devnet. Once the protocol layer launches on mainnet, the Data Pipeline will pull from the mainnet network.
 
 - Using KYVE’s REST-API: This option provides a native way to access data by coding your own solution using KYVE’s REST-API.
 
@@ -90,11 +90,7 @@ To tie the network together, KYVE has its own native coin, $KYVE, which has mult
 - On the governance level, $KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
   the evolution and growth of KYVE.
 
-Currently, $KYVE is not yet on the market. TGE was on March 14th, 2023. Visit our [tokenomics](https://www.kyve.network/tokenomics) to find out more regarding $KYVE utility, claims, and unlocks. Stay tuned for $KYVE’s official listing.
-
-:::info
-Interested in [learning more about the tokenomics?](https://www.kyve.network/tokenomics)
-:::
+TGE was on March 14th, 2023. Visit our [tokenomics](https://www.kyve.network/tokenomics) to find out more regarding $KYVE utility, claims, and unlocks. Find more about $KYVE via [CoinMarketCap](https://coinmarketcap.com/currencies/kyve-network).
 
 ## Partnered with KYVE
 
