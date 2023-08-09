@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## Introduction
 
-On every round there has to be a single uploader, the rest of the protocol validators are assigned to role of "validator". Since rewards are only payed out to nodes who successfully proposed valid bundle the uploader selection is critical and has to be calculated fairly for every participant.
+On every round there has to be a single uploader, the rest of the protocol validators are assigned to role of "validator". Since rewards are only paid out to nodes who successfully proposed valid bundle the uploader selection is critical and has to be calculated fairly for every participant.
 
 ## Weighted Round Robin Uploader Selection
 
@@ -26,7 +26,7 @@ $$
 
 ### Fairness
 
-The frequency of the uploader selection should match with the voting power of that validator. Let $R$ denote the number of total rounds and $r$ the index of the current round.
+The frequency of the uploader selection should match the voting power of that validator. Let $R$ denote the number of total rounds and $r$ the index of the current round.
 Let $N$ denote the number of total validators and $n$ the index of the n-th validator.
 
 The stake (+ delegation) of each validator for each round is given by
@@ -162,7 +162,7 @@ To prevent such occurrences, when a new validator is added, its initial priority
 A(V) = -1.125 * P
 ```
 
-where P is the total voting power of the set including V. Curent implementation uses the penalty factor of 1.125 because it provides a small punishment that is efficient to calculate.
+where P is the total voting power of the set including V. Current implementation uses the penalty factor of 1.125 because it provides a small punishment that is efficient to calculate.
 
 ##### Proposer Priority Range
 
@@ -200,5 +200,5 @@ Note also that even during steady state the priority range may increase beyond 2
 
 ##### Skipping rounds
 
-Because validators who vote abstain should not be selected as the next uploader they skip rounds everytime they do that
+Because validators who vote abstain should not be selected as the next uploader they skip rounds every time they do that
 so they don't advance in the queue.
