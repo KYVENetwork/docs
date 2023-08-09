@@ -12,7 +12,7 @@ and registering it for validation on-chain for the other validators.
 
 ## Becoming an uploader
 
-There are two options on how a pool participant can be become an uploader:
+There are two options for how a pool participant can become an uploader:
 
 - When the pool is just created and still in "genesis" state, the role of uploader is still empty. With the
   transaction `MsgClaimUploaderRole` the first pool participant who calls this transaction gets the uploader role for
