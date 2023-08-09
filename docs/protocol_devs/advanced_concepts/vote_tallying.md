@@ -14,7 +14,7 @@ To finally determine if a bundle is valid or not the votes from all the node val
 
 ## Calculation
 
-The voting power is almost the same like the uploader selection probability defined before, but here **every** node in a pool is taken into account and not only the ones who voted either _valid_ or _invalid_. This implies
+The voting power is almost the same as the uploader selection probability defined before, but here **every** node in a pool is taken into account and not only the ones who voted either _valid_ or _invalid_. This implies
 that simply having more delegation leads to more voting power.
 
 $$
@@ -31,7 +31,7 @@ where
 
 ## Reaching Quorum
 
-This implies that the total voting power inside a pool should always add up to 100%. In order to tally votes for the final status (quorum) the voting power of the nodes are summed up based on their vote. Then quorum (which can have three outcomes) then can be determined based on the requirements below:
+This implies that the total voting power inside a pool should always add up to 100%. In order to tally votes for the final status (quorum) the voting power of the nodes is summed up based on their vote. Then quorum (which can have three outcomes) then can be determined based on the requirements below:
 
 - **VALID**: > 50% voting power dedicated to valid
 - **INVALID**: >= 50% voting power dedicated to invalid
