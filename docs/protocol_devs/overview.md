@@ -16,7 +16,7 @@ In summary, _uploaders_ are collecting data from the data sources, storing them 
 
 ## Architecture
 
-KYVE has two main layers of concern: the _consensus layer_ and the _protocol layer_. Each are essential but come with different tasks and responsibilities.
+KYVE has two main layers of concern: the _consensus layer_ and the _protocol layer_. Each is essential but comes with different tasks and responsibilities.
 
 <p align="center">
   <img width="80%" src="/img/kyve_network.png" />
