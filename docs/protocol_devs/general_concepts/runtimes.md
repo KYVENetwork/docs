@@ -40,7 +40,7 @@ found [here](https://github.com/KYVENetwork/kyvejs/tree/main/integrations)
 ## Interface
 
 The runtime not only retrieves and validates the data for the protocol validator, it also has some other responsibilities. A
-full list of every method the runtime has to implemented can be found below:
+full list of every method the runtime has to implement can be found below:
 
 ```ts title="/kyvejs/common/protocol/src/types/interfaces/runtime.interface.ts"
 /**
@@ -84,10 +84,10 @@ export interface IRuntime {
   getDataItem(v: Validator, source: string, key: string): Promise<DataItem>;
 
   /**
-   * Prevalidates a data item right after is was retrieved from source.
+   * Prevalidates a data item right after it was retrieved from source.
    * If the prevalidation fails the item gets rejected and never makes
    * it to the local cache. If the prevalidation succeeds the item gets
-   * transformed and written to cache were it is used from submission
+   * transformed and written to cache where it is used from submission
    * of proposals or bundle validation.
    *
    * Deterministic behavior is required
@@ -101,7 +101,7 @@ export interface IRuntime {
 
   /**
    * Transforms a single data item and return it. Used for example
-   * to remove unecessary data or format the data in a better way.
+   * to remove unnecessary data or format the data in a better way.
    *
    * Deterministic behavior is required
    *
