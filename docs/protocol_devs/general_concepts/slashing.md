@@ -6,9 +6,9 @@ sidebar_position: 6
 
 ## Introduction
 
-To discourage and punish malicious behaviour protocol validators can get slashed and therefore loose a part of their
+To discourage and punish malicious behaviour protocol validators can get slashed and therefore lose a part of their
 delegation.
-Depending on the severity of the behaviour different kind of slashes are applied. There are three types of slashes:
+Depending on the severity of the behaviour different kinds of slashes are applied. There are three types of slashes:
 
 - **Timeout slash**: applied if the node misses a certain amount of bundle proposals
 - **Vote slash**: applied if the node voted incorrect (for example voted valid although the bundle was invalid
@@ -20,7 +20,7 @@ the node automatically
 gets removed from the pool if any of the above slashings are applied.
 
 :::danger
-**ATTENTION**: Not only the node's personal delegation will get slashed, also normal delegators will loose a part of
+**ATTENTION**: Not only the node's personal delegation will get slashed, also normal delegators will lose a part of
 their delegation in the same ratio. This implies that delegators have to choose their node carefully.
 :::
 
@@ -38,11 +38,11 @@ reached (`max_points`) the timeout slash gets applied, but for that to occur
 the node has to receive the max points in a row. If for example the node has already 2 points but then starts voting
 again because of a short internet timeout the points
 are reset to zero again. With this system we can ensure with a high probability, that the node is actually offline.
-The `max_points` is a global parameter and it's value can be found below.
+The `max_points` is a global parameter and its value can be found below.
 
-Nodes receive a point in the following occurences:
+Nodes receive a point in the following occurrences:
 
-- When the node is uploader and does not upload withing the Upload Timeout (time can be found below)
+- When the node is uploader and does not upload within the Upload Timeout (time can be found below)
 - When the node is validator and does not vote in the entire bundle proposal round
 
 ## Slash Parameters
