@@ -15,7 +15,7 @@ This has some huge benefits, the biggest of them is of course the higher stake
 each pool has now. So instead of splitting up the stake of a validator in each pool a pool is secured with
 the entire stake, making the cost of attempting a 51% attack way higher. Furthermore, rewards can be massively
 increased due to using the stake in 'parallel'. By validating in multiple pools a validator can earn double
-the rewards if he runs on the twice the amount of pools as their competitors. But this of course comes also with a catch, running on multiple pools increases the risk of getting slashed in one of those pools. Getting slashed in one pool affects the entire stake, so the pools have to be chosen carefully.
+the rewards if he runs on twice the amount of pools as their competitors. But this of course comes also with a catch, running on multiple pools increases the risk of getting slashed in one of those pools. Getting slashed in one pool affects the entire stake, so the pools have to be chosen carefully.
 
 ## The use of Valaccounts
 
@@ -27,4 +27,4 @@ to export his private key to a server and enables massive horizontal scaling, du
 
 ![interpool security](/img/interpool_security.png)
 
-Here we can see that the validator granted permissions to three valaccount, were each of those runs on one pool. The node operator can decide if he wants to run multiple nodes on one machine like `Valaccount-1` and `Valaccount-2` or if he wants dedicated machines for every pool like `Valaccount-3`. Choosing the last option enables massive horizontal scaling and enables the validator to run on every pool KYVE will ever have.
+Here we can see that the validator granted permissions to three valaccount, where each of those runs on one pool. The node operator can decide if he wants to run multiple nodes on one machine like `Valaccount-1` and `Valaccount-2` or if he wants dedicated machines for every pool like `Valaccount-3`. Choosing the last option enables massive horizontal scaling and enables the validator to run on every pool KYVE will ever have.
