@@ -165,7 +165,10 @@ connection.
 
     - **Pool-ID**: `8` which refers to the [Evmos chain](https://app.kyve.network/#/pools/8/bundles).
     - **Bundle-Start-ID**: `105395` (or choose another `Bundle-Start-ID`)
-    - **KYVE-API URL Base**: *This should remain as is*.
+    - **KYVE-API URL Base**: The base URL indicates the KYVE network
+      1. `Mainnet` : https://api-eu-1.kyve.network
+      2. `Testnet` : https://api-eu-1.kaon.kyve.network/
+      3. `Devnet` : https://api.korellia.kyve.network/ 
 
    <br></br>
 

@@ -85,7 +85,10 @@ Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
     - **Source Name**: KYVE
     - **Pool-IDs**: `8`
     - **Bundle-Start-IDs**: `105395`
-    - **KYVE-API URL Base**: *This should remain as is*.
+    - **KYVE-API URL Base**: The base URL indicates the KYVE network
+      1. `Mainnet` : https://api-eu-1.kyve.network
+      2. `Testnet` : https://api-eu-1.kaon.kyve.network/
+      3. `Devnet` : https://api.korellia.kyve.network/ 
 
    <br></br>
    <img src="/img/elt/airbyte_kyve_source.jpg" alt="Airbyte set up source" />
