@@ -43,9 +43,16 @@ chmod 666 ~/.gaia/config/addrbook.json
 
 **TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/cosmos
 
+### Configuration
+Due to the size of the `block_results` response, it is __required__ to set the following in your `~/.gaia/config/config.toml`:
+
+```toml
+timeout_broadcast_tx_commit = "120s"
+```
+
 For pruning the following settings are recommended to decrease the disk usage:
 
-~/.gaia/config/config.toml
+`~/.gaia/config/config.toml`
 
 ```toml
 [tx_index]
@@ -53,7 +60,7 @@ For pruning the following settings are recommended to decrease the disk usage:
 indexer = "null"
 ```
 
-~/.gaia/config/app.toml
+`~/.gaia/config/app.toml`
 
 ```toml
 pruning = "everything"

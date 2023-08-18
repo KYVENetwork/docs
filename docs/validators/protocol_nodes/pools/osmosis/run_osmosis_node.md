@@ -42,9 +42,16 @@ chmod 666 ~/.osmosisd/config/addrbook.json
 
 **TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/osmosis
 
-For pruning the following settings are recommended to decrease the disk usage:
+### Configuration
+Due to the size of the `block_results` response, it is __required__ to set the following in your `~/.osmosisd/config/config.toml`:
 
-~/.osmosisd/config/config.toml
+```toml
+timeout_broadcast_tx_commit = "120s"
+```
+
+For efficient pruning, the following settings are recommended to decrease the disk usage:
+
+`~/.osmosisd/config/config.toml`
 
 ```toml
 [tx_index]
@@ -52,7 +59,7 @@ For pruning the following settings are recommended to decrease the disk usage:
 indexer = "null"
 ```
 
-~/.osmosisd/config/app.toml
+`~/.osmosisd/config/app.toml`
 
 ```toml
 pruning = "everything"
