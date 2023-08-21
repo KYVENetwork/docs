@@ -51,7 +51,7 @@ Kaon is KYVE's official testnet. It is designed to replicate the mainnet. Before
 
 ## Devnet - Korellia
 
-Korellia is the oldest official testnet of KYVE. The Incentivized Testnet was performed on this network alongside many important upgrades. It will be used as a devnet from this point on, for testing out new features without the risk of loosing real assets.
+Korellia is the oldest official testnet of KYVE. The Incentivized Testnet was performed on this network alongside many important upgrades. It will be used as a devnet from this point on, for testing out new features without the risk of losing real assets.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

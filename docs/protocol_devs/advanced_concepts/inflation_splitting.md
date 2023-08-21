@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Inflation Splitting
 
-Consenus and Protocol Validators have two different sources of income, both earn their rewards from performing work in form of
+Consensus and Protocol Validators have two different sources of income, both earn their rewards from performing work in form of
 creating and validating new blocks/bundles and providing security to the network. While on chain a block reward consists of the
 transaction fees from the previous block and the block provision which was minted due to inflation a bundle reward on protocol
 merely consists of the funds provided by pool funders.
@@ -25,5 +25,5 @@ minted $KYVE to protocol and therefore supporting the bundle reward. A summary o
   <img width="50%" src="/img/with_inflation_split.png" />
 </p>
 
-While the funders get charged with the operating cost of the pool, the pool also takes a certain amount from it's inflation fund
-depending on the payout rate. With this total payout the bundle reward gets distributed to all stakeholders like the treasury, the uploader and it's delegators. More information on that calculation can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md)
+While the funders get charged with the operating cost of the pool, the pool also takes a certain amount from its inflation fund
+depending on the payout rate. With this total payout the bundle reward gets distributed to all stakeholders like the treasury, the uploader and its delegators. More information on that calculation can be found [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md)

@@ -14,7 +14,7 @@ KYVE's objective is to validate and store data streams on decentralized storage 
 
 ## Layers
 
-To achieve this at scale, KYVE consists of two layers: the _consensus layer_ and the _protocol layer_. Here, the consensus layer is a sovereign Proof of Stake blockchain built with [Cosmos](https://cosmos.network/) and using the [Tendermint](https://tendermint.com/) consensus engine. It's main goal is to find consensus and secure the protocol layer on top of it. The protocol layer has all the logic which makes KYVE unique and enables the actual data validation.
+To achieve this at scale, KYVE consists of two layers: the _consensus layer_ and the _protocol layer_. Here, the consensus layer is a sovereign Proof of Stake blockchain built with [Cosmos](https://cosmos.network/) and using the [Tendermint](https://tendermint.com/) consensus engine. Its main goal is to find consensus and secure the protocol layer on top of it. The protocol layer has all the logic which makes KYVE unique and enables the actual data validation.
 
 <p align="center">
   <img width="40%" src="/img/kyve_layers.png" />

@@ -59,7 +59,7 @@ Pools can also directly be queried by the following REST API endpoint: `/kyve/qu
 </Tabs>
 
 :::tip
-**Note:** Additionally, a pool can directly be queried by it's unique ID: `/kyve/query/v1beta1/pool/{id}`
+**Note:** Additionally, a pool can directly be queried by its unique ID: `/kyve/query/v1beta1/pool/{id}`
 :::
 
 ## Pool Economics
@@ -107,7 +107,7 @@ since they also receive a slash proportionally to their delegation. In return fo
 
 ## Properties
 
-To make data pools as general as possible many parameters where introduced to fit the various requirements of data
+To make data pools as general as possible many parameters were introduced to fit the various requirements of data
 streams. For each pool the following state is stored:
 
 ### `id`
