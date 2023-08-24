@@ -16,7 +16,7 @@ We officially support macOS and Linux in the following architectures:
 
 ## Minimum Hardware Requirements
 
-To run mainnet of testnet protocol validators, you will need a machine with the following minimum hardware requirements:
+To run mainnet or testnet protocol validators, you will need a machine with the following minimum hardware requirements:
 
 - 8 or more physical CPU cores
 - At least 1 TB of disk storage

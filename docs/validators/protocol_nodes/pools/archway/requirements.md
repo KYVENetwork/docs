@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol validators on the Cosmos Hub pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol validators on the Archway pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
 
 ## Supported OS
 
@@ -18,10 +18,10 @@ We officially support macOS and Linux in the following architectures:
 
 To run mainnet or testnet protocol validators, you will need a machine with the following minimum hardware requirements:
 
-- 2 or more physical CPU cores
-- At least 512 GB of disk storage
-- At least 16 GB of memory (RAM)
-- At least 50mbps network bandwidth
+- 8 or more physical CPU cores
+- At least 1 TB of disk storage
+- At least 32 GB of memory (RAM)
+- At least 100mbps network bandwidth
 
 ## Pool Delegation Requirements
 
@@ -84,19 +84,19 @@ which holds some funds:
 
 ```bash
 $ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
-> Loaded address: 7smNXWVNbTinRPuKbrke0XR0N9N6FgTBVCh20niXEbU
-> ? Confirmation: send 1000000000000 Winston to node1.bundlr.network (OXcT1sVRSA5eGwt2k6Yuz8-3e3g9WJi5uSE99CWqsBs)?
+
+> ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
 > Funding receipt:
-> Amount: 1000000000000 with Fee: 1379016 to OXcT1sVRSA5eGwt2k6Yuz8-3e3g9WJi5uSE99CWqsBs
+> Amount: 1000000000000 with Fee: 1379016 to 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo
 > ID: 7cI6jpfpx6A2z8F5AoVHvZn9Az_BWPgvKzBCoE5w07A
 ```
 
 In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 minutes
-you can view your balance using your arweave address (which will show up under `Loaded address` like the example seen above) with: 
+you can view your balance with:
 
 ```bash
-$ bundlr balance <your arweave address> -h https://node1.bundlr.network -c arweave
+$ bundlr balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.bundlr.network -c arweave
 
 > Balance: 1000000000000 Winston (1AR)
 ```
@@ -106,7 +106,7 @@ In order to withdraw your funds from Bundlr simply execute:
 ```bash
 $ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
 
-> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (OXcT1sVRSA5eGwt2k6Yuz8-3e3g9WJi5uSE99CWqsBs)?
+> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
 > Withdrawal request for 500000000000 winston successful
 > Transaction ID: xcmxJmHyNS502fzqiT66rNeIOSldKGDWR8XsL9auDfs with network fee 1379016 for a total cost of 2858032

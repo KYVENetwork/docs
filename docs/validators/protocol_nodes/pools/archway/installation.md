@@ -115,20 +115,20 @@ Now that KYSOR is initialized we move on to the next step. For every pool you ru
 
 ```bash
 ./kysor valaccounts create \
---name 'osmosis' \
---pool 1 \
+--name 'archway' \
+--pool 2 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `osmosis.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `archway.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name osmosis \
---pool 1 \
+--name archway \
+--pool 2 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
@@ -141,20 +141,20 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 
 ```bash
 ./kysor valaccounts create \
---name 'osmosis' \
---pool 1 \
+--name 'archway' \
+--pool 2 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `osmosis.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `archway.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name osmosis \
---pool 1 \
+--name archway \
+--pool 2 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
@@ -167,20 +167,20 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 
 ```bash
 ./kysor valaccounts create \
---name 'osmosis' \
---pool 30 \
+--name 'archway' \
+--pool 31 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `osmosis.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `archway.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name osmosis \
---pool 30 \
+--name archway \
+--pool 31 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
@@ -243,6 +243,7 @@ Knowing where KYSOR saves it's logs and binaries can be helpful. The example bel
 └── valaccounts
     ├── cosmoshub.toml
     └── osmosis.toml
+    └── archway.toml
 ```
 
 Here the following directories have the following reason:
@@ -262,7 +263,7 @@ Here the following directories have the following reason:
 
 If you run with KYSOR and have auto download enabled (which is not recommended for Mainnet and Kaon) you can skip the manual binary installation. If you want to run the binaries with or without KYSOR you have to install them manually.
 
-Depending on the runtime the binary installation differs. For Osmosis we have to install the binary from the
+Depending on the runtime the binary installation differs. For Archway we have to install the binary from the
 @kyvejs/tendermint runtime.
 
 #### Build from source

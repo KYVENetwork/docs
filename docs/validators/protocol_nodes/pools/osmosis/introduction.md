@@ -7,10 +7,6 @@ sidebar_position: 1
 This data pool validates and archives all blocks and block results from Osmosis and makes them permanently
 available with Arweave and Bundlr.
 
-:::info
-**INFO**: The Osmosis pool is currently **not** live on Mainnet, only on Kaon and Korellia.
-:::
-
 ## Overview
 
 - **Runtime**: @kyvejs/tendermint
@@ -18,8 +14,9 @@ available with Arweave and Bundlr.
 - **Data**: Blocks from Genesis ongoing
 - **Storage Provider**: Bundlr
 - **Networks**
+  - [Mainnet](https://app.kyve.network/#/pools/1) (Pool Id: 1)
   - [Kaon](https://app.kaon.kyve.network/#/pools/1) (Pool Id: 1)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 30)
+  - [Korellia](https://app.korellia.kyve.network/#/pools/30) (Pool Id: 30)
 - **Min Hardware Requirements**
   - 4 or more physical CPU cores
   - 32 GB RAM
@@ -44,11 +41,11 @@ This architecture diagram summarizes the setup of the Osmosis integration on KYV
 </p>
 
 Here the tendermint runtime is responsible for communicating with the tendermint application (purple) - in this case osmosisd, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol validator. The resulting
-data are the blocks from the tendermint application - validated and permanently stored on a storage provider like Arweave.
+data are the blocks and the block results from the tendermint application - validated and permanently stored on a storage provider like Arweave.
 
 ## Goal
 
 The goal of this pool is to validate and archive all blocks and block results from Osmosis permanently and decentralized. With this
 data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes
-on Osmosis obsolete in the long run. More information on how to perform block sync with KYVE visit the documention about
+on Osmosis obsolete in the long run. More information on how to perform block sync with KYVE visit the documentation about
 KSYNC [here](https://github.com/KYVENetwork/ksync). In addition, the validated archived block results enable a number of further use cases for data analysis. 
