@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# ELT FAQ
+# FAQ
 
-##  DNS Resolution Error - `Failed to resolve 'arweave.net'`
+## DNS Resolution Error - `Failed to resolve 'arweave.net'`
 
 **Issue:** When running the ELT process, you encounter the following error message:
 
@@ -20,17 +20,22 @@ This error is most likely due to DNS resolution issues.
 - **Linux:**
     1. Open the terminal.
     2. Edit the `/etc/resolv.conf` file using your preferred text editor. For example:
-    ```
+
+    ```bash
     sudo nano /etc/resolv.conf
     ```
+
     3. Add the following lines at the top of the file to set your DNS server to `1.1.1.1`:
-    ```
+
+    ``` bash
     nameserver 1.1.1.1
     ```
+
     4. Save the file and exit the text editor.
     5. Restart your network manager or networking service to apply the changes. The command may vary depending on your Linux distribution. For example:
-    ```
-    sudo systemctl restart network-manager
+
+    ```bash
+        sudo systemctl restart network-manager
     ```
 
 - **Mac:**
