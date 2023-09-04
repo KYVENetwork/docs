@@ -6,6 +6,10 @@ sidebar_position: 3
 
 The Osmosis Full Node will act as the source for the KYVE protocol validator and is **required**. You can either run the Osmosis node on the same machine with the KYVE protocol together (recommended) or on a seperate machine.
 
+:::danger
+Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
+:::
+
 ## Install Osmosis full node
 
 The Osmosis binary with the version `v3.1.0` has to be installed. There are two ways to install and run the binary:
