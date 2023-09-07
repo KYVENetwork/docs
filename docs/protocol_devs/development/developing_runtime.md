@@ -4,6 +4,8 @@ sidebar_position: 7
 
 # Developing your own Runtime
 
+Before you start we would highly recommend reading the previous docs in this chapter (For Protocol Devs) to gain a full picture of the KYVE stack.
+
 ## Setup
 
 To get started with developing your own runtime create a fork of KYVE's kyvejs repository (https://github.com/KYVENetwork/kyvejs).
