@@ -51,6 +51,7 @@ const config = {
     },
     errorMsg: "error",
   },
+  clientModules: [require.resolve('./globalClientModule.ts')],
   scripts: [
     {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
