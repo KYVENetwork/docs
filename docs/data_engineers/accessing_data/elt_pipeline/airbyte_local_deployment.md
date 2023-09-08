@@ -64,15 +64,15 @@ For Windows users, the Windows Subsystem for Linux 2 (WSL2) must be installed. Y
 
 In this step, we'll deploy Airbyte locally on your machine. Make sure you have installed Docker and Docker Compose on your system as shown in the [Overview section](overview.md).
 
-To deploy Airbyte locally, run the following commands in your terminal:
+To deploy Airbyte locally, check out the KYVE Airbyte fork
 
 ```sh
-git clone https://github.com/airbytehq/airbyte.git
-```
-
-```sh
+git clone https://github.com/KYVENetwork/airbyte
 cd airbyte
+git checkout feat/mainnet-support
 ```
+
+Then start Airbyte locally by running
 
 ```sh
 ./run-ab-platform.sh
