@@ -90,6 +90,44 @@ When you first access the Website, you will be directed to the onboarding screen
 
 <img src="/img/elt/airbyte_preferences.png" alt="Airbyte Preferences" width="500px;" />
 
-You can browse on the `Sources` page and search for the KYVE source.
+### Load KYVE source
+
+You can browse on the `Sources` page and search for the **integrated** KYVE source.
 
 <img src="/img/elt/airbyte_source_page.png" alt="Airbyte Source Page" />
+
+:::note
+
+For using the latest KYVE source with custom modification you should build and load the `source-kyve` manually. See the following section for the instructions.
+
+:::
+
+### Custom-build KYVE source
+
+If you wish to test a modified version of the KYVE source connector, follow these steps to build the connector and load it into Airbyte:
+
+1. In a new terminal window change to the `source-kyve` directory:
+
+   ```sh
+   cd airbyte-integrations/connectors/source-kyve
+   ```
+
+2. Build the Docker image for the KYVE source:
+
+   ```sh
+   docker build . -t airbyte/source-kyve:dev
+   ```
+
+3. In the Airbyte UI, navigate to the settings page and add a new source connector.
+
+   <img src="/img/elt/airbyte_new_connector.jpg" alt="Airbyte Settings" />
+
+4. Fill out the fields as follows, then click Add:
+
+   - **Connector display name**: `KYVE` (or any other name)
+   - **Docker repository name**: `airbyte/source-kyve`
+   - **Docker image tag**: `dev`
+   - **Connector documentation URL**: `https://docs.kyve.network/`
+
+   <br></br>
+   <img src="/img/elt/airbyte_new_connector2.jpg" alt="Airbyte Add New Connector" />
