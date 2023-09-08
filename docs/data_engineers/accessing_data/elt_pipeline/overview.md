@@ -13,13 +13,29 @@ The sections that follow were created to help you understand how to setup the KY
 
 ## Airbyte Local Deployment
 
-For users that wants to experiment locally with the KYVE data it is recommended the Local Deployment approach of Airbyte. This option requires some configuration steps in order to run locally the Airbyte app. Detailed instructions are presented in [Airbyte Local Deployment](airbyte_local_deployment) section.
+For users who want to experiment locally with the KYVE data it is recommended 
+to use the Local Deployment approach of Airbyte. This option requires some 
+configuration steps in order to run Airbyte locally. Detailed instructions are 
+presented in [Airbyte Local Deployment](airbyte_local_deployment).
 
 ## Airbyte Cloud
 
-You can connect to the [Airbyte Cloud](https://airbyte.com/airbyte-cloud) platform and try the `KYVE Source Connector`.
+You can connect to the [Airbyte Cloud](https://airbyte.com/airbyte-cloud) 
+platform and use the `KYVE Source Connector`.
 
-This option does not require any local setup. For setting up a destination follow the documentation in the Airbyte cloud page. For example, the [Snowflake](elt_destinations/snowflake) section presents one such destination that could be used with cloud.
+This option does not require any local setup. For setting up a destination 
+follow the documentation in the Airbyte Cloud page. For example, 
+the [Snowflake](elt_destinations/snowflake) section presents one such 
+destination that could be used with Airbyte Cloud.
+
+:::caution
+
+The Airbyte integration receives regular updates. These take
+some time until they are available in Airbyte Cloud. Therefore, if you need
+support for the latest features consider using the Local Deployment until
+it's available in Airbyte Cloud.
+
+:::
 
 ## FAQ
 
