@@ -72,7 +72,7 @@ cd airbyte
 git checkout feat/mainnet-support
 ```
 
-Then start the server by running
+Then start Airbyte locally by running
 
 ```sh
 ./run-ab-platform.sh
