@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Examples
 
-### 1. Sync Cosmos Hub (Mainnet) with AUTO-SYNC
+### 1. Sync Cosmos Hub with AUTO-SYNC
 
 Cosmos Hub requires a start with P2P sync due to the >100MB genesis file.
 To simplify the syncing process, we can use AUTO-SYNC to let KSYNC manage both processes independently.
@@ -36,11 +36,11 @@ mv genesis.cosmoshub-4.json ~/.gaia/config/genesis.json
 Don't include an addrbook.json and KSYNC will manage your config file itself.
 It should only connect to our peer. The supervised KSYNC process can be started with
 
-`````bash
+```bash
  ksync start --daemon-path /<daemon-path>/gaiad --home /Users/<user>/.gaia --pool-id 0 --chain-id=kyve-1
-`````
+```
 
-### 2. Sync Osmosis (Kaon) with DB-SYNC
+### 2. Sync Osmosis with DB-SYNC
 
 To sync osmosis you have to download and set up the correct osmosis binary. To sync from genesis the version `v3.1.0` has
 to be used. You can download them [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0) or build them from source: [https://github.com/osmosis-labs/osmosis](https://github.com/osmosis-labs/osmosis)
@@ -77,7 +77,7 @@ After you see that the node is waiting for incoming connections you can open a *
 the sync.
 
 ```bash
-ksync start --mode=db --home="/Users/<user>/.osmosisd" --pool-id=1 --chain-id=kaon-1
+ksync start --mode=db --home="/Users/<user>/.osmosisd" --pool-id=1 --chain-id=kyve-1
 ```
 
 You should see KSYNC connecting to Osmosis and applying the blocks against the app. You can exit anytime with CMD+C
@@ -86,7 +86,7 @@ if you wish to abort the syncing process.
 When you want to continue to sync normally you can now add an addrbook or add peers in `persistent_peers`. When you start
 the node again with the normal start command `./osmosisd start` the node should continue normally and tries to sync the remaining blocks.
 
-### 3. Sync Cosmos Hub (Mainnet) with P2P-SYNC
+### 3. Sync Cosmos Hub with P2P-SYNC
 
 Since we want to sync Cosmos Hub from genesis and the genesis file is bigger than 100MB we have to use P2P sync.
 
@@ -125,15 +125,16 @@ allow_duplicate_ip = true
 Important: Don't include an addrbook.json and make sure persistent_peers and etc. (e.g. unconditional_peer_ids, private_peer_ids
 and seeds) are empty for now or else the node will connect to other peers. It should only connect to our peer.
 
-When the config is done the node can be started. 
+When the config is done the node can be started.
 
-:::info 
+:::info
 This can take a while (~5mins) since the genesis file is
 quite big. You can skip invariants checks to boot even faster, but it still takes a long time until the gaia node starts.
 
 ```bash
 ./gaiad start --x-crisis-skip-assert-invariants
 ```
+
 :::
 
 After you see that the node is searching for peers you can start the tool. For testing KYVE has archived the first
@@ -147,4 +148,4 @@ You should see the peer connecting and sending over blocks to the gaia node. Aft
 the tool shows _Done_ and you can safely exit the process with CMD+C.
 
 When you want to continue to sync normally you can now add an addrbook or add peers in `persistent_peers`.
-When you start  the node again the node should continue normally and tries to sync the remaining blocks.
+When you start the node again the node should continue normally and tries to sync the remaining blocks.
