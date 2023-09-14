@@ -6,6 +6,10 @@ sidebar_position: 3
 
 The Archway Full Node will act as the source for the KYVE protocol validator and is **required**. You can either run the Archway node on the same machine with the KYVE protocol together (recommended) or on a seperate machine.
 
+:::danger
+Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
+:::
+
 ## Install Archway full node
 
 The Archway binary with the version `v1.0.0` has to be installed. There are two ways to install and run the binary:
@@ -40,7 +44,9 @@ To enable the start of the syncing process, a seed node needs to be added into
 seeds = "3ba7bf08f00e228026177e9cdc027f6ef6eb2b39@35.232.234.58:26656"
 ```
 
-**TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/archway
+:::info
+You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/archway
+:::
 
 ### Configuration
 Due to the size of the `block_results` response, it is __required__ to set the following in your `~/.archway/config/config.toml`:
@@ -98,7 +104,7 @@ docker run --restart unless-stopped -p 0.0.0.0:26657:26657 kyve/archway --x-cris
 ```
 
 :::info
-**INFO**: To prevent data loss, it is recommended to use a Docker volume in the running container.
+To prevent data loss, it is recommended to use a Docker volume in the running container.
 :::
 
 Example: 
@@ -118,7 +124,7 @@ docker run -d --restart unless-stopped \
 ```
 
 :::info
-**INFO**: When creating the volume, you must ensure that the <path_to_empty_directory> folder is empty and writable by your docker service.
+When creating the volume, you must ensure that the <path_to_empty_directory> folder is empty and writable by your docker service.
 :::
 
 ## Verifying the completed node setup
@@ -134,5 +140,7 @@ curl http://localhost:26657/block?height=1000000
 If it returns a valid block response you can continue with starting the actual KYVE protocol validator
 and start participating in the validation and archival process.
 
-**TIP**: to save storage space you can start pruning blocks manually after they have been archived
+:::info
+To save storage space you can start pruning blocks manually after they have been archived
 by the pool since after that they are not needed anymore.
+:::

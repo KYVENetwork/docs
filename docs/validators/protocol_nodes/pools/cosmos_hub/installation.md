@@ -8,6 +8,10 @@ This section will deal with the installation for the Gaia Full Node and the KYVE
 Node will act as the source for the KYVE protocol validator and is **required**. You can either run the Gaia node on
 a seperate machine or run it on the same machine with the KYVE protocol together.
 
+:::danger
+Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
+:::
+
 ## Install Gaia full node
 
 The gaia binary with the version `v4.2.1` has to be installed. You can follow the official installation instructions [here](https://hub.cosmos.network/main/getting-started/installation.html) or download the binary directly from [here](https://github.com/cosmos/gaia/releases/tag/v4.2.1).

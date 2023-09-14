@@ -70,6 +70,17 @@ In this step, you will deploy a local `Postgres` database using Docker.
 
 ## Configure Airbyte
 
+
+:::caution
+
+This example uses old data from the devnet. Check out
+[https://app.kyve.network/#/pools](https://app.kyve.network/#/pools)
+to get a list of active mainnet pools.
+Here, we can recommend Osmosis (`pool_id: 1`) or Archway (`pool_id: 2`)
+
+:::
+
+
 Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
 
 1. Set up the source.

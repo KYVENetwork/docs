@@ -151,6 +151,15 @@ The default schema is the schema you want to work with. Typically, it is `public
 
 ## Create an ELT pipeline
 
+:::caution
+
+This example uses old data from the devnet. Check out
+[https://app.kyve.network/#/pools](https://app.kyve.network/#/pools)
+to get a list of active mainnet pools.
+Here, we can recommend Osmosis (`pool_id: 1`) or Archway (`pool_id: 2`)
+
+:::
+
 Now you are ready to go on the Airbyte app ([http://localhost:8000/](http://localhost:8000/)) and create a new
 connection.
 
