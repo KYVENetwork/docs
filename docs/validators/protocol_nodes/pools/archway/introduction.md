@@ -7,7 +7,6 @@ sidebar_position: 1
 This data pool validates and archives all blocks and block results from Archway and makes them permanently
 available with Arweave and Bundlr.
 
-
 :::info
 **INFO**: The Archway pool is currently **not** live on Mainnet, only on Kaon and Korellia.
 :::
@@ -19,6 +18,7 @@ available with Arweave and Bundlr.
 - **Data**: Blocks from Genesis ongoing
 - **Storage Provider**: Bundlr
 - **Networks**
+  - [Mainnet](https://app.kyve.network/#/pools/2) (Pool Id: 2)
   - [Kaon](https://app.kaon.kyve.network/#/pools/2) (Pool Id: 2)
   - [Korellia](https://app.korellia.kyve.network/#/pools/31) (Pool Id: 31)
 - **Min Hardware Requirements**
@@ -52,4 +52,4 @@ data are the blocks and the block results from the tendermint application - vali
 The goal of this pool is to validate and archive all blocks and block results from Archway permanently and decentralized. With this
 data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes
 on Archway obsolete in the long run. More information on how to perform block sync with KYVE visit the documentation about
-KSYNC [here](https://github.com/KYVENetwork/ksync). In addition, the validated archived block results enable a number of further use cases for data analysis. 
+KSYNC [here](https://github.com/KYVENetwork/ksync). In addition, the validated archived block results enable a number of further use cases for data analysis.

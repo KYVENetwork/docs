@@ -41,7 +41,7 @@ actual KYVE protocol validator.
 This architecture diagram summarizes the setup of the Axelar integration on KYVE:
 
 <p align="center">
-  <img width="90%" src="/img/tendermint_archway.png" />
+  <img width="90%" src="/img/tendermint_axelar.png" />
 </p>
 
 Here the tendermint runtime is responsible for communicating with the tendermint application (purple) - in this case archwayd, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol validator. The resulting
