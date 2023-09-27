@@ -7,10 +7,6 @@ sidebar_position: 1
 This data pool validates and archives all blocks and block results from Archway and makes them permanently
 available with Arweave and Bundlr.
 
-:::info
-**INFO**: The Archway pool is currently **not** live on Mainnet, only on Kaon and Korellia.
-:::
-
 ## Overview
 
 - **Runtime**: @kyvejs/tendermint
@@ -25,7 +21,7 @@ available with Arweave and Bundlr.
   - 4 or more physical CPU cores
   - 32 GB RAM
   - 1 TB DISK
-  - 50mbps network bandwidth
+  - 100mbps network bandwidth
 
 ## General Setup
 

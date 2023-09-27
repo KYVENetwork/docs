@@ -4,190 +4,132 @@ sidebar_position: 2
 
 # Usage
 
-Depending on the blockchain application you are trying to sync the following sync modes can be used.
+Depending on what you want to achieve with KSYNC there are three sync modes available. A quick summary of what they do
+and when to use them can be found below:
 
-Whichever sync mode you're using, you still have to make sure that the blocks for your node are actually available.
-You can check out available storage pools for every KYVE network below:
-
-- **KYVE (Mainnet)**: https://app.kyve.network/#/pools
-- **Kaon (Testnet)**: https://app.kaon.kyve.network/#/pools
-- **Korellia (Devent)**: https://app.korellia.kyve.network/#/pools
+|                                 | Description                                                                                         | Recommendation                                                                                                               |
+|---------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| [**BLOCK-SYNC**](#block-sync)   | Syncs blocks from the node's current height up to a specified target height.                        | Generally recommended for archival node runners, who want to have a full node containing all blocks.                      |
+| [**STATE-SYNC**](#state-sync)   | Applies a state-sync snapshot to the node. After the snapshot is applied, the node can continue block-syncing from the applied snapshot height. | Generally recommended for new node runners, who want to join a network in minutes without wanting to sync the entire blockchain. |
+| [**HEIGHT-SYNC**](#height-sync) | Finds the quickest way out of state-sync and height-sync to get to the specified target height.     | Generally recommended for users who want to check out a historical state within minutes at the specified target height for analysis.      |
 
 ### Limitations
 
-If you want to sync a node from genesis and the genesis file is bigger than 100MB you have to use P2P because of a
-message size limitation in the Tendermint Socket Protocol (TSP).
+Because KSYNC uses the blocks and snapshots archived by the KYVE storage pools you first have to check if those pools
+are available in the first place for your desired chain and block height.
 
-Currently, P2P-SYNC is only supported for nodes using `github.com/tendermint/tendermint`. If nodes use CometBFT, DB-SYNC
-has to be used. CometBFT support will be added in the future.
+Depending on the KYVE network, you can find all available data pools here:
 
-:::info 
-[AUTO-SYNC](#auto-sync) wil manage the P2P or DB decision on its own.
-:::
+- **Mainnet (KYVE)**: https://app.kyve.network/#/pools
+- **Testnet (Kaon)**: https://app.kaon.kyve.network/#/pools
+- **Devnet (Korellia)**: https://app.korellia.kyve.network/#/pools
 
-### AUTO-SYNC
+Depending on the sync mode you use, the data pools need to run on the following runtimes:
 
-Due to the 100MB limitation, [P2P-SYNC](#p2p-sync) was implemented to support KSYNC for any type of Tendermint blockchain.
-However, in comparison to [DB-SYNC](#db-sync) it has some disadvantages, which is why it's recommended to use P2P-Sync only as long as the first block was synced successfully before switching back to DB-SYNC.
-On top of that, you need to run the node to be synced and KSYNC in two different terminals, which isn't that comfortable for developers.
-AUTO-SYNC consists of a process manager, running P2P-Sync or DB-Sync on the one hand and the node to be synced on the other hand.
-Based on the requirements, the process manager will manage which syncing process is required, thereby enabling the best way of syncing the node with the validated blocks.
-If the node is completely synced with the corresponding KYVE pool, it will start normally to find peers through the provided seeds.
-This resolves in the ability to sync a node completely with KYVE data requiring just one command.
+- **block-sync**: `@kyvejs/tendermint` or `@kyvejs/tendermint-bsync`
+- **state-sync**: `@kyvejs/tendermint-ssync`
+- **height-sync**: `@kyvejs/tendermint` or `@kyvejs/tendermint-bsync` and `@kyvejs/tendermint-ssync`
 
-#### AUTO-SYNC requirements
+## BLOCK-SYNC
 
-The requirements are similar to the [DB-SYNC requirements](#db-requirements). Everything else will be set up automatically.
+### Syncing to latest available height
 
-#### Sync node with AUTO-SYNC
-
-To start the syncing process, simply run
-
-````bash
-ksync start --home="/Users/<user>/.<chain>" --daemon-path="/Users/<user>/<daemon>" --pool-id=<pool> --chain-id=<chain-id> --seeds <p2p.seeds>
-````
-
-:::info
-Since AUTO-SYNC is the default syncing mode you don't have to specify with a flag.
-:::
-
-### P2P-SYNC
-
-In this sync mode this tool mocks a peer which has all the blocks the actual peer node needs. The
-blocks are then streamed over the dedicated block channels and storing them is handled by the node itself.
-
-<p align="center">
-  <img width="70%" src="/img/p2p_sync.png" />
-</p>
-
-#### P2P Requirements
-
-It does not matter if you want to sync a node from genesis or from an existing height, the following settings have
-to be changed in order to run p2p sync.
-
-Make sure that `persistent_peers` are empty in the `config.toml` config file:
-
-`~/.<chain>/config/config.toml`
-```toml
-[p2p]
-
-persistent_peers = ""
-```
-
-Make sure that your `addrbook.json` is empty or delete it entirely:
+Depending on your current node height (can be also 0  if you start syncing from genesis) you can sync up to the latest
+height available by the storage pool. KSYNC will automatically exit once that height is reached.
 
 ```bash
-rm ~/.<chain>/config/addrbook.json
+ksync block-sync --binary="/path/to/<binaryd>" --home="/path/to/.<home>" --block-pool-id=<pool-id>
 ```
 
-And finally make the following settings:
+### Syncing to specified target height
 
-`~/.<chain>/config/config.toml`
-```toml
-[p2p]
-
-pex = false
-
-allow_duplicate_ip = true
-```
-
-#### Sync node with P2P
-
-Now you can start your node simply with the `start` command like you would start the node normally.
+Depending on your current node height (can be also 0  if you start syncing from genesis) you can sync up to your desired
+target height. KSYNC will automatically exit once that height is reached.
 
 ```bash
-./<chaind> start
+ksync block-sync --binary="/path/to/<binaryd>" --home="/path/to/.<home>" --block-pool-id=<pool-id> --target-height=<height>
 ```
 
-When you see that the  node is trying to search for peers but is unable to find any you can start KSYNC.
+### Example
 
-:::caution 
-If the node actually finds peers the configuration is wrong, in this case double-check the settings
-above.
-:::
+Use _block-sync_ to sync your Osmosis node with validated KYVE data to height ``42,000``:
 
-You can then start KSYNC in a **new** terminal with the following command. Please make sure to replace `<user>` and
-`<chain>` with your specific values. This of course is also true for `<pool>` and `<chain-id>`.
+To _block-sync_ Osmosis you have to download and set up the correct Osmosis binary. To sync from genesis the version `v3.1.0` has
+to be used. You can download them [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0) or build them from source: [https://github.com/osmosis-labs/osmosis](https://github.com/osmosis-labs/osmosis)
+
+Verify installation with:
 
 ```bash
-ksync start mode=p2p --home="/Users/<user>/.<chain>" --pool-id=<pool> --chain-id=<chain-id>
+./osmosisd version
+3.1.0
 ```
 
-Available chain ids are `kyve-1` for Mainnet, `kaon-1` for Kaon Testnet and `korellia` for Korellia Devnet
-
-:::info
-If you want to use your own rest endpoint for syncing, because you are running your own KYVE node
-for example or want to use a different geolocated endpoint, simply overwrite it by adding the `--rest-endpoint=https://api-us-1.kyve.network`
-:::
-
-Once KSYNC starts it automatically continues from the latest height found in the node and starts downloading
-the blocks from the storage provider and validates the checksum. You should see blocks streaming over and the node
-committing those blocks. If you run this command without a `--target-height` it will sync all blocks which are
-available in the pool. You can simply exit the sync process by killing KSYNC with CMD+C.
-
-### DB-SYNC
-
-In this sync mode this tool mocks the tendermint process which communicates directly with the
-blockchain application over ABCI and replays the blocks against the app and manually writes the results
-to the DB directly.
-
-<p align="center">
-  <img width="70%" src="/img/db_sync.png" />
-</p>
-
-#### DB Requirements
-
-It does not matter if you want to sync a node from genesis or from an existing height, the following settings have
-to be changed in order to run DB sync.
-
-Make sure that `persistent_peers` are empty in the `config.toml` config file:
-
-`~/.<chain>/config/config.toml`
-```toml
-[p2p]
-
-persistent_peers = ""
-```
-
-Make sure that your `addrbook.json` is empty or delete it entirely:
+After the installation, init the config:
 
 ```bash
-rm ~/.<chain>/config/addrbook.json
+./osmosisd init <your-moniker> --chain-id osmosis-1
 ```
 
-Make sure that `proxy_app` and `abci` have the following default values in the `config.toml` config file:
-
-`~/.<chain>/config/config.toml`
-```toml
-#######################################################################
-###                   Main Base Config Options                      ###
-#######################################################################
-
-proxy_app = "tcp://127.0.0.1:26658"
-abci = "socket"
-```
-
-#### Sync node with DB
-
-Now you can start your node with a special flag, so it does not start with tendermint as an embedded process:
+Download the genesis:
 
 ```bash
-./<chaind> start --with-tendermint=false
+wget -O ~/.osmosisd/config/genesis.json https://github.com/osmosis-labs/networks/raw/main/osmosis-1/genesis.json
 ```
 
-If you see that the abci server is waiting for new connections you can proceed with starting KSYNC in a **new**
-terminal with the following command. Please make sure to replace `<user>` and
-`<chain>` with your specific values. This of course is also true for `<pool>` and `<chain-id>`.
+Now that the binary is properly installed, KSYNC can already be started:
 
-Available chain ids are `kyve-1` for Mainnet, `kaon-1` for Kaon Testnet and `korellia` for Korellia Devnet
+```bash
+ksync block-sync --binary="/Users/alice/osmosisd" --home="/Users/alice/.osmosisd" --block-pool-id=1 --target-height=42000
+```
 
-:::info
-If you want to use your own rest endpoint for syncing, because you are running your own KYVE node
-for example or want to use a different geolocated endpoint, simply overwrite it by adding the `--rest-endpoint=https://api-us-1.kyve.network`
-:::
+## STATE-SYNC
 
-Once KSYNC starts it automatically continues from the latest height found in the node and starts downloading
-the blocks from the storage provider and validates the checksum. You should KSYNC committing blocks against the app.
-If you run this command without a `--target-height` it will sync all blocks which are
-available in the pool. KSYNC will automatically exit once a target height is reached, or you can simply exit the sync
-process by killing KSYNC with CMD+C.
+### Syncing to latest available snapshot height
+
+You can _state-sync_ a node if it has no height (either node has to be just initialized or reset with `ksync unsafe-reset-all`)
+to the latest available snapshot archived by the pool with the following command. If the storage pool has synced with the live
+height this can be used to rapidly join this network.
+
+```bash
+ksync state-sync --binary="/path/to/<binaryd>" --home="/path/to/.<home>" --snapshot-pool-id=<pool-id>
+```
+
+### Syncing to specified snapshot height
+
+You can _state-sync_ a node if it has no height (either node has to be just initialized or reset with `ksync unsafe-reset-all`)
+to your desired target height. The target height has to be the exact height of the archived snapshot. If the specified
+height can not be found it prints out the nearest available snapshot height you can use.
+
+```bash
+ksync state-sync --binary="/path/to/<binaryd>" --home="/path/to/.<home>" --snapshot-pool-id=<pool-id> --target-height=<height>
+```
+
+### Example
+
+Will be added when the Archway State-Sync pool on Kaon is live.
+
+## HEIGHT-SYNC
+
+### Syncing to latest available block height
+
+You can _height-sync_  a node if it has no height (either node has to be just initialized or reset with `ksync unsafe-reset-all`)
+to the latest available height. This is especially useful for joining a new network if the user wants to join as quick as
+possible.
+
+```bash
+ksync height-sync --binary="/path/to/<binaryd>" --home="/path/to/.<home>" --snapshot-pool-id=<pool-id> --block-pool-id=<pool-id>
+```
+
+### Syncing to specified target height
+
+You can _height-sync_ a node if it has no height (either node has to be just initialized or reset with `ksync unsafe-reset-all`)
+to your desired target height. The target height can be any height (but the block data pool must have archived it), then
+it will use available _state-sync_ snapshots and _block-sync_ to get to the target height as quickly as possible
+
+```bash
+ksync height-sync --binary="/path/to/<binaryd>" --home="/path/to/.<home>" --snapshot-pool-id=<pool-id> --block-pool-id=<pool-id> --target-height=<height>
+```
+
+### Example
+
+Will be added when the Archway State-Sync pool on Kaon is live.
