@@ -27,6 +27,7 @@ Get familiar with KYVE and explore its main concepts.
 ## Explore the Stack
 
 - **[KYVE](https://www.kyve.network/datalake)** - The Web3 data lake for fetching, storing, and validating data
+- **[KSYNC](https://github.com/KYVENetwork/ksync)** - Rapidly sync validated blocks and snapshots from KYVE to every Tendermint based Blockchain Application
 - **[Data Pipeline](https://www.kyve.network/datapipeline)** - An ELT pipeline for accessing KYVE data
 - More products coming soon ...
 
