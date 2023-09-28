@@ -10,7 +10,7 @@ available with Arweave and Bundlr.
 ## Overview
 
 - **Runtime**: @kyvejs/tendermint-ssync
-- **Data Source**: Self hosted KSYNC/Archway node
+- **Data Source**: Self hosted KSYNC process
 - **Data**: Snapshot every 3,000 blocks from Genesis ongoing
 - **Storage Provider**: Bundlr
 - **Networks**
@@ -40,7 +40,7 @@ This architecture diagram summarizes the setup of the Archway // State-Sync inte
   <img width="90%" src="/img/tendermint-ssync-archway.png" />
 </p>
 
-Here, the tendermint-ssync runtime is responsible for communicating with the tendermint application (purple) - in this case KSYNC, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol validator. The resulting
+Here, the tendermint-ssync runtime is responsible for communicating with KSYNC, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol validator. The resulting
 data are the state-sync snapshots from the tendermint application - validated and permanently stored on a storage provider like Arweave.
 
 ## Goal
