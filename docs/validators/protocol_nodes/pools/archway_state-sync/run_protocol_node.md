@@ -10,6 +10,10 @@ With KSYNC in place and the KYVE node also installed you can finally start the p
 
 Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount `archway` we select the this valaccount to start the KYSOR.
 
+:::caution
+**IMPORTANT**: If http://localhost:7878/list_snapshots still returns an empty array the protocol node can not start, please wait until the first snapshot is created, after that you are able to finally start the protocol node.
+:::
+
 ```bash
 ./kysor start --valaccount 'archway-ssync'
 ```
