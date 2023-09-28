@@ -66,7 +66,7 @@ If you want to start the nodes as a background process you can use `systemd`.
 
 For the daemon service root-privileges are required during the setup. Create a service file. $USER is the Linux user which runs the process. Replace it before you copy the command.
 
-Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `archway`
+Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `archway-ssync`
 
 :::info
 You might have to execute this command with `sudo`
@@ -80,7 +80,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=/home/$USER/kysor start --valaccount archway
+ExecStart=/home/$USER/kysor start --valaccount archway-ssync
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=infinity

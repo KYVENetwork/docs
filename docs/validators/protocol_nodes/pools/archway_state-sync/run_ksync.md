@@ -8,8 +8,9 @@ KSYNC will provide the snapshot of an Archway Node, which will act as the source
 
 ## Install Archway node
 
-The Archway binary with the version `v1.0.0` has to be installed. You can 
-- follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or 
+The Archway binary with the version `v1.0.0` has to be installed. You can
+
+- follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or
 - download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.0).
 
 You can verify the successful installation with
@@ -71,7 +72,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --snapshot-pool-id=4--block-pool-id=2
+ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --snapshot-pool-id=4 --block-pool-id=2
 ```
 
 :::caution
