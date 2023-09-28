@@ -78,6 +78,10 @@ Once you see that KSYNC is syncing blocks you can open `https://localhost:7878/l
 return an empty array, but after the first snapshot height is reached (check the interval in the data pool settings) you
 should see a first snapshot object in the response.
 
+:::caution
+**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `archwayd` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
+:::
+
 ### Changing snapshot api server port
 
 You can change the snapshot api server port with the flag `--snapshot-port=<port>`
