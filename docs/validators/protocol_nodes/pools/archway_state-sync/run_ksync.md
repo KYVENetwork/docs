@@ -39,7 +39,7 @@ wget -qO- https://github.com/archway-network/networks/raw/main/archway-1/genesis
 To install the required version of `ksync`, run the following command:
 
 ```bash
-go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0-beta.0
+go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0-beta.2
 ```
 
 Run `ksync version` to verify the installation.
@@ -52,7 +52,7 @@ as follows:
 ```bash
 git clone https://github.com/KYVENetwork/ksync.git
 cd ksync
-git checkout tags/v1.0.0-beta.0 -b v1.0.0-beta.0
+git checkout tags/v1.0.0-beta.0 -b v1.0.0-beta.2
 make ksync
 ```
 
