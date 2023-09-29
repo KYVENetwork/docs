@@ -39,7 +39,7 @@ wget -qO- https://github.com/archway-network/networks/raw/main/archway-1/genesis
 To install the required version of `ksync`, run the following command:
 
 ```bash
-go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0-beta.0
+go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0-beta.1
 ```
 
 Run `ksync version` to verify the installation.
@@ -52,7 +52,7 @@ as follows:
 ```bash
 git clone git@github.com:KYVENetwork/ksync.git
 cd ksync
-git checkout tags/v1.0.0-beta.0 -b v1.0.0-beta.0
+git checkout tags/v1.0.0-beta.1 -b v1.0.0-beta.1
 make ksync
 ```
 
@@ -72,7 +72,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --snapshot-pool-id=4 --block-pool-id=2
+ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --chain-id=kaon-1 --snapshot-pool-id=4 --block-pool-id=2
 ```
 
 :::caution

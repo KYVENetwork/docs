@@ -64,6 +64,8 @@ For the last option you can do a one time transfer so that the valaccount has so
 
 Once you have joined the pool the node should continue in about ~10 seconds. After that you are successfully participating in a pool.
 
+If you want to connect to a different endpoint other than the default _http://localhost:7878_, you can overwrite this endpoint with the env variable: KYVEJS_TENDERMINT_SSYNC_API=your-custom-endpoint.
+
 ## Start node with systemd
 
 If you want to start the nodes as a background process you can use `systemd`.
