@@ -50,7 +50,7 @@ You can also install from source by pulling the ksync repository and switching t
 as follows:
 
 ```bash
-git clone git@github.com:KYVENetwork/ksync.git
+git clone https://github.com/KYVENetwork/ksync.git
 cd ksync
 git checkout tags/v1.0.0-beta.0 -b v1.0.0-beta.0
 make ksync
@@ -72,7 +72,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --snapshot-pool-id=4 --block-pool-id=2
+ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --snapshot-pool-id=4 --block-pool-id=2  --chain-id [kyve-1|kaon-1|korellia]
 ```
 
 :::caution
