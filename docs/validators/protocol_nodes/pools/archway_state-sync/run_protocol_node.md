@@ -100,20 +100,20 @@ Don't forget to change the filename and the valaccount in the service file if yo
 Start the daemon
 
 ```bash
-sudo systemctl enable archway
-sudo systemctl start archway
+sudo systemctl enable archwayd
+sudo systemctl start archwayd
 ```
 
 It can be stopped using
 
 ```
-sudo systemctl stop archway
+sudo systemctl stop archwayd
 ```
 
 You can see its logs with
 
 ```
-sudo journalctl -u archway -f -o cat
+sudo journalctl -u archwayd -f -o cat
 ```
 
 ## Start node on multiple pools
