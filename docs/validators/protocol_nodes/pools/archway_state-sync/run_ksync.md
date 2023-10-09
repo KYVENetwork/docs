@@ -79,7 +79,7 @@ ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --
 You can only run this command when the corresponding KYVE data snapshot-pool has been created.
 :::
 
-Once you see that KSYNC is syncing blocks you can open `https://localhost:7878/list_snapshots`. In the beginning it should
+Once you see that KSYNC is syncing blocks you can open `http://localhost:7878/list_snapshots`. In the beginning it should
 return an empty array, but after the first snapshot height is reached (check the interval in the data pool settings) you
 should see a first snapshot object in the response.
 
