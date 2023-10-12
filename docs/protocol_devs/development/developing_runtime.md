@@ -153,7 +153,7 @@ If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30
       "operating_cost": "2500000000",
       "min_delegation": "100000000000",
       "max_bundle_size": "100",
-      "version": "1.0.0-beta.2",
+      "version": "1.0.7",
       "binaries": "{\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0-beta.2/kyve-linux-x64.zip\",\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0-beta.2/kyve-linux-arm64.zip\"}",
       "storage_provider_id": 3,
       "compression_id": 1

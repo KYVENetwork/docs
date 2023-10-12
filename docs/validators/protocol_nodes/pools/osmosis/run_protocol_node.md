@@ -51,8 +51,8 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/tendermint
 2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 
-2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint = v1.0.0-beta.1
-2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.0-beta.14
+2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint = v1.0.7
+2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.11
 
 2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 1 yet
 2023-02-13 08:46:00.876  INFO  Visit https://app.kyve.network and join the pool from your validator account:
