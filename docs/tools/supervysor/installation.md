@@ -20,7 +20,7 @@ go install github.com/KYVENetwork/supervysor/cmd/supervysor@latest
 To install a previous version, you can specify the version:
 
 ```bash
-go install github.com/KYVENetwork/supervysor/cmd/supervysor@v0.1.0
+go install github.com/KYVENetwork/supervysor/cmd/supervysor@v0.2.0
 ```
 
 :::info

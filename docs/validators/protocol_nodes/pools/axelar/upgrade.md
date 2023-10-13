@@ -39,14 +39,14 @@ The first step is to check if the upgrade proposal has passed and when it will g
   "@type": "/kyve.pool.v1beta1.MsgScheduleRuntimeUpgrade",
   "authority": "kyve10d07y265gmmuvt4z0w9aw880jnsr700jdv7nah",
   "runtime": "@kyvejs/tendermint",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.7",
   "scheduled_at": "1684749600",
   "duration": "600",
-  "binaries": "{\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0-beta.1/kyve-linux-arm64.zip\",\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0-beta.1/kyve-linux-x64.zip\",\"kyve-macos-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0-beta.1/kyve-macos-x64.zip\"}"
+  "binaries": "{\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.7/kyve-linux-arm64.zip\",\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.7/kyve-linux-x64.zip\",\"kyve-macos-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.7/kyve-macos-x64.zip\"}"
 }
 ```
 
-Here **every** pool which is running on the _@kyvejs/tendermint_ runtime gets upgraded with the new version of _1.0.0-beta.1_. The upgrade will go into effect
+Here **every** pool which is running on the _@kyvejs/tendermint_ runtime gets upgraded with the new version of _1.0.7_. The upgrade will go into effect
 at the _scheduled_at_ time (UNIX time format). Once the upgrade goes into effect the pool will halt during the upgrade is getting applied. The length of the upgrade
 is determined by the _duration_ (here 600 seconds -> 10 mins). The reason behind an upgrade duration where the pool halts is to give node operators some time to perform
 the upgrade (restart the node or manually switch out the binaries during that time). After the duration has completed the pool will continue automatically. Finally, the
@@ -70,8 +70,8 @@ mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/x.x.x/bin/
 **IMPORTANT**: The version _x.x.x_ has to match with the version in the upgrade proposal, so for the example proposal above it would be:
 
 ```bash
-mkdir -r ~/.kysor/upgrades/pool-0/1.0.0-beta.1/bin/
-mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/1.0.0-beta.1/bin/
+mkdir -r ~/.kysor/upgrades/pool-0/1.0.7/bin/
+mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/1.0.7/bin/
 ```
 
 :::
@@ -79,14 +79,12 @@ mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/1.0.0-beta.1/bin/
 To make sure the installation was successful you can print the version which should match with the version in the path:
 
 ```bash
-.kysor/upgrades/pool-0/1.0.0-beta.1/bin/kyve-macos-x64 version
+.kysor/upgrades/pool-0/1.0.7/bin/kyve-macos-x64 version
 ```
 
-TODO
-
 ```bash
-@kyvejs/tendermint version: 1.0.0-beta.0
-@kyvejs/protocol version: 1.0.0-beta.24
+@kyvejs/tendermint version: 1.0.7
+@kyvejs/protocol version: 1.0.11
 Node version: v18.5.0
 
 Platform: linux
@@ -107,11 +105,9 @@ if you have installed the correct version by executing the version command.
 ./kyve-macos-x64 version
 ```
 
-TODO
-
 ```bash
-@kyvejs/tendermint version: 1.0.0-beta.1
-@kyvejs/protocol version: 1.0.0-beta.24
+@kyvejs/tendermint version: 1.0.7
+@kyvejs/protocol version: 1.0.11
 Node version: v18.5.0
 
 Platform: linux

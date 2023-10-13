@@ -80,7 +80,7 @@ Finally, the node can be started:
 ```
 
 :::caution
-**ATTENTION**: To be able to perform upgrades automatically, it is recommended to use the <strong>cosmovisor</strong>. How to set it up can be found [here](https://docs.archway.io/validators/running-a-node/cosmovisor).
+To be able to perform upgrades automatically, it is recommended to use the <strong>cosmovisor</strong>. How to set it up can be found [here](https://docs.archway.io/validators/running-a-node/cosmovisor).
 :::
 
 To start the Archway node with the cosmovisor, run:
@@ -88,6 +88,10 @@ To start the Archway node with the cosmovisor, run:
 ```bash
 cosmovisor run start --x-crisis-skip-assert-invariants
 ```
+
+:::info
+Regarding __SoftwareUpgrades__ of the node, we recommend the official [upgrade path](https://docs.axelar.dev/node/join-genesis#follow-the-upgrade-path) by Axelar
+:::
 
 ### 2. Archway Docker Container
 

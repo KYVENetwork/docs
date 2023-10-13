@@ -8,10 +8,12 @@ To use the supervysor, you first need to initialize it:
 
 ```bash
 supervysor init
---binary-path         string   'path to chain binaries (e.g. ~/go/bin/osmosisd)'
+--abci-endpoint       string   'ABCI Endpoint to request node information (default "http://127.0.0.1:26657")'
+--binary              string   'path to chain binaries (e.g. ~/go/bin/osmosisd)'
 --chain-id            string   'KYVE chain-id'
---home-path           string   'path to home directory (e.g. ~/.osmosisd)'
+--home                string   'path to home directory (e.g. ~/.osmosisd)'
 --metrics             string   'exposing Prometheus metrics ("true" or "false")'
+--metrics-port        int      'port for metrics server (default 26660)'
 --pool-id             int      'KYVE pool-id'
 --seeds               string   'seeds for the node to connect'
 --pruning-interval    int      'block-pruning interval (hours) (default 24)'
