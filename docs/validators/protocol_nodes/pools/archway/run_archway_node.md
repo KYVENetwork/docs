@@ -90,7 +90,7 @@ cosmovisor run start --x-crisis-skip-assert-invariants
 ```
 
 :::info
-Regarding __SoftwareUpgrades__ of the node, we recommend the official [upgrade path]("https://docs.axelar.dev/node/join-genesis#follow-the-upgrade-path") by Axelar
+Regarding __SoftwareUpgrades__ of the node, we recommend the official [upgrade path](https://docs.axelar.dev/node/join-genesis#follow-the-upgrade-path) by Axelar
 :::
 
 ### 2. Archway Docker Container
