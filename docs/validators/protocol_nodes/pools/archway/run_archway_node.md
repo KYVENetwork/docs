@@ -33,7 +33,7 @@ After the successful installation, you need to set up the archwayd config. First
 To download and setup the genesis file execute the following command:
 
 ```bash
-wget -qO- https://github.com/archway-network/networks/raw/main/archway-1/genesis/genesis.json.gz | zcat > ~/.archway/config/genesis.json
+wget -qO- https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz | zcat > ~/.archway/config/genesis.json
 ```
 
 To enable the start of the syncing process, a seed node needs to be added into
