@@ -32,6 +32,13 @@ To download and setup the genesis file execute the following command:
 wget -qO- https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz | zcat > ~/.archway/config/genesis.json
 ```
 
+### Upgrades
+
+To upgrade the `archwayd` binary successfully, it is required to change the used binary manually.
+Therefore, just start the KSYNC process with the upgraded `archwayd` binary after it exited automatically.
+
+**Cosmovisor** is not supported yet, but an upgrade handler like this will be added soon.
+
 ## Install KSYNC
 
 ### Install with Go (recommended)

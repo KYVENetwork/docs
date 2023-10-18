@@ -167,3 +167,10 @@ If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30
 ## Joining your Pool and testing your Runtime
 
 Once your pool and runtime are ready you can join your pool. For that simply use KYSOR (example [here](https://docs.kyve.network/validators/protocol_nodes/pools/cosmos_hub/installation#install-kyve-protocol-validator)) and follow the steps but just for your pool on Korellia.
+
+## $KYVE Faucet
+
+To participate in the Testnet **Kaon** or the Devnet **Korellia**, you will need tokens that can be obtained through faucets.
+
+- **[Kaon Faucet](https://app.kaon.kyve.network/#/faucet)**
+- **[Korellia Faucet](https://app.korellia.kyve.network/#/faucet)**
