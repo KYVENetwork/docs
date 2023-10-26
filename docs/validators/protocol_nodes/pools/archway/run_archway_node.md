@@ -12,9 +12,8 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 ## Install Archway full node
 
-The Archway binary with the version `v1.0.0` has to be installed. There are two ways to install and run the binary:
+The Archway binary with the version `v1.0.0` has to be installed.
 
-### 1. Install Archway Binary manually
 You can follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.0).
 
 You can verify the successful installation with
@@ -76,7 +75,7 @@ index-events = [""]
 Finally, the node can be started:
 
 ```bash
-./archway start --x-crisis-skip-assert-invariants
+./archwayd start --x-crisis-skip-assert-invariants
 ```
 
 :::caution
@@ -88,48 +87,6 @@ To start the Archway node with the cosmovisor, run:
 ```bash
 cosmovisor run start --x-crisis-skip-assert-invariants
 ```
-
-:::info
-Regarding __SoftwareUpgrades__ of the node, we recommend the official [upgrade path](https://docs.axelar.dev/node/join-genesis#follow-the-upgrade-path) by Axelar
-:::
-
-### 2. Archway Docker Container
-
-To get the latest Archway node image, run:
-
-```bash
-docker pull kyve/archway:latest
-```
-
-To start the node, simply run:
-
-```bash
-docker run --restart unless-stopped -p 0.0.0.0:26657:26657 kyve/archway --x-crisis-skip-assert-invariants
-```
-
-:::info
-To prevent data loss, it is recommended to use a Docker volume in the running container.
-:::
-
-Example: 
-```bash
-# create the volume named archwayd and select an empty directory:
-docker volume create --driver local \
-    --opt type=none \
-    --opt device=<path_to_empty_directory> \
-    --opt o=bind \
-    archwayd
-
-# start the container and map the volume to the container
-docker run -d --restart unless-stopped \
-    -p 0.0.0.0:26657:26657 \
-    -v archwayd:/root/.archway \
-    kyve/archway --x-crisis-skip-assert-invariants
-```
-
-:::info
-When creating the volume, you must ensure that the <path_to_empty_directory> folder is empty and writable by your docker service.
-:::
 
 ## Verifying the completed node setup
 

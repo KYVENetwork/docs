@@ -46,7 +46,7 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Bundlr
 2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
 
-2023-02-13 08:46:00.873  INFO  Chain ID = kyve-kaon
+2023-02-13 08:46:00.873  INFO  Chain ID = kyve-1
 2023-02-13 08:46:00.873  INFO  Pool ID = 2
 2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/tendermint
 2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
@@ -54,7 +54,7 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint = v1.0.7
 2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.11
 
-2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 1 yet
+2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 2 yet
 2023-02-13 08:46:00.876  INFO  Visit https://app.kyve.network and join the pool from your validator account:
 
 2023-02-13 08:46:00.876  INFO  Valaddress:    kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
@@ -111,20 +111,20 @@ Don't forget to change the filename and the valaccount in the service file if yo
 Start the daemon
 
 ```bash
-sudo systemctl enable archway
-sudo systemctl start archway
+sudo systemctl enable archwayd
+sudo systemctl start archwayd
 ```
 
 It can be stopped using
 
 ```
-sudo systemctl stop archway
+sudo systemctl stop archwayd
 ```
 
 You can see its logs with
 
 ```
-sudo journalctl -u archway -f -o cat
+sudo journalctl -u archwayd -f -o cat
 ```
 
 ## Start node on multiple pools

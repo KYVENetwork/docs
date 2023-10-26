@@ -8,20 +8,20 @@ With KSYNC in place and the KYVE node also installed you can finally start the p
 
 ## Start Node
 
-Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount `archway-ssync` we select the this valaccount to start the KYSOR.
+Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount `cronos-ssync` we select the this valaccount to start the KYSOR.
 
 :::caution
 **IMPORTANT**: If http://localhost:7878/list_snapshots still returns an empty array the protocol node can not start, please wait until the first snapshot is created, after that you are able to finally start the protocol node.
 :::
 
 ```bash
-./kysor start --valaccount 'archway-ssync'
+./kysor start --valaccount 'cronos-ssync'
 ```
 
 You can also start the process in debug mode by adding the `--debug` flag like this:
 
 ```bash
-./kysor start --valaccount 'archway-ssync' --debug
+./kysor start --valaccount 'cronos-ssync' --debug
 ```
 
 After the node successfully started you should see the following logs:
@@ -33,15 +33,15 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Bundlr
 2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
 
-2023-02-13 08:46:00.873  INFO  Chain ID = kyve-1
-2023-02-13 08:46:00.873  INFO  Pool ID = 4
+2023-02-13 08:46:00.873  INFO  Chain ID = kaon-1
+2023-02-13 08:46:00.873  INFO  Pool ID = 7
 2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/tendermint-ssync
 2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 
 2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint-ssync = v1.0.0
 2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.0-beta.14
 
-2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 4 yet
+2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 7 yet
 2023-02-13 08:46:00.876  INFO  Visit https://app.kyve.network and join the pool from your validator account:
 
 2023-02-13 08:46:00.876  INFO  Valaddress:    kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
@@ -54,7 +54,7 @@ With this information (`Valaddress` and `Valname`) you can head over the KYVE ap
 
 Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
-A dialog should open where you should select the pool you want to join (here Archway). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
+A dialog should open where you should select the pool you want to join (here Cronos // State-Sync). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
 
 For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 100 $KYVE for the start which typically lasts for about 1 month.
 
@@ -72,21 +72,21 @@ If you want to start the nodes as a background process you can use `systemd`.
 
 For the daemon service root-privileges are required during the setup. Create a service file. $USER is the Linux user which runs the process. Replace it before you copy the command.
 
-Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `archway-ssync`
+Since the KYSOR can run on multiple pools on one machine we would recommend naming the daemon service after the valaccount name and with a `d` appending to it. With that you can create multiple service files and control each of them. This example shows the service file for our valaccount `cronos-ssync`
 
 :::info
 You might have to execute this command with `sudo`
 :::
 
 ```bash
-tee <<EOF > /dev/null /etc/systemd/system/archwayd.service
+tee <<EOF > /dev/null /etc/systemd/system/cronosd.service
 [Unit]
-Description=KYVE Protocol-Node archway daemon
+Description=KYVE Protocol-Node cronos daemon
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=/home/$USER/kysor start --valaccount archway-ssync
+ExecStart=/home/$USER/kysor start --valaccount cronos-ssync
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=infinity
@@ -100,20 +100,20 @@ Don't forget to change the filename and the valaccount in the service file if yo
 Start the daemon
 
 ```bash
-sudo systemctl enable archwayd
-sudo systemctl start archwayd
+sudo systemctl enable cronosd
+sudo systemctl start cronosd
 ```
 
 It can be stopped using
 
 ```
-sudo systemctl stop archwayd
+sudo systemctl stop cronosd
 ```
 
 You can see its logs with
 
 ```
-sudo journalctl -u archwayd -f -o cat
+sudo journalctl -u cronosd -f -o cat
 ```
 
 ## Start node on multiple pools

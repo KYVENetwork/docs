@@ -4,38 +4,38 @@ sidebar_position: 3
 
 # Run KSYNC
 
-KSYNC will provide the snapshot of an Archway Node, which will act as the source for the KYVE protocol validator and is **required**.
+KSYNC will provide the snapshot of an Osmosis Node, which will act as the source for the KYVE protocol validator and is **required**.
 
-## Install Archway node
+## Install Osmosis node
 
-The Archway binary with the version `v1.0.0` has to be installed. You can
+The Osmosis binary with the version `v3.1.0` has to be installed. You can
 
-- follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or
-- download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.0).
+- follow the official installation instructions [here](https://docs.osmosis.zone/networks/join-mainnet) or
+- download the binary directly from [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0).
 
 You can verify the successful installation with
 
 ```
-./archwayd version
-1.0.0
+./osmosisd version
+3.1.0
 ```
 
-After the successful installation, you need to set up the archwayd config. First choose a moniker and initialize everything:
+After the successful installation, you need to set up the osmosisd config. First choose a moniker and initialize everything:
 
 ```bash
-./archwayd init <your-moniker> --chain-id archway-1
+./osmosisd init <your-moniker> --chain-id osmosis-1
 ```
 
 To download and setup the genesis file execute the following command:
 
 ```bash
-wget -qO- https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz | zcat > ~/.archway/config/genesis.json
+wget -O ~/.osmosisd/config/genesis.json https://github.com/osmosis-labs/networks/raw/main/osmosis-1/genesis.json
 ```
 
 ### Upgrades
 
-To upgrade the `archwayd` binary successfully, it is required to change the used binary manually.
-Therefore, just start the KSYNC process with the upgraded `archwayd` binary after it exited automatically.
+To upgrade the `osmosisd` binary successfully, it is required to change the used binary manually.
+Therefore, just start the KSYNC process with the upgraded `osmosisd` binary after it exited automatically.
 
 **Cosmovisor** is not supported yet, but an upgrade handler like this will be added soon.
 
@@ -79,7 +79,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --chain-id=kaon-1 --snapshot-pool-id=4 --block-pool-id=2
+ksync serve-snapshots --binary="/path/to/osmosisd" --home="/path/to/.osmosisd" --chain-id=kaon-1 --snapshot-pool-id=5 --block-pool-id=1
 ```
 
 :::caution
@@ -91,7 +91,7 @@ return an empty array, but after the first snapshot height is reached (check the
 should see a first snapshot object in the response.
 
 :::caution
-**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `archwayd` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
+**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `osmosisd` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
 :::
 
 ### Changing snapshot api server port
