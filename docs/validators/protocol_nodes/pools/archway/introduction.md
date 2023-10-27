@@ -5,23 +5,23 @@ sidebar_position: 1
 # Introduction
 
 This data pool validates and archives all blocks and block results from Archway and makes them permanently
-available with Arweave and Bundlr.
+available with Arweave and Irys (previously Bundlr).
 
 ## Overview
 
-- **Runtime**: @kyvejs/tendermint
-- **Data Source**: Self hosted Archway full node (archway-1)
-- **Data**: Blocks from Genesis ongoing
-- **Storage Provider**: Bundlr
-- **Networks**
-  - [Mainnet](https://app.kyve.network/#/pools/2) (Pool Id: 2)
-  - [Kaon](https://app.kaon.kyve.network/#/pools/2) (Pool Id: 2)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/31) (Pool Id: 31)
-- **Min Hardware Requirements**
-  - 4 or more physical CPU cores
-  - 32 GB RAM
-  - 1 TB DISK
-  - 100mbps network bandwidth
+-   **Runtime**: @kyvejs/tendermint
+-   **Data Source**: Self hosted Archway full node (archway-1)
+-   **Data**: Blocks from Genesis ongoing
+-   **Storage Provider**: Irys
+-   **Networks**
+    -   [Mainnet](https://app.kyve.network/#/pools/2) (Pool Id: 2)
+    -   [Kaon](https://app.kaon.kyve.network/#/pools/2) (Pool Id: 2)
+    -   [Korellia](https://app.korellia.kyve.network/#/pools/31) (Pool Id: 31)
+-   **Min Hardware Requirements**
+    -   4 or more physical CPU cores
+    -   32 GB RAM
+    -   1 TB DISK
+    -   100mbps network bandwidth
 
 ## General Setup
 

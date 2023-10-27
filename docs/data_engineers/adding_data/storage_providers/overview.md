@@ -13,7 +13,7 @@ to your runtime.
 | --- | ---------- | ------------------------------------------------------ |
 | 0   | No Storage | Data does not get stored                               |
 | 1   | Arweave    | Uses Arweave to store data                             |
-| 2   | Bundlr     | Uses Irys (previously Bundlr) to store data on Arweave |
+| 2   | Irys       | Uses Irys (previously Bundlr) to store data on Arweave |
 
 ## Writing a custom storage provider
 

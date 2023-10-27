@@ -14,9 +14,9 @@ trustless. Data pools which are currently live can be found [here](https://app.k
 
 **A pool always has to specify the following requirements:**
 
-- One or more data sources which the pool wants to validate and archive
-- A runtime which has defined how to validate the data
-- A web3 storage provider where validated data should get stored to (for example Arweave)
+-   One or more data sources which the pool wants to validate and archive
+-   A runtime which has defined how to validate the data
+-   A web3 storage provider where validated data should get stored to (for example Arweave)
 
 If those requirements are met protocol validators can join a pool and actually start validating the data.
 
@@ -240,7 +240,7 @@ continues with the newer version. Usually about one day.
 
 ### `current_storage_provider_id`
 
-The ID of the storage provider which should get used. Here `1` equals Arweave and `2` equals Bundlr. If it is zero no
+The ID of the storage provider which should get used. Here `1` equals Arweave and `2` equals Irys (previously Bundlr). If it is zero no
 storage provider is used and data just gets validated and not archived.
 
 ### `current_compression_id`
@@ -256,80 +256,80 @@ calculated on the fly.
 
 ```json
 {
-  "id": "0",
-  "data": {
-    "id": "0",
-    "name": "Moonbeam",
-    "runtime": "@kyvejs/evm",
-    "logo": "ar://9FJDam56yBbmvn8rlamEucATH5UcYqSBw468rlCXn8E",
-    "config": "ar://DgdB-2hLrxjhyEEbCML__dgZN5_uS7T6Z5XDkaFh3P0",
-    "start_key": "1188653",
-    "current_key": "3003881",
-    "current_summary": "0x09979a8fecec0a89d9b4d6e43c4bf6b7d31d5f25b140ee64a7b30f75ba021f59",
-    "current_index": "3003432",
-    "total_bundles": "115984",
-    "upload_interval": "120",
-    "operating_cost": "2500000000",
-    "min_delegation": "100000000000000",
-    "max_bundle_size": "100",
-    "disabled": false,
-    "funders": [
-      {
-        "address": "kyve1hfvhl7vf635xta2l4y5p4myj23pp7sg08f5rew",
-        "amount": "360529737262038"
-      }
-    ],
-    "total_funds": "360529737262038",
-    "protocol": {
-      "version": "1.0.0-beta.6",
-      "binaries": "{\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Fevm%401.0.0-beta.6/kyve-linux-arm64.zip\",\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Fevm%401.0.0-beta.6/kyve-linux-x64.zip\",\"kyve-macos-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Fevm%401.0.0-beta.6/kyve-macos-x64.zip\"}",
-      "last_upgrade": "1675501187"
-    },
-    "upgrade_plan": {
-      "version": "",
-      "binaries": "",
-      "scheduled_at": "0",
-      "duration": "0"
-    },
-    "current_storage_provider_id": 1,
-    "current_compression_id": 1
-  },
-  "bundle_proposal": {
-    "pool_id": "0",
-    "storage_id": "H4wmW_jwO_tOETu4aHEUAZjwQ3onyVNq1NLMjRkH_pI",
-    "uploader": "kyve12htkqlkx4mmd2fw6d9jpmttyykjdpnadd3w45k",
-    "next_uploader": "kyve14yrlpnrwfhtu6u4kux2k8gem04rehulyjldzma",
-    "data_size": "22947",
-    "bundle_size": "20",
-    "to_key": "3003901",
-    "bundle_summary": "0x008f89084595a842251558f253ad72810dbd5b879eddf2a610e15cbbc27b853b",
-    "data_hash": "682ba4b5fec5f3df18941047c040a75a53ecd49557023906ef8778a7699d9d20",
-    "updated_at": "1677077694",
-    "voters_valid": [
-      "kyve12htkqlkx4mmd2fw6d9jpmttyykjdpnadd3w45k",
-      "kyve14yrlpnrwfhtu6u4kux2k8gem04rehulyjldzma",
-      "kyve10flshfy53rz0tfmuyt3n2ptx2z0t0rardql4ks"
-    ],
-    "voters_invalid": [],
-    "voters_abstain": ["kyve1kslrzlrjw25e9c48ck2j4777m6cqqkcryntfja"],
-    "from_key": "3003882",
-    "storage_provider_id": 1,
-    "compression_id": 1
-  },
-  "stakers": [
-    "kyve10flshfy53rz0tfmuyt3n2ptx2z0t0rardql4ks",
-    "kyve10p7hvhef9rwjujtgkqetfznwsfk09w0kwjq8c8",
-    "kyve10tv5zp58j90v926gpgn26g97arcmezarsclzws",
-    "kyve12gzunma7tr3undhtqqkax7a4xa9xceflu0uwpf",
-    "kyve12htkqlkx4mmd2fw6d9jpmttyykjdpnadd3w45k",
-    "kyve13xzj5e568n4kwe76ayzmzzuraz6c9vnaslrn3t",
-    "kyve14ah6djgs435j8x6h7hxvysdxnaq7u97hf265dp",
-    "kyve14s2kxx6n9nx68eefuqg2npc8jq3cfz6j6hw8f7",
-    "kyve14yrlpnrwfhtu6u4kux2k8gem04rehulyjldzma",
-    "kyve15mt7rmc782jv3sx5dta0ut8k2z38vhrtzcr4sq"
-  ],
-  "total_self_delegation": "1821046243698393",
-  "total_delegation": "4509813459035511",
-  "status": "POOL_STATUS_ACTIVE"
+	"id": "0",
+	"data": {
+		"id": "0",
+		"name": "Moonbeam",
+		"runtime": "@kyvejs/evm",
+		"logo": "ar://9FJDam56yBbmvn8rlamEucATH5UcYqSBw468rlCXn8E",
+		"config": "ar://DgdB-2hLrxjhyEEbCML__dgZN5_uS7T6Z5XDkaFh3P0",
+		"start_key": "1188653",
+		"current_key": "3003881",
+		"current_summary": "0x09979a8fecec0a89d9b4d6e43c4bf6b7d31d5f25b140ee64a7b30f75ba021f59",
+		"current_index": "3003432",
+		"total_bundles": "115984",
+		"upload_interval": "120",
+		"operating_cost": "2500000000",
+		"min_delegation": "100000000000000",
+		"max_bundle_size": "100",
+		"disabled": false,
+		"funders": [
+			{
+				"address": "kyve1hfvhl7vf635xta2l4y5p4myj23pp7sg08f5rew",
+				"amount": "360529737262038"
+			}
+		],
+		"total_funds": "360529737262038",
+		"protocol": {
+			"version": "1.0.0-beta.6",
+			"binaries": "{\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Fevm%401.0.0-beta.6/kyve-linux-arm64.zip\",\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Fevm%401.0.0-beta.6/kyve-linux-x64.zip\",\"kyve-macos-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Fevm%401.0.0-beta.6/kyve-macos-x64.zip\"}",
+			"last_upgrade": "1675501187"
+		},
+		"upgrade_plan": {
+			"version": "",
+			"binaries": "",
+			"scheduled_at": "0",
+			"duration": "0"
+		},
+		"current_storage_provider_id": 1,
+		"current_compression_id": 1
+	},
+	"bundle_proposal": {
+		"pool_id": "0",
+		"storage_id": "H4wmW_jwO_tOETu4aHEUAZjwQ3onyVNq1NLMjRkH_pI",
+		"uploader": "kyve12htkqlkx4mmd2fw6d9jpmttyykjdpnadd3w45k",
+		"next_uploader": "kyve14yrlpnrwfhtu6u4kux2k8gem04rehulyjldzma",
+		"data_size": "22947",
+		"bundle_size": "20",
+		"to_key": "3003901",
+		"bundle_summary": "0x008f89084595a842251558f253ad72810dbd5b879eddf2a610e15cbbc27b853b",
+		"data_hash": "682ba4b5fec5f3df18941047c040a75a53ecd49557023906ef8778a7699d9d20",
+		"updated_at": "1677077694",
+		"voters_valid": [
+			"kyve12htkqlkx4mmd2fw6d9jpmttyykjdpnadd3w45k",
+			"kyve14yrlpnrwfhtu6u4kux2k8gem04rehulyjldzma",
+			"kyve10flshfy53rz0tfmuyt3n2ptx2z0t0rardql4ks"
+		],
+		"voters_invalid": [],
+		"voters_abstain": ["kyve1kslrzlrjw25e9c48ck2j4777m6cqqkcryntfja"],
+		"from_key": "3003882",
+		"storage_provider_id": 1,
+		"compression_id": 1
+	},
+	"stakers": [
+		"kyve10flshfy53rz0tfmuyt3n2ptx2z0t0rardql4ks",
+		"kyve10p7hvhef9rwjujtgkqetfznwsfk09w0kwjq8c8",
+		"kyve10tv5zp58j90v926gpgn26g97arcmezarsclzws",
+		"kyve12gzunma7tr3undhtqqkax7a4xa9xceflu0uwpf",
+		"kyve12htkqlkx4mmd2fw6d9jpmttyykjdpnadd3w45k",
+		"kyve13xzj5e568n4kwe76ayzmzzuraz6c9vnaslrn3t",
+		"kyve14ah6djgs435j8x6h7hxvysdxnaq7u97hf265dp",
+		"kyve14s2kxx6n9nx68eefuqg2npc8jq3cfz6j6hw8f7",
+		"kyve14yrlpnrwfhtu6u4kux2k8gem04rehulyjldzma",
+		"kyve15mt7rmc782jv3sx5dta0ut8k2z38vhrtzcr4sq"
+	],
+	"total_self_delegation": "1821046243698393",
+	"total_delegation": "4509813459035511",
+	"status": "POOL_STATUS_ACTIVE"
 }
 ```

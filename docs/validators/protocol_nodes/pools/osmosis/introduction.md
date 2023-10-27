@@ -5,23 +5,23 @@ sidebar_position: 1
 # Introduction
 
 This data pool validates and archives all blocks and block results from Osmosis and makes them permanently
-available with Arweave and Bundlr.
+available with Arweave and Irys (previously Bundlr).
 
 ## Overview
 
-- **Runtime**: @kyvejs/tendermint
-- **Data Source**: Self hosted Osmosis full node (osmosis-1)
-- **Data**: Blocks from Genesis ongoing
-- **Storage Provider**: Bundlr
-- **Networks**
-  - [Mainnet](https://app.kyve.network/#/pools/1) (Pool Id: 1)
-  - [Kaon](https://app.kaon.kyve.network/#/pools/1) (Pool Id: 1)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/30) (Pool Id: 30)
-- **Min Hardware Requirements**
-  - 4 or more physical CPU cores
-  - 32 GB RAM
-  - 1 TB DISK
-  - 50mbps network bandwidth
+-   **Runtime**: @kyvejs/tendermint
+-   **Data Source**: Self hosted Osmosis full node (osmosis-1)
+-   **Data**: Blocks from Genesis ongoing
+-   **Storage Provider**: Irys
+-   **Networks**
+    -   [Mainnet](https://app.kyve.network/#/pools/1) (Pool Id: 1)
+    -   [Kaon](https://app.kaon.kyve.network/#/pools/1) (Pool Id: 1)
+    -   [Korellia](https://app.korellia.kyve.network/#/pools/30) (Pool Id: 30)
+-   **Min Hardware Requirements**
+    -   4 or more physical CPU cores
+    -   32 GB RAM
+    -   1 TB DISK
+    -   50mbps network bandwidth
 
 ## General Setup
 
@@ -48,4 +48,4 @@ data are the blocks and the block results from the tendermint application - vali
 The goal of this pool is to validate and archive all blocks and block results from Osmosis permanently and decentralized. With this
 data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes
 on Osmosis obsolete in the long run. More information on how to perform block sync with KYVE visit the documentation about
-KSYNC [here](https://github.com/KYVENetwork/ksync). In addition, the validated archived block results enable a number of further use cases for data analysis. 
+KSYNC [here](https://github.com/KYVENetwork/ksync). In addition, the validated archived block results enable a number of further use cases for data analysis.
