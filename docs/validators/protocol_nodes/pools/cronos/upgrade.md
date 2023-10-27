@@ -38,15 +38,15 @@ The first step is to check if the upgrade proposal has passed and when it will g
 {
   "@type": "/kyve.pool.v1beta1.MsgScheduleRuntimeUpgrade",
   "authority": "kyve10d07y265gmmuvt4z0w9aw880jnsr700jdv7nah",
-  "runtime": "@kyvejs/tendermint-ssync",
-  "version": "1.0.0",
+  "runtime": "@kyvejs/tendermint",
+  "version": "1.0.7",
   "scheduled_at": "1684749600",
   "duration": "600",
-  "binaries": "{\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0/kyve-linux-arm64.zip\",\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0/kyve-linux-x64.zip\",\"kyve-macos-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.0/kyve-macos-x64.zip\"}"
+  "binaries": "{\"kyve-linux-arm64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.7/kyve-linux-arm64.zip\",\"kyve-linux-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.7/kyve-linux-x64.zip\",\"kyve-macos-x64\":\"https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint%401.0.7/kyve-macos-x64.zip\"}"
 }
 ```
 
-Here **every** pool which is running on the _@kyvejs/tendermint-ssync_ runtime gets upgraded with the new version of _1.0.0_. The upgrade will go into effect
+Here **every** pool which is running on the _@kyvejs/tendermint_ runtime gets upgraded with the new version of _1.0.7_. The upgrade will go into effect
 at the _scheduled_at_ time (UNIX time format). Once the upgrade goes into effect the pool will halt during the upgrade is getting applied. The length of the upgrade
 is determined by the _duration_ (here 600 seconds -> 10 mins). The reason behind an upgrade duration where the pool halts is to give node operators some time to perform
 the upgrade (restart the node or manually switch out the binaries during that time). After the duration has completed the pool will continue automatically. Finally, the
@@ -56,7 +56,7 @@ The next step is to install the new upgrade binary in KYSOR. For that either dow
 build from source be sure to checkout the right version.
 
 :::tip
-**INFO**: Checkout the correct version in kyvejs like this: `git checkout tags/@kyvejs/tendermint-ssync@x.x.x -b x.x.x`. More info on building binaries from source can be found [here](/validators/protocol_nodes/pools/osmosis/installation.md#build-from-source)
+**INFO**: Checkout the correct version in kyvejs like this: `git checkout tags/@kyvejs/tendermint@x.x.x -b x.x.x`. More info on building binaries from source can be found [here](/validators/protocol_nodes/pools/cronos/installation#build-from-source)
 :::
 
 Once you have either downloaded or build the binaries you have to place them in the correct path. For that create the following directories and move the binary there:
@@ -70,8 +70,8 @@ mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/x.x.x/bin/
 **IMPORTANT**: The version _x.x.x_ has to match with the version in the upgrade proposal, so for the example proposal above it would be:
 
 ```bash
-mkdir -r ~/.kysor/upgrades/pool-0/1.0.0/bin/
-mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/1.0.0/bin/
+mkdir -r ~/.kysor/upgrades/pool-0/1.0.7/bin/
+mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/1.0.7/bin/
 ```
 
 :::
@@ -79,12 +79,12 @@ mv kyve-linux-x64 ~/.kysor/upgrades/pool-0/1.0.0/bin/
 To make sure the installation was successful you can print the version which should match with the version in the path:
 
 ```bash
-.kysor/upgrades/pool-0/1.0.0/bin/kyve-macos-x64 version
+.kysor/upgrades/pool-0/1.0.7/bin/kyve-macos-x64 version
 ```
 
 ```bash
-@kyvejs/tendermint-ssync version: 1.0.0
-@kyvejs/protocol version: 1.0.0-beta.24
+@kyvejs/tendermint version: 1.0.7
+@kyvejs/protocol version: 1.0.11
 Node version: v18.5.0
 
 Platform: linux
@@ -106,13 +106,13 @@ if you have installed the correct version by executing the version command.
 ```
 
 ```bash
-@kyvejs/tendermint-ssync version: 1.0.0
-@kyvejs/protocol version: 1.0.0-beta.24
+@kyvejs/tendermint version: 1.0.7
+@kyvejs/protocol version: 1.0.11
 Node version: v18.5.0
 
 Platform: linux
 Arch: x64
 ```
 
-The version of _@kyvejs/tendermint-ssync_ should match with the version in the upgrade proposal. Once the upgrade executed the old binary will automatically stop with an error since
+The version of _@kyvejs/tendermint_ should match with the version in the upgrade proposal. Once the upgrade executed the old binary will automatically stop with an error since
 the version upgraded. Now simply restart the process with the new binary and the node will continue to validate bundles once the upgrade duration has passed.

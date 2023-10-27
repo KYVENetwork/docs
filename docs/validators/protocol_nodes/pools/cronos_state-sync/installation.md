@@ -37,30 +37,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="network">
-  <TabItem value="kyve" label="Mainnet">
-
-Official Mainnet endpoints:
-
-```bash
-EU RPC: 'https://rpc-eu-1.kyve.network'
-EU API: 'https://api-eu-1.kyve.network'
-
-US RPC: 'https://rpc-us-1.kyve.network'
-US API: 'https://api-us-1.kyve.network'
-```
-
-Depending on your geolocation certain endpoints can be used as a primary and secondary endpoints.
-Primary endpoints are used by default, secondary ones only when the primary fails and so on. It is also possible
-to only use one or more than two. It is important that the number of endpoints used for rpc and api are equal.
-
-```bash
-./kysor init \
---chain-id 'kyve-1' \
---rpc '<primary_rpc>,<secondary_rpc>,...' \
---rest '<primary_api>,<secondary_api>,...'
-```
-
-  </TabItem>
   <TabItem value="kaon" label="Kaon">
 
 Official Kaon endpoints:
@@ -111,50 +87,24 @@ There should be a `config.toml` file where the configurations you just defined a
 Now that KYSOR is initialized we move on to the next step. For every pool you run on a _valaccount_ has to be created. A new valaccount with a new mnemonic can be created in the following way:
 
 <Tabs groupId="network">
-  <TabItem value="kyve" label="Mainnet">
-
-```bash
-./kysor valaccounts create \
---name 'archway-ssync' \
---pool 4 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics
-```
-
-This will create a `archway-ssync.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
-
-If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
-
-```bash
-./kysor valaccounts create \
---name archway-ssync \
---pool 4 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics \
---recover
-```
-
-This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
-
-  </TabItem>
   <TabItem value="kaon" label="Kaon">
 
 ```bash
 ./kysor valaccounts create \
---name 'archway-ssync' \
---pool 4 \
+--name 'cronos-ssync' \
+--pool 7 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `archway-ssync.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `cronos-ssync.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name archway-ssync \
---pool 4 \
+--name cronos-ssync \
+--pool 7 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
@@ -167,20 +117,20 @@ This will prompt you to enter the mnemonic you want to import. More help on how 
 
 ```bash
 ./kysor valaccounts create \
---name 'archway-ssync' \
---pool 38 \
+--name 'cronos-ssync' \
+--pool 40 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics
 ```
 
-This will create a `archway-ssync.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
+This will create a `cronos-ssync.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
 
 If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
 
 ```bash
 ./kysor valaccounts create \
---name archway-ssync \
---pool 38 \
+--name cronos-ssync \
+--pool 40 \
 --storage-priv "$(cat path/to/arweave.json)" \
 --metrics \
 --recover
@@ -243,7 +193,7 @@ Knowing where KYSOR saves it's logs and binaries can be helpful. The example bel
 └── valaccounts
     ├── cosmoshub.toml
     └── osmosis.toml
-    └── archway-ssync.toml
+    └── cronos-ssync.toml
 ```
 
 Here the following directories have the following reason:
@@ -263,7 +213,7 @@ Here the following directories have the following reason:
 
 If you run with KYSOR and have auto download enabled (which is not recommended for Mainnet and Kaon) you can skip the manual binary installation. If you want to run the binaries with or without KYSOR you have to install them manually.
 
-Depending on the runtime the binary installation differs. For Archway we have to install the binary from the
+Depending on the runtime the binary installation differs. For Cronos // State-Sync we have to install the binary from the
 @kyvejs/tendermint-ssync runtime.
 
 #### Build from source

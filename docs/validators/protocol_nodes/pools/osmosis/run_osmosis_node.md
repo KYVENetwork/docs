@@ -14,7 +14,6 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 The Osmosis binary with the version `v3.1.0` has to be installed. There are two ways to install and run the binary:
 
-### 1. Install Osmosis Binary manually
 You can follow the official installation instructions [here](https://docs.osmosis.zone/networks/join-mainnet) or download the binary directly from [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0).
 
 You can verify the successful installation with
@@ -91,43 +90,6 @@ cosmovisor run start --x-crisis-skip-assert-invariants
 **WARNING**: Because Osmosis had 3 hard forks (off-chain software upgrades), it's strongly recommended to disable binary downloads with `DAEMON_ALLOW_DOWNLOAD_BINARIES=false`. More information about managing the hard forks can be found [here](#managing-hard-forks)
 :::
 
-### 2. Osmosis Docker Container
-
-To get the latest Osmosis node image, run:
-
-```bash
-docker pull kyve/osmosis:latest
-```
-
-To start the node, simply run:
-
-```bash
-docker run --restart unless-stopped -p 0.0.0.0:26657:26657 kyve/osmosis --x-crisis-skip-assert-invariants
-```
-
-:::info
-**INFO**: To prevent data loss, it is recommended to use a Docker volume in the running container.
-:::
-
-Example: 
-```bash
-# create the volume named osmosisd and select an empty directory:
-docker volume create --driver local \
-    --opt type=none \
-    --opt device=<path_to_empty_directory> \
-    --opt o=bind \
-    osmosisd
-
-# start the container and map the volume to the container
-docker run -d --restart unless-stopped \
-    -p 0.0.0.0:26657:26657 \
-    -v osmosisd:/root/.osmosisd \
-    kyve/osmosis --x-crisis-skip-assert-invariants
-```
-
-:::info
-**INFO**: When creating the volume, you must ensure that the <path_to_empty_directory> folder is empty and writable by your docker service.
-:::
 
 ## Verifying the completed node setup
 
@@ -157,6 +119,4 @@ To prevent longer syncing breaks or other issues, it's recommended to use the co
 - the `osmosisd` <strong>v6</strong> binary in the `upgrades/v5/bin` directory,
 - the `osmosisd` <strong>v8</strong> binary in the `upgrades/v7/bin` directory and 
 - the `osmosisd` <strong>v10</strong> binary in the `upgrades/v9/bin` directory.
-
-The [dockerized Osmosis node](#2-osmosis-docker-container) is built with this setup by default.
 

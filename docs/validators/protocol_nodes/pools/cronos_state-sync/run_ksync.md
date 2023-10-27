@@ -4,38 +4,37 @@ sidebar_position: 3
 
 # Run KSYNC
 
-KSYNC will provide the snapshot of an Archway Node, which will act as the source for the KYVE protocol validator and is **required**.
+KSYNC will provide the snapshot of an Cronos Node, which will act as the source for the KYVE protocol validator and is **required**.
 
-## Install Archway node
+## Install Cronos node
 
-The Archway binary with the version `v1.0.0` has to be installed. You can
+The Cronos binary with the version `v0.6.11` has to be installed.
 
-- follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or
-- download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.0).
+You can follow the official installation instructions [here](https://docs.cronos.org/for-node-hosts/running-nodes/cronos-mainnet) or download the binary directly from [here](https://github.com/crypto-org-chain/cronos/releases/tag/v0.6.11).
 
 You can verify the successful installation with
 
 ```
-./archwayd version
-1.0.0
+./cronosd version
+0.6.11
 ```
 
-After the successful installation, you need to set up the archwayd config. First choose a moniker and initialize everything:
+After the successful installation, you need to set up the cronosd config. First choose a moniker and initialize everything:
 
 ```bash
-./archwayd init <your-moniker> --chain-id archway-1
+./cronosd init <your-moniker> --chain-id cronosmainnet_25-1
 ```
 
 To download and setup the genesis file execute the following command:
 
 ```bash
-wget -qO- https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz | zcat > ~/.archway/config/genesis.json
+wget -qO- https://raw.githubusercontent.com/crypto-org-chain/cronos-mainnet/master/cronosmainnet_25-1/genesis.json | zcat > ~/.cronos/config/genesis.json
 ```
 
 ### Upgrades
 
-To upgrade the `archwayd` binary successfully, it is required to change the used binary manually.
-Therefore, just start the KSYNC process with the upgraded `archwayd` binary after it exited automatically.
+To upgrade the `cronosd` binary successfully, it is required to change the used binary manually.
+Therefore, just start the KSYNC process with the upgraded `cronosd` binary after it exited automatically.
 
 **Cosmovisor** is not supported yet, but an upgrade handler like this will be added soon.
 
@@ -46,7 +45,7 @@ Therefore, just start the KSYNC process with the upgraded `archwayd` binary afte
 To install the required version of `ksync`, run the following command:
 
 ```bash
-go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0-beta.2
+go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0
 ```
 
 Run `ksync version` to verify the installation.
@@ -79,7 +78,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --chain-id=kaon-1 --snapshot-pool-id=4 --block-pool-id=2
+ksync serve-snapshots --binary="/path/to/cronosd" --home="/path/to/.cronos" --chain-id=kaon-1 --snapshot-pool-id=4 --block-pool-id=2
 ```
 
 :::caution
@@ -91,7 +90,7 @@ return an empty array, but after the first snapshot height is reached (check the
 should see a first snapshot object in the response.
 
 :::caution
-**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `archwayd` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
+**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `cronosd` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
 :::
 
 ### Changing snapshot api server port
