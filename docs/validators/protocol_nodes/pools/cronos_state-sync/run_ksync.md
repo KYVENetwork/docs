@@ -78,7 +78,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/cronosd" --home="/path/to/.cronos" --chain-id=kaon-1 --snapshot-pool-id=4 --block-pool-id=2
+ksync serve-snapshots --binary="/path/to/cronosd" --home="/path/to/.cronos" --chain-id=kaon-1 --block-pool-id=6 --snapshot-pool-id=7
 ```
 
 :::caution
