@@ -5,7 +5,7 @@ sidebar_position: 1
 # Introduction
 
 This data pool validates and archives all blocks and block results from Axelar and makes them permanently
-available with Arweave and Bundlr.
+available with Arweave and Irys (previously Bundlr).
 
 :::info
 **INFO**: The Axelar pool is currently **not** live on Mainnet, only on Kaon and Korellia.
@@ -13,19 +13,19 @@ available with Arweave and Bundlr.
 
 ## Overview
 
-- **Runtime**: @kyvejs/tendermint
-- **Data Source**: Self hosted Axelar full node (axelar-dojo-1)
-- **Data**: Blocks from Genesis ongoing
-- **Storage Provider**: Bundlr
-- **Networks**
-  - [Mainnet](https://app.kyve.network/#/pools/3) (Pool Id: 3)
-  - [Kaon](https://app.kaon.kyve.network/#/pools/2) (Pool Id: 3)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/36) (Pool Id: 36)
-- **Min Hardware Requirements**
-  - 4 or more physical CPU cores
-  - 32 GB RAM
-  - 1 TB DISK
-  - 50mbps network bandwidth
+-   **Runtime**: @kyvejs/tendermint
+-   **Data Source**: Self hosted Axelar full node (axelar-dojo-1)
+-   **Data**: Blocks from Genesis ongoing
+-   **Storage Provider**: Irys
+-   **Networks**
+    -   [Mainnet](https://app.kyve.network/#/pools/3) (Pool Id: 3)
+    -   [Kaon](https://app.kaon.kyve.network/#/pools/2) (Pool Id: 3)
+    -   [Korellia](https://app.korellia.kyve.network/#/pools/36) (Pool Id: 36)
+-   **Min Hardware Requirements**
+    -   4 or more physical CPU cores
+    -   32 GB RAM
+    -   1 TB DISK
+    -   50mbps network bandwidth
 
 ## General Setup
 

@@ -5,22 +5,22 @@ sidebar_position: 1
 # Introduction
 
 This data pool validates and archives state-sync snapshots from Cronos and makes them permanently
-available with Arweave and Bundlr.
+available with Arweave and Irys (previously Bundlr).
 
 ## Overview
 
-- **Runtime**: @kyvejs/tendermint-ssync
-- **Data Source**: KSYNC (over serve-snapshots)
-- **Data**: state-sync snapshots every 3,000 blocks from genesis ongoing
-- **Storage Provider**: Bundlr
-- **Networks**
-  - [Kaon](https://app.kaon.kyve.network/#/pools/4) (Pool Id: 7)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/40) (Pool Id: 40)
-- **Min Hardware Requirements**
-  - 4 or more physical CPU cores
-  - 32 GB RAM
-  - 150 GB DISK
-  - 100mbps network bandwidth
+-   **Runtime**: @kyvejs/tendermint-ssync
+-   **Data Source**: KSYNC (over serve-snapshots)
+-   **Data**: state-sync snapshots every 3,000 blocks from genesis ongoing
+-   **Storage Provider**: Irys
+-   **Networks**
+    -   [Kaon](https://app.kaon.kyve.network/#/pools/4) (Pool Id: 7)
+    -   [Korellia](https://app.korellia.kyve.network/#/pools/40) (Pool Id: 40)
+-   **Min Hardware Requirements**
+    -   4 or more physical CPU cores
+    -   32 GB RAM
+    -   150 GB DISK
+    -   100mbps network bandwidth
 
 ## General Setup
 

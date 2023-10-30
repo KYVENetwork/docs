@@ -5,23 +5,23 @@ sidebar_position: 1
 # Introduction
 
 This data pool validates and archives all blocks and block results from Cronos and makes them permanently
-available with Arweave and Bundlr.
+available with Arweave and Irys (previously Bundlr).
 
 ## Overview
 
-- **Runtime**: @kyvejs/tendermint
-- **Data Source**: Self hosted Cronos full node (cronosmainnet_25-1)
-- **Data**: Blocks from Genesis ongoing
-- **Storage Provider**: Bundlr
-- **Networks**
-  - [Mainnet](https://app.kyve.network/#/pools/2) (Pool Id: 2)
-  - [Kaon](https://app.kaon.kyve.network/#/pools/6) (Pool Id: 6)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/39) (Pool Id: 39)
-- **Min Hardware Requirements**
-  - 8 or more physical CPU cores
-  - 32 GB RAM
-  - 1.5 TB DISK
-  - 100mbps network bandwidth
+-   **Runtime**: @kyvejs/tendermint
+-   **Data Source**: Self hosted Cronos full node (cronosmainnet_25-1)
+-   **Data**: Blocks from Genesis ongoing
+-   **Storage Provider**: Irys
+-   **Networks**
+    -   [Mainnet](https://app.kyve.network/#/pools/2) (Pool Id: 2)
+    -   [Kaon](https://app.kaon.kyve.network/#/pools/6) (Pool Id: 6)
+    -   [Korellia](https://app.korellia.kyve.network/#/pools/39) (Pool Id: 39)
+-   **Min Hardware Requirements**
+    -   8 or more physical CPU cores
+    -   32 GB RAM
+    -   1.5 TB DISK
+    -   100mbps network bandwidth
 
 ## General Setup
 

@@ -5,23 +5,23 @@ sidebar_position: 1
 # Introduction
 
 This data pool validates and archives all blocks from Cosmos Hub and makes them permanently
-available with Arweave and Bundlr.
+available with Arweave and Irys (previously Bundlr).
 
 ## Overview
 
-- **Runtime**: @kyvejs/tendermint-bsync
-- **Data Source**: Self hosted Gaia full node (cosmoshub-4)
-- **Data**: Blocks from height 5,200,791 ongoing
-- **Storage Provider**: Bundlr
-- **Networks**
-  - [Mainnet](https://app.kyve.network/#/pools/0) (Pool Id: 0)
-  - [Kaon](https://app.kaon.kyve.network/#/pools/0) (Pool Id: 0)
-  - [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 24)
-- **Min Hardware Requirements**
-  - 2 or more physical CPU cores
-  - 16 GB RAM
-  - 512 GB DISK
-  - 50mbps network bandwidth
+-   **Runtime**: @kyvejs/tendermint-bsync
+-   **Data Source**: Self hosted Gaia full node (cosmoshub-4)
+-   **Data**: Blocks from height 5,200,791 ongoing
+-   **Storage Provider**: Irys
+-   **Networks**
+    -   [Mainnet](https://app.kyve.network/#/pools/0) (Pool Id: 0)
+    -   [Kaon](https://app.kaon.kyve.network/#/pools/0) (Pool Id: 0)
+    -   [Korellia](https://app.korellia.kyve.network/#/pools/24) (Pool Id: 24)
+-   **Min Hardware Requirements**
+    -   2 or more physical CPU cores
+    -   16 GB RAM
+    -   512 GB DISK
+    -   50mbps network bandwidth
 
 ## General Setup
 
