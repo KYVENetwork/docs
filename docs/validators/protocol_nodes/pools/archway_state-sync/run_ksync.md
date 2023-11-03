@@ -8,16 +8,16 @@ KSYNC will provide the snapshot of an Archway Node, which will act as the source
 
 ## Install Archway node
 
-The Archway binary with the version `v1.0.0` has to be installed. You can
+The Archway binary with the version `v1.0.1` has to be installed. You can
 
 - follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or
-- download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.0).
+- download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.1).
 
 You can verify the successful installation with
 
 ```
 ./archwayd version
-1.0.0
+1.0.1
 ```
 
 After the successful installation, you need to set up the archwayd config. First choose a moniker and initialize everything:
@@ -46,7 +46,7 @@ Therefore, just start the KSYNC process with the upgraded `archwayd` binary afte
 To install the required version of `ksync`, run the following command:
 
 ```bash
-go install github.com/KYVENetwork/ksync/cmd/ksync@v1.0.0-beta.2
+go install github.com/KYVENetwork/ksync/cmd/ksync@latest
 ```
 
 Run `ksync version` to verify the installation.
@@ -59,7 +59,7 @@ as follows:
 ```bash
 git clone git@github.com:KYVENetwork/ksync.git
 cd ksync
-git checkout tags/v1.0.0
+git checkout tags/v1.0.1
 make ksync
 ```
 
@@ -79,7 +79,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --chain-id=kaon-1 --snapshot-pool-id=4 --block-pool-id=2
+ksync serve-snapshots --binary="/path/to/archwayd" --home="/path/to/.archway" --snapshot-pool-id=4 --block-pool-id=2
 ```
 
 :::caution
