@@ -12,11 +12,13 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 ## Install Axelar full node
 
-The Axelar binary with the version `v0.13.6` has to be installed. There are two ways to install and run the binary:
-
-### 1. Install Axelar Binary manually
-
 You can follow the official installation instructions [here](https://docs.axelar.dev/node/join-genesis) or download the binary directly from [here](https://github.com/axelarnetwork/axelar-core/releases/tag/v0.13.6).
+
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For axelard v0.13.6 it is go17**
+:::
 
 You can verify the successful installation with
 

@@ -16,6 +16,12 @@ The Cronos binary with the version `v0.6.11` has to be installed.
 
 You can follow the official installation instructions [here](https://docs.cronos.org/for-node-hosts/running-nodes/cronos-mainnet) or download the binary directly from [here](https://github.com/crypto-org-chain/cronos/releases/tag/v0.6.11).
 
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For cronosd v0.6.11 it is go17**
+:::
+
 You can verify the successful installation with
 
 ```
@@ -44,7 +50,8 @@ seeds = "0d5cf1394a1cfde28dc8f023567222abc0f47534@cronos-seed-0.crypto.org:26656
 ```
 
 ### Configuration
-Due to the size of the `block_results` response, it is __required__ to set the following in your `~/.cronos/config/config.toml`:
+
+Due to the size of the `block_results` response, it is **required** to set the following in your `~/.cronos/config/config.toml`:
 
 ```toml
 timeout_broadcast_tx_commit = "120s"

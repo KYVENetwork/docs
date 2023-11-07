@@ -13,6 +13,12 @@ The Osmosis binary with the version `v3.1.0` has to be installed. You can
 - follow the official installation instructions [here](https://docs.osmosis.zone/networks/join-mainnet) or
 - download the binary directly from [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0).
 
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For osmosisd v3.1.0 it is go15**
+:::
+
 You can verify the successful installation with
 
 ```

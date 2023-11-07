@@ -12,6 +12,12 @@ The Cronos binary with the version `v0.6.11` has to be installed.
 
 You can follow the official installation instructions [here](https://docs.cronos.org/for-node-hosts/running-nodes/cronos-mainnet) or download the binary directly from [here](https://github.com/crypto-org-chain/cronos/releases/tag/v0.6.11).
 
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For cronosd v0.6.11 it is go17**
+:::
+
 You can verify the successful installation with
 
 ```

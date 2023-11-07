@@ -16,6 +16,12 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 The gaia binary with the version `v4.2.1` has to be installed. You can follow the official installation instructions [here](https://hub.cosmos.network/main/getting-started/installation.html) or download the binary directly from [here](https://github.com/cosmos/gaia/releases/tag/v4.2.1).
 
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For gaiad v4.2.1 it is go15**
+:::
+
 You can verify the successful installation with
 
 ```
@@ -48,7 +54,8 @@ chmod 666 ~/.gaia/config/addrbook.json
 **TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/cosmos
 
 ### Configuration
-Due to the size of the `block_results` response, it is __required__ to set the following in your `~/.gaia/config/config.toml`:
+
+Due to the size of the `block_results` response, it is **required** to set the following in your `~/.gaia/config/config.toml`:
 
 ```toml
 timeout_broadcast_tx_commit = "120s"

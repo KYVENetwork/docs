@@ -16,6 +16,12 @@ The Osmosis binary with the version `v3.1.0` has to be installed. There are two 
 
 You can follow the official installation instructions [here](https://docs.osmosis.zone/networks/join-mainnet) or download the binary directly from [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0).
 
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For osmosisd v3.1.0 it is go15**
+:::
+
 You can verify the successful installation with
 
 ```
@@ -46,7 +52,8 @@ chmod 666 ~/.osmosisd/config/addrbook.json
 **TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/osmosis
 
 ### Configuration
-Due to the size of the `block_results` response, it is __required__ to set the following in your `~/.osmosisd/config/config.toml`:
+
+Due to the size of the `block_results` response, it is **required** to set the following in your `~/.osmosisd/config/config.toml`:
 
 ```toml
 timeout_broadcast_tx_commit = "120s"
@@ -90,7 +97,6 @@ cosmovisor run start --x-crisis-skip-assert-invariants
 **WARNING**: Because Osmosis had 3 hard forks (off-chain software upgrades), it's strongly recommended to disable binary downloads with `DAEMON_ALLOW_DOWNLOAD_BINARIES=false`. More information about managing the hard forks can be found [here](#managing-hard-forks)
 :::
 
-
 ## Verifying the completed node setup
 
 After the successful start of the node you have to sync blocks until the latest summary of the pool is reached. For example
@@ -111,12 +117,12 @@ by the pool since after that they are not needed anymore.
 
 Osmosis had three software upgrades which were executed without submitting `SoftwareUpgrade` governance proposals. As a result, the cosmovisor does not recognize these necessary upgrades, which is why the node can no longer sync from a specific height. These hard forks occured at the following heights:
 
-- [v5 to v6](https://www.mintscan.io/osmosis/proposals/103) at `2464000` 
-- [v7 to v8](https://www.mintscan.io/osmosis/proposals/228) at `4402000` 
+- [v5 to v6](https://www.mintscan.io/osmosis/proposals/103) at `2464000`
+- [v7 to v8](https://www.mintscan.io/osmosis/proposals/228) at `4402000`
 - [v9 to v10](https://github.com/osmosis-labs/osmosis/blob/main/networks/osmosis-1/upgrades/v10/guide.md) at `4713065`
 
-To prevent longer syncing breaks or other issues, it's recommended to use the cosmovisor with already downloaded binaries. After that, you need to move 
-- the `osmosisd` <strong>v6</strong> binary in the `upgrades/v5/bin` directory,
-- the `osmosisd` <strong>v8</strong> binary in the `upgrades/v7/bin` directory and 
-- the `osmosisd` <strong>v10</strong> binary in the `upgrades/v9/bin` directory.
+To prevent longer syncing breaks or other issues, it's recommended to use the cosmovisor with already downloaded binaries. After that, you need to move
 
+- the `osmosisd` <strong>v6</strong> binary in the `upgrades/v5/bin` directory,
+- the `osmosisd` <strong>v8</strong> binary in the `upgrades/v7/bin` directory and
+- the `osmosisd` <strong>v10</strong> binary in the `upgrades/v9/bin` directory.

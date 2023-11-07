@@ -13,6 +13,12 @@ The Archway binary with the version `v1.0.1` has to be installed. You can
 - follow the official installation instructions [here](https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis) or
 - download the binary directly from [here](https://github.com/archway-network/archway/releases/tag/v1.0.1).
 
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For archwayd v1.0.1 it is go19**
+:::
+
 You can verify the successful installation with
 
 ```
