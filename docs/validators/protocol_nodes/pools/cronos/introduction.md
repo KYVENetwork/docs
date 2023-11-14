@@ -14,7 +14,6 @@ available with Arweave and Bundlr.
 - **Data**: Blocks from Genesis ongoing
 - **Storage Provider**: Bundlr
 - **Networks**
-  - [Mainnet](https://app.kyve.network/#/pools/2) (Pool Id: 2)
   - [Kaon](https://app.kaon.kyve.network/#/pools/6) (Pool Id: 6)
   - [Korellia](https://app.korellia.kyve.network/#/pools/39) (Pool Id: 39)
 - **Min Hardware Requirements**

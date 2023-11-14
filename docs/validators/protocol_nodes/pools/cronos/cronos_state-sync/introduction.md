@@ -11,10 +11,10 @@ available with Arweave and Bundlr.
 
 - **Runtime**: @kyvejs/tendermint-ssync
 - **Data Source**: KSYNC (over serve-snapshots)
-- **Data**: state-sync snapshots every 5,000 blocks from genesis ongoing
+- **Data**: state-sync snapshots every 3,000 blocks from genesis ongoing
 - **Storage Provider**: Bundlr
 - **Networks**
-  - [Kaon](https://app.kaon.kyve.network/#/pools/7) (Pool Id: 7)
+  - [Kaon](https://app.kaon.kyve.network/#/pools/4) (Pool Id: 7)
   - [Korellia](https://app.korellia.kyve.network/#/pools/40) (Pool Id: 40)
 - **Min Hardware Requirements**
   - 4 or more physical CPU cores
