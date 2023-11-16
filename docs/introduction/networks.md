@@ -39,7 +39,7 @@ Kaon is KYVE's official testnet. It is designed to replicate the mainnet. Before
   </TabItem>
   <TabItem value="explorer" label="Explorer">
     <strong>Mintscan</strong>: <a href="https://testnet.mintscan.io/kyve-testnet">https://testnet.mintscan.io/kyve-testnet</a><br/>
-    <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kaon.kyve.network/kaon">https://explorer.kaon.kyve.network/kaon</a>
+    <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kyve.network/kaon">https://explorer.kyve.network/kaon</a>
   </TabItem>
   <TabItem value="rpc" label="RPC">
     <strong>RPC</strong>: <a href="https://rpc-eu-1.kaon.kyve.network">https://rpc-eu-1.kaon.kyve.network</a>
@@ -61,7 +61,7 @@ import TabItem from '@theme/TabItem';
     <strong>WebApp</strong>: <a href="https://app.korellia.kyve.network">https://app.korellia.kyve.network</a>
   </TabItem>
   <TabItem value="explorer" label="Explorer">
-    <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.korellia.kyve.network/korellia">https://explorer.korellia.kyve.network/korellia</a><br/>
+    <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
   </TabItem>
   <TabItem value="rpc" label="RPC">
     <strong>RPC</strong>: <a href="https://rpc-eu-1.korellia.kyve.network">https://rpc-eu-1.korellia.kyve.network</a>

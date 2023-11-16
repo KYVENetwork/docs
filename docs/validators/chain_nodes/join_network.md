@@ -133,7 +133,7 @@ After that start the node with
 
 <Admonition type="info">
         <p>Make sure to use the current version of the chain for statesync. All releases can be found here: <a href="https://github.com/KYVENetwork/chain/releases">https://github.com/KYVENetwork/chain/releases</a>.
-Go to <a href="https://explorer.kaon.kyve.network/kaon/gov">https://explorer.kaon.kyve.network/kaon/gov</a> and look for the latest SoftwareUpgrade Proposal to find the current version.</p>
+Go to <a href="https://explorer.kyve.network/kaon/gov">https://explorer.kyve.network/kaon/gov</a> and look for the latest SoftwareUpgrade Proposal to find the current version.</p>
 </Admonition>
 
 First, one needs to obtain a trusted height and hash of that height.
@@ -169,8 +169,8 @@ After that start the node with
 The latest binaries can be found at the [Installtion](installation) instructions.
 
 After that, one needs to obtain a trusted height and hash of that height.
-One can go to a blockexplorer and use the values provided there. For example block 5121641 can be viewed at: <a href="https://explorer.korellia.kyve.network/korellia/blocks/5121641">
-https://explorer.korellia.kyve.network/korellia/blocks/5121641 </a>
+One can go to a blockexplorer and use the values provided there. For example block 5121641 can be viewed at: <a href="https://explorer.kyve.network/korellia/blocks/5121641">
+https://explorer.kyve.network/korellia/blocks/5121641 </a>
 
 To enable state-sync edit <code>config.yml</code> under the section <code>[statesync]</code>
 

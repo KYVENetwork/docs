@@ -39,9 +39,9 @@ import TabItem from '@theme/TabItem';
     Mainnet validators: <a href="https://explorer.kyve.network/kyve/staking">https://explorer.kyve.network/kyve/staking</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    Kaon validators: <a href="https://explorer.kaon.kyve.network/kaon/staking">https://explorer.kaon.kyve.network/kaon/staking</a>
+    Kaon validators: <a href="https://explorer.kyve.network/kaon/staking">https://explorer.kyve.network/kaon/staking</a>
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-    Korellia validators: <a href="https://explorer.korellia.kyve.network/korellia/staking">https://explorer.korellia.kyve.network/korellia/staking</a>
+    Korellia validators: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
   </TabItem>
 </Tabs>

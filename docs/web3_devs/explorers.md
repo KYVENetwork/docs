@@ -23,11 +23,11 @@ import TabItem from '@theme/TabItem';
   </TabItem>
   <TabItem value="kaon" label="Kaon">
     <strong>ViewBlock</strong>: <a href="https://viewblock.io/kyve">https://viewblock.io/kyve?network=kaon</a><br/>
-    <strong>Ping.Pub</strong>: <a href="https://explorer.kaon.kyve.network/kaon">https://explorer.kaon.kyve.network/kaon</a><br/>
+    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/kaon">https://explorer.kyve.network/kaon</a><br/>
     <strong>Mintscan</strong>: <a href="https://testnet.mintscan.io/kyve-testnet">https://testnet.mintscan.io/kyve-testnet</a>
   </TabItem>
   <TabItem value="korellia" label="Korellia">
     <strong>ViewBlock</strong>: <a href="https://viewblock.io/kyve">https://viewblock.io/kyve?network=korellia</a><br/>
-    <strong>Ping.Pub</strong>: <a href="https://explorer.korellia.kyve.network/korellia">https://explorer.korellia.kyve.network/korellia</a>
+    <strong>Ping.Pub</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a>
   </TabItem>
 </Tabs>

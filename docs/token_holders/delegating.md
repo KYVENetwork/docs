@@ -26,10 +26,10 @@ import TabItem from '@theme/TabItem';
     <strong>Explorer</strong>: <a href="https://explorer.kyve.network/kyve/staking">https://explorer.kyve.network/kyve/staking</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    <strong>Explorer</strong>: <a href="https://explorer.kaon.kyve.network/kaon/staking">https://explorer.kaon.kyve.network/kaon/staking</a>
+    <strong>Explorer</strong>: <a href="https://explorer.kyve.network/kaon/staking">https://explorer.kyve.network/kaon/staking</a>
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-    <strong>Explorer</strong>: <a href="https://explorer.korellia.kyve.network/korellia/staking">https://explorer.korellia.kyve.network/korellia/staking</a>
+    <strong>Explorer</strong>: <a href="https://explorer.kyve.network/korellia/staking">https://explorer.kyve.network/korellia/staking</a>
   </TabItem>
 </Tabs>
 
