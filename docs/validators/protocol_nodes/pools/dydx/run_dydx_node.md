@@ -14,7 +14,7 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 The dYdX binary with the version `v1.0.1` has to be installed.
 
-You can follow the official installation instructions [here](https://docs.dydxprotocol.exchange/validators/running_full_node) or download the binary directly from [here](https://github.com/dydxprotocol/v4-chain/releases/tag/protocol%2Fv1.0.1).
+You can follow the official installation instructions [here](https://docs.dydx.exchange/validators/running_full_node) or download the binary directly from [here](https://github.com/dydxprotocol/v4-chain/releases/tag/protocol%2Fv1.0.1).
 
 :::danger
 If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
