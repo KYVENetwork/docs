@@ -12,19 +12,21 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 ## Install Axelar full node
 
-You can follow the official installation instructions [here](https://docs.axelar.dev/node/join-genesis) or download the binary directly from [here](https://github.com/axelarnetwork/axelar-core/releases/tag/v0.13.6).
+You can follow the official installation instructions [here](https://docs.axelar.dev/node/join-genesis) or download the binary directly from [here](https://github.com/axelarnetwork/axelar-core/releases/tag/v0.10.7).
 
 :::danger
 If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
 
-**For axelard v0.13.6 it is go17**
+**For axelard v0.10.7 it is go16**
 :::
 
 You can verify the successful installation with
 
 ```
-./axelard version
-0.13.6
+./axelard version --long
+version: 0.10.7
+commit: 44fc624a6b710b421dd9dff82d0251b94d28296f
+go: go version go1.16.12 linux/amd64
 ```
 
 After the successful installation, you need to set up the axelard config. First choose a moniker and initialize everything:
