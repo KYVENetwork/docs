@@ -108,7 +108,13 @@ If that build succeeds you can start implementing your runtime logic.
 
 ## Creating your Data Pool
 
-Since new data pools need to be tested heavily the start their journey on our Devnet Korellia. For that you can use this proposal template and once filled out you have to submit it to the KYVE Core Team via [Discord](https://discord.com/invite/kyve) or [Telegram](https://t.me/KYVENet) so we can vote it through governance.
+Since new data pools need to be tested heavily they start their journey on our Devnet Korellia. For this you can use the following proposal template or use the "Create Development Pool"-button in the Korellia web app ([https://app.korellia.kyve.network/#/pools](https://app.korellia.kyve.network/#/pools)).
+If the proposal is valid, it will be automatically voted 'yes' and your pool will be available 10 minutes after the proposal submission.
+
+To submit a proposal a minimum deposit of 1000 $KYVE is required. This amount will be returned to your wallet after the voting period is over.
+
+If the proposal is not automatically voted on or if you have any questions regarding the configuration, feel free to reach out
+to the KYVE Core Team via [Discord](https://discord.com/invite/kyve) or [Telegram](https://t.me/KYVENet).
 
 ```json
 {
@@ -122,7 +128,7 @@ Since new data pools need to be tested heavily the start their journey on our De
       "config": "{}",
       "start_key": "1",
       "upload_interval": "60",
-      "operating_cost": "1000000000",
+      "inflation_share_weight": "0",
       "min_delegation": "100000000",
       "max_bundle_size": "100",
       "version": "<your_version>",
@@ -132,11 +138,11 @@ Since new data pools need to be tested heavily the start their journey on our De
     }
   ],
   "metadata": "",
-  "deposit": "20000000000000tkyve"
+  "deposit": "1000000000tkyve"
 }
 ```
 
-If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30) create proposal looked like on Korellia take a look at the following:
+If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30)-Create proposal looked like on Korellia, take a look at the following:
 
 ```json
 {
@@ -150,7 +156,7 @@ If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30
       "config": "{\"rpc\":\"http://localhost:26657\",\"network\":\"osmosis-1\"}",
       "start_key": "1",
       "upload_interval": "60",
-      "operating_cost": "2500000000",
+      "inflation_share_weight": "2500000000",
       "min_delegation": "100000000000",
       "max_bundle_size": "100",
       "version": "1.0.7",
@@ -160,7 +166,7 @@ If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30
     }
   ],
   "metadata": "",
-  "deposit": "20000000000000tkyve"
+  "deposit": "25000000000tkyve"
 }
 ```
 
