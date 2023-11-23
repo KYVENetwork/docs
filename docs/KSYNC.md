@@ -22,7 +22,7 @@ To install the latest version <strong><KSYNCLatestVersion /></strong> of KSYNC, 
 go install github.com/KYVENetwork/ksync/cmd/ksync@latest
 ```
 
-To verify the installation simply run `ksync version`.
+To verify the installation simply run `ksync version`. To build from source visit the repository on [GitHub](https://github.com/KYVENetwork/ksync).
 
 ## What is KSYNC?
 
