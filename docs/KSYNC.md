@@ -5,7 +5,7 @@ sidebar_position: 8
 # KSYNC
 
 <p align="center">
-  <img src="/img/ksync/ksync.png" />
+  <img style={{borderRadius: '10px'}} src="/img/ksync/ksync.png" />
 </p>
 
 <p align="center">
@@ -16,44 +16,42 @@ sidebar_position: 8
 
 import KSYNCLatestVersion from '/src/components/ksync/LatestVersion';
 
-### Install with Go (recommended)
-
 To install the latest version <strong><KSYNCLatestVersion /></strong> of KSYNC, run the following command:
 
 ```bash
 go install github.com/KYVENetwork/ksync/cmd/ksync@latest
 ```
 
-To install a previous version, you can specify the version.
+To verify the installation simply run `ksync version`.
 
-```bash
-go install github.com/KYVENetwork/ksync/cmd/ksync@v1.1.0
-```
+## What is KSYNC?
 
-To verify the installation simply run:
+KSYNC is a tool capable of syncing blocks and state-sync snapshots from the decentralized KYVE data lake directly into Cosmos blockchain nodes. With KSYNC Cosmos validators don't need to wait for peers in order to block-sync and they don't need to search for trusted app hashes if they want to state-sync. Furthermore, state-syncing to historical heights up to genesis are possible.
 
-```bash
-ksync version
-```
+## Why KSYNC?
 
-### Install from source
+<div style={{display: 'flex',alignItems:'start'}}>
+  <div>
+    <p>
+      There is no incentive to keep historical blockchain data in Cosmos, therefore finding
+      peers with historical blocks is difficult.
+      Furthermore state-sync snapshots, which promise syncs in minutes, sometimes simply do not work due to other nodes not having them enabled or p2p connections breaking. Additionally it is only possible to state-sync to the current live height.
+    </p>
+    <ul>
+      <li>
+        KSYNC can <strong>block-sync cosmos chains from genesis up to live height</strong>, which might be the only option for archival node runners in the future since historical blocks are harder each day to come by.
+      </li>
+      <li>
+        KSYNC can <strong>state-sync cosmos chains from genesis up to live height</strong> for certain intervals (usually not bigger than 10,000). State-syncing from historical heights was impossible before and could only be accomplished with centralized providers having huge backups of the entire data directory.
+      </li>
+      <li>
+        KSYNC can <strong>checkout any blockheight from genesis up to live height within minutes</strong> with height-sync (combination of state- and block-sync). This was only possible with huge efforts and resources before.
+      </li>
+    </ul>
 
-You can also install from source by pulling the ksync repository and switching to the correct version and building
-as follows:
-
-```bash
-git clone git@github.com:KYVENetwork/ksync.git
-cd ksync
-git checkout tags/vx.x.x -b vx.x.x
-make ksync
-```
-
-This will build ksync in `/build` directory. Afterwards, you may want to put it into your machine's PATH like
-as follows:
-
-```bash
-cp build/ksync ~/go/bin/ksync
-```
+  </div>
+  <img width="40%" style={{borderRadius: '10px',marginLeft: '20px',objectFit: 'scale-down'}} src="/img/ksync/overview.png" />
+</div>
 
 ## Usage
 
