@@ -10,9 +10,11 @@ sidebar_position: 8
 
 ## Installation
 
+import KSYNCLatestVersion from '/src/components/ksync/LatestVersion';
+
 ### Install with Go (recommended)
 
-To install the latest version of `ksync`, run the following command:
+To install the latest version <strong><KSYNCLatestVersion /></strong> of KSYNC, run the following command:
 
 ```bash
 go install github.com/KYVENetwork/ksync/cmd/ksync@latest
@@ -24,7 +26,11 @@ To install a previous version, you can specify the version.
 go install github.com/KYVENetwork/ksync/cmd/ksync@v1.1.0
 ```
 
-Run `ksync version` to verify the installation.
+To verify the installation simply run:
+
+```bash
+ksync version
+```
 
 ### Install from source
 
@@ -56,22 +62,23 @@ and when to use them can be found below:
 | [**STATE-SYNC**](#state-sync)   | Applies a state-sync snapshot to the node. After the snapshot is applied, the node can continue block-syncing from the applied snapshot height. | Generally recommended for new node runners, who want to join a network in minutes without wanting to sync the entire blockchain.     |
 | [**HEIGHT-SYNC**](#height-sync) | Finds the quickest way out of state-sync and height-sync to get to the specified target height.                                                 | Generally recommended for users who want to check out a historical state within minutes at the specified target height for analysis. |
 
-### Limitations
+### Check availability
 
-Because KSYNC uses the blocks and snapshots archived by the KYVE storage pools you first have to check if those pools
-are available in the first place for your desired chain and block height.
+In order to use KSYNC, the data has to be made available by KYVE in the first place. To get an overview
+of all supported sources simply run:
 
-Depending on the KYVE network, you can find all available data pools here:
+```bash
+ksync info
+```
 
-- **Mainnet (KYVE)**: https://app.kyve.network/#/pools
-- **Testnet (Kaon)**: https://app.kaon.kyve.network/#/pools
-- **Devnet (Korellia)**: https://app.korellia.kyve.network/#/pools
+This provides an overview of all chains that are supported by KSYNC using the validated Mainnet data.
+The listed source name can be used as `--source=<source-name>` in several commands.
 
-Depending on the sync mode you use, the data pools need to run on the following runtimes:
+To get an overview of all supported chains using the validated data of the KYVE Testnet Kaon, simply run:
 
-- **block-sync**: `@kyvejs/tendermint` or `@kyvejs/tendermint-bsync`
-- **state-sync**: `@kyvejs/tendermint-ssync`
-- **height-sync**: `@kyvejs/tendermint` or `@kyvejs/tendermint-bsync` and `@kyvejs/tendermint-ssync`
+```bash
+ksync info --chain-id="kaon-1"
+```
 
 ### BLOCK-SYNC
 

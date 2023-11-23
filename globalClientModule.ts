@@ -24,11 +24,12 @@ async function sendCopyEvent(content: string): Promise<void> {
   const data = {
     user_id: null,
     ajs_anonymous_id: localStorage.getItem(AJS_ANONYMOUS_ID),
+    path: window.location.href,
+    referrer: document.referrer,
     event: "COPY",
     properties: {
       content,
     },
-    referrer: document.referrer,
   };
   try {
     const res = await axios.post(`${ANALYTICS_URL}/track`, data, {
