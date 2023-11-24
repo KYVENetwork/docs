@@ -50,7 +50,7 @@ KSYNC is a tool capable of syncing blocks and state-sync snapshots from the dece
     </ul>
 
   </div>
-  <img width="40%" style={{borderRadius: '10px',marginLeft: '20px',objectFit: 'scale-down'}} src="/img/ksync/overview.png" />
+  <img width="40%" style={{borderRadius: '10px',marginLeft: '20px',objectFit: 'scale-down', maxWidth: '350px'}} src="/img/ksync/overview.png" />
 </div>
 
 ## Usage
