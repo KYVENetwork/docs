@@ -187,5 +187,5 @@ wget -qO- https://github.com/archway-network/networks/raw/main/archway/genesis/g
 Now that the binary is properly installed, KSYNC can already be started:
 
 ```bash
-ksync height-sync --binary="/path/to/archwayd" --source="archway" --target-height=135000
+ksync height-sync --binary="/path/to/archwayd" --source="archway" --target-height=138147
 ```
