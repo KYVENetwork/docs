@@ -160,9 +160,9 @@ ksync height-sync --binary="/path/to/<binaryd>" --snapshot-pool-id=<pool-id> --b
 
 ### Example
 
-Use _state-sync_ to sync your Archway node with validated KYVE data to height `135,000`:
+Use _height-sync_ to sync your Archway node with validated KYVE data to height `138,147`:
 
-To _state-sync_ Archway you have to download and set up the correct Archway binary. To sync from genesis the version `v1.0.1` has
+To _height-sync_ Archway you have to download and set up the correct Archway binary. To sync from genesis the version `v1.0.1` has
 to be used. You can download them [here](https://github.com/archway-network/archway/releases/tag/v1.0.1) or build them from source: [https://github.com/archway-network/archway](https://github.com/archway-network/archway)
 
 Verify installation with:
