@@ -3,10 +3,13 @@
 import { ClientModule } from "@docusaurus/types";
 import axios from "axios";
 
-document.body.addEventListener("copy", function () {
-  const selection = document.getSelection();
-  sendCopyEvent(selection.toString());
-});
+// https://github.com/facebook/docusaurus/issues/4268
+if (typeof window !== "undefined") {
+  document.body.addEventListener("copy", function () {
+    const selection = document.getSelection();
+    sendCopyEvent(selection.toString());
+  });
+}
 
 const module: ClientModule = {
   onRouteDidUpdate({ location, previousLocation }) {
