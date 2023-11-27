@@ -70,7 +70,13 @@ const config = {
         redirects: [
           {
             to: "/KSYNC",
-            from: ["/tools/KSYNC/overview"],
+            from: [
+              "/tools/KSYNC/overview",
+              "/tools/KSYNC/installation",
+              "/tools/KSYNC/usage",
+              "/tools/KSYNC/protocol_validators",
+              "/tools/KSYNC/settings",
+            ],
           },
         ],
       },
