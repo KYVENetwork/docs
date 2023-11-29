@@ -432,3 +432,8 @@ are automatically, deleted, saving a lot of disk space. If you want to disable i
 If you want to keep all of your snapshots but still want to prune everything else you can run with `--pruning` and
 `--keep-snapshots`
 :::
+
+## Contribution & Low-level technical documentation
+
+You can find the source code of KSYNC, together with contribution guidelines and a detailed technical
+documentation in the README of KSYNC's repository here: **[https://github.com/KYVENetwork/ksync](https://github.com/KYVENetwork/ksync)**
