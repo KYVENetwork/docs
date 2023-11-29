@@ -69,7 +69,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/KSYNC",
+            to: "/ksync",
             from: [
               "/tools/KSYNC/overview",
               "/tools/KSYNC/installation",
