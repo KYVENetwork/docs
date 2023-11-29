@@ -51,7 +51,7 @@ const config = {
     },
     errorMsg: "error",
   },
-  clientModules: [require.resolve('./globalClientModule.ts')],
+  clientModules: [require.resolve("./globalClientModule.ts")],
   scripts: [
     {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
@@ -59,9 +59,28 @@ const config = {
       "data-project-name": "KYVE",
       "data-project-color": "#050D0B",
       "data-project-logo":
-          "https://user-images.githubusercontent.com/62398724/137493477-63868209-a19b-4efa-9413-f06d41197d6d.png",
+        "https://user-images.githubusercontent.com/62398724/137493477-63868209-a19b-4efa-9413-f06d41197d6d.png",
       async: true,
     },
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            to: "/ksync",
+            from: [
+              "/tools/KSYNC/overview",
+              "/tools/KSYNC/installation",
+              "/tools/KSYNC/usage",
+              "/tools/KSYNC/protocol_validators",
+              "/tools/KSYNC/settings",
+            ],
+          },
+        ],
+      },
+    ],
   ],
   presets: [
     [
@@ -69,7 +88,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         gtag: {
-          trackingID: 'G-SY5FWZVWK2',
+          trackingID: "G-SY5FWZVWK2",
           anonymizeIP: true,
         },
         docs: {
@@ -120,9 +139,9 @@ const config = {
       },
       footer: {
         logo: {
-          alt: 'KYVE logo',
-          src: 'img/favicon.ico',
-          href: 'https://docs.kyve.network',
+          alt: "KYVE logo",
+          src: "img/favicon.ico",
+          href: "https://docs.kyve.network",
         },
         style: "dark",
         links: [
@@ -158,7 +177,7 @@ const config = {
                 label: "YouTube",
                 href: "https://www.youtube.com/channel/UCThrQRlVd2KKy2-e0tBgfpQ",
               },
-            ]
+            ],
           },
           {
             title: "More",
@@ -178,12 +197,12 @@ const config = {
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: '08VTEK2AEZ',
+        appId: "08VTEK2AEZ",
 
         // Public API key: it is safe to commit it
-        apiKey: 'd42641774cb613121c37dcd07732c587',
+        apiKey: "d42641774cb613121c37dcd07732c587",
 
-        indexName: 'kyve',
+        indexName: "kyve",
 
         contextualSearch: true,
         searchParameters: {},
