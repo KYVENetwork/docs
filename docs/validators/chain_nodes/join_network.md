@@ -62,13 +62,13 @@ mv genesis.json ~/.kyve/config/
 Download the Korellia genesis file (207 KB)
 
 ```bash
-wget https://files.kyve.network/korellia/genesis.json
+wget https://files.kyve.network/korellia-2/genesis.json
 ```
 
 verify the correctness of the genesis configuration via
 
 ```shell
-echo "4298308739a5025804e7f83cb01456a9edee507c79f92a179f88058669b0fdfd  genesis.json" | sha256sum -c
+echo "c9c05363d5c535a1b2a9ff51ec63c878fad26e081f1fecf1d011a92dbbeeabbf  genesis.json" | sha256sum -c
 ```
 
 and move the genesis file to the config directory
