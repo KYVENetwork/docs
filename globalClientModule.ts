@@ -1,7 +1,7 @@
 const BCPAnalytics = require("bcp-analytics").default;
 
 if (typeof window !== "undefined") {
-  new BCPAnalytics({ debug: true })
+  new BCPAnalytics()
     .registerSegment({
       url: "https://apm.kyve.network",
     })
