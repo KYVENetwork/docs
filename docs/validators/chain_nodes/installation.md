@@ -17,7 +17,7 @@ table shows the upgrade block height for a given version:
 | [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://testnet.mintscan.io/kyve-testnet/blocks/1115111) | [826000](https://mintscan.io/kyve/blocks/826000)   |
 | [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://testnet.mintscan.io/kyve-testnet/blocks/1502502) | [1135000](https://mintscan.io/kyve/blocks/1135000) |
 | [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://testnet.mintscan.io/kyve-testnet/blocks/2341100) | [2061100](https://mintscan.io/kyve/blocks/2061100) |
-| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://testnet.mintscan.io/kyve-testnet/blocks/4185500) | Planned for Dec 5th 2023                           |
+| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://testnet.mintscan.io/kyve-testnet/blocks/4185500) | [3908000](https://mintscan.io/kyve/blocks/3908000) |
 
 For the Korellia devnet there is no version map. Only the latest version via
 blocksync is supported.
@@ -110,40 +110,36 @@ After the download was done, verify that it was successful:
 
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-    Since the source code of korellia is still close source the binaries have to be obtained by simply downloading them.
-    
-    Here is a list for every supported OS with the current version <code>v0.8.0</code><br/><br/>
+    Korellia does not follow any release schedule. Usually it's in sync with the latest
+    stable release branch and it uses the <code>kaon</code> build environment.
+    Here is a list for every supported OS with the current version <code>v1.4.0</code><br/><br/>
 
 **linux/amd64**
 
 ```bash
-wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_linux_amd64.tar.gz
-tar -xvzf kyved_linux_amd64.tar.gz
-mv chaind kyved
+wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_linux_amd64.tar.gz
+tar -xvzf kyved_kaon_linux_amd64.tar.gz
 ```
 
 **linux/arm64**
 
 ```bash
-wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_linux_arm64.tar.gz
-tar -xvzf kyved_linux_arm64.tar.gz
-mv chaind kyved
+wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_linux_arm64.tar.gz
+tar -xvzf kyved_kaon_linux_arm64.tar.gz
 ```
 
 **darwin/amd64**
 
 ```bash
-wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_darwin_amd64.tar.gz
-tar -xvzf kyved_darwin_amd64.tar.gz
-mv chaind kyved
+wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_darwin_amd64.tar.gz
+tar -xvzf kyved_kaon_darwin_amd64.tar.gz
 ```
 
 **darwin/arm64**
 
 ```bash
-wget https://s3.eu-central-1.amazonaws.com/files.kyve.network/chain/v0.8.0/kyved_darwin_arm64.tar.gz
-tar -xvzf kyved_darwin_arm64.tar.gz
-mv chaind kyved
+wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_darwin_arm64.tar.gz
+tar -xvzf kyved_kaon_darwin_arm64.tar.gz
 ```
 
 After the installation is done, verify that it was successful:
