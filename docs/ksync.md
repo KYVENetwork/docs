@@ -105,36 +105,142 @@ target height. KSYNC will automatically exit once that height is reached.
 ksync block-sync --binary="/path/to/<binaryd>" --source=<source-name> --target-height=<height>
 ```
 
+#### Syncing from genesis with Cosmovisor
+
+If you want to sync from genesis it is often recommended to sync with [Cosmovisor](https://docs.cosmos.network/main/build/tooling/cosmovisor) so you don't have to manually upgrade everytime. For this reason KSYNC also supports the Cosmovisor. You can
+simply instead of using the binaryd use the cosmovisor as binary.
+
+```bash
+ksync block-sync --binary="/path/to/cosmovisor" --source=<source-name>
+```
+
+It is important to note that this command alone will not automatically upgrade, KSYNC will always exit once an upgrade is reached. To automatically upgrade you need to specify a systemd process in order to restart the process. During the restart
+cosmovisor will pick the upgrade binary and KSYNC can continue to block-sync. The systemd config file should look like this:
+
+```
+[Unit]
+Description=KSYNC deamon supervising the ksync sync process
+After=network-online.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=$HOME
+ExecStart=$HOME/ksync block-sync --binary="/path/to/cosmovisor" --source=<source> -y
+Restart=always
+RestartSec=10s
+LimitNOFILE=infinity
+Environment="DAEMON_NAME=<binary>"
+Environment="DAEMON_HOME=$HOME/.<binary>"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=false"
+Environment="DAEMON_LOG_BUFFER_SIZE=512"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
+[Install]
+WantedBy=multi-user.target
+```
+
 #### Example
 
-Use _block-sync_ to sync your Osmosis node with validated KYVE data to height `42,000`:
+Sync Archway from genesis up to live height and upgrade automatically.
 
-To _block-sync_ Osmosis you have to download and set up the correct Osmosis binary. To sync from genesis the version `v3.1.0` has
-to be used. You can download them [here](https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0) or build them from source: [https://github.com/osmosis-labs/osmosis](https://github.com/osmosis-labs/osmosis)
+To _state-sync_ Archway you have to download and set up the correct Archway binary. To sync from genesis the version `v1.0.1` has
+to be used. You can download them [here](https://github.com/archway-network/archway/releases/tag/v1.0.1) or build them from source: [https://github.com/archway-network/archway](https://github.com/archway-network/archway)
 
 Verify installation with:
 
 ```bash
-./osmosisd version
-3.1.0
+./archwayd version
+1.0.1
 ```
 
 After the installation, init the config:
 
 ```bash
-./osmosisd init <your-moniker> --chain-id osmosis-1
+./archwayd init <your-moniker> --chain-id archway-1
 ```
 
 Download the genesis:
 
 ```bash
-wget -O ~/.osmosisd/config/genesis.json https://github.com/osmosis-labs/networks/raw/main/osmosis-1/genesis.json
+wget -qO- https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz | zcat > ~/.archway/config/genesis.json
 ```
 
-Now that the binary is properly installed, KSYNC can already be started:
+Install or download the Cosmovisor binary from [here](https://github.com/cosmos/cosmos-sdk/releases?q=cosmovisor&expanded=true) and create the following directories:
 
 ```bash
-ksync block-sync --binary="/path/to/osmosisd" --source="osmosis" --target-height=42000
+mkdir -p "${HOME}"/.archway/cosmovisor/genesis/bin
+mkdir "${HOME}"/.archway/cosmovisor/upgrades
+```
+
+Then copy the archwayd binary to the genesis/bin folder:
+
+```bash
+cp "${GOPATH}"/bin/archwayd "${HOME}"/.archway/cosmovisor/genesis/bin
+```
+
+Furthermore, you can already create and download the upgrade binaries like this:
+
+```bash
+mkdir -p "${HOME}"/.archway/cosmovisor/upgrades/v2.0.0/bin
+cp "${GOPATH}"/bin/archwayd_v2 "${HOME}"/.archway/cosmovisor/upgrades/v2.0.0/bin
+
+mkdir -p "${HOME}"/.archway/cosmovisor/upgrades/v4.0.0/bin
+cp "${GOPATH}"/bin/archwayd_v4 "${HOME}"/.archway/cosmovisor/upgrades/v4.0.0/bin
+```
+
+Now you can create the systemd service file with:
+
+```bash
+sudo nano /etc/systemd/system/ksync.service
+```
+
+and add the following content by making sure to change the &lt;your-user&gt;, &lt;path-to-ksync&gt;, &lt;path-to-archway&gt; and &lt;path-to-cosmovisor&gt; with your values:
+
+```
+[Unit]
+Description=ksync
+After=network-online.target
+
+[Service]
+User=<your-user>
+ExecStart=/<path-to-ksync>/ksync block-sync --binary="<path-to-cosmovisor>/cosmovisor" --source=archway -y
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+Environment="DAEMON_NAME=archwayd"
+Environment="DAEMON_HOME=/<path-to-archway>/.archway"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=false"
+Environment="DAEMON_LOG_BUFFER_SIZE=512"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+You can now reload the systemctl daemon:
+
+```bash
+sudo -S systemctl daemon-reload
+```
+
+and enable KSYNC as a service:
+
+```bash
+sudo -S systemctl enable ksync
+```
+
+You can now start KSYNC by executing:
+
+```bash
+sudo systemctl start ksync
+```
+
+Make sure to check that the service is running by executing:
+
+```bash
+sudo journalctl -u ksync -f
 ```
 
 ### STATE-SYNC
