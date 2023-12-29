@@ -39,3 +39,17 @@ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+# How to contribute
+
+Generally, you can contribute via Pull Requests. The following branch conventions are required:
+
+- **feat/\***: for a new feature
+- **fix/\***: for fixing a bug
+- **refactor/\***: for improving code maintainability without changing any logic
+
+For committing new changes [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) have
+to be used.
+
+When your Pull Request is ready, it can be opened against the `main` branch. Once the owners have approved
+your Pull Request, your changes get merged.
