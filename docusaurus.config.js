@@ -59,7 +59,7 @@ const config = {
       "data-project-name": "KYVE",
       "data-project-color": "#050D0B",
       "data-project-logo":
-        "https://user-images.githubusercontent.com/62398724/137493477-63868209-a19b-4efa-9413-f06d41197d6d.png",
+        "https://docs.kyve.network/img/favicon.ico",
       async: true,
     },
   ],
