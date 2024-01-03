@@ -132,6 +132,10 @@ To verify that the KYSOR runs successfully just run
 After the successful installation of KYSOR it now needs to be initialized. Depending on the network you want to join a different
 configuration needs to be passed to the init options.
 
+:::caution
+Like for all Web3 projects, we always recommend using your own endpoints for optimal security and the independence of centralized architecture. This implies running your own KYVE chain node, you can find more information [here](/validators/chain_nodes/join_network).
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
