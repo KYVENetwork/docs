@@ -109,7 +109,7 @@ First, one needs to obtain a trusted height and hash of that height.
 One can go to a blockexplorer and use the values provided there. For example block 86783 can be viewed at: <a href="https://www.mintscan.io/kyve/blocks/86783">
 https://www.mintscan.io/kyve/blocks/86783 </a>
 
-To enable state-sync edit <code>config.yml</code> under the section <code>[statesync]</code>
+To enable state-sync edit <code>config.toml</code> under the section <code>[statesync]</code>
 
 ```toml
 [statesync]
@@ -140,7 +140,7 @@ First, one needs to obtain a trusted height and hash of that height.
 One can go to a blockexplorer and use the values provided there. For example block 325017 can be viewed at: <a href="https://testnet.mintscan.io/kyve-testnet/blocks/328549">
 https://testnet.mintscan.io/kyve-testnet/blocks/325017 </a>
 
-To enable state-sync edit <code>config.yml</code> under the section <code>[statesync]</code>
+To enable state-sync edit <code>config.toml</code> under the section <code>[statesync]</code>
 
 ```toml
 [statesync]
@@ -172,7 +172,7 @@ After that, one needs to obtain a trusted height and hash of that height.
 One can go to a blockexplorer and use the values provided there. For example block 5121641 can be viewed at: <a href="https://explorer.kyve.network/korellia/blocks/5121641">
 https://explorer.kyve.network/korellia/blocks/5121641 </a>
 
-To enable state-sync edit <code>config.yml</code> under the section <code>[statesync]</code>
+To enable state-sync edit <code>config.toml</code> under the section <code>[statesync]</code>
 
 ```toml
 [statesync]
