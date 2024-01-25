@@ -190,7 +190,7 @@ You can enable useful Prometheus metrics through the `--metrics` flag when runni
 supervysor init [...] --metrics --metrics-port=25500
 ```
 
-### Add fallback endpoints
+### Overwrite KYVE endpoints
 
 The supervysor retrieves the pool data from the KYVE blockchain. By default, it uses the following
 endpoints:
@@ -199,10 +199,10 @@ endpoints:
 - **Testnet (`kaon-1`)**: https://api.kaon.kyve.network
 - **Devnet (`korellia-2`)**: https://api.korellia.kyve.network
 
-These can be extended (comma separated string) by adding the flag `--fallback-endpoints`:
+These can be overwritten (more can be comma separated string) by adding the flag `--endpoints`:
 
 ```bash
-supervysor init [...] --fallback-endpoints="https://api-eu-1.kyve.network"
+supervysor init [...] --endpoints="https://api-eu-1.kyve.network,https://api.kyve.network"
 ```
 
 :::tip
