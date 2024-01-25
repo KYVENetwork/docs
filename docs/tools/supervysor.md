@@ -202,7 +202,7 @@ endpoints:
 These can be overwritten (more can be comma separated string) by adding the flag `--endpoints`:
 
 ```bash
-supervysor init [...] --endpoints="https://api-eu-1.kyve.network,https://api.kyve.network"
+supervysor init [...] --endpoints="<endpoint-1>,<endpoint-2>"
 ```
 
 :::tip
