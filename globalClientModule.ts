@@ -1,11 +1,11 @@
-// const BCPAnalytics = require("bcp-analytics").default;
+document.addEventListener("copy", () => {
+  const selection = document.getSelection();
 
-// if (typeof window !== "undefined") {
-//   new BCPAnalytics()
-//     .registerSegment({
-//       url: "https://apm.kyve.network",
-//     })
-//     .start();
-// }
+  if (selection && (window as any).dw) {
+    (window as any).dw.track("Content Copied", {
+      text: selection.toString(),
+    });
+  }
+});
 
 export default module;
