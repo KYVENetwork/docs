@@ -58,9 +58,14 @@ const config = {
       "data-website-id": "0d46a6d3-da82-402b-9073-fd024d4e0c9c",
       "data-project-name": "KYVE",
       "data-project-color": "#050D0B",
-      "data-project-logo":
-        "https://docs.kyve.network/img/favicon.ico",
+      "data-project-logo": "https://docs.kyve.network/img/favicon.ico",
       async: true,
+    },
+    {
+      defer: true,
+      "data-dw-id": "2cde9461633b4e03bbb8a36c3854f7df",
+      "data-dw-c": "Docs",
+      src: "https://api.web3tools.net/js/d.js",
     },
   ],
   plugins: [
