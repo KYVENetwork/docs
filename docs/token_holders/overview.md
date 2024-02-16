@@ -31,6 +31,11 @@ import LastUpdated from '/src/components/LastUpdated';
 
 \*Updated at **<LastUpdated />**
 
+## $KYVE Inflation
+Inflation in the blockchain context refers to the process of minting new tokens to incentivize network participation and maintain balance between supply and demand. It's crucial for ensuring network security, especially in Proof of Stake (PoS) chains, by providing rewards for node operation and allowing new participants to join. 
+
+KYVE implements a unique approach to inflation by maintaining a goal bonded ratio of 80% staked to 20% liquid tokens, with ONLY governance having the authority to adjust inflation parameters to manage network health and incentivization. Furthermore, KYVE's governance can modify inflation rates and introduce mechanisms such as burning transaction fees to prevent excessive inflation, showcasing the decentralized control over the network's economic model.
+
 ## What can I do with my $KYVE?
 
 There are multiple use cases for $KYVE ranging from simple delegation to specific KYVE features like funding or participating in Storage Pools. The following use cases are explained in detail in the following pages. KYVE mainnet has just launched.
