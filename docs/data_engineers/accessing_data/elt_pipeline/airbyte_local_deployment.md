@@ -8,6 +8,21 @@ sidebar_position: 1
 
 To experiment with the ELT pipeline via local [Airbyte](https://airbyte.com/) instance, let's first ensure your computer is configured correctly.
 
+### Mac
+
+1. Make sure you have Homebrew installed. If not you can follow the instructions listed [here](https://brew.sh/).
+
+2. Make sure you have Docker Desktop installed. If not you can install it with Homebrew in your terminal:
+
+   ```sh
+   brew install --cask docker
+   ```
+
+### Linux
+
+1. In order to install Docker and `docker-compose` on Linux, please follow the instructions
+   listed [here](https://docs.docker.com/engine/install/) and choose your Linux distribution. Remember to also run the post-installation steps listed [here](https://docs.docker.com/engine/install/linux-postinstall/).
+
 ### Windows
 
 For Windows users, the Windows Subsystem for Linux 2 (WSL2) must be installed. You must be running Windows 10 version
@@ -45,22 +60,9 @@ For Windows users, the Windows Subsystem for Linux 2 (WSL2) must be installed. Y
 4. After you've set up WSL2 successfully, install `Docker desktop on Windows` by following the
    steps [here](https://docs.docker.com/desktop/install/windows-install/).
 
-### Mac
-
-1. Make sure you have Homebrew installed. If not you can follow the instructions listed [here](https://brew.sh/).
-
-2. Make sure you have Docker Desktop installed. If not you can install it with Homebrew in your terminal:
-
-   ```sh
-   brew install --cask docker
-   ```
-
-### Linux
-
-1. In order to install Docker and `docker-compose` on Linux, please follow the instructions
-   listed [here](https://docs.docker.com/engine/install/) and choose your Linux distribution. Remember to also run the post-installation steps listed [here](https://docs.docker.com/engine/install/linux-postinstall/).
-
 ## Local Deployment
+
+### Prerequisites
 
 In this step, we'll deploy Airbyte locally on your machine. Make sure you have installed Docker and Docker Compose on your system as shown in the [Overview section](overview.md).
 
@@ -69,7 +71,7 @@ To deploy Airbyte locally, check out the KYVE Airbyte fork
 ```sh
 git clone https://github.com/KYVENetwork/airbyte
 cd airbyte
-git checkout feat/mainnet-support
+git checkout release/0.3.0
 ```
 
 Then start Airbyte locally by running
@@ -90,19 +92,7 @@ When you first access the Website, you will be directed to the onboarding screen
 
 <img src="/img/elt/airbyte_preferences.png" alt="Airbyte Preferences" width="500px;" />
 
-### Load KYVE source
-
-You can browse on the `Sources` page and search for the **integrated** KYVE source.
-
-<img src="/img/elt/airbyte_source_page.png" alt="Airbyte Source Page" />
-
-:::note
-
-For using the latest KYVE source with custom modification you should build and load the `source-kyve` manually. See the following section for the instructions.
-
-:::
-
-### Custom-build KYVE source
+### 1. Custom-build KYVE source (recommended)
 
 If you wish to test a modified version of the KYVE source connector, follow these steps to build the connector and load it into Airbyte:
 
@@ -131,3 +121,16 @@ If you wish to test a modified version of the KYVE source connector, follow thes
 
    <br></br>
    <img src="/img/elt/airbyte_new_connector2.jpg" alt="Airbyte Add New Connector" />
+
+
+### 2. Load KYVE source
+
+You can browse on the `Sources` page and search for the **integrated** KYVE source.
+
+<img src="/img/elt/airbyte_source_page.png" alt="Airbyte Source Page" />
+
+:::note
+
+For using the latest KYVE source with custom modification you should build and load the `source-kyve` manually. See the following section for the instructions.
+
+:::
