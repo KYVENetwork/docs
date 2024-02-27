@@ -63,7 +63,7 @@ import LastUpdated from '/src/components/LastUpdated';
 
 \*Updated at **<LastUpdated />**
 
-The protocol slashing parameters can only be updated via the governance. The slashed $KYVE will get transferred to the community pool.
+The protocol slashing parameters can only be updated via the governance. The slashed \$KYVE will get transferred to the community pool.
 
 ## Calculation
 
@@ -71,20 +71,20 @@ In order to understand the slashing calculation the following example can be use
 are used.
 
 ```
-Node delegation = 100,000 $KYVE
+Node delegation = 100,000 \$KYVE
 Upload slash    = 5%
 Vote slash      = 2%
 Timeout slash   = 0.05%
 
 # Timeout slash
-Slash amount = 100,000 $KYVE * 0.0005 = 50 $KYVE
-Remaining delegation = 100,000 $KYVE - 100,000 $KYVE * 0.0005 = 99,950 $KYVE
+Slash amount = 100,000 \$KYVE * 0.0005 = 50 \$KYVE
+Remaining delegation = 100,000 \$KYVE - 100,000 \$KYVE * 0.0005 = 99,950 \$KYVE
 
 # Vote slash
-Slash amount = 100,000 $KYVE * 0.02 = 2000 $KYVE
-Remaining delegation = 100,000 $KYVE - 100,000 $KYVE * 0.02 = 98,000 $KYVE
+Slash amount = 100,000 \$KYVE * 0.02 = 2000 \$KYVE
+Remaining delegation = 100,000 \$KYVE - 100,000 \$KYVE * 0.02 = 98,000 \$KYVE
 
 # Upload slash
-Slash amount = 100,000 $KYVE * 0.05 = 5000 $KYVE
-Remaining delegation = 100,000 $KYVE - 100,000 $KYVE * 0.05 = 95,000 $KYVE
+Slash amount = 100,000 \$KYVE * 0.05 = 5000 \$KYVE
+Remaining delegation = 100,000 \$KYVE - 100,000 \$KYVE * 0.05 = 95,000 \$KYVE
 ```

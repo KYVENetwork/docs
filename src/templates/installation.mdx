@@ -1,109 +1,8 @@
----
-sidebar_position: 3
----
 
-# Installation
+import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
+import CodeBlock from "@theme/CodeBlock";
 
-This section will deal with the installation for the Gaia Full Node and the KYVE protocol validator. The Gaia Full
-Node will act as the source for the KYVE protocol validator and is **required**. You can either run the Gaia node on
-a seperate machine or run it on the same machine with the KYVE protocol together.
-
-:::danger
-Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
-:::
-
-## Install Gaia full node
-
-The gaia binary with the version `v4.2.1` has to be installed. You can follow the official installation instructions [here](https://hub.cosmos.network/main/getting-started/installation.html) or download the binary directly from [here](https://github.com/cosmos/gaia/releases/tag/v4.2.1).
-
-:::danger
-If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
-
-**For gaiad v4.2.1 it is go15**
-:::
-
-You can verify the successful installation with
-
-```
-./gaiad version
-4.2.1
-```
-
-In order to setup the gaia config first choose a moniker and init gaia:
-
-```bash
-./gaiad init <your-moniker> --chain-id cosmoshub-4
-```
-
-To install the genesis file execute the following command:
-
-```bash
-wget https://raw.githubusercontent.com/cosmos/mainnet/master/genesis/genesis.cosmoshub-4.json.gz
-gzip -d genesis.cosmoshub-4.json.gz
-mv genesis.cosmoshub-4.json ~/.gaia/config/genesis.json
-```
-
-Peers can be added via this addrbook which can be retrieved here:
-
-```bash
-wget https://dl2.quicksync.io/json/addrbook.cosmos.json
-mv addrbook.cosmos.json ~/.gaia/config/addrbook.json
-chmod 666 ~/.gaia/config/addrbook.json
-```
-
-**TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/cosmos
-
-### Configuration
-
-Due to the size of the `block_results` response, it is **required** to set the following in your `~/.gaia/config/config.toml`:
-
-```toml
-timeout_broadcast_tx_commit = "120s"
-```
-
-For pruning the following settings are recommended to decrease the disk usage:
-
-`~/.gaia/config/config.toml`
-
-```toml
-[tx_index]
-
-indexer = "null"
-```
-
-`~/.gaia/config/app.toml`
-
-```toml
-pruning = "everything"
-
-index-events = [""]
-```
-
-Finally, the node can be started:
-
-**NOTE**: For some users it might be required to increase the limit of open files on your system with `ulimit -n 65536`
-
-**INFO**: Since the genesis file is quite big (over 100MB) the starting process can take a serveral minutes before the node starts to sync blocks.
-
-```bash
-./gaiad start --x-crisis-skip-assert-invariants
-```
-
-Now you have to sync blocks until the latest summary of the pool is reached. For example
-if the latest pool summary is 6,000,000 you can check if the node has synced the blocks until
-that height with:
-
-```bash
-curl http://localhost:26657/block?height=6000000
-```
-
-If it returns a valid block response you can continue with starting the actual KYVE protocol validator
-and start participating in the validation and archival process.
-
-**TIP**: to save storage space you can start pruning blocks manually after they have been archived
-by the pool since after that they are not needed anymore.
-
-**TIP**: to make it easier during chain upgrades we also recommend running the chain with _cosmosvisor_. You can find official instructions [here](https://hub.cosmos.network/main/hub-tutorials/upgrade-node.html#cosmovisor)
+export const pool = () => useCurrentSidebarCategory().customProps;
 
 ## Install KYVE protocol validator
 
@@ -136,8 +35,8 @@ configuration needs to be passed to the init options.
 Like for all Web3 projects, we always recommend using your own endpoints for optimal security and the independence of centralized architecture. This implies running your own KYVE chain node, you can find more information [here](/validators/chain_nodes/join_network).
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
@@ -213,84 +112,53 @@ There should be a `config.toml` file where the configurations you just defined a
 
 Now that KYSOR is initialized we move on to the next step. For every pool you run on a _valaccount_ has to be created. A new valaccount with a new mnemonic can be created in the following way:
 
+export function TabContent(props) {
+  const tab = props.tab;
+  return (
+    <>
+      <CodeBlock language="bash">
+        {`./kysor valaccounts create \\\n`}
+        {`--name '${pool().val_name}' \\\n`}
+        {`--pool ${pool().networks[tab]} \\\n`}
+        {`--storage-priv \"$(cat path/to/arweave.json)\" \\\n`}
+        {`--metrics`}
+      </CodeBlock>
+      <p>
+        This will create a <code>{pool().val_name + ".toml"}</code> file under
+        the KYSOR home directory in <code>~/.kysor/valaccounts/</code> where all
+        the other valaccounts are stored. There you can view your valaccount
+        config.
+      </p>
+      <p>
+        If you want to create a valaccount from an existing mnemonic just add
+        the <code>--recover</code> flag like this:
+      </p>
+      <CodeBlock language="bash">
+        {`./kysor valaccounts create \\\n`}
+        {`--name '${pool().val_name}' \\\n`}
+        {`--pool ${pool().networks[tab]} \\\n`}
+        {`--storage-priv \"$(cat path/to/arweave.json)\" \\\n`}
+        {`--metrics \\\n`}
+        {`--recover`}
+      </CodeBlock>
+      <p>
+        This will prompt you to enter the mnemonic you want to import. More help
+        on how to manage valaccounts can be found with{" "}
+        <code>./kysor valaccounts --help</code>
+      </p>
+    </>
+  );
+}
+
 <Tabs groupId="network">
-  <TabItem value="kyve" label="Mainnet">
-
-```bash
-./kysor valaccounts create \
---name 'cosmoshub' \
---pool 0 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics
-```
-
-This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
-
-If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
-
-```bash
-./kysor valaccounts create \
---name cosmoshub \
---pool 0 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics \
---recover
-```
-
-This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
-
+  <TabItem value="Mainnet" label="Mainnet">
+    <TabContent tab="Mainnet" />
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-
-```bash
-./kysor valaccounts create \
---name 'cosmoshub' \
---pool 0 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics
-```
-
-This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
-
-If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
-
-```bash
-./kysor valaccounts create \
---name cosmoshub \
---pool 0 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics \
---recover
-```
-
-This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
-
+    <TabContent tab="Kaon" />
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-
-```bash
-./kysor valaccounts create \
---name 'cosmoshub' \
---pool 24 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics
-```
-
-This will create a `cosmoshub.toml` file under the KYSOR home directory in `~/.kysor/valaccounts/` where all the other valaccounts are stored. There you can view your valaccount config.
-
-If you want to create a valaccount from an existing mnemonic just add the `--recover` flag like this:
-
-```bash
-./kysor valaccounts create \
---name cosmoshub \
---pool 24 \
---storage-priv "$(cat path/to/arweave.json)" \
---metrics \
---recover
-```
-
-This will prompt you to enter the mnemonic you want to import. More help on how to manage valaccounts can be found with `./kysor valaccounts --help`
-
+    <TabContent tab="Korellia" />
   </TabItem>
 </Tabs>
 
@@ -381,9 +249,9 @@ cd kyvejs
 If you want to build a specific version you can checkout the tag and continue from the version branch.
 If you want to build the latest version you can skip this step.
 
-```bash
-git checkout tags/@kyvejs/tendermint-bsync@x.x.x -b x.x.x
-```
+<CodeBlock language="bash">
+  {`git checkout tags/${pool().runtime}@x.x.x -b x.x.x`}
+</CodeBlock>
 
 After you have cloned the project and have the desired version the dependencies can be installed and the project build:
 
@@ -396,10 +264,10 @@ Finally, you can build the runtime binaries.
 
 **INFO**: During the binary build log warnings can occur. You can safely ignore them.
 
-```bash
-cd integrations/tendermint-bsync
-yarn build:binaries
-```
+<CodeBlock language="bash">
+  {`cd integrations/${pool().runtime.split("/").slice(1).join("/")}\n`}
+  {`yarn build:binaries`}
+</CodeBlock>
 
 You can verify the installation with printing the version:
 

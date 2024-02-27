@@ -81,16 +81,16 @@ solution. More storage providers are to be added in the near future.
 Interested in [storing KYVE data ?](/data_engineers/adding_data/index.md)
 :::
 
-## $KYVE
+## \$KYVE
 
-To tie the network together, KYVE has its own native coin, $KYVE, which has multiple uses:
+To tie the network together, KYVE has its own native coin, \$KYVE, which has multiple uses:
 
-- On the chain level, $KYVE is used for staking and delegating, securing the network through Proof of Stake.
-- On the protocol level, $KYVE is used for funding, staking, and delegating, providing security for uploaded data.
-- On the governance level, $KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
+- On the chain level, \$KYVE is used for staking and delegating, securing the network through Proof of Stake.
+- On the protocol level, \$KYVE is used for funding, staking, and delegating, providing security for uploaded data.
+- On the governance level, \$KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in
   the evolution and growth of KYVE.
 
-TGE was on March 14th, 2023. Visit our [tokenomics](https://www.kyve.network/tokenomics) to find out more regarding $KYVE utility, claims, and unlocks. Find more about $KYVE via [CoinMarketCap](https://coinmarketcap.com/currencies/kyve-network).
+TGE was on March 14th, 2023. Visit our [tokenomics](https://www.kyve.network/tokenomics) to find out more regarding \$KYVE utility, claims, and unlocks. Find more about \$KYVE via [CoinMarketCap](https://coinmarketcap.com/currencies/kyve-network).
 
 ## Partnered with KYVE
 

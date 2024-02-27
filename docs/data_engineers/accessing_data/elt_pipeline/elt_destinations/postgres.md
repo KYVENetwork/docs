@@ -81,7 +81,7 @@ Here, we can recommend Osmosis (`pool_id: 1`) or Archway (`pool_id: 2`)
 :::
 
 
-Now you're ready to create the connection in Airbyte (<http://localhost:8000/>).
+Now you're ready to create the connection in Airbyte (\<http://localhost:8000/\>).
 
 1. Set up the source.
 

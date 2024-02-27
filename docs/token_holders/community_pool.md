@@ -21,7 +21,7 @@ import LastUpdated from '/src/components/LastUpdated';
 
 ## Earnings
 
-The community pool has multiple channels where $KYVE is transferred to the pool. The following are listed below:
+The community pool has multiple channels where \$KYVE is transferred to the pool. The following are listed below:
 
 - `Community Tax`: This tax is deducted on the consensus layer before the current block reward gets distributed to the network participants
 - `Network Fee`: This fee is deducted on the protocol layer before the current bundle reward gets distributed to the network participants

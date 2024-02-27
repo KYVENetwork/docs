@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Networks
 
-Currently, KYVE has three networks. The **KYVE mainnet**, which uses the official $KYVE and provides truly trustless data, and two testnets; **Korellia** and **Kaon**, where the native currency of $tKYVE has no value and the data is not safe to use.
+Currently, KYVE has three networks. The **KYVE mainnet**, which uses the official \$KYVE and provides truly trustless data, and two testnets; **Korellia** and **Kaon**, where the native currency of $tKYVE has no value and the data is not safe to use.
 
 ## Mainnet - KYVE
 

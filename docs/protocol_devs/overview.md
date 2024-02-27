@@ -25,7 +25,7 @@ KYVE has two main layers of concern: the _consensus layer_ and the _protocol lay
 ### Chain Layer
 
 The consensus layer consists of the KYVE blockchain and is the backbone of KYVE. The KYVE blockchain is built with the [Cosmos SDK](https://cosmos.network/) and uses [Tendermint](https://tendermint.com/) as the consensus engine. This blockchain is run by independent nodes we call _consensus validators_ since they're
-running on the chain level. The native currency of the KYVE chain is $KYVE. It secures the chain and allows consensus validators to stake and other users to delegate to them.
+running on the chain level. The native currency of the KYVE chain is \$KYVE. It secures the chain and allows consensus validators to stake and other users to delegate to them.
 
 Because the KYVE blockchain is a Cosmos app chain the custom KYVE logic needed for data validation and archival is directly implemented into the blockchain itself.
 

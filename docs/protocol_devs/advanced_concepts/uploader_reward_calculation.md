@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## Introduction
 
-To incentivize protocol validators to stay online and continue uploading and validating data nodes receive a reward in $KYVE for every valid bundle proposed. This reward depends on the size of the data uploaded, the specified operating cost of the pool and the share of the inflation the pool receives. Once the total bundle reward is charged from the funders and the inflation share ([Inflation Splitting](/protocol_devs/advanced_concepts/inflation_splitting.md)) the reward gets distributed to all stakeholders which are the treasury, the uploader and its delegators.
+To incentivize protocol validators to stay online and continue uploading and validating data nodes receive a reward in \$KYVE for every valid bundle proposed. This reward depends on the size of the data uploaded, the specified operating cost of the pool and the share of the inflation the pool receives. Once the total bundle reward is charged from the funders and the inflation share ([Inflation Splitting](/protocol_devs/advanced_concepts/inflation_splitting.md)) the reward gets distributed to all stakeholders which are the treasury, the uploader and its delegators.
 
 ## Bundle Reward
 
@@ -18,7 +18,7 @@ The network fee collects a part of the bundle reward and transfers it to the com
 
 ### Storage Cost
 
-The storage cost is a param in `x/bundles` and determines how much $KYVE the uploader should receive for uploading a specific size
+The storage cost is a param in `x/bundles` and determines how much \$KYVE the uploader should receive for uploading a specific size
 of data. This gets deducted after the network fee and credited directly to the uploader and **not** its delegators.
 
 ### Commission

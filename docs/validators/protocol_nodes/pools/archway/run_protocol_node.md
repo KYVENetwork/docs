@@ -69,10 +69,10 @@ Now that the node is already running it just needs the authorization from it's m
 
 A dialog should open where you should select the pool you want to join (here Archway). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
 
-For the last option you can do a one time transfer so that the valaccount has some $KYVE to pay for transaction fees. We would recommend sending 100 $KYVE for the start which typically lasts for about 1 month.
+For the last option you can do a one time transfer so that the valaccount has some \$KYVE to pay for transaction fees. We would recommend sending 100 \$KYVE for the start which typically lasts for about 1 month.
 
 :::caution
-**IMPORTANT**: Make sure that the valaccount always has enough $KYVE to pay for transaction fees, otherwise you are again in danger of receiving a timeout slash.
+**IMPORTANT**: Make sure that the valaccount always has enough \$KYVE to pay for transaction fees, otherwise you are again in danger of receiving a timeout slash.
 :::
 
 Once you have joined the pool the node should continue in about ~10 seconds. After that you are successfully participating in a pool.

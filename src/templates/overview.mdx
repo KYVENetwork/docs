@@ -1,0 +1,62 @@
+import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
+export const pool = () => useCurrentSidebarCategory().customProps;
+
+export function formatPoolUrl(pool, id) {
+  let baseUrl = "https://app.kyve.network/#/pools/";
+  switch (pool) {
+    case "Kaon":
+      baseUrl = "https://app.kaon.kyve.network/#/pools/";
+      break;
+    case "Korellia":
+      baseUrl = "https://app.korellia.kyve.network/#/pools/";
+      break;
+  }
+  return (
+    <ul key={id}>
+      <li>
+        <a href={baseUrl + id}>{pool}</a> (Pool id: {id})
+      </li>
+    </ul>
+  );
+}
+
+<p>
+  This data pool validates and archives all blocks from {pool().name} and makes
+  them permanently available with Arweave and Bundlr.
+</p>
+
+## General
+
+- **Runtime**:
+  <span> {pool().runtime}</span>
+- **Data Source**:
+  <span> {pool().datasource}</span>
+- **Data**:
+  <span> {pool().data}</span>
+- **Storage Provider**:
+  <span> {pool().storage_provider}</span>
+- **Networks**
+  <div>
+    {Object.keys(pool().networks).map((key, index) =>
+      formatPoolUrl(key, pool().networks[key])
+    )}
+  </div>
+- **Min Hardware Requirements**
+  <div>
+    {pool().requirements.map((r, index) => (
+      <ul key={index}>
+        <li>{r}</li>
+      </ul>
+    ))}
+  </div>
+
+## Requirements
+
+TODO: link to the overall requirements
+
+## Goal
+
+<p>{pool().goal}</p>
+
+More information on how to perform block sync with KYVE visit the documention about
+KSYNC [here](https://github.com/KYVENetwork/ksync).

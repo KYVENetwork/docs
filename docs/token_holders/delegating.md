@@ -7,12 +7,12 @@ sidebar_position: 4
 Since there are two different types of nodes (consensus validator & protocol validator), there are also two types of delegation. Both actions help to secure the KYVE network and earn rewards, but both come with their respected risks.
 
 :::caution
-**ATTENTION**: Delegating might lead to the loss of your $KYVE. Please read this guide until the end in order to understand how to prevent this.
+**ATTENTION**: Delegating might lead to the loss of your \$KYVE. Please read this guide until the end in order to understand how to prevent this.
 :::
 
 ## Chain Delegation
 
-Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate to a consensus validator, you're $KYVE is bonded and used in the Delegated Proof of Stake protocol to produce and validate new blocks. By delegating to a consensus validator, you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed, a part of your delegation is also slashed.
+Chain delegation helps to secure the KYVE blockchain, which further secures the protocol layer that sits on top of it. When you delegate to a consensus validator, you're \$KYVE is bonded and used in the Delegated Proof of Stake protocol to produce and validate new blocks. By delegating to a consensus validator, you are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed, a part of your delegation is also slashed.
 
 ### How to delegate?
 
@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Staking' page, you can see a list of all consensus validators which are actively running in the network. After choosing a node based on certain factors like APY, commission or uptime you can delegate by clicking on the node itself or on the right button 'Delegate'.
+You can simply connect your wallet on the top right of the page and make sure you have some \$KYVE that you want to delegate. On the 'Staking' page, you can see a list of all consensus validators which are actively running in the network. After choosing a node based on certain factors like APY, commission or uptime you can delegate by clicking on the node itself or on the right button 'Delegate'.
 
 The following example shows the delegation with the Ping explorer on the Kaon network.
 
@@ -43,7 +43,7 @@ The following example shows the delegation with the Ping explorer on the Kaon ne
 
 ### Rewards
 
-In return for lending out $KYVE and putting them at risk in order to secure, the network delegators receive rewards in form of $KYVE. The most important parameter to estimate the rewards is the APY (Annual percentage yield), or also sometimes called APR (Annual percentage rate). This is an estimation of how much interest you can accrue in one year.
+In return for lending out \$KYVE and putting them at risk in order to secure, the network delegators receive rewards in form of \$KYVE. The most important parameter to estimate the rewards is the APY (Annual percentage yield), or also sometimes called APR (Annual percentage rate). This is an estimation of how much interest you can accrue in one year.
 
 :::caution
 **IMPORTANT**: The chain delegation APY is **never** a guarantee. It is simply an estimation for the next year based on current parameters.
@@ -71,12 +71,12 @@ import LastUpdated from '/src/components/LastUpdated';
 
 \*Updated at **<LastUpdated />**
 
-The chain slashing parameters can only be updated via the governance. The slashed $KYVE will get transferred to the community pool.
+The chain slashing parameters can only be updated via the governance. The slashed \$KYVE will get transferred to the community pool.
 
 ### Undelegation
 
 To prevent undelegation, and therefore mitigate slashings before the evidence of a malicious node can be found, there is an unbonding time.
-When a delegator starts undelegating, the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator. Max entries
+When a delegator starts undelegating, the \$KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the \$KYVE is automatically transferred to the delegator. Max entries
 defines how much undelegations and redelegations you can have in parallel.
 
 import ParamString from '/src/components/params/ParamString';
@@ -130,7 +130,7 @@ The easiest way to delegate into protocol validators is by using the KYVE web ap
   </TabItem>
 </Tabs>
 
-You can simply connect your wallet on the top right of the page and make sure you have some $KYVE that you want to delegate. On the 'Validators' page you can see a list of all protocol validators which are actively running in the network. After choosing a node based on certain factors like APY, commission or slashing history you can delegate by clicking on the node itself or on the right button 'Delegate'.
+You can simply connect your wallet on the top right of the page and make sure you have some \$KYVE that you want to delegate. On the 'Validators' page you can see a list of all protocol validators which are actively running in the network. After choosing a node based on certain factors like APY, commission or slashing history you can delegate by clicking on the node itself or on the right button 'Delegate'.
 
 The following example shows the delegation with the KYVE web app on the Korellia network.
 
@@ -140,7 +140,7 @@ The following example shows the delegation with the KYVE web app on the Korellia
 
 ### Rewards
 
-Again similar to chain delegation the delegator receives in return for lending out $KYVE and putting them at risk in order to secure the network and the process of data validation rewards in form of $KYVE. The most important parameter again is the APY (or APR).
+Again similar to chain delegation the delegator receives in return for lending out \$KYVE and putting them at risk in order to secure the network and the process of data validation rewards in form of \$KYVE. The most important parameter again is the APY (or APR).
 
 :::caution
 **IMPORTANT**: The protocol delegation APY is **never** a guarantee. It is simply an estimation for the next year based on current parameters.
@@ -167,12 +167,12 @@ The severity of a slash depends on the action of the node and on the network par
 
 \*Updated at **<LastUpdated />**
 
-The protocol slashing parameters can only be updated via the governance. The slashed $KYVE will get transferred to the community pool.
+The protocol slashing parameters can only be updated via the governance. The slashed \$KYVE will get transferred to the community pool.
 
 ### Undelegation
 
 To prevent undelegation and therefore mitigate slashings before a bundle proposal round is closed there is an undelegation time.
-When a delegator starts undelegating the $KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the $KYVE is automatically transferred to the delegator.
+When a delegator starts undelegating the \$KYVE are unbonding for the specified unbonding time. After the unbonding time is reached the \$KYVE is automatically transferred to the delegator.
 
 |                  | Mainnet                                                                                  | Kaon                                                                                     | Korellia                                                                                     |
 | ---------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |

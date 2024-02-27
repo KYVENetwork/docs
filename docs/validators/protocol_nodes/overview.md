@@ -10,7 +10,7 @@ Protocol validators are the backbone of a KYVE data pool. They are responsible f
 
 ## Responsibilities
 
-Since protocol validators are responsible for uploading and verifying data they need to do certain tasks in order to contribute to the network and earn $KYVE rewards. Their main role is uploading data to a Web3 storage provider like Arweave. Once a protocol validator has uploaded a piece of data inside a data pool, all the other protocol validators in that data pool gather that proposed data and validate it on their end. Only when the majority of protocol validators agree on the validity of the data the entry gets archived.
+Since protocol validators are responsible for uploading and verifying data they need to do certain tasks in order to contribute to the network and earn \$KYVE rewards. Their main role is uploading data to a Web3 storage provider like Arweave. Once a protocol validator has uploaded a piece of data inside a data pool, all the other protocol validators in that data pool gather that proposed data and validate it on their end. Only when the majority of protocol validators agree on the validity of the data the entry gets archived.
 
 Depending on their current role they have in a data pool they have different tasks. A protocol validator can be an [Uploader](/protocol_devs/general_concepts/uploader.md) or a [Validator](/protocol_devs/general_concepts/validator.md). More information can be found there.
 
@@ -53,7 +53,7 @@ A detailed step by step guide on how to run a protocol validator can be found in
 
 - **Requirements**
   - Get a machine with certain hardware requirements
-  - Choose a pool and verify that you own enough $KYVE to join
+  - Choose a pool and verify that you own enough \$KYVE to join
   - Setup a storage provider wallet and fund it
 - **Installation**
   - Install KYSOR (The Cosmovisor for protocol validators)
@@ -67,5 +67,5 @@ A detailed step by step guide on how to run a protocol validator can be found in
 - **Protocol Node**: A software client build and maintained by KYVE in order to participate in KYVE data pools which are responsible for uploading and validating data, therefore maintaining the network
 - **Runtime**: A prebuilt integration for specific data sources which can be grouped together. For example `@kyvejs/evm` handles the archival of multiple EVM based blockchains
 - **KYSOR**: The Cosmovisor of KYVE. Handles upgrading to newer protocol validators automatically and comes with a CLI which helps bootstrapping protocol validators.
-- **Validator account**: The main account which holds $KYVE and grants valaccounts the permission to earn rewards for them
-- **Valaccount**: The operating address of a protocol validator. It holds only some $KYVE to pay for transaction fees and basically does all the work (upload and validate data)
+- **Validator account**: The main account which holds \$KYVE and grants valaccounts the permission to earn rewards for them
+- **Valaccount**: The operating address of a protocol validator. It holds only some \$KYVE to pay for transaction fees and basically does all the work (upload and validate data)

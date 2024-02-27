@@ -17,9 +17,9 @@ quite big to finance the entire network especially in the starting phase. A shor
 </p>
 
 It actually starts to become unfair looking at the chain where
-the minted $KYVE from inflation is used to support the block reward. For this reason and to decrease the burden of the funders
+the minted \$KYVE from inflation is used to support the block reward. For this reason and to decrease the burden of the funders
 inflation splitting was introduced, which basically splits the inflation between chain and protocol, redirecting parts of the newly
-minted $KYVE to protocol and therefore supporting the bundle reward. A summary of this process can be taken from below:
+minted \$KYVE to protocol and therefore supporting the bundle reward. A summary of this process can be taken from below:
 
 <p align="center">
   <img width="50%" src="/img/with_inflation_split.png" />

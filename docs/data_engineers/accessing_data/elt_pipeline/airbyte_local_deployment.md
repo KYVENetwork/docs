@@ -78,7 +78,7 @@ Then start Airbyte locally by running
 ./run-ab-platform.sh
 ```
 
-After the deployment is complete, you'll be able to access the Airbyte UI at <http://localhost:8000/>.
+After the deployment is complete, you'll be able to access the Airbyte UI at \<http://localhost:8000/\>.
 The default credentials are:
 
 ```sh

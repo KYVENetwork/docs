@@ -1,0 +1,113 @@
+---
+sidebar_position: 3
+---
+import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
+import CodeBlock from "@theme/CodeBlock";
+import Installation from "/src/templates/installation.mdx";
+export const pool = () => useCurrentSidebarCategory().customProps;
+
+# Installation
+
+
+This section will deal with the installation for the Gaia Full Node and the KYVE protocol validator. The Gaia Full
+Node will act as the source for the KYVE protocol validator and is **required**. You can either run the Gaia node on
+a seperate machine or run it on the same machine with the KYVE protocol together.
+
+:::danger
+Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
+:::
+
+## Install Gaia full node
+
+The gaia binary with the version `v4.2.1` has to be installed. You can follow the official installation instructions [here](https://hub.cosmos.network/main/getting-started/installation.html) or download the binary directly from [here](https://github.com/cosmos/gaia/releases/tag/v4.2.1).
+
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For gaiad v4.2.1 it is go15**
+:::
+
+You can verify the successful installation with
+
+```
+./gaiad version
+4.2.1
+```
+
+In order to setup the gaia config first choose a moniker and init gaia:
+
+<CodeBlock language="bash">
+  {"./gaiad init <your-moniker> --chain-id " + pool().chainId}
+</CodeBlock>
+
+To install the genesis file execute the following command:
+
+```bash
+wget https://raw.githubusercontent.com/cosmos/mainnet/master/genesis/genesis.cosmoshub-4.json.gz
+gzip -d genesis.cosmoshub-4.json.gz
+mv genesis.cosmoshub-4.json ~/.gaia/config/genesis.json
+```
+
+Peers can be added via this addrbook which can be retrieved here:
+
+```bash
+wget https://dl2.quicksync.io/json/addrbook.cosmos.json
+mv addrbook.cosmos.json ~/.gaia/config/addrbook.json
+chmod 666 ~/.gaia/config/addrbook.json
+```
+
+**TIP**: You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/cosmos
+
+### Configuration
+
+Due to the size of the `block_results` response, it is **required** to set the following in your `~/.gaia/config/config.toml`:
+
+```toml
+timeout_broadcast_tx_commit = "120s"
+```
+
+For pruning the following settings are recommended to decrease the disk usage:
+
+`~/.gaia/config/config.toml`
+
+```toml
+[tx_index]
+
+indexer = "null"
+```
+
+`~/.gaia/config/app.toml`
+
+```toml
+pruning = "everything"
+
+index-events = [""]
+```
+
+Finally, the node can be started:
+
+**NOTE**: For some users it might be required to increase the limit of open files on your system with `ulimit -n 65536`
+
+**INFO**: Since the genesis file is quite big (over 100MB) the starting process can take a serveral minutes before the node starts to sync blocks.
+
+```bash
+./gaiad start --x-crisis-skip-assert-invariants
+```
+
+Now you have to sync blocks until the latest summary of the pool is reached. For example
+if the latest pool summary is 6,000,000 you can check if the node has synced the blocks until
+that height with:
+
+```bash
+curl http://localhost:26657/block?height=6000000
+```
+
+If it returns a valid block response you can continue with starting the actual KYVE protocol validator
+and start participating in the validation and archival process.
+
+**TIP**: to save storage space you can start pruning blocks manually after they have been archived
+by the pool since after that they are not needed anymore.
+
+**TIP**: to make it easier during chain upgrades we also recommend running the chain with _cosmosvisor_. You can find official instructions [here](https://hub.cosmos.network/main/hub-tutorials/upgrade-node.html#cosmovisor)
+
+<Installation />

@@ -20,7 +20,7 @@ Because of the nature of each type of validator there are many differences regar
 | --------------------------- |----------------------------------------------| -------------------------------------------- |
 | Task                        | find consensus on chain state                | find consensus on data validity              |
 | Available Slots             | 100                                          | pools x 50                                   |
-| Minimum $KYVE required      | more than lowest validator if slots are full | more than lowest validator if slots are full |
+| Minimum \$KYVE required      | more than lowest validator if slots are full | more than lowest validator if slots are full |
 | Min CPU requirements        | 2vCPU                                        | 1vCPU                                        |
 | Min RAM requirements        | 16 GB                                        | 2 GB                                         |
 | Minimum DISK requirements   | 250 GB                                       | 8 GB                                         |

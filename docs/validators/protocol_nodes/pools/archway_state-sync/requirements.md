@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol validators on the Archway // State-Sync pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol validators on the Archway // State-Sync pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of \$KYVE and other currencies.
 
 ## Supported OS
 
@@ -25,7 +25,7 @@ To run mainnet or testnet protocol validators, you will need a machine with the 
 
 ## Pool Delegation Requirements
 
-### Verify if you have enough $KYVE to participate
+### Verify if you have enough \$KYVE to participate
 
 Due to a limited number of validator slots in each pool, only the nodes with the highest delegation can claim
 a validator slot. You can only claim a validator slot if you have **more than the minimum delegation amount**.
@@ -34,11 +34,11 @@ To check the minimum delegation amount you can click on the tab `Validators` onc
 
 ![min delegation](/img/min_delegation.png)
 
-In this case, there are still 45 free validator slots, so you just have to have more than 0 $KYVE of delegation in order to participate. If the slots would be full and the minimum delegation would be, for example,
-300 $KYVE, you have to have **more** than 300 $KYVE delegated in your validator.
+In this case, there are still 45 free validator slots, so you just have to have more than 0 \$KYVE of delegation in order to participate. If the slots would be full and the minimum delegation would be, for example,
+300 \$KYVE, you have to have **more** than 300 \$KYVE delegated in your validator.
 
 :::caution
-**IMPORTANT**: If you don't have more $KYVE than the minimum delegation amount, you can not continue
+**IMPORTANT**: If you don't have more \$KYVE than the minimum delegation amount, you can not continue
 :::
 
 ## Storage Provider Requirements

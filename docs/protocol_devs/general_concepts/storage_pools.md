@@ -73,7 +73,7 @@ In order to payout protocol validators and incentivize them the pool needs funds
 they are interested in archiving the data the specific pool handles. This could be the project or the foundation behind
 a data source that wants its data to be permanently archived onto Arweave. Besides people interested in making the data
 permanent, anyone can become a funder. The only downside is that there are currently no rewards for becoming a funder.
-The opposite is the case; being a funder will cost you $KYVE.
+The opposite is the case; being a funder will cost you \$KYVE.
 
 Because of limited funding slots, only those who fund the highest amount can claim a funding slot. Currently, there are
 50 funding slots available per pool. If there are still funding slots available, you only need to fund more than 0
@@ -83,9 +83,9 @@ Once you outbid the current lowest funder, you claim his funding slot. The remai
 automatically transferred back to him. This mechanism ensures that only people with the highest interest in archiving
 the data can operate as a funder.
 
-### Basic $KYVE Flow
+### Basic \$KYVE Flow
 
-With the funds provided by a funder the flow of $KYVE can be summarized by the diagram below:
+With the funds provided by a funder the flow of \$KYVE can be summarized by the diagram below:
 
 <p align="center">
   <img width="70%" src="/img/pool_economics.png" />
@@ -101,7 +101,7 @@ community pool. You can find more information on the calculation of the uploader
 
 ### Keeping Delegators Incentivized
 
-Delegators are lending $KYVE to protocol validators to help secure the network and helping them to earn more rewards. Delegators have to trust protocol validators
+Delegators are lending \$KYVE to protocol validators to help secure the network and helping them to earn more rewards. Delegators have to trust protocol validators
 since they also receive a slash proportionally to their delegation. In return for putting the capital at risk delegators receive delegation rewards which are also funded by funders. These rewards are a certain fraction of the entire bundle reward, depending on the nodes commission. You can find more information about the commission
 [here](/protocol_devs/advanced_concepts/uploader_reward_calculation.md) and more details about the delegation distribution [here](/protocol_devs/advanced_concepts/delegation_reward_calculation.md).
 
@@ -171,7 +171,7 @@ operator has like server costs, transaction fees etc. in order to operate not in
 ### `min_delegation`
 
 The minimum delegation a data pool should have before it starts validating bundles. Used for security reasons to
-prevent for example only one node operator from proposing a bundle with a delegation of only 1 $KYVE. Unit is in ukyve.
+prevent for example only one node operator from proposing a bundle with a delegation of only 1 \$KYVE. Unit is in ukyve.
 
 ### `max_bundle_size`
 
@@ -185,7 +185,7 @@ disabled it can not validate bundles and is effectively paused. Only the governa
 
 ### `funders`
 
-An array of entries which keep track of users that funded a pool with $KYVE. For that the address and the current
+An array of entries which keep track of users that funded a pool with \$KYVE. For that the address and the current
 funding amount is stored.
 
 #### `address`

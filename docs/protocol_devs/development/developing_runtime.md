@@ -111,7 +111,7 @@ If that build succeeds you can start implementing your runtime logic.
 Since new data pools need to be tested heavily they start their journey on our Devnet Korellia. For this you can use the following proposal template or use the "Create Development Pool"-button in the Korellia web app ([https://app.korellia.kyve.network/#/pools](https://app.korellia.kyve.network/#/pools)).
 If the proposal is valid, it will be automatically voted 'yes' and your pool will be available 10 minutes after the proposal submission.
 
-To submit a proposal a minimum deposit of 1000 $KYVE is required. This amount will be returned to your wallet after the voting period is over.
+To submit a proposal a minimum deposit of 1000 \$KYVE is required. This amount will be returned to your wallet after the voting period is over.
 
 If the proposal is not automatically voted on or if you have any questions regarding the configuration, feel free to reach out
 to the KYVE Core Team via [Discord](https://discord.com/invite/kyve) or [Telegram](https://t.me/KYVENet).
@@ -174,7 +174,7 @@ If you're curious how a real [Pool](https://app.korellia.kyve.network/#/pools/30
 
 Once your pool and runtime are ready you can join your pool. For that simply use KYSOR (example [here](https://docs.kyve.network/validators/protocol_nodes/pools/cosmos_hub/installation#install-kyve-protocol-validator)) and follow the steps but just for your pool on Korellia.
 
-## $KYVE Faucet
+## \$KYVE Faucet
 
 To participate in the Testnet **Kaon** or the Devnet **Korellia**, you will need tokens that can be obtained through faucets.
 

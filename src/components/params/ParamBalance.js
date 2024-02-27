@@ -49,7 +49,7 @@ const ParamBalance = ({
 
   return (
     <span>
-      <strong>{data}</strong> $KYVE
+      <strong>{data}</strong> \$KYVE
     </span>
   );
 };

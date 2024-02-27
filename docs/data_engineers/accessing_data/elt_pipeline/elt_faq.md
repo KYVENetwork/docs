@@ -24,18 +24,10 @@ This error is most likely due to DNS resolution issues.
   
   <ol>
     <li>Open the terminal.</li>
-    <li>Edit the `/etc/resolv.conf` file using your preferred text editor. For example:
-      <pre><code>
-      sudo nano /etc/resolv.conf
-      </code></pre>
-      </li> 
-    <li>Add the following lines at the top of the file to set your DNS server to `1.1.1.1`:
-      <pre><code>nameserver 1.1.1.1</code></pre>
-    </li>
+    <li>Edit the `/etc/resolv.conf` file using your preferred text editor. For example:<pre><code>sudo nano /etc/resolv.conf</code></pre></li> 
+    <li>Add the following lines at the top of the file to set your DNS server to `1.1.1.1`:<pre><code>nameserver 1.1.1.1</code></pre></li>
     <li>Save the file and exit the text editor.</li>
-    <li>Restart your network manager or networking service to apply the changes. The command may vary depending on your Linux distribution. For example:
-      <pre><code>sudo systemctl restart network-manager</code></pre>
-    </li>
+    <li>Restart your network manager or networking service to apply the changes. The command may vary depending on your Linux distribution. For example:<pre><code>sudo systemctl restart network-manager</code></pre></li>
   </ol>
 
 </TabItem>

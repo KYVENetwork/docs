@@ -56,7 +56,7 @@ git checkout tags/<tag> -b <tag>
 make build
 ```
 
-Here the <code><tag\></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>. 
+Here the <code><tag/></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>. 
 For building v1.1.0 or later on needs to additionally define the environment, i.e. `make build ENV=mainnet`
 
 :::tip
@@ -96,7 +96,7 @@ git checkout tags/<tag> -b <tag>
 make build ENV=kaon
 ```
 
-Here the <code><tag\></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
+Here the <code><tag/></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
 
 :::tip
 **Note:** You can find the compiled binary under <code>chain/build/kyved</code>
