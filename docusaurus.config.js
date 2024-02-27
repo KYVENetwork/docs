@@ -5,8 +5,26 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from "prism-react-renderer";
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
+function defineSection(section, options = {}) {
+  return [
+    "@docusaurus/plugin-content-docs",
+    /** @type {import('@docusaurus/plugin-content-docs').Options} */
+    ({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+      path: `docs/${section}`,
+      routeBasePath: section,
+      id: section,
+      sidebarPath: "./sidebars.js",
+      breadcrumbs: true,
+      editUrl: "https://github.com/KYVENetwork/docs/tree/main",
+      ...options,
+    }),
+  ];
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -70,6 +88,10 @@ const config = {
     },
   ],
   plugins: [
+    defineSection("learn"),
+    defineSection("validators"),
+    defineSection("developers"),
+    defineSection("ksync"),
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -93,32 +115,34 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        gtag: {
-          trackingID: "G-SY5FWZVWK2",
-          anonymizeIP: true,
-        },
         docs: {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          routeBasePath: "/docs",
           sidebarPath: "./sidebars.js",
+          breadcrumbs: true,
+          path: "docs/home",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/KYVENetwork/docs/tree/main",
         },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
+        },
+        gtag: {
+          trackingID: "G-SY5FWZVWK2",
+          anonymizeIP: true,
         },
       }),
     ],
   ],
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
   themeConfig:
@@ -136,6 +160,26 @@ const config = {
           },
         },
         items: [
+          {
+            position: "left",
+            label: "Learn",
+            to: "/learn/introduction/overview",
+          },
+          {
+            position: "left",
+            label: "Validators",
+            to: "/validators/validators_overview",
+          },
+          {
+            position: "left",
+            label: "Developers",
+            to: "/developers/data_engineers/accessing_data/using_rest",
+          },
+          {
+            position: "left",
+            label: "KSYNC",
+            to: "/ksync",
+          },
           {
             href: "https://github.com/KYVENetwork",
             label: "GitHub",
