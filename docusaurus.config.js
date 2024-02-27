@@ -109,6 +109,17 @@ const config = {
         ],
       },
     ],
+    async function loadTailwind(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
   ],
   presets: [
     [
@@ -163,17 +174,17 @@ const config = {
           {
             position: "left",
             label: "Learn",
-            to: "/learn/introduction/overview",
+            to: "/learn",
           },
           {
             position: "left",
             label: "Validators",
-            to: "/validators/validators_overview",
+            to: "/validators",
           },
           {
             position: "left",
             label: "Developers",
-            to: "/developers/data_engineers/accessing_data/using_rest",
+            to: "/developers",
           },
           {
             position: "left",
@@ -181,18 +192,18 @@ const config = {
             to: "/ksync",
           },
           {
-            href: "https://github.com/KYVENetwork",
-            label: "GitHub",
+            href: "https://github.com/KYVENetwork/",
+            className: "pseudo-icon discord-icon",
+            position: "right",
+          },
+          {
+            href: "https://github.com/KYVENetwork/",
+            className: "pseudo-icon github-icon",
             position: "right",
           },
         ],
       },
       footer: {
-        logo: {
-          alt: "KYVE logo",
-          src: "img/favicon.ico",
-          href: "https://docs.kyve.network",
-        },
         style: "dark",
         links: [
           {

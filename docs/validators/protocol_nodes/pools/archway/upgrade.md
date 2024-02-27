@@ -56,7 +56,7 @@ The next step is to install the new upgrade binary in KYSOR. For that either dow
 build from source be sure to checkout the right version.
 
 :::tip
-**INFO**: Checkout the correct version in kyvejs like this: `git checkout tags/@kyvejs/tendermint@x.x.x -b x.x.x`. More info on building binaries from source can be found [here](/validators/protocol_nodes/pools/archway/installation.md#build-from-source)
+**INFO**: Checkout the correct version in kyvejs like this: `git checkout tags/@kyvejs/tendermint@x.x.x -b x.x.x`. More info on building binaries from source can be found [here](/validators/protocol_nodes/pools/archway/installation#build-from-source)
 :::
 
 Once you have either downloaded or build the binaries you have to place them in the correct path. For that create the following directories and move the binary there:

@@ -28,7 +28,7 @@ Then there are _protocol validators_ which always run on a specific _data pool_ 
 
 
 :::tip
-A more detailed overview and guides on how to run those nodes can be found [here](/validators/validators_overview)
+A more detailed overview and guides on how to run those nodes can be found [here](/validators)
 :::
 
 The diagram below shows the different types of nodes and where they are actually running:
