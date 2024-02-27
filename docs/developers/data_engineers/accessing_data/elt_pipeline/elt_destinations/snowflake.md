@@ -5,7 +5,7 @@ sidebar_position: 2
 # Snowflake Destination
 
 This page will guide you through setting up an ELT pipeline using Snowflake to fetch data from
-a [KYVE data pool](/introduction/architecture.md) and import it into a Snowflake data warehouse.
+a [KYVE data pool](/learn/introduction/architecture) and import it into a Snowflake data warehouse.
 
 ## About Snowflake
 

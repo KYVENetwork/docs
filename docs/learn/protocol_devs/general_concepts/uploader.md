@@ -18,7 +18,7 @@ There are two options for how a pool participant can become an uploader:
   transaction `MsgClaimUploaderRole` the first pool participant who calls this transaction gets the uploader role for
   the first round
 - Increasing the total delegation. Increasing it increases the probability of getting chosen as the next uploader in
-  each round. More details can be found [here](/protocol_devs/advanced_concepts/uploader_selection.md)
+  each round. More details can be found [here](/learn/protocol_devs/advanced_concepts/uploader_selection)
 
 ## Responsibilities
 

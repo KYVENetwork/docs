@@ -28,7 +28,7 @@ Then there are _protocol validators_ which always run on a specific _data pool_ 
 
 
 :::tip
-A more detailed overview and guides on how to run those nodes can be found [here](/validators/validators_overview.md)
+A more detailed overview and guides on how to run those nodes can be found [here](/validators/validators_overview)
 :::
 
 The diagram below shows the different types of nodes and where they are actually running:
@@ -40,5 +40,5 @@ The diagram below shows the different types of nodes and where they are actually
 As already mentioned above, protocol validators are responsible for the actual data validation, while the consensus validators are responsible for finding consensus and securing the network. The submission of data, the voting and the vote tallying at the end is all implemented directly into the blockchain itself with the help of Cosmos SDK modules.
 
 :::tip
-You can find all the info about how the KYVE protocol works in detail [here](/protocol_devs/overview.md)
+You can find all the info about how the KYVE protocol works in detail [here](/learn/protocol_devs/overview)
 :::

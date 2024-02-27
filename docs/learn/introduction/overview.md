@@ -28,7 +28,7 @@ The Chain Layer which is the consensus layer, is the backbone of KYVE and is an 
 [Ignite](https://ignitedao.io/about-ignite-dao/). It’s run by independent nodes, which enable users to support and secure the KYVE blockchain.
 
 :::info
-Interested in [running a consensus validator ?](/validators/chain_nodes/overview.md)
+Interested in [running a consensus validator ?](/validators/chain_nodes/overview)
 :::
 
 Sitting on top of the consensus layer is the Protocol Layer, which enables the actual use case of KYVE’s data lake. This
@@ -40,7 +40,7 @@ valid for its users to tap into. This enables KYVE to store any data permanently
 a Web3 data lake.
 
 :::info
-Interested in [running a protocol validator ?](/validators/protocol_nodes/overview.md)
+Interested in [running a protocol validator ?](/validators/protocol_nodes/overview)
 :::
 
 ## KYVE Network Stack
@@ -66,7 +66,7 @@ trustless data:
 More solutions for accessing KYVE’s data will come in the near future.
 
 :::info
-Interested in [accessing KYVE data ?](/data_engineers/accessing_data/using_rest.md)
+Interested in [accessing KYVE data ?](/developers/data_engineers/accessing_data/using_rest)
 :::
 
 ### Storing Data Through KYVE
@@ -78,7 +78,7 @@ KYVE is storage agnostic. By default, you can store data through KYVE onto [Arwe
 solution. More storage providers are to be added in the near future.
 
 :::info
-Interested in [storing KYVE data ?](/data_engineers/adding_data/index.md)
+Interested in [storing KYVE data ?](/developers/data_engineers/adding_data/index)
 :::
 
 ## \$KYVE

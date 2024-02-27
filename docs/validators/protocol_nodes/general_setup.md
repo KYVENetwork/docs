@@ -1,8 +1,9 @@
 ---
 sidebar_position: 2
 ---
-
 # General Setup
+
+TODO: generalize
 
 If you want to participate in the Osmosis pool you will have to run an Osmosis Full node which will act as the data source for the KYVE protocol validator.
 
