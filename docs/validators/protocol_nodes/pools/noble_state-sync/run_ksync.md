@@ -4,43 +4,47 @@ sidebar_position: 3
 
 # Run KSYNC
 
-KSYNC will provide the snapshot of an dYdX Node, which will act as the source for the KYVE protocol validator and is **required**.
+KSYNC will provide the snapshot of an Noble Node, which will act as the source for the KYVE protocol validator and is **required**.
 
-## Install dYdX node
+## Install Noble node
 
-The dYdX binary with the version `v1.0.1` has to be installed.
+The Noble binary with the version `v1.0.0` has to be installed.
 
-You can follow the official installation instructions [here](https://docs.dydxprotocol.exchange/validators/running_full_node) or download the binary directly from [here](https://github.com/dydxprotocol/v4-chain/releases/tag/protocol%2Fv1.0.1).
+You can follow the official installation instructions [here](https://docs.nobleassets.xyz/network/running) or build from source [here](https://github.com/noble-assets/noble/releases/tag/v1.0.0).
 
 :::danger
 If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
 
-**For dydxprotocold v1.0.1 it is go21**
+**v1.0.0 -> go19**<br/>
+**v2.0.0 -> go19**<br/>
+**v3.0.0 -> go19**<br/>
+**v3.1.0 -> go19**<br/>
+**v4.0.1 -> go21**
 :::
 
 You can verify the successful installation with
 
 ```
-./dydxprotocold version
-1.0.1
+./nobled version
+1.0.0
 ```
 
-After the successful installation, you need to set up the dydxprotocold config. First choose a moniker and initialize everything:
+After the successful installation, you need to set up the nobled config. First choose a moniker and initialize everything:
 
 ```bash
-./dydxprotocold init <your-moniker> --chain-id dydx-mainnet-1
+./nobled init <your-moniker> --chain-id noble-1
 ```
 
 To download and setup the genesis file execute the following command:
 
 ```bash
-wget -qO- genesis.json https://snapshots.polkachu.com/genesis/dydx/genesis.json | zcat > ~/.dydxprotocol/config/genesis.json
+wget https://raw.githubusercontent.com/strangelove-ventures/noble-networks/main/mainnet/noble-1/genesis.json -O ~/.noble/config/genesis.json
 ```
 
 ### Upgrades
 
-To upgrade the `dydxprotocold` binary successfully, it is required to change the used binary manually.
-Therefore, just start the KSYNC process with the upgraded `dydxprotocold` binary after it exited automatically.
+To upgrade the `nobled` binary successfully, it is required to change the used binary manually.
+Therefore, just start the KSYNC process with the upgraded `nobled` binary after it exited automatically.
 
 **Cosmovisor** is not supported yet, but an upgrade handler like this will be added soon.
 
@@ -51,7 +55,7 @@ Therefore, just start the KSYNC process with the upgraded `dydxprotocold` binary
 To install the required version of `ksync`, run the following command:
 
 ```bash
-go install github.com/KYVENetwork/ksync/cmd/ksync@v1.1.1
+go install github.com/KYVENetwork/ksync/cmd/ksync@latest
 ```
 
 Run `ksync version` to verify the installation.
@@ -64,7 +68,7 @@ as follows:
 ```bash
 git clone git@github.com:KYVENetwork/ksync.git
 cd ksync
-git checkout tags/v1.1.1
+git checkout tags/v1.4.0
 make ksync
 ```
 
@@ -84,7 +88,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/dydxprotocold" --home="/path/to/.dydxprotocol" --chain-id=kaon-1 --block-pool-id=8 --snapshot-pool-id=9 --engine=cometbft
+ksync serve-snapshots --binary="/path/to/nobled" --home="/path/to/.noble" --source=noble
 ```
 
 :::caution
@@ -96,7 +100,7 @@ return an empty array, but after the first snapshot height is reached (check the
 should see a first snapshot object in the response.
 
 :::caution
-**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `dydxprotocold` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
+**Software upgrades** of the data source node have to be performed manually. Therefore, you only need to switch the `nobled` binaries (after the node exited automatically at an upgrade height) in order to restart KSYNC.
 :::
 
 ### Changing snapshot api server port

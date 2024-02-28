@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol validators on the dYdX pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol validators on the Noble pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
 
 ## Supported OS
 
@@ -19,7 +19,7 @@ We officially support macOS and Linux in the following architectures:
 To run mainnet or testnet protocol validators, you will need a machine with the following minimum hardware requirements:
 
 - 8 or more physical CPU cores
-- At least 1.5 TB of disk storage
+- At least 1 TB of disk storage
 - At least 32 GB of memory (RAM)
 - At least 100mbps network bandwidth
 

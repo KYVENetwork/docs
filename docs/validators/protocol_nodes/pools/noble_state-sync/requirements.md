@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run protocol validators on the Archway // State-Sync pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Before you can run protocol validators on the Noble // State-Sync pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
 
 ## Supported OS
 
