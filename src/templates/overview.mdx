@@ -21,7 +21,7 @@ export function formatPoolUrl(pool, id, index) {
 }
 
 <div>
-  This data pool validates and archives all blocks from {pool().name} and makes
+  This data pool validates and archives all blocks {pool().name != "Cosmos Hub" ? " and block results " : ""}from {pool().name} and makes
   them permanently available with Arweave and Bundlr.
 </div>
 
@@ -32,7 +32,7 @@ export function formatPoolUrl(pool, id, index) {
 - **Data Source**:
   <span> {pool().datasource}</span>
 - **Data**:
-  <span> {pool().data}</span>
+  <span> {pool().runtime.includes("ssync") ? '' : 'Blocks from '}{pool().start_data} ongoing</span>
 - **Storage Provider**:
   <span> {pool().storage_provider}</span>
 - **Networks**

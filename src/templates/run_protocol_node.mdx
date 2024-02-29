@@ -6,7 +6,7 @@ export const pool = () => getPool();
 
 ## Start Node
 
-Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount `cosmoshub` we select the this valaccount to start the KYSOR.
+Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount <code>{pool().val_name}</code> we select the this valaccount to start the KYSOR.
 
 <CodeBlock language="bash">
   {`./kysor start --valaccount '${pool().val_name}'`}
@@ -41,7 +41,8 @@ pass it to KYSOR:
 
 After the node successfully started you should see the following logs:
 
-```log
+
+<CodeBlock language="log">
 2023-02-13 08:46:00.618  INFO  Starting node ...
 
 2023-02-13 08:46:00.624  INFO  Starting metric server on: http://localhost:8080/metrics
@@ -49,27 +50,27 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
 
 2023-02-13 08:46:00.873  INFO  Chain ID = kyve-kaon
-2023-02-13 08:46:00.873  INFO  Pool ID = 0
-2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/tendermint-bsync
+2023-02-13 08:46:00.873  INFO  Pool ID = {pool().networks["Kaon"]}
+2023-02-13 08:46:00.873  INFO  Runtime = {pool().runtime}
 2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 
-2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint-bsync = v1.0.11
+2023-02-13 08:46:00.873  INFO  {pool().runtime} = v1.0.11
 2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.11
 
-2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 0 yet
+2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id {pool().networks["Kaon"]} yet
 2023-02-13 08:46:00.876  INFO  Visit https://app.kyve.network and join the pool from your validator account:
 
 2023-02-13 08:46:00.876  INFO  Valaddress:    kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 2023-02-13 08:46:00.876  INFO  Valname:       causal-chocolate-sparrow
 
 2023-02-13 08:46:00.876  INFO  The node will not continue until the account is authorized
-```
+</CodeBlock>
 
 With this information (`Valaddress` and `Valname`) you can head over the KYVE app and join the pool.
 
 Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
-A dialog should open where you should select the pool you want to join (here Cosmos Hub). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).
+<p>A dialog should open where you should select the pool you want to join (here {pool().name}). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).</p>
 
 For the last option you can do a one time transfer so that the valaccount has some \$KYVE to pay for transaction fees. We would recommend sending 100 \$KYVE for the start which typically lasts for about 1 month.
 
@@ -89,8 +90,7 @@ For the daemon service root-privileges are required during the setup. Create a s
   Since the KYSOR can run on multiple pools on one machine we would recommend
   naming the daemon service after the valaccount name and with a <code>d</code>{" "}
   appending to it. With that you can create multiple service files and control
-  each of them. This example shows the service file for our valaccount{" "}
-  <code>{pool().val_name}</code>
+  each of them. This example shows the service file for our valaccount <code>{pool().val_name}</code>
 </div>
 
 :::info
@@ -136,6 +136,7 @@ You can see its logs with
 <CodeBlock language="bash">
   {`sudo journalctl -u ${pool().val_name} -f -o cat\n`}
 </CodeBlock>
+
 
 ## Start node on multiple pools
 

@@ -1,0 +1,110 @@
+import CodeBlock from "@theme/CodeBlock";
+import { getPool } from "/src/components/GetPool";
+export const pool = () => getPool();
+
+<div>The {pool().name} Full Node will act as the source for the KYVE protocol validator and is **required**. You can either run the {pool().name} node on the same machine with the KYVE protocol together (recommended) or on a seperate machine.</div>
+
+:::danger
+Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
+:::
+
+## Install full node
+
+<div>
+    The {pool().name} binary with the version <code>{pool().binaryVersion}</code> has to be installed. There are two ways to install and run the binary:
+</div>
+
+<div>You can follow the official installation instructions <a href={pool().installInstructions}>here</a> or download the binary directly from <a href={pool().binaryDownload}>here</a>.</div>
+
+:::danger
+If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
+
+**For {pool().binaryName} {pool().binaryVersion} it is {pool().goVersion}**
+:::
+
+You can verify the successful installation with
+
+<CodeBlock>
+{`./${pool().binaryName} version\n`}
+{`${pool().binaryVersion}`}
+</CodeBlock>
+
+After the successful installation, you need to set up the {pool().binaryName} config. First choose a moniker and initialize everything:
+
+<CodeBlock language="bash">
+{`./${pool().binaryName} init <your-moniker> --chain-id ${pool().chainId}`}
+</CodeBlock>
+
+To download and setup the genesis file execute the following command:
+
+<CodeBlock language="bash">
+{`wget -qO- ${pool().genesisFile}| zcat > ~/.${pool().val_name}/config/genesis.json`}
+</CodeBlock>
+
+To enable the start of the syncing process, a seed node needs to be added into
+
+<div><code>~/.{pool().val_name}/config/config.toml</code></div>
+
+<CodeBlock>
+{`seeds = "${pool().seed}"`}
+</CodeBlock>
+:::info
+You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/<span>{pool().val_name}</span>
+:::
+
+### Configuration
+
+Due to the size of the `block_results` response, it is **required** to set the following in your <span><code>~/.{pool().val_name}/config/config.toml</code></span>:
+
+```toml
+timeout_broadcast_tx_commit = "120s"
+```
+
+For efficient pruning, the following settings are recommended to decrease the disk usage:
+
+<code>~/.{pool().val_name}/config/config.toml</code>
+
+```toml
+[tx_index]
+
+indexer = "null"
+```
+
+<code>~/.{pool().val_name}/config/app.toml</code>
+```toml
+pruning = "everything"
+
+index-events = [""]
+```
+
+Finally, the node can be started:
+
+<CodeBlock>
+{`./${pool().binaryName} start --x-crisis-skip-assert-invariants`}
+</CodeBlock>
+
+:::caution
+**ATTENTION**: To be able to perform upgrades automatically, it is recommended to use the <strong>cosmovisor</strong>. How to set it up can be found [here](https://docs.osmosis.zone/networks/join-mainnet#set-up-cosmovisor).
+:::
+
+To start the Osmosis node with the cosmovisor, run:
+
+```bash
+cosmovisor run start --x-crisis-skip-assert-invariants
+```
+
+## Verifying the completed node setup
+
+After the successful start of the node you have to sync blocks until the latest summary of the pool is reached. For example
+if the latest pool summary is 1,000,000 you can check if the node has synced the blocks until
+that height with:
+
+```bash
+curl http://localhost:26657/block?height=1000000
+```
+
+If it returns a valid block response you can continue with starting the actual KYVE protocol validator
+and start participating in the validation and archival process.
+
+**TIP**: to save storage space you can start pruning blocks manually after they have been archived
+by the pool since after that they are not needed anymore.

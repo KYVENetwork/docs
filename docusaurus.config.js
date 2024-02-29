@@ -7,7 +7,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import { POOLS } from "./pools";
 
 function defineSection(section, options = {}) {
   return [
@@ -70,7 +69,7 @@ const config = {
       decimals: 9,
     },
     errorMsg: "error",
-    pools: POOLS,
+    pools: require("./pools.js"),
   },
   clientModules: [require.resolve("./globalClientModule.ts")],
   scripts: [

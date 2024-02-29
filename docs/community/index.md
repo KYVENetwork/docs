@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## What is \$KYVE
 
-$KYVE is KYVE’s native coin. It has multiple use cases:
+\$KYVE is KYVE’s native coin. It has multiple use cases:
 On the chain level, \$KYVE is used for staking and delegating, securing the network through Proof of Stake;
 On the protocol level, \$KYVE is used for funding, staking, and delegating, providing security for uploaded data.
 On the governance level, \$KYVE is used for submitting and voting on proposals, allowing stakeholders to have a say in the evolution and growth of KYVE.

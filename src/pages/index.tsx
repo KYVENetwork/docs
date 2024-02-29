@@ -77,11 +77,11 @@ export default function Home() {
         </div>
         <div>
           <div className="font-bold text-3xl mt-8">Archived on Mainnet</div>
-          <div className="grid grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-6 gap-6 mt-8">
             {POOLS.map((x, i) => (
               <div
                 key={i}
-                className="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1"
+                className="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2"
               >
                 <PoolCard {...x} />
               </div>
