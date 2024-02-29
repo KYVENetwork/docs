@@ -1,7 +1,7 @@
-import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
-export const pool = () => useCurrentSidebarCategory().customProps;
+import { getPool } from "/src/components/GetPool";
+export const pool = () => getPool();
 
-export function formatPoolUrl(pool, id) {
+export function formatPoolUrl(pool, id, index) {
   let baseUrl = "https://app.kyve.network/#/pools/";
   switch (pool) {
     case "Kaon":
@@ -12,7 +12,7 @@ export function formatPoolUrl(pool, id) {
       break;
   }
   return (
-    <ul key={id}>
+    <ul key={index}>
       <li>
         <a href={baseUrl + id}>{pool}</a> (Pool id: {id})
       </li>
@@ -20,10 +20,10 @@ export function formatPoolUrl(pool, id) {
   );
 }
 
-<p>
+<div>
   This data pool validates and archives all blocks from {pool().name} and makes
   them permanently available with Arweave and Bundlr.
-</p>
+</div>
 
 ## General
 
@@ -38,7 +38,7 @@ export function formatPoolUrl(pool, id) {
 - **Networks**
   <div>
     {Object.keys(pool().networks).map((key, index) =>
-      formatPoolUrl(key, pool().networks[key])
+      formatPoolUrl(key, pool().networks[key], index)
     )}
   </div>
 - **Min Hardware Requirements**
@@ -56,7 +56,7 @@ TODO: link to the overall requirements
 
 ## Goal
 
-<p>{pool().goal}</p>
+<div>{pool().goal}</div>
 
 More information on how to perform block sync with KYVE visit the documention about
 KSYNC [here](https://github.com/KYVENetwork/ksync).

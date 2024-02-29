@@ -7,6 +7,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { POOLS } from "./pools";
 
 function defineSection(section, options = {}) {
   return [
@@ -69,6 +70,7 @@ const config = {
       decimals: 9,
     },
     errorMsg: "error",
+    pools: POOLS,
   },
   clientModules: [require.resolve("./globalClientModule.ts")],
   scripts: [
@@ -89,9 +91,9 @@ const config = {
   ],
   plugins: [
     defineSection("learn"),
+    defineSection("community"),
     defineSection("validators"),
     defineSection("developers"),
-    defineSection("ksync"),
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -178,6 +180,11 @@ const config = {
           },
           {
             position: "left",
+            label: "Community",
+            to: "/community",
+          },
+          {
+            position: "left",
             label: "Validators",
             to: "/validators",
           },
@@ -185,11 +192,6 @@ const config = {
             position: "left",
             label: "Developers",
             to: "/developers",
-          },
-          {
-            position: "left",
-            label: "KSYNC",
-            to: "/ksync",
           },
           {
             href: "https://github.com/KYVENetwork/",

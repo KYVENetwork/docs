@@ -1,8 +1,7 @@
 
-import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
 import CodeBlock from "@theme/CodeBlock";
-
-export const pool = () => useCurrentSidebarCategory().customProps;
+import { getPool } from "/src/components/GetPool";
+export const pool = () => getPool();
 
 ## Install KYVE protocol validator
 

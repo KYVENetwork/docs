@@ -1,7 +1,7 @@
 import CodeBlock from "@theme/CodeBlock";
 import Admonition from "@theme/Admonition";
-import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
-export const pool = () => useCurrentSidebarCategory().customProps;
+import { getPool } from "/src/components/GetPool";
+export const pool = () => getPool();
 
 Upgrading a protocol node can be difficult, learn here how to prepare and execute an upgrade.
 

@@ -1,0 +1,77 @@
+export const POOLS = [
+  {
+    name: "Cosmos Hub",
+    chainId: "cosmoshub-4",
+    val_name: "cosmoshub",
+    runtime: "@kyvejs/tendermint-bsync",
+    datasource: "Self hosted Gaia full node (cosmoshub-4)",
+    data: "Blocks from height 5,200,791 ongoing",
+    storage_provider: "Bundlr",
+    networks: {
+      Mainnet: 0,
+      Kaon: 0,
+      Korellia: 24,
+    },
+    requirements: [
+      "2 or more physical CPU cores",
+      "16 GB RAM",
+      "512 GB DISK",
+      "50mbps network bandwith",
+    ],
+    goal: "The goal of this pool is to validate and archive all blocks from Cosmos Hub permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cosmos obsolete in the long run.",
+    hex: "#1c2049",
+    logo: "ar://GSK9zAQx1jOnQIhbM20qCoOFYT3EJXIJfwfvT_QhLVM",
+    description:
+      "Serving as the economic center of the Interchain, the Cosmos Hub is a blockchain that provides vital ecosystem services. The primary token of the Cosmos Hub is the ATOM, but the Hub will support many tokens in the future.",
+  },
+  {
+    name: "Archway",
+    chainId: "archway-1",
+    val_name: "archway",
+    runtime: "@kyvejs/tendermint-bsync",
+    datasource: "Self hosted Gaia full node (archway-1)",
+    data: "Blocks from height 5,200,791 ongoing",
+    storage_provider: "Bundlr",
+    networks: {
+      Mainnet: 0,
+      Kaon: 0,
+      Korellia: 24,
+    },
+    requirements: [
+      "2 or more physical CPU cores",
+      "16 GB RAM",
+      "512 GB DISK",
+      "50mbps network bandwith",
+    ],
+    goal: "The goal of this pool is to validate and archive all blocks from Cosmos Hub permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cosmos obsolete in the long run.",
+    hex: "#e45121",
+    logo: "ar://hKb8dVx4E1NCUJ_BlhNOcyfQEta5r38SBXqsfPnAsWE",
+    description:
+      "Archway is a Cosmos-native incentivized smart contract chain that enables developers to deploy high-performance dapps that earn rewards based on the traffic they bring to the network. ",
+  },
+  {
+    name: "Axelar",
+    chainId: "axelar-dojo-1",
+    val_name: "axelardojo",
+    runtime: "@kyvejs/tendermint-bsync",
+    datasource: "Self hosted Gaia full node (cosmoshub-4)",
+    data: "Blocks from height 5,200,791 ongoing",
+    storage_provider: "Bundlr",
+    networks: {
+      Mainnet: 0,
+      Kaon: 0,
+      Korellia: 24,
+    },
+    requirements: [
+      "2 or more physical CPU cores",
+      "16 GB RAM",
+      "512 GB DISK",
+      "50mbps network bandwith",
+    ],
+    goal: "The goal of this pool is to validate and archive all blocks from Cosmos Hub permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cosmos obsolete in the long run.",
+    hex: "#5cc1fa",
+    logo: "ar://iW1jN99yH_gdQtRhf5J_lVwOIu8p_i7FyxEgoQAkWxU",
+    description:
+      "Axelar is the programmable Web3 interoperability platform, connecting over 50 blockchains via a secure, scalable network – internet infrastructure for the world’s next super app.",
+  },
+];

@@ -1,8 +1,8 @@
-import { useCurrentSidebarCategory } from "@docusaurus/theme-common";
 import CodeBlock from "@theme/CodeBlock";
-export const pool = () => useCurrentSidebarCategory().customProps;
+import { getPool } from "/src/components/GetPool";
+export const pool = () => getPool();
 
-<p>With the <span>{pool().name}</span> node in place and the KYVE node also installed you can finally start the node.</p>
+<div>With the <span>{pool().name}</span> node in place and the KYVE node also installed you can finally start the node.</div>
 
 ## Start Node
 
@@ -85,13 +85,13 @@ If you want to start the nodes as a background process you can use `systemd`.
 
 For the daemon service root-privileges are required during the setup. Create a service file. $USER is the Linux user which runs the process. Replace it before you copy the command.
 
-<p>
+<div>
   Since the KYSOR can run on multiple pools on one machine we would recommend
   naming the daemon service after the valaccount name and with a <code>d</code>{" "}
   appending to it. With that you can create multiple service files and control
   each of them. This example shows the service file for our valaccount{" "}
   <code>{pool().val_name}</code>
-</p>
+</div>
 
 :::info
 You might have to execute this command with `sudo`
