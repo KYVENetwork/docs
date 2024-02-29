@@ -97,7 +97,7 @@ export default [
     chainId: "archway-1",
     val_name: "archway",
     runtime: "@kyvejs/tendermint",
-    datasource: "Self hosted Osmosis full node (archway-1)",
+    datasource: "Self hosted Archway full node (archway-1)",
     start_data: "Genesis",
     storage_provider: "Bundlr",
     networks: {
@@ -126,5 +126,111 @@ export default [
     genesisFile:
       "https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz",
     seed: "3ba7bf08f00e228026177e9cdc027f6ef6eb2b39@35.232.234.58:26656",
+  },
+  {
+    name: "Axelar",
+    chainId: "axelar-dojo-1",
+    val_name: "axelar",
+    runtime: "@kyvejs/tendermint",
+    datasource: "Self hosted Axelar full node (axelar-dojo-1)",
+    start_data: "Genesis",
+    storage_provider: "Bundlr",
+    networks: {
+      Mainnet: 3,
+      Kaon: 3,
+      Korellia: 36,
+    },
+    requirements: [
+      "8 or more physical CPU cores",
+      "32 GB RAM",
+      "1 TB DISK",
+      "100mbps network bandwith",
+    ],
+    goal: "The goal of this pool is to validate and archive all blocks and block results from Axelar permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Axelar obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
+    hex: "#5cc1fa",
+    logo: "ar://iW1jN99yH_gdQtRhf5J_lVwOIu8p_i7FyxEgoQAkWxU",
+    description:
+      "Axelar is the programmable Web3 interoperability platform, connecting over 50 blockchains via a secure, scalable network – internet infrastructure for the world’s next super app. For partners ranging from Uniswap to Circle, Axelar enables scalable cross-chain solutions. Users interact with any asset in one click. Developers span multiple blockchains as though building on one, supported by a simple API and a permissionless ecosystem of tools and service providers. Backers include Binance, Coinbase, Dragonfly, Galaxy and Polychain. See what full-stack interoperability can do for your dApp. Learn more at https://axelar.network.",
+    binaryVersion: "v0.10.7",
+    goVersion: "go16",
+    binaryName: "axelard",
+    binaryDownload:
+      "https://github.com/axelarnetwork/axelar-core/releases/tag/v0.10.7",
+    installInstructions: "https://docs.axelar.dev/node/join-genesis",
+    genesisFile:
+      "https://s3.eu-central-1.amazonaws.com/files.kyve.network/infrastructure/axelar/genesis.json.gz",
+    seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:15156,3d67d0646cddcc203b41434aceea64ade22ba6fc@k8s-mainnet-axelarco-79b464ee93-f03cb16c57cf7cb2.elb.us-east-2.amazonaws.com:26656,609504b517f88f628e98d4a918ffc69e9654b451@65.108.192.147:26656,691101434ca4016b28e6a9943da2ad6838b80685@axelar-seed.pops.one:26656,44596cd8c8fd80be909a5968ac4ba6651d840b36@axelar-seed.validatrium.com:6969",
+  },
+  {
+    name: "Cronos",
+    chainId: "cronosmainnet_25-1",
+    val_name: "cronos",
+    runtime: "@kyvejs/tendermint",
+    datasource: "Self hosted Cronos full node (cronosmainnet_25-1)",
+    start_data: "Genesis",
+    storage_provider: "Bundlr",
+    networks: {
+      Mainnet: 5,
+      Kaon: 6,
+      Korellia: 36,
+    },
+    requirements: [
+      "8 or more physical CPU cores",
+      "32 GB RAM",
+      "1.5 TB DISK",
+      "100mbps network bandwith",
+    ],
+    goal: "The goal of this pool is to validate and archive all blocks and block results from Cronos permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cronos obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
+    hex: "#191b34",
+    logo: "ar://BbNmwRFv11y68Jiele3wxZNYQTqRVn_ZK6BwJ5S2MCE",
+    description:
+      "Cronos (cronos.org) is the leading Ethereum-compatible layer 1 blockchain network built on the Cosmos SDK, supported by Crypto.com, Crypto.org, and more than 500 app developers and partners. Today, the #CROfam ecosystem represents an addressable user base of more than 80 million people worldwide. Our mission is to make it easy and safe for the next billion crypto users to adopt Web3, with a focus on decentralized applications in the DeFi, NFTs and GameFi verticals.",
+    binaryVersion: "v0.6.11",
+    goVersion: "go17",
+    binaryName: "cronosd",
+    binaryDownload:
+      "https://github.com/crypto-org-chain/cronos/releases/tag/v0.6.11",
+    installInstructions:
+      "https://docs.cronos.org/for-node-hosts/running-nodes/cronos-mainnet",
+    genesisFile:
+      "https://raw.githubusercontent.com/crypto-org-chain/cronos-mainnet/master/cronosmainnet_25-1/genesis.json",
+    seed: "0d5cf1394a1cfde28dc8f023567222abc0f47534@cronos-seed-0.crypto.org:26656,3032073adc06d710dd512240281637c1bd0c8a7b@cronos-seed-1.crypto.org:26656,04f43116b4c6c70054d9c2b7485383df5b1ed1da@cronos-seed-2.crypto.org:26656,337377dcda43d79c537d2c4d93ad3b698ce9452e@bd-cronos-mainnet-seed-node-01.bdnodes.net:26656",
+  },
+  {
+    name: "Cronos // State-Sync",
+    chainId: "cronosmainnet_25-1",
+    val_name: "cronos-ssync",
+    runtime: "@kyvejs/tendermint-ssync",
+    datasource: "Self hosted Cronos full node (cronosmainnet_25-1)",
+    start_data: "Genesis",
+    storage_provider: "Bundlr",
+    networks: {
+      Mainnet: 6,
+      Kaon: 7,
+      Korellia: 37,
+    },
+    blockPoolId: 5,
+    configName: ".cronos",
+    requirements: [
+      "8 or more physical CPU cores",
+      "32 GB RAM",
+      "150 GB DISK",
+      "100mbps network bandwith",
+    ],
+    goal: "The goal of this pool is to validate and archive all blocks and block results from Cronos permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cronos obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
+    hex: "#191b34",
+    logo: "ar://BbNmwRFv11y68Jiele3wxZNYQTqRVn_ZK6BwJ5S2MCE",
+    description:
+      "Cronos (cronos.org) is the leading Ethereum-compatible layer 1 blockchain network built on the Cosmos SDK, supported by Crypto.com, Crypto.org, and more than 500 app developers and partners. Today, the #CROfam ecosystem represents an addressable user base of more than 80 million people worldwide. Our mission is to make it easy and safe for the next billion crypto users to adopt Web3, with a focus on decentralized applications in the DeFi, NFTs and GameFi verticals.",
+    binaryVersion: "v0.6.11",
+    goVersion: "go17",
+    binaryName: "cronosd",
+    binaryDownload:
+      "https://github.com/crypto-org-chain/cronos/releases/tag/v0.6.11",
+    installInstructions:
+      "https://docs.cronos.org/for-node-hosts/running-nodes/cronos-mainnet",
+    genesisFile:
+      "https://raw.githubusercontent.com/crypto-org-chain/cronos-mainnet/master/cronosmainnet_25-1/genesis.json",
+    seed: "0d5cf1394a1cfde28dc8f023567222abc0f47534@cronos-seed-0.crypto.org:26656,3032073adc06d710dd512240281637c1bd0c8a7b@cronos-seed-1.crypto.org:26656,04f43116b4c6c70054d9c2b7485383df5b1ed1da@cronos-seed-2.crypto.org:26656,337377dcda43d79c537d2c4d93ad3b698ce9452e@bd-cronos-mainnet-seed-node-01.bdnodes.net:26656",
   },
 ];

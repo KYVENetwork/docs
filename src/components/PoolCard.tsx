@@ -23,12 +23,17 @@ export const PoolCard = ({ description, name, hex, logo }: PoolCardProps) => {
         )
       }
     >
-      <div className="flex items-center bg-[#252B2E] text-white px-4 py-7 rounded-lg relative overflow-hidden dark:bg-[#1a1e20]">
+      <div className="bg-[#252B2E] text-white rounded-lg relative overflow-hidden dark:bg-[#1a1e20] h-40 flex items-center px-3">
         <img src={logoUrl} className="rounded-lg w-12 h-12 mr-4"></img>
         <div className="text-2xl z-10">{name}</div>
         <PlanetSVG hex={hex} />
       </div>
-      <div className="z-10 text-[#8F8F8F] mt-4 overflow-auto" style={{scrollbarWidth: "none"}}>{description}</div>
+      <div
+        className="z-10 text-[#8F8F8F] mt-4 overflow-auto h-full"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {description}
+      </div>
     </div>
   );
 };

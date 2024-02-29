@@ -11,16 +11,16 @@ export default function Home() {
 
   const CARDS: CardProps[] = [
     {
-      title: "Learn",
+      title: "Delegation",
       desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
       img: "img/homepage/learn.svg",
-      href: "/learn",
+      href: "/community/delegating",
     },
     {
-      title: "Community",
+      title: "KSYNC",
       desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
       img: "img/homepage/community.svg",
-      href: "/community",
+      href: "/validators/ksync",
     },
     {
       title: "Validators",
