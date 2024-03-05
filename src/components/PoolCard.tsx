@@ -13,7 +13,7 @@ export const PoolCard = ({ description, name, hex, logo }: PoolCardProps) => {
   const histroy = useHistory();
   return (
     <div
-      className="flex flex-col p-6 w-full h-[280px] bg-white dark:bg-[#252B2E] rounded-xl text-black relative shadow-xl hover:scale-[1.025] transition-all duration-300 hover:cursor-pointer"
+      className="flex flex-col p-6 w-full h-[280px] bg-white dark:bg-[#252B2E] rounded-xl text-black relative hover:scale-[1.025] transition-all duration-300 hover:cursor-pointer"
       onClick={() =>
         histroy.push(
           `/validators/protocol_nodes/pools/${name

@@ -1876,6 +1876,23 @@
     p-map "^4.0.0"
     webpack-sources "^3.2.2"
 
+"@splidejs/react-splide@^0.7.12":
+  version "0.7.12"
+  resolved "https://registry.yarnpkg.com/@splidejs/react-splide/-/react-splide-0.7.12.tgz#c7efe231bbbb6812da64689178b6c871269baff5"
+  integrity sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==
+  dependencies:
+    "@splidejs/splide" "^4.1.3"
+
+"@splidejs/splide-extension-auto-scroll@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide-extension-auto-scroll/-/splide-extension-auto-scroll-0.5.3.tgz#3d3f61229b27fae7923dba62bcd13f6e1b798410"
+  integrity sha512-vPJ8Tn4uebnHa6scBcIypW154HTDenkazX9Nw8T1na44n7OtLoz40R4RoirteV7taPWW7w7ZZPCiEpi2ReYFAQ==
+
+"@splidejs/splide@^4.1.3":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
+  integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
+
 "@svgr/babel-plugin-add-jsx-attribute@^6.5.1":
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-6.5.1.tgz#74a5d648bd0347bda99d82409d87b8ca80b9a1ba"

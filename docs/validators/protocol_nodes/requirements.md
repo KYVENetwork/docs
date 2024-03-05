@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Requirements
 
-<!-- TODO: generalize text -->
+TODO: generalize text
 
 Before you can run protocol validators on the Osmosis pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of \$KYVE and other currencies.
 

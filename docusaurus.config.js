@@ -209,7 +209,7 @@ const config = {
             to: "/developers",
           },
           {
-            href: "https://github.com/KYVENetwork/",
+            href: "https://discord.gg/PATvZvEmxF",
             className: "pseudo-icon discord-icon",
             position: "right",
           },

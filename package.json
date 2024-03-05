@@ -19,6 +19,8 @@
     "@docusaurus/plugin-google-gtag": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
     "@mdx-js/react": "^3.0.0",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",
     "bcp-analytics": "^1.0.0-alpha.2",

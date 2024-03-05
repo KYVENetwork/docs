@@ -1,5 +1,6 @@
 {
   "label": "General Concepts",
   "position": 2,
-  "link": null
+  "collapsible": true,
+  "collapsed": true
 }

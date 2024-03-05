@@ -3,11 +3,18 @@ import Layout from "@theme/Layout";
 import { Card, CardProps } from "../components/Card";
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
 import React from "react";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
-  const POOLS = siteConfig.customFields!.pools as PoolCardProps[];
+  const POOLS = (siteConfig.customFields!.pools as PoolCardProps[]).filter(
+    (x) => !x.name.includes("State-Sync")
+  );
 
   const CARDS: CardProps[] = [
     {
@@ -41,7 +48,13 @@ export default function Home() {
       <main className="container py-12">
         <div className="grid grid-cols-2 items-center">
           <div className="col-span-2 md:col-span-1">
-            <img src="/img/homepage/logo_text.svg"></img>
+            <ThemedImage
+              alt="logo"
+              sources={{
+                dark: useBaseUrl("/img/homepage/logo_white.svg"),
+                light: useBaseUrl("/img/homepage/logo.svg"),
+              }}
+            ></ThemedImage>
             <div className="text-5xl font-bold mt-16">
               We need some good looking text here!
             </div>
@@ -77,17 +90,35 @@ export default function Home() {
         </div>
         <div>
           <div className="font-bold text-3xl mt-8">Archived on Mainnet</div>
-          <div className="grid grid-cols-6 gap-6 mt-8">
-            {POOLS.map((x, i) => (
-              <div
-                key={i}
-                className="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2"
-              >
+          <div className="grid grid-cols-6 gap-6 mt-8"></div>
+        </div>
+        <Splide
+          options={{
+            rewind: true,
+            arrows: false,
+            breakpoints: {
+              1024: {
+                perPage: 2,
+              },
+              640: {
+                perPage: 1,
+              },
+            },
+            perPage: 3,
+            gap: 10,
+            type: "loop",
+            pagination: false,
+          }}
+          extensions={{ AutoScroll }}
+        >
+          {POOLS.map((x, i) => (
+            <SplideSlide key={i} className="py-2">
+              <div className="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2">
                 <PoolCard {...x} />
               </div>
-            ))}
-          </div>
-        </div>
+            </SplideSlide>
+          ))}
+        </Splide>
       </main>
     </Layout>
   );

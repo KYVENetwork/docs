@@ -1,5 +1,6 @@
 {
   "label": "Development",
   "position": 4,
-  "link": null
+  "collapsible": true,
+  "collapsed": true
 }
