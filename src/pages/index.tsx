@@ -8,9 +8,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { useHistory } from "@docusaurus/router";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const histroy = useHistory();
 
   const POOLS = (siteConfig.customFields!.pools as PoolCardProps[]).filter(
     (x) => !x.name.includes("State-Sync")
@@ -115,7 +117,18 @@ export default function Home() {
           extensions={{ AutoScroll }}
         >
           {POOLS.map((x, i) => (
-            <SplideSlide key={i} className="py-2">
+            <SplideSlide
+              key={i}
+              className="py-2"
+              onClick={() =>
+                histroy.push(
+                  `/validators/protocol_nodes/pools/${x.name
+                    .toLowerCase()
+                    .split(" ")
+                    .join("_")}/overview`
+                )
+              }
+            >
               <div className="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2">
                 <PoolCard {...x} />
               </div>

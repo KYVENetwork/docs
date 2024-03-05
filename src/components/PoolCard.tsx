@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "@docusaurus/router";
 
 export interface PoolCardProps {
   name: string;
@@ -10,19 +9,8 @@ export interface PoolCardProps {
 
 export const PoolCard = ({ description, name, hex, logo }: PoolCardProps) => {
   const logoUrl = "https://arweave.net/" + logo.replace("ar://", "");
-  const histroy = useHistory();
   return (
-    <div
-      className="flex flex-col p-6 w-full h-[280px] bg-white dark:bg-[#252B2E] rounded-xl text-black relative hover:scale-[1.025] transition-all duration-300 hover:cursor-pointer"
-      onClick={() =>
-        histroy.push(
-          `/validators/protocol_nodes/pools/${name
-            .toLowerCase()
-            .split(" ")
-            .join("_")}/overview`
-        )
-      }
-    >
+    <div className="flex flex-col p-6 w-full h-[280px] bg-white dark:bg-[#252B2E] rounded-xl text-black relative hover:scale-[1.025] transition-all duration-300 hover:cursor-pointer">
       <div className="bg-[#252B2E] text-white rounded-lg relative overflow-hidden dark:bg-[#1a1e20] h-40 flex items-center px-3">
         <img src={logoUrl} className="rounded-lg w-12 h-12 mr-4"></img>
         <div className="text-2xl z-10">{name}</div>

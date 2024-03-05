@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from "prism-react-renderer";
+import { themes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
@@ -270,8 +270,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} BCP Innovations UG. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: themes.github,
+        darkTheme: themes.oneDark,
+        additionalLanguages: ["bash", "diff", "json"],
       },
       algolia: {
         // The application ID provided by Algolia
