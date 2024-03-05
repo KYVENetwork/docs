@@ -226,7 +226,13 @@ const Noble = {
   description:
     "Noble is a Cosmos application-specific blockchain purpose-built for native asset issuance. Noble brings the efficiency and interoperability of native assets to the wider Cosmos ecosystem, starting with USDC. Noble’s vision is to be the world’s premier issuance hub for digital assets that connect to other blockchains seamlessly. Noble leverages the Cosmos-SDK – a flexible toolkit that allows developers to incorporate existing modules and to seamlessly integrate custom modules that add virtually unlimited functionality for asset issuers on the Noble blockchain.",
   binaryVersion: "v1.0.0",
-  goVersion: "go19",
+  goVersion: [
+    ["v1.0.0", "go19"],
+    ["v2.0.0", "go19"],
+    ["v3.0.0", "go19"],
+    ["v3.1.0", "go19"],
+    ["v4.0.1", "go21"],
+  ],
   binaryName: "nobled",
   binaryDownload: "https://github.com/noble-assets/noble/releases/tag/v1.0.0",
   installInstructions: "https://docs.nobleassets.xyz/network/running",
@@ -240,7 +246,7 @@ const NobleSSync = {
   name: "Noble // State-Sync",
   val_name: "noble-ssync",
   runtime: "@kyvejs/tendermint-ssync",
-  datasource: "Self hosted Cronos full node (noble-1)",
+  datasource: "Self hosted Noble full node (noble-1)",
   start_data: "state-sync snapshots every 3,000 blocks",
   networks: {
     Mainnet: 8,

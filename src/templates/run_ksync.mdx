@@ -1,6 +1,14 @@
 import CodeBlock from "@theme/CodeBlock";
 import { getPool } from "/src/components/GetPool";
 export const pool = () => getPool();
+export const goVersion = () => {
+  if (Array.isArray(pool().goVersion)) {
+    return pool().goVersion.map((x, i) => <div key={i}>{x.join(" -> ")}</div>);
+  }
+  return `For ${pool().binaryName} ${pool().binaryVersion} it is ${
+    pool().goVersion
+  }`;
+};
 
 KSYNC will provide the snapshot of an Archway Node, which will act as the source for the KYVE protocol validator and is **required**.
 
@@ -14,7 +22,7 @@ The {pool().nodeName} binary with the version <code>{pool().binaryVersion}</code
 :::danger
 If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
 
-**For {pool().binaryName} {pool().binaryVersion} it is {pool().goVersion}**
+**{goVersion()}**
 :::
 
 You can verify the successful installation with
@@ -83,7 +91,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 <CodeBlock language="bash">
-{`ksync serve-snapshots --binary="/path/to/${pool().binaryName}" --home="/path/to/${pool().configName}" --snapshot-pool-id=${pool().networks["Mainnet"]} --block-pool-id=${pool().blockPoolId}`}
+{`ksync serve-snapshots --binary="/path/to/${pool().binaryName}" --home="/path/to/${pool().configName}" --source=${pool().nodeName.toLowerCase()}`}
 </CodeBlock>
 
 :::caution

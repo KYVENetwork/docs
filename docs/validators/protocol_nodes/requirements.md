@@ -4,9 +4,7 @@ sidebar_position: 3
 
 # Requirements
 
-TODO: generalize text
-
-Before you can run protocol validators on the Osmosis pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of \$KYVE and other currencies.
+Before you can run a protocol validator on any pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of \$KYVE and other currencies.
 
 ## Supported OS
 
@@ -15,10 +13,6 @@ We officially support macOS and Linux in the following architectures:
 - `macos-x64`
 - `linux-x64`
 - `linux-arm64`
-
-## Minimum Hardware Requirements
-
-TODO: disclaim that the specific hardware requirements are pool dependend
 
 ## Pool Delegation Requirements
 

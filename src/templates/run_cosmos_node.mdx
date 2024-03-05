@@ -2,7 +2,21 @@ import CodeBlock from "@theme/CodeBlock";
 import { getPool } from "/src/components/GetPool";
 export const pool = () => getPool();
 
-<div>The {pool().name} Full Node will act as the source for the KYVE protocol validator and is **required**. You can either run the {pool().name} node on the same machine with the KYVE protocol together (recommended) or on a seperate machine.</div>
+export const goVersion = () => {
+  if (Array.isArray(pool().goVersion)) {
+    return pool().goVersion.map((x, i) => <div key={i}>{x.join(" -> ")}</div>);
+  }
+  return `For ${pool().binaryName} ${pool().binaryVersion} it is ${
+    pool().goVersion
+  }`;
+};
+
+<div>
+  The {pool().name} Full Node will act as the source for the KYVE protocol
+  validator and is **required**. You can either run the {pool().name} node on
+  the same machine with the KYVE protocol together (recommended) or on a
+  seperate machine.
+</div>
 
 :::danger
 Due to very specific requirements, an additional validation layer, accessibility as well as to prevent slashes, it is strongly recommended to run an independent data source node. API providers should be avoided and have already led to critical problems in the past.
@@ -11,45 +25,56 @@ Due to very specific requirements, an additional validation layer, accessibility
 ## Install full node
 
 <div>
-    The {pool().name} binary with the version <code>{pool().binaryVersion}</code> has to be installed. There are two ways to install and run the binary:
+  The {pool().name} binary with the version <code>{pool().binaryVersion}</code>{" "}
+  has to be installed. There are two ways to install and run the binary:
 </div>
 
-<div>You can follow the official installation instructions <a href={pool().installInstructions}>here</a> or download the binary directly from <a href={pool().binaryDownload}>here</a>.</div>
+<div>
+  You can follow the official installation instructions{" "}
+  <a href={pool().installInstructions}>here</a> or download the binary directly
+  from <a href={pool().binaryDownload}>here</a>.
+</div>
 
 :::danger
 If you are building from source please use the specified go version in the go.mod file, else there is the danger of receiving vote slashes.
 
-**For {pool().binaryName} {pool().binaryVersion} it is {pool().goVersion}**
+**{goVersion()}**
 :::
 
 You can verify the successful installation with
 
 <CodeBlock>
-{`./${pool().binaryName} version\n`}
-{`${pool().binaryVersion}`}
+  {`./${pool().binaryName} version\n`}
+  {`${pool().binaryVersion}`}
 </CodeBlock>
 
 After the successful installation, you need to set up the {pool().binaryName} config. First choose a moniker and initialize everything:
 
 <CodeBlock language="bash">
-{`./${pool().binaryName} init <your-moniker> --chain-id ${pool().chainId}`}
+  {`./${pool().binaryName} init <your-moniker> --chain-id ${pool().chainId}`}
 </CodeBlock>
 
 To download and setup the genesis file execute the following command:
 
 <CodeBlock language="bash">
-{pool().genesisFile.endsWith(".gz") ? `wget -qO- ${pool().genesisFile} | zcat > ~/.${pool().val_name}/config/genesis.json` : `wget -qO- ${pool().genesisFile} | cat > ~/.${pool().val_name}/config/genesis.json`}
+  {pool().genesisFile.endsWith(".gz")
+    ? `wget -qO- ${pool().genesisFile} | zcat > ~/.${
+        pool().val_name
+      }/config/genesis.json`
+    : `wget -qO- ${pool().genesisFile} | cat > ~/.${
+        pool().val_name
+      }/config/genesis.json`}
 </CodeBlock>
 
 To enable the start of the syncing process, a seed node needs to be added into
 
-<div><code>~/.{pool().val_name}/config/config.toml</code></div>
+<div>
+  <code>~/.{pool().val_name}/config/config.toml</code>
+</div>
 
-<CodeBlock>
-{`seeds = "${pool().seed}"`}
-</CodeBlock>
-:::info
-You can also add persistent_peers from Polkachu to ensure that you will actually find peers where you can sync with the network: https://polkachu.com/live_peers/
+<CodeBlock>{`seeds = "${pool().seed}"`}</CodeBlock>
+:::info You can also add persistent_peers from Polkachu to ensure that you will actually
+find peers where you can sync with the network: https://polkachu.com/live_peers/
 :::
 
 ### Configuration
@@ -71,11 +96,11 @@ indexer = "null"
 ```
 
 <code>~/.{pool().val_name}/config/app.toml</code>
-```toml
-pruning = "everything"
+```toml pruning = "everything"
 
 index-events = [""]
-```
+
+````
 
 Finally, the node can be started:
 
@@ -91,7 +116,7 @@ To start the Osmosis node with the cosmovisor, run:
 
 ```bash
 cosmovisor run start --x-crisis-skip-assert-invariants
-```
+````
 
 ## Verifying the completed node setup
 
