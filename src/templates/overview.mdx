@@ -20,9 +20,45 @@ export function formatPoolUrl(pool, id, index) {
   );
 }
 
+export function getGoal(pool) {
+  if (pool.name.includes("State-Sync")) {
+    return (
+      <div>
+        The goal of this pool is to validate and archive state-sync snapshots
+        from {pool.nodeName} permanently and decentralized. With this data, we
+        want to make it possible for other nodes to state-sync the data from
+        KYVE, making expensive archival nodes on {pool.nodeName} obsolete in the
+        long run.
+      </div>
+    );
+  }
+  // why is cosmos hub always special?
+  if (pool.runtime.includes("bsync")) {
+    return (
+      <div>
+        The goal of this pool is to validate and archive all blocks from{" "}
+        {pool.name} permanently and decentralized. With this data we want to
+        make it possible for other nodes to block sync the data from KYVE,
+        making expensive archival nodes on {pool.name} obsolete in the long run.
+      </div>
+    );
+  }
+  return (
+    <div>
+      The goal of this pool is to validate and archive all blocks and block
+      results from {pool.name} permanently and decentralized. With this data we
+      want to make it possible for other nodes to block sync the data from KYVE,
+      making expensive archival nodes on {pool.name} obsolete in the long run.
+      In addition, the validated archived block results enable a number of
+      further use cases for data analysis
+    </div>
+  );
+}
+
 <div>
-  This data pool validates and archives all blocks {pool().name != "Cosmos Hub" ? " and block results " : ""}from {pool().name} and makes
-  them permanently available with Arweave and Bundlr.
+  This data pool validates and archives all blocks{" "}
+  {pool().name != "Cosmos Hub" ? " and block results " : ""}from {pool().name}{" "}
+  and makes them permanently available with Arweave and Bundlr.
 </div>
 
 ## General
@@ -32,7 +68,11 @@ export function formatPoolUrl(pool, id, index) {
 - **Data Source**:
   <span> {pool().datasource}</span>
 - **Data**:
-  <span> {pool().runtime.includes("ssync") ? '' : 'Blocks from '}{pool().start_data} ongoing</span>
+  <span>
+    {" "}
+    {pool().runtime.includes("ssync") ? "" : "Blocks from "}
+    {pool().start_data} ongoing
+  </span>
 - **Storage Provider**:
   <span> {pool().storage_provider}</span>
 - **Networks**
@@ -56,7 +96,7 @@ TODO: link to the overall requirements
 
 ## Goal
 
-<div>{pool().goal}</div>
+<div>{getGoal(pool())}</div>
 
 More information on how to perform block sync with KYVE visit the documention about
 KSYNC [here](https://github.com/KYVENetwork/ksync).

@@ -18,7 +18,6 @@ export default [
       "512 GB DISK",
       "50mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive all blocks from Cosmos Hub permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cosmos obsolete in the long run.",
     hex: "#1c2049",
     logo: "ar://GSK9zAQx1jOnQIhbM20qCoOFYT3EJXIJfwfvT_QhLVM",
     description:
@@ -43,7 +42,6 @@ export default [
       "1 TB DISK",
       "100mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive all blocks and block results from Osmosis permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Osmosis obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
     hex: "#8d07c7",
     logo: "ar://u8kGlBx37seQCO1X5vQsc3Q8iO2CE-BHqsm0937poak",
     description:
@@ -76,7 +74,6 @@ export default [
       "150 GB DISK",
       "100mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive state-sync snapshots from Archway permanently and decentralized. With this data, we want to make it possible for other nodes to state-sync the data from KYVE, making expensive archival nodes on Archway obsolete in the long run.",
     hex: "#e45121",
     logo: "ar://hKb8dVx4E1NCUJ_BlhNOcyfQEta5r38SBXqsfPnAsWE",
     description:
@@ -111,7 +108,6 @@ export default [
       "1 TB DISK",
       "100mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive all blocks and block results from Archway permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Archway obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
     hex: "#e45121",
     logo: "ar://hKb8dVx4E1NCUJ_BlhNOcyfQEta5r38SBXqsfPnAsWE",
     description:
@@ -146,7 +142,6 @@ export default [
       "1 TB DISK",
       "100mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive all blocks and block results from Axelar permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Axelar obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
     hex: "#5cc1fa",
     logo: "ar://iW1jN99yH_gdQtRhf5J_lVwOIu8p_i7FyxEgoQAkWxU",
     description:
@@ -180,7 +175,6 @@ export default [
       "1.5 TB DISK",
       "100mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive all blocks and block results from Cronos permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cronos obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
     hex: "#191b34",
     logo: "ar://BbNmwRFv11y68Jiele3wxZNYQTqRVn_ZK6BwJ5S2MCE",
     description:
@@ -209,6 +203,7 @@ export default [
       Kaon: 7,
       Korellia: 37,
     },
+    nodeName: "Cronos",
     blockPoolId: 5,
     configName: ".cronos",
     requirements: [
@@ -217,7 +212,6 @@ export default [
       "150 GB DISK",
       "100mbps network bandwith",
     ],
-    goal: "The goal of this pool is to validate and archive all blocks and block results from Cronos permanently and decentralized. With this data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes on Cronos obsolete in the long run. In addition, the validated archived block results enable a number of further use cases for data analysis.",
     hex: "#191b34",
     logo: "ar://BbNmwRFv11y68Jiele3wxZNYQTqRVn_ZK6BwJ5S2MCE",
     description:
