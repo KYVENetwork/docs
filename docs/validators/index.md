@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Validators Overview
+# Overview
 
 Validators are the backbone of KYVE and depending on which type of validator you want to join different requirements and responsibilities have to be met.
 

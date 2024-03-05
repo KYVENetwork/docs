@@ -5,6 +5,7 @@
 :root {
   --ifm-color-primary: #58c6b2;
   --ifm-background-color: #f3f3f3;
+  --ifm-menu-link-padding-horizontal: 0.5rem;
 }
 
 .footer {
@@ -93,4 +94,16 @@ html[data-theme="dark"] .discord-icon::before {
 
 .btn-primary:hover {
   box-shadow: 0 0 12px #58c6b2;
+}
+
+.menu__list ul li a {
+  font-weight: normal;
+}
+
+.menu__list ul {
+  border-left: solid 1px #58c6b2 !important;
+}
+
+.menu__list-item-collapsible a {
+  font-weight: var(--ifm-font-weight-semibold) !important;
 }

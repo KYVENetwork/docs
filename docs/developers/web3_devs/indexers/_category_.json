@@ -1,5 +1,7 @@
 {
   "label": "Indexers",
   "position": 0,
-  "link": null
+  "link": null,
+  "collapsible": true,
+  "collapsed": true
 }

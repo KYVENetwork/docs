@@ -17,6 +17,7 @@ function defineSection(section, options = {}) {
       rehypePlugins: [rehypeKatex],
       path: `docs/${section}`,
       routeBasePath: section,
+      sidebarCollapsible: false,
       id: section,
       sidebarPath: "./sidebars.js",
       breadcrumbs: true,
@@ -146,6 +147,7 @@ const config = {
           rehypePlugins: [rehypeKatex],
           sidebarPath: "./sidebars.js",
           breadcrumbs: true,
+          sidebarCollapsible: false,
           path: "docs/home",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
