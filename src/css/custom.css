@@ -36,6 +36,10 @@ html[data-theme="dark"] .footer__title {
   color: white;
 }
 
+html[data-theme="dark"] .footer a:hover {
+  color: var(--ifm-color-primary);
+}
+
 .hide {
   display: none;
 }
@@ -106,4 +110,25 @@ html[data-theme="dark"] .discord-icon::before {
 
 .menu__list-item-collapsible a {
   font-weight: var(--ifm-font-weight-semibold) !important;
+}
+
+html[data-theme="light"] #kapa-widget-container button {
+  background: white !important;
+  color: #2b2b2b;
+  transition: all 0.2s ease-in-out;
+}
+
+html[data-theme="dark"] #kapa-widget-container button {
+  background: var(--ifm-background-surface-color) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+html[data-theme="light"] #kapa-widget-container button:hover {
+  color: var(--ifm-color-primary);
+  transition: all 0.2s ease-in-out;
+}
+
+html[data-theme="dark"] #kapa-widget-container button:hover {
+  color: var(--ifm-color-primary);
+  transition: all 0.2s ease-in-out;
 }
