@@ -75,7 +75,10 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">
-            <img src="/img/homepage/kyve-markup.svg"></img>
+            <img
+              className="hidden sm:visible sm:flex"
+              src="/img/homepage/kyve-markup.svg"
+            ></img>
           </div>
         </div>
         <div className="grid grid-cols-4 gap-6 mt-8">

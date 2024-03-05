@@ -38,7 +38,7 @@ After the successful installation, you need to set up the {pool().binaryName} co
 To download and setup the genesis file execute the following command:
 
 <CodeBlock language="bash">
-{`wget -qO- ${pool().genesisFile}| zcat > ~/.${pool().val_name}/config/genesis.json`}
+{pool().genesisFile.endsWith(".gz") ? `wget -qO- ${pool().genesisFile} | zcat > ~/.${pool().val_name}/config/genesis.json` : `wget -qO- ${pool().genesisFile} | cat > ~/.${pool().val_name}/config/genesis.json`}
 </CodeBlock>
 
 To enable the start of the syncing process, a seed node needs to be added into
