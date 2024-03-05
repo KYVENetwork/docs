@@ -37,7 +37,7 @@ const ParamTotalSupply = ({ networkUrl, denom, decimals }) => {
 
   return (
     <div>
-      <strong>{data}</strong> \$KYVE
+      <strong>{data}</strong> $KYVE
     </div>
   );
 };

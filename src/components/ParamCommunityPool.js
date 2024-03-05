@@ -43,7 +43,7 @@ const ParamCommunityPool = ({ network = "mainnet" }) => {
 
   return (
     <div>
-      <strong>{data}</strong> \$KYVE
+      <strong>{data}</strong> $KYVE
     </div>
   );
 };
