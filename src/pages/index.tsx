@@ -79,6 +79,7 @@ export default function Home() {
           <div className="flex justify-center col-span-2 md:col-span-1">
             <img
               className="hidden sm:visible sm:flex"
+              draggable={false}
               src="/img/homepage/kyve-markup.svg"
             ></img>
           </div>

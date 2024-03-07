@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_label: " "
 ---
+import {Redirect} from '@docusaurus/router'
 
-# TODO
+<Redirect to="/developers/data_engineers/accessing_data/using_rest"/>
