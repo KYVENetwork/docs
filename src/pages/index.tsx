@@ -9,6 +9,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { useHistory } from "@docusaurus/router";
+import styles from "./styles.module.css";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -20,7 +21,7 @@ export default function Home() {
 
   const CARDS: CardProps[] = [
     {
-      title: "Delegation",
+      title: "How to delegate",
       desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
       img: "img/homepage/learn.svg",
       href: "/community/delegating",
@@ -32,13 +33,13 @@ export default function Home() {
       href: "/validators/ksync",
     },
     {
-      title: "Validators",
+      title: "Own runtime",
       desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
       img: "img/homepage/validators.png",
       href: "/validators",
     },
     {
-      title: "Developers",
+      title: "Access the data",
       desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
       img: "img/homepage/developers.png",
       href: "/developers",
@@ -58,7 +59,8 @@ export default function Home() {
               }}
             ></ThemedImage>
             <div className="text-5xl font-bold mt-16">
-              We need some good looking text here!
+              We need some good looking text{" "}
+              <span className="text-primary">here!</span>
             </div>
             <div className="mt-8">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -68,10 +70,18 @@ export default function Home() {
               sanctus est Lorem ipsum dolor sit amet.
             </div>
             <div className="mt-8 flex flex-nowrap">
-              <div className="bg-[#58C6B2] rounded-xl py-2.5 px-3 text-white btn-primary mr-4">
+              <div
+                className="bg-[#58C6B2] rounded-xl py-2.5 px-3 text-white btn-primary mr-4 hover:cursor-pointer"
+                onClick={() => histroy.push("validators/chain_nodes/overview")}
+              >
                 Validate The Network
               </div>
-              <div className="rounded-xl py-2.5 px-3 border border-solid border-black text-black dark:text-white dark:border-white">
+              <div
+                className="rounded-xl py-2.5 px-3 border border-solid border-black text-black dark:text-white dark:border-white hover:cursor-pointer"
+                onClick={() =>
+                  histroy.push("/developers/development/developing_runtime")
+                }
+              >
                 Build Your Own Data Rollup
               </div>
             </div>
@@ -90,7 +100,12 @@ export default function Home() {
               key={i}
               className="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1"
             >
-              <Card {...x} />
+              <div
+                className={styles.fadeIn}
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <Card {...x} />
+              </div>
             </div>
           ))}
         </div>

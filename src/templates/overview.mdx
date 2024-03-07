@@ -88,12 +88,10 @@ export function getGoal(pool) {
   <span> {pool().runtime}</span>
 - **Data Source**:
   <span> {pool().datasource}</span>
-- **Data**:
-  <span>
-    {" "}
-    {pool().runtime.includes("ssync") ? "" : "Blocks from "}
-    {pool().start_data} ongoing{" "}
-  </span>
+- **Data**: <span>
+  {(pool().runtime.includes("ssync") ? "" : "Blocks from ") +
+  pool().start_data}{" "}
+  ongoing</span>
 - **Storage Provider**:
   <span> {pool().storage_provider}</span>
 - **Networks**

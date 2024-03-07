@@ -132,3 +132,7 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
   color: var(--ifm-color-primary);
   transition: all 0.2s ease-in-out;
 }
+
+.text-primary {
+  color: var(--ifm-color-primary);
+}
