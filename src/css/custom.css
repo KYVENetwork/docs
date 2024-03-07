@@ -134,5 +134,35 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
 }
 
 .text-primary {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 0.5s forwards ease;
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+.fadeOut {
+  animation: fadeOutAnimation 0.5s forwards ease;
 }

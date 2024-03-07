@@ -21,28 +21,51 @@ export default function Home() {
 
   const CARDS: CardProps[] = [
     {
-      title: "How to delegate",
-      desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
+      title: "KSYNC",
       img: "img/homepage/learn.svg",
       href: "/community/delegating",
     },
     {
-      title: "KSYNC",
-      desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
+      title: "Tokoen Holders 101",
       img: "img/homepage/community.svg",
       href: "/validators/ksync",
     },
     {
-      title: "Own runtime",
-      desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
+      title: "Data Pipeline",
       img: "img/homepage/validators.png",
       href: "/validators",
     },
     {
-      title: "Access the data",
-      desc: "Discover how KYVE is enabling validators, applications, and builder alike to bring their data experiences to the next level.",
+      title: "Architecture",
       img: "img/homepage/developers.png",
       href: "/developers",
+    },
+  ];
+
+  const CARDS_DETAILED: CardProps[] = [
+    {
+      title: "New to KYVE?",
+      img: "img/homepage/learn.svg",
+      href: "/community/delegating",
+      desc: "Discover how KYVE is enabling validators, applications, and builders alike to bring their data experiences to the next level.",
+    },
+    {
+      title: "Community: Participate",
+      img: "img/homepage/community.svg",
+      href: "/community/delegating",
+      desc: "Discover how KYVE is enabling validators, applications, and builders alike to bring their data experiences to the next level.",
+    },
+    {
+      title: "Validators: Optimize",
+      img: "img/homepage/validators.png",
+      href: "/community/delegating",
+      desc: "Run a node on KYVE's chain, or a validator on it's protocol, or simply benefit from KYVE's node optimization tooling to enhance your overall experience running on other chains.",
+    },
+    {
+      title: "DApp Builders: Get Started",
+      img: "img/homepage/developers.png",
+      href: "/community/delegating",
+      desc: "Take your scalability to the next level by creating your own custom data rollup powered by KYVE. We handle the data, you build the future.",
     },
   ];
 
@@ -59,15 +82,14 @@ export default function Home() {
               }}
             ></ThemedImage>
             <div className="text-5xl font-bold mt-16">
-              We need some good looking text{" "}
-              <span className="text-primary">here!</span>
+              <span className="text-primary">KYVE</span> Handles The data, You
+              lead the future
             </div>
             <div className="mt-8">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
+              Transform your data experience with KYVE's ultimate data
+              rollups-as-a-service (DRaaS) solution for unmatched scalability
+              and seamless support for validators, builders, blockchains, and
+              apps alike.
             </div>
             <div className="mt-8 flex flex-nowrap">
               <div
@@ -94,7 +116,8 @@ export default function Home() {
             ></img>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-6 mt-8">
+        <div className="text-3xl mt-8 mb-2 font-bold">Top pages</div>
+        <div className="grid grid-cols-4 gap-6">
           {CARDS.map((x, i) => (
             <div
               key={i}
@@ -146,6 +169,16 @@ export default function Home() {
             </SplideSlide>
           ))}
         </Splide>
+        <div className="grid grid-cols-4 gap-6 mt-8">
+          {CARDS_DETAILED.map((x, i) => (
+            <div
+              key={i}
+              className="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2 h-full"
+            >
+              <Card {...x} delay={i * 150} />
+            </div>
+          ))}
+        </div>
       </main>
     </Layout>
   );
