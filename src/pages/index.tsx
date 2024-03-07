@@ -100,12 +100,7 @@ export default function Home() {
               key={i}
               className="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1"
             >
-              <div
-                className={styles.fadeIn}
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
-                <Card {...x} />
-              </div>
+              <Card {...x} delay={i * 150} />
             </div>
           ))}
         </div>
