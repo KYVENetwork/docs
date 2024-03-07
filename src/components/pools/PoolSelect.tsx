@@ -57,15 +57,14 @@ const PoolSelect = (props) => {
   const logoUrl = (logo: string) =>
     "https://arweave.net/" + logo.replace("ar://", "");
   const [selected, setSelected, poolNavbar] = useSelectedPool(pools, props);
-  const label = (open) => {
+  const label = () => {
     return (
-      <div
-        className={
-          "flex flex-nowrap cursor-pointer select-none menu__link menu__link--sublist-caret"
-        }
-      >
+      <div className="flex flex-nowrap items-center cursor-pointer select-none menu__link">
         <img src={logoUrl(selected.logo)} className="w-8 h-8 rounded-md mr-2" />
         {selected.name}
+        <div className="ml-auto">
+          <SearchSVG />
+        </div>
       </div>
     );
   };
@@ -81,7 +80,6 @@ const PoolSelect = (props) => {
             value={search}
             onClick={(e) => e.stopPropagation()}
           />
-          <SearchSVG className="cursor-pointer" />
         </div>
         {pools
           .filter((x) => x.name.toLowerCase().includes(search.toLowerCase()))
@@ -89,7 +87,7 @@ const PoolSelect = (props) => {
             <div
               key={index}
               className={
-                "menu__link flex flex-nowrap " +
+                "menu__link cursor-pointer flex flex-nowrap " +
                 (pool == selected ? "text-primary" : "")
               }
               onClick={() => setSelected(pool)}

@@ -1,7 +1,7 @@
 import React, { HtmlHTMLAttributes, useState } from "react";
 
 export interface DropboxProps extends HtmlHTMLAttributes<HTMLDivElement> {
-  label: (open: boolean) => React.JSX.Element;
+  label: () => React.JSX.Element;
 }
 
 const Dropbox = ({ label, children, ...props }: DropboxProps) => {
@@ -30,7 +30,7 @@ const Dropbox = ({ label, children, ...props }: DropboxProps) => {
       }}
       tabIndex={0}
     >
-      <div onClick={toggle}>{label(open)}</div>
+      <div onClick={toggle}>{label()}</div>
       <div {...props} className="relative" onClick={() => close()}>
         {open && (
           <div
