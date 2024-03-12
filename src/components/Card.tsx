@@ -12,12 +12,11 @@ export const Card = ({ delay, img, href, children, className }: CardProps) => {
   const histroy = useHistory();
   return (
     <div
+      className="h-full"
       data-sal="slide-up"
       data-sal-easing="ease-out-back"
       data-sal-duration="500"
-      className="h-full"
       data-sal-delay={delay}
-      data-tilt
     >
       <Tilt
         perspective={10000}
@@ -26,7 +25,7 @@ export const Card = ({ delay, img, href, children, className }: CardProps) => {
         tiltMaxAngleX={8}
         tiltMaxAngleY={8}
         scale={1.025}
-        className="rounded-lg overflow-hidden"
+        className="rounded-lg overflow-hidden h-full"
       >
         <div
           className={

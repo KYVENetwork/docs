@@ -2,7 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { Card, CardProps } from "../components/Card";
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -10,6 +10,8 @@ import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { useHistory } from "@docusaurus/router";
 import sal from "sal.js";
+
+import KyveMarkup from "../../static/img/homepage/kyve-markup.svg";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -31,7 +33,7 @@ export default function Home() {
     },
     {
       title: "Delegation",
-      img: "img/homepage/community.svg",
+      img: "img/homepage/community.png",
       href: "/community/delegating",
     },
     {
@@ -55,7 +57,7 @@ export default function Home() {
     },
     {
       title: "Tokenholders",
-      img: "img/homepage/community.svg",
+      img: "img/homepage/community.png",
       href: "/community",
       desc: "Discover how KYVE is enabling validators, applications, and builders alike to bring their data experiences to the next level.",
     },
@@ -73,39 +75,38 @@ export default function Home() {
     },
   ];
 
+  const animation = (type = "slide-in", delay = 0) => {
+    return {
+      "data-sal": type,
+      "data-sal-easing": "ease-out-back",
+      "data-sal-duration": "500",
+      "data-sal-delay": delay,
+    };
+  };
+
   return (
     <Layout>
       <main className="container py-12">
         <div className="grid grid-cols-2 items-center">
           <div className="col-span-2 md:col-span-1">
-            <ThemedImage
-              alt="logo"
-              sources={{
-                dark: useBaseUrl("/img/homepage/logo_white.svg"),
-                light: useBaseUrl("/img/homepage/logo.svg"),
-              }}
-              data-sal="zoom-in"
-              data-sal-easing="ease-out-back"
-              data-sal-duration="500"
-            />
+            <div {...animation("zoom-in")}>
+              <ThemedImage
+                alt="logo"
+                sources={{
+                  dark: useBaseUrl("/img/homepage/logo_white.svg"),
+                  light: useBaseUrl("/img/homepage/logo.svg"),
+                }}
+              />
+            </div>
             <div
               className="text-5xl font-bold mt-16"
-              data-sal="slide-right"
-              data-sal-easing="ease-out-back"
-              data-sal-duration="500"
-              data-sal-delay="200"
+              {...animation("slide-right", 200)}
             >
               <span className="text-primary">KYVE</span> Handles The Data,
               <br />
               You Build The Future
             </div>
-            <div
-              className="mt-8"
-              data-sal="slide-left"
-              data-sal-easing="ease-out-back"
-              data-sal-duration="500"
-              data-sal-delay="400"
-            >
+            <div className="mt-8" {...animation("slide-left", 400)}>
               Transform your data experience with KYVE's ultimate data
               rollups-as-a-service (DRaaS) solution for unmatched scalability
               and seamless support for validators, builders, blockchains, and
@@ -113,13 +114,9 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">
-            <img
+            <KyveMarkup
               className="hidden sm:visible sm:flex"
-              draggable={false}
-              src="/img/homepage/kyve-markup.svg"
-              data-sal="zoom-out"
-              data-sal-easing="ease-out-back"
-              data-sal-duration="500"
+              {...animation("zoom-out")}
             />
           </div>
         </div>

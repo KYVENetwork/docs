@@ -7,6 +7,7 @@
 import { themes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { updatePoolsPlugin } from "./pools.js";
 
 function defineSection(section, options = {}) {
   return [
@@ -122,20 +123,7 @@ const config = {
         },
       };
     },
-    async function updatePools(context, options) {
-      return {
-        name: "docusuaurs-updatepools",
-        loadContent() {
-          // inject updatead pools
-          const file = require("./pools.js");
-          if (context.siteConfig && context.siteConfig.customFields)
-            context.siteConfig.customFields.pools = file;
-        },
-        getPathsToWatch() {
-          return [`pools.js`];
-        },
-      };
-    },
+    updatePoolsPlugin
   ],
   presets: [
     [
