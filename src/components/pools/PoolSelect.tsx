@@ -1,6 +1,6 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React, { useEffect, useState } from "react";
-import Dropbox from "../ui/Modal";
+import Modal from "../ui/Modal";
 import DocSidebarItems from "@theme-original/DocSidebarItems";
 import { useHistory } from "@docusaurus/router";
 
@@ -71,7 +71,7 @@ const PoolSelect = (props) => {
 
   return (
     <>
-      <Dropbox label={label}>
+      <Modal label={label}>
         <div className="flex flex-nowrap items-center menu__link">
           <input
             className="bg-transparent outline-none border-none font-bold text-lg w-48"
@@ -99,7 +99,7 @@ const PoolSelect = (props) => {
               {pool.name}
             </div>
           ))}
-      </Dropbox>
+      </Modal>
       <ul className="menu__list">
         <DocSidebarItems
           items={poolNavbar}

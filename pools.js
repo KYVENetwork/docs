@@ -184,7 +184,7 @@ const CronosSSync = {
   name: "Cronos // State-Sync",
   val_name: "cronos-ssync",
   runtime: "@kyvejs/tendermint-ssync",
-  datasource: "Self hosted Cronos full node (cronosmainnet_25-1)",
+  datasource: "KSYNC (over serve-snapshots)",
   start_data: "state-sync snapshots every 5,000 blocks",
   networks: {
     Mainnet: 6,
@@ -246,7 +246,7 @@ const NobleSSync = {
   name: "Noble // State-Sync",
   val_name: "noble-ssync",
   runtime: "@kyvejs/tendermint-ssync",
-  datasource: "Self hosted Noble full node (noble-1)",
+  datasource: "KSYNC (over serve-snapshots)",
   start_data: "state-sync snapshots every 3,000 blocks",
   networks: {
     Mainnet: 8,

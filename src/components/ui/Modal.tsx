@@ -1,10 +1,10 @@
 import React, { HtmlHTMLAttributes, useState } from "react";
 
-export interface DropboxProps extends HtmlHTMLAttributes<HTMLDivElement> {
+export interface ModalProps extends HtmlHTMLAttributes<HTMLDivElement> {
   label: () => React.JSX.Element;
 }
 
-const Dropbox = ({ label, children, ...props }: DropboxProps) => {
+const Modal = ({ label, children, ...props }: ModalProps) => {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
   const toggle = () => {
@@ -35,8 +35,8 @@ const Dropbox = ({ label, children, ...props }: DropboxProps) => {
         {open && (
           <div
             className={
-              "fadeIn absolute top-0 z-10 shadow-lg rounded-md border border-solid " +
-              (closing ? "fadeOut" : "")
+              "slideIn absolute top-0 z-40 shadow-lg rounded-md border border-solid " +
+              (closing ? "slideOut" : "")
             }
             style={{
               background: "var(--ifm-background-color)",
@@ -50,4 +50,4 @@ const Dropbox = ({ label, children, ...props }: DropboxProps) => {
     </div>
   );
 };
-export default Dropbox;
+export default Modal;

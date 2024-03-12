@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'sal.js/dist/sal.css';
 
 :root {
   --ifm-color-primary: #58c6b2;
@@ -137,7 +138,7 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
   color: var(--ifm-color-primary) !important;
 }
 
-@keyframes fadeInAnimation {
+@keyframes slideInAnimation {
   0% {
     opacity: 0;
     transform: translateY(50px);
@@ -148,12 +149,12 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
   }
 }
 
-.fadeIn {
+.slideIn {
   opacity: 0;
-  animation: fadeInAnimation 0.5s forwards ease;
+  animation: slideInAnimation 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes fadeOutAnimation {
+@keyframes slideOutAnimation {
   0% {
     opacity: 1;
     transform: translateY(0px);
@@ -163,6 +164,6 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
     transform: translateY(50px);
   }
 }
-.fadeOut {
-  animation: fadeOutAnimation 0.5s forwards ease;
+.slideOut {
+  animation: slideOutAnimation 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

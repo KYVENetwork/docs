@@ -1,38 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { HTMLAttributes } from "react";
 import { useHistory } from "@docusaurus/router";
-import { useInView } from "react-intersection-observer";
+import Tilt from "react-parallax-tilt";
 
-export interface CardProps {
-  title: string;
-  desc?: string;
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   img: string;
   href: string;
-  delay?: number;
+  delay: number;
 }
 
-export const Card = ({ desc, title, img, href, delay }: CardProps) => {
+export const Card = ({ delay, img, href, children, className }: CardProps) => {
   const histroy = useHistory();
-  const [ref, inView] = useInView();
-  const [animated, setAnimated] = useState(false);
-  useEffect(() => {
-    if (inView && !animated) {
-      setAnimated(true);
-    }
-  }, [inView]);
   return (
     <div
-      ref={ref}
-      className={(animated ? "fadeIn" : "opacity-0") + " h-full"}
-      style={{ animationDelay: `${delay}ms` }}
+      data-sal="slide-up"
+      data-sal-easing="ease-out-back"
+      data-sal-duration="500"
+      className="h-full"
+      data-sal-delay={delay}
+      data-tilt
     >
-      <div
-        className="flex flex-col p-6 w-full bg-gradient-to-b h-full from-[#252B2E] to-[#3f776f] rounded-xl text-white relative shadow-xl hover:scale-[1.025] transition-all duration-300 hover:text-white hover:cursor-pointer overflow-hidden justify-center"
-        onClick={() => histroy.push(href)}
+      <Tilt
+        perspective={10000}
+        glareEnable
+        glareMaxOpacity={0.4}
+        tiltMaxAngleX={8}
+        tiltMaxAngleY={8}
+        scale={1.025}
+        className="rounded-lg overflow-hidden"
       >
-        <div className="text-3xl font-bold z-10">{title}</div>
-        {desc && <div className="z-10 mt-8">{desc}</div>}
-        <img src={img} className="absolute right-0 top-0 z-0"></img>
-      </div>
+        <div
+          className={
+            "flex flex-col w-full bg-gradient-to-b h-full from-[#252B2E] to-[#3f776f] rounded-xl text-white relative shadow-xl transition-all duration-300 hover:cursor-pointer overflow-hidden justify-center " +
+            className
+          }
+          onClick={() => histroy.push(href)}
+        >
+          <div className="z-10">{children}</div>
+          <img src={img} className="absolute right-0 top-0 z-0"></img>
+        </div>
+      </Tilt>
     </div>
   );
 };
