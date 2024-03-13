@@ -84,7 +84,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 ```bash
-ksync serve-snapshots --binary="/path/to/celestia-appd" --home="/path/to/.celestia-app" --source=celestia
+ksync serve-snapshots --binary="/path/to/celestia-appd" --home="/path/to/.celestia-app" --source=celestia --engine=tendermint-celestiacore
 ```
 
 :::caution
