@@ -1,3 +1,6 @@
+import axios from "axios";
+import { load } from "js-yaml";
+
 const Cosmos = {
   name: "Cosmos Hub",
   chainId: "cosmoshub-4",
@@ -17,10 +20,6 @@ const Cosmos = {
     "512 GB DISK",
     "50mbps network bandwith",
   ],
-  hex: "#1c2049",
-  logo: "ar://GSK9zAQx1jOnQIhbM20qCoOFYT3EJXIJfwfvT_QhLVM",
-  description:
-    "Serving as the economic center of the Interchain, the Cosmos Hub is a blockchain that provides vital ecosystem services. The primary token of the Cosmos Hub is the ATOM, but the Hub will support many tokens in the future.",
 };
 
 const Osmosis = {
@@ -42,10 +41,6 @@ const Osmosis = {
     "1 TB DISK",
     "100mbps network bandwith",
   ],
-  hex: "#8d07c7",
-  logo: "ar://u8kGlBx37seQCO1X5vQsc3Q8iO2CE-BHqsm0937poak",
-  description:
-    "Osmosis, dubbed the Interchain Liquidity Lab, is a decentralized exchange (DEX) for Cosmos, an ecosystem of sovereign, interoperable blockchains all connected trustlessly over IBC, the Inter-Blockchain Communication Protocol.",
   binaryVersion: "v3.1.0",
   goVersion: "go15",
   binaryName: "osmosisd",
@@ -72,10 +67,6 @@ const Archway = {
     "1 TB DISK",
     "100mbps network bandwith",
   ],
-  hex: "#e45121",
-  logo: "ar://hKb8dVx4E1NCUJ_BlhNOcyfQEta5r38SBXqsfPnAsWE",
-  description:
-    "Archway is a Cosmos-native incentivized smart contract chain that enables developers to deploy high-performance dapps that earn rewards based on the traffic they bring to the network. As developers build and launch impactful dapps, they receive a proportional share of network fees, inflation, and premiums. At its core, Archway is designed to enable developers to capture the value they create through sustainable economic models built into the blockchain.",
   binaryVersion: "v1.0.1",
   goVersion: "go19",
   binaryName: "archwayd",
@@ -129,10 +120,6 @@ const Axelar = {
     "1 TB DISK",
     "100mbps network bandwith",
   ],
-  hex: "#5cc1fa",
-  logo: "ar://iW1jN99yH_gdQtRhf5J_lVwOIu8p_i7FyxEgoQAkWxU",
-  description:
-    "Axelar is the programmable Web3 interoperability platform, connecting over 50 blockchains via a secure, scalable network – internet infrastructure for the world’s next super app. For partners ranging from Uniswap to Circle, Axelar enables scalable cross-chain solutions. Users interact with any asset in one click. Developers span multiple blockchains as though building on one, supported by a simple API and a permissionless ecosystem of tools and service providers. Backers include Binance, Coinbase, Dragonfly, Galaxy and Polychain. See what full-stack interoperability can do for your dApp. Learn more at https://axelar.network.",
   binaryVersion: "v0.10.7",
   goVersion: "go16",
   binaryName: "axelard",
@@ -163,10 +150,6 @@ const Cronos = {
     "1.5 TB DISK",
     "100mbps network bandwith",
   ],
-  hex: "#191b34",
-  logo: "ar://BbNmwRFv11y68Jiele3wxZNYQTqRVn_ZK6BwJ5S2MCE",
-  description:
-    "Cronos (cronos.org) is the leading Ethereum-compatible layer 1 blockchain network built on the Cosmos SDK, supported by Crypto.com, Crypto.org, and more than 500 app developers and partners. Today, the #CROfam ecosystem represents an addressable user base of more than 80 million people worldwide. Our mission is to make it easy and safe for the next billion crypto users to adopt Web3, with a focus on decentralized applications in the DeFi, NFTs and GameFi verticals.",
   binaryVersion: "v0.6.11",
   goVersion: "go17",
   binaryName: "cronosd",
@@ -221,10 +204,6 @@ const Noble = {
     "1 TB DISK",
     "100mbps network bandwith",
   ],
-  hex: "#0e1225",
-  logo: "ar://DZP1WPGja9LAa7Vf1P2N-dfDVUlG9lmCkD_psZj47tU",
-  description:
-    "Noble is a Cosmos application-specific blockchain purpose-built for native asset issuance. Noble brings the efficiency and interoperability of native assets to the wider Cosmos ecosystem, starting with USDC. Noble’s vision is to be the world’s premier issuance hub for digital assets that connect to other blockchains seamlessly. Noble leverages the Cosmos-SDK – a flexible toolkit that allows developers to incorporate existing modules and to seamlessly integrate custom modules that add virtually unlimited functionality for asset issuers on the Noble blockchain.",
   binaryVersion: "v1.0.0",
   goVersion: [
     ["v1.0.0", "go19"],
@@ -264,7 +243,7 @@ const NobleSSync = {
   ],
 };
 
-export default [
+const pools = [
   Cosmos,
   Osmosis,
   Archway,
@@ -276,17 +255,38 @@ export default [
   NobleSSync,
 ];
 
+export default pools;
+
+const loadRegistry = async () => {
+  try {
+    const { data } = await axios.get(
+      "https://raw.githubusercontent.com/KYVENetwork/source-registry/main/.github/registry.yml"
+    );
+    const parsedRegistry = load(data);
+    for (const pool of pools) {
+      const source = parsedRegistry[pool.chainId];
+      pool.hex = source["networks"]["kyve-1"]["properties"]["hex"];
+      pool.logo = source["networks"]["kyve-1"]["properties"]["logo"];
+      pool.description =
+        source["networks"]["kyve-1"]["properties"]["description"];
+      if (source["networks"]["kyve-1"]["integrations"]["ksync"])
+        pool.binaryName =
+          source["networks"]["kyve-1"]["integrations"]["ksync"]["binary-name"];
+    }
+  } catch {
+  }
+};
+
 export async function updatePoolsPlugin(context, options) {
   return {
     name: "docusuaurs-updatepools",
-    loadContent() {
-      // inject updatead pools
-      const file = require("./pools.js");
+    async loadContent() {
+      await loadRegistry();
       if (context.siteConfig && context.siteConfig.customFields)
-        context.siteConfig.customFields.pools = file;
+        context.siteConfig.customFields.pools = pools;
     },
     getPathsToWatch() {
       return [`pools.js`];
     },
   };
-};
+}

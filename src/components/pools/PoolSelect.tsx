@@ -69,6 +69,9 @@ const PoolSelect = (props) => {
     );
   };
 
+  const filteredPools = () =>
+    pools.filter((x) => x.name.toLowerCase().includes(search.toLowerCase()));
+
   return (
     <>
       <Modal label={label}>
@@ -77,28 +80,36 @@ const PoolSelect = (props) => {
             className="bg-transparent outline-none border-none font-bold text-lg w-48"
             placeholder="Search"
             onChange={(x) => setSearch(x.target.value)}
+            autoFocus
             value={search}
             onClick={(e) => e.stopPropagation()}
           />
+          <span
+            className="cursor-pointer font-bold"
+            onClick={(e) => {
+              setSearch("");
+              e.stopPropagation();
+            }}
+          >
+            X
+          </span>
         </div>
-        {pools
-          .filter((x) => x.name.toLowerCase().includes(search.toLowerCase()))
-          .map((pool, index) => (
-            <div
-              key={index}
-              className={
-                "menu__link cursor-pointer flex flex-nowrap " +
-                (pool == selected ? "text-primary" : "")
-              }
-              onClick={() => setSelected(pool)}
-            >
-              <img
-                src={logoUrl(pool.logo)}
-                className="w-8 h-8 rounded-md mr-2"
-              />
-              {pool.name}
-            </div>
-          ))}
+        {filteredPools().map((pool, index) => (
+          <div
+            key={index}
+            className={
+              "menu__link cursor-pointer flex flex-nowrap " +
+              (pool == selected ? "text-primary" : "")
+            }
+            onClick={() => {
+              setSelected(pool);
+              setSearch("");
+            }}
+          >
+            <img src={logoUrl(pool.logo)} className="w-8 h-8 rounded-md mr-2" />
+            {pool.name}
+          </div>
+        ))}
       </Modal>
       <ul className="menu__list">
         <DocSidebarItems
