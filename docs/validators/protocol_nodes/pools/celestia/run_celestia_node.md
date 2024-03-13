@@ -12,7 +12,7 @@ Due to very specific requirements, an additional validation layer, accessibility
 
 ## Install Celestia full node
 
-The Celestia binary with the version `v1.0.0` has to be installed.
+The Celestia binary with the version `v1.7.0` has to be installed.
 
 You can follow the official installation instructions [here](https://docs.celestia.org/nodes/consensus-node) or build from source [here](https://github.com/celestiaorg/celestia-app/releases/tag/v1.7.0).
 
