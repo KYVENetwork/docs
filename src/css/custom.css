@@ -134,10 +134,6 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
   transition: all 0.2s ease-in-out;
 }
 
-.text-primary {
-  color: var(--ifm-color-primary) !important;
-}
-
 @keyframes slideInAnimation {
   0% {
     opacity: 0;

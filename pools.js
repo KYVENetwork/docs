@@ -44,6 +44,7 @@ const Osmosis = {
   binaryVersion: "v3.1.0",
   goVersion: "go15",
   binaryName: "osmosisd",
+  configName: ".osmosis",
   binaryDownload: "https://github.com/osmosis-labs/osmosis/releases/tag/v3.1.0",
   installInstructions: "https://docs.osmosis.zone/osmosis-core/osmosisd/",
 };
@@ -69,13 +70,13 @@ const Archway = {
   ],
   binaryVersion: "v1.0.1",
   goVersion: "go19",
+  nodeName: "Archway",
+  configName: ".archway",
   binaryName: "archwayd",
   binaryDownload:
     "https://github.com/archway-network/archway/releases/tag/v1.0.1",
   installInstructions:
     "https://docs.archway.io/validators/running-a-node/join-a-network/sync-from-genesis",
-  genesisFile:
-    "https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz",
   seed: "3ba7bf08f00e228026177e9cdc027f6ef6eb2b39@35.232.234.58:26656",
 };
 
@@ -90,9 +91,6 @@ const ArchwaySSync = {
     Mainnet: 4,
     Kaon: 4,
   },
-  blockPoolId: 2,
-  nodeName: "Archway",
-  configName: ".archway",
   requirements: [
     "8 or more physical CPU cores",
     "32 GB RAM",
@@ -123,11 +121,10 @@ const Axelar = {
   binaryVersion: "v0.10.7",
   goVersion: "go16",
   binaryName: "axelard",
+  configName: ".axelar",
   binaryDownload:
     "https://github.com/axelarnetwork/axelar-core/releases/tag/v0.10.7",
   installInstructions: "https://docs.axelar.dev/node/join-genesis",
-  genesisFile:
-    "https://s3.eu-central-1.amazonaws.com/files.kyve.network/infrastructure/axelar/genesis.json.gz",
   seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:15156,3d67d0646cddcc203b41434aceea64ade22ba6fc@k8s-mainnet-axelarco-79b464ee93-f03cb16c57cf7cb2.elb.us-east-2.amazonaws.com:26656,609504b517f88f628e98d4a918ffc69e9654b451@65.108.192.147:26656,691101434ca4016b28e6a9943da2ad6838b80685@axelar-seed.pops.one:26656,44596cd8c8fd80be909a5968ac4ba6651d840b36@axelar-seed.validatrium.com:6969",
 };
 
@@ -152,13 +149,13 @@ const Cronos = {
   ],
   binaryVersion: "v0.6.11",
   goVersion: "go17",
+  nodeName: "Cronos",
+  configName: ".cronos",
   binaryName: "cronosd",
   binaryDownload:
     "https://github.com/crypto-org-chain/cronos/releases/tag/v0.6.11",
   installInstructions:
     "https://docs.cronos.org/for-node-hosts/running-nodes/cronos-mainnet",
-  genesisFile:
-    "https://raw.githubusercontent.com/crypto-org-chain/cronos-mainnet/master/cronosmainnet_25-1/genesis.json",
   seed: "0d5cf1394a1cfde28dc8f023567222abc0f47534@cronos-seed-0.crypto.org:26656,3032073adc06d710dd512240281637c1bd0c8a7b@cronos-seed-1.crypto.org:26656,04f43116b4c6c70054d9c2b7485383df5b1ed1da@cronos-seed-2.crypto.org:26656,337377dcda43d79c537d2c4d93ad3b698ce9452e@bd-cronos-mainnet-seed-node-01.bdnodes.net:26656",
 };
 
@@ -174,9 +171,6 @@ const CronosSSync = {
     Kaon: 7,
     Korellia: 37,
   },
-  nodeName: "Cronos",
-  blockPoolId: 5,
-  configName: ".cronos",
   requirements: [
     "8 or more physical CPU cores",
     "32 GB RAM",
@@ -212,11 +206,11 @@ const Noble = {
     ["v3.1.0", "go19"],
     ["v4.0.1", "go21"],
   ],
+  nodeName: "Noble",
+  configName: ".noble",
   binaryName: "nobled",
   binaryDownload: "https://github.com/noble-assets/noble/releases/tag/v1.0.0",
   installInstructions: "https://docs.nobleassets.xyz/network/running",
-  genesisFile:
-    "https://raw.githubusercontent.com/strangelove-ventures/noble-networks/main/mainnet/noble-1/genesis.json",
   seed: "20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:21590",
 };
 
@@ -232,9 +226,61 @@ const NobleSSync = {
     Kaon: 12,
     Korellia: 46,
   },
-  nodeName: "Noble",
-  blockPoolId: 7,
-  configName: ".noble",
+  requirements: [
+    "8 or more physical CPU cores",
+    "32 GB RAM",
+    "150 GB DISK",
+    "100mbps network bandwith",
+  ],
+};
+
+const Celestia = {
+  name: "Celestia",
+  chainId: "celestia",
+  val_name: "celestia",
+  runtime: "@kyvejs/tendermint",
+  datasource: "Self hosted Celestia full node (celestia)",
+  start_data: "Genesis",
+  storage_provider: "Bundlr",
+  networks: {
+    Mainnet: 9,
+    Kaon: 14,
+    Korellia: 70,
+  },
+  requirements: [
+    "4 or more physical CPU cores",
+    "32 GB RAM",
+    "1 TB DISK",
+    "100mbps network bandwith",
+  ],
+  binaryVersion: "v1.7.0",
+  goVersion: [["v1.7.0", "go22"]],
+  nodeName: "Celestia",
+  configName: ".celestia-app",
+  binaryName: "celestia-appd",
+  binaryDownload:
+    "https://github.com/celestiaorg/celestia-app/releases/tag/v1.7.0",
+  installInstructions: "https://docs.celestia.org/nodes/consensus-node",
+  seed: "6de4ce5baa9d2bed33c0c53b9518b907cfaab33b@65.108.128.201:11656",
+  configToml: {
+    description:
+      "Due to the size of the block_results response and because Celestia disables the storage of block results by default, ",
+    code: 'abci_discard_abci_responses = false\ntimeout_broadcast_tx_commit = "120s"',
+  },
+  appToml: 'pruning = "everything"\nindex-events = [""]',
+};
+
+const CelestiaSSync = {
+  ...Celestia,
+  name: "Celestia // State-Sync",
+  val_name: "celestia-ssync",
+  runtime: "@kyvejs/tendermint-ssync",
+  datasource: "KSYNC (over serve-snapshots)",
+  start_data: "state-sync snapshots every 3,000 blocks",
+  networks: {
+    Mainnet: 10,
+    Kaon: 15,
+  },
   requirements: [
     "8 or more physical CPU cores",
     "32 GB RAM",
@@ -253,6 +299,8 @@ const pools = [
   CronosSSync,
   Noble,
   NobleSSync,
+  Celestia,
+  CelestiaSSync,
 ];
 
 export default pools;
@@ -269,11 +317,26 @@ const loadRegistry = async () => {
       pool.logo = source["networks"]["kyve-1"]["properties"]["logo"];
       pool.description =
         source["networks"]["kyve-1"]["properties"]["description"];
-      if (source["networks"]["kyve-1"]["integrations"]["ksync"])
+      pool.genesisFile =
+        source["codebase"]["settings"]["cosmos-properties"]["genesis-url"];
+      if (source["networks"]["kyve-1"]["integrations"]["ksync"]) {
         pool.binaryName =
           source["networks"]["kyve-1"]["integrations"]["ksync"]["binary-name"];
+
+        // check if the source has a state sync pool
+        pool.integrations = [];
+        if (
+          source["networks"]["kyve-1"].pools.find((p) =>
+            p.runtime.includes("ssync")
+          )
+        )
+          pool.integrations.push("State-Sync");
+        pool.integrations.push(...["Block-Sync", "Height-Sync"]);
+      }
     }
-  } catch {
+  } catch (e) {
+    console.log("Faild to load registry!");
+    console.log(e);
   }
 };
 

@@ -1,8 +1,8 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import { Card, CardProps } from "../components/Card";
+import { Card } from "../components/Card";
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -174,9 +174,6 @@ export default function Home() {
               gap: 10,
               type: "loop",
               pagination: false,
-              autoScroll: {
-                speed: 0.75,
-              },
             }}
             extensions={{ AutoScroll }}
           >

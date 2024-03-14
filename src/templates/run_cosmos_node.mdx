@@ -61,8 +61,8 @@ To download and setup the genesis file execute the following command:
     ? `wget -qO- ${pool().genesisFile} | zcat > ~/.${
         pool().val_name
       }/config/genesis.json`
-    : `wget -qO- ${pool().genesisFile} | cat > ~/.${
-        pool().val_name
+    : `wget -qO- ${pool().genesisFile} | cat > ~/${
+        pool().configName
       }/config/genesis.json`}
 </CodeBlock>
 
@@ -79,11 +79,13 @@ find peers where you can sync with the network: https://polkachu.com/live_peers/
 
 ### Configuration
 
-Due to the size of the `block_results` response, it is **required** to set the following in your <span><code>~/.{pool().val_name}/config/config.toml</code></span>:
+{!pool().configToml ? (<span>
+  Due to the size of the <code>block_results</code> response,
+</span>) : <span>{pool().configToml.description}</span>} it is <b>required</b> to set the following in your <span><code>~/.{pool().val_name}/config/config.toml</code></span>:
 
-```toml
-timeout_broadcast_tx_commit = "120s"
-```
+<CodeBlock language="toml">
+  {pool().configToml ? pool().configToml.code : 'timeout_broadcast_tx_commit = "120s"'}
+</CodeBlock>
 
 For efficient pruning, the following settings are recommended to decrease the disk usage:
 
@@ -96,11 +98,9 @@ indexer = "null"
 ```
 
 <code>~/.{pool().val_name}/config/app.toml</code>
-```toml pruning = "everything"
-
-index-events = [""]
-
-````
+<CodeBlock language="toml">
+{pool().appToml ?? 'index-events = [""]'}
+</CodeBlock>
 
 Finally, the node can be started:
 

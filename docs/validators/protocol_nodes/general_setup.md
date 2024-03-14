@@ -21,10 +21,3 @@ This architecture diagram summarizes the setup of the Osmosis integration on KYV
 
 Here the tendermint runtime is responsible for communicating with the tendermint application (purple) - in this case osmosisd, and forwarding the data to the KYVE core protocol. The KYVE core then handles the communication with the pool. This entire process (yellow) is the KYVE protocol validator. The resulting
 data are the blocks and the block results from the tendermint application - validated and permanently stored on a storage provider like Arweave.
-
-## Goal
-
-The goal of this pool is to validate and archive all blocks and block results from Osmosis permanently and decentralized. With this
-data we want to make it possible for other nodes to block sync the data from KYVE, making expensive archival nodes
-on Osmosis obsolete in the long run. More information on how to perform block sync with KYVE visit the documentation about
-KSYNC [here](https://github.com/KYVENetwork/ksync). In addition, the validated archived block results enable a number of further use cases for data analysis. 

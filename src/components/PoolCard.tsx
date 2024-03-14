@@ -1,16 +1,24 @@
 import React from "react";
+import Link from "../../static/img/homepage/link.svg";
 
 export interface PoolCardProps {
   name: string;
   description: string;
   hex: string;
   logo: string;
+  integrations: string[];
 }
 
-export const PoolCard = ({ description, name, hex, logo }: PoolCardProps) => {
+export const PoolCard = ({
+  description,
+  name,
+  hex,
+  logo,
+  integrations,
+}: PoolCardProps) => {
   const logoUrl = "https://arweave.net/" + logo.replace("ar://", "");
   return (
-    <div className="flex flex-col p-6 w-full h-[280px] bg-white dark:bg-[#252B2E] rounded-xl text-black relative hover:scale-[1.025] transition-all duration-300 hover:cursor-pointer">
+    <div className="flex flex-col p-6 w-full h-[330px] bg-white dark:bg-[#252B2E] rounded-xl text-black relative hover:scale-[1.025] transition-all duration-300 hover:cursor-pointer">
       <div className="bg-[#252B2E] text-white rounded-lg relative overflow-hidden dark:bg-[#1a1e20] p-8 flex items-center">
         <img src={logoUrl} className="rounded-lg w-12 h-12 mr-4"></img>
         <div className="text-2xl z-10">{name}</div>
@@ -21,6 +29,20 @@ export const PoolCard = ({ description, name, hex, logo }: PoolCardProps) => {
         style={{ scrollbarWidth: "none" }}
       >
         {description}
+      </div>
+      <div>
+        <hr className="bg-accent my-2" />
+        <div className="flex items-center">
+          <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
+            {integrations[0]}
+          </div>
+          <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
+            +{integrations.length - 1}
+          </div>
+          <div className="ml-auto bg-primary rounded-2xl p-2 shadow-md px-4 hover:scale-105 transition-all">
+            <Link />
+          </div>
+        </div>
       </div>
     </div>
   );
