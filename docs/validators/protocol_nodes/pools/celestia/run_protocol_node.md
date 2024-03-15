@@ -47,11 +47,11 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
 
 2023-02-13 08:46:00.873  INFO  Chain ID = kyve-1
-2023-02-13 08:46:00.873  INFO  Pool ID = 2
+2023-02-13 08:46:00.873  INFO  Pool ID = 9
 2023-02-13 08:46:00.873  INFO  Runtime = @kyvejs/tendermint
 2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 
-2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint = v1.0.7
+2023-02-13 08:46:00.873  INFO  @kyvejs/tendermint = v1.1.5
 2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.11
 
 2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id 2 yet
@@ -90,7 +90,7 @@ You might have to execute this command with `sudo`
 :::
 
 ```bash
-tee <<EOF > /dev/null /etc/systemd/system/archwayd.service
+tee <<EOF > /dev/null /etc/systemd/system/celestiad.service
 [Unit]
 Description=KYVE Protocol-Node celestia daemon
 After=network-online.target
@@ -111,20 +111,20 @@ Don't forget to change the filename and the valaccount in the service file if yo
 Start the daemon
 
 ```bash
-sudo systemctl enable archwayd
-sudo systemctl start archwayd
+sudo systemctl enable celestiad
+sudo systemctl start celestiad
 ```
 
 It can be stopped using
 
 ```
-sudo systemctl stop archwayd
+sudo systemctl stop celestiad
 ```
 
 You can see its logs with
 
 ```
-sudo journalctl -u archwayd -f -o cat
+sudo journalctl -u celestiad -f -o cat
 ```
 
 ## Start node on multiple pools
