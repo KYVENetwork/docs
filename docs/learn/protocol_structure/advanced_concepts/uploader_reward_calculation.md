@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## Introduction
 
-To incentivize protocol validators to stay online and continue uploading and validating data nodes receive a reward in \$KYVE for every valid bundle proposed. This reward depends on the size of the data uploaded, the specified operating cost of the pool and the share of the inflation the pool receives. Once the total bundle reward is charged from the funders and the inflation share ([Inflation Splitting](/learn/protocol_devs/advanced_concepts/inflation_splitting)) the reward gets distributed to all stakeholders which are the treasury, the uploader and its delegators.
+To incentivize protocol validators to stay online and continue uploading and validating data nodes receive a reward in \$KYVE for every valid bundle proposed. This reward depends on the size of the data uploaded, the specified operating cost of the pool and the share of the inflation the pool receives. Once the total bundle reward is charged from the funders and the inflation share ([Inflation Splitting](/learn/protocol_structure/advanced_concepts/inflation_splitting)) the reward gets distributed to all stakeholders which are the treasury, the uploader and its delegators.
 
 ## Bundle Reward
 

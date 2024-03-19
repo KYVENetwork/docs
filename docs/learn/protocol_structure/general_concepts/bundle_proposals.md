@@ -52,7 +52,7 @@ transaction arguments we can identify the following requirements:
 - `storage_id`: here the previously mentioned storage receipt is stored. With this other participants in the network can
   retrieve the actual data and verify it
 - `data_size`: the amount of bytes the data has which got stored on the storage provider. Used for
-  the [reward calculation](/learn/protocol_devs/advanced_concepts/uploader_reward_calculation) and is also verified by
+  the [reward calculation](/learn/protocol_structure/advanced_concepts/uploader_reward_calculation) and is also verified by
   other validators
 - `data_hash`: a sha256 hash of the raw data content which got stored on the storage provider. Once the bundle is valid
   the hash also gets stored on-chain together with the _storage_id_ so that data consumers can always verify the
@@ -211,7 +211,7 @@ listed including other helpful information.
 
 Ongoing bundle proposals are always attached to the pool query and can be found under `bundle_proposal`. As already
 mentioned before
-in [Storage Pools](/learn/protocol_devs/general_concepts/storage_pools) there are two endpoints where pools can be queried:
+in [Storage Pools](/learn/protocol_structure/general_concepts/storage_pools) there are two endpoints where pools can be queried:
 
 - `/kyve/query/v1beta1/pools`: gets all pools
 - `/kyve/query/v1beta1/pool/{id}`: gets a single pool by its ID

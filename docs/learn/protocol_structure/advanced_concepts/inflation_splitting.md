@@ -26,4 +26,4 @@ minted \$KYVE to protocol and therefore supporting the bundle reward. A summary 
 </p>
 
 While the funders get charged with the operating cost of the pool, the pool also takes a certain amount from its inflation fund
-depending on the payout rate. With this total payout the bundle reward gets distributed to all stakeholders like the treasury, the uploader and its delegators. More information on that calculation can be found [here](/learn/protocol_devs/advanced_concepts/uploader_reward_calculation)
+depending on the payout rate. With this total payout the bundle reward gets distributed to all stakeholders like the treasury, the uploader and its delegators. More information on that calculation can be found [here](/learn/protocol_structure/advanced_concepts/uploader_reward_calculation)

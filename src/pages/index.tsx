@@ -2,7 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { Card } from "../components/Card";
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -17,9 +17,11 @@ import KyveMarkupAnimated from "../../static/img/homepage/kyve-markup-animated.s
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const histroy = useHistory();
+  const [isFirefox, setFirefox] = useState(false);
 
   useEffect(() => {
     sal();
+    setFirefox(navigator.userAgent.toLowerCase().includes("firefox"));
   }, []);
 
   const POOLS = (siteConfig.customFields!.pools as PoolCardProps[]).filter(
@@ -84,8 +86,6 @@ export default function Home() {
       "data-sal-delay": delay,
     };
   };
-
-  const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
 
   return (
     <Layout>

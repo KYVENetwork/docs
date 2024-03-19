@@ -97,13 +97,13 @@ Protocol validators have many tasks. They have to collect data, bundle them, upl
 their work and keep them incentivized, they receive bundle rewards when they successfully propose a valid bundle. As described above, those
 rewards are funded by funders. But
 before the uploader receives his reward, a network fee (usually 1%) is deducted and automatically transferred to the
-community pool. You can find more information on the calculation of the uploader reward [here](/learn/protocol_devs/advanced_concepts/uploader_reward_calculation).
+community pool. You can find more information on the calculation of the uploader reward [here](/learn/protocol_structure/advanced_concepts/uploader_reward_calculation).
 
 ### Keeping Delegators Incentivized
 
 Delegators are lending \$KYVE to protocol validators to help secure the network and helping them to earn more rewards. Delegators have to trust protocol validators
 since they also receive a slash proportionally to their delegation. In return for putting the capital at risk delegators receive delegation rewards which are also funded by funders. These rewards are a certain fraction of the entire bundle reward, depending on the nodes commission. You can find more information about the commission
-[here](/learn/protocol_devs/advanced_concepts/uploader_reward_calculation) and more details about the delegation distribution [here](/learn/protocol_devs/advanced_concepts/delegation_reward_calculation).
+[here](/learn/protocol_structure/advanced_concepts/uploader_reward_calculation) and more details about the delegation distribution [here](/learn/protocol_structure/advanced_concepts/delegation_reward_calculation).
 
 ## Properties
 
