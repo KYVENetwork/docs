@@ -1,12 +1,20 @@
 import CodeBlock from "@theme/CodeBlock";
 import { getPool } from "/src/components/GetPool";
+import Admonition from '@theme/Admonition';
 export const pool = () => getPool();
 
-<div>With the <span>{pool().name}</span> node in place and the KYVE node also installed you can finally start the node.</div>
+<div>
+  With the <span>{pool().nodeName}</span> node in place and the KYVE node also
+  installed you can finally start the node.
+</div>
 
 ## Start Node
 
 Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount <code>{pool().val_name}</code> we select the this valaccount to start the KYSOR.
+
+{pool().runtime.includes("ssync") && <Admonition type="caution">
+<b>IMPORTANT</b>: If http://localhost:7878/list_snapshots still returns an empty array the protocol node can not start, please wait until the first snapshot is created, after that you are able to finally start the protocol node.
+</Admonition>}
 
 <CodeBlock language="bash">
   {`./kysor start --valaccount '${pool().val_name}'`}
@@ -19,7 +27,7 @@ You can also start the process in debug mode by adding the `--debug` flag like t
 </CodeBlock>
 
 :::tip
-If you're running the gaia node on a separate machine you have to tell the protocol validator with an env variable the new rpc endpoint.
+If you're running the {pool().nodeName} node on a separate machine you have to tell the protocol validator with an env variable the new rpc endpoint.
 
 Create .env file:
 
@@ -40,7 +48,6 @@ pass it to KYSOR:
 :::
 
 After the node successfully started you should see the following logs:
-
 
 <CodeBlock language="log">
 2023-02-13 08:46:00.618  INFO  Starting node ...
@@ -66,11 +73,19 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.876  INFO  The node will not continue until the account is authorized
 </CodeBlock>
 
+
 With this information (`Valaddress` and `Valname`) you can head over the KYVE app and join the pool.
 
 Now that the node is already running it just needs the authorization from it's main validator account in order to run for this validator and generate rewards. For that visit your validator page and click on `Join existing pool`.
 
-<p>A dialog should open where you should select the pool you want to join (here {pool().name}). After that enter the valaddress that needs to be authorized and the valname, which just serves as a security that the node has actually been started. (If you join a pool without having the node running you are in danger of receiving a timeout slash because once you join a pool you are expected to validate and upload data).</p>
+<p>
+  A dialog should open where you should select the pool you want to join (here{" "}
+  {pool().name}). After that enter the valaddress that needs to be authorized
+  and the valname, which just serves as a security that the node has actually
+  been started. (If you join a pool without having the node running you are in
+  danger of receiving a timeout slash because once you join a pool you are
+  expected to validate and upload data).
+</p>
 
 For the last option you can do a one time transfer so that the valaccount has some \$KYVE to pay for transaction fees. We would recommend sending 100 \$KYVE for the start which typically lasts for about 1 month.
 
@@ -90,7 +105,8 @@ For the daemon service root-privileges are required during the setup. Create a s
   Since the KYSOR can run on multiple pools on one machine we would recommend
   naming the daemon service after the valaccount name and with a <code>d</code>{" "}
   appending to it. With that you can create multiple service files and control
-  each of them. This example shows the service file for our valaccount <code>{pool().val_name}</code>
+  each of them. This example shows the service file for our valaccount{" "}
+  <code>{pool().val_name}</code>
 </div>
 
 :::info
@@ -136,7 +152,6 @@ You can see its logs with
 <CodeBlock language="bash">
   {`sudo journalctl -u ${pool().val_name} -f -o cat\n`}
 </CodeBlock>
-
 
 ## Start node on multiple pools
 

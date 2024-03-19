@@ -39,7 +39,7 @@ export default function Home() {
     {
       title: "Data Pipeline",
       img: "img/homepage/validators.png",
-      href: "/validators",
+      href: "/developers/data_engineers/accessing_data/elt_pipeline/overview",
     },
     {
       title: "Architecture",
