@@ -12,6 +12,7 @@ import { useHistory } from "@docusaurus/router";
 import sal from "sal.js";
 
 import KyveMarkup from "../../static/img/homepage/kyve-markup.svg";
+import KyveMarkupAnimated from "../../static/img/homepage/kyve-markup-animated.svg";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -84,6 +85,8 @@ export default function Home() {
     };
   };
 
+  const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
+
   return (
     <Layout>
       <main className="container py-12">
@@ -114,10 +117,17 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">
-            <KyveMarkup
-              className="hidden sm:visible sm:flex"
-              {...animation("zoom-out")}
-            />
+            {isFirefox ? (
+              <KyveMarkup
+                className="hidden sm:visible sm:flex"
+                {...animation("zoom-out")}
+              />
+            ) : (
+              <KyveMarkupAnimated
+                className="hidden sm:visible sm:flex"
+                {...animation("zoom-out")}
+              />
+            )}
           </div>
         </div>
         <div>
