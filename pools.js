@@ -329,9 +329,10 @@ const loadRegistry = async () => {
           source["networks"]["kyve-1"].pools.find((p) =>
             p.runtime.includes("ssync")
           )
-        )
-          pool.integrations.push("State-Sync");
-        pool.integrations.push(...["Block-Sync", "Height-Sync"]);
+        ) {
+          pool.integrations.push("State-Sync", "Height-Sync");
+        }
+        pool.integrations.push("Block-Sync");
       }
     }
   } catch (e) {

@@ -2,6 +2,17 @@ import CodeBlock from "@theme/CodeBlock";
 import { getPool } from "/src/components/GetPool";
 import Admonition from '@theme/Admonition';
 export const pool = () => getPool();
+export const getRPC = () => {
+  switch (pool().runtime) {
+    case "@kyvejs/tendermint":
+      return "KYVEJS_TENDERMINT_RPC";
+    case "@kyvejs/tendermint-bsync":
+      return "KYVEJS_TENDERMINT_BSYNC_RPC";
+    case "@kyvejs/tendermint-ssync":
+      return "KYVEJS_TENDERMINT_SSYNC_API";
+  }
+  return "default";
+}
 
 <div>
   With the <span>{pool().nodeName}</span> node in place and the KYVE node also
@@ -32,11 +43,7 @@ If you're running the {pool().nodeName} node on a separate machine you have to t
 Create .env file:
 
 <CodeBlock>
-  {`${
-    pool().runtime.includes("bsync")
-      ? "KYVEJS_TENDERMINT_BSYNC_RPC"
-      : "KYVEJS_TENDERMINT_RPC"
-  }="https://my-custom-rpc-endpoint:26657"`}
+  {getRPC()+"=https://my-custom-rpc-endpoint:26657"}
 </CodeBlock>
 
 pass it to KYSOR:

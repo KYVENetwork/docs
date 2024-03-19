@@ -36,9 +36,11 @@ export const PoolCard = ({
           <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
             {integrations[0]}
           </div>
-          <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
-            +{integrations.length - 1}
-          </div>
+          {integrations.length > 1 && (
+            <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
+              +{integrations.length - 1}
+            </div>
+          )}
           <div className="ml-auto bg-primary rounded-2xl p-2 shadow-md px-4 hover:scale-105 transition-all">
             <Link />
           </div>

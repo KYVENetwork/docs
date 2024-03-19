@@ -52,7 +52,7 @@ export default function Home() {
     {
       title: "New to KYVE?",
       img: "img/homepage/learn.svg",
-      href: "/learn",
+      href: "https://www.kyve.academy/",
       desc: "Discover how KYVE is enabling validators, applications, and builders alike to bring their data experiences to the next level.",
     },
     {

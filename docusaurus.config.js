@@ -107,6 +107,7 @@ const config = {
               "/tools/KSYNC/usage",
               "/tools/KSYNC/protocol_validators",
               "/tools/KSYNC/settings",
+              "/ksync",
             ],
           },
         ],
@@ -123,7 +124,7 @@ const config = {
         },
       };
     },
-    updatePoolsPlugin
+    updatePoolsPlugin,
   ],
   presets: [
     [
@@ -249,13 +250,21 @@ const config = {
             title: "More",
             items: [
               {
+                label: "KYVE Network",
+                href: "https://kyve.network",
+              },
+              {
+                label: "App",
+                href: "https://app.kyve.network",
+              },
+              {
                 label: "GitHub",
                 href: "https://github.com/KYVENetwork",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} BCP Innovations UG. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} KYVE Foundation. Built with Docusaurus.`,
       },
       prism: {
         theme: themes.github,
@@ -273,6 +282,9 @@ const config = {
 
         contextualSearch: true,
         searchParameters: {},
+      },
+      colorMode: {
+        respectPrefersColorScheme: true,
       },
     }),
 };
