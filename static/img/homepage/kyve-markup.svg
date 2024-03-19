@@ -95,65 +95,65 @@
                 transform="matrix(0.866025 0.5 -0.866025 0.5 351.702 119.971)" fill="#58C6B2" />
         </g>
         <circle cx="396.14" cy="35.7893" r="7.33225" fill="url(#paint10_radial_12000_5308)">
-            <!-- <animate
+            <animate
                 attributeName="cy"
                 dur="4s"
                 calcMode="spline"
                 repeatCount="indefinite"
                 values="20; 35; 20"
                 keyTimes="0; 0.5; 1"
-                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" /> -->
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
         <circle cx="343.601" cy="66.4768" r="7.33225" fill="url(#paint11_radial_12000_5308)">
-            <!-- <animate
+            <animate
                 attributeName="cy"
                 dur="4s"
                 calcMode="spline"
                 repeatCount="indefinite"
                 values="60; 66; 60"
                 keyTimes="0; 0.5; 1"
-                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" /> -->
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
         <circle cx="309.569" cy="144.118" r="7.91845" fill="url(#paint12_radial_12000_5308)">
-            <!-- <animate
+            <animate
                 attributeName="cy"
                 dur="4s"
                 calcMode="spline"
                 repeatCount="indefinite"
                 values="130; 144; 130"
                 keyTimes="0; 0.5; 1"
-                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" /> -->
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
         <circle cx="403.378" cy="117.481" r="7.33225" fill="url(#paint13_radial_12000_5308)">
-            <!-- <animate
+            <animate
                 attributeName="cy"
                 dur="4s"
                 calcMode="spline"
                 repeatCount="indefinite"
                 values="110; 117; 110"
                 keyTimes="0; 0.5; 1"
-                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" /> -->
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
         <circle cx="304.515" cy="7.33225" r="7.33225" fill="url(#paint14_radial_12000_5308)">
-            <!-- <animate
+            <animate
                 attributeName="cy"
                 dur="4s"
                 calcMode="spline"
                 repeatCount="indefinite"
                 values="7; 10; 7"
                 keyTimes="0; 0.5; 1"
-                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" /> -->
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
         <rect x="248.115" y="15.4043" width="207.007" height="166.569"
             fill="url(#paint15_linear_12000_5308)">
-            <!-- <animate
+            <animate
                 attributeName="fill-opacity"
                 dur="4s"
                 calcMode="spline"
                 repeatCount="indefinite"
                 values="0.5; 1; 0.5"
                 keyTimes="0; 0.5; 1"
-                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" /> -->
+                keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </rect>
     </g>
     <g filter="url(#filter8_d_12000_5308)">
