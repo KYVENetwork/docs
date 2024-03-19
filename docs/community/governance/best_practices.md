@@ -8,7 +8,6 @@ sidebar_position: 1
 **Note:**
 
 - If users are creating governance proposals which require community pool funding (such as those of type `CommunityPoolSpendProposal`), refer to [this section](#community-spend-proposal).
-- If users are creating governance proposals concerned with the ERC-20 Module (such as those of type `RegisterCoinProposal`), refer to [this section](#erc-20-proposal).
 - If users are creating governance proposals concerned with changing parameters (such as those of type `ParameterChangeProposal`), refer to [this section](#parameter-change-proposal).
 
 :::

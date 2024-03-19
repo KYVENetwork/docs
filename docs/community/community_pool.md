@@ -44,5 +44,5 @@ import ParamPercentage from '/src/components/params/ParamPercentage';
 Currently, the only way how to access the funds on the community pool are via a governance spend proposal. This implies that those funds can only be spent when the community agrees and the proposal passes accordingly, making the community pool an actual community pool. The proposal type is `MsgCommunityPoolSpend`.
 
 :::tip
-**NOTE**: More information on how to create governance proposal can be found **[here](/learn/token_holders/governance)**
+**NOTE**: More information on how to create governance proposal can be found **[here](/community/governance)**
 :::

@@ -100,7 +100,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/ksync",
+            to: "/validators/ksync",
             from: [
               "/tools/KSYNC/overview",
               "/tools/KSYNC/installation",

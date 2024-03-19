@@ -398,7 +398,7 @@ endpoints:
 These can be changed by adding the flag `--chain-rest`.
 
 :::tip
-You can find all official KYVE chain endpoints [here](/introduction/networks).
+You can find all official KYVE chain endpoints [here](/learn/networks).
 :::
 
 #### Example

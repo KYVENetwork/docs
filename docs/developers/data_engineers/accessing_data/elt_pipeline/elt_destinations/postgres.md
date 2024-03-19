@@ -5,7 +5,7 @@ sidebar_position: 1
 # Postgres Destination
 
 This page will guide you through setting up an ELT pipeline to fetch data from
-a [KYVE data pool](/learn/introduction/architecture) and import it into a local `Postgres` database.
+a [KYVE data pool](/learn/architecture) and import it into a local `Postgres` database.
 
 ## Postgres Setup
 

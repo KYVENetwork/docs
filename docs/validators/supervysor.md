@@ -206,7 +206,7 @@ supervysor init [...] --endpoints="<endpoint-1>,<endpoint-2>"
 ```
 
 :::tip
-You can find all official KYVE chain endpoints [here](/introduction/networks).
+You can find all official KYVE chain endpoints [here](/learn/networks).
 :::
 
 ## Contribution & Low-level technical documentation

@@ -70,7 +70,7 @@ on your local machine and copy the contents to your validator.
 reside in a safe place.
 :::
 
-We refer to [Wallets](/learn/token_holders/wallets) for operating key creation. 
+We refer to [Wallets](/community/wallets) for operating key creation. 
 We recommend to consider the following things:
 
 - Use a multi-sig setup
