@@ -59,19 +59,19 @@ export default function Home() {
       desc: "Discover how KYVE is enabling validators, applications, and builders alike to bring their data experiences to the next level.",
     },
     {
-      title: "Tokenholders",
+      title: "Token Holders",
       img: "img/homepage/community.png",
       href: "/community",
-      desc: "Discover how KYVE is enabling validators, applications, and builders alike to bring their data experiences to the next level.",
+      desc: "With $KYVE, stake to further decentralize and secure the network's two unique layers, and participate in governance to give your say in driving the future of KYVE.",
     },
     {
-      title: "Validators: Optimize",
+      title: "Validators",
       img: "img/homepage/validators.png",
-      href: "/community/delegating",
+      href: "/validators",
       desc: "Run a node on KYVE's chain, or a validator on it's protocol, or simply benefit from KYVE's node optimization tooling to enhance your overall experience running on other chains.",
     },
     {
-      title: "DApp Builders: Get Started",
+      title: "DApp Builders",
       img: "img/homepage/developers.png",
       href: "/developers",
       desc: "Take your scalability to the next level by creating your own custom data rollup powered by KYVE. We handle the data, you build the future.",
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <div className="font-bold text-3xl mt-12">Validate those pools</div>
+          <div className="font-bold text-3xl mt-12">Validate These Blockchains</div>
           <Splide
             options={{
               rewind: true,

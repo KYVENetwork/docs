@@ -15,9 +15,12 @@ export default function DocSidebarItemWrapper(props) {
   if (CustomComponent) {
     return <CustomComponent {...props} />;
   }
+
+  const delay = props.index * 50;
+
   return (
     <>
-      <div data-sal="slide-up">
+      <div data-sal="slide-up" data-sal-delay={delay}>
         <DocSidebarItem {...props} />
       </div>
     </>
