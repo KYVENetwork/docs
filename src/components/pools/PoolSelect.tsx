@@ -94,22 +94,30 @@ const PoolSelect = (props) => {
             X
           </span>
         </div>
-        {filteredPools().map((pool, index) => (
-          <div
-            key={index}
-            className={
-              "menu__link cursor-pointer flex flex-nowrap " +
-              (pool == selected ? "text-primary" : "")
-            }
-            onClick={() => {
-              setSelected(pool);
-              setSearch("");
-            }}
-          >
-            <img src={logoUrl(pool.logo)} className="w-8 h-8 rounded-md mr-2" />
-            {pool.name}
-          </div>
-        ))}
+        <div
+          className="max-h-96 overflow-y-scroll"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {filteredPools().map((pool, index) => (
+            <div
+              key={index}
+              className={
+                "menu__link cursor-pointer flex flex-nowrap " +
+                (pool == selected ? "text-primary" : "")
+              }
+              onClick={() => {
+                setSelected(pool);
+                setTimeout(() => setSearch(""), 250);
+              }}
+            >
+              <img
+                src={logoUrl(pool.logo)}
+                className="w-8 h-8 rounded-md mr-2"
+              />
+              {pool.name}
+            </div>
+          ))}
+        </div>
       </Modal>
       <ul className="menu__list">
         <DocSidebarItems
