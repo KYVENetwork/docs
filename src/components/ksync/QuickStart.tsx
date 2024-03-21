@@ -9,17 +9,12 @@ import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
 
 const useSelectedSource = () => {
-  const [selected, setInternSelected] = useState<any>();
+  const [selected, setSelected] = useState<any>();
   const [search, setSearch] = useState("");
   const [onKaon, setOnKaon] = useState(false);
   const [registry, setRegistry] = useState<any>();
   const location = useLocation();
-  const history = useHistory();
-
-  const setSelected = (source: any) => {
-    history.replace(location.pathname + "?" + source["source-id"]);
-    setInternSelected(source);
-  };
+  const histroy = useHistory();
 
   useEffect(() => {
     const loadRegistry = async () => {
@@ -29,10 +24,13 @@ const useSelectedSource = () => {
       const parsedRegistry = load(data);
       setRegistry(parsedRegistry);
       if (location.search) {
-        const source = parsedRegistry[location.search.slice(1)];
-        if (source) {
-          setSelected(source);
-          return;
+        const match = location.search.match(/source=[^&]*/g);
+        if (match) {
+          const source = parsedRegistry[match[0].replace("source=", "")];
+          if (source) {
+            setSelected(source);
+            return;
+          }
         }
       }
       setSelected(parsedRegistry["archway-1"]);
@@ -51,7 +49,25 @@ const QuickStart = () => {
   const [registry, selected, setSelected, search, setSearch, onKaon] =
     useSelectedSource();
 
-  const [height, setHeight] = useState<string | undefined>();
+  const location = useLocation();
+  let initHeight = "";
+  if (location.search) {
+    const match = location.search.match(/height=[^&]*/g);
+    if (match) initHeight = match[0].replace("height=", "");
+  }
+  const [height, setHeight] = useState<string | undefined>(initHeight);
+
+  const histroy = useHistory();
+
+  useEffect(() => {
+    if (!selected) return;
+    if (height)
+      histroy.replace(
+        location.pathname + `?height=${height}&source=${selected["source-id"]}`
+      );
+    else
+      histroy.replace(location.pathname + `?source=${selected["source-id"]}`);
+  }, [height, selected]);
 
   const genesisFile = useMemo(() => {
     try {
@@ -213,7 +229,7 @@ const QuickStart = () => {
         </CodeBlock>
       </div>
       <h1>Start the Sync</h1>
-      <Tabs>
+      <Tabs groupId="tab" queryString>
         <TabItem value="block" label="Block Sync">
           <SyncCommand sync="Block-Sync" />
         </TabItem>
@@ -229,6 +245,7 @@ const QuickStart = () => {
         type="number"
         className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full"
         onChange={(x) => setHeight(x.target.value)}
+        value={height}
       />
     </div>
   );
