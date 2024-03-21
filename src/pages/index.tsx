@@ -21,6 +21,9 @@ export default function Home() {
 
   useEffect(() => {
     sal();
+  }, [isFirefox]);
+
+  useEffect(() => {
     setFirefox(navigator.userAgent.toLowerCase().includes("firefox"));
   }, []);
 
@@ -167,7 +170,9 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <div className="font-bold text-3xl mt-12">Validate These Blockchains</div>
+          <div className="font-bold text-3xl mt-12">
+            Validate These Blockchains
+          </div>
           <Splide
             options={{
               rewind: true,

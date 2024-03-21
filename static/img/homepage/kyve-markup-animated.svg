@@ -94,7 +94,8 @@
             <rect width="123.95" height="123.95" rx="7.93279"
                 transform="matrix(0.866025 0.5 -0.866025 0.5 351.702 119.971)" fill="#58C6B2" />
         </g>
-        <circle cx="396.14" cy="20" r="7.33225" fill="url(#paint10_radial_12000_5308)">
+        <circle cx="396.14" cy="20" r="7.33225" opacity="0.001"
+            fill="url(#paint10_radial_12000_5308)">
             <animate
                 attributeName="cy"
                 dur="1s"
@@ -112,6 +113,13 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1" />
             <animate
+                attributeName="opacity"
+                dur="1s"
+                begin="1.0s"
+                values="1; 1"
+                repeatCount="indefinite"
+            />
+            <animate
                 attributeName="cy"
                 dur="4s"
                 begin="1s"
@@ -121,8 +129,8 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
-        <circle cx="343.601" cy="60" r="7.33225" fill="url(#paint11_radial_12000_5308)">
-            <animate attributeName="opacity" dur="0.15s" values="0" />
+        <circle cx="343.601" cy="60" r="7.33225" opacity="0.001"
+            fill="url(#paint11_radial_12000_5308)">
             <animate
                 attributeName="cy"
                 dur="1s"
@@ -140,6 +148,13 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1" />
             <animate
+                attributeName="opacity"
+                dur="1.15s"
+                begin="1.0s"
+                values="1; 1"
+                repeatCount="indefinite"
+            />
+            <animate
                 attributeName="cy"
                 begin="1.15s"
                 dur="4s"
@@ -149,7 +164,8 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
-        <circle cx="309.569" cy="130" r="7.91845" fill="url(#paint12_radial_12000_5308)">
+        <circle cx="309.569" cy="130" r="7.91845" opacity="0.001"
+            fill="url(#paint12_radial_12000_5308)">
             <animate attributeName="opacity" dur="0.3s" values="0" />
             <animate
                 attributeName="cy"
@@ -168,6 +184,13 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1" />
             <animate
+                attributeName="opacity"
+                dur="1.3s"
+                begin="1.0s"
+                values="1; 1"
+                repeatCount="indefinite"
+            />
+            <animate
                 attributeName="cy"
                 begin="1.3s"
                 dur="4s"
@@ -177,7 +200,8 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
-        <circle cx="403.378" cy="110" r="7.33225" fill="url(#paint13_radial_12000_5308)">
+        <circle cx="403.378" cy="110" r="7.33225" opacity="0.001"
+            fill="url(#paint13_radial_12000_5308)">
             <animate attributeName="opacity" dur="0.45s" values="0" />
             <animate
                 attributeName="cy"
@@ -196,6 +220,13 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1" />
             <animate
+                attributeName="opacity"
+                dur="1s"
+                begin="1.45s"
+                values="1; 1"
+                repeatCount="indefinite"
+            />
+            <animate
                 attributeName="cy"
                 begin="1.45s"
                 dur="4s"
@@ -205,7 +236,8 @@
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1; 0.5 0 0.5 1" />
         </circle>
-        <circle cx="304.515" cy="7" r="7.33225" fill="url(#paint14_radial_12000_5308)">
+        <circle cx="304.515" cy="7" r="7.33225" opacity="0.001"
+            fill="url(#paint14_radial_12000_5308)">
             <animate attributeName="opacity" dur="0.6s" values="0" />
             <animate
                 attributeName="cy"
@@ -215,6 +247,13 @@
                 values="0; 17; 7"
                 keyTimes="0; 0.5; 1"
                 keySplines="0.5 0 0.5 1;0.5 0 0.5 1" />
+            <animate
+                attributeName="opacity"
+                dur="1s"
+                begin="1.6s"
+                values="1; 1"
+                repeatCount="indefinite"
+            />
             <animate
                 attributeName="opacity"
                 dur="1s"

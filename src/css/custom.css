@@ -17,6 +17,9 @@
   --ifm-color-success-dark: #58c6b2;
   --ifm-color-success-contrast-background: #58c6b248 !important;
   --ifm-color-success-contrast-foreground: black;
+  --ifm-color-info-dark: #58c6b2;
+  --ifm-color-info-contrast-background: #58c6b248 !important;
+  --ifm-color-info-contrast-foreground: black;
 }
 
 html[data-theme="dark"] :root {
