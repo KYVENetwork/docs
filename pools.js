@@ -9,6 +9,7 @@ const Cosmos = {
   datasource: "Self hosted Gaia full node (cosmoshub-4)",
   start_data: "height 5,200,791",
   storage_provider: "Bundlr",
+  configName: ".cosmos",
   networks: {
     Mainnet: 0,
     Kaon: 0,

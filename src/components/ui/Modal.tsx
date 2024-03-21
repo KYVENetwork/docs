@@ -35,12 +35,11 @@ const Modal = ({ label, children, ...props }: ModalProps) => {
         {open && (
           <div
             className={
-              "slideIn absolute top-0 z-40 shadow-lg rounded-md border border-solid " +
+              "slideIn absolute top-0 z-40 shadow-lg rounded-md border border-solid border-borderColor " +
               (closing ? "slideOut" : "")
             }
             style={{
               background: "var(--ifm-background-color)",
-              borderColor: "var(--ifm-toc-border-color)",
             }}
           >
             {children}

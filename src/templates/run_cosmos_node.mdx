@@ -58,8 +58,8 @@ To download and setup the genesis file execute the following command:
 
 <CodeBlock language="bash">
   {pool().genesisFile.endsWith(".gz")
-    ? `wget -qO- ${pool().genesisFile} | zcat > ~/.${
-        pool().val_name
+    ? `wget -qO- ${pool().genesisFile} | zcat > ~/${
+        pool().configName
       }/config/genesis.json`
     : `wget -qO- ${pool().genesisFile} | cat > ~/${
         pool().configName

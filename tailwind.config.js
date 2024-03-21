@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         primary: "var(--ifm-color-primary)",
         accent: "#00000030",
+        borderColor: "var(--ifm-toc-border-color)"
       },
     },
   },

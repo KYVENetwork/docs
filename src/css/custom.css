@@ -7,6 +7,10 @@
   --ifm-alert-background-color-highlight: #58c6b27a;
 }
 
+.alert--warning {
+  --ifm-alert-background-color-highlight: #9b27b09d;
+}
+
 :root {
   --ifm-color-primary: #58c6b2;
   --ifm-background-color: #f3f3f3;
