@@ -85,6 +85,11 @@ const QuickStart = () => {
     return selected["networks"]["kaon-1"]["integrations"]["ksync"];
   }, [selected]);
 
+  const hasSSync = useMemo(() => {
+    if (!ksync) return false;
+    return ksync["state-sync-pool"] != undefined;
+  }, [ksync]);
+
   const genesisVersion = useMemo(() => {
     if (!selected) return;
     return selected["codebase"]["settings"]["upgrades"][0][
@@ -228,24 +233,48 @@ const QuickStart = () => {
         </CodeBlock>
       </div>
       <h1>Start the Sync</h1>
-      <Tabs groupId="tab" queryString>
+      <Tabs
+        groupId="tab"
+        queryString
+      >
         <TabItem value="block" label="Block Sync">
+          <b>Target height:</b>
+          <input
+            placeholder="target height"
+            type="number"
+            className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
+            onChange={(x) => setHeight(x.target.value)}
+            value={height}
+          />
           <SyncCommand sync="Block-Sync" />
         </TabItem>
-        <TabItem value="state" label="State Sync">
-          <SyncCommand sync="State-Sync" />
-        </TabItem>
-        <TabItem value="height" label="Height Sync">
-          <SyncCommand sync="Height-Sync" />
-        </TabItem>
+        {hasSSync && (
+          <TabItem value="state" label="State Sync">
+            <b>Target height:</b>
+            <input
+              placeholder="target height"
+              type="number"
+              className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
+              onChange={(x) => setHeight(x.target.value)}
+              value={height}
+            />
+            <SyncCommand sync="State-Sync" />
+          </TabItem>
+        )}
+        {hasSSync && (
+          <TabItem value="height" label="Height Sync">
+            <b>Target height:</b>
+            <input
+              placeholder="target height"
+              type="number"
+              className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
+              onChange={(x) => setHeight(x.target.value)}
+              value={height}
+            />
+            <SyncCommand sync="Height-Sync" />
+          </TabItem>
+        )}
       </Tabs>
-      <input
-        placeholder="target height"
-        type="number"
-        className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full"
-        onChange={(x) => setHeight(x.target.value)}
-        value={height}
-      />
     </div>
   );
 };
