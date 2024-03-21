@@ -14,7 +14,6 @@ const useSelectedSource = () => {
   const [onKaon, setOnKaon] = useState(false);
   const [registry, setRegistry] = useState<any>();
   const location = useLocation();
-  const histroy = useHistory();
 
   useEffect(() => {
     const loadRegistry = async () => {
@@ -198,9 +197,9 @@ const QuickStart = () => {
       <div>
         First of all, it is required to download and setup the correct version
         of <code>{ksync["binary-name"]}</code> with the genesis file in order to
-        use any kind of Sync. You can download a prebuild binary{" "}
-        <a href={""}>here</a> or follow the{" "}
-        <a href={ksync["docs-url"]}>{getProperties(selected).title} Docs.</a>
+        use any kind of Sync. Follow the{" "}
+        <a href={ksync["docs-url"]}>{getProperties(selected).title} Docs</a> on
+        how to get the correct version. ({genesisVersion})
       </div>
       <div>
         Verify the installation with:
