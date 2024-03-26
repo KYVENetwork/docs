@@ -140,6 +140,9 @@ const QuickStart = () => {
     );
   };
 
+  const REQUEST_URL =
+    "https://webforms.pipedrive.com/f/5VG4BySG2HkYXi7Tpw85JrPsclH0zYomRf5DgBqJCJ4LkW43x8auSMWX1LmtgIDmdJ";
+
   return (
     <div>
       {onKaon && (
@@ -233,10 +236,7 @@ const QuickStart = () => {
         </CodeBlock>
       </div>
       <h1>Start the Sync</h1>
-      <Tabs
-        groupId="tab"
-        queryString
-      >
+      <Tabs groupId="tab" queryString>
         <TabItem value="block" label="Block Sync">
           <b>Target height:</b>
           <input
@@ -248,32 +248,48 @@ const QuickStart = () => {
           />
           <SyncCommand sync="Block-Sync" />
         </TabItem>
-        {hasSSync && (
-          <TabItem value="state" label="State Sync">
-            <b>Target height:</b>
-            <input
-              placeholder="target height"
-              type="number"
-              className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
-              onChange={(x) => setHeight(x.target.value)}
-              value={height}
-            />
-            <SyncCommand sync="State-Sync" />
-          </TabItem>
-        )}
-        {hasSSync && (
-          <TabItem value="height" label="Height Sync">
-            <b>Target height:</b>
-            <input
-              placeholder="target height"
-              type="number"
-              className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
-              onChange={(x) => setHeight(x.target.value)}
-              value={height}
-            />
-            <SyncCommand sync="Height-Sync" />
-          </TabItem>
-        )}
+        <TabItem value="state" label="State Sync">
+          {hasSSync ? (
+            <div>
+              <b>Target height:</b>
+              <input
+                placeholder="target height"
+                type="number"
+                className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
+                onChange={(x) => setHeight(x.target.value)}
+                value={height}
+              />
+              <SyncCommand sync="State-Sync" />
+            </div>
+          ) : (
+            <Admonition type="info">
+              There is no <b>State Sync</b> support for{" "}
+              {getProperties(selected).title}.{" "}
+              <a href={REQUEST_URL}>Request integration here.</a>
+            </Admonition>
+          )}
+        </TabItem>
+        <TabItem value="height" label="Height Sync">
+          {hasSSync ? (
+            <div>
+              <b>Target height:</b>
+              <input
+                placeholder="target height"
+                type="number"
+                className="outline-none bg-transparent p-2 font-bold text-base border border-solid border-borderColor rounded-md w-full mb-2"
+                onChange={(x) => setHeight(x.target.value)}
+                value={height}
+              />
+              <SyncCommand sync="Height-Sync" />
+            </div>
+          ) : (
+            <Admonition type="info">
+              There is no <b>Height Sync</b> support for{" "}
+              {getProperties(selected).title}.{" "}
+              <a href={REQUEST_URL}>Request integration here.</a>
+            </Admonition>
+          )}
+        </TabItem>
       </Tabs>
     </div>
   );
