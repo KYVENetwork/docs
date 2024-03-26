@@ -32,7 +32,10 @@ export const Card = ({ delay, img, href, children, className }: CardProps) => {
             "flex flex-col w-full bg-gradient-to-b h-full from-[#252B2E] to-[#3f776f] rounded-xl text-white relative shadow-xl transition-all duration-300 hover:cursor-pointer overflow-hidden justify-center " +
             className
           }
-          onClick={() => histroy.push(href)}
+          onClick={() => {
+            if (href.includes("https://")) window.open(href);
+            else histroy.push(href);
+          }}
         >
           <div className="z-10">{children}</div>
           <img src={img} className="absolute right-0 top-0 z-0"></img>
