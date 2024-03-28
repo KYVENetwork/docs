@@ -41,7 +41,8 @@ html[data-theme="dark"] :root {
 }
 
 .footer__title {
-  color: black;
+  color: #4b4b4b;
+  font-weight: normal;
 }
 
 html[data-theme="dark"] .footer {
@@ -55,7 +56,8 @@ html[data-theme="dark"] .footer a {
 }
 
 html[data-theme="dark"] .footer__title {
-  color: white;
+  color: #9b9b9b;
+  font-weight: normal;
 }
 
 html[data-theme="dark"] .footer a:hover {

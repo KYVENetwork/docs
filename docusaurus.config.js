@@ -217,19 +217,19 @@ const config = {
             items: [
               {
                 label: "Discord",
-                href: "https://discord.gg/kyve",
+                to: "https://discord.gg/kyve",
               },
               {
                 label: "Telegram",
-                href: "https://t.me/KYVENet",
+                to: "https://t.me/KYVENet",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/KYVENetwork",
+                to: "https://twitter.com/KYVENetwork",
               },
               {
                 label: "Reddit",
-                href: "https://reddit.com/r/kyve",
+                to: "https://reddit.com/r/kyve",
               },
             ],
           },
@@ -238,11 +238,11 @@ const config = {
             items: [
               {
                 label: "Medium",
-                href: "https://kyve.medium.com/",
+                to: "https://kyve.medium.com/",
               },
               {
                 label: "YouTube",
-                href: "https://www.youtube.com/channel/UCThrQRlVd2KKy2-e0tBgfpQ",
+                to: "https://www.youtube.com/channel/UCThrQRlVd2KKy2-e0tBgfpQ",
               },
             ],
           },
@@ -251,15 +251,15 @@ const config = {
             items: [
               {
                 label: "KYVE Network",
-                href: "https://kyve.network",
+                to: "https://kyve.network",
               },
               {
                 label: "App",
-                href: "https://app.kyve.network",
+                to: "https://app.kyve.network",
               },
               {
                 label: "GitHub",
-                href: "https://github.com/KYVENetwork",
+                to: "https://github.com/KYVENetwork",
               },
             ],
           },

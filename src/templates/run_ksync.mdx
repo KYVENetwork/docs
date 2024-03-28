@@ -91,7 +91,7 @@ once created they are exposed over a REST API server which the protocol node can
 To start with default settings serve the snapshots with:
 
 <CodeBlock language="bash">
-{`ksync serve-snapshots --binary="/path/to/${pool().binaryName}" --home="/path/to/${pool().configName}" --source=${pool().nodeName.toLowerCase()}`}
+{`ksync serve-snapshots --binary="/path/to/${pool().binaryName}" --home="/path/to/${pool().configName}" --source="${pool().nodeName.toLowerCase()}"`}
 </CodeBlock>
 
 :::caution

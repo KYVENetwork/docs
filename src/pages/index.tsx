@@ -134,7 +134,12 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <div className="text-3xl mt-8 mb-2 font-bold">Top pages</div>
+          <div
+            className="text-3xl mt-8 mb-2 font-bold"
+            {...animation("zoom-out")}
+          >
+            Top pages
+          </div>
           <div className="grid grid-cols-4 gap-6">
             {CARDS.map((x, i) => (
               <div

@@ -21,7 +21,7 @@ export const getRPC = () => {
 
 ## Start Node
 
-Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount <code>{pool().val_name}</code> we select the this valaccount to start the KYSOR.
+Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount <code>{pool().val_name}</code> we select this valaccount to start the KYSOR.
 
 {pool().runtime.includes("ssync") && <Admonition type="caution">
 <b>IMPORTANT</b>: If http://localhost:7878/list_snapshots still returns an empty array the protocol node can not start, please wait until the first snapshot is created, after that you are able to finally start the protocol node.
