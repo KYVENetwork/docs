@@ -1,5 +1,3 @@
-import _refiner from "refiner-js";
-
 if (typeof window !== "undefined") {
   document.addEventListener("copy", () => {
     const selection = document.getSelection();
@@ -10,7 +8,7 @@ if (typeof window !== "undefined") {
       });
     }
   });
-
+  const _refiner = require('refiner-js')
   _refiner("setProject", "01b7c520-e1f0-11ee-b266-35f4ddac70ed");
 }
 
