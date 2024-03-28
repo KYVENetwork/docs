@@ -38,7 +38,13 @@ Cosmostation wallet is open source. The source code can be found on [GitHub](htt
 **NOTE**: It can be downloaded and installed here: **[https://www.leapwallet.io/download](https://www.leapwallet.io/download)**
 :::
 
-Leap wallet is partially open source. The source code of the keychain can be found on [GitHub](https://github.com/leapwallet/leap-keychain).
+### XDEFI
+
+[XDEFI](https://www.xdefi.io/) wallet is a non-custodial, multi-chain wallet that allows you to securely store and send NFTs and assets across 200+ networks.
+
+:::info
+**NOTE**: It can be downloaded and installed here: **[https://install.xdefi.io/?xdefi_id=xdefiio](https://install.xdefi.io/?xdefi_id=xdefiio)**
+:::
 
 ## Cold Wallets
 

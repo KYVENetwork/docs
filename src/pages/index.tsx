@@ -113,10 +113,10 @@ export default function Home() {
               You Build The Future
             </div>
             <div className="mt-8" {...animation("slide-left", 400)}>
-              Transform your data experience with KYVE's ultimate data
-              rollups-as-a-service (DRaaS) solution for unmatched scalability
-              and seamless support for validators, builders, blockchains, and
-              apps alike.
+              Transform your data experience with KYVE's Data
+              Rollups-as-a-Service (DRaaS), ensuring unmatched scalability and
+              seamless support for validators, builders, blockchains, and apps
+              alike.
             </div>
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">
