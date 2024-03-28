@@ -8,7 +8,7 @@ sidebar_position: 1
 
 The KYVE blockchain is built on [Tendermint Core](https://github.com/tendermint/tendermint), which relies on validators to commit new blocks to the blockchain using a consensus protocol. These validators participate by broadcasting votes with cryptographic signatures signed by their private keys. Validator candidates can stake their own tokens and have tokens delegated to them by token holders. KYVE's native token is **$KYVE**, and at genesis, KYVE will launch with 100 validator slots. The top 100 validator candidates with the most stake will become KYVE validators.
 
-Validators and their delegators earn KYVE as block provisions and transaction fees through the Tendermint consensus protocol. Initially, there will be no fee burning but in the future it is up to the governance to decide if this feature gets enable, thus making $KYVE a deflationary currency. Futhermore, validators can set commission on the fees their delegators receive to provide further incentive.
+Validators and their delegators earn KYVE as block provisions and transaction fees through the Tendermint consensus protocol. Initially, there will be no fee burning but in the future it is up to the governance to decide if this feature gets enable, thus making \$KYVE a deflationary currency. Futhermore, validators can set commission on the fees their delegators receive to provide further incentive.
 
 If validators are frequently offline, double sign, or fail to participate in governance, their staked KYVE (as well as the KYVE of their delegators) may be slashed, with the severity of the penalty depending on the severity of the violation.
 

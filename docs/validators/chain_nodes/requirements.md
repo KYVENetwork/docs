@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Requirements
 
-Before you can run consensus validators some basic requirements have to be met ranging from simple hardware specs to owning a certain amount of $KYVE.
+Before you can run consensus validators some basic requirements have to be met ranging from simple hardware specs to owning a certain amount of \$KYVE.
 
 ## Supported OS
 
@@ -29,7 +29,7 @@ As the usage of the blockchain grows, the server requirements may increase as we
 ## Minimum staking requirements
 
 Because only the top 100 validators who have the most stake can join in one of the limited validator slots you first have to verify
-if you have enough $KYVE to join. If there are still slots open, you just need more than zero, but if all slots are occupied you need at least more than the lowest validator. You can check this on our block explorers:
+if you have enough \$KYVE to join. If there are still slots open, you just need more than zero, but if all slots are occupied you need at least more than the lowest validator. You can check this on our block explorers:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

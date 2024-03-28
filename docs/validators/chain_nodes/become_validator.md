@@ -70,7 +70,7 @@ on your local machine and copy the contents to your validator.
 reside in a safe place.
 :::
 
-We refer to [Wallets](/token_holders/wallets.md) for operating key creation. 
+We refer to [Wallets](/community/wallets) for operating key creation. 
 We recommend to consider the following things:
 
 - Use a multi-sig setup
@@ -99,7 +99,7 @@ Now go back to your local machine, we assume a local machine with Ledger
 local$ ./kyved keys add <key_name> --ledger
 ```
 
-To become a validator you need $KYVE. There are currently 100 validator slots, if all slots are taken you need to stake more than the lowest one in the list to take its place. Please make sure that you have enough balance in your wallet before you proceed.
+To become a validator you need \$KYVE. There are currently 100 validator slots, if all slots are taken you need to stake more than the lowest one in the list to take its place. Please make sure that you have enough balance in your wallet before you proceed.
 
 <br></br>
 
@@ -107,7 +107,7 @@ To become a validator you need $KYVE. There are currently 100 validator slots, i
 This example shows how to create a validator on our testnet Kaon. Please note that Kaon's base denom is "tkyve" and has 6 decimals.
 
 ```
-1 $KYVE = 1000000tkyve
+1 \$KYVE = 1000000tkyve
 ```
 :::
 

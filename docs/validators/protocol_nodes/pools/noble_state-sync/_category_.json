@@ -1,5 +1,6 @@
 {
   "label": "Noble // State-Sync",
   "position": 9,
-  "link": null
+  "collapsible": true,
+  "collapsed": true
 }
