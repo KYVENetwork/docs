@@ -19,6 +19,10 @@ decentralized data validation, immutability, and retrieval.
 With these tools, developers, data engineers, and others can easily and reliably access the trustless data they need in
 order to continue building the future of Web3.
 
+## Getting started
+Read into KYVE or learn with the KYVE Academy:
+- **[KYVE Academy](https://kyve.academy/)** - Start with dedicated tutorials about KYVE
+
 ## KYVE’s Layer 1 blockchain
 
 KYVE is its own Proof of Stake (PoS) Layer 1 blockchain built with the [Cosmos SDK](https://v1.cosmos.network/sdk). It has two layers: the **Chain Layer**, and the **Protocol
