@@ -307,6 +307,8 @@ const EthereumBlobs = {
     "2 TB DISK",
     "100mbps network bandwith",
   ],
+  integrations: [],
+  description: "Data blobs are a fresh approach to optimizing transaction data storage on L2 networks within Ethereum. They are inexpensive and temporary memory carrying data about transactions, called blob-carrying transactions. These blobs are designed to make the verification of these transactions more efficient."
 };
 
 const pools = [

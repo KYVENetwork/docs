@@ -33,9 +33,11 @@ export const PoolCard = ({
       <div>
         <hr className="bg-accent my-2" />
         <div className="flex items-center">
-          <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
-            {integrations[0]}
-          </div>
+          {integrations.length > 0 && (
+            <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
+              {integrations[0]}
+            </div>
+          )}
           {integrations.length > 1 && (
             <div className="px-2.5 py-1 rounded-full border-solid border border-accent dark:text-white mr-1">
               +{integrations.length - 1}
