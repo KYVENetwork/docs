@@ -290,6 +290,25 @@ const CelestiaSSync = {
   ],
 };
 
+const EthereumBlobs = {
+  name: "Ethereum // Blobs",
+  logo: "ar://Ui5fULe72VfEKo5reeGKvGXF_5HOuAIfdaOM7fXjVyA",
+  val_name: "ethereum-blobs",
+  runtime: "@kyvejs/ethereum-blobs",
+  datasource: "Slef hosted Ethereum full node (Lighthose & Geth)",
+  start_data: "Blobs starting from the Dencun upgrade",
+  networks: {
+    Kaon: 20,
+    Korellia: 97,
+  },
+  requirements: [
+    "8 or more physical CPU cores",
+    "16 GB RAM",
+    "2 TB DISK",
+    "100mbps network bandwith",
+  ],
+};
+
 const pools = [
   Cosmos,
   Osmosis,
@@ -302,6 +321,7 @@ const pools = [
   NobleSSync,
   Celestia,
   CelestiaSSync,
+  EthereumBlobs,
 ];
 
 export default pools;
@@ -313,28 +333,32 @@ const loadRegistry = async () => {
     );
     const parsedRegistry = load(data);
     for (const pool of pools) {
-      const source = parsedRegistry[pool.chainId];
-      pool.hex = source["networks"]["kyve-1"]["properties"]["hex"];
-      pool.logo = source["networks"]["kyve-1"]["properties"]["logo"];
-      pool.description =
-        source["networks"]["kyve-1"]["properties"]["description"];
-      pool.genesisFile =
-        source["codebase"]["settings"]["cosmos-properties"]["genesis-url"];
-      if (source["networks"]["kyve-1"]["integrations"]["ksync"]) {
-        pool.binaryName =
-          source["networks"]["kyve-1"]["integrations"]["ksync"]["binary-name"];
+      try {
+        const source = parsedRegistry[pool.chainId];
+        pool.hex = source["networks"]["kyve-1"]["properties"]["hex"];
+        pool.logo = source["networks"]["kyve-1"]["properties"]["logo"];
+        pool.description =
+          source["networks"]["kyve-1"]["properties"]["description"];
+        pool.genesisFile =
+          source["codebase"]["settings"]["cosmos-properties"]["genesis-url"];
+        if (source["networks"]["kyve-1"]["integrations"]["ksync"]) {
+          pool.binaryName =
+            source["networks"]["kyve-1"]["integrations"]["ksync"][
+              "binary-name"
+            ];
 
-        // check if the source has a state sync pool
-        pool.integrations = [];
-        if (
-          source["networks"]["kyve-1"].pools.find((p) =>
-            p.runtime.includes("ssync")
-          )
-        ) {
-          pool.integrations.push("State-Sync", "Height-Sync");
+          // check if the source has a state sync pool
+          pool.integrations = [];
+          if (
+            source["networks"]["kyve-1"].pools.find((p) =>
+              p.runtime.includes("ssync")
+            )
+          ) {
+            pool.integrations.push("State-Sync", "Height-Sync");
+          }
+          pool.integrations.push("Block-Sync");
         }
-        pool.integrations.push("Block-Sync");
-      }
+      } catch {}
     }
   } catch (e) {
     console.log("Faild to load registry!");
