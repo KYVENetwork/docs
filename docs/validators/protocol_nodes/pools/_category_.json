@@ -1,5 +1,9 @@
 {
   "label": "Pools",
-  "position": 2,
-  "link": null
+  "position": 5,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "type": "pool-select"
+  }
 }

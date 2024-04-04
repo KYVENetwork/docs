@@ -1,5 +1,6 @@
 {
   "label": "Celestia",
   "position": 10,
-  "link": null
+  "collapsible": true,
+  "collapsed": true
 }

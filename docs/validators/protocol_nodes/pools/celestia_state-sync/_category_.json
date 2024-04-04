@@ -1,5 +1,6 @@
 {
   "label": "Celestia // State-Sync",
   "position": 11,
-  "link": null
+  "collapsible": true,
+  "collapsed": true
 }

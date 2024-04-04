@@ -1,11 +1,32 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import { themes } from "prism-react-renderer";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import { updatePoolsPlugin } from "./pools.js";
 
-const math = require("remark-math");
-const katex = require("rehype-katex");
+function defineSection(section, options = {}) {
+  return [
+    "@docusaurus/plugin-content-docs",
+    /** @type {import('@docusaurus/plugin-content-docs').Options} */
+    ({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+      path: `docs/${section}`,
+      routeBasePath: section,
+      sidebarCollapsible: false,
+      id: section,
+      sidebarPath: "./sidebars.js",
+      breadcrumbs: true,
+      editUrl: "https://github.com/KYVENetwork/docs/tree/main",
+      ...options,
+    }),
+  ];
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -22,9 +43,9 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -50,6 +71,7 @@ const config = {
       decimals: 9,
     },
     errorMsg: "error",
+    pools: require("./pools.js"),
   },
   clientModules: [require.resolve("./globalClientModule.ts")],
   scripts: [
@@ -69,44 +91,64 @@ const config = {
     },
   ],
   plugins: [
+    defineSection("learn"),
+    defineSection("community"),
+    defineSection("validators"),
+    defineSection("developers"),
     [
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
           {
-            to: "/ksync",
+            to: "/validators/ksync",
             from: [
               "/tools/KSYNC/overview",
               "/tools/KSYNC/installation",
               "/tools/KSYNC/usage",
               "/tools/KSYNC/protocol_validators",
               "/tools/KSYNC/settings",
+              "/ksync",
             ],
           },
         ],
       },
     ],
+    async function loadTailwind(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+    updatePoolsPlugin,
   ],
   presets: [
     [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        gtag: {
-          trackingID: "G-SY5FWZVWK2",
-          anonymizeIP: true,
-        },
         docs: {
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-          routeBasePath: "/",
-          sidebarPath: require.resolve("./sidebars.js"),
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          sidebarPath: "./sidebars.js",
+          breadcrumbs: true,
+          sidebarCollapsible: false,
+          path: "docs/home",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/KYVENetwork/docs/tree/main",
         },
+        blog: false,
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: "./src/css/custom.css",
+        },
+        gtag: {
+          trackingID: "G-SY5FWZVWK2",
+          anonymizeIP: true,
         },
       }),
     ],
@@ -136,18 +178,38 @@ const config = {
         },
         items: [
           {
-            href: "https://github.com/KYVENetwork",
-            label: "GitHub",
+            position: "left",
+            label: "Learn",
+            to: "/learn",
+          },
+          {
+            position: "left",
+            label: "Community",
+            to: "/community",
+          },
+          {
+            position: "left",
+            label: "Validators",
+            to: "/validators",
+          },
+          {
+            position: "left",
+            label: "Developers",
+            to: "/developers",
+          },
+          {
+            href: "https://discord.gg/PATvZvEmxF",
+            className: "pseudo-icon discord-icon",
+            position: "right",
+          },
+          {
+            href: "https://github.com/KYVENetwork/",
+            className: "pseudo-icon github-icon",
             position: "right",
           },
         ],
       },
       footer: {
-        logo: {
-          alt: "KYVE logo",
-          src: "img/favicon.ico",
-          href: "https://docs.kyve.network",
-        },
         style: "dark",
         links: [
           {
@@ -155,19 +217,19 @@ const config = {
             items: [
               {
                 label: "Discord",
-                href: "https://discord.gg/kyve",
+                to: "https://discord.gg/kyve",
               },
               {
                 label: "Telegram",
-                href: "https://t.me/KYVENet",
+                to: "https://t.me/KYVENet",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/KYVENetwork",
+                to: "https://twitter.com/KYVENetwork",
               },
               {
                 label: "Reddit",
-                href: "https://reddit.com/r/kyve",
+                to: "https://reddit.com/r/kyve",
               },
             ],
           },
@@ -176,11 +238,11 @@ const config = {
             items: [
               {
                 label: "Medium",
-                href: "https://kyve.medium.com/",
+                to: "https://kyve.medium.com/",
               },
               {
                 label: "YouTube",
-                href: "https://www.youtube.com/channel/UCThrQRlVd2KKy2-e0tBgfpQ",
+                to: "https://www.youtube.com/channel/UCThrQRlVd2KKy2-e0tBgfpQ",
               },
             ],
           },
@@ -188,17 +250,26 @@ const config = {
             title: "More",
             items: [
               {
+                label: "KYVE Network",
+                to: "https://kyve.network",
+              },
+              {
+                label: "App",
+                to: "https://app.kyve.network",
+              },
+              {
                 label: "GitHub",
-                href: "https://github.com/KYVENetwork",
+                to: "https://github.com/KYVENetwork",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} BCP Innovations UG. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} KYVE Foundation. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: themes.github,
+        darkTheme: themes.oneDark,
+        additionalLanguages: ["bash", "diff", "json"],
       },
       algolia: {
         // The application ID provided by Algolia
@@ -212,7 +283,10 @@ const config = {
         contextualSearch: true,
         searchParameters: {},
       },
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
     }),
 };
 
-module.exports = config;
+export default config;

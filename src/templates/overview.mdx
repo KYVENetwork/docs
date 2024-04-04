@@ -1,0 +1,122 @@
+import { getPool } from "/src/components/GetPool";
+export const pool = () => getPool();
+export const purpose = () => {
+  if (pool().runtime.includes("ssync")) {
+    return (
+      <div>
+        This data pool validates and archives state-sync snapshots from{" "}
+        {pool().nodeName} and makes them permanently available with Arweave and
+        Bundlr
+      </div>
+    );
+  }
+  if (pool().runtime.includes("bsync")) {
+    return (
+      <div>
+        This data pool validates and archives all blocks from {pool().name} and
+        makes them permanently available with Arweave and Bundlr
+      </div>
+    );
+  }
+  return (
+    <div>
+      This data pool validates and archives all blocks and block results from{" "}
+      {pool().name} and makes them permanently available with Arweave and Bundlr
+    </div>
+  );
+};
+
+export function formatPoolUrl(pool, id, index) {
+  let baseUrl = "https://app.kyve.network/#/pools/";
+  switch (pool) {
+    case "Kaon":
+      baseUrl = "https://app.kaon.kyve.network/#/pools/";
+      break;
+    case "Korellia":
+      baseUrl = "https://app.korellia.kyve.network/#/pools/";
+      break;
+  }
+  return (
+    <ul key={index}>
+      <li>
+        <a href={baseUrl + id}>{pool}</a> (Pool id: {id})
+      </li>
+    </ul>
+  );
+}
+
+export function getGoal(pool) {
+  if (pool.name.includes("State-Sync")) {
+    return (
+      <div>
+        The goal of this pool is to validate and archive state-sync snapshots
+        from {pool.nodeName} permanently and decentralized. With this data, we
+        want to make it possible for other nodes to state-sync the data from
+        KYVE, making expensive archival nodes on {pool.nodeName} obsolete in the
+        long run.
+      </div>
+    );
+  }
+  // why is cosmos hub always special?
+  if (pool.runtime.includes("bsync")) {
+    return (
+      <div>
+        The goal of this pool is to validate and archive all blocks from{" "}
+        {pool.name} permanently and decentralized. With this data we want to
+        make it possible for other nodes to block sync the data from KYVE,
+        making expensive archival nodes on {pool.name} obsolete in the long run.
+      </div>
+    );
+  }
+  return (
+    <div>
+      The goal of this pool is to validate and archive all blocks and block
+      results from {pool.name} permanently and decentralized. With this data we
+      want to make it possible for other nodes to block sync the data from KYVE,
+      making expensive archival nodes on {pool.name} obsolete in the long run.
+      In addition, the validated archived block results enable a number of
+      further use cases for data analysis
+    </div>
+  );
+}
+
+<div>{purpose()}</div>
+
+## General
+
+- **Runtime**:
+  <span> {pool().runtime}</span>
+- **Data Source**:
+  <span> {pool().datasource}</span>
+- **Data**: <span>
+  {(pool().runtime.includes("ssync") ? "" : "Blocks from ") +
+  pool().start_data}{" "}
+  ongoing</span>
+- **Storage Provider**:
+  <span> {pool().storage_provider}</span>
+- **Networks**
+  <div>
+    {Object.keys(pool().networks).map((key, index) =>
+      formatPoolUrl(key, pool().networks[key], index)
+    )}
+  </div>
+- **Min Hardware Requirements**
+  <div>
+    {pool().requirements.map((r, index) => (
+      <ul key={index}>
+        <li>{r}</li>
+      </ul>
+    ))}
+  </div>
+
+## Requirements
+
+Before you can run a protocol validator on any pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
+Make sure you meet the requirements described [here](/validators/protocol_nodes/requirements).
+
+## Goal
+
+<div>{getGoal(pool())}</div>
+
+More information on how to perform block sync with KYVE visit the documention about
+KSYNC [here](/validators/ksync).

@@ -1,5 +1,6 @@
 {
   "label": "Axelar",
   "position": 5,
-  "link": null
+  "collapsible": true,
+  "collapsed": true
 }
