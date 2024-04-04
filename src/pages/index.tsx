@@ -205,6 +205,7 @@ export default function Home() {
                   histroy.push(
                     `/validators/protocol_nodes/pools/${x.name
                       .toLowerCase()
+                      .replace(" //", "")
                       .split(" ")
                       .join("_")}/overview`
                   )
