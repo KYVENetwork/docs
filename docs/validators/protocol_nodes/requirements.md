@@ -14,6 +14,15 @@ We officially support macOS and Linux in the following architectures:
 - `linux-x64`
 - `linux-arm64`
 
+## Minimum Hardware Requirements
+
+To run the protocol node the following hardware requirements are needed. Please note that the source node will have additional hardware requirements.
+
+- 1 or more physical CPU cores
+- 2 GB RAM
+- 32 GB DISK
+- 1mbps network bandwidth
+
 ## Pool Delegation Requirements
 
 ### Verify if you have enough \$KYVE to participate
