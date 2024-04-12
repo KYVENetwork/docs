@@ -266,9 +266,9 @@ const Celestia = {
   configToml: {
     description:
       "Due to the size of the block_results response and because Celestia disables the storage of block results by default, ",
-    code: 'abci_discard_abci_responses = false\ntimeout_broadcast_tx_commit = "120s"',
+    code: 'discard_abci_responses = false\ntimeout_broadcast_tx_commit = "120s"',
   },
-  appToml: 'pruning = "everything"\nindex-events = [""]',
+  appToml: 'pruning = "everything"\nindex-events = [""]\n\n[state-sync]\n\nsnapshot-interval = 0\nsnapshot-keep-recent = 0',
 };
 
 const CelestiaSSync = {
