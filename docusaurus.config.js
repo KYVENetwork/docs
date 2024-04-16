@@ -110,6 +110,13 @@ const config = {
               "/ksync",
             ],
           },
+          {
+            to: "/validators/protocol_nodes/supervysor",
+            from: [
+              "/tools/supervysor",
+              "/supervysor",
+            ],
+          },
         ],
       },
     ],
