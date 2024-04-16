@@ -145,9 +145,9 @@ const DataDirectory = () => {
 
   return (
     <>
-      <div className="flex flex-nowrap items-end">
+      <div className="">
         <h2 className="mb-0">Select Source:</h2>
-        <div className="ml-auto">
+        <div className="flex mt-2">
           <Modal label={label}>
             <div className="flex flex-nowrap items-center menu__link">
               <input
