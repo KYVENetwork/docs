@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 Download the mainnet genesis file (5.2 MB)
 
 ```shell
-wget https://files.kyve.network/mainnet/genesis.json
+wget https://raw.githubusercontent.com/KYVENetwork/networks/main/kyve-1/genesis.json
 ```
 
 verify the correctness of the genesis configuration via
@@ -41,7 +41,7 @@ mv genesis.json ~/.kyve/config/
 Download the Kaon genesis file (55 KB)
 
 ```bash
-wget https://files.kyve.network/kaon/genesis.json
+wget https://raw.githubusercontent.com/KYVENetwork/networks/main/kaon-1/genesis.json
 ```
 
 verify the correctness of the genesis configuration via
@@ -86,7 +86,33 @@ mv genesis.json ~/.kyve/config/
 We strongly recommend setting up Cosmovisor and Systemd as a supervisor.
 :::
 
-### Use Statesync
+### State-Sync with KSYNC
+
+:::info
+Using KSYNC for state-syncing KYVE is only available for mainnet, if you wish to join Kaon or Korellia use traditional state-sync [here](/docs/validators/chain_nodes/join_network.md#use-traditional-state-sync).
+:::
+
+Since KYVE has validated and archived all of it's own state-sync snapshots on a 3,000 block interval those can be used
+to bootstrap you KYVE node. For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
+KSYNC run the following:
+
+```
+go install github.com/KYVENetwork/ksync/cmd/ksync@latest
+```
+
+You can verify the installation with `ksync version`. To state-sync to the latest available snapshot run the following:
+
+:::warning
+Please use the correct `kyved` binary version, you can find the correct version for each height [here](/docs/validators/chain_nodes/installation.md#versions).
+:::
+
+```
+ksync state-sync --binary /path/to/kyved --chain-id kaon-1 --source kyve
+```
+
+After the state-sync snapshot has been applied you can normally continue syncing blocks over the P2P network.
+
+### Use traditional State-Sync
 
 import Admonition from '@theme/Admonition';
 
@@ -193,6 +219,67 @@ After that start the node with
 
   </TabItem>
 </Tabs>
+
+### Sync from genesis with KSYNC
+
+:::info
+Using KSYNC for syncing KYVE from genesis is only available for mainnet, if you wish to sync Kaon or Korellia use the normal P2P sync [here](/docs/validators/chain_nodes/join_network.md#sync-from-genesis).
+:::
+
+Since KYVE has validated and archived all of it's own blocks and block results they can be used to sync the node instead of fetching them from the P2P network.
+For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
+KSYNC run the following:
+
+```
+go install github.com/KYVENetwork/ksync/cmd/ksync@latest
+```
+
+Since syncing the node from genesis can take weeks we strongly recommend setting up a systemd process which supervises the ksync process. Also since during the sync you will encounter multiple upgrades we also strongly recommend setting up Cosmovisor and preinstall all upgrade binaries. You can find information on setting up Cosmosvisor [here](/docs/validators/chain_nodes/cosmovisor.md) and the systemd template below.
+
+Create a file `/etc/systemd/system/ksync.service` with the following contents:
+
+```
+[Unit]
+Description=ksync
+After=network-online.target
+
+[Service]
+User=<your-user>
+ExecStart=/<path-to-ksync>/ksync block-sync --binary <path-to-cosmovisor>/cosmovisor --chain-id kaon-1 --source=kyve -y
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+Environment="DAEMON_NAME=kyved"
+Environment="DAEMON_HOME=/<path-to-kyve>/.kyve"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=false"
+Environment="DAEMON_LOG_BUFFER_SIZE=512"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Make sure to replace &lt;your-user&gt;, &lt;path-to-ksync&gt;, &lt;path-to-kyve&gt; and &lt;path-to-cosmovisor&gt; with your values.
+
+To start the process:
+
+```shell
+sudo systemctl enable ksync
+sudo systemctl start ksync
+```
+
+It can be stopped using
+
+```shell
+sudo systemctl stop ksync
+```
+
+You can see its logs with
+
+```shell
+sudo journalctl -u ksync -f
+```
 
 ### Sync from genesis
 
