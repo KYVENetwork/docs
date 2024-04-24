@@ -20,20 +20,9 @@ presented in [Airbyte Local Deployment](airbyte_local_deployment).
 
 ## Airbyte Cloud
 
-You can connect to the [Airbyte Cloud](https://airbyte.com/airbyte-cloud) 
-platform and use the `KYVE Source Connector`.
-
-This option does not require any local setup. For setting up a destination 
-follow the documentation in the Airbyte Cloud page. For example, 
-the [Snowflake](elt_destinations/snowflake) section presents one such 
-destination that could be used with Airbyte Cloud.
-
 :::caution
 
-The Airbyte integration receives regular updates. These take
-some time until they are available in Airbyte Cloud. Therefore, if you need
-support for the latest features consider using the Local Deployment until
-it's available in Airbyte Cloud.
+Currently, it's not recommended to use the KYVE connector on Airbyte Cloud.
 
 :::
 
