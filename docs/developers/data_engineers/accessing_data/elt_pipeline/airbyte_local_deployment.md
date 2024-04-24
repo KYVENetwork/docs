@@ -92,7 +92,7 @@ When you first access the Website, you will be directed to the onboarding screen
 
 <img src="/img/elt/airbyte_preferences.png" alt="Airbyte Preferences" width="500px;" />
 
-### 1. Custom-build KYVE source (recommended)
+### 1. Custom-build KYVE connector (recommended)
 
 If you wish to test a modified version of the KYVE source connector, follow these steps to build the connector and load it into Airbyte:
 
@@ -102,7 +102,7 @@ If you wish to test a modified version of the KYVE source connector, follow thes
    cd airbyte-integrations/connectors/source-kyve
    ```
 
-2. Build the Docker image for the KYVE source:
+2. Build the Docker image for the KYVE connector:
 
    ```sh
    docker build . -t airbyte/source-kyve:dev
@@ -123,14 +123,27 @@ If you wish to test a modified version of the KYVE source connector, follow thes
    <img src="/img/elt/airbyte_new_connector2.jpg" alt="Airbyte Add New Connector" />
 
 
-### 2. Load KYVE source
+### 2. Load KYVE connector
 
 You can browse on the `Sources` page and search for the **integrated** KYVE source.
 
 <img src="/img/elt/airbyte_source_page.png" alt="Airbyte Source Page" />
 
-:::note
+### 3. Usage
 
-For using the latest KYVE source with custom modification you should build and load the `source-kyve` manually. See the following section for the instructions.
+After loading the KYVE connector, it can be used by creating a new source using the built connector.
 
+:::tip
+Make sure to select the **custom** and not the community KYVE connector.
+:::
+
+The source requires the following:
+- Pool-ID: The ID of the KYVE storage pool you want to load.
+- Start-ID: Defines, from which bundle id the pipeline should start to extract the data.
+- KYVE-API URL Base: URL to the KYVE Chain API.
+- **[Optional]** Start and end key: Defines, from and to which key the pipeline should start to extract the data.
+- **[Optional]** Enable Tendermint normalization: Normalizes block results object and writes each event of begin_block_events, end_block_events and txs_results in one row.
+
+:::tip
+If you want to load Osmosis data, it is recommended to enable the Tendermint normalization due to its big row size. 
 :::
