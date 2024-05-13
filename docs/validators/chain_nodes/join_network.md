@@ -92,8 +92,8 @@ We strongly recommend setting up Cosmovisor and Systemd as a supervisor.
 Using KSYNC for state-syncing KYVE is only available for mainnet, if you wish to join Kaon or Korellia use traditional state-sync [here](/docs/validators/chain_nodes/join_network.md#use-traditional-state-sync).
 :::
 
-Since KYVE has validated and archived all of it's own state-sync snapshots on a 3,000 block interval those can be used
-to bootstrap you KYVE node. For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
+Since KYVE has validated and archived all of its own state-sync snapshots on a 3,000 block interval those can be used
+to bootstrap your KYVE node. For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
 KSYNC run the following:
 
 ```
@@ -226,7 +226,7 @@ After that start the node with
 Using KSYNC for syncing KYVE from genesis is only available for mainnet, if you wish to sync Kaon or Korellia use the normal P2P sync [here](/docs/validators/chain_nodes/join_network.md#sync-from-genesis).
 :::
 
-Since KYVE has validated and archived all of it's own blocks and block results they can be used to sync the node instead of fetching them from the P2P network.
+Since KYVE has validated and archived all of its own blocks and block results they can be used to sync the node instead of fetching them from the P2P network.
 For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
 KSYNC run the following:
 
