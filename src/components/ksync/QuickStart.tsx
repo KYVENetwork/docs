@@ -80,8 +80,10 @@ const QuickStart = () => {
   const ksync = useMemo(() => {
     if (!selected) return;
     try {
+      if (!selected["networks"]["kyve-1"]["integrations"]) return;
       return selected["networks"]["kyve-1"]["integrations"]["ksync"];
     } catch {}
+    if (!selected["networks"]["kaon-1"]["integrations"]) return;
     return selected["networks"]["kaon-1"]["integrations"]["ksync"];
   }, [selected]);
 
@@ -92,6 +94,7 @@ const QuickStart = () => {
 
   const genesisVersion = useMemo(() => {
     if (!selected) return;
+    if (!ksync) return;
     return selected["codebase"]["settings"]["upgrades"][0][
       "recommended-version"
     ];
@@ -142,6 +145,66 @@ const QuickStart = () => {
 
   const REQUEST_URL =
     "https://webforms.pipedrive.com/f/5VG4BySG2HkYXi7Tpw85JrPsclH0zYomRf5DgBqJCJ4LkW43x8auSMWX1LmtgIDmdJ";
+
+  if (!ksync) {
+    return (
+      <div>
+        <Admonition type="warning" className="mb-2">
+          {getProperties(selected).title} has no KSYNC integration.
+        </Admonition>
+        <div className="flex flex-nowrap items-end">
+          <h2 className="mb-0">Select Source:</h2>
+          <div className="ml-auto">
+            <Modal label={label}>
+              <div className="flex flex-nowrap items-center menu__link">
+                <input
+                  className="bg-transparent outline-none border-none font-bold text-lg w-48"
+                  placeholder="Search"
+                  onChange={(x) => setSearch(x.target.value)}
+                  autoFocus
+                  value={search}
+                  onClick={(e) => e.stopPropagation()}
+                />
+                <span
+                  className="cursor-pointer font-bold"
+                  onClick={(e) => {
+                    setSearch("");
+                    e.stopPropagation();
+                  }}
+                >
+                  X
+                </span>
+              </div>
+              <div
+                className="max-h-96 overflow-y-scroll"
+                style={{ scrollbarWidth: "none" }}
+              >
+                {sources().map((source, index) => (
+                  <div
+                    key={index}
+                    className={
+                      "menu__link cursor-pointer flex flex-nowrap " +
+                      (source == selected ? "text-primary" : "")
+                    }
+                    onClick={() => {
+                      setSelected(source);
+                      setTimeout(() => setSearch(""), 250);
+                    }}
+                  >
+                    <img
+                      src={logoUrl(source)}
+                      className="w-8 h-8 rounded-md mr-2"
+                    />
+                    {getProperties(source).title}
+                  </div>
+                ))}
+              </div>
+            </Modal>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
