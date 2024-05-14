@@ -7,41 +7,55 @@ import { load } from "js-yaml";
 import axios from "axios";
 
 function GetGoal({ runtime, sourcename }) {
-  if (runtime.includes("ssync")) {
-    return (
-      <div>
-        <h3>State Sync Snaphots</h3>
-        We archive validated state-sync snapshots from {sourcename} permanently
-        and decentralized. With this data, it possible for other nodes to
-        quickly state-sync, making expensive archival nodes on {sourcename}{" "}
-        obsolete in the long run.
-      </div>
-    );
+  switch (runtime) {
+    case "kyvejs/tendermint":
+      return (
+        <div>
+          <h3>Blocks & Block Results</h3>
+          We validate and archive all blocks and block results from {
+            sourcename
+          }{" "}
+          permanently and decentralized. With this data it is possible for other
+          nodes to block sync the data from KYVE, making expensive archival
+          nodes on {sourcename} obsolete in the long run. Additionally, the
+          validated & archived block results enable a number of further use
+          cases for data analysis.
+        </div>
+      );
+    case "kyvejs/tendermint-ssync":
+      return (
+        <div>
+          <h3>State Sync Snaphots</h3>
+          We archive validated state-sync snapshots from {sourcename}{" "}
+          permanently and decentralized. With this data, it possible for other
+          nodes to quickly state-sync, making expensive archival nodes on{" "}
+          {sourcename} obsolete in the long run.
+        </div>
+      );
+
+    case "kyvejs/tendermint-bsync":
+      return (
+        <div>
+          <h3>Blocks</h3>
+          We validate and archive all blocks from {sourcename} permanently and
+          decentralized. With this data it is possible for other nodes to block
+          sync the data from KYVE, making expensive archival nodes on{" "}
+          {sourcename} obsolete in the long run.
+        </div>
+      );
+    case "kyvejs/ethereum-blobs":
+      return (
+        <div>
+          <h3>Blobs</h3>
+          We validate and archive all blobs for certain L2s on {sourcename}{" "}
+          permanently and decentralized. With this data we want to play a key
+          role in the required decentralized storage of these blobs and making
+          them a public good for scalable, reliable building on Ethereum. This
+          enables a number of further use cases for data analysis and node
+          runners in the Ethereum ecosystem.
+        </div>
+      );
   }
-  if (runtime.includes("bsync")) {
-    return (
-      <div>
-        <h3>Blocks</h3>
-        We validate and archive all blocks from {sourcename} permanently and
-        decentralized. With this data it is possible for other nodes to block
-        sync the data from KYVE, making expensive archival nodes on {sourcename}{" "}
-        obsolete in the long run.
-      </div>
-    );
-  }
-  return (
-    <div>
-      <h3>Blocks & Block Results</h3>
-      We validate and archive all blocks and block results from {
-        sourcename
-      }{" "}
-      permanently and decentralized. With this data it is possible for other
-      nodes to block sync the data from KYVE, making expensive archival nodes on{" "}
-      {sourcename} obsolete in the long run. Additionally, the validated &
-      archived block results enable a number of further use cases for data
-      analysis.
-    </div>
-  );
 }
 
 const DataDirectory = () => {
@@ -107,6 +121,8 @@ const DataDirectory = () => {
           return "State Sync Snapshots";
         case "kyvejs/tendermint-bsync":
           return "Blocks";
+        case "kyvejs/ethereum-blobs":
+          return "L2 Blobs";
       }
       return "/";
     };
