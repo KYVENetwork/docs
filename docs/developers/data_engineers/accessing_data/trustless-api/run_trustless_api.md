@@ -37,7 +37,7 @@ trustless_api start
 
 ## Config
 
-The following config serves as an example, utilizing a Postgres database and an S3 bucket. You can find the template configuration here: `.config.template.yml`
+The following config serves as an example, utilizing a Postgres database and an S3 bucket. You can find the template configuration here: `./config.template.yml`
 
 ```yml
 # log level values: info, warning, debug, error, none
@@ -67,9 +67,9 @@ pools:
 # ================
 database:
   # supported databases: sqlite (default), postgres
-  type: sqlite
+  type: postgres
   # the database name, if you use sqlite this will the the database file. default: ./database.db
-  dbname: indexer.db
+  dbname: indexer
   # following attributes are only relevant when using postgres, you don't need them for sqlite
   host: "localhost"
   # IMPORTANT: this is postgres database port, not the port the app will use to serve
@@ -98,11 +98,11 @@ crawler:
 # ===============
 storage:
   # the type of storage to use. available options: local (default), s3
-  type: local
+  type: s3
   # how many threads are used to save/upload the processed bundle. Default 8
   threads: 8
   # only relevant when using local storage, can be left empty when using AWS
-  path: ./data
+  path: ""
   # what compression to use when storing/uploading the data
   # available options: gzip (default), none
   compression: gzip
