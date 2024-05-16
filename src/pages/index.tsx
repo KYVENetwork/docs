@@ -18,6 +18,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const histroy = useHistory();
   const [isFirefox, setFirefox] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
     sal();
@@ -25,6 +26,8 @@ export default function Home() {
 
   useEffect(() => {
     setFirefox(navigator.userAgent.toLowerCase().includes("firefox"));
+
+    setShowBanner(localStorage.getItem("banner") != "true");
   }, []);
 
   const POOLS = (siteConfig.customFields!.pools as PoolCardProps[]).filter(
@@ -90,9 +93,52 @@ export default function Home() {
     };
   };
 
+  const renderBanenr = () => {
+    if (!showBanner) return <></>;
+    return (
+      <div className="grid grid-flow-col grid-cols-12 rounded-xl bg-[#0000003f] px-5 py-5 mb-5">
+        <div className="col-span-11">
+          <div className="flex items-center flex-nowrap">
+            <div className="rounded-full bg-primary p-1.5 items-center justify-center flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width={20}
+                height={20}
+              >
+                <path
+                  fill="#ffffff"
+                  d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"
+                />
+              </svg>
+            </div>
+            <div className="ml-2 font-bold text-xl">Builders!</div>
+          </div>
+          <div className="mt-2">
+            The KYVE Grants Program Phase 0 is live.{" "}
+            <a href="https://commonwealth.im/kyve/discussions/2.5%20Grant%20Applications">
+              Apply today
+            </a>{" "}
+            to launch your innovations with KYVE trustless data and tooling.
+          </div>
+        </div>
+        <div
+          className="text-primary underline hover:cursor-pointer"
+          onClick={() => {
+            setShowBanner(false);
+            localStorage.setItem("banner", "true");
+          }}
+        >
+          Don't show me again
+        </div>
+      </div>
+    );
+  };
+
   return (
     <Layout>
       <main className="container py-12">
+        {renderBanenr()}
         <div className="grid grid-cols-2 items-center">
           <div className="col-span-2 md:col-span-1">
             <div {...animation("zoom-in")}>
