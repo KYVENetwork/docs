@@ -1,6 +1,12 @@
 import { Card } from "../Card";
+import {useEffect} from "react";
+import sal from "sal.js";
 
 const TrustlessAPIOverview = () => {
+    useEffect(() => {
+        sal();
+    }, []);
+
     const CARDS_DETAILED = [
         {
             title: "Usage",
