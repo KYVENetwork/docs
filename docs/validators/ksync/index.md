@@ -415,7 +415,7 @@ For KSYNC to actually sync blocks and snapshots the data has to be retrieved fro
 KSYNC uses the following endpoints:
 
 - **Arweave (`1`)**: https://arweave.net
-- **Bundlr (`2`)**: https://arweave.net
+- **Irys (`2`)**: https://arweave.net
 - **KYVE Storage Provider (`3`)**: https://storage.kyve.network _(shouldn't be overwritten)_
 
 These can be changed by adding the flag `--storage-rest`.
@@ -426,7 +426,7 @@ You can check which storage providers KSYNC uses by visiting KYVE webapp. There 
 
 #### Example
 
-Use another gateway for Bundlr:
+Use another gateway for Irys:
 
 ```bash
 ksync block-sync --binary="/path/to/osmosisd" --storage-rest="https://gateway.irys.xyz" --source="osmosis" --target-height=42000

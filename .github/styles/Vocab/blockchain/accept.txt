@@ -1,6 +1,6 @@
 Ethereum
 Solana
-Bundlr
+Irys
 Arweave
 EVM
 Celo

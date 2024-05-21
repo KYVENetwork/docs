@@ -5,14 +5,14 @@ sidebar_position: 1
 # Overview
 
 This data pool validates and archives blobs from Ethereum (EIP-4844) for certain contract addresses
-and makes them permanently available with Arweave and Bundlr.
+and makes them permanently available with Arweave and Irys.
 
 ## Overview
 
 - **Runtime**: @kyvejs/ethereum-blobs
 - **Data Source**: Self hosted Ethereum full node (Lighthouse & Geth)
 - **Data**: Blobs starting from the Dencun upgrade
-- **Storage Provider**: Bundlr
+- **Storage Provider**: Irys
 - **Networks**
   - [Kaon](https://app.kaon.kyve.network/#/pools/20) (Pool Id: 20)
   - [Korellia](https://app.korellia.kyve.network/#/pools/96) (Pool Id: 96)
@@ -30,7 +30,7 @@ Make sure you meet the requirements described [here](/validators/protocol_nodes/
 ## Goal
 
 The goal of this pool is to validate and archive all blobs for certain L2s permanently and decentralized. With this
-data we want to play a key role in the required decentralized storage of these blobs and making them a public good for 
+data we want to play a key role in the required decentralized storage of these blobs and making them a public good for
 scalable, reliable building on Ethereum. Furthermore, the validated data will be accessible through the Trustless-API,
-mocking the `/eth/v1/beacon/blob_sidecars` endpoint. This enables a number of further use cases for data analysis and 
+mocking the `/eth/v1/beacon/blob_sidecars` endpoint. This enables a number of further use cases for data analysis and
 node runners in the Ethereum ecosystem.

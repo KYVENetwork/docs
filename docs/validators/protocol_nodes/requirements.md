@@ -50,7 +50,7 @@ Depending on which storage provider the pool runs, on you have to setup a wallet
 data with. Currently, there are two available storage providers:
 
 - [Arweave](https://arweave.org)
-- [Bundlr](https://bundlr.network/)
+- [Irys](https://irys.xyz)
 
 On the pool overview, it is clearly listed which storage provider a pool uses.
 
@@ -58,60 +58,62 @@ On the pool overview, it is clearly listed which storage provider a pool uses.
 
 Arweave is a truly decentralized, permanent data storage solution.
 
-In order to setup an Arweave wallet which is also required if you want to setup a Bundlr wallet you need a keyfile which will be the private key of Arweave.
+In order to setup an Arweave wallet which is also required if you want to setup an Irys wallet you need a keyfile which will be the private key of Arweave.
 You can generate an Arweave wallet [here](https://arweave.app/). You can exchange $AR on common exchanges. We would recommend an amount of ~1 AR which is more than enough for a few weeks or even months.
 
 Store the keyfile in a secure location you will need it again later in the installation process.
 
-### Setting up a Bundlr Wallet
+### Setting up an Irys Wallet
 
-Bundlr is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
+Irys is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
 with guaranteed transaction finality.
 
-In order to setup a Bundlr wallet follow the exact same steps as in **Setting up an Arweave wallet**. After
-completing the above steps the easiest way to setup the Bundlr wallet is to install the Bundlr CLI:
+In order to setup an Irys wallet follow the exact same steps as in **Setting up an Arweave wallet**. After
+completing the above steps the easiest way to setup the Irys wallet is to install the Irys CLI
+(depending on your setup, you may need to use the sudo command).
 
 ```bash
-npm install -g @bundlr-network/client
+npm i -g @irys/sdk
+sudo npm i -g @irys/sdk
 ```
 
-In order to fund the Bundlr node simply execute the following, where `arweave.json` is your Arweave keyfile
+In order to fund the Irys node simply execute the following, where `arweave.json` is your Arweave keyfile
 which holds some funds:
 
 :::caution
-**IMPORTANT**: Always use `https://node1.bundlr.network` as the host to fund your bundlr account since KYVE uses this by default
+**IMPORTANT**: Always use `https://node1.irys.xyz` as the host to fund your irys account since KYVE uses this by default
 :::
 
 ```bash
-$ bundlr fund 1000000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
+$ irys fund 1000000000000 -h https://node1.irys.xyz -w arweave.json -t arweave
 
-> ? Confirmation: send 1000000000000 Winston to dev.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> ? Confirmation: send 1000000000000 Winston to dev.irys.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
 > Funding receipt:
 > Amount: 1000000000000 with Fee: 1379016 to 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo
 > ID: 7cI6jpfpx6A2z8F5AoVHvZn9Az_BWPgvKzBCoE5w07A
 ```
 
-In this example we funded Bundlr with 1 $AR which should be more than enough. After about ~30 minutes
+In this example we funded Irys with 1 $AR which should be more than enough. After about ~30 minutes
 you can view your balance with:
 
 ```bash
-$ bundlr balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.bundlr.network -c arweave
+$ irys balance 35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo -h https://node1.irys.xyz -t arweave
 
 > Balance: 1000000000000 Winston (1AR)
 ```
 
-In order to withdraw your funds from Bundlr simply execute:
+In order to withdraw your funds from Irys simply execute:
 
 ```bash
-$ bundlr withdraw 500000000000 -h https://node1.bundlr.network -w arweave.json -c arweave
+$ irys withdraw 500000000000 -h https://node1.irys.xyz -w arweave.json -t arweave
 
-> ? Confirmation: withdraw 500000000000 winston from node1.bundlr.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
+> ? Confirmation: withdraw 500000000000 winston from node1.irys.network (35jqt51H71Tf4YmZfoGvN9FLw62a4aPnLgZa9KLdwLo)?
 > Y / N y
 > Withdrawal request for 500000000000 winston successful
 > Transaction ID: xcmxJmHyNS502fzqiT66rNeIOSldKGDWR8XsL9auDfs with network fee 1379016 for a total cost of 2858032
 ```
 
-More information about the Bundlr CLI can be found [here](https://docs.bundlr.network/docs/client/cli).
+More information about the Irys CLI can be found [here](https://docs.irys.xyz/developer-docs/cli).
 
 Store the keyfile in a secure location you will need it again later in the installation process.

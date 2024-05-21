@@ -240,7 +240,7 @@ continues with the newer version. Usually about one day.
 
 ### `current_storage_provider_id`
 
-The ID of the storage provider which should get used. Here `1` equals Arweave and `2` equals Bundlr. If it is zero no
+The ID of the storage provider which should get used. Here `1` equals Arweave and `2` equals Irys. If it is zero no
 storage provider is used and data just gets validated and not archived.
 
 ### `current_compression_id`

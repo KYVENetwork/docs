@@ -1,6 +1,6 @@
 import CodeBlock from "@theme/CodeBlock";
 import { getPool } from "/src/components/GetPool";
-import Admonition from '@theme/Admonition';
+import Admonition from "@theme/Admonition";
 export const pool = () => getPool();
 export const getRPC = () => {
   switch (pool().runtime) {
@@ -12,7 +12,7 @@ export const getRPC = () => {
       return "KYVEJS_TENDERMINT_SSYNC_API";
   }
   return "default";
-}
+};
 
 <div>
   With the <span>{pool().nodeName}</span> node in place and the KYVE node also
@@ -24,6 +24,7 @@ export const getRPC = () => {
 Finally the protocol validator can be started. In order to start it, execute the following command. Since we named our valaccount <code>{pool().val_name}</code> we select this valaccount to start the KYSOR.
 
 {pool().runtime.includes("ssync") && <Admonition type="caution">
+
 <b>IMPORTANT</b>: If http://localhost:7878/list_snapshots still returns an empty array the protocol node can not start, please wait until the first snapshot is created, after that you are able to finally start the protocol node.
 </Admonition>}
 
@@ -42,9 +43,7 @@ If you're running the {pool().nodeName} node on a separate machine you have to t
 
 Create .env file:
 
-<CodeBlock>
-  {getRPC()+"=https://my-custom-rpc-endpoint:26657"}
-</CodeBlock>
+<CodeBlock>{getRPC() + "=https://my-custom-rpc-endpoint:26657"}</CodeBlock>
 
 pass it to KYSOR:
 
@@ -59,27 +58,27 @@ After the node successfully started you should see the following logs:
 <CodeBlock language="log">
 2023-02-13 08:46:00.618  INFO  Starting node ...
 
-2023-02-13 08:46:00.624  INFO  Starting metric server on: http://localhost:8080/metrics
-2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Bundlr
-2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
+2023-02-13 08:46:00.624 INFO Starting metric server on: http://localhost:8080/metrics
+2023-02-13 08:46:00.828 INFO Checking account balance on StorageProvider:Irys
+2023-02-13 08:46:00.872 INFO Account has available funds on StorageProvider:Irys
 
-2023-02-13 08:46:00.873  INFO  Chain ID = kyve-kaon
-2023-02-13 08:46:00.873  INFO  Pool ID = {pool().networks["Kaon"]}
-2023-02-13 08:46:00.873  INFO  Runtime = {pool().runtime}
-2023-02-13 08:46:00.873  INFO  Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
+2023-02-13 08:46:00.873 INFO Chain ID = kyve-kaon
+2023-02-13 08:46:00.873 INFO Pool ID = {pool().networks["Kaon"]}
+2023-02-13 08:46:00.873 INFO Runtime = {pool().runtime}
+2023-02-13 08:46:00.873 INFO Valaddress = kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
 
-2023-02-13 08:46:00.873  INFO  {pool().runtime} = v1.0.11
-2023-02-13 08:46:00.873  INFO  @kyvejs/protocol = v1.0.11
+2023-02-13 08:46:00.873 INFO {pool().runtime} = v1.0.11
+2023-02-13 08:46:00.873 INFO @kyvejs/protocol = v1.0.11
 
-2023-02-13 08:46:00.876  INFO  Valaccount has not joined the pool with id {pool().networks["Kaon"]} yet
-2023-02-13 08:46:00.876  INFO  Visit https://app.kyve.network and join the pool from your validator account:
+2023-02-13 08:46:00.876 INFO Valaccount has not joined the pool with id {pool().networks["Kaon"]} yet
+2023-02-13 08:46:00.876 INFO Visit https://app.kyve.network and join the pool from your validator account:
 
-2023-02-13 08:46:00.876  INFO  Valaddress:    kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
-2023-02-13 08:46:00.876  INFO  Valname:       causal-chocolate-sparrow
+2023-02-13 08:46:00.876 INFO Valaddress: kyve1887l27uwn5r6u9gxw7dg9wt0kqh7uk23suumzc
+2023-02-13 08:46:00.876 INFO Valname: causal-chocolate-sparrow
 
-2023-02-13 08:46:00.876  INFO  The node will not continue until the account is authorized
+2023-02-13 08:46:00.876 INFO The node will not continue until the account is authorized
+
 </CodeBlock>
-
 
 With this information (`Valaddress` and `Valname`) you can head over the KYVE app and join the pool.
 

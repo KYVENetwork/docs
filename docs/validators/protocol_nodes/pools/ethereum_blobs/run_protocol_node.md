@@ -45,8 +45,8 @@ After the node successfully started you should see the following logs:
 2023-02-13 08:46:00.618  INFO  Starting node ...
 
 2023-02-13 08:46:00.624  INFO  Starting metric server on: http://localhost:8080/metrics
-2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Bundlr
-2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Bundlr
+2023-02-13 08:46:00.828  INFO  Checking account balance on StorageProvider:Irys
+2023-02-13 08:46:00.872  INFO  Account has available funds on StorageProvider:Irys
 
 2023-02-13 08:46:00.873  INFO  Chain ID = kyve-1
 2023-02-13 08:46:00.873  INFO  Pool ID = 20

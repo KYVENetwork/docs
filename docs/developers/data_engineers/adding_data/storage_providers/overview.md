@@ -9,11 +9,11 @@ to your runtime.
 
 ## Existing storage providers
 
-| ID  | Name       | Description                          |
-| --- | ---------- | ------------------------------------ |
-| 0   | No Storage | Data does not get stored             |
-| 1   | Arweave    | Uses Arweave to store data           |
-| 2   | Bundlr     | Uses Bundlr to store data on Arweave |
+| ID  | Name       | Description                        |
+| --- | ---------- | ---------------------------------- |
+| 0   | No Storage | Data does not get stored           |
+| 1   | Arweave    | Uses Arweave to store data         |
+| 2   | Irys       | Uses Irys to store data on Arweave |
 
 ## Writing a custom storage provider
 

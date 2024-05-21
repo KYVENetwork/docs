@@ -8,7 +8,7 @@ const Cosmos = {
   runtime: "@kyvejs/tendermint-bsync",
   datasource: "Self hosted Gaia full node (cosmoshub-4)",
   start_data: "height 5,200,791",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   configName: ".cosmos",
   networks: {
     Mainnet: 0,
@@ -30,7 +30,7 @@ const Osmosis = {
   runtime: "@kyvejs/tendermint",
   datasource: "Self hosted Osmosis full node (osmosis-1)",
   start_data: "Genesis",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   networks: {
     Mainnet: 1,
     Kaon: 1,
@@ -57,7 +57,7 @@ const Archway = {
   runtime: "@kyvejs/tendermint",
   datasource: "Self hosted Archway full node (archway-1)",
   start_data: "Genesis",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   networks: {
     Mainnet: 2,
     Kaon: 2,
@@ -107,7 +107,7 @@ const Axelar = {
   runtime: "@kyvejs/tendermint",
   datasource: "Self hosted Axelar full node (axelar-dojo-1)",
   start_data: "Genesis",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   networks: {
     Mainnet: 3,
     Kaon: 3,
@@ -136,7 +136,7 @@ const Cronos = {
   runtime: "@kyvejs/tendermint",
   datasource: "Self hosted Cronos full node (cronosmainnet_25-1)",
   start_data: "Genesis",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   networks: {
     Mainnet: 5,
     Kaon: 6,
@@ -187,7 +187,7 @@ const Noble = {
   runtime: "@kyvejs/tendermint",
   datasource: "Self hosted Noble full node (noble-1)",
   start_data: "Genesis",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   networks: {
     Mainnet: 7,
     Kaon: 12,
@@ -242,7 +242,7 @@ const Celestia = {
   runtime: "@kyvejs/tendermint",
   datasource: "Self hosted Celestia full node (celestia)",
   start_data: "Genesis",
-  storage_provider: "Bundlr",
+  storage_provider: "Irys",
   networks: {
     Mainnet: 9,
     Kaon: 14,
@@ -268,7 +268,8 @@ const Celestia = {
       "Due to the size of the block_results response and because Celestia disables the storage of block results by default, ",
     code: 'discard_abci_responses = false\ntimeout_broadcast_tx_commit = "120s"',
   },
-  appToml: 'pruning = "everything"\nindex-events = [""]\n\n[state-sync]\n\nsnapshot-interval = 0\nsnapshot-keep-recent = 0',
+  appToml:
+    'pruning = "everything"\nindex-events = [""]\n\n[state-sync]\n\nsnapshot-interval = 0\nsnapshot-keep-recent = 0',
 };
 
 const CelestiaSSync = {
@@ -308,7 +309,8 @@ const EthereumBlobs = {
     "100mbps network bandwith",
   ],
   integrations: [],
-  description: "Data blobs are a fresh approach to optimizing transaction data storage on L2 networks within Ethereum. They are inexpensive and temporary memory carrying data about transactions, called blob-carrying transactions. These blobs are designed to make the verification of these transactions more efficient."
+  description:
+    "Data blobs are a fresh approach to optimizing transaction data storage on L2 networks within Ethereum. They are inexpensive and temporary memory carrying data about transactions, called blob-carrying transactions. These blobs are designed to make the verification of these transactions more efficient.",
 };
 
 const pools = [
