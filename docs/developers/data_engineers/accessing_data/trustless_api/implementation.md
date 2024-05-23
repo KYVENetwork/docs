@@ -166,5 +166,5 @@ The crawler has done the difficult part of indexing each bundle, now the server 
 5. Finally, the user constructs the local Merkle root hash based on the provided data item from the server and compares it to the on-chain merkle root.
 
 :::tip
-The [Trustless Client](/developers/data_engineers/accessing_data/trustless-api/trustless_client) serves the functionality for 5).
+The [Trustless Client](/developers/data_engineers/accessing_data/trustless_api/trustless_client) serves the functionality for 5).
 :::
