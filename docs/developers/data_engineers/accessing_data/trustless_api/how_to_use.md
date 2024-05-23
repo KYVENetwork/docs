@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Usage
+# How to use
 
 :::tip
 This section describes how to use the Trustless API and how to access the endpoint by KYVE.
@@ -13,7 +13,7 @@ The official endpoint of the Trustless API by the KYVE team can be found here:
 
 **https://data.services.kyve.network**
 
-The endpoint provides data of various pools. For example, it includes the Ethereum // Blobs Pool from Kaon and the Celestia // Blobs Pool from Korellia. 
+The endpoint provides data of various pools. For example, it includes the Ethereum // Blobs Pool from Testnet and the Celestia // Blobs Pool from Devnet. 
 When selecting the URLs of the individual data, an attempt is made to mock the existing and therefore known endpoints in order to address external developers 
 with the lowest possible barrier, which should promote the usage of the Trustless API. Therefore, all supported endpoints are listed on the start page of the API endpoint.
 

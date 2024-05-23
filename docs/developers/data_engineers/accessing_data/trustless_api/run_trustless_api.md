@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Run own API endpoint
+# Run Your Own API Endpoint
 
 :::tip
 This section describes how to spin up and run an own Trustless API endpoint.
@@ -12,11 +12,11 @@ This section describes how to spin up and run an own Trustless API endpoint.
 ```bash
 git clone https://github.com/KYVENetwork/trustless-api.git
 
-cd trustless_api
+cd trustless-api
 
 make
 
-cp build/trustless_api ~/go/bin/trustless_api
+cp build/trustless-api ~/go/bin/trustless-api
 ```
 ## How to start:
 ### Crawler
@@ -24,7 +24,7 @@ cp build/trustless_api ~/go/bin/trustless_api
 You can start the crawling process with the following command:
 
 ```sh
-trustless_api crawler
+trustless-api crawler
 ```
 
 ### Server
@@ -32,7 +32,7 @@ trustless_api crawler
 To serve the crawled data items you have to start the process with the following arguments:
 
 ```sh
-trustless_api start
+trustless-api start
 ```
 
 ## Config
