@@ -17,7 +17,7 @@ These components operate independently, so the crawler must be running to ensure
 
 ## Crawler
 
-<img width="70%" src="/img/trustless_api/trustless_crawler.png" alt="Crawler sketch"/>
+<img width="70%" src="/img/trustless_api/trustless_crawler.jpg" alt="Crawler sketch"/>
 
 As previously mentioned, the `crawler` is responsible for retrieving all bundles from the KYVE chain and storing each data item. The crawler process knows which pools to query based on the `config.yml` file provided. You can find a template configuration under `./config/config.template.yml.`
 
@@ -154,7 +154,7 @@ type SaveDataItem interface {
 ```
 
 ## How the server works in detail
-<img src="/img/trustless_api/trustless_server.png" alt="server sketch"/>
+<img src="/img/trustless_api/trustless_server.jpg" alt="server sketch"/>
 
 The crawler has done the difficult part of indexing each bundle, now the server is able to simply retrieve and serve the requested data item from the database.
 
