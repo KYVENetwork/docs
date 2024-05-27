@@ -36,8 +36,8 @@ Each go-routine (referred to as a ChildCrawler from here on) performs the follow
 
 To insert a bundle, the following steps are required for the crawler:
 
-1. Query the specific bundle using the bundleId on the KYVE chain, where it is called finalizedBundle (the ChildCrawler will use the chainrest defined in the config as the node endpoint).
-2. Retrieve the decompressed bundle data associated with the finalizedBundle from the storage provider (the ChildCrawler will use the storagerest defined in the config as the storage provider endpoint).
+1. Query the specific bundle using the bundleId on the KYVE chain, where it is called finalizedBundle (the ChildCrawler will use the `chainrest` defined in the config as the node endpoint).
+2. Retrieve the decompressed bundle data associated with the finalizedBundle from the storage provider (the ChildCrawler will use the `storagerest` defined in the config as the storage provider endpoint).
 3. The decompressed bundle data is an array of data items. Compute the hash value of each data item to generate the data inclusion proof, enabling simple verification of whether a data item was included in a specific bundle.
 
 ### Generate Data Inclusion Proof
@@ -65,7 +65,7 @@ The `EthBlobsIndexer` generates all necessary indices to query for blobs:
 - block_height
 - slot_number
 
-This means, the `EthBlobsIndexer` will take a bundle, which is an array of data items, as an argument and return an array of trustless data items back. A trustless data item contains the actual data, the inclusion proof and all necessary information to verify that proof (like `chainId` and `bundleId`). Additionally it contains an array of indicies for that specific data item, these indicies will then be stored in the data base to correctly retrieve the trustless data item later on.
+This means, the `EthBlobsIndexer` will take a bundle, which is an array of data items, as an argument and return an array of trustless data items back. A trustless data item contains the actual data, the inclusion proof and all necessary information to verify that proof (like `chainId` and `bundleId`). Additionally it contains an array of indicies for that specific data item, these indicies will then be stored in the database to correctly retrieve the trustless data item later on.
 
 ```go
 func (e *EthBlobsIndexer) IndexBundle(bundle *types.Bundle) (*[]types.TrustlessDataItem, error) {
