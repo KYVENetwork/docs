@@ -89,11 +89,18 @@ const DataDirectory = () => {
       "https://arweave.net/" + getProperties(source).logo.replace("ar://", "")
     );
   };
-  const label = () => {
+  const label = (open: boolean) => {
     return (
-      <div className="flex flex-nowrap items-center cursor-pointer select-none border-solid border-borderColor border rounded-md p-2 menu__link dark:text-white text-black font-bold text-xl">
-        <img src={logoUrl(selected)} className="w-12 h-12 rounded-md mr-2" />
-        {getProperties(selected).title}
+      <div
+        className={
+          "flex flex-nowrap items-center cursor-pointer select-none border-solid border-borderColor border rounded-md p-2 menu__link dark:text-white text-black font-bold text-xl menu__list-item " +
+          (!open ? "menu__list-item--collapsed" : "")
+        }
+      >
+        <a className="menu__link menu__link--sublist menu__link--sublist-caret">
+          <img src={logoUrl(selected)} className="w-12 h-12 rounded-md mr-2" />
+          <span className="mr-2">{getProperties(selected).title}</span>
+        </a>
       </div>
     );
   };

@@ -7,7 +7,10 @@ module.exports = {
       colors: {
         primary: "var(--ifm-color-primary)",
         accent: "#00000030",
-        borderColor: "var(--ifm-toc-border-color)"
+        borderColor: "var(--ifm-toc-border-color)",
+      },
+      transitionTimingFunction: {
+        sal: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       },
     },
   },

@@ -2,6 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { Card } from "../components/Card";
 import { PoolCard, PoolCardProps } from "../components/PoolCard";
+import Chat from "../components/chat";
 import React, { useEffect, useState } from "react";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -93,7 +94,7 @@ export default function Home() {
     };
   };
 
-  const renderBanenr = () => {
+  const renderBanner = () => {
     if (!showBanner) return <></>;
     return (
       <div className="grid grid-flow-col grid-cols-12 rounded-xl bg-[#0000003f] px-5 py-5 mb-5">
@@ -138,9 +139,9 @@ export default function Home() {
   return (
     <Layout>
       <main className="container py-12">
-        {renderBanenr()}
-        <div className="grid grid-cols-2 items-center">
-          <div className="col-span-2 md:col-span-1">
+        {renderBanner()}
+        <div className="flex items-center">
+          <div className={"flex-1 transition-all ease-sal duration-300"}>
             <div {...animation("zoom-in")}>
               <ThemedImage
                 alt="logo"
@@ -178,6 +179,9 @@ export default function Home() {
               />
             )}
           </div>
+        </div>
+        <div className="my-16 slideIn">
+          <Chat />
         </div>
         <div>
           <div

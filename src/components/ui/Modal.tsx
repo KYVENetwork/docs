@@ -1,7 +1,7 @@
 import React, { HtmlHTMLAttributes, useState } from "react";
 
 export interface ModalProps extends HtmlHTMLAttributes<HTMLDivElement> {
-  label: () => React.JSX.Element;
+  label: (open: boolean) => React.JSX.Element;
 }
 
 const Modal = ({ label, children, ...props }: ModalProps) => {
@@ -30,7 +30,7 @@ const Modal = ({ label, children, ...props }: ModalProps) => {
       }}
       tabIndex={0}
     >
-      <div onClick={toggle}>{label()}</div>
+      <div onClick={toggle}>{label(open)}</div>
       <div {...props} className="relative" onClick={() => close()}>
         {open && (
           <div

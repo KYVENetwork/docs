@@ -1,6 +1,5 @@
 ---
-sidebar_position: 8
-title: KSYNC
+title: Overview
 ---
 
 <h1 class="hide">

@@ -43,7 +43,7 @@ export const PoolCard = ({
               +{integrations.length - 1}
             </div>
           )}
-          <div className="ml-auto bg-primary rounded-2xl p-2 shadow-md px-4 hover:scale-105 transition-all">
+          <div className="ml-auto bg-primary rounded-2xl p-2 shadow-md px-4 hover:scale-105 transition-all text-white">
             <Link />
           </div>
         </div>

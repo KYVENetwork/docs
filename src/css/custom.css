@@ -24,6 +24,11 @@
   --ifm-color-info-dark: #58c6b2;
   --ifm-color-info-contrast-background: #58c6b248 !important;
   --ifm-color-info-contrast-foreground: black;
+  /* background: linear-gradient(33deg, rgba(0, 0, 0, 0.582) 00%, #58c6b227 100%); */
+  /* background: radial-gradient(#58c6b220, transparent); */
+  /* background: radial-gradient(#58c6b298 -40%, rgba(49, 49, 49, 0.452) 80%); */
+  /* background-repeat: no-repeat;
+  background-attachment: fixed; */
 }
 
 html[data-theme="dark"] :root {
@@ -116,11 +121,21 @@ html[data-theme="dark"] .discord-icon::before {
 }
 
 .btn-primary {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 8px #58c6b2;
+  background: var(--ifm-color-primary);
+  border: none;
 }
 
 .btn-primary:hover {
   box-shadow: 0 0 12px #58c6b2;
+}
+
+.btn-primary:disabled {
+  box-shadow: none;
+  color: white;
+  background: var(--ifm-color-primary);
+  opacity: 0.8;
 }
 
 .menu__list ul li a {
@@ -186,4 +201,70 @@ html[data-theme="dark"] #kapa-widget-container button:hover {
 .slideOut {
   animation: slideOutAnimation 0.5s forwards
     cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 0.5s forwards
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skeleton {
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(92, 92, 92, 0.8) 50%,
+      rgba(255, 255, 255, 0) 70%
+    )
+    #5555557e;
+  background-size: 200% 100%;
+  display: inline-flex;
+  line-height: 1;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+@keyframes grow {
+  to {
+    width: 0px;
+  }
+}
+
+.skeleton-grow {
+  animation: grow 1s forwards reverse ease-in-out;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.border-wrap {
+  background: linear-gradient(33deg, rgba(0, 0, 0, 0.425) -50%, #58c6b2c7 100%);
+  padding: 2px;
+}
+
+.root-background {
+  background: var(--ifm-background-color) !important;
 }
