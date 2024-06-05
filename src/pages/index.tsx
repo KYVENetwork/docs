@@ -140,8 +140,8 @@ export default function Home() {
     <Layout>
       <main className="container py-12">
         {renderBanner()}
-        <div className="flex items-center">
-          <div className={"flex-1 transition-all ease-sal duration-300"}>
+        <div className="grid grid-cols-2 items-center">
+          <div className="col-span-2 md:col-span-1 ease-sal duration-300">
             <div {...animation("zoom-in")}>
               <ThemedImage
                 alt="logo"

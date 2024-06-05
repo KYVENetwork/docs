@@ -18,7 +18,7 @@ export interface Message {
   bot: boolean;
 }
 
-const Chat = () => {
+const Chat = ({ big }: { big?: boolean }) => {
   const API_TOKEN = "abc8245b-d6e7-4b29-b5b1-4966523fd103";
   const [focus, setFocus] = useState(false);
 
@@ -128,7 +128,7 @@ const Chat = () => {
           `https://kapa-service-la7dkmplpq-uc.a.run.app/query/v1/thread/${identifiers.thread_id}/stream?` +
             new URLSearchParams({
               query: question,
-              thread_id: identifiers ? identifiers?.thread_id : "",
+              thread_id: identifiers.thread_id,
             }),
           {
             method: "GET",
@@ -213,19 +213,25 @@ const Chat = () => {
   };
 
   return (
-    <div className={"mx-auto transition-all " + (focus ? "w-full" : "w-2/3")}>
+    <div
+      className={
+        "mx-auto transition-all " + (focus || big ? "w-full" : "w-2/3")
+      }
+    >
       <div className="text-center font-bold text-3xl mb-6">
         Ask anything about KYVE
       </div>
       <div className="border-wrap rounded-xl w-full">
         <div className="w-full rounded-xl root-background">
           <div className="flex flex-col dark:bg-black dark:bg-opacity-20 p-4 w-full rounded-xl">
-            <div className="text-right text-primary">
-              <Link
-                onClick={() => setFocus(!focus)}
-                className="cursor-pointer"
-              />
-            </div>
+            {!big && (
+              <div className="text-right text-primary">
+                <Link
+                  onClick={() => setFocus(!focus)}
+                  className="cursor-pointer"
+                />
+              </div>
+            )}
             <div className="max-h-[60dvh] overflow-auto flex flex-col-reverse no-scrollbar messages">
               <RenderGenerating />
               {messages
