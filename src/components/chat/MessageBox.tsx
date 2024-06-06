@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Message } from ".";
 import Markdown from "react-markdown";
 
@@ -11,7 +11,7 @@ const MessageBox = ({ message: msg }: { message: Message }) => {
           className={
             "mt-2 " +
             (!msg.bot
-              ? "font-bold text-2xl border-t-0 border-l-0 border-r-0 border-b border-solid border-white border-opacity-50 "
+              ? "font-bold text-2xl border-t-0 border-l-0 border-r-0 border-b border-solid dark:border-white border-black border-opacity-50 "
               : " ") +
             (msg.finished && !msg.bot && "slideIn")
           }
@@ -27,7 +27,7 @@ const MessageBox = ({ message: msg }: { message: Message }) => {
                 style={{
                   animationDelay: i * 100 + "ms",
                 }}
-                key={x.title}
+                key={x.title + i}
                 href={x.source_url}
               >
                 {x.title.slice(0, 12) + (x.title.length > 6 ? "..." : "")}

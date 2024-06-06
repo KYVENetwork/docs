@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MessageBox from "./MessageBox";
 import { Skeleton } from "./Skeleton";
 import Link from "../../../static/img/homepage/link.svg";
@@ -187,20 +187,20 @@ const Chat = ({ big }: { big?: boolean }) => {
 
   const SUGGESTIONS = [
     {
-      title: "Wen 100x?",
+      title: "What is $KYVE? ELI5",
+      emoji: "👶",
+    },
+    {
+      title: "How to participate?",
+      emoji: "🙋‍♂️",
+    },
+    {
+      title: "What are data pools?",
       emoji: "🔎",
     },
     {
-      title: "Wen 100x?",
-      emoji: "🔎",
-    },
-    {
-      title: "Wen 100x?",
-      emoji: "🔎",
-    },
-    {
-      title: "Wen 100x?",
-      emoji: "🔎",
+      title: "How does the Data Pipeline work?",
+      emoji: "🚰",
     },
   ];
 
@@ -215,7 +215,7 @@ const Chat = ({ big }: { big?: boolean }) => {
   return (
     <div
       className={
-        "mx-auto transition-all " + (focus || big ? "w-full" : "w-2/3")
+        "mx-auto transition-all " + (focus || big ? "w-full" : "w-full md:w-2/3")
       }
     >
       <div className="text-center font-bold text-3xl mb-6">
@@ -267,11 +267,11 @@ const Chat = ({ big }: { big?: boolean }) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-2 mt-2">
+      <div className="grid grid-cols-2 gap-2 mt-2 max-md:grid-cols-1">
         {SUGGESTIONS.map((s, i) => (
           <div
             key={s.title + i}
-            className="dark:bg-black dark:bg-opacity-25 dark:border-none rounded-xl p-1 cursor-pointer select-none slideIn border border-solid border-black border-opacity-20"
+            className="dark:bg-black dark:bg-opacity-25 dark:border-none rounded-xl p-1 cursor-pointer select-none slideIn border border-solid border-black border-opacity-20 h-10 flex items-center"
             style={{
               animationDelay: (i + 5) * 100 + "ms",
             }}

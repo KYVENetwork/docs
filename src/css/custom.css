@@ -261,7 +261,7 @@ html[data-theme="dark"] .ask-ai-widget div:hover {
 }
 
 .border-wrap {
-  /* background: linear-gradient(33deg, rgba(0, 0, 0, 0.425) -50%, #58c6b2c7 100%); */
+  background: linear-gradient(33deg, rgba(0, 0, 0, 0.425) -50%, #58c6b2c7 100%);
   padding: 2px;
 }
 

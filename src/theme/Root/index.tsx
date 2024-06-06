@@ -41,7 +41,10 @@ function Root({ children }) {
         {open && (
           <div className="fixed z-[1000] left-[50%] top-[5%] translate-x-[-50%]">
             <div
-              className={"slideIn w-[90dvw] md:w-[60dvw] p-4 rounded-lg " + (closing ? "slideOut" : "")}
+              className={
+                "slideIn w-[90dvw] md:w-[60dvw] p-4 rounded-lg " +
+                (closing ? "slideOut" : "")
+              }
               style={{ background: "var(--ifm-background-color)" }}
             >
               <Chat big />
