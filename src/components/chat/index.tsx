@@ -195,11 +195,11 @@ const Chat = ({ big }: { big?: boolean }) => {
       emoji: "🙋‍♂️",
     },
     {
-      title: "What are data pools?",
+      title: "What is trustless data?",
       emoji: "🔎",
     },
     {
-      title: "How does the Data Pipeline work?",
+      title: "How to use KSYNC?",
       emoji: "🚰",
     },
   ];
