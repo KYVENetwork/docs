@@ -18,7 +18,7 @@ function defineSection(section, options = {}) {
       rehypePlugins: [rehypeKatex],
       path: `docs/${section}`,
       routeBasePath: section,
-      sidebarCollapsible: false,
+      sidebarCollapsible: true,
       id: section,
       sidebarPath: "./sidebars.js",
       breadcrumbs: true,
@@ -112,10 +112,7 @@ const config = {
           },
           {
             to: "/validators/protocol_nodes/supervysor",
-            from: [
-              "/tools/supervysor",
-              "/supervysor",
-            ],
+            from: ["/tools/supervysor", "/supervysor"],
           },
         ],
       },
@@ -132,6 +129,27 @@ const config = {
       };
     },
     updatePoolsPlugin,
+    // inject hotjar script tag
+    async function hotjarPlugin(context, options) {
+      return {
+        name: "docusaurus-plugin-hotjar",
+        injectHtmlTags() {
+          return {
+            headTags: {
+              tagName: "script",
+              innerHTML: `(function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:5046420,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
+            },
+          };
+        },
+      };
+    },
   ],
   presets: [
     [
@@ -143,7 +161,7 @@ const config = {
           rehypePlugins: [rehypeKatex],
           sidebarPath: "./sidebars.js",
           breadcrumbs: true,
-          sidebarCollapsible: false,
+          sidebarCollapsible: true,
           path: "docs/home",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -154,7 +172,7 @@ const config = {
           customCss: "./src/css/custom.css",
         },
         gtag: {
-          trackingID: "G-SY5FWZVWK2",
+          trackingID: "G-WB2K8PYJE4",
           anonymizeIP: true,
         },
       }),
