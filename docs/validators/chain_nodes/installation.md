@@ -9,18 +9,19 @@ sidebar_position: 3
 Depending on the network one may need to run different versions. The following
 table shows the upgrade block height for a given version:
 
-| Tag                                                                          | Kaon                                                               | Mainnet                                            |
-|------------------------------------------------------------------------------|--------------------------------------------------------------------|----------------------------------------------------|
-| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                  | -                                                  |
-| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://testnet.mintscan.io/kyve-testnet/blocks/443300)   | -                                                  |
-| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                  | 0                                                  |
-| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://testnet.mintscan.io/kyve-testnet/blocks/1115111) | [826000](https://mintscan.io/kyve/blocks/826000)   |
-| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://testnet.mintscan.io/kyve-testnet/blocks/1502502) | [1135000](https://mintscan.io/kyve/blocks/1135000) |
-| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://testnet.mintscan.io/kyve-testnet/blocks/2341100) | [2061100](https://mintscan.io/kyve/blocks/2061100) |
-| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://testnet.mintscan.io/kyve-testnet/blocks/4185500) | [3908000](https://mintscan.io/kyve/blocks/3908000) |
+| Tag                                                                          | Kaon                                                               | Mainnet                                                       |
+|------------------------------------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------|
+| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                  | -                                                             |
+| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://viewblock.io/de/kyve/block/443300?network=kaon)   | -                                                             |
+| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                  | 0                                                             |
+| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://viewblock.io/de/kyve/block/1115111?network=kaon) | [826000](https://mintscan.io/kyve/blocks/826000)              |
+| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://viewblock.io/de/kyve/block/1502502?network=kaon) | [1135000](https://mintscan.io/kyve/blocks/1135000)            |
+| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://viewblock.io/de/kyve/block/2341100?network=kaon) | [2061100](https://www.mintscan.io/kyve-testnet/block/2061100) |
+| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://viewblock.io/de/kyve/block/4185500?network=kaon) | [3908000](https://mintscan.io/kyve/blocks/3908000)            |
+| [`v1.5.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.5.0)         | [7571371](https://viewblock.io/de/kyve/block/7571371?network=kaon) | [7254527](https://mintscan.io/kyve/blocks/7254527)            |
 
 For the Korellia devnet there is no version map. Only the latest version via
-blocksync is supported.
+statesync is supported.
 
 ## Obtain binaries
 
@@ -52,12 +53,11 @@ Clone and build KYVE using <code>git</code>:
 git clone https://github.com/KYVENetwork/chain.git
 cd chain
 git fetch
-git checkout tags/<tag> -b <tag>
-make build
+git checkout tags/<tag>
+make build ENV=mainnet
 ```
 
-Here the <code><tag/></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>. 
-For building v1.1.0 or later on needs to additionally define the environment, i.e. `make build ENV=mainnet`
+Here the <code>&lt;tag&gt;</code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
 
 :::tip
 **Note:** You can find the compiled binary under <code>chain/build/kyved</code>
@@ -96,7 +96,7 @@ git checkout tags/<tag> -b <tag>
 make build ENV=kaon
 ```
 
-Here the <code><tag/></code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
+Here the <code>&lt;tag&gt;</code> is the latest version which you can get <a href="https://github.com/KYVENetwork/chain/tags">here</a>.
 
 :::tip
 **Note:** You can find the compiled binary under <code>chain/build/kyved</code>
@@ -117,29 +117,29 @@ After the download was done, verify that it was successful:
 **linux/amd64**
 
 ```bash
-wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_linux_amd64.tar.gz
-tar -xvzf kyved_kaon_linux_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_linux_amd64
+chmod +x kyved_kaon_linux_amd64
 ```
 
 **linux/arm64**
 
 ```bash
-wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_linux_arm64.tar.gz
-tar -xvzf kyved_kaon_linux_arm64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_linux_arm64
+chmod +x kyved_kaon_linux_arm64
 ```
 
 **darwin/amd64**
 
 ```bash
-wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_darwin_amd64.tar.gz
-tar -xvzf kyved_kaon_darwin_amd64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_darwin_amd64
+chmod +x kyved_kaon_darwin_amd64
 ```
 
 **darwin/arm64**
 
 ```bash
-wget https://files.kyve.network/korellia-2/1.4.0/kyved_kaon_darwin_arm64.tar.gz
-tar -xvzf kyved_kaon_darwin_arm64.tar.gz
+wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_darwin_arm64
+chmod +x kyved_kaon_darwin_arm64
 ```
 
 After the installation is done, verify that it was successful:
