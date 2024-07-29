@@ -48,13 +48,13 @@ Pools can also directly be queried by the following REST API endpoint: `/kyve/qu
 
 <Tabs groupId="network">
   <TabItem value="kyve" label="Mainnet">
-    <strong>Pools</strong>: <a href="https://api-eu-1.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.kyve.network/kyve/query/v1beta1/pools</a>
+    <strong>Pools</strong>: <a href="https://api.kyve.network/kyve/query/v1beta1/pools">https://api.kyve.network/kyve/query/v1beta1/pools</a>
   </TabItem>
   <TabItem value="kaon" label="Kaon">
-    <strong>Pools</strong>: <a href="https://api-eu-1.kaon.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.kaon.kyve.network/kyve/query/v1beta1/pools</a>
+    <strong>Pools</strong>: <a href="https://api.kaon.kyve.network/kyve/query/v1beta1/pools">https://api.kaon.kyve.network/kyve/query/v1beta1/pools</a>
   </TabItem>
   <TabItem value="korellia" label="Korellia">
-    <strong>Pools</strong>: <a href="https://api-eu-1.korellia.kyve.network/kyve/query/v1beta1/pools">https://api-eu-1.korellia.kyve.network/kyve/query/v1beta1/pools</a>
+    <strong>Pools</strong>: <a href="https://api.korellia.kyve.network/kyve/query/v1beta1/pools">https://api.korellia.kyve.network/kyve/query/v1beta1/pools</a>
   </TabItem>
 </Tabs>
 

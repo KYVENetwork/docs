@@ -20,12 +20,10 @@ KYVE is the official mainnet of KYVE. Data validated and archived in this networ
     <strong>Ping.Pub (Official)</strong>: <a href="https://ping.pub/kyve">https://ping.pub/kyve</a>
   </TabItem>
   <TabItem value="rpc" label="RPC">
-    <strong>RPC EU</strong>: <a href="https://rpc-eu-1.kyve.network">https://rpc-eu-1.kyve.network</a><br/>
-    <strong>RPC US</strong>: <a href="https://rpc-us-1.kyve.network">https://rpc-us-1.kyve.network</a>
+    <strong>RPC</strong>: <a href="https://rpc.kyve.network">https://rpc.kyve.network</a><br/>
   </TabItem>
   <TabItem value="rest" label="REST">
-    <strong>REST EU</strong>: <a href="https://api-eu-1.kyve.network">https://api-eu-1.kyve.network</a><br/>
-    <strong>REST US</strong>: <a href="https://api-us-1.kyve.network">https://api-us-1.kyve.network</a>
+    <strong>REST</strong>: <a href="https://api.kyve.network">https://api.kyve.network</a><br/>
   </TabItem>
 </Tabs>
 
@@ -42,10 +40,10 @@ Kaon is KYVE's official testnet. It is designed to replicate the mainnet. Before
     <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kyve.network/kaon">https://explorer.kyve.network/kaon</a>
   </TabItem>
   <TabItem value="rpc" label="RPC">
-    <strong>RPC</strong>: <a href="https://rpc-eu-1.kaon.kyve.network">https://rpc-eu-1.kaon.kyve.network</a>
+    <strong>RPC</strong>: <a href="https://rpc.kaon.kyve.network">https://rpc.kaon.kyve.network</a>
   </TabItem>
   <TabItem value="rest" label="REST">
-    <strong>REST</strong>: <a href="https://api-eu-1.kaon.kyve.network">https://api-eu-1.kaon.kyve.network</a>
+    <strong>REST</strong>: <a href="https://api.kaon.kyve.network">https://api.kaon.kyve.network</a>
   </TabItem>
 </Tabs>
 
@@ -64,9 +62,9 @@ import TabItem from '@theme/TabItem';
     <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kyve.network/korellia">https://explorer.kyve.network/korellia</a><br/>
   </TabItem>
   <TabItem value="rpc" label="RPC">
-    <strong>RPC</strong>: <a href="https://rpc-eu-1.korellia.kyve.network">https://rpc-eu-1.korellia.kyve.network</a>
+    <strong>RPC</strong>: <a href="https://rpc.korellia.kyve.network">https://rpc.korellia.kyve.network</a>
   </TabItem>
   <TabItem value="rest" label="REST">
-    <strong>REST</strong>: <a href="https://api-eu-1.korellia.kyve.network">https://api-eu-1.korellia.kyve.network</a>
+    <strong>REST</strong>: <a href="https://api.korellia.kyve.network">https://api.korellia.kyve.network</a>
   </TabItem>
 </Tabs>

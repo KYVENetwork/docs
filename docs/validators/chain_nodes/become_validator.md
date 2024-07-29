@@ -122,7 +122,7 @@ This example shows how to create a validator on our testnet Kaon. Please note th
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1000000" \
-  --node https://rpc-eu-1.kaon.kyve.network:443 \
+  --node https://rpc.kaon.kyve.network:443 \
   --gas="auto" \
   --from=<key_name>
 ```
