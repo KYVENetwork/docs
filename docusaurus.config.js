@@ -18,7 +18,7 @@ function defineSection(section, options = {}) {
       rehypePlugins: [rehypeKatex],
       path: `docs/${section}`,
       routeBasePath: section,
-      sidebarCollapsible: false,
+      sidebarCollapsible: true,
       id: section,
       sidebarPath: "./sidebars.js",
       breadcrumbs: true,
