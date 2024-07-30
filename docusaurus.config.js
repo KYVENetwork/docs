@@ -154,9 +154,12 @@ const config = {
           customCss: "./src/css/custom.css",
         },
         gtag: {
-          trackingID: "G-SY5FWZVWK2",
-          anonymizeIP: true,
+          trackingID: "G-WB2K8PYJE4",
         },
+        sitemap: {
+          priority: null,
+          changefreq: null
+        }
       }),
     ],
   ],
