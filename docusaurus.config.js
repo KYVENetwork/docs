@@ -118,6 +118,14 @@ const config = {
             ],
           },
         ],
+        createRedirects(existingPath) {
+          if (existingPath.startsWith('/data_engineers')) {
+            return [
+              existingPath.replace('/data_engineers', '/developers/data_engineers'),
+            ];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
       },
     ],
     async function loadTailwind(context, options) {
@@ -145,7 +153,6 @@ const config = {
           breadcrumbs: true,
           sidebarCollapsible: false,
           path: "docs/home",
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/KYVENetwork/docs/tree/main",
         },
