@@ -248,7 +248,7 @@ const config = {
             items: [
               {
                 label: "Medium",
-                to: "https://kyve.medium.com/",
+                to: "https://blog.kyve.network/",
               },
               {
                 label: "YouTube",
@@ -266,6 +266,10 @@ const config = {
               {
                 label: "App",
                 to: "https://app.kyve.network",
+              },
+              {
+                label: "Blog",
+                to: "https://kyve.network/blog",
               },
               {
                 label: "GitHub",
