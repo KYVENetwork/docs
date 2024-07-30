@@ -19,7 +19,6 @@ export interface Message {
 }
 
 const Chat = ({ big }: { big?: boolean }) => {
-  const API_TOKEN = "abc8245b-d6e7-4b29-b5b1-4966523fd103";
   const [focus, setFocus] = useState(false);
 
   const [messages, setMessages] = useState<Message[]>([]);
@@ -125,29 +124,23 @@ const Chat = ({ big }: { big?: boolean }) => {
 
       if (identifiers) {
         response = await fetch(
-          `https://kapa-service-la7dkmplpq-uc.a.run.app/query/v1/thread/${identifiers.thread_id}/stream?` +
+          `https://cache.kyve.network/kapaai/query/v1/thread/${identifiers.thread_id}/stream?` +
             new URLSearchParams({
               query: question,
               thread_id: identifiers.thread_id,
             }),
           {
             method: "GET",
-            headers: {
-              "X-API-TOKEN": API_TOKEN,
-            },
           }
         );
       } else {
         response = await fetch(
-          `https://kapa-service-la7dkmplpq-uc.a.run.app/query/v1/stream?` +
+          `https://cache.kyve.network/kapaai/query/v1/stream?` +
             new URLSearchParams({
               query: question,
             }),
           {
             method: "GET",
-            headers: {
-              "X-API-TOKEN": API_TOKEN,
-            },
           }
         );
       }
