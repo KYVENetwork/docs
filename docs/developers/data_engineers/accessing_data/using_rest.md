@@ -5,7 +5,7 @@ sidebar_position: 0
 # Accessing Stored Data via REST
 
 KYVE data is available for developers through the REST-API exposed by the consensus validators, a list of REST endpoints can be
-found [here](/developers/web3_devs/grpc). The REST integration
+found [here](/developers/web3_devs/endpoints). The REST integration
 is the native way to access data that has been stored through KYVE.
 
 ## Understanding Storage Providers and Compression

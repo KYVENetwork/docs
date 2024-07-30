@@ -391,8 +391,8 @@ ksync block-sync --binary="/path/to/osmosisd" --home="/my/custom/home/.osmosis" 
 KSYNC retrieves the metadata including checksums from the KYVE blockchain. By default, KSYNC uses the following
 endpoints:
 
-- **Mainnet (`kyve-1`)**: https://api-eu-1.kyve.network
-- **Testnet (`kaon-1`)**: https://api-eu-1.kaon.kyve.network
+- **Mainnet (`kyve-1`)**: https://api.kyve.network
+- **Testnet (`kaon-1`)**: https://api.kaon.kyve.network
 - **Devnet (`korellia-2`)**: https://api.korellia.kyve.network
 
 These can be changed by adding the flag `--chain-rest`.
@@ -406,7 +406,7 @@ You can find all official KYVE chain endpoints [here](/learn/networks).
 Use the endpoint of your own KYVE node:
 
 ```bash
-ksync block-sync --binary="/path/to/osmosisd" --chain-rest="https://api-us-1.kyve.network" --source="osmosis" --target-height=42000
+ksync block-sync --binary="/path/to/osmosisd" --chain-rest="https://api.kyve.network" --source="osmosis" --target-height=42000
 ```
 
 ### Overwrite storage provider endpoint

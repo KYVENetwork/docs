@@ -15,23 +15,21 @@ import TabItem from '@theme/TabItem';
   <TabItem value="kyve" label="Mainnet">
 
 ```
-https://rpc-eu-1.kyve.network
-https://rpc-us-1.kyve.network
+https://rpc.kyve.network
 ```
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
 ```
-https://rpc-eu-1.kaon.kyve.network
-https://rpc-us-1.kaon.kyve.network
+https://rpc.kaon.kyve.network
 ```
 
   </TabItem>
   <TabItem value="korellia" label="Korellia">
 
 ```
-https://rpc-eu-1.korellia.kyve.network
+https://rpc.korellia.kyve.network
 ```
 
   </TabItem>
@@ -45,23 +43,21 @@ All queries for the current chain state. The KYVE queries are prefixed with a `/
   <TabItem value="kyve" label="Mainnet">
 
 ```
-https://api-eu-1.kyve.network
-https://api-us-1.kyve.network
+https://api.kyve.network
 ```
 
   </TabItem>
   <TabItem value="kaon" label="Kaon">
 
 ```
-https://api-eu-1.kaon.kyve.network
-https://api-us-1.kaon.kyve.network
+https://api.kaon.kyve.network
 ```
 
   </TabItem>
   <TabItem value="korellia" label="Korellia">
 
 ```
-https://api-eu-1.korellia.kyve.network
+https://api.korellia.kyve.network
 ```
 
   </TabItem>

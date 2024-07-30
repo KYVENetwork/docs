@@ -174,7 +174,7 @@ enable = true
 
 # ...
 
-rpc_servers = "https://rpc-eu-1.kaon.kyve.network:443,https://rpc-us-1.kaon.kyve.network:443"
+rpc_servers = "https://rpc.kaon.kyve.network:443,https://rpc.kaon.kyve.network:443"
 trust_height = 325017 # Replace with newer block
 trust_hash = "6548AC5525F24CD09BADDBE3A143CC3D44D057F669EB72BDED9C4C7D62E85FDC" # Replace with newer hash
 ```
