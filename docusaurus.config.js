@@ -203,6 +203,27 @@ const config = {
             to: "/developers",
           },
           {
+            type: "docSidebar",
+            sidebarId: "accessDataSetsSidebar",
+            position: "left",
+            label: "Access Blockchain Data Sets",
+            to: "/developers",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "buildSidebar",
+            position: "left",
+            label: "Build",
+            to: "/developers",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "runANodeSidebar",
+            position: "left",
+            label: "Run a Node",
+            to: "/developers",
+          },
+          {
             href: "https://discord.gg/PATvZvEmxF",
             className: "pseudo-icon discord-icon",
             position: "right",
