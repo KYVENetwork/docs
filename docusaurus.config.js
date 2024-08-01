@@ -9,25 +9,6 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { updatePoolsPlugin } from "./pools.js";
 
-function defineSection(section, options = {}) {
-  return [
-    "@docusaurus/plugin-content-docs",
-    /** @type {import('@docusaurus/plugin-content-docs').Options} */
-    ({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex],
-      path: `docs/${section}`,
-      routeBasePath: section,
-      sidebarCollapsible: true,
-      id: section,
-      sidebarPath: "./sidebars.js",
-      breadcrumbs: true,
-      editUrl: "https://github.com/KYVENetwork/docs/tree/main",
-      ...options,
-    }),
-  ];
-}
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "KYVE",
@@ -91,10 +72,6 @@ const config = {
     },
   ],
   plugins: [
-    defineSection("learn"),
-    defineSection("community"),
-    defineSection("validators"),
-    defineSection("developers"),
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -152,8 +129,8 @@ const config = {
           sidebarPath: "./sidebars.js",
           breadcrumbs: true,
           sidebarCollapsible: false,
-          path: "docs/home",
-          // Remove this to remove the "edit this page" links.
+          path: "docs",
+          routeBasePath: "/",
           editUrl: "https://github.com/KYVENetwork/docs/tree/main",
         },
         blog: false,
@@ -195,21 +172,29 @@ const config = {
         },
         items: [
           {
-            position: "left",
+            type: "docSidebar",
             label: "Learn",
+            sidebarId: "learnSidebar",
+            position: "left",
             to: "/learn",
           },
           {
-            position: "left",
+            type: "docSidebar",
             label: "Community",
+            sidebarId: "communitySidebar",
+            position: "left",
             to: "/community",
           },
           {
-            position: "left",
+            type: "docSidebar",
             label: "Validators",
+            sidebarId: "validatorSidebar",
+            position: "left",
             to: "/validators",
           },
           {
+            type: "docSidebar",
+            sidebarId: "developerSidebar",
             position: "left",
             label: "Developers",
             to: "/developers",
