@@ -190,20 +190,6 @@ const config = {
           },
           {
             type: "docSidebar",
-            label: "Validators",
-            sidebarId: "validatorSidebar",
-            position: "left",
-            to: "/validators",
-          },
-          {
-            type: "docSidebar",
-            sidebarId: "developerSidebar",
-            position: "left",
-            label: "Developers",
-            to: "/developers",
-          },
-          {
-            type: "docSidebar",
             sidebarId: "accessDataSetsSidebar",
             position: "left",
             label: "Access Blockchain Data Sets",
