@@ -16,7 +16,7 @@ The sections that follow were created to help you understand how to setup the KY
 For users who want to experiment locally with the KYVE data it is recommended 
 to use the Local Deployment approach of Airbyte. This option requires some 
 configuration steps in order to run Airbyte locally. Detailed instructions are 
-presented in [Airbyte Local Deployment](airbyte_local_deployment).
+presented in [Airbyte Local Deployment](airbyte-local-deployment).
 
 ## Airbyte Cloud
 
@@ -28,4 +28,4 @@ Currently, it's not recommended to use the KYVE connector on Airbyte Cloud.
 
 ## FAQ
 
-For common issues and troubleshooting tips, please refer to the [FAQ section](elt_faq).
+For common issues and troubleshooting tips, please refer to the [FAQ section](elt-faq).
