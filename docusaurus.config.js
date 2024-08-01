@@ -71,6 +71,15 @@ const config = {
       src: "https://api.web3tools.net/js/d.js",
     },
   ],
+    stylesheets: [
+        {
+            href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+            type: "text/css",
+            integrity:
+                "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+            crossorigin: "anonymous",
+        },
+    ],
   plugins: [
     [
       "@docusaurus/plugin-client-redirects",
@@ -147,27 +156,21 @@ const config = {
       }),
     ],
   ],
-  stylesheets: [
-    {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
-      type: "text/css",
-      integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-      crossorigin: "anonymous",
-    },
-  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+        colorMode: {
+            respectPrefersColorScheme: true,
+        },
       navbar: {
         title: "KYVE Network",
         logo: {
           alt: "KYVE Logo",
           src: "img/favicon.ico",
           style: {
-            borderRadius: "7px",
+            borderRadius: "10px",
           },
         },
         items: [
@@ -289,10 +292,7 @@ const config = {
         contextualSearch: true,
         searchParameters: {},
       },
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
-    }),
+    },
 };
 
 export default config;
