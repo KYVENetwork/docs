@@ -86,8 +86,9 @@ const config = {
       {
         redirects: [
           {
-            to: "/validators/ksync",
+            to: "/access-data-sets/ksync",
             from: [
+              "/validators/ksync",
               "/tools/KSYNC/overview",
               "/tools/KSYNC/installation",
               "/tools/KSYNC/usage",
@@ -97,21 +98,14 @@ const config = {
             ],
           },
           {
-            to: "/validators/protocol_nodes/supervysor",
+            to: "/run-a-node/protocol-nodes/supervysor",
             from: [
+              "/validators/protocol_nodes/supervysor",
               "/tools/supervysor",
               "/supervysor",
             ],
           },
         ],
-        createRedirects(existingPath) {
-          if (existingPath.startsWith('/data_engineers')) {
-            return [
-              existingPath.replace('/data_engineers', '/developers/data_engineers'),
-            ];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
       },
     ],
     async function loadTailwind(context, options) {
