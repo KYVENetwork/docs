@@ -79,3 +79,20 @@ body * {
 .footer {
   border-top: var(--color-surface-container) 1px solid;
 }
+
+/* KAPA AI */
+#kapa-widget-container button {
+  background: var(--color-surface-container) !important;
+  color: var(--color-on-surface);
+  transition: all 0.2s ease-in-out;
+}
+
+#kapa-widget-container button:hover {
+  color: var(--ifm-color-primary);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Tailwind Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
