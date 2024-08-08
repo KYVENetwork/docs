@@ -8,8 +8,10 @@
   --ifm-h1-font-size: 32pt;
   --ifm-footer-background-color: var(--color-surface-container);
   --ifm-footer-title-color: var(--color-on-surface);
-  --ifm-footer-link-color: var(--color-on-surface);
+  --ifm-footer-link-color: var(--color-on-surface-variant);
   --ifm-color-primary: var(--color-primary);
+  --ifm-menu-color: var(--color-on-surface-variant);
+  --ifm-navbar-link-color: var(--color-on-surface);
 
 }
 
@@ -23,6 +25,7 @@
   --color-outline-variant: #e2e2f0;
 
   --color-on-surface: #0f011d;
+  --color-on-surface-variant: #6b6b6b;
 }
 
 /* Dark Mode*/
@@ -70,7 +73,7 @@ body * {
   font-weight: 400;
   font-size: 12pt;
   line-height: 16pt;
-  letter-spacing: 0.4pt;
+  letter-spacing: 0.04pt;
 }
 
 .footer {
