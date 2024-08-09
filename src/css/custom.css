@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* IFM Overwrites */
-:root {
-  --ifm-heading-font-family: Poppins, sans-serif;
-  --ifm-heading-font-weight: 500;
-  --ifm-heading-line-height: 40px;
-  --ifm-h1-font-size: 32pt;
-  --ifm-footer-background-color: var(--color-surface-container);
-  --ifm-footer-title-color: var(--color-on-surface);
-  --ifm-footer-link-color: var(--color-on-surface-variant);
-  --ifm-color-primary: var(--color-primary);
-  --ifm-menu-color: var(--color-on-surface-variant);
-  --ifm-navbar-link-color: var(--color-on-surface);
-
-}
-
 /* Light Mode */
 :root {
   --color-primary: #338678;
@@ -38,6 +23,23 @@
   --color-outline-variant: #3e4946;
 
   --color-on-surface: #e0e3e1;
+  --color-on-surface-variant: #BEC9C5;
+}
+
+/* IFM Overwrites */
+:root {
+  --ifm-heading-font-family: Poppins, sans-serif;
+  --ifm-heading-font-weight: 500;
+  --ifm-heading-line-height: 40px;
+  --ifm-h1-font-size: 32pt;
+
+  --ifm-footer-background-color: var(--color-surface-container);
+  --ifm-footer-title-color: var(--color-on-surface);
+  --ifm-footer-link-color: var(--color-on-surface-variant);
+  --ifm-color-primary: var(--color-primary);
+  --ifm-menu-color: var(--color-on-surface-variant);
+  --ifm-navbar-link-color: var(--color-on-surface);
+  --ifm-background-color: var(--color-surface-container);
 }
 
 /* Overwrite Navbar, Wrapper and Sidebar*/
