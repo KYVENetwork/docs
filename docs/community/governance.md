@@ -36,7 +36,7 @@ Currently, the KYVE governance is able to make the following proposals:
   - `MsgCancelRuntimeUpgrade`: Cancel a scheduled runtime upgrade for data pools
 
 :::tip
-**Note:** Working on a governance proposal or want to learn more about the voting process? Make sure to look at the [best practices](./governance_advanced/best_practices.md).
+**Note:** Working on a governance proposal or want to learn more about the voting process? Make sure to look at the [best practices](./governance-advanced/best-practices.md).
 :::
 
 ## On- and off-chain Governance Structure

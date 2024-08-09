@@ -9,25 +9,6 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { updatePoolsPlugin } from "./pools.js";
 
-function defineSection(section, options = {}) {
-  return [
-    "@docusaurus/plugin-content-docs",
-    /** @type {import('@docusaurus/plugin-content-docs').Options} */
-    ({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex],
-      path: `docs/${section}`,
-      routeBasePath: section,
-      sidebarCollapsible: true,
-      id: section,
-      sidebarPath: "./sidebars.js",
-      breadcrumbs: true,
-      editUrl: "https://github.com/KYVENetwork/docs/tree/main",
-      ...options,
-    }),
-  ];
-}
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "KYVE",
@@ -41,7 +22,7 @@ const config = {
   baseUrl: "/",
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenMarkdownLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -90,18 +71,24 @@ const config = {
       src: "https://api.web3tools.net/js/d.js",
     },
   ],
+    stylesheets: [
+        {
+            href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+            type: "text/css",
+            integrity:
+                "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+            crossorigin: "anonymous",
+        },
+    ],
   plugins: [
-    defineSection("learn"),
-    defineSection("community"),
-    defineSection("validators"),
-    defineSection("developers"),
     [
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
           {
-            to: "/validators/ksync",
+            to: "/access-data-sets/ksync",
             from: [
+              "/validators/ksync",
               "/tools/KSYNC/overview",
               "/tools/KSYNC/installation",
               "/tools/KSYNC/usage",
@@ -111,21 +98,14 @@ const config = {
             ],
           },
           {
-            to: "/validators/protocol_nodes/supervysor",
+            to: "/run-a-node/protocol-nodes/supervysor",
             from: [
+              "/validators/protocol_nodes/supervysor",
               "/tools/supervysor",
               "/supervysor",
             ],
           },
         ],
-        createRedirects(existingPath) {
-          if (existingPath.startsWith('/data_engineers')) {
-            return [
-              existingPath.replace('/data_engineers', '/developers/data_engineers'),
-            ];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
       },
     ],
     async function loadTailwind(context, options) {
@@ -151,9 +131,10 @@ const config = {
           rehypePlugins: [rehypeKatex],
           sidebarPath: "./sidebars.js",
           breadcrumbs: true,
-          sidebarCollapsible: false,
-          path: "docs/home",
-          // Remove this to remove the "edit this page" links.
+          sidebarCollapsible: true,
+          showLastUpdateTime: true,
+          path: "docs",
+          routeBasePath: "/",
           editUrl: "https://github.com/KYVENetwork/docs/tree/main",
         },
         blog: false,
@@ -170,48 +151,57 @@ const config = {
       }),
     ],
   ],
-  stylesheets: [
-    {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
-      type: "text/css",
-      integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-      crossorigin: "anonymous",
-    },
-  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+        colorMode: {
+            respectPrefersColorScheme: true,
+        },
       navbar: {
         title: "KYVE Network",
         logo: {
           alt: "KYVE Logo",
           src: "img/favicon.ico",
           style: {
-            borderRadius: "7px",
+            borderRadius: "10px",
           },
         },
         items: [
           {
-            position: "left",
+            type: "docSidebar",
             label: "Learn",
+            sidebarId: "learnSidebar",
+            position: "left",
             to: "/learn",
           },
           {
-            position: "left",
+            type: "docSidebar",
             label: "Community",
+            sidebarId: "communitySidebar",
+            position: "left",
             to: "/community",
           },
           {
+            type: "docSidebar",
+            sidebarId: "accessDataSetsSidebar",
             position: "left",
-            label: "Validators",
-            to: "/validators",
+            label: "Access Blockchain Data Sets",
+            to: "/developers",
           },
           {
+            type: "docSidebar",
+            sidebarId: "buildSidebar",
             position: "left",
-            label: "Developers",
+            label: "Build",
+            to: "/developers",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "runANodeSidebar",
+            position: "left",
+            label: "Run a Node",
             to: "/developers",
           },
           {
@@ -227,7 +217,6 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
         links: [
           {
             title: "Community",
@@ -304,10 +293,7 @@ const config = {
         contextualSearch: true,
         searchParameters: {},
       },
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
-    }),
+    },
 };
 
 export default config;
