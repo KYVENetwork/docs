@@ -25,7 +25,7 @@ and makes them permanently available with Arweave and Irys.
 ## Requirements
 
 Before you can run a protocol validator on any pool, there are some basic requirements that have to be met, ranging from simple hardware specs to owning a certain amount of $KYVE and other currencies.
-Make sure you meet the requirements described [here](/validators/protocol_nodes/requirements).
+Make sure you meet the requirements described [here](/docs/run-a-node/protocol-nodes/requirements.md).
 
 ## Goal
 

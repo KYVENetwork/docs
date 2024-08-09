@@ -104,7 +104,7 @@ The supervysor then will start an Osmosis node as data source for the pool with 
 ### 2. Run an Archway node on Testnet Kaon with the supervysor
 
 To run an Archway node on Testnet Kaon you have to download and set up the correct binaries. You can see a more detailed
-introduction [here](/validators/protocol_nodes/pools/archway/run_archway_node).
+introduction [here](/docs/run-a-node/protocol-nodes/pools/archway/run-archway-node.md).
 
 Verify the correct installation and setup with the successful start of the node syncing `~2,000` blocks:
 
