@@ -81,6 +81,7 @@ const config = {
         },
     ],
   plugins: [
+      "docusaurus-plugin-hotjar",
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -179,6 +180,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
         colorMode: {
@@ -318,6 +320,9 @@ const config = {
         contextualSearch: true,
         searchParameters: {},
       },
+      hotjar: {
+        applicationId: "5046420",
+      }
     },
 };
 
