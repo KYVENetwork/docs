@@ -89,11 +89,11 @@ We strongly recommend setting up Cosmovisor and Systemd as a supervisor.
 ### State-Sync with KSYNC
 
 :::info
-Using KSYNC for state-syncing KYVE is only available for mainnet, if you wish to join Kaon or Korellia use traditional state-sync [here](/docs/validators/chain_nodes/join_network.md#use-traditional-state-sync).
+Using KSYNC for state-syncing KYVE is only available for mainnet, if you wish to join Kaon or Korellia use traditional state-sync [here](/docs/run-a-node/chain-nodes/join-network.md#use-traditional-state-sync).
 :::
 
 Since KYVE has validated and archived all of its own state-sync snapshots on a 3,000 block interval those can be used
-to bootstrap your KYVE node. For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
+to bootstrap your KYVE node. For this the node-syncing tool [KSYNC](/docs/access-data-sets/ksync/index.md) can be used. To install
 KSYNC run the following:
 
 ```
@@ -103,7 +103,7 @@ go install github.com/KYVENetwork/ksync/cmd/ksync@latest
 You can verify the installation with `ksync version`. To state-sync to the latest available snapshot run the following:
 
 :::warning
-Please use the correct `kyved` binary version, you can find the correct version for each height [here](/docs/validators/chain_nodes/installation.md#versions).
+Please use the correct `kyved` binary version, you can find the correct version for each height [here](/docs/run-a-node/chain-nodes/installation.md#versions).
 :::
 
 ```
@@ -223,18 +223,18 @@ After that start the node with
 ### Sync from genesis with KSYNC
 
 :::info
-Using KSYNC for syncing KYVE from genesis is only available for mainnet, if you wish to sync Kaon or Korellia use the normal P2P sync [here](/docs/validators/chain_nodes/join_network.md#sync-from-genesis).
+Using KSYNC for syncing KYVE from genesis is only available for mainnet, if you wish to sync Kaon or Korellia use the normal P2P sync [here](/docs/run-a-node/chain-nodes/join-network.md#sync-from-genesis).
 :::
 
 Since KYVE has validated and archived all of its own blocks and block results they can be used to sync the node instead of fetching them from the P2P network.
-For this the node-syncing tool [KSYNC](/docs/validators/ksync/index.md) can be used. To install
+For this the node-syncing tool [KSYNC](/docs/access-data-sets/ksync/index.md) can be used. To install
 KSYNC run the following:
 
 ```
 go install github.com/KYVENetwork/ksync/cmd/ksync@latest
 ```
 
-Since syncing the node from genesis can take weeks we strongly recommend setting up a systemd process which supervises the ksync process. Also since during the sync you will encounter multiple upgrades we also strongly recommend setting up Cosmovisor and preinstall all upgrade binaries. You can find information on setting up Cosmosvisor [here](/docs/validators/chain_nodes/cosmovisor.md) and the systemd template below.
+Since syncing the node from genesis can take weeks we strongly recommend setting up a systemd process which supervises the ksync process. Also since during the sync you will encounter multiple upgrades we also strongly recommend setting up Cosmovisor and preinstall all upgrade binaries. You can find information on setting up Cosmosvisor [here](/docs/run-a-node/chain-nodes/cosmovisor.md) and the systemd template below.
 
 Create a file `/etc/systemd/system/ksync.service` with the following contents:
 
