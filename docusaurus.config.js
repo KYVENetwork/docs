@@ -105,6 +105,22 @@ const config = {
               "/supervysor",
             ],
           },
+          {
+            to: "/access-data-sets/trustless-api/overview",
+            from: [
+              "/developers/data_engineers/accessing_data/trustless_api/overview",
+            ],
+          },
+          {
+            to: "/access-data-sets/data-load-tool",
+            from: [
+              "/developers/data_engineers/accessing_data/elt_pipeline/overview",
+              "/data_engineers/accessing_data/elt_pipeline/overview"
+            ]},
+          {to: "/run-a-node/protocol-nodes/pools/cosmos_hub/installation",
+            from: ["/validators/protocol_nodes/pools/cosmos_hub/installation"]},
+          {to: "/learn/protocol-structure/advanced-concepts/uploader-selection",
+            from: ["/protocol_devs/advanced_concepts/uploader_selection"]}
         ],
       },
     ],
