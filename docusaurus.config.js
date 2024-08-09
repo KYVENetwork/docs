@@ -103,8 +103,33 @@ const config = {
               "/validators/protocol_nodes/supervysor",
               "/tools/supervysor",
               "/supervysor",
+              "/tools/supervysor/overview",
             ],
           },
+          {
+            to: "/access-data-sets/trustless-api/overview",
+            from: [
+              "/developers/data_engineers/accessing_data/trustless_api/overview",
+            ],
+          },
+          {
+            to: "/access-data-sets/data-load-tool",
+            from: [
+              "/developers/data_engineers/accessing_data/elt_pipeline/overview",
+              "/data_engineers/accessing_data/elt_pipeline/overview"
+            ]},
+          {to: "/run-a-node/protocol-nodes/pools/cosmos_hub/installation",
+            from: ["/validators/protocol_nodes/pools/cosmos_hub/installation"]},
+          {to: "/learn/protocol-structure/advanced-concepts/uploader-selection",
+            from: ["/protocol_devs/advanced_concepts/uploader_selection"]},
+          {to: "/run-a-node",
+            from: ["/node/running", "/intro/protocol-node"]},
+          {to: "/learn/architecture",
+            from: ["/architecture"]},
+          {to: "/build/development/developing-runtime",
+            from: ["/protocol_devs/development/developing_runtime"]},
+          {to: "/community",
+            from: ["/token_holders/overview", "/basics/kyve", "/token_holders/governance"]},
         ],
       },
     ],
