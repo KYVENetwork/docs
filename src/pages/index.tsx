@@ -38,7 +38,7 @@ export default function Home() {
     {
       title: "KSYNC",
       img: "img/homepage/learn.svg",
-      href: "/validators/ksync",
+      href: "/access-data-sets/ksync",
     },
     {
       title: "Delegation",
@@ -48,7 +48,7 @@ export default function Home() {
     {
       title: "Data Pipeline",
       img: "img/homepage/validators.png",
-      href: "/developers/data_engineers/accessing_data/elt_pipeline/overview",
+      href: "/access-data-sets/data-load-tool",
     },
     {
       title: "Architecture",
@@ -73,13 +73,13 @@ export default function Home() {
     {
       title: "Validators",
       img: "img/homepage/validators.png",
-      href: "/validators",
+      href: "/run-a-node",
       desc: "Run a node on KYVE's chain, or a validator on it's protocol, or simply benefit from KYVE's node optimization tooling to enhance your overall experience running on other chains.",
     },
     {
       title: "DApp Builders",
       img: "img/homepage/developers.png",
-      href: "/developers",
+      href: "/build/adding-data",
       desc: "Take your scalability to the next level by creating your own custom data rollup powered by KYVE. We handle the data, you build the future.",
     },
   ];
@@ -249,7 +249,7 @@ export default function Home() {
                 className="py-2"
                 onClick={() =>
                   histroy.push(
-                    `/validators/protocol_nodes/pools/${x.name
+                    `/run-a-node/protocol-nodes/pools/${x.name
                       .toLowerCase()
                       .replace(" //", "")
                       .split(" ")
