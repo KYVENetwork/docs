@@ -112,7 +112,7 @@ You can redelegate by going to the explorer and to your delegations. There shoul
 
 Similarly to chain delegation, which helps to secure the KYVE blockchain, protocol delegation helps to secure the actual validity of the data KYVE is archiving. For that you have to delegate into protocol validators.
 When protocol validators receive delegations their voting power and their probability of getting chosen as the next uploader increases. This means that protocol validators have more control over which data gets validated and
-also earn more rewards. More information on that can be found [here](/learn/protocol_structure/advanced_concepts/uploader_selection). By delegating into protocol validators you again are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed a part of your delegation is also slashed.
+also earn more rewards. More information on that can be found [here](/docs/learn/protocol-structure/advanced-concepts/uploader-selection.md). By delegating into protocol validators you again are trusting that node to act honestly. If that node is found to act maliciously and is getting slashed a part of your delegation is also slashed.
 
 ### How to delegate?
 
@@ -146,10 +146,10 @@ Again similar to chain delegation the delegator receives in return for lending o
 **IMPORTANT**: The protocol delegation APY is **never** a guarantee. It is simply an estimation for the next year based on current parameters.
 :::
 
-Another parameter which influences the rewards of a delegator is the node commission. The node commission defines how much of the bundle reward directly goes to the node and how much goes to the rest - the delegators. A high commission means less rewards for delegators, a low one the opposite. More information on that can be found [here](/learn/protocol_structure/advanced_concepts/uploader_reward_calculation).
+Another parameter which influences the rewards of a delegator is the node commission. The node commission defines how much of the bundle reward directly goes to the node and how much goes to the rest - the delegators. A high commission means less rewards for delegators, a low one the opposite. More information on that can be found [here](/docs/learn/protocol-structure/advanced-concepts/uploader-reward-calculation.md).
 
 The source of those rewards are data pool funds provided by pool funders. Pool funders have an interest in validating the archiving a specific data source the data pool handles. Once a node receives
-a bundle reward (the data he archived got validated) the rewards are distributed between all delegators. More information on the distribution details can be found [here](/learn/protocol_structure/advanced_concepts/delegation_reward_calculation).
+a bundle reward (the data he archived got validated) the rewards are distributed between all delegators. More information on the distribution details can be found [here](/docs/learn/protocol-structure/advanced-concepts/delegation-reward-calculation.md).
 
 Those rewards then can be claimed in the web app under 'User'. Once they are claimed they are liquid and free to use.
 
@@ -157,7 +157,7 @@ Those rewards then can be claimed in the web app under 'User'. Once they are cla
 
 As already briefly mentioned before, protocol delegation comes with risk. Delegating into a protocol validator also implies that you as a delegator are responsible for the actions of that node. If the node behaves accordingly it and you as a delegator receive rewards. If the network finds the node was acting maliciously (for example uploading incorrect data) or being offline the node and you receive a slash.
 
-The severity of a slash depends on the action of the node and on the network parameters. More details of how and when those slashes are applied can be found [here](/learn/protocol_structure/general_concepts/slashing). These can be found below:
+The severity of a slash depends on the action of the node and on the network parameters. More details of how and when those slashes are applied can be found [here](/docs/learn/protocol-structure/general-concepts/slashing.md). These can be found below:
 
 |                 | Mainnet                                                                      | Kaon                                                                         | Korellia                                                                         |
 | --------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |

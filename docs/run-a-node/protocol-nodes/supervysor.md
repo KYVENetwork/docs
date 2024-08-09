@@ -12,7 +12,7 @@ sidebar_position: 4
 
 ## Requirements
 
-The supervysor manages the process of the data source node. First of all, it should be ensured that this node can run successfully, which can be tested by trying to sync the first `~1,000` blocks. In addition, to successfully participate in a KYVE data pool, it is necessary to create a protocol validator and join a data pool. Further information can be found [**here**](/validators/protocol_nodes/overview).
+The supervysor manages the process of the data source node. First of all, it should be ensured that this node can run successfully, which can be tested by trying to sync the first `~1,000` blocks. In addition, to successfully participate in a KYVE data pool, it is necessary to create a protocol validator and join a data pool. Further information can be found [**here**](/docs/run-a-node/protocol-nodes/overview.md).
 
 Make sure your Go version is at least ```1.20```.
 
@@ -76,7 +76,7 @@ Make sure to **always** reinitialize after using another supervysor version.
 ### 1. Run a Cosmovisor Osmosis node with the supervysor
 
 To run an Osmosis node with the Cosmovisor you have to download and set up the correct binaries. You can see a more detailed
-introduction [here](/validators/protocol_nodes/pools/osmosis/run_osmosis_node).
+introduction [here](/docs/run-a-node/protocol-nodes/pools/osmosis/run_osmosis_node.md).
 
 Verify the correct installation and setup with the successful start of the node syncing `~2,000` blocks:
 

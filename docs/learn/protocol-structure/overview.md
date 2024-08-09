@@ -38,7 +38,7 @@ The source code can be found here: [https://github.com/KYVENetwork/chain](https:
 Since KYVE's blockchain is based on Tendermint it relies on a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.
 
 :::info
-You can find more information about consensus validators [here](/validators/chain_nodes/overview)
+You can find more information about consensus validators [here](/docs/run-a-node/chain-nodes/overview.md)
 :::
 
 ### Protocol Layer
@@ -51,5 +51,5 @@ logic which makes KYVE unique is implemented directly into the consensus validat
 Protocol validators are the backbone of a KYVE data pool. A protocol validator always runs in a specific data pool which validates a specific source of data. They are responsible for collecting data from a data source, bundling and uploading them to a Web3 storage provider like Arweave and verifying it.
 
 :::info
-You can find more information on protocol validators [here](/validators/protocol_nodes/overview)
+You can find more information on protocol validators [here](/docs/run-a-node/protocol-nodes/overview.md)
 :::

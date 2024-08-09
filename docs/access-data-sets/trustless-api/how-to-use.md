@@ -18,7 +18,7 @@ When selecting the URLs of the individual data, an attempt is made to mock the e
 with the lowest possible barrier, which should promote the usage of the Trustless API. Therefore, all supported endpoints are listed on the start page of the API endpoint.
 
 :::tip
-If the data you're searching for is not supported yet, either contact the KYVE team or spin up [your own Trustless API endpoint](/developers/data_engineers/accessing_data/trustless_api/run_trustless_api).
+If the data you're searching for is not supported yet, either contact the KYVE team or spin up [your own Trustless API endpoint](./run-trustless-api).
 :::
 
 ## Data schema

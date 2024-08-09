@@ -5,7 +5,7 @@ sidebar_position: 0
 # Accessing Stored Data via REST
 
 KYVE data is available for developers through the REST-API exposed by the consensus validators, a list of REST endpoints can be
-found [here](/developers/web3_devs/endpoints). The REST integration
+found [here](/docs/build/web3-devs/endpoints.md). The REST integration
 is the native way to access data that has been stored through KYVE.
 
 ## Understanding Storage Providers and Compression
@@ -19,7 +19,7 @@ The returned elements include a `storage_provider_id` which points to a storage 
 `storage_id` developers can retrieve the uploaded data.
 
 Some integrations might compress data before storing it on the storage provider. The `compression_id` indicates which
-[compression method](../adding_data/compressions/overview) has been used.
+[compression method](/docs/build/adding-data/compressions/overview.md) has been used.
 
 After the data has been retrieved from the storage provider and decompressed, developers can use it in the application.
 

@@ -12,11 +12,11 @@ Protocol validators are the backbone of a KYVE data pool. They are responsible f
 
 Since protocol validators are responsible for uploading and verifying data they need to do certain tasks in order to contribute to the network and earn \$KYVE rewards. Their main role is uploading data to a Web3 storage provider like Arweave. Once a protocol validator has uploaded a piece of data inside a data pool, all the other protocol validators in that data pool gather that proposed data and validate it on their end. Only when the majority of protocol validators agree on the validity of the data the entry gets archived.
 
-Depending on their current role they have in a data pool they have different tasks. A protocol validator can be an [Uploader](/learn/protocol_structure/general_concepts/uploader) or a [Validator](/learn/protocol_structure/general_concepts/validator). More information can be found there.
+Depending on their current role they have in a data pool they have different tasks. A protocol validator can be an [Uploader](/docs/learn/protocol-structure/general-concepts/uploader.md) or a [Validator](/docs/learn/protocol-structure/general-concepts/validator.md). More information can be found there.
 
 ## Risks
 
-Becoming a protocol validator also comes with risk in form of slashings if the tasks are not performed well. There are three types of slashings, each having a different level of severity. You can find all details about when slashing is applied and how much the penalty will be [here](/learn/protocol_structure/general_concepts/slashing).
+Becoming a protocol validator also comes with risk in form of slashings if the tasks are not performed well. There are three types of slashings, each having a different level of severity. You can find all details about when slashing is applied and how much the penalty will be [here](/docs/learn/protocol-structure/general-concepts/slashing.md).
 
 ## Accounts and Rewards
 
