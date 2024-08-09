@@ -32,7 +32,7 @@ The validator has three options when casting a vote:
 
 :::tip
 **NOTE**: More information on how the votes are tallied and the quorum reached can be
-found [here](/learn/protocol_structure/advanced_concepts/vote_tallying)
+found [here](/docs/learn/protocol-structure/advanced-concepts/vote-tallying.md)
 :::
 
 ## Flow diagram
