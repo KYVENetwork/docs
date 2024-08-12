@@ -14,7 +14,7 @@ function Root({ children }) {
   return (
     <>
       <div>
-        <div className="fixed bottom-[20px] right-[20px] z-50 ask-ai-widget">
+        <div className="fixed bottom-[20px] right-[20px] z-50 bg-surfaceContainer border border-solid border-outline-variant rounded-lg">
           <div
             className="text-center border-none outline-none p-3 rounded-md shadow-xl hover:cursor-pointer"
             onClick={() => setOpen(true)}
@@ -42,10 +42,9 @@ function Root({ children }) {
           <div className="fixed z-[1000] left-[50%] top-[5%] translate-x-[-50%]">
             <div
               className={
-                "slideIn w-[90dvw] md:w-[60dvw] p-4 rounded-lg " +
+                "slideIn w-[90dvw] md:w-[60dvw] p-4 rounded-lg bg-surfaceContainer " +
                 (closing ? "slideOut" : "")
               }
-              style={{ background: "var(--ifm-background-color)" }}
             >
               <Chat big />
             </div>
