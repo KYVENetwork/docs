@@ -59,12 +59,15 @@ const PoolSelect = (props) => {
   const [selected, setSelected, poolNavbar] = useSelectedPool(pools, props);
   const label = () => {
     return (
-      <div className="flex flex-nowrap items-center cursor-pointer select-none menu__link">
-        <img src={logoUrl(selected.logo)} className="w-8 h-8 rounded-md mr-2" />
-        {selected.name}
-        <div className="ml-auto">
-          <SearchSVG />
-        </div>
+      <div className={"menu__list-item"}>
+        <a className="flex flex-nowrap items-center cursor-pointer select-none menu__link border-outline-variant border-solid border rounded-lg">
+          <img
+            src={logoUrl(selected.logo)}
+            className="w-8 h-8 rounded-md mr-2"
+          />
+          {selected.name}
+          <SearchSVG className="ml-auto" />
+        </a>
       </div>
     );
   };

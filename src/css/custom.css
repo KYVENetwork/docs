@@ -1,9 +1,18 @@
+/* Tailwind Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* animation framework */
+@import "sal.js/dist/sal.css";
+
 
 /* Light Mode */
 :root {
   --color-primary: #338678;
-
+  --color-on-primary: #ffffff;
   --color-surface-container: #f5f5fa;
   --color-surface: #ffffff;
 
@@ -16,7 +25,8 @@
 /* Dark Mode*/
 [data-theme='dark'] {
   --color-primary: #85d5c5;
-
+  --color-on-primary: #003730;
+  
   --color-surface-container: #1c201f;
   --color-surface: #101413;
 
@@ -94,7 +104,91 @@ body * {
   transition: all 0.2s ease-in-out;
 }
 
-/* Tailwind Imports */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@keyframes slideInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.slideIn {
+  opacity: 0;
+  animation: slideInAnimation 0.5s forwards
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideOutAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+.slideOut {
+  animation: slideOutAnimation 0.5s forwards
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 0.5s forwards
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skeleton {
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(92, 92, 92, 0.8) 50%,
+      rgba(255, 255, 255, 0) 70%
+    )
+    #5555557e;
+  background-size: 200% 100%;
+  display: inline-flex;
+  line-height: 1;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+@keyframes grow {
+  to {
+    width: 0px;
+  }
+}
+
+.skeleton-grow {
+  animation: grow 1s forwards reverse ease-in-out;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
