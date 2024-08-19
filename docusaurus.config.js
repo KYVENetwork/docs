@@ -131,6 +131,39 @@ const config = {
             from: ["/architecture"]},
           {to: "/build/development/developing-runtime",
             from: ["/protocol_devs/development/developing_runtime"]},
+          {
+            to: "/build/development/developing-runtime",
+            from: [
+                "/protocol_devs/development/developing_runtime"
+            ]
+          },
+          {
+            to: "/build/development/runtimes",
+            from: [
+              "/build/development/runtimes"
+            ]
+          },
+          {
+            to: "/build/development/storage-providers",
+            from: [
+              "/build/adding-data/storage-providers/overview",
+              "/build/adding-data/storage-providers/arweave",
+              "/build/adding-data/storage-providers/irys"
+            ]
+          },
+          {
+            to: "/build/development/compressions",
+            from: [
+              "/build/adding-data/compressions/overview",
+            ]
+          },
+          {
+            to: "/build/web3-devs/indexers",
+            from: [
+              "/build/web3-devs/indexers/overview",
+              "/build/web3-devs/indexers/subquery",
+            ]
+          },
           {to: "/community",
             from: ["/token_holders/overview", "/basics/kyve", "/token_holders/governance"]},
           {to: "/access-data-sets", from: ["/access-data-sets/data-directory"]},
