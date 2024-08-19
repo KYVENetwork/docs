@@ -1,11 +1,7 @@
 ---
 sidebar_position: 8
-title: KSYNC
+title: Overview
 ---
-
-<h1 class="hide">
-# KSYNC
-</h1>
 
 <p align="center">
   <img style={{borderRadius: '10px'}} src="/img/ksync/ksync.png" />
