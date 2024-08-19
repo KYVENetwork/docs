@@ -115,8 +115,9 @@ const config = {
             ],
           },
           {
-            to: "/access-data-sets/data-load-tool",
+            to: "/access-data-sets/data-pipeline/overview",
             from: [
+                "/access-data-sets/data-load-tool",
               "/developers/data_engineers/accessing_data/elt_pipeline/overview",
               "/data_engineers/accessing_data/elt_pipeline/overview"
             ]},
