@@ -19,7 +19,7 @@ The returned elements include a `storage_provider_id` which points to a storage 
 `storage_id` developers can retrieve the uploaded data.
 
 Some integrations might compress data before storing it on the storage provider. The `compression_id` indicates which
-[compression method](/docs/build/adding-data/compressions/overview.md) has been used.
+[compression method](/docs/build/development/compressions) has been used.
 
 After the data has been retrieved from the storage provider and decompressed, developers can use it in the application.
 
