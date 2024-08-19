@@ -82,7 +82,7 @@ KYVE is storage agnostic. By default, you can store data through KYVE onto [Arwe
 solution. More storage providers are to be added in the near future.
 
 :::info
-Interested in [storing KYVE data ?](/docs/build/adding-data/index.md)
+Interested in [storing KYVE data ?](/build/development/developing-runtime)
 :::
 
 ## \$KYVE
