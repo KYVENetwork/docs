@@ -2,7 +2,7 @@ import { Card } from "../Card";
 import React, { useEffect } from "react";
 import sal from "sal.js";
 
-const TrustlessAPIOverview = () => {
+const BuildOverview = () => {
   useEffect(() => {
     sal();
   }, []);
@@ -46,4 +46,4 @@ const TrustlessAPIOverview = () => {
   );
 };
 
-export default TrustlessAPIOverview;
+export default BuildOverview;
