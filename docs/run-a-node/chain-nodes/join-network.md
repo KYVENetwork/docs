@@ -93,7 +93,7 @@ Using KSYNC for state-syncing KYVE is only available for mainnet, if you wish to
 :::
 
 Since KYVE has validated and archived all of its own state-sync snapshots on a 3,000 block interval those can be used
-to bootstrap your KYVE node. For this the node-syncing tool [KSYNC](/docs/access-data-sets/ksync/index.md) can be used. To install
+to bootstrap your KYVE node. For this the node-syncing tool [KSYNC](/docs/access-data-sets/ksync/overview) can be used. To install
 KSYNC run the following:
 
 ```
@@ -227,7 +227,7 @@ Using KSYNC for syncing KYVE from genesis is only available for mainnet, if you 
 :::
 
 Since KYVE has validated and archived all of its own blocks and block results they can be used to sync the node instead of fetching them from the P2P network.
-For this the node-syncing tool [KSYNC](/docs/access-data-sets/ksync/index.md) can be used. To install
+For this the node-syncing tool [KSYNC](/docs/access-data-sets/ksync/overview) can be used. To install
 KSYNC run the following:
 
 ```

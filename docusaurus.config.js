@@ -87,7 +87,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/access-data-sets/ksync",
+            to: "/access-data-sets/ksync/overview",
             from: [
               "/validators/ksync",
               "/tools/KSYNC/overview",
@@ -96,6 +96,7 @@ const config = {
               "/tools/KSYNC/protocol_validators",
               "/tools/KSYNC/settings",
               "/ksync",
+              "/access-data-sets/ksync/"
             ],
           },
           {
@@ -131,6 +132,7 @@ const config = {
             from: ["/protocol_devs/development/developing_runtime"]},
           {to: "/community",
             from: ["/token_holders/overview", "/basics/kyve", "/token_holders/governance"]},
+          {to: "/access-data-sets", from: ["/access-data-sets/data-directory"]},
         ],
       },
     ],
