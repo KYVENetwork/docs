@@ -2,13 +2,17 @@
 sidebar_position: 1
 ---
 
+import RunANodeOverview from '/src/components/run_a_node/Overview';
+
 # Overview
 
 Validators are the backbone of KYVE and depending on which type of validator you want to join different requirements and responsibilities have to be met.
 
-## Types of validators
+<RunANodeOverview />
 
-KYVE currently has two types of validators: A _consensus validator_ which is a validator in a Cosmos based Proof of Stake blockchain. Their main tasks are finding consensus on the chain state which includes keeping track of the data pools and other related data. On the other hand we have _protocol validators_ which is a validator on the protocol level. Their main tasks are connecting to data pools and uploading and validating data from various data sources, archiving them on a web3 storage provider like Arweave. A general overview of that architecture can be found below:
+<br></br>
+
+## General Architecture
 
 ![architecture](/img/architecture.png)
 
