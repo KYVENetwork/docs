@@ -155,6 +155,13 @@ const config = {
               "/build/adding-data/compressions/overview",
             ]
           },
+          {
+            to: "/build/web3-devs/indexers",
+            from: [
+              "/build/web3-devs/indexers/overview",
+              "/build/web3-devs/indexers/subquery",
+            ]
+          },
           {to: "/community",
             from: ["/token_holders/overview", "/basics/kyve", "/token_holders/governance"]},
         ],

@@ -2,9 +2,17 @@
 sidebar_position: 2
 ---
 
-# SubQuery Indexer
+# Indexers
 
-## Intro
+Indexers, in a broad context, play a fundamental role in organising and optimising data retrieval within various systems. These tools act as navigational aids, allowing efficient access to specific information by creating structured indexes. In the realm of databases and information management, indexers enhance query performance by creating a roadmap to swiftly locate data entries. 
+
+In the context of blockchain and dApps, indexers go beyond traditional databases, facilitating streamlined access to on-chain data. This includes transaction histories, smart contract states, and event logs. In the dynamic and decentralised world of blockchain, indexers contribute to the efficiency of data queries, supporting real-time updates and ensuring the seamless functionality of diverse applications and platforms.
+
+There are several indexer solutions available, each offering different levels of decentralisation, ease of development, and performance for you to consider. These solutions serve as intermediaries to assist in indexing the KYVE network.
+
+## SubQuery Indexer
+
+### Intro
 
 SubQuery is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for web3 projects. SubQuery SDK allows developers to get rich indexed data and build intuitive and immersive decentralised applications in a faster and more efficient way. SubQuery supports 100+ ecosystems including KYVE, Cosmos, Ethereum, Polygon, Polkadot, Algorand, NEAR, and Avalanche.
 
@@ -18,7 +26,7 @@ Other advantages include superior performance with multiple RPC endpoint configu
 - [KYVE Starter Project](https://github.com/subquery/cosmos-subql-starter/tree/main/Kyve/kyve-starter)
 - For technical questions and support reach out to us `start@subquery.network`
 
-## Running and Hosting your KYVE SubQuery APIs
+### Running and Hosting your KYVE SubQuery APIs
 
 SubQuery is open-source, meaning you have the freedom to run it in the following three ways:
 - Locally on your own computer (or a cloud provider of your choosing), [view the instructions on how to run SubQuery Locally](https://academy.subquery.network/run_publish/run.html).
