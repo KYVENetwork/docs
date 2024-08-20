@@ -79,7 +79,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/access-data-sets/ksync",
+            to: "/access-data-sets/ksync/overview",
             from: [
               "/validators/ksync",
               "/tools/KSYNC/overview",
@@ -88,6 +88,7 @@ const config = {
               "/tools/KSYNC/protocol_validators",
               "/tools/KSYNC/settings",
               "/ksync",
+              "/access-data-sets/ksync/"
             ],
           },
           {
@@ -106,37 +107,58 @@ const config = {
             ],
           },
           {
-            to: "/access-data-sets/data-load-tool",
+            to: "/access-data-sets/data-pipeline/overview",
             from: [
+                "/access-data-sets/data-load-tool",
               "/developers/data_engineers/accessing_data/elt_pipeline/overview",
-              "/data_engineers/accessing_data/elt_pipeline/overview",
-            ],
-          },
-          {
-            to: "/run-a-node/protocol-nodes/pools/cosmos_hub/installation",
-            from: ["/validators/protocol_nodes/pools/cosmos_hub/installation"],
-          },
-          {
-            to: "/learn/protocol-structure/advanced-concepts/uploader-selection",
-            from: ["/protocol_devs/advanced_concepts/uploader_selection"],
-          },
-          {
-            to: "/run-a-node",
-            from: ["/node/running", "/intro/protocol-node"],
-          },
-          { to: "/learn/architecture", from: ["/architecture"] },
+              "/data_engineers/accessing_data/elt_pipeline/overview"
+            ]},
+          {to: "/run-a-node/protocol-nodes/pools/cosmos_hub/installation",
+            from: ["/validators/protocol_nodes/pools/cosmos_hub/installation"]},
+          {to: "/learn/protocol-structure/advanced-concepts/uploader-selection",
+            from: ["/protocol_devs/advanced_concepts/uploader_selection"]},
+          {to: "/run-a-node",
+            from: ["/node/running", "/intro/protocol-node"]},
+          {to: "/learn/architecture",
+            from: ["/architecture"]},
+          {to: "/build/development/developing-runtime",
+            from: ["/protocol_devs/development/developing_runtime"]},
           {
             to: "/build/development/developing-runtime",
-            from: ["/protocol_devs/development/developing_runtime"],
+            from: [
+                "/protocol_devs/development/developing_runtime"
+            ]
           },
           {
-            to: "/community",
+            to: "/build/development/runtimes",
             from: [
-              "/token_holders/overview",
-              "/basics/kyve",
-              "/token_holders/governance",
-            ],
+              "/build/development/runtimes"
+            ]
           },
+          {
+            to: "/build/development/storage-providers",
+            from: [
+              "/build/adding-data/storage-providers/overview",
+              "/build/adding-data/storage-providers/arweave",
+              "/build/adding-data/storage-providers/irys"
+            ]
+          },
+          {
+            to: "/build/development/compressions",
+            from: [
+              "/build/adding-data/compressions/overview",
+            ]
+          },
+          {
+            to: "/build/web3-devs/indexers",
+            from: [
+              "/build/web3-devs/indexers/overview",
+              "/build/web3-devs/indexers/subquery",
+            ]
+          },
+          {to: "/community",
+            from: ["/token_holders/overview", "/basics/kyve", "/token_holders/governance"]},
+          {to: "/access-data-sets", from: ["/access-data-sets/data-directory"]},
         ],
       },
     ],
