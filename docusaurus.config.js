@@ -57,31 +57,23 @@ const config = {
   clientModules: [require.resolve("./globalClientModule.ts")],
   scripts: [
     {
-      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
-      "data-website-id": "0d46a6d3-da82-402b-9073-fd024d4e0c9c",
-      "data-project-name": "KYVE",
-      "data-project-color": "#050D0B",
-      "data-project-logo": "https://docs.kyve.network/img/favicon.ico",
-      async: true,
-    },
-    {
       defer: true,
       "data-dw-id": "2cde9461633b4e03bbb8a36c3854f7df",
       "data-dw-c": "Docs",
       src: "https://api.web3tools.net/js/d.js",
     },
   ],
-    stylesheets: [
-        {
-            href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
-            type: "text/css",
-            integrity:
-                "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-            crossorigin: "anonymous",
-        },
-    ],
+  stylesheets: [
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
+      integrity:
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
+    },
+  ],
   plugins: [
-      "docusaurus-plugin-hotjar",
+    "docusaurus-plugin-hotjar",
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -208,20 +200,19 @@ const config = {
         },
         sitemap: {
           priority: null,
-          changefreq: null
-        }
+          changefreq: null,
+        },
       }),
     ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
-
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
-        colorMode: {
-            respectPrefersColorScheme: true,
-        },
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: "KYVE Network",
         logo: {
@@ -358,7 +349,7 @@ const config = {
       },
       hotjar: {
         applicationId: "5046420",
-      }
+      },
     },
 };
 

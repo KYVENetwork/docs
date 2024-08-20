@@ -9,6 +9,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { useHistory } from "@docusaurus/router";
+import Chat from "../components/chat";
 import sal from "sal.js";
 
 import KyveMarkup from "../../static/img/homepage/kyve-markup.svg";
@@ -93,7 +94,7 @@ export default function Home() {
     };
   };
 
-  const renderBanenr = () => {
+  const renderBanner = () => {
     if (!showBanner) return <></>;
     return (
       <div className="grid grid-flow-col grid-cols-12 rounded-xl bg-[#0000003f] px-5 py-5 mb-5">
@@ -138,7 +139,7 @@ export default function Home() {
   return (
     <Layout>
       <main className="container py-12">
-        {renderBanenr()}
+        {renderBanner()}
         <div className="grid grid-cols-2 items-center">
           <div className="col-span-2 md:col-span-1">
             <div {...animation("zoom-in")}>
@@ -178,6 +179,9 @@ export default function Home() {
               />
             )}
           </div>
+        </div>
+        <div>
+          <Chat />
         </div>
         <div>
           <div
