@@ -39,7 +39,7 @@ export default function Home() {
     {
       title: "KSYNC",
       img: "img/homepage/learn.svg",
-      href: "/access-data-sets/ksync",
+      href: "/access-data-sets/ksync/overview",
     },
     {
       title: "Delegation",
@@ -49,7 +49,7 @@ export default function Home() {
     {
       title: "Data Pipeline",
       img: "img/homepage/validators.png",
-      href: "/access-data-sets/data-load-tool",
+      href: "/access-data-sets/data-pipeline/overview",
     },
     {
       title: "Architecture",
@@ -80,7 +80,7 @@ export default function Home() {
     {
       title: "DApp Builders",
       img: "img/homepage/developers.png",
-      href: "/build/adding-data",
+      href: "/build",
       desc: "Take your scalability to the next level by creating your own custom data rollup powered by KYVE. We handle the data, you build the future.",
     },
   ];
