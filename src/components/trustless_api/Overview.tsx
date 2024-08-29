@@ -11,25 +11,25 @@ const TrustlessAPIOverview = () => {
     {
       title: "How to use",
       img: "",
-      href: "/developers/data_engineers/accessing_data/trustless_api/how_to_use",
+      href: "/access-data-sets/trustless-api/how-to-use",
       desc: "This section describes how to use the Trustless API and how to access the endpoint by KYVE.",
     },
     {
       title: "Trustless Client",
       img: "",
-      href: "/developers/data_engineers/accessing_data/trustless_api/trustless_client",
+      href: "/access-data-sets/trustless-api/trustless-client",
       desc: "This section describes the usage of the Trustless Client, enabling a seamless integration of the Trustless API.",
     },
     {
       title: "Implementation",
       img: "",
-      href: "/developers/data_engineers/accessing_data/trustless_api/implementation",
+      href: "/access-data-sets/trustless-api/implementation",
       desc: "This section describes the implementation details of the Trustless API.",
     },
     {
       title: "Run Your Own API Endpoint",
       img: "",
-      href: "/developers/data_engineers/accessing_data/trustless_api/run_trustless_api",
+      href: "/access-data-sets/trustless-api/run-trustless-api",
       desc: "This section describes how to spin up and run an own Trustless API endpoint.",
     },
   ];
