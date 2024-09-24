@@ -25,7 +25,6 @@ The community pool has multiple channels where \$KYVE is transferred to the pool
 
 - `Community Tax`: This tax is deducted on the consensus layer before the current block reward gets distributed to the network participants
 - `Network Fee`: This fee is deducted on the protocol layer before the current bundle reward gets distributed to the network participants
-- `Chain Node Slashes`: When a consensus validator gets slashed due to incorrect or malicious behaviour the slashed funds will get transferred to the community pool
 - `Protocol Node Slashes`: When a protocol validator gets slashed due to incorrect or malicious behaviour the slashed funds will get transferred to the community pool
 
 The current values for the tax and the fee can be found below for every network:
