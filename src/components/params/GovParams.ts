@@ -34,7 +34,7 @@ export const StringToDays = (str: string) => {
 
 export const DepositToKYVE = (deposit: { denom: string; amount: string }[]) => {
   const amount = (parseInt(deposit[0].amount) / 10 ** 6).toLocaleString();
-  return amount + " KYVE";
+  return amount + " $KYVE";
 };
 
 export const StringToPercent = (str: string) => {

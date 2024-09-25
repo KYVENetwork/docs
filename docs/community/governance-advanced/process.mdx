@@ -11,15 +11,22 @@ The deposit period lasts either <GovParam render={params => <span>{StringToMinut
 
 ### Deposits
 
-Deposit amounts are at risk of being burned. Prior to a governance proposal entering the voting period (ie. for the proposal to be voted upon), there must be at least a minimum number of KYVE deposited (<GovParam render={params => <span>{DepositToKYVE(params.params.min_deposit)}</span>} />/<GovParam render={params => <span>{DepositToKYVE(params.params.expedited_min_deposit)}</span>} /> for expedited proposal). Anyone may contribute to this deposit. Deposits of passed and failed proposals are returned to the contributors.
+Deposit amounts are at risk of being burned. Before a governance proposal can
+enter the voting period (i.e., before it can be voted on), a minimum amount of
+KYVE must be deposited: <GovParam render={params => <span>{DepositToKYVE(params.params.min_deposit)}</span>} />
+for standard proposals and <GovParam render={params => <span>{DepositToKYVE(params.params.expedited_min_deposit)}</span>} />
+for expedited ones. Anyone can contribute to this deposit, and the deposits for both passed and failed proposals are returned to the contributors.
 
-In the past, different people have considered contributions amounts differently. There is some consensus that this should be a personal choice. There is also some consensus that this can be an opportunity for supporters to signal their support by adding to the deposit amount, so a proposer may choose to leave contribution room (ie. a deposit below <GovParam render={params => <span>{DepositToKYVE(params.params.min_deposit)}</span>} />) so that others may participate. It is important to remember that any contributed KYVE are at risk of being burned.
+In the past, people have viewed contributions differently, but it's generally
+agreed that the decision to contribute is personal. Supporters can show their
+backing by adding to the deposit, so proposers may leave room for others to
+contribute by depositing less than <GovParam render={params => <span>{DepositToKYVE(params.params.min_deposit)}</span>} />.
+However, it's important to remember that all contributions are at risk of being burned.
 
 ### Burned deposits
 
-Deposits are burned when proposals:
-
-1. **Are vetoed** - deposits for proposals with <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} /> of voting power backing the `NoWithVeto` option are also burned
+Deposits are burned when the proposal reaches the voting stage and more than <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} />
+of the participants (excluding `Abstain`-voters) vote `NoWithVeto`.
 
 ## Voting Period
 
@@ -27,14 +34,14 @@ The voting period is currently a fixed <GovParam render={params => <span>{String
 
 ## What do the voting options mean?
 
-1. **`Abstain`**: indicates that the voter is impartial to the outcome of the proposal.
-2. **`Yes`**: indicates approval of the proposal in its current form.
-3. **`No`**: indicates disapproval of the proposal in its current form.
-4. **`NoWithVeto`**: indicates stronger opposition to the proposal than simply voting `No`. If the number of `NoWithVeto` votes is greater than a third of total votes excluding `Abstain` votes, the proposal is rejected and the deposits are [burned](#burned-deposits).
+1. **`Abstain`**: Indicates that the voter is impartial to the outcome of the proposal.
+2. **`Yes`**: Indicates approval of the proposal in its current form.
+3. **`No`**: Indicates disapproval of the proposal in its current form.
+4. **`NoWithVeto`**: Indicates stronger opposition to the proposal than simply voting `No`. If the number of `NoWithVeto` votes is greater than <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} /> of total votes excluding `Abstain` votes, the proposal is rejected and the deposits are [burned](#burned-deposits).
 
-As accepted by the community in [Proposal 6](https://www.mintscan.io/cosmos/proposals/6), voters are expected to vote `NoWithVeto` if a proposal leads to undesirable outcomes for the community. It states “if a proposal seems to be spam or is deemed to have caused a negative externality to Cosmos community, voters should vote `NoWithVeto`.”
+As accepted by the CosmosHub community in [Proposal 6](https://www.mintscan.io/cosmos/proposals/6), voters are expected to vote `NoWithVeto` if a proposal leads to undesirable outcomes for the community. It states “if a proposal seems to be spam or is deemed to have caused a negative externality to Cosmos community, voters should vote `NoWithVeto`.”
 
-Voting `NoWithVeto` provides a mechanism for a minority group representing a _third_ of the participating voting power to reject a proposal that would otherwise pass. This makes explicit an aspect of the consensus protocol: it works as long as only up to [a third of nodes fail](https://docs.tendermint.com/v0.35/introduction/what-is-tendermint.html). In other words, greater than a third of validators are always in a position to cause a proposal to fail outside the formalized governance process and the network's norms, such as by censoring transactions. The purpose of internalizing this aspect of the consensus protocol into the governance process is to discourage validators from relying on collusion and censorship tactics to influence voting outcomes.
+Voting `NoWithVeto` provides a mechanism for a minority group representing a _third_ of the participating voting power to reject a proposal that would otherwise pass. This makes explicit an aspect of the consensus protocol: it works as long as only up to [a third of nodes fail](https://docs.tendermint.com/v0.35/introduction/what-is-tendermint.html). In other words, a third of the validators are always in a position to cause a proposal to fail outside the formalized governance process and the network's norms, such as by censoring transactions. The purpose of internalizing this aspect of the consensus protocol into the governance process is to discourage validators from relying on collusion and censorship tactics to influence voting outcomes.
 
 ## What determines whether or not a governance proposal passes?
 
@@ -44,19 +51,23 @@ There are four criteria:
    - anyone may contribute to this deposit
    - the deposit must be reached within <GovParam render={params => <span>{StringToMinutes(params.params.max_deposit_period)}</span>} /> minutes
 2. A minimum of <GovParam render={params => <span>{StringToPercent(params.params.quorum)}</span>} /> of the network's voting power (quorum) is required to participate to make the proposal valid
-3. A simple majority (greater than <GovParam render={params => <span>{StringToPercent(params.params.threshold)}</span>} />) of the participating voting power must back the `Yes` vote during the <GovParam render={params => <span>{StringToDays(params.params.voting_period)}</span>} />-day voting period
+3. A simple majority (greater than <GovParam render={params => <span>{StringToPercent(params.params.threshold)}</span>} />) of the participating voting power (except the `Abstain`-voters) must back the `Yes` vote during the <GovParam render={params => <span>{StringToDays(params.params.voting_period)}</span>} />-day voting period
 4. Less than <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} /> of participating voting power votes `NoWithVeto`
 
 Currently, the criteria for submitting and passing/failing all proposal types is the same.
 
 ### How is voting tallied?
 
-Voting power is determined by stake weight at the end of the <GovParam render={params => <span>{StringToDays(params.params.voting_period)}</span>} />-day voting period and is proportional to the number of total KYVE participating in the vote. Only bonded KYVE count towards the voting power for a governance proposal. Liquid KYVE will not count toward a vote or quorum.
+Voting power is determined by stake weight at the end of the <GovParam render={params => <span>{StringToDays(params.params.voting_period)}</span>} />-day voting period and is proportional to the number of total \$KYVE participating in the vote. Only bonded \$KYVE count towards the voting power for a governance proposal.
+Liquid \$KYVE will not count toward a vote or quorum.
 
-Inactive validators can cast a vote, but their voting power (including the backing of their delegators) will not count toward the vote if they are not in the active set when the voting period ends. That means that if I delegate to a validator that is either jailed, tombstoned, or ranked lower than 100 in stake-backing at the time that the voting period ends, my stake-weight will not count in the vote.
+Inactive validators can cast a vote, but their voting power, including that of their delegators, will not be counted if they are not in the active set when the voting period ends. This means that if you delegate to a validator who is jailed, tombstoned, or ranked outside the top 100 validators at the end of the voting period, your stake will not be counted in the vote.
 
-Though a simple majority `Yes` vote (ie. 50% of participating voting power) is required for a governance proposal vote to pass, a `NoWithVeto` vote of <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} />  of participating voting power or greater can override this outcome and cause the proposal to fail. This enables a minority group representing greater than <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} /> of voting power to fail a proposal that would otherwise pass.
+While a simple majority "Yes" vote (i.e. 50% of the participating voting power) is required for a governance proposal to pass, a `NoWithVeto` vote of <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} /> or more can override the result and cause the proposal to fail. This allows a minority group with more than <GovParam render={params => <span>{StringToPercent(params.params.veto_threshold)}</span>} /> of the voting power to block a proposal that would otherwise pass.
 
-### How is quorum determined?
+### How is the quorum determined?
 
-Voting power, whether backing a vote of `Yes`, `Abstain`, `No`, or `NoWithVeto`, counts toward quorum. Quorum is required for the outcome of a governance proposal vote to be considered valid and for deposit contributors to recover their deposit amounts. If the proposal vote does not reach quorum (ie. less than 33.4% of the network's voting power is participating) within <GovParam render={params => <span>{StringToDays(params.params.voting_period)}</span>} /> days, any deposit amounts will be burned and the proposal outcome will not be considered to be valid.
+Voting power, whether supporting a `Yes`, `Abstain`, `No`, or `NoWithVeto` vote,
+counts toward the quorum. Quorum is required for a governance proposal to be considered valid.
+If the proposal fails to reach quorum (i.e., less than 33.4% of the network's voting power participates)
+within 7 days the proposal outcome will not be considered valid.
