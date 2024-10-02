@@ -51,65 +51,87 @@ These parameters can only be updated via the governance.
 
 ## Calculation
 
-The total bundle reward is calculated as follows:
+The reward is calculated per bundle and per pool. A reward consists of multiple
+coins. Funders can fund in any supported IBC-coin. 
+The total bundle reward is calculated as
 
 $$
 \begin{aligned}
-total\_bundle\_reward = operating\_cost + (pool\_account\_balance \cdot inflation\_payout\_rate)
+R_{\text{total}}= funders\_payout + (pool\_account\_balance \cdot inflation\_payout\_rate)
 \end{aligned}
 $$
+
+where 
+- $R_{\text{total}} \in \{ {x \in \mathcal{R}}^n \; | \; x_i > 0  \; \forall i \in \{1,..., N_{\text{coins}}\} \}$ consisting of $N_{\text{coins}}$ different coins. 
+- $funders\_payout$ is the sum of all coins the funders paid for the given bundle in the given pool.
+- $pool\_account\_balance$ is the current account balance of the pool from inflation splitting.
+- $inflation\_payout\_rate$ is the rate at which the pool account should be charged (global parameter).
 
 From the total bundle reward the network fee gets first deducted and transferred.
+The value is given by
 
 $$
 \begin{aligned}
-treasury\_reward = total\_bundle\_reward \cdot network\_fee
+R_{\text{treasury}} = R_{\text{total}} \cdot network\_fee
+\end{aligned}
+$$
+where $network\_fee$ is the percentage of the rewards that is paid to the community pool as a fee.
+
+After the network fee is deducted, the storage cost for uploading the bundle to the storage provider
+is calculated on a USD basis:
+
+$$
+\begin{aligned}
+C_{storage} = data\_size \cdot storage\_cost
+\end{aligned}
+$$
+where
+- $date\_size$ is the size of the data uploaded to the storage-provider in bytes.
+- $storage\_cost$ is the cost (in USD) per byte for uploading data to a given storage-provider (global parameter).
+
+Now $C_{storage}$ is split across all available coins in the reward equally. 
+
+$$
+\begin{aligned}
+S_{i} = \frac{C_{storage}}{N_{\text{coins}} \cdot p_i}
+\end{aligned}
+$$
+where
+- $p_i$ is the price of the $i$-th coin in USD (global parameter, which is kept up-to-date by the governance).
+
+Now the storage cost is deducted from the total reward for each coin. If the storage
+cost for a given coin is larger than the available amount, the entire amount is deducted.
+The storage reward for the $i$-th coin is given by
+
+$$
+\begin{aligned}
+R_{\text{storage},i} = \min(R_{\text{total},i}, S_i) \; .
 \end{aligned}
 $$
 
-After the network fee got deducted we further deduct the storage reward and credit it to the uploader
-directly to cover his storage costs:
+The treasury cost and the storage cost are deducted from the total reward which leads to
+the remaining bundle reward which is split between the validator (uploader) and its delegators based on the validator's commission:
 
 $$
 \begin{aligned}
-storage\_reward = data\_size \cdot storage\_cost
+R_{\text{commission}} = (R_{\text{total}} - R_{\text{treasury}} - R_{\text{storage}}) \cdot c
 \end{aligned}
 $$
 
-This yields our remaining bundle reward which is split between uploader and its delegators:
-
 $$
 \begin{aligned}
-bundle\_reward = total\_bundle\_reward - treasury\_reward - storage\_reward
-\end{aligned}
-$$
-
-The commission reward for the uploader can then be calculated with:
-
-$$
-\begin{aligned}
-commission\_reward = bundle\_reward \cdot commission
-\end{aligned}
-$$
-
-The remains are distributed to the delegators:
-
-$$
-\begin{aligned}
-delegation\_reward = bundle\_reward - commission\_reward
+R_{\text{delegation}} = (R_{\text{total}} - R_{\text{treasury}} - R_{\text{storage}}) \cdot (1-c)
 \end{aligned}
 $$
 
 where
 
-- $total\_bundle\_reward$ = `is the total bundle reward paid out from the pool`
-- $operating\_cost$ = `the fixed base reward per pool in ukyve`
-- $pool\_account\_balance$ = `the current account balance of the pool from inflation splitting`
-- $inflation\_payout\_rate$ = `the rate in % at which the pool account should be charged`
-- $network\_fee$ = `the percentage of how much goes to the community pool as a fee`
-- $data\_size$ = `the amount of bytes in bundle proposal`
-- $storage\_cost$ = `the reward per byte in ukyve`
-- $bundle\_reward$ = `the remaining bundle reward for uploader and its delegators`
-- $commission$ = `the commission percentage chosen by the node operator`
-- $commission\_reward$ = `is the reward the uploader receives through commission`
-- $delegation\_reward$ = `the rewards delegators receive for securing the network`
+- $c$ is the commission set by the validator.
+
+The total reward can be summarized as:
+
+$$
+\begin{aligned}
+R_{\text{total}} = \underbrace{R_{\text{treasury}}}_\text{Community Pool} + \underbrace{R_{\text{storage}} + R_{\text{commission}}}_\text{Validator} + \underbrace{R_{\text{delegation}}}_\text{Delegators}
+\end{aligned}
+$$
