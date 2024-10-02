@@ -71,7 +71,7 @@ import LastUpdated from '/src/components/LastUpdated';
 
 \*Updated at **<LastUpdated />**
 
-The chain slashing parameters can only be updated via the governance. The slashed \$KYVE will get transferred to the community pool.
+The chain slashing parameters can only be updated via the governance. The slashed \$KYVE will get burned.
 
 ### Undelegation
 
