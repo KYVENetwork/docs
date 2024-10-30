@@ -123,7 +123,7 @@ Store the keyfile in a secure location you will need it again later in the insta
 
 Turbo is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
 with guaranteed transaction finality. An additional benefit of using the Turbo storage solution is that
-certain coins like $KYVE can also be used for funding which minimizes the complexity of operating KYVE
+certain coins like \$KYVE can also be used for funding which minimizes the complexity of operating KYVE
 protocol nodes.
 
 In order to setup a Turbo wallet take an existing KYVE account or create a new one you want to specifically use
@@ -134,8 +134,8 @@ npm i -g @ardrive/turbo-sdk
 yarn global add @ardrive/turbo-sdk
 ```
 
-In order upload with Turbo you need to fund your account with $KYVE, of course you can also still
-fund with $AR if that is preferred.
+In order to upload with Turbo you need to fund your account with \$KYVE, of course you can also still
+fund with \$AR if that is preferred.
 
 You always receive credits after funding which are in value equal to $AR. You can preview the conversions
 before funding with:
@@ -147,10 +147,10 @@ $ turbo price --value 300 --type kyve
 ```
 
 :::caution
-**IMPORTANT**: $KYVE can not be defunded again, so only fund the amount that you actually need!
+**IMPORTANT**: \$KYVE can not be defunded again, so only fund the amount that you actually need!
 :::
 
-Example of funding 300 $KYVE:
+Example of funding 300 \$KYVE:
 
 ```bash
 $ turbo crypto-fund --value 300 --token kyve --mnemonic "your_mnemonic"
