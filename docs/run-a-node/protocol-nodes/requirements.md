@@ -47,10 +47,11 @@ Because a data pool is always archiving the data on a web3 storage provider, the
 must have access to a funded wallet in order to be able to actually upload data to those storage providers.
 
 Depending on which storage provider the pool runs, on you have to setup a wallet with which you can upload
-data with. Currently, there are two available storage providers:
+data with. Currently, there the following storage providers are available:
 
 - [Arweave](https://arweave.org)
 - [Irys](https://irys.xyz)
+- [Turbo](https://ardrive.io/turbo-bundler/)
 
 On the pool overview, it is clearly listed which storage provider a pool uses.
 
@@ -117,3 +118,63 @@ $ irys withdraw 500000000000 -h https://node1.irys.xyz -w arweave.json -t arweav
 More information about the Irys CLI can be found [here](https://docs.irys.xyz/developer-docs/cli).
 
 Store the keyfile in a secure location you will need it again later in the installation process.
+
+### Setting up a Turbo Wallet
+
+Turbo is a layer 2 solution for Arweave, bundling transactions and therefore making it much more scalable
+with guaranteed transaction finality. An additional benefit of using the Turbo storage solution is that
+certain coins like $KYVE can also be used for funding which minimizes the complexity of operating KYVE
+protocol nodes.
+
+In order to setup a Turbo wallet take an existing KYVE account or create a new one you want to specifically use
+for paying for Turbo transactions, note that KYVE accounts always begin with `kyve1....`.
+
+```bash
+npm i -g @ardrive/turbo-sdk
+yarn global add @ardrive/turbo-sdk
+```
+
+In order upload with Turbo you need to fund your account with $KYVE, of course you can also still
+fund with $AR if that is preferred.
+
+You always receive credits after funding which are in value equal to $AR. You can preview the conversions
+before funding with:
+
+```bash
+$ turbo price --value 300 --type kyve
+
+> Current price estimate for 300 kyve is ~0.239517454785 Credits
+```
+
+:::caution
+**IMPORTANT**: $KYVE can not be defunded again, so only fund the amount that you actually need!
+:::
+
+Example of funding 300 $KYVE:
+
+```bash
+$ turbo crypto-fund --value 300 --token kyve --mnemonic "your_mnemonic"
+
+> Transaction details:
+>
+>   Amount: 300 kyve
+>   Target: kyve1clmuh5sjw73784lg0gnf4p07qefzrtk78an698
+>   Credits received: 0.240351511231
+>   Credit recipient: kyve1z6huufuclqd8h349wgkd4mu8wfvq8k30tskra0
+>   Network fees: (Gas fees apply)
+>
+> This payment is non-refundable.  Proceed with transaction?
+```
+
+Once your transaction was successful you can verify it with checking your credit balance:
+
+```bash
+$ turbo balance --address kyve1z6huufuclqd8h349wgkd4mu8wfvq8k30tskra0
+
+> Turbo Balance for Native Address "kyve1z6huufuclqd8h349wgkd4mu8wfvq8k30tskra0"
+> Credits: 0.241308174763
+```
+
+More information about the Turbo CLI can be found [here](https://github.com/ardriveapp/turbo-sdk?tab=readme-ov-file).
+
+Store the mnemonic in a secure location you will need it again later in the installation process.
