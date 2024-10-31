@@ -126,8 +126,29 @@ with guaranteed transaction finality. An additional benefit of using the Turbo s
 certain coins like \$KYVE can also be used for funding which minimizes the complexity of operating KYVE
 protocol nodes.
 
-In order to setup a Turbo wallet take an existing KYVE account or create a new one you want to specifically use
-for paying for Turbo transactions, note that KYVE accounts always begin with `kyve1....`.
+Since it is possible to pay with $KYVE directly from your KYVE account to pay for storage fees you
+first have to decide what wallet you want to use for that. We recommend setting up a completely new KYVE wallet
+dedicated only for Storage fees. You can then use this wallet for all the protocol nodes on the different
+pools you are in. This has the benefit that you can monitor your expenses more easily and don’t need to
+fund multiple wallets for each pool all the time. If you do not provide a wallet the protocol node by
+default will use the valaccount, in this case no value `–-storage-priv` has to be set.
+
+In case you want to use a single KYVE wallet to pay for storage you have to provide the mnemonic either
+at the binary start command if you don’t use KYSOR with `–storage-priv “your mnemonic …”` or in the
+`valaccount.toml` if you use KYSOR. An example `valaccount.toml` could look like this:
+
+```toml
+pool = 2
+valaccount = "your valaccount mnemonic …"
+storagePriv = "your storage mnemonic …"
+requestBackoff = "50"
+cache = "jsonfile"
+metrics = true
+metricsPort = "8080"
+```
+
+After you have set up your KYVE wallet you can install the Turbo SDK in order to top up your wallet so
+you are able to pay for storage fees. First install it with the following commands:
 
 ```bash
 npm i -g @ardrive/turbo-sdk
