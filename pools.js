@@ -313,6 +313,66 @@ const EthereumBlobs = {
     "Data blobs are a fresh approach to optimizing transaction data storage on L2 networks within Ethereum. They are inexpensive and temporary memory carrying data about transactions, called blob-carrying transactions. These blobs are designed to make the verification of these transactions more efficient.",
 };
 
+const dYdX = {
+  name: "dYdX",
+  chainId: "dydx-mainnet-1",
+  val_name: "dydx",
+  runtime: "@kyvejs/tendermint",
+  datasource: "Self hosted dYdX full node (dydx-mainnet-1)",
+  start_data: "Genesis",
+  storage_provider: "Irys",
+  networks: {
+    Mainnet: 13,
+    Kaon: 8,
+  },
+  requirements: [
+    "8 or more physical CPU cores",
+    "32 GB RAM",
+    "1 TB DISK",
+    "100mbps network bandwith",
+  ],
+  binaryVersion: "v2.0.1",
+  goVersion: [],
+  nodeName: "dYdX",
+  configName: ".dydxprotocol",
+  binaryName: "dydxprotocold",
+  binaryDownload:
+    "https://github.com/dydxprotocol/v4-chain/releases/tag/protocol/v2.0.1",
+  installInstructions:
+    "https://docs.dydx.exchange/infrastructure_providers-validators/set_up_full_node",
+  seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:23856",
+};
+
+// const Andromeda = {
+//   name: "Andromeda",
+//   chainId: "andromeda-1",
+//   val_name: "andromeda",
+//   runtime: "@kyvejs/tendermint",
+//   datasource: "Self hosted Andromeda full node (andromeda-1)",
+//   start_data: "Genesis",
+//   storage_provider: "Irys",
+//   networks: {
+//     Mainnet: 14,
+//     Kaon: 33,
+//   },
+//   requirements: [
+//     "8 or more physical CPU cores",
+//     "32 GB RAM",
+//     "1 TB DISK",
+//     "100mbps network bandwith",
+//   ],
+//   binaryVersion: "v0.1.1-beta-patch",
+//   goVersion: [],
+//   nodeName: "andromeda",
+//   configName: ".andromeda",
+//   binaryName: "andromedad",
+//   binaryDownload:
+//     "https://github.com/andromedaprotocol/andromedad/releases/tag/v0.1.1-beta-patch",
+//   installInstructions:
+//     "https://docs.andromedaprotocol.io/andromeda/chain/running-a-node",
+//   seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:21256",
+// };
+
 const pools = [
   Cosmos,
   Osmosis,
@@ -326,6 +386,8 @@ const pools = [
   Celestia,
   CelestiaSSync,
   EthereumBlobs,
+  dYdX,
+  // Andromeda,
 ];
 
 export default pools;
