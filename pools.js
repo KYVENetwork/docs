@@ -343,35 +343,35 @@ const dYdX = {
   seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:23856",
 };
 
-// const Andromeda = {
-//   name: "Andromeda",
-//   chainId: "andromeda-1",
-//   val_name: "andromeda",
-//   runtime: "@kyvejs/tendermint",
-//   datasource: "Self hosted Andromeda full node (andromeda-1)",
-//   start_data: "Genesis",
-//   storage_provider: "Irys",
-//   networks: {
-//     Mainnet: 14,
-//     Kaon: 33,
-//   },
-//   requirements: [
-//     "8 or more physical CPU cores",
-//     "32 GB RAM",
-//     "1 TB DISK",
-//     "100mbps network bandwith",
-//   ],
-//   binaryVersion: "v0.1.1-beta-patch",
-//   goVersion: [],
-//   nodeName: "andromeda",
-//   configName: ".andromeda",
-//   binaryName: "andromedad",
-//   binaryDownload:
-//     "https://github.com/andromedaprotocol/andromedad/releases/tag/v0.1.1-beta-patch",
-//   installInstructions:
-//     "https://docs.andromedaprotocol.io/andromeda/chain/running-a-node",
-//   seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:21256",
-// };
+const Andromeda = {
+  name: "Andromeda",
+  chainId: "andromeda-1",
+  val_name: "andromeda",
+  runtime: "@kyvejs/tendermint",
+  datasource: "Self hosted Andromeda full node (andromeda-1)",
+  start_data: "Genesis",
+  storage_provider: "Irys",
+  networks: {
+    Mainnet: 14,
+    Kaon: 33,
+  },
+  requirements: [
+    "8 or more physical CPU cores",
+    "32 GB RAM",
+    "1 TB DISK",
+    "100mbps network bandwith",
+  ],
+  binaryVersion: "v0.1.1-beta-patch",
+  goVersion: [],
+  nodeName: "andromeda",
+  configName: ".andromeda",
+  binaryName: "andromedad",
+  binaryDownload:
+    "https://github.com/andromedaprotocol/andromedad/releases/tag/v0.1.1-beta-patch",
+  installInstructions:
+    "https://docs.andromedaprotocol.io/andromeda/chain/running-a-node",
+  seed: "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:21256",
+};
 
 const pools = [
   Cosmos,
@@ -387,7 +387,7 @@ const pools = [
   CelestiaSSync,
   EthereumBlobs,
   dYdX,
-  // Andromeda,
+  Andromeda,
 ];
 
 export default pools;
