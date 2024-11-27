@@ -126,6 +126,11 @@ with guaranteed transaction finality. An additional benefit of using the Turbo s
 certain coins like \$KYVE can also be used for funding which minimizes the complexity of operating KYVE
 protocol nodes.
 
+:::info
+To migrate from Irys to Turbo if you are using Kysor simply replace the `storagePriv` value with the
+Turbo mnemonic in your `.kysor/valaccounts/<valaccount>.toml` file and restart.
+:::
+
 Since it is possible to pay with $KYVE directly from your KYVE account to pay for storage fees you
 first have to decide what wallet you want to use for that. We recommend setting up a completely new KYVE wallet
 dedicated only for Storage fees. You can then use this wallet for all the protocol nodes on the different
