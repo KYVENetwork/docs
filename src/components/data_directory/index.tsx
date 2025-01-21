@@ -159,6 +159,17 @@ const DataDirectory = () => {
     );
   };
 
+  const supportsKsync = () => {
+    const networks = ["kyve-1", "kaon-1"];
+    for (const network of networks) {
+      if (!selected["networks"][network]) return false;
+
+      const pools = selected["networks"][network]["pools"] as any[];
+      if (pools.find((x) => x.runtime.includes("tendermint"))) return true;
+    }
+    return false;
+  };
+
   return (
     <>
       <div className="">
@@ -211,15 +222,52 @@ const DataDirectory = () => {
           </Modal>
         </div>
       </div>
-      <h2>Pools:</h2>
-      <Tabs>
-        <TabItem value="mainnet" label="Mainnet">
-          {pools("kyve-1")}
-        </TabItem>
-        <TabItem value="kaon" label="Kaon">
-          {pools("kaon-1")}
-        </TabItem>
-      </Tabs>
+      <div className="grid grid-cols-3 gap-1">
+        <div className="col-span-3">
+          <h2>Pools:</h2>
+          <Tabs>
+            <TabItem value="mainnet" label="Mainnet">
+              {pools("kyve-1")}
+            </TabItem>
+            <TabItem value="kaon" label="Kaon">
+              {pools("kaon-1")}
+            </TabItem>
+          </Tabs>
+        </div>
+        <div className="col-span-3">
+          <h2>Supported Tools:</h2>
+          <table>
+            <tr>
+              <th>Tool</th>
+              <th>Details</th>
+              <th>Support</th>
+            </tr>
+            <tr>
+              <td>DLT</td>
+              <td>
+                Load datasets from KYVE pools to your destination.{" "}
+                <a href="./data-pipeline/data-load-tool">Learn more.</a>
+              </td>
+              <td className={"text-center " + "text-green-500 text-3xl"}>✔</td>
+            </tr>
+            <tr>
+              <td>KSYNC</td>
+              <td>
+                Rapidly sync blocks and snapshots from KYVE.{" "}
+                <a href="./data-pipeline/data-load-tool">Learn more.</a>
+              </td>
+              <td
+                className={
+                  "text-center text-3xl " +
+                  (supportsKsync() ? "text-green-500" : "text-red-500")
+                }
+              >
+                {supportsKsync() ? "✔" : "✗"}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </>
   );
 };
