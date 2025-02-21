@@ -117,8 +117,8 @@ by the pool since after that they are not needed anymore.
 
 Osmosis had three software upgrades which were executed without submitting `SoftwareUpgrade` governance proposals. As a result, the cosmovisor does not recognize these necessary upgrades, which is why the node can no longer sync from a specific height. These hard forks occured at the following heights:
 
-- [v5 to v6](https://www.mintscan.io/osmosis/proposals/103) at `2464000`
-- [v7 to v8](https://www.mintscan.io/osmosis/proposals/228) at `4402000`
+- [v5 to v6](https://ping.pub/kyve/gov/103) at `2464000`
+- [v7 to v8](https://ping.pub/kyve/gov/228) at `4402000`
 - [v9 to v10](https://github.com/osmosis-labs/osmosis/blob/main/networks/osmosis-1/upgrades/v10/guide.md) at `4713065`
 
 To prevent longer syncing breaks or other issues, it's recommended to use the cosmovisor with already downloaded binaries. After that, you need to move

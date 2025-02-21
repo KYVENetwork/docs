@@ -9,16 +9,16 @@ sidebar_position: 3
 Depending on the network one may need to run different versions. The following
 table shows the upgrade block height for a given version:
 
-| Tag                                                                          | Kaon                                                               | Mainnet                                            |
-|------------------------------------------------------------------------------|--------------------------------------------------------------------|----------------------------------------------------|
-| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                  | -                                                  |
-| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://viewblock.io/de/kyve/block/443300?network=kaon)   | -                                                  |
-| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                  | 0                                                  |
-| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://viewblock.io/de/kyve/block/1115111?network=kaon) | [826000](https://mintscan.io/kyve/blocks/826000)   |
-| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://viewblock.io/de/kyve/block/1502502?network=kaon) | [1135000](https://mintscan.io/kyve/blocks/1135000) |
-| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://viewblock.io/de/kyve/block/2341100?network=kaon) | [2061100](https://mintscan.io/kyve/blocks/2061100) |
-| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://viewblock.io/de/kyve/block/4185500?network=kaon) | [3908000](https://mintscan.io/kyve/blocks/3908000) |
-| [`v1.5.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.5.0)         | [7571371](https://viewblock.io/de/kyve/block/7571371?network=kaon) | [7254527](https://mintscan.io/kyve/blocks/7254527) |
+| Tag                                                                          | Kaon                                                               | Mainnet                                        |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------ | ---------------------------------------------- |
+| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                  | -                                              |
+| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://viewblock.io/de/kyve/block/443300?network=kaon)   | -                                              |
+| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                  | 0                                              |
+| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://viewblock.io/de/kyve/block/1115111?network=kaon) | [826000](https://ping.pub/kyve/block/826000)   |
+| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://viewblock.io/de/kyve/block/1502502?network=kaon) | [1135000](https://ping.pub/kyve/block/1135000) |
+| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://viewblock.io/de/kyve/block/2341100?network=kaon) | [2061100](https://ping.pub/kyve/block/2061100) |
+| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://viewblock.io/de/kyve/block/4185500?network=kaon) | [3908000](https://ping.pub/kyve/block/3908000) |
+| [`v1.5.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.5.0)         | [7571371](https://viewblock.io/de/kyve/block/7571371?network=kaon) | [7254527](https://ping.pub/kyve/block/7254527) |
 
 For the Korellia devnet there is no version map. Only the latest version via
 statesync is supported.

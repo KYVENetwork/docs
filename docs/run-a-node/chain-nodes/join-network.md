@@ -132,8 +132,8 @@ Go to <a href="https://explorer.kyve.network/kyve/gov">https://explorer.kyve.net
 </Admonition>
 
 First, one needs to obtain a trusted height and hash of that height.
-One can go to a blockexplorer and use the values provided there. For example block 86783 can be viewed at: <a href="https://www.mintscan.io/kyve/blocks/86783">
-https://www.mintscan.io/kyve/blocks/86783 </a>
+One can go to a blockexplorer and use the values provided there. For example block 86783 can be viewed at: <a href="https://ping.pub/kyve/block/86783">
+https://ping.pub/kyve/block/86783 </a>
 
 To enable state-sync edit <code>config.toml</code> under the section <code>[statesync]</code>
 
@@ -163,8 +163,8 @@ Go to <a href="https://explorer.kyve.network/kaon/gov">https://explorer.kyve.net
 </Admonition>
 
 First, one needs to obtain a trusted height and hash of that height.
-One can go to a blockexplorer and use the values provided there. For example block 325017 can be viewed at: <a href="https://testnet.mintscan.io/kyve-testnet/blocks/328549">
-https://testnet.mintscan.io/kyve-testnet/blocks/325017 </a>
+One can go to a blockexplorer and use the values provided there. For example block 325017 can be viewed at: <a href="https://explorer.kyve.network/kaon/block/328549">
+https://explorer.kyve.network/kaon/block/325017 </a>
 
 To enable state-sync edit <code>config.toml</code> under the section <code>[statesync]</code>
 

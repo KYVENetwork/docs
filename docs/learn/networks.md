@@ -15,7 +15,6 @@ KYVE is the official mainnet of KYVE. Data validated and archived in this networ
     <strong>WebApp</strong>: <a href="https://app.kyve.network">https://app.kyve.network</a>
   </TabItem>
   <TabItem value="explorer" label="Explorer">
-    <strong>Mintscan</strong>: <a href="https://www.mintscan.io/kyve">https://www.mintscan.io/kyve</a><br/>
     <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kyve.network/kyve">https://explorer.kyve.network/kyve</a><br/>
     <strong>Ping.Pub (Official)</strong>: <a href="https://ping.pub/kyve">https://ping.pub/kyve</a>
   </TabItem>
@@ -36,7 +35,6 @@ Kaon is KYVE's official testnet. It is designed to replicate the mainnet. Before
     <strong>WebApp</strong>: <a href="https://app.kaon.kyve.network">https://app.kaon.kyve.network</a>
   </TabItem>
   <TabItem value="explorer" label="Explorer">
-    <strong>Mintscan</strong>: <a href="https://testnet.mintscan.io/kyve-testnet">https://testnet.mintscan.io/kyve-testnet</a><br/>
     <strong>Ping.Pub (KYVE)</strong>: <a href="https://explorer.kyve.network/kaon">https://explorer.kyve.network/kaon</a>
   </TabItem>
   <TabItem value="rpc" label="RPC">
