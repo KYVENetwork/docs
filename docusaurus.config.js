@@ -34,20 +34,20 @@ const config = {
 
   customFields: {
     kyve: {
-      rpc: "https://rpc-eu-1.kyve.network",
-      rest: "https://api-eu-1.kyve.network",
+      rpc: "https://rpc.kyve.network",
+      rest: "https://api.kyve.network",
       denom: "ukyve",
       decimals: 6,
     },
     kaon: {
-      rpc: "https://rpc-eu-1.kaon.kyve.network",
-      rest: "https://api-eu-1.kaon.kyve.network",
+      rpc: "https://rpc.kaon.kyve.network",
+      rest: "https://api.kaon.kyve.network",
       denom: "tkyve",
       decimals: 6,
     },
     korellia: {
-      rpc: "https://rpc-eu-1.korellia.kyve.network",
-      rest: "https://api-eu-1.korellia.kyve.network",
+      rpc: "https://rpc.korellia.kyve.network",
+      rest: "https://api.korellia.kyve.network",
       denom: "tkyve",
       decimals: 9,
     },
@@ -88,7 +88,7 @@ const config = {
               "/tools/KSYNC/protocol_validators",
               "/tools/KSYNC/settings",
               "/ksync",
-              "/access-data-sets/ksync/"
+              "/access-data-sets/ksync/",
             ],
           },
           {
@@ -109,56 +109,67 @@ const config = {
           {
             to: "/access-data-sets/data-pipeline/overview",
             from: [
-                "/access-data-sets/data-load-tool",
+              "/access-data-sets/data-load-tool",
               "/developers/data_engineers/accessing_data/elt_pipeline/overview",
-              "/data_engineers/accessing_data/elt_pipeline/overview"
-            ]},
-          {to: "/run-a-node/protocol-nodes/pools/cosmos_hub/installation",
-            from: ["/validators/protocol_nodes/pools/cosmos_hub/installation"]},
-          {to: "/learn/protocol-structure/advanced-concepts/uploader-selection",
-            from: ["/protocol_devs/advanced_concepts/uploader_selection"]},
-          {to: "/run-a-node",
-            from: ["/node/running", "/intro/protocol-node"]},
-          {to: "/learn/architecture",
-            from: ["/architecture"]},
-          {to: "/build/development/developing-runtime",
-            from: ["/protocol_devs/development/developing_runtime"]},
+              "/data_engineers/accessing_data/elt_pipeline/overview",
+            ],
+          },
+          {
+            to: "/run-a-node/protocol-nodes/pools/cosmos_hub/installation",
+            from: ["/validators/protocol_nodes/pools/cosmos_hub/installation"],
+          },
+          {
+            to: "/learn/protocol-structure/advanced-concepts/uploader-selection",
+            from: ["/protocol_devs/advanced_concepts/uploader_selection"],
+          },
+          {
+            to: "/run-a-node",
+            from: ["/node/running", "/intro/protocol-node"],
+          },
+          { to: "/learn/architecture", from: ["/architecture"] },
           {
             to: "/build/development/developing-runtime",
-            from: [
-                "/protocol_devs/development/developing_runtime"
-            ]
+            from: ["/protocol_devs/development/developing_runtime"],
+          },
+          {
+            to: "/build/development/developing-runtime",
+            from: ["/protocol_devs/development/developing_runtime"],
           },
           {
             to: "/build/development/runtimes",
-            from: [
-              "/build/development/runtimes"
-            ]
+            from: ["/build/development/runtimes"],
           },
           {
             to: "/build/development/storage-providers",
             from: [
               "/build/adding-data/storage-providers/overview",
               "/build/adding-data/storage-providers/arweave",
-              "/build/adding-data/storage-providers/irys"
-            ]
+              "/build/adding-data/storage-providers/irys",
+            ],
           },
           {
             to: "/build/development/compressions",
-            from: [
-              "/build/adding-data/compressions/overview",
-            ]
+            from: ["/build/adding-data/compressions/overview"],
           },
           {
             to: "/build/web3-devs/indexers",
             from: [
               "/build/web3-devs/indexers/overview",
               "/build/web3-devs/indexers/subquery",
-            ]
+            ],
           },
-          {to: "/community",
-            from: ["/token_holders/overview", "/basics/kyve", "/token_holders/governance"]},
-          {to: "/access-data-sets", from: ["/access-data-sets/data-directory"]},
+          {
+            to: "/community",
+            from: [
+              "/token_holders/overview",
+              "/basics/kyve",
+              "/token_holders/governance",
+            ],
+          },
+          {
+            to: "/access-data-sets",
+            from: ["/access-data-sets/data-directory"],
+          },
         ],
       },
     ],
