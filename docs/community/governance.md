@@ -56,7 +56,7 @@ Governance practices and decisions are communicated through different types of d
 
 Venues involve community members to different degrees and individuals often perform multiple roles in the Cosmos ecosystem (validators, users, developers and core-members of KYVE Team). Because technical direction setting and development is almost always happening in the open, involvement from members in the extended community occurs organically.
 
-- **[KYVE Discord](https://discord.gg/kyve)**
+- **[KYVE Discord](https://discord.com/invite/PATvZvEmxF)**
   - For ecosystem cross-pollination with an active developer presence.
   - `🏛│governance` channel for discussing proposals, upgrades, etc.
   - `📜│proposals` channel for a full list of proposals.

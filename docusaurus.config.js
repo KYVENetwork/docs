@@ -270,7 +270,7 @@ const config = {
             to: "/developers",
           },
           {
-            href: "https://discord.gg/PATvZvEmxF",
+            href: "https://discord.com/invite/PATvZvEmxF",
             className: "pseudo-icon discord-icon",
             position: "right",
           },
@@ -288,7 +288,7 @@ const config = {
             items: [
               {
                 label: "Discord",
-                to: "https://discord.gg/kyve",
+                to: "https://discord.com/invite/PATvZvEmxF",
               },
               {
                 label: "Telegram",
