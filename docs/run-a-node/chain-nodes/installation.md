@@ -9,17 +9,19 @@ sidebar_position: 3
 Depending on the network one may need to run different versions. The following
 table shows the upgrade block height for a given version:
 
-| Tag                                                                          | Kaon                                                                       | Mainnet                                                     |
-| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0) | 0                                                                          | -                                                           |
-| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1) | [443300](https://explorer.kyve.network/kaon/block/443300?network=kaon)     | -                                                           |
-| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)         | -                                                                          | 0                                                           |
-| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)         | [1115111](https://explorer.kyve.network/kaon/block/1115111?network=kaon)   | [826000](https://explorer.kyve.network/kyve/block/826000)   |
-| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)         | [1502502](https://explorer.kyve.network/kaon/block/1502502?network=kaon)   | [1135000](https://explorer.kyve.network/kyve/block/1135000) |
-| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)         | [2341100](https://explorer.kyve.network/kaon/block/2341100?network=kaon)   | [2061100](https://explorer.kyve.network/kyve/block/2061100) |
-| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)         | [4185500](https://explorer.kyve.network/kaon/block/4185500?network=kaon)   | [3908000](https://explorer.kyve.network/kyve/block/3908000) |
-| [`v1.5.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.5.0)         | [7571371](https://explorer.kyve.network/kaon/block/7571371?network=kaon)   | [7254527](https://explorer.kyve.network/kyve/block/7254527) |
-| [`v2.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v2.0.0)         | [11018314](https://explorer.kyve.network/kaon/block/11018314?network=kaon) | -                                                           |
+| Tag                                                                              | Kaon                                                                       | Mainnet                                                       |
+|----------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------|
+| [`v1.0.0-rc0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc0)     | 0                                                                          | -                                                             |
+| [`v1.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0-rc1)     | [443300](https://explorer.kyve.network/kaon/block/443300?network=kaon)     | -                                                             |
+| [`v1.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.0.0)             | -                                                                          | 0                                                             |
+| [`v1.1.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.1.0)             | [1115111](https://explorer.kyve.network/kaon/block/1115111?network=kaon)   | [826000](https://explorer.kyve.network/kyve/block/826000)     |
+| [`v1.2.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.2.0)             | [1502502](https://explorer.kyve.network/kaon/block/1502502?network=kaon)   | [1135000](https://explorer.kyve.network/kyve/block/1135000)   |
+| [`v1.3.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.3.0)             | [2341100](https://explorer.kyve.network/kaon/block/2341100?network=kaon)   | [2061100](https://explorer.kyve.network/kyve/block/2061100)   |
+| [`v1.4.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.4.0)             | [4185500](https://explorer.kyve.network/kaon/block/4185500?network=kaon)   | [3908000](https://explorer.kyve.network/kyve/block/3908000)   |
+| [`v1.5.0`](https://github.com/KYVENetwork/chain/releases/tag/v1.5.0)             | [7571371](https://explorer.kyve.network/kaon/block/7571371?network=kaon)   | [7254527](https://explorer.kyve.network/kyve/block/7254527)   |
+| [`v2.0.0-rc1`](https://github.com/KYVENetwork/chain/releases/tag/v2.0.0-rc1)     | [11018314](https://explorer.kyve.network/kaon/block/11018314?network=kaon) | -                                                             |
+| [`v2.0.0-kaon2`](https://github.com/KYVENetwork/chain/releases/tag/v2.0.0-kaon2) | [11414147](https://explorer.kyve.network/kaon/block/11414147?network=kaon) | -                                                             |
+| [`v2.0.0`](https://github.com/KYVENetwork/chain/releases/tag/v2.0.0)             | -                                                                          | [11026800](https://explorer.kyve.network/kyve/block/11026800) |
 
 For the Korellia devnet there is no version map. Only the latest version via
 statesync is supported.
@@ -113,42 +115,6 @@ After the download was done, verify that it was successful:
   <TabItem value="korellia" label="Korellia">
     Korellia does not follow any release schedule. Usually it's in sync with the latest
     stable release branch and it uses the <code>kaon</code> build environment.
-    Here is a list for every supported OS with the current version <code>v1.4.0</code><br/><br/>
-
-**linux/amd64**
-
-```bash
-wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_linux_amd64
-chmod +x kyved_kaon_linux_amd64
-```
-
-**linux/arm64**
-
-```bash
-wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_linux_arm64
-chmod +x kyved_kaon_linux_arm64
-```
-
-**darwin/amd64**
-
-```bash
-wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_darwin_amd64
-chmod +x kyved_kaon_darwin_amd64
-```
-
-**darwin/arm64**
-
-```bash
-wget https://github.com/KYVENetwork/chain/releases/download/v1.5.0/kyved_kaon_darwin_arm64
-chmod +x kyved_kaon_darwin_arm64
-```
-
-After the installation is done, verify that it was successful:
-
-```bash
-./kyved version
-```
-
   </TabItem>
 </Tabs>
 
