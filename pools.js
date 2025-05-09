@@ -100,6 +100,29 @@ const ArchwaySSync = {
   ],
 };
 
+const Avail = {
+  name: "Avail",
+  logo: "ar://fvncwI5IqQfDBcOtkL2kad3RgwwEjEamdrofPt9cDm4",
+  val_name: "avail",
+  runtime: "@kyvejs/avail",
+  datasource: "Self hosted Avail Mainnet archive node",
+  start_data: "Blocks and Data Submissions starting from Genesis",
+  networks: {
+    Korellia: 156,
+  },
+  requirements: [
+    "8 or more physical CPU cores",
+    "16 GB RAM",
+    "200 GB DISK",
+    "100mbps network bandwith",
+  ],
+  integrations: [],
+  description:
+      "The goal of this pool is to validate and archive all Avail blocks and data submissions in a decentralized and permanent manner. By leveraging Arweave and Irys for long-term storage, this data becomes a \n" +
+      "public good for developers and researchers. The pool ensures reliable access to the full history of the Avail blockchain, supporting transparency, data analysis, and long-term verifiability \n" +
+      "of the network's activity.",
+};
+
 const Axelar = {
   name: "Axelar",
   chainId: "axelar-dojo-1",
@@ -296,7 +319,7 @@ const EthereumBlobs = {
   logo: "ar://Ui5fULe72VfEKo5reeGKvGXF_5HOuAIfdaOM7fXjVyA",
   val_name: "ethereum-blobs",
   runtime: "@kyvejs/ethereum-blobs",
-  datasource: "Slef hosted Ethereum full node (Lighthose & Geth)",
+  datasource: "Self hosted Ethereum full node (Lighthose & Geth)",
   start_data: "Blobs starting from the Dencun upgrade",
   networks: {
     Kaon: 20,
@@ -378,6 +401,7 @@ const pools = [
   Osmosis,
   Archway,
   ArchwaySSync,
+  Avail,
   Axelar,
   Cronos,
   CronosSSync,
