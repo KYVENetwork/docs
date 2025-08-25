@@ -15,7 +15,11 @@ to your runtime.
 | 1  | [Arweave](#arweave)                             | Uses Arweave to store data                 |
 | 2  | [Irys](#irys)                                   | Uses Irys to store data on Arweave         |
 | 3  | [KYVE Storage Provider](#kyve-storage-provider) | Uses web2 services to store data |
+| 3  | [Turbo](#turbo) | Uses ArDrive Turbo services to store data |
 
+:::info
+**NOTE**: The default storage provider on mainnet is **Turbo**
+:::
 
 ### Arweave
 [Arweave](https://www.arweave.org/) is a protocol that offers permanent, decentralized storage. The web as
@@ -38,6 +42,11 @@ By aggregating multiple transactions into a single, larger transaction, Irys ena
 The KYVE Storage Provider offers a convenient web2 storage solution that leverages services like Amazon S3 and Cloudflare R2. This storage layer is designed specifically for testing purposes, allowing developers and users to simulate the data archival process without incurring the costs associated with web3 storage solutions.
 
 By using the KYVE Storage Provider, teams can efficiently test and refine their data storage workflows, ensuring that everything functions smoothly before committing to permanent storage on a decentralized network. This approach provides a cost-effective and flexible environment for experimenting with archival processes, making it easier to develop and optimize storage strategies within the KYVE ecosystem.
+
+### Turbo
+[Turbo](https://ardrive.io/turbo-bundler) is an open source bundler for the Arweave ecosystem. It uses optimistic, instant data caching and provides
+different payment methods like AR, ETH, SOL and most importantly KYVE. Turbo is KYVE's go to storage provider and uses it as the default option to store
+blockchain data permanently on Arweave.
 
 ## Writing a custom storage provider
 To enable integrations to use a different place to store the data, you have to write your custom storage integration and
