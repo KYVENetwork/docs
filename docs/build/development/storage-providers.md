@@ -13,7 +13,7 @@ to your runtime.
 |----|-------------------------------------------------|--------------------------------------------|
 | 0  | No Storage                                      | Data does not get stored                   |
 | 1  | [Arweave](#arweave)                             | Uses Arweave to store data                 |
-| 2  | [Irys](#irys)                                   | Uses Irys to store data on Arweave         |
+| 2  | [Irys (deprecated)](#irys)                                   | Uses Irys to store data on Arweave         |
 | 3  | [KYVE Storage Provider](#kyve-storage-provider) | Uses web2 services to store data |
 | 3  | [Turbo](#turbo) | Uses ArDrive Turbo services to store data |
 
@@ -33,7 +33,12 @@ rangy, no doubt enabling KYVE’s vision.
 Because of Arweaves unique feature - Pay
 now, store forever - KYVE chose Arweave as a layer 0, laying the foundation for the KYVE Network.
 
-### Irys
+### Irys (deprecated)
+
+:::warning
+**WARNING**: Irys will not be used as a KYVE storage provider anymore since it is deprecated
+:::
+
 [Irys](https://docs.irys.xyz/), previously known as Bundlr, serves as a critical provenance layer within the Arweave ecosystem. 
 This technology is designed to optimize data storage and execution by facilitating the bundling of uploads to Arweave. 
 By aggregating multiple transactions into a single, larger transaction, Irys enables more efficient scaling of data uploads to the network.
